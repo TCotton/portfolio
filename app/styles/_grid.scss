@@ -1,0 +1,173 @@
+@import "media_queries";
+@import "library";
+@import "variables";
+
+// creating golden ratio grid with sass - fixed with
+
+$container_width: 970;
+$column_width: 70;
+$column_margins: 10;
+$columns: 12;
+
+div[class*="cols_"] {
+  display: inline;
+  float: left;
+  margin-left :  unquote($column_margins + "px");
+}
+
+// create the 12 columns below AND
+// create 12 columns with margin-left
+// this is for fixed width columns
+
+
+@for $i from 1 through $columns {
+
+  @if $i == 1 {
+
+    .cols_#{$i} {
+      width: unquote($column_width * $i + 'px');
+    }
+
+  } @else {
+
+    .cols_#{$i} {
+      // is there a better way of calculating this
+      width: unquote(($column_width * $i) + ($column_margins * $i - $column_margins) + 'px');
+    }
+
+  }
+
+}
+
+@for $i from 1 through $columns {
+
+  @if $i == 1 {
+
+    .margin_left_cols_#{$i} {
+      margin-left: unquote($column_width * $i + 'px');
+    }
+
+  } @else {
+
+    .margin_left_cols_#{$i} {
+      // is there a better way of calculating this
+      margin-left: unquote(($column_width * $i) + ($column_margins * $i + $column_margins) + 'px');
+    }
+
+  }
+
+}
+
+.inside {
+  margin-left: 0;
+}
+
+
+//main {
+//  margin-left: auto;
+//  margin-right: auto;
+//  width: 970px;
+//}
+//
+//.g80, .g160, .g240, .g320, .g400, .g480, .g560, .g640, .g720, .g800, .g880, .g960 {
+//  display: inline;
+//  float: left;
+//  margin-left: 10px;
+//}
+//
+//.g80 {
+//  width: 70px;
+//}
+//
+//.g160 {
+//  width: 150px;
+//}
+//
+//.g240 {
+//  width: 230px;
+//}
+//
+//.g320 {
+//  width: 310px;
+//}
+//
+//.g400 {
+//  width: 390px;
+//}
+//
+//.g480 {
+//  width: 470px;
+//}
+//
+//.g560 {
+//  width: 550px;
+//}
+//
+//.g640 {
+//  width: 630px;
+//}
+//
+//.g720 {
+//  width: 710px;
+//}
+//
+//.g800 {
+//  width: 790px;
+//}
+//
+//.g880 {
+//  width: 870px;
+//}
+//
+//.g960 {
+//  width: 950px;
+//}
+//
+//.ml80 {
+//  margin-left: 90px;
+//}
+//
+//.ml160 {
+//  margin-left: 170px;
+//}
+//
+//.ml240 {
+//  margin-left: 250px;
+//}
+//
+//.ml320 {
+//  margin-left: 330px;
+//}
+//
+//.ml400 {
+//  margin-left: 410px;
+//}
+//
+//.ml480 {
+//  margin-left: 490px;
+//}
+//
+//.ml560 {
+//  margin-left: 570px;
+//}
+//
+//.ml640 {
+//  margin-left: 650px;
+//}
+//
+//.ml720 {
+//  margin-left: 730px;
+//}
+//
+//.ml800 {
+//  margin-left: 810px;
+//}
+//
+//.ml880 {
+//  margin-left: 890px;
+//}
+//
+//.ml960 {
+//  margin-left: 970px;
+//}
+

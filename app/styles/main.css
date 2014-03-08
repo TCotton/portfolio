@@ -1,0 +1,741 @@
+/* line 1, _reset.scss */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  font-size: 100%;
+  background: transparent;
+}
+
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+/* line 17, _reset.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+  display: block;
+}
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+/* line 25, _reset.scss */
+audio, canvas, progress, video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+/* line 36, _reset.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9.
+ * Hide the `template` element in IE, Safari, and Firefox < 22.
+ */
+/* line 45, _reset.scss */
+[hidden], template {
+  display: none;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+/* line 58, _reset.scss */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  text-size-adjust: 100%;
+}
+
+/**
+ * Remove default margin.
+ */
+/* line 71, _reset.scss */
+body {
+  margin: 0;
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+/* line 82, _reset.scss */
+a {
+  background: transparent;
+}
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+/* line 93, _reset.scss */
+a:focus {
+  outline: thin dotted #cccccc;
+}
+
+/* line 97, _reset.scss */
+textarea:focus, input:focus {
+  outline: thin dotted #cccccc;
+}
+
+/* line 101, _reset.scss */
+:focus {
+  outline: thin dotted #cccccc;
+}
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+/* line 108, _reset.scss */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+/* line 115, _reset.scss */
+b, strong {
+  font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+/* line 122, _reset.scss */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+/* line 129, _reset.scss */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+/* line 138, _reset.scss */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+/* line 146, _reset.scss */
+code, kbd, pre, samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+/* line 154, _reset.scss */
+pre {
+  white-space: pre-wrap;
+}
+
+/**
+ * Set consistent quote types.
+ */
+/* line 161, _reset.scss */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+/* line 168, _reset.scss */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+/* line 175, _reset.scss */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 182, _reset.scss */
+sup {
+  top: -0.5em;
+}
+
+/* line 186, _reset.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+/* line 197, _reset.scss */
+img {
+  border: 0;
+}
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+/* line 204, _reset.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+/* line 215, _reset.scss */
+figure {
+  margin: 0;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/**
+ * Define consistent border, margin, and padding.
+ */
+/* line 226, _reset.scss */
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+/* line 236, _reset.scss */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+/* line 247, _reset.scss */
+button, input, optgroup, select, textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+/* line 257, _reset.scss */
+button, input {
+  line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+/* line 267, _reset.scss */
+button, select {
+  text-transform: none;
+}
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10.
+ */
+/* line 275, _reset.scss */
+button {
+  overflow: visible;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+/* line 286, _reset.scss */
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+/* line 294, _reset.scss */
+button[disabled], html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+/* line 302, _reset.scss */
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+/* line 312, _reset.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+/* line 324, _reset.scss */
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+/* line 332, _reset.scss */
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+/* line 341, _reset.scss */
+input {
+  line-height: normal;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+/* line 349, _reset.scss */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
+}
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+/* line 361, _reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 365, _reset.scss */
+td, th {
+  padding: 0;
+}
+
+/* disable / enable fort kerning and in all modern browers from ie9 upwards */
+/* line 370, _reset.scss */
+body {
+  /* only optmize text for headers due to performance issues */
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-font-kerning: auto;
+  -moz-font-kerning: auto;
+  font-kerning: auto;
+}
+
+/* line 378, _reset.scss */
+h1, h2, h3, h4, h5, h6, th, td, caption {
+  font-weight: normal;
+  /* just left it in the headers. Was making font less legible elsewhere */
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -webkit-font-kerning: normal;
+  -moz-font-kerning: normal;
+  font-kerning: normal;
+  -webkit-font-feature-settings: "liga" 1, "kern" 1;
+  -moz-font-feature-settings: "liga" 1, "kern" 1;
+  font-feature-settings: "liga" 1, "kern" 1;
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 0) and (min-pixel-device-ratio: 1.5) {
+  /* line 393, _reset.scss */
+  p, li {
+    letter-spacing: 0.01rem;
+    word-spacing: 0.01rem;
+  }
+}
+/* * { Box-sizing: Border-box } FTW: http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+/* line 399, _reset.scss */
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 403, _reset.scss */
+input[type=submit], input[type=button], select, a {
+  cursor: pointer;
+}
+
+/* line 406, _reset.scss */
+textarea {
+  resize: vertical;
+  overflow: auto;
+  width: 100%;
+}
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+/* line 418, _reset.scss */
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/* Remove Search Box Buttons in WebKit: http://davidwalsh.name/remove-search-box-buttons-webkit */
+/* line 423, _reset.scss */
+input[type='search']::-webkit-search-decoration, input[type='search']::-webkit-search-cancel-button, input[type='search']::-webkit-search-results-button, input[type='search']::-webkit-search-results-decoration {
+  display: none;
+}
+
+/* make placeholder text disappear on focus */
+/* line 428, _reset.scss */
+::-webkit-input-placeholder:focus {
+  opacity: 0;
+}
+
+/* line 432, _reset.scss */
+:-moz-placeholder:focus {
+  /* Firefox 18- */
+  opacity: 0;
+}
+
+/* line 437, _reset.scss */
+::-moz-placeholder:focus {
+  /* Firefox 19+ */
+  opacity: 0;
+}
+
+/* line 442, _reset.scss */
+:-ms-input-placeholder:focus {
+  opacity: 0;
+}
+
+/* responsive images */
+/* line 447, _reset.scss */
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border: 0;
+}
+
+/* set colour links */
+/* line 455, _reset.scss */
+a:link {
+  color: blue;
+}
+
+/* line 459, _reset.scss */
+a:visited {
+  color: blue;
+}
+
+/* line 463, _reset.scss */
+a:focus {
+  color: blue;
+}
+
+/* line 467, _reset.scss */
+a:hover {
+  color: blue;
+}
+
+/* line 471, _reset.scss */
+a:active {
+  color: blue;
+}
+
+/* selected link */
+/*
+* Hide only visually, but have it available for screenreaders: h5bp.com/v
+*/
+/* line 480, _reset.scss */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/* clearfix */
+/* line 491, _reset.scss */
+.clearfix::before, .clearfix::after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+
+/* line 498, _reset.scss */
+.clearfix::after {
+  clear: both;
+}
+
+/* line 12, _grid.scss */
+div[class*="cols_"] {
+  display: inline;
+  float: left;
+  margin-left: 10px;
+}
+
+/* line 27, _grid.scss */
+.cols_1 {
+  width: 70px;
+}
+
+/* line 33, _grid.scss */
+.cols_2 {
+  width: 150px;
+}
+
+/* line 33, _grid.scss */
+.cols_3 {
+  width: 230px;
+}
+
+/* line 33, _grid.scss */
+.cols_4 {
+  width: 310px;
+}
+
+/* line 33, _grid.scss */
+.cols_5 {
+  width: 390px;
+}
+
+/* line 33, _grid.scss */
+.cols_6 {
+  width: 470px;
+}
+
+/* line 33, _grid.scss */
+.cols_7 {
+  width: 550px;
+}
+
+/* line 33, _grid.scss */
+.cols_8 {
+  width: 630px;
+}
+
+/* line 33, _grid.scss */
+.cols_9 {
+  width: 710px;
+}
+
+/* line 33, _grid.scss */
+.cols_10 {
+  width: 790px;
+}
+
+/* line 33, _grid.scss */
+.cols_11 {
+  width: 870px;
+}
+
+/* line 33, _grid.scss */
+.cols_12 {
+  width: 950px;
+}
+
+/* line 46, _grid.scss */
+.margin_left_cols_1 {
+  margin-left: 70px;
+}
+
+/* line 52, _grid.scss */
+.margin_left_cols_2 {
+  margin-left: 170px;
+}
+
+/* line 52, _grid.scss */
+.margin_left_cols_3 {
+  margin-left: 250px;
+}
+
+/* line 52, _grid.scss */
+.margin_left_cols_4 {
+  margin-left: 330px;
+}
+
+/* line 52, _grid.scss */
+.margin_left_cols_5 {
+  margin-left: 410px;
+}
+
+/* line 52, _grid.scss */
+.margin_left_cols_6 {
+  margin-left: 490px;
+}
+
+/* line 52, _grid.scss */
+.margin_left_cols_7 {
+  margin-left: 570px;
+}
+
+/* line 52, _grid.scss */
+.margin_left_cols_8 {
+  margin-left: 650px;
+}
+
+/* line 52, _grid.scss */
+.margin_left_cols_9 {
+  margin-left: 730px;
+}
+
+/* line 52, _grid.scss */
+.margin_left_cols_10 {
+  margin-left: 810px;
+}
+
+/* line 52, _grid.scss */
+.margin_left_cols_11 {
+  margin-left: 890px;
+}
+
+/* line 52, _grid.scss */
+.margin_left_cols_12 {
+  margin-left: 970px;
+}
+
+/* line 61, _grid.scss */
+.inside {
+  margin-left: 0;
+}
+
+/* line 11, main.scss */
+html {
+  font: 62.5% / 2 Helvetica, Arial, sans-serif;
+}
+
+/**
+
+$media: screen;
+$media_max_width_mobile : max-width;
+$media_max_width_mobile_value: 320px;
+
+*/
+@media screen and (max-width: 320px) {
+  /* line 25, main.scss */
+  body {
+    background: pink;
+  }
+}
+/* line 31, main.scss */
+h1 {
+  font: 1.6rem Helvetica, Arial, sans-serif;
+  margin-bottom: 1.25rem;
+}
+
+/* line 37, main.scss */
+h2 {
+  font: 1.5rem Helvetica, Arial, sans-serif;
+  margin-bottom: 1.33333rem;
+}
+
+/* line 43, main.scss */
+h3 {
+  font: 1.4rem Helvetica, Arial, sans-serif;
+  margin-bottom: 1.42857rem;
+}
+
+/* line 49, main.scss */
+p {
+  font: 1.4rem serif;
+  margin-bottom: 1.42857rem;
+}

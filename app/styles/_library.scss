@@ -1,0 +1,120 @@
+@import "variables";
+
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+@function basefont-to-pixel($baseFS) {
+  // see http://pxtoem.com/
+  @if $baseFS == 37.5% {
+    @return 6;
+  } @else if $baseFS == 43.8% {
+    @return 7;
+  } @else if $baseFS == 50.0% {
+    @return 8;
+  } @else if $baseFS == 56.3% {
+    @return 9;
+  } @else if $baseFS == 62.5% {
+    @return 10;
+  } @else if $baseFS == 68.8% {
+    @return 11;
+  } @else if $baseFS == 75.0% {
+    @return 12;
+  } @else if $baseFS == 81.3% {
+    @return 13;
+  } @else if $baseFS == 87.5% {
+    @return 14;
+  } @else if $baseFS == 93.8% {
+    @return 15;
+  } @else if $baseFS == 100.0% {
+    @return 16;
+  }
+
+}
+
+@mixin font-calculator($fontFamily, $fontSize, $divider: null) {
+
+  // the font calculator works out of a uniform vertical rhythm between font sizes and bottom margins
+  // use the mixin like so:
+  // #hightlight-this h1 {
+  // @include font-calculator('Helvetica, sans-serif', 14, 2);
+  // }
+  // note that the third parameter is optional
+  // the first parameter is the font family
+  // the second is the font size in pixels - without the pixel unit value
+  // font size is converted
+
+  $fontSizeEm: strip-units($fontSize)/basefont-to-pixel($baseFontSize);
+  font: unquote($fontSizeEm + "rem") #{$fontFamily};
+
+  @if $divider == 2 {
+    margin-bottom: unquote((strip-units($baseLineHeight) / $fontSizeEm / 2)+"rem");
+  } @else if $divider == 4 {
+    margin-bottom: unquote((strip-units($baseLineHeight) / $fontSizeEm / 4)+"rem");
+  } @else if $divider == null {
+    margin-bottom: unquote((strip-units($baseLineHeight) / $fontSizeEm)+"rem");
+  }
+
+}
+
+@mixin margin-calculator($fontSize, $divider: null) {
+
+  $fontSizeEm: strip-units($fontSize)/basefont-to-pixel($baseFontSize);
+
+  @if $divider == 2 {
+    margin-bottom: unquote((strip-units($baseLineHeight) / $fontSizeEm / 2)+"rem");
+  } @else if $divider == 4 {
+    margin-bottom: unquote((strip-units($baseLineHeight) / $fontSizeEm / 4)+"rem");
+  } @else if $divider == null {
+    margin-bottom: unquote((strip-units($baseLineHeight) / $fontSizeEm)+"rem");
+  }
+
+}
+
+// Overflow Ellipsis
+@mixin ellipsis() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// example
+//.ellipsis {
+//  @include ellipsis;
+//}
+
+// Word Wrapping
+@mixin word-wrap() {
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+
+// example
+//.word-wrap {
+//  @include word-wrap;
+//}
+
+@mixin calc($property, $value...) {
+  $property: -webkit-calc($value);
+  $property: calc($value);
+}
+
+@mixin transitions($value...) {
+  -webkit-transition: $value;
+  transition: $value;
+}
+
+@mixin transform($value...) {
+  -ms-transform: $value;
+  -webkit-transform: $value;
+  transform: $value;
+}
+
+@mixin boxshadow($value...) {
+  -webkit-box-shadow: $value;
+  box-shadow: $value;
+}
