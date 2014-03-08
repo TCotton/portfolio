@@ -5,7 +5,8 @@ describe('i18n filter', function() {
   var localize;
 
   // load the localization code
-  beforeEach(module('localization'));
+
+  beforeEach(module('portfolioApp'));
 
   beforeEach(function () {
 

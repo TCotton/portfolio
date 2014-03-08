@@ -6,7 +6,8 @@ angular.module('portfolioApp', [
     'ngSanitize',
     'ngRoute',
     'localization',
-    'fastBind.bindOnce'
+    'fastBind.bindOnce',
+    'fastBind.bindAttrOnce'
   ])
   .config(function ($routeProvider) {
     $routeProvider

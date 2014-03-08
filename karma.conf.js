@@ -17,6 +17,7 @@ module.exports = function(config) {
       'app/components/angular-cookies/angular-cookies.js',
       'app/components/angular-sanitize/angular-sanitize.js',
       'app/components/angular-route/angular-route.js',
+      'app/libs/*.js',
       'app/scripts/*.js',
       'app/scripts/**/*.js',
       'test/mock/**/*.js',
