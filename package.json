@@ -1,7 +1,9 @@
 {
   "name": "portfolio",
   "version": "0.0.1",
-  "dependencies": {},
+  "dependencies": {
+    "pkgcloud": "~0.9.2"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-autoprefixer": "~0.4.0",
@@ -44,9 +46,27 @@
     "grunt-contrib-sass": "^0.7.2"
   },
   "engines": {
-    "node": ">=0.8.0"
+    "node": ">=0.10.26"
   },
   "scripts": {
     "test": "grunt test"
-  }
+  },
+  "description": "My portfolio",
+  "main": "Gruntfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/TCotton/portfolio.git"
+  },
+  "keywords": [
+    "portfoli0"
+  ],
+  "author": "Andy Walpole",
+  "license": "copyright",
+  "bugs": {
+    "url": "https://github.com/TCotton/portfolio/issues"
+  },
+  "homepage": "https://github.com/TCotton/portfolio"
 }

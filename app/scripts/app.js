@@ -7,7 +7,8 @@ angular.module('portfolioApp', [
     'ngRoute',
     'localization',
     'fastBind.bindOnce',
-    'fastBind.bindAttrOnce'
+    'fastBind.bindAttrOnce',
+    'firebase'
   ])
   .config(function ($routeProvider) {
     $routeProvider
