@@ -28,29 +28,29 @@ $media_max_width_mobile_value: 320px;
 
 }
 
-h1 {
-
-  @include font-calculator($baseFontFamily, 16);
-
-}
-
-h2 {
-
-  @include font-calculator($baseFontFamily, 15);
-
-}
-
-h3 {
-
-  @include font-calculator($baseFontFamily, 14);
-
-}
-
-p {
-
-  @include font-calculator('serif', 14);
-
-}
+//h1 {
+//
+//  @include font-calculator($baseFontFamily, 16);
+//
+//}
+//
+//h2 {
+//
+//  @include font-calculator($baseFontFamily, 15);
+//
+//}
+//
+//h3 {
+//
+//  @include font-calculator($baseFontFamily, 14);
+//
+//}
+//
+//p {
+//
+//  @include font-calculator('serif', 14);
+//
+//}
 
 @import "header";
 @import "blog";

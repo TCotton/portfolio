@@ -47,10 +47,12 @@
   $fontSizeEm: strip-units($fontSize)/basefont-to-pixel($baseFontSize);
   font: unquote($fontSizeEm + "rem") #{$fontFamily};
 
-  @if $divider == 2 {
-    margin-bottom: unquote((strip-units($baseLineHeight) / $fontSizeEm / 2)+"rem");
+  @if $divider == 0 {
+    margin-bottom: 0;
+  } @else if $divider == 2 {
+    margin-bottom: unquote((strip-units($baseLineHeight) / $fontSizeEm / 2) + "rem");
   } @else if $divider == 4 {
-    margin-bottom: unquote((strip-units($baseLineHeight) / $fontSizeEm / 4)+"rem");
+    margin-bottom: unquote((strip-units($baseLineHeight) / $fontSizeEm / 4) + "rem");
   } @else if $divider == null {
     margin-bottom: unquote((strip-units($baseLineHeight) / $fontSizeEm)+"rem");
   }

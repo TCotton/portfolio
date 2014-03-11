@@ -1,1 +1,88 @@
 @import "variables";
+@import "library";
+
+
+.logo h1 {
+  @include font-calculator($secondaryFontFamily, 35px, 0);
+}
+
+.navigation li {
+  @include font-calculator($baseFontFamily, 15px, 0);
+  font-weight: 700;
+}
+
+.page-top-title h2 {
+  @include font-calculator($baseFontFamily, 50px);
+  font-weight: 300;
+}
+
+.page-top-text p {
+  @include font-calculator($baseFontFamily, 20px);
+  font-weight: 300;
+}
+
+.front-page-bottom-header {
+  @include font-calculator($baseFontFamily, 80px);
+  font-weight: 300;
+}
+
+.front-page-bottom-text {
+  @include font-calculator($baseFontFamily, 13px);
+  font-weight: 600;
+}
+
+.blog-title h3 {
+  @include font-calculator($baseFontFamily, 40px);
+  font-weight: 300;
+  color: $textTwo;
+}
+
+.blog-text, .blog-text {
+  @include font-calculator($baseFontFamily, 16px);
+  color: $textTwo;
+}
+
+.blog-text p, .blog-text li {
+  @extend .blog-text;
+  font-weight: 400;
+}
+
+.blog-text p.date {
+  @extend .blog-text;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.blog-text p.read-more {
+  @extend .blog-text;
+  font-weight: 700;
+}
+
+.blog-sidebar-header h4 {
+  @include font-calculator($baseFontFamily, 30px);
+  font-weight: 300;
+  color: $textTwo;
+}
+
+.blog-sidebar-text p, .blog-sidebar-text li {
+  @include font-calculator($baseFontFamily, 16px);
+  font-weight: 600;
+  color: $textTwo;
+}
+
+.footer-top-text p, .footer-top-text li{
+  @include font-calculator($baseFontFamily, 20px);
+  font-weight: 300;
+  font-style: italic;
+  color: $textTwo;
+}
+
+.footer-copyright {
+  @include font-calculator($baseFontFamily, 13px);
+  color: white;
+  text-transform:capitalize;
+}
+
+.paragraph {
+  @include font-calculator($baseFontFamily, 16px);
+}
