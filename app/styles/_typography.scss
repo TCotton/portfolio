@@ -1,7 +1,6 @@
 @import "variables";
 @import "library";
 
-
 .logo h1 {
   @include font-calculator($secondaryFontFamily, 35px, 0);
 }
@@ -37,24 +36,26 @@
   color: $textTwo;
 }
 
-.blog-text, .blog-text {
-  @include font-calculator($baseFontFamily, 16px);
-  color: $textTwo;
+/* little mixin for standard blog css attributes and values */
+@mixin blogText($tag) {
+  .blog-text #{$tag} {
+    @include font-calculator($baseFontFamily, 16px);
+    color: $textTwo;
+    @content;
+  }
 }
 
-.blog-text p, .blog-text li {
-  @extend .blog-text;
+@include blogText('li') {
   font-weight: 400;
 }
-
-.blog-text p.date {
-  @extend .blog-text;
+@include blogText('p') {
+  font-weight: 400;
+}
+@include blogText('p.date') {
   font-weight: 400;
   font-style: italic;
 }
-
-.blog-text p.read-more {
-  @extend .blog-text;
+@include blogText('p.read-more') {
   font-weight: 700;
 }
 
@@ -70,6 +71,12 @@
   color: $textTwo;
 }
 
+.contact-header h3 {
+  @include font-calculator($baseFontFamily, 30px);
+  font-weight: 300;
+  color: $textTwo;
+}
+
 .footer-top-text p, .footer-top-text li{
   @include font-calculator($baseFontFamily, 20px);
   font-weight: 300;
@@ -81,8 +88,4 @@
   @include font-calculator($baseFontFamily, 13px);
   color: white;
   text-transform:capitalize;
-}
-
-.paragraph {
-  @include font-calculator($baseFontFamily, 16px);
 }

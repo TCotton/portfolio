@@ -1,12 +1,7 @@
 @import "reset";
 @import "variables";
 @import "library";
-@import "grid";
-@import "media_queries";
-@import "typography";
-@import "modules/buttons";
-@import "modules/forms";
-@import "modules/icons";
+
 
 html {
   font: #{$baseFontSize} / #{$baseLineHeight} $baseFontFamily;
@@ -20,13 +15,13 @@ $media_max_width_mobile_value: 320px;
 
 */
 
-@media screen and (max-width: $media_max_width_mobile_value) {
-
-  body {
-    background : pink;
-  }
-
-}
+//@media screen and (max-width: $media_max_width_mobile_value) {
+//
+//  body {
+//    background : pink;
+//  }
+//
+//}
 
 //h1 {
 //
@@ -55,3 +50,9 @@ $media_max_width_mobile_value: 320px;
 @import "header";
 @import "blog";
 @import "footer";
+@import "grid";
+@import "media_queries";
+@import "typography";
+@import "modules/buttons";
+@import "modules/forms";
+@import "modules/icons";

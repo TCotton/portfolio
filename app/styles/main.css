@@ -566,6 +566,18 @@ a:active {
   clear: both;
 }
 
+/* line 6, main.scss */
+html {
+  font: 62.5% / 2 'Open Sans', sans-serif;
+}
+
+/**
+
+$media: screen;
+$media_max_width_mobile : max-width;
+$media_max_width_mobile_value: 320px;
+
+*/
 /* line 5, _grid.scss */
 #container {
   width: 1366px;
@@ -577,12 +589,12 @@ a:active {
 #left-large {
   width: 870px;
   float: left;
-  padding: 0 0 57px 0;
 }
 
-/* line 17, _grid.scss */
+/* line 16, _grid.scss */
 #left-small {
   width: 382px;
+  margin: 0 57px 0 0;
   float: left;
 }
 
@@ -598,48 +610,76 @@ a:active {
   float: left;
 }
 
-/* line 5, _typography.scss */
+@media screen and (max-width: 1366px) {
+  /* line 34, _grid.scss */
+  #container {
+    width: 95%;
+    padding: 0 4.172767203513909%;
+  }
+
+  /* line 39, _grid.scss */
+  #left-large {
+    width: 63.689604685212295%;
+    margin: 0 4.172767203513909% 0 0;
+  }
+
+  /* line 44, _grid.scss */
+  #left-small {
+    width: 27.96486090775988%;
+  }
+
+  /* line 48, _grid.scss */
+  #right-large {
+    width: 63.689604685212295%;
+  }
+
+  /* line 52, _grid.scss */
+  #right-small {
+    width: 27.96486090775988%;
+  }
+}
+/* line 4, _typography.scss */
 .logo h1 {
   font: 3.5rem 'Yellowtail', cursive;
   margin-bottom: 0;
 }
 
-/* line 9, _typography.scss */
+/* line 8, _typography.scss */
 .navigation li {
   font: 1.5rem 'Open Sans', sans-serif;
   margin-bottom: 0;
   font-weight: 700;
 }
 
-/* line 14, _typography.scss */
+/* line 13, _typography.scss */
 .page-top-title h2 {
   font: 5rem 'Open Sans', sans-serif;
   margin-bottom: 0.4rem;
   font-weight: 300;
 }
 
-/* line 19, _typography.scss */
+/* line 18, _typography.scss */
 .page-top-text p {
   font: 2rem 'Open Sans', sans-serif;
   margin-bottom: 1rem;
   font-weight: 300;
 }
 
-/* line 24, _typography.scss */
+/* line 23, _typography.scss */
 .front-page-bottom-header {
   font: 8rem 'Open Sans', sans-serif;
   margin-bottom: 0.25rem;
   font-weight: 300;
 }
 
-/* line 29, _typography.scss */
+/* line 28, _typography.scss */
 .front-page-bottom-text {
   font: 1.3rem 'Open Sans', sans-serif;
   margin-bottom: 1.53846rem;
   font-weight: 600;
 }
 
-/* line 34, _typography.scss */
+/* line 33, _typography.scss */
 .blog-title h3 {
   font: 4rem 'Open Sans', sans-serif;
   margin-bottom: 0.5rem;
@@ -647,30 +687,41 @@ a:active {
   color: #666666;
 }
 
-/* line 40, _typography.scss */
-.blog-text, .blog-text p, .blog-text li, .blog-text p.date, .blog-text p.read-more, .blog-text, .blog-text p, .blog-text li, .blog-text p.date, .blog-text p.read-more {
+/* little mixin for standard blog css attributes and values */
+/* line 41, _typography.scss */
+.blog-text li {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.25rem;
   color: #666666;
-}
-
-/* line 45, _typography.scss */
-.blog-text p, .blog-text p.date p, .blog-text p.read-more p, .blog-text li, .blog-text p.date li, .blog-text p.read-more li {
   font-weight: 400;
 }
 
-/* line 50, _typography.scss */
+/* line 41, _typography.scss */
+.blog-text p {
+  font: 1.6rem 'Open Sans', sans-serif;
+  margin-bottom: 1.25rem;
+  color: #666666;
+  font-weight: 400;
+}
+
+/* line 41, _typography.scss */
 .blog-text p.date {
+  font: 1.6rem 'Open Sans', sans-serif;
+  margin-bottom: 1.25rem;
+  color: #666666;
   font-weight: 400;
   font-style: italic;
 }
 
-/* line 56, _typography.scss */
+/* line 41, _typography.scss */
 .blog-text p.read-more {
+  font: 1.6rem 'Open Sans', sans-serif;
+  margin-bottom: 1.25rem;
+  color: #666666;
   font-weight: 700;
 }
 
-/* line 61, _typography.scss */
+/* line 62, _typography.scss */
 .blog-sidebar-header h4 {
   font: 3rem 'Open Sans', sans-serif;
   margin-bottom: 0.66667rem;
@@ -678,7 +729,7 @@ a:active {
   color: #666666;
 }
 
-/* line 67, _typography.scss */
+/* line 68, _typography.scss */
 .blog-sidebar-text p, .blog-sidebar-text li {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.25rem;
@@ -686,7 +737,15 @@ a:active {
   color: #666666;
 }
 
-/* line 73, _typography.scss */
+/* line 74, _typography.scss */
+.contact-header h3 {
+  font: 3rem 'Open Sans', sans-serif;
+  margin-bottom: 0.66667rem;
+  font-weight: 300;
+  color: #666666;
+}
+
+/* line 80, _typography.scss */
 .footer-top-text p, .footer-top-text li {
   font: 2rem 'Open Sans', sans-serif;
   margin-bottom: 1rem;
@@ -695,18 +754,12 @@ a:active {
   color: #666666;
 }
 
-/* line 80, _typography.scss */
+/* line 87, _typography.scss */
 .footer-copyright {
   font: 1.3rem 'Open Sans', sans-serif;
   margin-bottom: 1.53846rem;
   color: white;
   text-transform: capitalize;
-}
-
-/* line 86, _typography.scss */
-.paragraph {
-  font: 1.6rem 'Open Sans', sans-serif;
-  margin-bottom: 1.25rem;
 }
 
 /* line 3, modules/_buttons.scss */
@@ -717,23 +770,4 @@ a:active {
   height: 56px;
   line-height: 56px;
   border-radius: 5px;
-}
-
-/* line 11, main.scss */
-html {
-  font: 62.5% / 2 'Open Sans', sans-serif;
-}
-
-/**
-
-$media: screen;
-$media_max_width_mobile : max-width;
-$media_max_width_mobile_value: 320px;
-
-*/
-@media screen and (max-width: 320px) {
-  /* line 25, main.scss */
-  body {
-    background: pink;
-  }
 }
