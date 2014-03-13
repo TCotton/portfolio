@@ -1,5 +1,24 @@
 @import "../variables";
 
+// placeholder font color
+::-webkit-input-placeholder {
+  color: $textThree;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: $textThree;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: $textThree;
+}
+
+:-ms-input-placeholder {
+  color: $textThree;
+}
+
 .contact, .comments {
 
   .input {
