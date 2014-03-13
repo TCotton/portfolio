@@ -44,33 +44,33 @@
   // the second is the font size in pixels - without the pixel unit value
   // font size is converted
 
-  $fontSizeEm: strip-units($fontSize)/basefont-to-pixel($baseFontSize);
-  font: unquote($fontSizeEm + "rem") #{$fontFamily};
+  $fontSizeRem: strip-units($fontSize)/basefont-to-pixel($baseFontSize);
+  font: unquote($fontSizeRem + "rem") #{$fontFamily};
 
   @if $divider == 0 {
     margin-bottom: 0;
   } @else if $divider == 0.5 {
-    margin-bottom: unquote((strip-units($baseLineHeight) / $fontSizeEm / 2) + "rem");
+    margin-bottom: unquote((strip-units($baseLineHeight) / $fontSizeRem / 2) + "rem");
   } @else if $divider == 0.25 {
-    margin-bottom: unquote((strip-units($baseLineHeight) / $fontSizeEm / 4) + "rem");
+    margin-bottom: unquote((strip-units($baseLineHeight) / $fontSizeRem / 4) + "rem");
   } @else if $divider == null {
-    margin-bottom: unquote((strip-units($baseLineHeight) / $fontSizeEm)+"rem");
+    margin-bottom: unquote((strip-units($baseLineHeight) / $fontSizeRem)+"rem");
   }
 
 }
 
 @mixin margin-calculator($fontSize, $divider: null) {
 
-  $fontSizeEm: strip-units($fontSize)/basefont-to-pixel($baseFontSize);
+  $fontSizeRem: strip-units($fontSize)/basefont-to-pixel($baseFontSize);
 
   @if $divider == 0 {
     margin-bottom: 0;
   } @else if $divider == 0.5 {
-    margin-bottom: unquote((strip-units($baseLineHeight) / $fontSizeEm / 2) + "rem");
+    margin-bottom: unquote((strip-units($baseLineHeight) / $fontSizeRem / 2) + "rem");
   } @else if $divider == 0.25 {
-    margin-bottom: unquote((strip-units($baseLineHeight) / $fontSizeEm / 4) + "rem");
+    margin-bottom: unquote((strip-units($baseLineHeight) / $fontSizeRem / 4) + "rem");
   } @else if $divider == null {
-    margin-bottom: unquote((strip-units($baseLineHeight) / $fontSizeEm)+"rem");
+    margin-bottom: unquote((strip-units($baseLineHeight) / $fontSizeRem)+"rem");
   }
 
 }
