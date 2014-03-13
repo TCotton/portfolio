@@ -46,13 +46,12 @@ $media_max_width_mobile_value: 320px;
 //  @include font-calculator('serif', 14);
 //
 //}
-
-@import "header";
-@import "blog";
-@import "footer";
 @import "grid";
-@import "media_queries";
+@import "header";
 @import "typography";
 @import "modules/buttons";
 @import "modules/forms";
 @import "modules/icons";
+@import "blog";
+@import "media_queries";
+@import "footer";

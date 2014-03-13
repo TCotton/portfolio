@@ -78,11 +78,13 @@
 @mixin wcag-link-color-contrast($color) {
 
   a:link {
-    color: $color;
+    color: darken($color, 20%);
+    font-weight: 600;
   }
 
   a:visited {
-    color: $color;
+    color: lighten($color, 5%);
+    font-weight: 400;
   }
 
   a:focus {

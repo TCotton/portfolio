@@ -1,1 +1,7 @@
 @import "variables";
+
+#blog {
+
+  @include wcag-link-color-contrast($textTwo);
+
+}

@@ -871,3 +871,26 @@ $media_max_width_mobile_value: 320px;
 .contact .textarea:focus, .comments .textarea:focus {
   border: #666666;
 }
+
+/* line 80, _library.scss */
+#blog a:link {
+  color: #333333;
+  font-weight: 600;
+}
+/* line 85, _library.scss */
+#blog a:visited {
+  color: #737373;
+  font-weight: 400;
+}
+/* line 90, _library.scss */
+#blog a:focus {
+  color: #666666;
+}
+/* line 94, _library.scss */
+#blog a:hover {
+  color: #666666;
+}
+/* line 98, _library.scss */
+#blog a:active {
+  color: #666666;
+}
