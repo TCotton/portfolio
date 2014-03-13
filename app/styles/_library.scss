@@ -75,6 +75,30 @@
 
 }
 
+@mixin wcag-link-color-contrast($color) {
+
+  a:link {
+    color: $color;
+  }
+
+  a:visited {
+    color: $color;
+  }
+
+  a:focus {
+    color: $color;
+  }
+
+  a:hover {
+    color: $color;
+  }
+
+  a:active {
+    color: $color;
+  }
+
+}
+
 // Overflow Ellipsis
 @mixin ellipsis() {
   overflow: hidden;
