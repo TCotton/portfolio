@@ -368,7 +368,7 @@ td, th {
 /* disable / enable fort kerning and in all modern browers from ie9 upwards */
 
 body {
-  /* only optmize text for headers due to performance issues */
+  /* only optimize text for headers due to performance issues */
   text-rendering: optimizeSpeed;
   -webkit-font-smoothing: subpixel-antialiased;
   -webkit-font-kerning: auto;
@@ -389,7 +389,7 @@ h1, h2, h3, h4, h5, h6, th, td, caption {
 }
 
 // slight character and word gap of retina devices to make the text more legible
-@media all and (-webkit-min-device-pixel-ratio:0) and (min-pixel-device-ratio: 1.5) {
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   p, li {
     letter-spacing: 0.01rem;
     word-spacing: 0.01rem;

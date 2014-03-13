@@ -11,22 +11,26 @@
 #left-large {
   width: 870px;
   float : left;
+  display: inline;
 }
 
 #left-small {
   width: 382px;
   margin: 0 57px 0 0;
   float: left;
+  display: inline;
 }
 
 #right-large {
   width: 870px;
   float: left;
+  display: inline;
 }
 
 #right-small {
   width: 382px;
   float: left;
+  display: inline;
 }
 
 @media screen and (max-width: $media_breakpoint_wide) {
