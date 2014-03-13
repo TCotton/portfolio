@@ -1,1 +1,31 @@
 @import "../variables";
+
+.contact, .comments {
+
+  .input {
+    width: 543px;
+    height: 66px;
+    padding: 10px;
+    border: $border;
+    @include font-calculator($baseFontFamily, 30px);
+    color: $textTwo;
+    font-weight: 400;
+    &:focus {
+      border: $textTwo;
+    }
+  }
+
+  .textarea {
+    width: 822px;
+    height: 271px;
+    padding: 10px;
+    border: $border;
+    @include font-calculator($baseFontFamily, 30px);
+    color: $textTwo;
+    font-weight: 400;
+    &:focus {
+      border: $textTwo;
+    }
+  }
+
+}
