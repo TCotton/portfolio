@@ -1,7 +1,27 @@
 @import "variables";
 
-#blog {
+.blog {
 
-  @include wcag-link-color-contrast($textTwo);
+  a:link {
+    color: darken($textTwo, 20%);
+    font-weight: 600;
+  }
+
+  a:visited {
+    color: lighten($textTwo, 5%);
+    font-weight: 400;
+  }
+
+  a:focus {
+    color: $textTwo;
+  }
+
+  a:hover {
+    color: $textTwo;
+  }
+
+  a:active {
+    color: $textTwo;
+  }
 
 }

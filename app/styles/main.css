@@ -603,11 +603,12 @@ $media_max_width_mobile_value: 320px;
 /* line 24, _grid.scss */
 #right-large {
   width: 870px;
+  margin: 0 57px 0 0;
   float: left;
   display: inline;
 }
 
-/* line 30, _grid.scss */
+/* line 31, _grid.scss */
 #right-small {
   width: 382px;
   float: left;
@@ -615,29 +616,30 @@ $media_max_width_mobile_value: 320px;
 }
 
 @media screen and (max-width: 1366px) {
-  /* line 38, _grid.scss */
+  /* line 39, _grid.scss */
   #container {
     width: 95%;
     padding: 0 4.172767203513909%;
   }
 
-  /* line 43, _grid.scss */
+  /* line 44, _grid.scss */
   #left-large {
     width: 63.689604685212295%;
     margin: 0 4.172767203513909% 0 0;
   }
 
-  /* line 48, _grid.scss */
+  /* line 49, _grid.scss */
   #left-small {
     width: 27.96486090775988%;
   }
 
-  /* line 52, _grid.scss */
+  /* line 53, _grid.scss */
   #right-large {
     width: 63.689604685212295%;
+    margin: 0 4.172767203513909% 0 0;
   }
 
-  /* line 56, _grid.scss */
+  /* line 58, _grid.scss */
   #right-small {
     width: 27.96486090775988%;
   }
@@ -872,25 +874,25 @@ $media_max_width_mobile_value: 320px;
   border: #666666;
 }
 
-/* line 80, _library.scss */
-#blog a:link {
+/* line 5, _blog.scss */
+.blog a:link {
   color: #333333;
   font-weight: 600;
 }
-/* line 85, _library.scss */
-#blog a:visited {
+/* line 10, _blog.scss */
+.blog a:visited {
   color: #737373;
   font-weight: 400;
 }
-/* line 90, _library.scss */
-#blog a:focus {
+/* line 15, _blog.scss */
+.blog a:focus {
   color: #666666;
 }
-/* line 94, _library.scss */
-#blog a:hover {
+/* line 19, _blog.scss */
+.blog a:hover {
   color: #666666;
 }
-/* line 98, _library.scss */
-#blog a:active {
+/* line 23, _blog.scss */
+.blog a:active {
   color: #666666;
 }
