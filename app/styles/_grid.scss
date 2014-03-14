@@ -30,7 +30,7 @@
   display: inline;
 }
 
-@media screen and (max-width: $media_breakpoint_wide) {
+@include breakpoint(wide) {
 
   #container {
     width: 95%;

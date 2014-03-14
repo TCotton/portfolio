@@ -75,30 +75,22 @@
 
 }
 
-@mixin wcag-link-color-contrast($color) {
-
-  a:link {
-    color: darken($color, 20%);
-    font-weight: 600;
+@mixin breakpoint($name) {
+  @if $name == "wide" {
+    @media screen and (max-width: 1366px) {
+      @content;
+    }
   }
-
-  a:visited {
-    color: lighten($color, 5%);
-    font-weight: 400;
+  @else if $name == "tablet" {
+    @media screen and (max-width: 767px) {
+      @content;
+    }
   }
-
-  a:focus {
-    color: $color;
+  @else if $name == "mobile" {
+    @media screen and (max-width: 500px) {
+      @content;
+    }
   }
-
-  a:hover {
-    color: $color;
-  }
-
-  a:active {
-    color: $color;
-  }
-
 }
 
 // Overflow Ellipsis

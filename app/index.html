@@ -22,7 +22,7 @@
 <div id="container">
 
 <div ng-include src="'views/header.html'"></div>
-<div id="container" ng-view></div>
+<div id="content" ng-view></div>
 <div ng-include src="'views/footer.html'"></div>
 
 </div><!-- end container -->
@@ -48,11 +48,14 @@
 
 <!-- build:js scripts/vendor.js -->
 <!-- bower:js -->
+<script src="components/underscore/underscore.js"></script>
 <script src="components/angular/angular.js"></script>
 <script src="components/angular-resource/angular-resource.js"></script>
 <script src="components/angular-cookies/angular-cookies.js"></script>
 <script src="components/angular-sanitize/angular-sanitize.js"></script>
 <script src="components/angular-route/angular-route.js"></script>
+<script src="components/angular-touch/angular-touch.js"></script>
+
 <!-- endbower -->
 <!-- endbuild -->
 
