@@ -81,6 +81,11 @@
       @content;
     }
   }
+  @else if $name == "standard" {
+    @media screen and (max-width: 960px) {
+      @content;
+    }
+  }
   @else if $name == "tablet" {
     @media screen and (max-width: 767px) {
       @content;
@@ -91,6 +96,31 @@
       @content;
     }
   }
+  @else if $name == "ipad" {
+    // check that this works
+    @media screen and (max-device-width : 1024px), (-webkit-min-device-pixel-ratio: 2),  (min-resolution: 192dpi)  {
+      @content;
+    }
+  }
+  @else if $name == "ipadlandscape" {
+    // check that this works
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape), (-webkit-min-device-pixel-ratio: 2),  (min-resolution: 192dpi)  {
+      @content;
+    }
+  }
+  @else if $name == "ipadportrait" {
+    // check that this works
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait), (-webkit-min-device-pixel-ratio: 2),  (min-resolution: 192dpi)  {
+      @content;
+    }
+  }
+  @else if $name == "retina" {
+    // check that this works
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      @content;
+    }
+  }
+
 }
 
 // Overflow Ellipsis

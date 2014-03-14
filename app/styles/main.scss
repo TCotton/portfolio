@@ -7,6 +7,22 @@ html {
   font: #{$baseFontSize} / #{$baseLineHeight} $baseFontFamily;
 }
 
+@include breakpoint(tablet) {
+
+  html {
+    font: #{$baseFontSize} / #{$tableLineHeight} $baseFontFamily;
+  }
+
+}
+
+@include breakpoint(tablet) {
+
+  html {
+    font: #{$baseFontSize} / #{$tableLineHeight} $baseFontFamily;
+  }
+
+}
+
 /**
 
 $media: screen;
