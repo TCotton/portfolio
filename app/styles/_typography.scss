@@ -1,6 +1,3 @@
-@import "variables";
-@import "library";
-
 .logo h1 {
   @include font-calculator($secondaryFontFamily, 35px, 0);
 }

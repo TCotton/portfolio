@@ -578,21 +578,21 @@ $media_max_width_mobile : max-width;
 $media_max_width_mobile_value: 320px;
 
 */
-/* line 5, _grid.scss */
+/* line 1, _grid.scss */
 #container {
   width: 1366px;
   padding: 0 57px;
   margin: 10px auto;
 }
 
-/* line 11, _grid.scss */
+/* line 7, _grid.scss */
 #left-large {
   width: 870px;
   float: left;
   display: inline;
 }
 
-/* line 17, _grid.scss */
+/* line 13, _grid.scss */
 #left-small {
   width: 382px;
   margin: 0 57px 0 0;
@@ -600,7 +600,7 @@ $media_max_width_mobile_value: 320px;
   display: inline;
 }
 
-/* line 24, _grid.scss */
+/* line 20, _grid.scss */
 #right-large {
   width: 870px;
   margin: 0 57px 0 0;
@@ -608,7 +608,7 @@ $media_max_width_mobile_value: 320px;
   display: inline;
 }
 
-/* line 31, _grid.scss */
+/* line 27, _grid.scss */
 #right-small {
   width: 382px;
   float: left;
@@ -616,76 +616,76 @@ $media_max_width_mobile_value: 320px;
 }
 
 @media screen and (max-width: 1366px) {
-  /* line 39, _grid.scss */
+  /* line 35, _grid.scss */
   #container {
     width: 95%;
     padding: 0 4.172767203513909%;
   }
 
-  /* line 44, _grid.scss */
+  /* line 40, _grid.scss */
   #left-large {
     width: 63.689604685212295%;
     margin: 0 4.172767203513909% 0 0;
   }
 
-  /* line 49, _grid.scss */
+  /* line 45, _grid.scss */
   #left-small {
     width: 27.96486090775988%;
   }
 
-  /* line 53, _grid.scss */
+  /* line 49, _grid.scss */
   #right-large {
     width: 63.689604685212295%;
     margin: 0 4.172767203513909% 0 0;
   }
 
-  /* line 58, _grid.scss */
+  /* line 54, _grid.scss */
   #right-small {
     width: 27.96486090775988%;
   }
 }
-/* line 4, _typography.scss */
+/* line 1, _typography.scss */
 .logo h1 {
   font: 3.5rem 'Yellowtail', cursive;
   margin-bottom: 0;
 }
 
-/* line 8, _typography.scss */
+/* line 5, _typography.scss */
 .navigation li {
   font: 1.5rem 'Open Sans', sans-serif;
   margin-bottom: 0;
   font-weight: 700;
 }
 
-/* line 13, _typography.scss */
+/* line 10, _typography.scss */
 .page-top-title h2 {
   font: 5rem 'Open Sans', sans-serif;
   margin-bottom: 0.4rem;
   font-weight: 300;
 }
 
-/* line 18, _typography.scss */
+/* line 15, _typography.scss */
 .page-top-text p {
   font: 2rem 'Open Sans', sans-serif;
   margin-bottom: 1rem;
   font-weight: 300;
 }
 
-/* line 23, _typography.scss */
+/* line 20, _typography.scss */
 .front-page-bottom-header {
   font: 8rem 'Open Sans', sans-serif;
   margin-bottom: 0.25rem;
   font-weight: 300;
 }
 
-/* line 28, _typography.scss */
+/* line 25, _typography.scss */
 .front-page-bottom-text {
   font: 1.3rem 'Open Sans', sans-serif;
   margin-bottom: 1.53846rem;
   font-weight: 600;
 }
 
-/* line 33, _typography.scss */
+/* line 30, _typography.scss */
 .blog-title h3 {
   font: 4rem 'Open Sans', sans-serif;
   margin-bottom: 0.5rem;
@@ -694,7 +694,7 @@ $media_max_width_mobile_value: 320px;
 }
 
 /* little mixin for standard blog css attributes and values */
-/* line 41, _typography.scss */
+/* line 38, _typography.scss */
 .blog-text li {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.25rem;
@@ -702,7 +702,7 @@ $media_max_width_mobile_value: 320px;
   font-weight: 400;
 }
 
-/* line 41, _typography.scss */
+/* line 38, _typography.scss */
 .blog-text p {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.25rem;
@@ -710,7 +710,7 @@ $media_max_width_mobile_value: 320px;
   font-weight: 400;
 }
 
-/* line 41, _typography.scss */
+/* line 38, _typography.scss */
 .blog-text p.date {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.25rem;
@@ -719,7 +719,7 @@ $media_max_width_mobile_value: 320px;
   font-style: italic;
 }
 
-/* line 41, _typography.scss */
+/* line 38, _typography.scss */
 .blog-text p.read-more {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.25rem;
@@ -727,7 +727,7 @@ $media_max_width_mobile_value: 320px;
   font-weight: 700;
 }
 
-/* line 62, _typography.scss */
+/* line 59, _typography.scss */
 .blog-sidebar-header h4 {
   font: 3rem 'Open Sans', sans-serif;
   margin-bottom: 0.66667rem;
@@ -735,7 +735,7 @@ $media_max_width_mobile_value: 320px;
   color: #666666;
 }
 
-/* line 68, _typography.scss */
+/* line 65, _typography.scss */
 .blog-sidebar-text p, .blog-sidebar-text li {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.25rem;
@@ -743,7 +743,7 @@ $media_max_width_mobile_value: 320px;
   color: #666666;
 }
 
-/* line 74, _typography.scss */
+/* line 71, _typography.scss */
 .contact-header h3 {
   font: 3rem 'Open Sans', sans-serif;
   margin-bottom: 0.66667rem;
@@ -751,7 +751,7 @@ $media_max_width_mobile_value: 320px;
   color: #666666;
 }
 
-/* line 80, _typography.scss */
+/* line 77, _typography.scss */
 .footer-top-text p, .footer-top-text li {
   font: 2rem 'Open Sans', sans-serif;
   margin-bottom: 1rem;
@@ -760,7 +760,7 @@ $media_max_width_mobile_value: 320px;
   color: #666666;
 }
 
-/* line 87, _typography.scss */
+/* line 84, _typography.scss */
 .footer-copyright {
   font: 1.3rem 'Open Sans', sans-serif;
   margin-bottom: 1.53846rem;
@@ -768,7 +768,7 @@ $media_max_width_mobile_value: 320px;
   text-transform: capitalize;
 }
 
-/* line 3, modules/_buttons.scss */
+/* line 1, modules/_buttons.scss */
 .button-front-one {
   background: white;
   font: 1.6rem 'Open Sans', sans-serif;
@@ -781,8 +781,12 @@ $media_max_width_mobile_value: 320px;
   line-height: 56px;
   border-radius: 5px;
 }
+/* line 11, modules/_buttons.scss */
+.button-front-one:hover, .button-front-one:active {
+  color: #026176;
+}
 
-/* line 15, modules/_buttons.scss */
+/* line 16, modules/_buttons.scss */
 .button-side-projects {
   width: 100%;
   height: 56px;
@@ -794,21 +798,29 @@ $media_max_width_mobile_value: 320px;
   border-radius: 5px;
   border: 1px solid #666666;
 }
+/* line 25, modules/_buttons.scss */
+.button-side-projects:hover, .button-side-projects:active {
+  color: #333333;
+}
 
-/* line 26, modules/_buttons.scss */
+/* line 30, modules/_buttons.scss */
 .button-mywork {
   width: 100%;
   height: 56px;
   line-height: 54px;
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 0;
-  color: #666666;
+  color: white;
   font-weight: 400;
   border-radius: 5px;
   background: #666666;
 }
+/* line 39, modules/_buttons.scss */
+.button-mywork:hover, .button-mywork:active {
+  color: #e6e6e6;
+}
 
-/* line 37, modules/_buttons.scss */
+/* line 44, modules/_buttons.scss */
 .button-contact, .button-contact {
   width: 310px;
   height: 56px;
@@ -820,30 +832,34 @@ $media_max_width_mobile_value: 320px;
   border-radius: 5px;
   background: #666666;
 }
+/* line 53, modules/_buttons.scss */
+.button-contact:hover, .button-contact:active, .button-contact:hover, .button-contact:active {
+  color: #e6e6e6;
+}
 
-/* line 4, modules/_forms.scss */
+/* line 2, modules/_forms.scss */
 ::-webkit-input-placeholder {
   color: #999999;
 }
 
-/* line 8, modules/_forms.scss */
+/* line 6, modules/_forms.scss */
 :-moz-placeholder {
   /* Firefox 18- */
   color: #999999;
 }
 
-/* line 13, modules/_forms.scss */
+/* line 11, modules/_forms.scss */
 ::-moz-placeholder {
   /* Firefox 19+ */
   color: #999999;
 }
 
-/* line 18, modules/_forms.scss */
+/* line 16, modules/_forms.scss */
 :-ms-input-placeholder {
   color: #999999;
 }
 
-/* line 24, modules/_forms.scss */
+/* line 22, modules/_forms.scss */
 .contact .input, .comments .input {
   width: 543px;
   height: 66px;
@@ -854,11 +870,11 @@ $media_max_width_mobile_value: 320px;
   color: #666666;
   font-weight: 400;
 }
-/* line 32, modules/_forms.scss */
+/* line 30, modules/_forms.scss */
 .contact .input:focus, .comments .input:focus {
   border: #666666;
 }
-/* line 37, modules/_forms.scss */
+/* line 35, modules/_forms.scss */
 .contact .textarea, .comments .textarea {
   width: 822px;
   height: 271px;
@@ -869,30 +885,30 @@ $media_max_width_mobile_value: 320px;
   color: #666666;
   font-weight: 400;
 }
-/* line 45, modules/_forms.scss */
+/* line 43, modules/_forms.scss */
 .contact .textarea:focus, .comments .textarea:focus {
   border: #666666;
 }
 
-/* line 5, _blog.scss */
+/* line 3, _blog.scss */
 .blog a:link {
   color: #333333;
   font-weight: 600;
 }
-/* line 10, _blog.scss */
+/* line 8, _blog.scss */
 .blog a:visited {
   color: #737373;
   font-weight: 400;
 }
-/* line 15, _blog.scss */
+/* line 13, _blog.scss */
 .blog a:focus {
   color: #666666;
 }
-/* line 19, _blog.scss */
+/* line 17, _blog.scss */
 .blog a:hover {
   color: #666666;
 }
-/* line 23, _blog.scss */
+/* line 21, _blog.scss */
 .blog a:active {
   color: #666666;
 }
