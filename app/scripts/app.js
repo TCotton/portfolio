@@ -5,7 +5,7 @@ angular.module('portfolioApp', [
     'ngResource',
     'ngSanitize',
     'ngRoute',
-    'ngTouch',
+//    'ngTouch',
     'localization',
     'fastBind.bindOnce',
     'fastBind.bindAttrOnce',

@@ -98,7 +98,7 @@
   }
   @else if $name == "ipad" {
     // check that this works
-    @media screen and (max-device-width : 1024px), (-webkit-min-device-pixel-ratio: 2),  (min-resolution: 192dpi)  {
+    @media screen and (max-device-width : 1024px), (-webkit-min-device-pixel-ratio: 2),  (min-resolution: 2dppx)  {
       @content;
     }
   }
