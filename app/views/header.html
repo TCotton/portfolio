@@ -10,13 +10,9 @@
 
         <div id="navigation">
 
-            <ul>
-                <li>My Work</li>
-                <li>Side Projects</li>
-                <li>About me</li>
-                <li>Contact me</li>
-                <li>My Blog</li>
-            </ul>
+            <li ng-repeat="item in navigation.items">
+                <a ng-href="{{item.href}}" ng-bind="item.label"></a>
+            </li>
 
         </div><!-- end navigation -->
 
