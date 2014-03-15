@@ -1,23 +1,54 @@
 #header {
+  height: 84px;
+  padding: 0 57px;
+  background: $topHeaderBackground;
+  white-space: nowrap;
+
+  a:link {
+    color: white;
+  }
+  a:visited {
+    color: white;
+  }
+  a:focus {
+    color: $textOneHover;
+  }
+  a:hover {
+    color: $textOneHover;
+  }
+  a:active {
+    color: $textOneHover;
+  }
 
 }
 
-#header-top {
+@include breakpoint(wide) {
 
-
-}
-
-#logo {
-
+  #header {
+    padding: 0 4.172767203513909%;
+  }
 
 }
 
-#navigation {
-
-
+#logo-wrapper {
+  float: left;
+  a {
+    text-decoration: none;
+  }
 }
 
-#header-bottom {
-
-
+#navigation-wrapper {
+  float: right;
+  li {
+    display: inline;
+    list-style: none;
+     + li {
+       margin : 0 0 0 24px;
+     }
+    a {
+      text-decoration: none;
+      color: white;
+      @include font-sharp();
+    }
+  }
 }

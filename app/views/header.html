@@ -1,25 +1,21 @@
 <div id="header" data-ng-controller="HeaderCtrl">
 
-    <div id="header-top">
+    <div id="logo-wrapper">
 
-        <div id="logo">
+        <h1 class="logo"><a href="">Andy Walpole</a></h1>
 
-            <h1>Andy Walpole</h1>
+    </div>
+    <!-- end logo -->
 
-        </div><!-- end logo -->
+    <div id="navigation-wrapper">
 
-        <div id="navigation">
-
+        <ul class="navigation">
             <li ng-repeat="item in navigation.items">
                 <a ng-href="{{item.href}}" ng-bind="item.label"></a>
             </li>
+        </ul>
 
-        </div><!-- end navigation -->
-
-    </div><!-- end header-top -->
-
-    <div id="header-bottom">
-
-    </div><!-- end header-bottom -->
+    </div>
+    <!-- end navigation -->
 
 </div><!-- end header -->

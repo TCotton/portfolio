@@ -426,36 +426,35 @@ body {
 h1, h2, h3, h4, h5, h6, th, td, caption {
   font-weight: normal;
   /* just left it in the headers. Was making font less legible elsewhere */
-  -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   -webkit-font-kerning: normal;
   -moz-font-kerning: normal;
   font-kerning: normal;
-  -webkit-font-feature-settings: "liga" 1, "kern" 1;
-  -moz-font-feature-settings: "liga" 1, "kern" 1;
-  font-feature-settings: "liga" 1, "kern" 1;
+  -webkit-font-feature-settings: "liga", "kern";
+  -moz-font-feature-settings: "liga", "kern";
+  font-feature-settings: "liga", "kern";
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
-  /* line 393, _reset.scss */
+  /* line 392, _reset.scss */
   p, li {
     letter-spacing: 0.01rem;
     word-spacing: 0.01rem;
   }
 }
 /* * { Box-sizing: Border-box } FTW: http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
-/* line 399, _reset.scss */
+/* line 398, _reset.scss */
 *, *::before, *::after {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 403, _reset.scss */
+/* line 402, _reset.scss */
 input[type=submit], input[type=button], select, a {
   cursor: pointer;
 }
 
-/* line 406, _reset.scss */
+/* line 405, _reset.scss */
 textarea {
   resize: vertical;
   overflow: auto;
@@ -467,42 +466,42 @@ textarea {
  * `font-size` values of the `input`, it causes the cursor style of the
  * decrement button to change from `default` to `text`.
  */
-/* line 418, _reset.scss */
+/* line 417, _reset.scss */
 input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
 /* Remove Search Box Buttons in WebKit: http://davidwalsh.name/remove-search-box-buttons-webkit */
-/* line 423, _reset.scss */
+/* line 422, _reset.scss */
 input[type='search']::-webkit-search-decoration, input[type='search']::-webkit-search-cancel-button, input[type='search']::-webkit-search-results-button, input[type='search']::-webkit-search-results-decoration {
   display: none;
 }
 
 /* make placeholder text disappear on focus */
-/* line 428, _reset.scss */
+/* line 427, _reset.scss */
 ::-webkit-input-placeholder:focus {
   opacity: 0;
 }
 
-/* line 432, _reset.scss */
+/* line 431, _reset.scss */
 :-moz-placeholder:focus {
   /* Firefox 18- */
   opacity: 0;
 }
 
-/* line 437, _reset.scss */
+/* line 436, _reset.scss */
 ::-moz-placeholder:focus {
   /* Firefox 19+ */
   opacity: 0;
 }
 
-/* line 442, _reset.scss */
+/* line 441, _reset.scss */
 :-ms-input-placeholder:focus {
   opacity: 0;
 }
 
 /* responsive images */
-/* line 447, _reset.scss */
+/* line 446, _reset.scss */
 img {
   max-width: 100%;
   height: auto;
@@ -511,27 +510,27 @@ img {
 }
 
 /* set colour links */
-/* line 455, _reset.scss */
+/* line 454, _reset.scss */
 a:link {
   color: blue;
 }
 
-/* line 459, _reset.scss */
+/* line 458, _reset.scss */
 a:visited {
   color: blue;
 }
 
-/* line 463, _reset.scss */
+/* line 462, _reset.scss */
 a:focus {
   color: blue;
 }
 
-/* line 467, _reset.scss */
+/* line 466, _reset.scss */
 a:hover {
   color: blue;
 }
 
-/* line 471, _reset.scss */
+/* line 470, _reset.scss */
 a:active {
   color: blue;
 }
@@ -540,7 +539,7 @@ a:active {
 /*
 * Hide only visually, but have it available for screenreaders: h5bp.com/v
 */
-/* line 480, _reset.scss */
+/* line 479, _reset.scss */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -553,7 +552,7 @@ a:active {
 }
 
 /* clearfix */
-/* line 491, _reset.scss */
+/* line 490, _reset.scss */
 .clearfix::before, .clearfix::after {
   content: "\0020";
   display: block;
@@ -561,7 +560,7 @@ a:active {
   overflow: hidden;
 }
 
-/* line 498, _reset.scss */
+/* line 497, _reset.scss */
 .clearfix::after {
   clear: both;
 }
@@ -593,34 +592,31 @@ $media_max_width_mobile_value: 320px;
 /* line 1, _grid.scss */
 #container {
   width: 1366px;
-  padding: 0 57px;
   margin: 10px auto;
 }
 
-/* line 7, _grid.scss */
+/* line 6, _grid.scss */
 #left-large {
   width: 870px;
   float: left;
   display: inline;
 }
 
-/* line 13, _grid.scss */
+/* line 12, _grid.scss */
 #left-small {
   width: 382px;
-  margin: 0 57px 0 0;
   float: left;
   display: inline;
 }
 
-/* line 20, _grid.scss */
+/* line 18, _grid.scss */
 #right-large {
   width: 870px;
-  margin: 0 57px 0 0;
   float: left;
   display: inline;
 }
 
-/* line 27, _grid.scss */
+/* line 24, _grid.scss */
 #right-small {
   width: 382px;
   float: left;
@@ -628,77 +624,80 @@ $media_max_width_mobile_value: 320px;
 }
 
 @media screen and (max-width: 1366px) {
-  /* line 35, _grid.scss */
+  /* line 32, _grid.scss */
   #container {
     width: 95%;
     padding: 0 4.172767203513909%;
   }
 
-  /* line 40, _grid.scss */
+  /* line 37, _grid.scss */
   #left-large {
     width: 63.689604685212295%;
     margin: 0 4.172767203513909% 0 0;
   }
 
-  /* line 45, _grid.scss */
+  /* line 42, _grid.scss */
   #left-small {
     width: 27.96486090775988%;
   }
 
-  /* line 49, _grid.scss */
+  /* line 46, _grid.scss */
   #right-large {
     width: 63.689604685212295%;
     margin: 0 4.172767203513909% 0 0;
   }
 
-  /* line 54, _grid.scss */
+  /* line 51, _grid.scss */
   #right-small {
     width: 27.96486090775988%;
   }
 }
 /* line 11, _typography.scss */
-.logo h1 {
+h1.logo {
   font: 3.5rem 'Yellowtail', cursive;
   margin-bottom: 0;
+  line-height: 84px;
+  color: white;
 }
 
-/* line 15, _typography.scss */
-.navigation li {
+/* line 17, _typography.scss */
+ul.navigation {
   font: 1.5rem 'Open Sans', sans-serif;
   margin-bottom: 0;
+  line-height: 84px;
   font-weight: 700;
 }
 
-/* line 20, _typography.scss */
-.page-top-title h2 {
+/* line 23, _typography.scss */
+h2.page-top-title {
   font: 5rem 'Open Sans', sans-serif;
   margin-bottom: 0.4rem;
   font-weight: 300;
 }
 
-/* line 25, _typography.scss */
+/* line 28, _typography.scss */
 .page-top-text p {
   font: 2rem 'Open Sans', sans-serif;
   margin-bottom: 1rem;
   font-weight: 300;
 }
 
-/* line 30, _typography.scss */
+/* line 33, _typography.scss */
 .front-page-bottom-header {
   font: 8rem 'Open Sans', sans-serif;
   margin-bottom: 0.25rem;
   font-weight: 300;
 }
 
-/* line 35, _typography.scss */
+/* line 38, _typography.scss */
 .front-page-bottom-text {
   font: 1.3rem 'Open Sans', sans-serif;
   margin-bottom: 1.53846rem;
   font-weight: 600;
 }
 
-/* line 40, _typography.scss */
-.blog-title h3 {
+/* line 43, _typography.scss */
+h3.blog-title {
   font: 4rem 'Open Sans', sans-serif;
   margin-bottom: 0.5rem;
   font-weight: 300;
@@ -706,7 +705,7 @@ $media_max_width_mobile_value: 320px;
 }
 
 /* little mixin for standard blog css attributes and values */
-/* line 48, _typography.scss */
+/* line 51, _typography.scss */
 .blog-text li {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.25rem;
@@ -714,7 +713,7 @@ $media_max_width_mobile_value: 320px;
   font-weight: 400;
 }
 
-/* line 48, _typography.scss */
+/* line 51, _typography.scss */
 .blog-text p {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.25rem;
@@ -722,7 +721,7 @@ $media_max_width_mobile_value: 320px;
   font-weight: 400;
 }
 
-/* line 48, _typography.scss */
+/* line 51, _typography.scss */
 .blog-text p.date {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.25rem;
@@ -731,7 +730,7 @@ $media_max_width_mobile_value: 320px;
   font-style: italic;
 }
 
-/* line 48, _typography.scss */
+/* line 51, _typography.scss */
 .blog-text p.read-more {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.25rem;
@@ -739,32 +738,32 @@ $media_max_width_mobile_value: 320px;
   font-weight: 700;
 }
 
-/* line 69, _typography.scss */
-.blog-sidebar-header h4 {
+/* line 72, _typography.scss */
+h4.blog-sidebar-header {
   font: 3rem 'Open Sans', sans-serif;
   margin-bottom: 0.66667rem;
   font-weight: 300;
   color: #666666;
 }
 
-/* line 75, _typography.scss */
-.blog-sidebar-text p, .blog-sidebar-text li {
+/* line 78, _typography.scss */
+.blog-sidebar-text p, ul.blog-sidebar-text {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.25rem;
   font-weight: 600;
   color: #666666;
 }
 
-/* line 81, _typography.scss */
-.contact-header h3 {
+/* line 84, _typography.scss */
+h3.contact-header {
   font: 3rem 'Open Sans', sans-serif;
   margin-bottom: 0.66667rem;
   font-weight: 300;
   color: #666666;
 }
 
-/* line 87, _typography.scss */
-.footer-top-text p, .footer-top-text li {
+/* line 90, _typography.scss */
+.footer-top-text p, ul.footer-top-text {
   font: 2rem 'Open Sans', sans-serif;
   margin-bottom: 1rem;
   font-weight: 300;
@@ -772,12 +771,81 @@ $media_max_width_mobile_value: 320px;
   color: #666666;
 }
 
-/* line 94, _typography.scss */
-.footer-copyright {
+/* line 97, _typography.scss */
+p.footer-copyright {
   font: 1.3rem 'Open Sans', sans-serif;
   margin-bottom: 1.53846rem;
   color: white;
   text-transform: capitalize;
+}
+
+/* line 1, _header.scss */
+#header {
+  height: 84px;
+  padding: 0 57px;
+  background: #27353d;
+  white-space: nowrap;
+}
+/* line 7, _header.scss */
+#header a:link {
+  color: white;
+}
+/* line 10, _header.scss */
+#header a:visited {
+  color: white;
+}
+/* line 13, _header.scss */
+#header a:focus {
+  color: #00bd9c;
+}
+/* line 16, _header.scss */
+#header a:hover {
+  color: #00bd9c;
+}
+/* line 19, _header.scss */
+#header a:active {
+  color: #00bd9c;
+}
+
+@media screen and (max-width: 1366px) {
+  /* line 27, _header.scss */
+  #header {
+    padding: 0 4.172767203513909%;
+  }
+}
+/* line 33, _header.scss */
+#logo-wrapper {
+  float: left;
+}
+/* line 35, _header.scss */
+#logo-wrapper a {
+  text-decoration: none;
+}
+
+/* line 40, _header.scss */
+#navigation-wrapper {
+  float: right;
+}
+/* line 42, _header.scss */
+#navigation-wrapper li {
+  display: inline;
+  list-style: none;
+}
+/* line 45, _header.scss */
+#navigation-wrapper li + li {
+  margin: 0 0 0 24px;
+}
+/* line 48, _header.scss */
+#navigation-wrapper li a {
+  text-decoration: none;
+  color: white;
+  text-rendering: optimizeLegibility;
+  -webkit-font-kerning: normal;
+  -moz-font-kerning: normal;
+  font-kerning: normal;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga", "kern";
+  font-feature-settings: "liga", "kern";
 }
 
 /* line 1, modules/_buttons.scss */

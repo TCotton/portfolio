@@ -63,8 +63,9 @@ $media_max_width_mobile_value: 320px;
 //
 //}
 @import "grid";
-@import "header";
 @import "typography";
+@import "header";
+@import "navigation";
 @import "modules/buttons";
 @import "modules/forms";
 @import "modules/icons";

@@ -8,16 +8,19 @@
 //Bold 700 Italic
 //Extra-Bold 800
 //Extra-Bold 800 Italic
-.logo h1 {
+h1.logo {
   @include font-calculator($secondaryFontFamily, 35px, 0);
+  line-height: 84px;
+  color: white;
 }
 
-.navigation li {
+ul.navigation {
   @include font-calculator($baseFontFamily, 15px, 0);
+  line-height: 84px;
   font-weight: 700;
 }
 
-.page-top-title h2 {
+h2.page-top-title {
   @include font-calculator($baseFontFamily, 50px);
   font-weight: 300;
 }
@@ -37,7 +40,7 @@
   font-weight: 600;
 }
 
-.blog-title h3 {
+h3.blog-title {
   @include font-calculator($baseFontFamily, 40px);
   font-weight: 300;
   color: $textTwo;
@@ -66,32 +69,32 @@
   font-weight: 700;
 }
 
-.blog-sidebar-header h4 {
+h4.blog-sidebar-header {
   @include font-calculator($baseFontFamily, 30px);
   font-weight: 300;
   color: $textTwo;
 }
 
-.blog-sidebar-text p, .blog-sidebar-text li {
+.blog-sidebar-text p, ul.blog-sidebar-text  {
   @include font-calculator($baseFontFamily, 16px);
   font-weight: 600;
   color: $textTwo;
 }
 
-.contact-header h3 {
+h3.contact-header {
   @include font-calculator($baseFontFamily, 30px);
   font-weight: 300;
   color: $textTwo;
 }
 
-.footer-top-text p, .footer-top-text li{
+.footer-top-text p, ul.footer-top-text{
   @include font-calculator($baseFontFamily, 20px);
   font-weight: 300;
   font-style: italic;
   color: $textTwo;
 }
 
-.footer-copyright {
+p.footer-copyright {
   @include font-calculator($baseFontFamily, 13px);
   color: white;
   text-transform:capitalize;
