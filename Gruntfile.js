@@ -40,10 +40,7 @@ module.exports = function (grunt) {
       },
       sass: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
-        tasks: ['sass:dev'],
-        options: {
-          livereload: true
-        }
+        tasks: ['sass:dev']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -53,8 +50,9 @@ module.exports = function (grunt) {
           livereload: '<%= connect.options.livereload %>'
         },
         files: [
-          '<%= yeoman.app %>/{,*/}*.html',
+          '<%= yeoman.app %>/views/{,*/}*.html',
           '.tmp/styles/{,*/}*.css',
+          '<%= yeoman.app %>/{,*/}*.css',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
       }
