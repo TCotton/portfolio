@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('portfolioApp').controller('HeaderCtrl', ['$scope','LINKS', function ($scope,LINKS) {
+angular.module('portfolioApp').controller('HeaderCtrl', ['$scope','LINKS', function ($scope, LINKS) {
 
   $scope.navigation = {
     items: [

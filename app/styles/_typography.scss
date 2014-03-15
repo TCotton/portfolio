@@ -10,13 +10,14 @@
 //Extra-Bold 800 Italic
 h1.logo {
   @include font-calculator($secondaryFontFamily, 35px, 0);
-  line-height: 84px;
+  line-height: $headerHeight;
   color: white;
 }
 
 ul.navigation {
   @include font-calculator($baseFontFamily, 15px, 0);
-  line-height: 84px;
+  text-transform: uppercase;
+  line-height: $headerHeight;
   font-weight: 700;
 }
 
@@ -95,7 +96,8 @@ h3.contact-header {
 }
 
 p.footer-copyright {
-  @include font-calculator($baseFontFamily, 13px);
+  @include font-calculator($baseFontFamily, 13px, 0);
+  line-height: $bottomFooterHeight;
   color: white;
   text-transform:capitalize;
 }

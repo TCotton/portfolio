@@ -626,28 +626,27 @@ $media_max_width_mobile_value: 320px;
 @media screen and (max-width: 1366px) {
   /* line 32, _grid.scss */
   #container {
-    width: 95%;
-    padding: 0 4.172767203513909%;
+    width: 99%;
   }
 
-  /* line 37, _grid.scss */
+  /* line 36, _grid.scss */
   #left-large {
     width: 63.689604685212295%;
     margin: 0 4.172767203513909% 0 0;
   }
 
-  /* line 42, _grid.scss */
+  /* line 41, _grid.scss */
   #left-small {
     width: 27.96486090775988%;
   }
 
-  /* line 46, _grid.scss */
+  /* line 45, _grid.scss */
   #right-large {
     width: 63.689604685212295%;
     margin: 0 4.172767203513909% 0 0;
   }
 
-  /* line 51, _grid.scss */
+  /* line 50, _grid.scss */
   #right-small {
     width: 27.96486090775988%;
   }
@@ -664,39 +663,40 @@ h1.logo {
 ul.navigation {
   font: 1.5rem 'Open Sans', sans-serif;
   margin-bottom: 0;
+  text-transform: uppercase;
   line-height: 84px;
   font-weight: 700;
 }
 
-/* line 23, _typography.scss */
+/* line 24, _typography.scss */
 h2.page-top-title {
   font: 5rem 'Open Sans', sans-serif;
   margin-bottom: 0.4rem;
   font-weight: 300;
 }
 
-/* line 28, _typography.scss */
+/* line 29, _typography.scss */
 .page-top-text p {
   font: 2rem 'Open Sans', sans-serif;
   margin-bottom: 1rem;
   font-weight: 300;
 }
 
-/* line 33, _typography.scss */
+/* line 34, _typography.scss */
 .front-page-bottom-header {
   font: 8rem 'Open Sans', sans-serif;
   margin-bottom: 0.25rem;
   font-weight: 300;
 }
 
-/* line 38, _typography.scss */
+/* line 39, _typography.scss */
 .front-page-bottom-text {
   font: 1.3rem 'Open Sans', sans-serif;
   margin-bottom: 1.53846rem;
   font-weight: 600;
 }
 
-/* line 43, _typography.scss */
+/* line 44, _typography.scss */
 h3.blog-title {
   font: 4rem 'Open Sans', sans-serif;
   margin-bottom: 0.5rem;
@@ -705,7 +705,7 @@ h3.blog-title {
 }
 
 /* little mixin for standard blog css attributes and values */
-/* line 51, _typography.scss */
+/* line 52, _typography.scss */
 .blog-text li {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.25rem;
@@ -713,7 +713,7 @@ h3.blog-title {
   font-weight: 400;
 }
 
-/* line 51, _typography.scss */
+/* line 52, _typography.scss */
 .blog-text p {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.25rem;
@@ -721,7 +721,7 @@ h3.blog-title {
   font-weight: 400;
 }
 
-/* line 51, _typography.scss */
+/* line 52, _typography.scss */
 .blog-text p.date {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.25rem;
@@ -730,7 +730,7 @@ h3.blog-title {
   font-style: italic;
 }
 
-/* line 51, _typography.scss */
+/* line 52, _typography.scss */
 .blog-text p.read-more {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.25rem;
@@ -738,7 +738,7 @@ h3.blog-title {
   font-weight: 700;
 }
 
-/* line 72, _typography.scss */
+/* line 73, _typography.scss */
 h4.blog-sidebar-header {
   font: 3rem 'Open Sans', sans-serif;
   margin-bottom: 0.66667rem;
@@ -746,7 +746,7 @@ h4.blog-sidebar-header {
   color: #666666;
 }
 
-/* line 78, _typography.scss */
+/* line 79, _typography.scss */
 .blog-sidebar-text p, ul.blog-sidebar-text {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.25rem;
@@ -754,7 +754,7 @@ h4.blog-sidebar-header {
   color: #666666;
 }
 
-/* line 84, _typography.scss */
+/* line 85, _typography.scss */
 h3.contact-header {
   font: 3rem 'Open Sans', sans-serif;
   margin-bottom: 0.66667rem;
@@ -762,7 +762,7 @@ h3.contact-header {
   color: #666666;
 }
 
-/* line 90, _typography.scss */
+/* line 91, _typography.scss */
 .footer-top-text p, ul.footer-top-text {
   font: 2rem 'Open Sans', sans-serif;
   margin-bottom: 1rem;
@@ -771,10 +771,11 @@ h3.contact-header {
   color: #666666;
 }
 
-/* line 97, _typography.scss */
+/* line 98, _typography.scss */
 p.footer-copyright {
   font: 1.3rem 'Open Sans', sans-serif;
-  margin-bottom: 1.53846rem;
+  margin-bottom: 0;
+  line-height: 94px;
   color: white;
   text-transform: capitalize;
 }
@@ -991,4 +992,11 @@ p.footer-copyright {
 /* line 21, _blog.scss */
 .blog a:active {
   color: #666666;
+}
+
+/* line 9, _footer.scss */
+#footer-bottom {
+  height: 94px;
+  background: #27353d;
+  text-align: center;
 }

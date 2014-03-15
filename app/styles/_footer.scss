@@ -1,1 +1,13 @@
-@import "variables";
+#footer {
+
+}
+
+#footer-top {
+
+}
+
+#footer-bottom {
+  height: $bottomFooterHeight;
+  background: $bottomFooterBackground;
+  text-align: center;
+}

@@ -7,4 +7,4 @@ app/components
 .idea/
 app/.buildignore
 test/.jshintrc
-app/scripts/constants.js
+app/scripts/config/constants.js
