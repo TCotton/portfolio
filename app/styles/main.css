@@ -436,7 +436,7 @@ h1, h2, h3, h4, h5, h6, th, td, caption {
   font-feature-settings: "liga" 1, "kern" 1;
 }
 
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
   /* line 393, _reset.scss */
   p, li {
     letter-spacing: 0.01rem;
@@ -656,48 +656,48 @@ $media_max_width_mobile_value: 320px;
     width: 27.96486090775988%;
   }
 }
-/* line 1, _typography.scss */
+/* line 11, _typography.scss */
 .logo h1 {
   font: 3.5rem 'Yellowtail', cursive;
   margin-bottom: 0;
 }
 
-/* line 5, _typography.scss */
+/* line 15, _typography.scss */
 .navigation li {
   font: 1.5rem 'Open Sans', sans-serif;
   margin-bottom: 0;
   font-weight: 700;
 }
 
-/* line 10, _typography.scss */
+/* line 20, _typography.scss */
 .page-top-title h2 {
   font: 5rem 'Open Sans', sans-serif;
   margin-bottom: 0.4rem;
   font-weight: 300;
 }
 
-/* line 15, _typography.scss */
+/* line 25, _typography.scss */
 .page-top-text p {
   font: 2rem 'Open Sans', sans-serif;
   margin-bottom: 1rem;
   font-weight: 300;
 }
 
-/* line 20, _typography.scss */
+/* line 30, _typography.scss */
 .front-page-bottom-header {
   font: 8rem 'Open Sans', sans-serif;
   margin-bottom: 0.25rem;
   font-weight: 300;
 }
 
-/* line 25, _typography.scss */
+/* line 35, _typography.scss */
 .front-page-bottom-text {
   font: 1.3rem 'Open Sans', sans-serif;
   margin-bottom: 1.53846rem;
   font-weight: 600;
 }
 
-/* line 30, _typography.scss */
+/* line 40, _typography.scss */
 .blog-title h3 {
   font: 4rem 'Open Sans', sans-serif;
   margin-bottom: 0.5rem;
@@ -706,7 +706,7 @@ $media_max_width_mobile_value: 320px;
 }
 
 /* little mixin for standard blog css attributes and values */
-/* line 38, _typography.scss */
+/* line 48, _typography.scss */
 .blog-text li {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.25rem;
@@ -714,7 +714,7 @@ $media_max_width_mobile_value: 320px;
   font-weight: 400;
 }
 
-/* line 38, _typography.scss */
+/* line 48, _typography.scss */
 .blog-text p {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.25rem;
@@ -722,7 +722,7 @@ $media_max_width_mobile_value: 320px;
   font-weight: 400;
 }
 
-/* line 38, _typography.scss */
+/* line 48, _typography.scss */
 .blog-text p.date {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.25rem;
@@ -731,7 +731,7 @@ $media_max_width_mobile_value: 320px;
   font-style: italic;
 }
 
-/* line 38, _typography.scss */
+/* line 48, _typography.scss */
 .blog-text p.read-more {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.25rem;
@@ -739,7 +739,7 @@ $media_max_width_mobile_value: 320px;
   font-weight: 700;
 }
 
-/* line 59, _typography.scss */
+/* line 69, _typography.scss */
 .blog-sidebar-header h4 {
   font: 3rem 'Open Sans', sans-serif;
   margin-bottom: 0.66667rem;
@@ -747,7 +747,7 @@ $media_max_width_mobile_value: 320px;
   color: #666666;
 }
 
-/* line 65, _typography.scss */
+/* line 75, _typography.scss */
 .blog-sidebar-text p, .blog-sidebar-text li {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.25rem;
@@ -755,7 +755,7 @@ $media_max_width_mobile_value: 320px;
   color: #666666;
 }
 
-/* line 71, _typography.scss */
+/* line 81, _typography.scss */
 .contact-header h3 {
   font: 3rem 'Open Sans', sans-serif;
   margin-bottom: 0.66667rem;
@@ -763,7 +763,7 @@ $media_max_width_mobile_value: 320px;
   color: #666666;
 }
 
-/* line 77, _typography.scss */
+/* line 87, _typography.scss */
 .footer-top-text p, .footer-top-text li {
   font: 2rem 'Open Sans', sans-serif;
   margin-bottom: 1rem;
@@ -772,7 +772,7 @@ $media_max_width_mobile_value: 320px;
   color: #666666;
 }
 
-/* line 84, _typography.scss */
+/* line 94, _typography.scss */
 .footer-copyright {
   font: 1.3rem 'Open Sans', sans-serif;
   margin-bottom: 1.53846rem;

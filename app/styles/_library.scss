@@ -104,19 +104,19 @@
   }
   @else if $name == "ipadlandscape" {
     // check that this works
-    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape), (-webkit-min-device-pixel-ratio: 2),  (min-resolution: 192dpi)  {
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape), (-webkit-min-device-pixel-ratio: 2),  (min-resolution: 2dppx)  {
       @content;
     }
   }
   @else if $name == "ipadportrait" {
     // check that this works
-    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait), (-webkit-min-device-pixel-ratio: 2),  (min-resolution: 192dpi)  {
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait), (-webkit-min-device-pixel-ratio: 2),  (min-resolution: 2dppx)  {
       @content;
     }
   }
   @else if $name == "retina" {
     // check that this works
-    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
       @content;
     }
   }

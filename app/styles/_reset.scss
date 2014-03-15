@@ -389,7 +389,7 @@ h1, h2, h3, h4, h5, h6, th, td, caption {
 }
 
 // slight character and word gap of retina devices to make the text more legible
-@media (-webkit-min-device-pixel-ratio: 2),  (min-resolution: 192dpi) {
+@media (-webkit-min-device-pixel-ratio: 2),  (min-resolution: 2dppx) {
   p, li {
     letter-spacing: 0.01rem;
     word-spacing: 0.01rem;
