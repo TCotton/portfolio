@@ -3,6 +3,51 @@
 }
 
 #footer-top {
+  height: 281px;
+  padding: 20px 57px 0 57px;
+  overflow: hidden;
+  background: $topFooterBackground;
+  position: relative;
+  a {
+    text-decoration: none;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: $bottomFooterHeight;
+    width: 100%;
+    pointer-events: none;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y0ZjNmMiIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmNGYzZjIiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top, rgba(244,243,242,0) 0%, rgba(244,243,242,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(244,243,242,0)), color-stop(100%,rgba(244,243,242,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(244,243,242,0) 0%,rgba(244,243,242,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(244,243,242,0) 0%,rgba(244,243,242,1) 100%); /* Opera 11.10+ */
+    background: linear-gradient(to bottom, rgba(244,243,242,0) 0%,rgba(244,243,242,1) 100%); /* W3C */
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: $topFooterBackground;
+    opacity: 0;
+    pointer-events: none;
+    @include transitions(opacity 0.5s);
+  }
+  &:hover:before {
+    opacity: 0.5;
+  }
+}
+
+@include breakpoint(wide) {
+
+  #footer-top {
+    padding: 30px 4.172767203513909% 0 4.172767203513909%;
+  }
 
 }
 
@@ -10,4 +55,17 @@
   height: $bottomFooterHeight;
   background: $bottomFooterBackground;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  &:before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    @include calc(left, "50% - 10px");
+    width: 21px;
+    height: 21px;
+    background: $topFooterBackground;
+    @include transform(rotate(45deg));
+  }
 }

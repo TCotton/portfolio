@@ -1,13 +1,49 @@
 <div id="footer">
 
     <div id="footer-top">
+    <a href="https://github.com/TCotton/portfolio">
 
-        example of code here
-
-    </div><!-- end footer top -->
+    <pre class="code-preview">
+/**
+ * This entire site is coded in AngularJS. Look at the code on GitHub: https://github.com/TCotton/portfolio
+ */
+angular.module('portfolioApp', ['ngCookies', 'ngResource', 'ngSanitize', 'ngRoute', 'localization', 'fastBind.bindOnce', 'fastBind.bindAttrOnce', 'AppConstants', 'HashBangURLs' ])
+  .config(function ($routeProvider) {
+    $routeProvider
+      .when('/', {
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl'
+      })
+      .when('/my-work.html', {
+        templateUrl: 'views/my_work.html'
+      })
+      .when('/side-projects.html', {
+        templateUrl: 'views/side_projects.html'
+      })
+      .when('/about-me.html', {
+        templateUrl: 'views/about_me.html'
+      })
+      .when('/contact-me.html', {
+        templateUrl: 'views/about_me.html'
+      })
+      .when('/blog/', {
+        templateUrl: 'views/blog.html'
+      })
+      .when('/blog/:blogPage', {
+        templateUrl: 'views/blog_page.html'
+      })
+      .otherwise({
+        redirectTo: '/'
+      });
+  });
+       </pre>
+    </a>
+    </div>
+    <!-- end footer top -->
 
     <div id="footer-bottom">
-       <p class="footer-copyright">&copy; Andy Walpole</p>
-    </div><!-- end footer bottom -->
+        <p class="footer-copyright">&copy; Andy Walpole</p>
+    </div>
+    <!-- end footer bottom -->
 
 </div><!-- end footer -->

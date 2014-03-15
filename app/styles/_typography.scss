@@ -95,6 +95,12 @@ h3.contact-header {
   color: $textTwo;
 }
 
+.code-preview {
+  font-size: 12px;
+  color: $textTwo;
+  line-height: 16px;
+}
+
 p.footer-copyright {
   @include font-calculator($baseFontFamily, 13px, 0);
   line-height: $bottomFooterHeight;
