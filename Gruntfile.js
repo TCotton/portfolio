@@ -330,24 +330,13 @@ module.exports = function (grunt) {
       }
     },
 
-//    ngconstant: {
-//      build: [
-//        {
-//          dest: '<%= yeoman.app %>/scripts/config/constants.js',
-//          name: 'AppConstants',
-//          constants: {
-//            ROUTES: grunt.file.readJSON('<%= yeoman.app %>/scripts/config/routes.json')
-//          }
-//        }
-//      ]
-//    },
-
     ngconstant: {
       options: {
         name: 'AppConstants',
         dest:  '<%= yeoman.app %>/scripts/config/constants.js',
         constants: {
-          ROUTES: grunt.file.readJSON('app/scripts/config/routes.json')
+          ROUTES: grunt.file.readJSON('app/scripts/config/routes.json'),
+          LINKS: grunt.file.readJSON('app/scripts/config/navigation.json')
         },
         values: {
           debug: true
@@ -443,6 +432,7 @@ module.exports = function (grunt) {
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
+    'ngconstant',
     'concat',
     'ngmin',
     'copy:dist',

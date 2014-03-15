@@ -9,7 +9,8 @@ angular.module('portfolioApp', [
     'localization',
     'fastBind.bindOnce',
     'fastBind.bindAttrOnce',
-    'AppConstants'
+    'AppConstants',
+    'HashBangURLs'
   ])
   .config(function ($routeProvider) {
     $routeProvider
