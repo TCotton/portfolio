@@ -1,3 +1,13 @@
+//Light 300
+//Light 300 Italic
+//Normal 400
+//Normal 400 Italic
+//Semi-Bold 600
+//Semi-Bold 600 Italic
+//Bold 700
+//Bold 700 Italic
+//Extra-Bold 800
+//Extra-Bold 800 Italic
 .logo h1 {
   @include font-calculator($secondaryFontFamily, 35px, 0);
 }

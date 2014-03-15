@@ -8,7 +8,8 @@ angular.module('portfolioApp', [
     'ngTouch',
     'localization',
     'fastBind.bindOnce',
-    'fastBind.bindAttrOnce'
+    'fastBind.bindAttrOnce',
+    'AppConstants'
   ])
   .config(function ($routeProvider) {
     $routeProvider

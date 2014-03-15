@@ -99,7 +99,8 @@ module.exports = function (grunt) {
       },
       all: [
         'Gruntfile.js',
-        '<%= yeoman.app %>/scripts/{,*/}*.js'
+        '<%= yeoman.app %>/scripts/{,*/}*.js',
+        '!<%= yeoman.app %>/**/scripts/config/constants.js', // ignore auto generated constants file'
       ],
       test: {
         options: {
@@ -326,6 +327,33 @@ module.exports = function (grunt) {
       }
     },
 
+//    ngconstant: {
+//      build: [
+//        {
+//          dest: '<%= yeoman.app %>/scripts/config/constants.js',
+//          name: 'AppConstants',
+//          constants: {
+//            ROUTES: grunt.file.readJSON('<%= yeoman.app %>/scripts/config/routes.json')
+//          }
+//        }
+//      ]
+//    },
+
+    ngconstant: {
+      options: {
+        name: 'AppConstants',
+        dest:  '<%= yeoman.app %>/scripts/config/constants.js',
+        constants: {
+          ROUTES: grunt.file.readJSON('app/scripts/config/routes.json')
+        },
+        values: {
+          debug: true
+        }
+      },
+      build: {
+      }
+    },
+
     // Run some tasks in parallel to speed up the build process
     concurrent: {
       server: [
@@ -387,6 +415,7 @@ module.exports = function (grunt) {
       'bower-install',
       'concurrent:server',
       'autoprefixer',
+      'ngconstant',
       'connect:livereload',
       'watch'
     ]);
