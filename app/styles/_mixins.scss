@@ -1,5 +1,3 @@
-@import "variables";
-
 @function strip-units($number) {
   @return $number / ($number * 0 + 1);
 }
@@ -153,9 +151,9 @@
 //  @include word-wrap;
 //}
 
-@mixin calc($property, $value...) {
-  $property: -webkit-calc(#{$value});
-  $property: calc(#{$value});
+@mixin calc($property, $value) {
+  #{$property}: -webkit-calc(#{$value});
+  #{$property}: calc(#{$value});
 }
 
 @mixin transitions($value...) {

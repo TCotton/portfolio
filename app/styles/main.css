@@ -797,53 +797,56 @@ p.footer-copyright {
 /* line 7, _header.scss */
 #header a:link {
   color: white;
+  -ms-transitions: color 0.3s;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
 }
-/* line 10, _header.scss */
+/* line 11, _header.scss */
 #header a:visited {
   color: white;
 }
-/* line 13, _header.scss */
+/* line 14, _header.scss */
 #header a:focus {
   color: #00bd9c;
 }
-/* line 16, _header.scss */
+/* line 17, _header.scss */
 #header a:hover {
   color: #00bd9c;
 }
-/* line 19, _header.scss */
+/* line 20, _header.scss */
 #header a:active {
   color: #00bd9c;
 }
 
 @media screen and (max-width: 1366px) {
-  /* line 27, _header.scss */
+  /* line 28, _header.scss */
   #header {
     padding: 0 4.172767203513909%;
   }
 }
-/* line 33, _header.scss */
+/* line 34, _header.scss */
 #logo-wrapper {
   float: left;
 }
-/* line 35, _header.scss */
+/* line 36, _header.scss */
 #logo-wrapper a {
   text-decoration: none;
 }
 
-/* line 40, _header.scss */
+/* line 41, _header.scss */
 #navigation-wrapper {
   float: right;
 }
-/* line 42, _header.scss */
+/* line 43, _header.scss */
 #navigation-wrapper li {
   display: inline;
   list-style: none;
 }
-/* line 45, _header.scss */
+/* line 46, _header.scss */
 #navigation-wrapper li + li {
   margin: 0 0 0 24px;
 }
-/* line 48, _header.scss */
+/* line 49, _header.scss */
 #navigation-wrapper li a {
   text-decoration: none;
   color: white;
@@ -1073,7 +1076,8 @@ p.footer-copyright {
   content: '';
   position: absolute;
   top: -10px;
-  left: 0;
+  left: -webkit-calc(50% - 10px);
+  left: calc(50% - 10px);
   width: 21px;
   height: 21px;
   background: #f4f3f2;

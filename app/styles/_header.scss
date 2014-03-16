@@ -6,6 +6,7 @@
 
   a:link {
     color: white;
+    @include transitions(color 0.3s);
   }
   a:visited {
     color: white;

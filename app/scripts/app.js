@@ -1,17 +1,9 @@
 'use strict';
 
-angular.module('portfolioApp', [
-    'ngCookies',
-    'ngResource',
-    'ngSanitize',
-    'ngRoute',
-//    'ngTouch',
-    'localization',
-    'fastBind.bindOnce',
-    'fastBind.bindAttrOnce',
-    'AppConstants',
-    'HashBangURLs'
-  ])
+/**
+ * This entire site is coded in AngularJS. Inspect the code on GitHub: https://github.com/TCotton/portfolio
+ */
+angular.module('portfolioApp', ['AppConstants', 'ngCookies', 'ngResource', 'ngSanitize', 'ngRoute', 'ngTouch', 'localization', 'fastBind.bindOnce', 'fastBind.bindAttrOnce', 'HashBangURLs' ])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
