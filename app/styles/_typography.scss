@@ -34,11 +34,13 @@ h2.page-top-title {
 .front-page-bottom-header {
   @include font-calculator($baseFontFamily, 80px);
   font-weight: 300;
+  color: white;
 }
 
 .front-page-bottom-text {
   @include font-calculator($baseFontFamily, 13px);
   font-weight: 600;
+  color: white;
 }
 
 h3.blog-title {
