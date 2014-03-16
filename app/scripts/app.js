@@ -10,16 +10,16 @@ angular.module('portfolioApp', ['AppConstants', 'ngCookies', 'ngResource', 'ngSa
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/my-work.html', {
+      .when('/my-work', {
         templateUrl: 'views/my_work.html'
       })
-      .when('/side-projects.html', {
+      .when('/side-projects', {
         templateUrl: 'views/side_projects.html'
       })
-      .when('/about-me.html', {
+      .when('/about-me', {
         templateUrl: 'views/about_me.html'
       })
-      .when('/contact-me.html', {
+      .when('/contact-me', {
         templateUrl: 'views/about_me.html'
       })
       .when('/blog/', {

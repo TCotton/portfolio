@@ -1,10 +1,12 @@
 #slider {
   height: 546px;
+  clear : both;
 }
 
 #homepage-stats {
   padding: 0 114px;
   height: 224px;
+  clear: both;
   background: $homepageStatsBackground;
 
   // cross browser support for flexbox
@@ -25,8 +27,8 @@
   -ms-justify-content: center;
   justify-content: center;
 
-
   > span {
+    // header and content for span blocks
     width: 20%;
     padding: 0 2%;
     float: left;

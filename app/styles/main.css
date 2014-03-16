@@ -986,12 +986,14 @@ p.footer-copyright {
 /* line 1, _homepage.scss */
 #slider {
   height: 546px;
+  clear: both;
 }
 
-/* line 5, _homepage.scss */
+/* line 6, _homepage.scss */
 #homepage-stats {
   padding: 0 114px;
   height: 224px;
+  clear: both;
   background: #00bd9c;
   display: -webkit-box;
   /* OLD - iOS 6-, Safari 3.1-6 */
@@ -1012,24 +1014,24 @@ p.footer-copyright {
   -ms-justify-content: center;
   justify-content: center;
 }
-/* line 29, _homepage.scss */
+/* line 30, _homepage.scss */
 #homepage-stats > span {
   width: 20%;
   padding: 0 2%;
   float: left;
   text-align: center;
 }
-/* line 34, _homepage.scss */
+/* line 36, _homepage.scss */
 #homepage-stats > span:first-of-type {
   padding: 0 2% 0 0;
 }
-/* line 37, _homepage.scss */
+/* line 39, _homepage.scss */
 #homepage-stats > span:last-of-type {
   padding: 0 2% 0 0;
 }
 
 @media screen and (max-width: 1366px) {
-  /* line 52, _homepage.scss */
+  /* line 54, _homepage.scss */
   #homepage-stats {
     padding: 0 4.172767203513909%;
   }

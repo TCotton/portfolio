@@ -1,8 +1,8 @@
 {
   "HOME_PAGE": "/#!/",
-  "MY_WORK": "/#!/my-work.html",
-  "SIDE_PROJECTS": "/#!/side-projects.html",
-  "ABOUT_ME": "/#!/about-me.html",
-  "CONTACT_ME": "/#!/contact-me.html",
+  "MY_WORK": "/#!/my-work",
+  "SIDE_PROJECTS": "/#!/side-projects",
+  "ABOUT_ME": "/#!/about-me",
+  "CONTACT_ME": "/#!/contact-me",
   "BLOG": "/#!/blog/"
 }
