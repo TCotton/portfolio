@@ -27,4 +27,6 @@ angular.module('portfolioApp').controller('HeaderCtrl', ['$scope','LINKS', funct
     ]
   };
 
+  $scope.homepage = LINKS.HOME_PAGE;
+
 }]);

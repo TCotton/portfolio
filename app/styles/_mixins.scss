@@ -57,6 +57,7 @@
 
 }
 
+// uses same calculation method as the font-calculator
 @mixin margin-calculator($fontSize, $divider: null) {
 
   $fontSizeRem: strip-units($fontSize)/basefont-to-pixel($baseFontSize);
@@ -73,6 +74,7 @@
 
 }
 
+// media queries mixin
 @mixin breakpoint($name) {
   @if $name == "wide" {
     @media screen and (max-width: 1366px) {
@@ -114,6 +116,7 @@
 
 }
 
+// sharper fonts
 @mixin font-sharp() {
   text-rendering: optimizeLegibility;
   -webkit-font-kerning: normal;
@@ -131,11 +134,6 @@
   text-overflow: ellipsis;
 }
 
-// example
-//.ellipsis {
-//  @include ellipsis;
-//}
-
 // Word Wrapping
 @mixin word-wrap() {
   -ms-word-break: break-all;
@@ -146,28 +144,27 @@
   hyphens: auto;
 }
 
-// example
-//.word-wrap {
-//  @include word-wrap;
-//}
-
+// calc function
 @mixin calc($property, $value) {
   #{$property}: -webkit-calc(#{$value});
   #{$property}: calc(#{$value});
 }
 
+// css transitions
 @mixin transitions($value...) {
-  -ms-transitions: $value;
+  -ms-transition: $value;
   -webkit-transition: $value;
   transition: $value;
 }
 
+// css transform
 @mixin transform($value...) {
   -ms-transform: $value;
   -webkit-transform: $value;
   transform: $value;
 }
 
+// css boxshadow
 @mixin boxshadow($value...) {
   -webkit-box-shadow: $value;
   box-shadow: $value;

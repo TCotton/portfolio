@@ -20,5 +20,8 @@ describe('Controller: HeaderCtrl', function () {
     expect(scope.navigation.items.length).toBe(5);
   });
 
+  it('scope.homepage should equal the homepage url', function () {
+    expect(scope.homepage).toContain('/#!/');
+  });
 
 });
