@@ -671,18 +671,20 @@ ul.navigation {
 /* line 24, _typography.scss */
 h2.page-top-title {
   font: 5rem 'Open Sans', sans-serif;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.1rem;
   font-weight: 300;
+  color: white;
 }
 
-/* line 29, _typography.scss */
-.page-top-text p {
+/* line 30, _typography.scss */
+p.page-top-text {
   font: 2rem 'Open Sans', sans-serif;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   font-weight: 300;
+  color: white;
 }
 
-/* line 34, _typography.scss */
+/* line 36, _typography.scss */
 .front-page-bottom-header {
   font: 8rem 'Open Sans', sans-serif;
   margin-bottom: 0.25rem;
@@ -690,7 +692,7 @@ h2.page-top-title {
   color: white;
 }
 
-/* line 40, _typography.scss */
+/* line 42, _typography.scss */
 .front-page-bottom-text {
   font: 1.3rem 'Open Sans', sans-serif;
   margin-bottom: 1.53846rem;
@@ -698,7 +700,7 @@ h2.page-top-title {
   color: white;
 }
 
-/* line 46, _typography.scss */
+/* line 48, _typography.scss */
 h3.blog-title {
   font: 4rem 'Open Sans', sans-serif;
   margin-bottom: 0.5rem;
@@ -707,7 +709,7 @@ h3.blog-title {
 }
 
 /* little mixin for standard blog css attributes and values */
-/* line 54, _typography.scss */
+/* line 56, _typography.scss */
 .blog-text li {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.25rem;
@@ -715,7 +717,7 @@ h3.blog-title {
   font-weight: 400;
 }
 
-/* line 54, _typography.scss */
+/* line 56, _typography.scss */
 .blog-text p {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.25rem;
@@ -723,7 +725,7 @@ h3.blog-title {
   font-weight: 400;
 }
 
-/* line 54, _typography.scss */
+/* line 56, _typography.scss */
 .blog-text p.date {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.25rem;
@@ -732,7 +734,7 @@ h3.blog-title {
   font-style: italic;
 }
 
-/* line 54, _typography.scss */
+/* line 56, _typography.scss */
 .blog-text p.read-more {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.25rem;
@@ -740,7 +742,7 @@ h3.blog-title {
   font-weight: 700;
 }
 
-/* line 75, _typography.scss */
+/* line 77, _typography.scss */
 h4.blog-sidebar-header {
   font: 3rem 'Open Sans', sans-serif;
   margin-bottom: 0.66667rem;
@@ -748,7 +750,7 @@ h4.blog-sidebar-header {
   color: #666666;
 }
 
-/* line 81, _typography.scss */
+/* line 83, _typography.scss */
 .blog-sidebar-text p, ul.blog-sidebar-text {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.25rem;
@@ -756,7 +758,7 @@ h4.blog-sidebar-header {
   color: #666666;
 }
 
-/* line 87, _typography.scss */
+/* line 89, _typography.scss */
 h3.contact-header {
   font: 3rem 'Open Sans', sans-serif;
   margin-bottom: 0.66667rem;
@@ -764,7 +766,7 @@ h3.contact-header {
   color: #666666;
 }
 
-/* line 93, _typography.scss */
+/* line 95, _typography.scss */
 .footer-top-text p, ul.footer-top-text {
   font: 2rem 'Open Sans', sans-serif;
   margin-bottom: 1rem;
@@ -773,14 +775,14 @@ h3.contact-header {
   color: #666666;
 }
 
-/* line 100, _typography.scss */
+/* line 102, _typography.scss */
 .code-preview {
   font-size: 12px;
   color: #666666;
   line-height: 16px;
 }
 
-/* line 106, _typography.scss */
+/* line 108, _typography.scss */
 p.footer-copyright {
   font: 1.3rem 'Open Sans', sans-serif;
   margin-bottom: 0;
@@ -987,9 +989,18 @@ p.footer-copyright {
 #slider {
   height: 546px;
   clear: both;
+  background: #04b4dc url("/images/slider/thompson-reuters-japan.png");
+  padding: 40px 0 0 0;
+}
+/* line 7, _homepage.scss */
+#slider section {
+  text-align: center;
+  width: 38.28696925329429%;
+  margin: 0 auto;
+  background: black;
 }
 
-/* line 6, _homepage.scss */
+/* line 15, _homepage.scss */
 #homepage-stats {
   padding: 0 114px;
   height: 224px;
@@ -1014,24 +1025,24 @@ p.footer-copyright {
   -ms-justify-content: center;
   justify-content: center;
 }
-/* line 30, _homepage.scss */
+/* line 39, _homepage.scss */
 #homepage-stats > span {
   width: 20%;
   padding: 0 2%;
   float: left;
   text-align: center;
 }
-/* line 36, _homepage.scss */
+/* line 45, _homepage.scss */
 #homepage-stats > span:first-of-type {
   padding: 0 2% 0 0;
 }
-/* line 39, _homepage.scss */
+/* line 48, _homepage.scss */
 #homepage-stats > span:last-of-type {
   padding: 0 2% 0 0;
 }
 
 @media screen and (max-width: 1366px) {
-  /* line 54, _homepage.scss */
+  /* line 63, _homepage.scss */
   #homepage-stats {
     padding: 0 4.172767203513909%;
   }

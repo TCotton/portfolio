@@ -1,6 +1,15 @@
 #slider {
   height: 546px;
   clear : both;
+  background: $sliderBackground $sliderOne;
+  padding: 40px 0 0 0;
+
+  section {
+    text-align: center;
+    width: 38.28696925329429%;
+    margin: 0 auto;
+    background: black;
+  }
 }
 
 #homepage-stats {
