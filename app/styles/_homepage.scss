@@ -25,11 +25,18 @@
 
   .left-arrow {
     left: 57px;
-    background: white $leftArrow;
+    background: $leftArrow;
+    &:hover {
+      background: $leftArrowHover;
+    }
   }
 
   .right-arrow {
     right: 57px;
+    background: $rightArrow;
+    &:hover {
+      background: $rightArrowHover;
+    }
   }
 
 }
