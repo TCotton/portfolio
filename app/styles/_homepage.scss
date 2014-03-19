@@ -1,8 +1,12 @@
 #slider {
-  height: 546px;
+  //height: 546px;
   clear: both;
-  background: $sliderBackground $sliderOne;
-  padding: 40px 0 0 0;
+  background-color: $sliderBackground;
+  background-image: $sliderOne;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  padding: 40px 0 39.97071742313324% 0;
   position: relative;
 
   section {

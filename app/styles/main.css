@@ -980,20 +980,23 @@ p.footer-copyright {
 
 /* line 1, _homepage.scss */
 #slider {
-  height: 546px;
   clear: both;
-  background: #04b4dc url("/images/slider/thompson-reuters-japan.png") no-repeat center center;
-  padding: 40px 0 0 0;
+  background-color: #04b4dc;
+  background-image: url("/images/slider/thompson-reuters-japan.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  padding: 40px 0 39.97071742313324% 0;
   position: relative;
 }
-/* line 8, _homepage.scss */
+/* line 12, _homepage.scss */
 #slider section {
   text-align: center;
   width: 38.28696925329429%;
   margin: 0 auto;
   background: black;
 }
-/* line 15, _homepage.scss */
+/* line 19, _homepage.scss */
 #slider [class*="arrow"] {
   position: absolute;
   top: -webkit-calc(50% - 28px);
@@ -1004,36 +1007,36 @@ p.footer-copyright {
   background: black;
   cursor: pointer;
 }
-/* line 26, _homepage.scss */
+/* line 30, _homepage.scss */
 #slider .left-arrow {
   left: 57px;
   background: url("/images/svg/left-arrow.svg") no-repeat center center;
 }
-/* line 29, _homepage.scss */
+/* line 33, _homepage.scss */
 #slider .left-arrow:hover {
   background: url("/images/svg/left-arrow-hover.svg") no-repeat center center;
 }
-/* line 34, _homepage.scss */
+/* line 38, _homepage.scss */
 #slider .right-arrow {
   right: 57px;
   background: url("/images/svg/right-arrow.svg") no-repeat center center;
 }
-/* line 37, _homepage.scss */
+/* line 41, _homepage.scss */
 #slider .right-arrow:hover {
   background: url("/images/svg/right-arrow-hover.svg") no-repeat center center;
 }
 
 @media screen and (max-width: 1366px) {
-  /* line 48, _homepage.scss */
+  /* line 52, _homepage.scss */
   #slider .left-arrow {
     left: 4.172767203513909%;
   }
-  /* line 52, _homepage.scss */
+  /* line 56, _homepage.scss */
   #slider .right-arrow {
     right: 4.172767203513909%;
   }
 }
-/* line 60, _homepage.scss */
+/* line 64, _homepage.scss */
 #homepage-stats {
   padding: 0 114px;
   height: 224px;
@@ -1058,24 +1061,24 @@ p.footer-copyright {
   -ms-justify-content: center;
   justify-content: center;
 }
-/* line 84, _homepage.scss */
+/* line 88, _homepage.scss */
 #homepage-stats > span {
   width: 20%;
   padding: 0 2%;
   float: left;
   text-align: center;
 }
-/* line 90, _homepage.scss */
+/* line 94, _homepage.scss */
 #homepage-stats > span:first-of-type {
   padding: 0 2% 0 0;
 }
-/* line 93, _homepage.scss */
+/* line 97, _homepage.scss */
 #homepage-stats > span:last-of-type {
   padding: 0 2% 0 0;
 }
 
 @media screen and (max-width: 1366px) {
-  /* line 108, _homepage.scss */
+  /* line 112, _homepage.scss */
   #homepage-stats {
     padding: 0 4.172767203513909%;
   }
