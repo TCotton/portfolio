@@ -582,13 +582,6 @@ html {
     font: 62.5% / 10 'Open Sans', sans-serif;
   }
 }
-/**
-
-$media: screen;
-$media_max_width_mobile : max-width;
-$media_max_width_mobile_value: 320px;
-
-*/
 /* line 1, _grid.scss */
 #container {
   width: 1366px;
@@ -991,16 +984,47 @@ p.footer-copyright {
   clear: both;
   background: #04b4dc url("/images/slider/thompson-reuters-japan.png");
   padding: 40px 0 0 0;
+  position: relative;
 }
-/* line 7, _homepage.scss */
+/* line 8, _homepage.scss */
 #slider section {
   text-align: center;
   width: 38.28696925329429%;
   margin: 0 auto;
   background: black;
 }
-
 /* line 15, _homepage.scss */
+#slider [class*="arrow"] {
+  position: absolute;
+  top: -webkit-calc(50% - 28px);
+  top: calc(50% - 28px);
+  width: 55px;
+  height: 54px;
+  display: block;
+  background: black;
+  cursor: pointer;
+}
+/* line 26, _homepage.scss */
+#slider .left-arrow {
+  left: 57px;
+  background: white url("/images/svg/left-arrow.svg") no-repeat center center;
+}
+/* line 31, _homepage.scss */
+#slider .right-arrow {
+  right: 57px;
+}
+
+@media screen and (max-width: 1366px) {
+  /* line 41, _homepage.scss */
+  #slider .left-arrow {
+    left: 4.172767203513909%;
+  }
+  /* line 45, _homepage.scss */
+  #slider .right-arrow {
+    right: 4.172767203513909%;
+  }
+}
+/* line 53, _homepage.scss */
 #homepage-stats {
   padding: 0 114px;
   height: 224px;
@@ -1025,24 +1049,24 @@ p.footer-copyright {
   -ms-justify-content: center;
   justify-content: center;
 }
-/* line 39, _homepage.scss */
+/* line 77, _homepage.scss */
 #homepage-stats > span {
   width: 20%;
   padding: 0 2%;
   float: left;
   text-align: center;
 }
-/* line 45, _homepage.scss */
+/* line 83, _homepage.scss */
 #homepage-stats > span:first-of-type {
   padding: 0 2% 0 0;
 }
-/* line 48, _homepage.scss */
+/* line 86, _homepage.scss */
 #homepage-stats > span:last-of-type {
   padding: 0 2% 0 0;
 }
 
 @media screen and (max-width: 1366px) {
-  /* line 63, _homepage.scss */
+  /* line 101, _homepage.scss */
   #homepage-stats {
     padding: 0 4.172767203513909%;
   }

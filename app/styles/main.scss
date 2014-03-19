@@ -23,45 +23,6 @@ html {
 
 }
 
-/**
-
-$media: screen;
-$media_max_width_mobile : max-width;
-$media_max_width_mobile_value: 320px;
-
-*/
-
-//@media screen and (max-width: $media_max_width_mobile_value) {
-//
-//  body {
-//    background : pink;
-//  }
-//
-//}
-
-//h1 {
-//
-//  @include font-calculator($baseFontFamily, 16);
-//
-//}
-//
-//h2 {
-//
-//  @include font-calculator($baseFontFamily, 15);
-//
-//}
-//
-//h3 {
-//
-//  @include font-calculator($baseFontFamily, 14);
-//
-//}
-//
-//p {
-//
-//  @include font-calculator('serif', 14);
-//
-//}
 @import "grid";
 @import "typography";
 @import "svg";

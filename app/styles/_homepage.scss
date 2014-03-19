@@ -1,8 +1,9 @@
 #slider {
   height: 546px;
-  clear : both;
+  clear: both;
   background: $sliderBackground $sliderOne;
   padding: 40px 0 0 0;
+  position: relative;
 
   section {
     text-align: center;
@@ -10,6 +11,43 @@
     margin: 0 auto;
     background: black;
   }
+
+  [class*="arrow"] {
+    position: absolute;
+    @include calc("top", "50% - 28px");
+    width: 55px;
+    height: 54px;
+    display: block;
+    background: black;
+    cursor: pointer;
+    //background-size: contain;
+  }
+
+  .left-arrow {
+    left: 57px;
+    background: white $leftArrow;
+  }
+
+  .right-arrow {
+    right: 57px;
+  }
+
+}
+
+@include breakpoint(wide) {
+
+  #slider {
+
+    .left-arrow {
+      left: 4.172767203513909%;
+    }
+
+    .right-arrow {
+      right: 4.172767203513909%;
+    }
+
+  }
+
 }
 
 #homepage-stats {
@@ -20,11 +58,11 @@
 
   // cross browser support for flexbox
 
-  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
-  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
-  display: -ms-flexbox;      /* TWEENER - IE 10 */
-  display: -webkit-flex;     /* NEW - Chrome */
-  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox; /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Chrome */
+  display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
 
   -webkit-align-items: center;
   -moz-align-items: center;
