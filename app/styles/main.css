@@ -1093,10 +1093,13 @@ p.footer-copyright {
 }
 /* line 6, _banner.scss */
 #banner section {
+  margin: auto;
   position: absolute;
-  top: 40px;
-  left: -webkit-calc(61.7130307467% / 2);
-  left: calc(61.7130307467% / 2);
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   text-align: center;
   width: 38.28696925329429%;
 }

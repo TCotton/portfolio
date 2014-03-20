@@ -4,9 +4,10 @@
   position: relative;
 
   section {
+    margin: auto;
     position: absolute;
-    top: 40px;
-    @include calc("left", "61.7130307467% / 2");
+    top: 50%; left: 50%;
+    @include transform(translate(-50%,-50%));
     text-align: center;
     width: 38.28696925329429%;
   }
