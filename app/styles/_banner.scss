@@ -1,0 +1,13 @@
+#banner {
+  height: 194px;
+  background: $bannerBackround;
+  position: relative;
+
+  section {
+    position: absolute;
+    top: 40px;
+    @include calc("left", "61.7130307467% / 2");
+    text-align: center;
+    width: 38.28696925329429%;
+  }
+}

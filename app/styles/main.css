@@ -1085,6 +1085,22 @@ p.footer-copyright {
     padding: 0 4.172767203513909%;
   }
 }
+/* line 1, _banner.scss */
+#banner {
+  height: 194px;
+  background: #00bd9c;
+  position: relative;
+}
+/* line 6, _banner.scss */
+#banner section {
+  position: absolute;
+  top: 40px;
+  left: -webkit-calc(61.7130307467% / 2);
+  left: calc(61.7130307467% / 2);
+  text-align: center;
+  width: 38.28696925329429%;
+}
+
 /* line 3, _blog.scss */
 .blog a:link {
   color: #333333;
