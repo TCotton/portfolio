@@ -1,0 +1,54 @@
+#container {
+  width: 1366px;
+  margin: 10px auto;
+}
+
+#left-large {
+  width: 870px;
+  float : left;
+  display: inline;
+}
+
+#left-small {
+  width: 382px;
+  float: left;
+  display: inline;
+}
+
+#right-large {
+  width: 870px;
+  float: left;
+  display: inline;
+}
+
+#right-small {
+  width: 382px;
+  float: left;
+  display: inline;
+}
+
+@include breakpoint(wide) {
+
+  #container {
+    width: 99%;
+  }
+
+  #left-large {
+    width: 63.689604685212295%;
+    margin: 0 4.172767203513909% 0 0;
+  }
+
+  #left-small {
+    width: 27.96486090775988%;
+  }
+
+  #right-large {
+    width: 63.689604685212295%;
+    margin: 0 4.172767203513909% 0 0;
+  }
+
+  #right-small {
+    width: 27.96486090775988%;
+  }
+
+}

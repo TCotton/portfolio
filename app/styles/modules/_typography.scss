@@ -1,0 +1,113 @@
+//Light 300
+//Light 300 Italic
+//Normal 400
+//Normal 400 Italic
+//Semi-Bold 600
+//Semi-Bold 600 Italic
+//Bold 700
+//Bold 700 Italic
+//Extra-Bold 800
+//Extra-Bold 800 Italic
+h1.logo {
+  @include font-calculator($secondaryFontFamily, 35px, 0);
+  line-height: $headerHeight;
+  color: white;
+}
+
+ul.navigation {
+  @include font-calculator($baseFontFamily, 15px, 0);
+  text-transform: uppercase;
+  line-height: $headerHeight;
+  font-weight: 700;
+}
+
+h2.page-top-title {
+  @include font-calculator($baseFontFamily, 40px);
+  font-weight: 300;
+  color: white;
+}
+
+p.page-top-text {
+  @include font-calculator($baseFontFamily, 18px);
+  font-weight: 300;
+  color: white;
+}
+
+.front-page-bottom-header {
+  @include font-calculator($baseFontFamily, 80px);
+  font-weight: 300;
+  color: white;
+}
+
+.front-page-bottom-text {
+  @include font-calculator($baseFontFamily, 13px);
+  font-weight: 600;
+  color: white;
+}
+
+h3.blog-title {
+  @include font-calculator($baseFontFamily, 40px);
+  font-weight: 300;
+  color: $textTwo;
+}
+
+/* little mixin for standard blog css attributes and values */
+@mixin blogText($tag) {
+  .blog-text #{$tag} {
+    @include font-calculator($baseFontFamily, 16px);
+    color: $textTwo;
+    @content;
+  }
+}
+
+@include blogText('li') {
+  font-weight: 400;
+}
+@include blogText('p') {
+  font-weight: 400;
+}
+@include blogText('p.date') {
+  font-weight: 400;
+  font-style: italic;
+}
+@include blogText('p.read-more') {
+  font-weight: 700;
+}
+
+h4.blog-sidebar-header {
+  @include font-calculator($baseFontFamily, 30px);
+  font-weight: 300;
+  color: $textTwo;
+}
+
+.blog-sidebar-text p, ul.blog-sidebar-text  {
+  @include font-calculator($baseFontFamily, 16px);
+  font-weight: 600;
+  color: $textTwo;
+}
+
+h3.contact-header {
+  @include font-calculator($baseFontFamily, 30px);
+  font-weight: 300;
+  color: $textTwo;
+}
+
+.footer-top-text p, ul.footer-top-text{
+  @include font-calculator($baseFontFamily, 20px);
+  font-weight: 300;
+  font-style: italic;
+  color: $textTwo;
+}
+
+.code-preview {
+  font-size: 12px;
+  color: $textTwo;
+  line-height: 16px;
+}
+
+p.footer-copyright {
+  @include font-calculator($baseFontFamily, 13px, 0);
+  line-height: $bottomFooterHeight;
+  color: white;
+  text-transform:capitalize;
+}
