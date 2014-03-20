@@ -1,19 +1,19 @@
 #slider {
-  //height: 546px;
   clear: both;
   background-color: $sliderBackground;
   background-image: $sliderOne;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center;
   background-size: contain;
-  padding: 40px 0 39.97071742313324% 0;
+  padding: 0 0 39.97071742313324% 0;
   position: relative;
 
   section {
+    position: absolute;
+    top: 40px;
+    @include calc("left", "61.7130307467% / 2");
     text-align: center;
     width: 38.28696925329429%;
-    margin: 0 auto;
-    background: black;
   }
 
   [class*="arrow"] {
@@ -22,9 +22,8 @@
     width: 55px;
     height: 54px;
     display: block;
-    background: black;
     cursor: pointer;
-    //background-size: contain;
+    background-size: contain;
   }
 
   .left-arrow {

@@ -663,16 +663,16 @@ ul.navigation {
 
 /* line 24, _typography.scss */
 h2.page-top-title {
-  font: 5rem 'Open Sans', sans-serif;
-  margin-bottom: 0.1rem;
+  font: 4rem 'Open Sans', sans-serif;
+  margin-bottom: 0.125rem;
   font-weight: 300;
   color: white;
 }
 
 /* line 30, _typography.scss */
 p.page-top-text {
-  font: 2rem 'Open Sans', sans-serif;
-  margin-bottom: 0.5rem;
+  font: 1.8rem 'Open Sans', sans-serif;
+  margin-bottom: 0.55556rem;
   font-weight: 300;
   color: white;
 }
@@ -984,17 +984,19 @@ p.footer-copyright {
   background-color: #04b4dc;
   background-image: url("/images/slider/thompson-reuters-japan.png");
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center;
   background-size: contain;
-  padding: 40px 0 39.97071742313324% 0;
+  padding: 0 0 39.97071742313324% 0;
   position: relative;
 }
-/* line 12, _homepage.scss */
+/* line 11, _homepage.scss */
 #slider section {
+  position: absolute;
+  top: 40px;
+  left: -webkit-calc(61.7130307467% / 2);
+  left: calc(61.7130307467% / 2);
   text-align: center;
   width: 38.28696925329429%;
-  margin: 0 auto;
-  background: black;
 }
 /* line 19, _homepage.scss */
 #slider [class*="arrow"] {
@@ -1004,39 +1006,39 @@ p.footer-copyright {
   width: 55px;
   height: 54px;
   display: block;
-  background: black;
   cursor: pointer;
+  background-size: contain;
 }
-/* line 30, _homepage.scss */
+/* line 29, _homepage.scss */
 #slider .left-arrow {
   left: 57px;
   background: url("/images/svg/left-arrow.svg") no-repeat center center;
 }
-/* line 33, _homepage.scss */
+/* line 32, _homepage.scss */
 #slider .left-arrow:hover {
   background: url("/images/svg/left-arrow-hover.svg") no-repeat center center;
 }
-/* line 38, _homepage.scss */
+/* line 37, _homepage.scss */
 #slider .right-arrow {
   right: 57px;
   background: url("/images/svg/right-arrow.svg") no-repeat center center;
 }
-/* line 41, _homepage.scss */
+/* line 40, _homepage.scss */
 #slider .right-arrow:hover {
   background: url("/images/svg/right-arrow-hover.svg") no-repeat center center;
 }
 
 @media screen and (max-width: 1366px) {
-  /* line 52, _homepage.scss */
+  /* line 51, _homepage.scss */
   #slider .left-arrow {
     left: 4.172767203513909%;
   }
-  /* line 56, _homepage.scss */
+  /* line 55, _homepage.scss */
   #slider .right-arrow {
     right: 4.172767203513909%;
   }
 }
-/* line 64, _homepage.scss */
+/* line 63, _homepage.scss */
 #homepage-stats {
   padding: 0 114px;
   height: 224px;
@@ -1061,24 +1063,24 @@ p.footer-copyright {
   -ms-justify-content: center;
   justify-content: center;
 }
-/* line 88, _homepage.scss */
+/* line 87, _homepage.scss */
 #homepage-stats > span {
   width: 20%;
   padding: 0 2%;
   float: left;
   text-align: center;
 }
-/* line 94, _homepage.scss */
+/* line 93, _homepage.scss */
 #homepage-stats > span:first-of-type {
   padding: 0 2% 0 0;
 }
-/* line 97, _homepage.scss */
+/* line 96, _homepage.scss */
 #homepage-stats > span:last-of-type {
   padding: 0 2% 0 0;
 }
 
 @media screen and (max-width: 1366px) {
-  /* line 112, _homepage.scss */
+  /* line 111, _homepage.scss */
   #homepage-stats {
     padding: 0 4.172767203513909%;
   }

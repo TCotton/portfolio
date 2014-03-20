@@ -22,13 +22,13 @@ ul.navigation {
 }
 
 h2.page-top-title {
-  @include font-calculator($baseFontFamily, 50px, 0.25);
+  @include font-calculator($baseFontFamily, 40px, 0.25);
   font-weight: 300;
   color: white;
 }
 
 p.page-top-text {
-  @include font-calculator($baseFontFamily, 20px, 0.5);
+  @include font-calculator($baseFontFamily, 18px, 0.5);
   font-weight: 300;
   color: white;
 }
