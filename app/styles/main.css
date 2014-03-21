@@ -616,32 +616,67 @@ html {
   display: inline;
 }
 
+/* line 30, modules/_grid.scss */
+#main-content {
+  padding: 57px;
+}
+
+/* My work */
+/* line 36, modules/_grid.scss */
+[class*="my-work-box"] {
+  width: -webkit-calc((100% / 3) - 33px);
+  width: calc((100% / 3) - 33px);
+  padding-bottom: 20%;
+  background: black;
+  float: left;
+  border: 1px solid #cccccc;
+  margin-right: 33px;
+}
+
+/* line 45, modules/_grid.scss */
+[class*="my-work-box"]:nth-of-type(3n) {
+  width: -webkit-calc(100% / 3);
+  width: calc(100% / 3);
+  background: blue;
+  margin-right: 0;
+}
+
+/* line 51, modules/_grid.scss */
+.my-work-box-one, .my-work-box-two, .my-work-box-three {
+  margin-bottom: 33px;
+}
+
 @media (max-width: 1366px) {
-  /* line 32, modules/_grid.scss */
+  /* line 57, modules/_grid.scss */
   #container {
     width: 99%;
   }
 
-  /* line 36, modules/_grid.scss */
+  /* line 61, modules/_grid.scss */
   #left-large {
     width: 63.689604685212295%;
     margin: 0 4.172767203513909% 0 0;
   }
 
-  /* line 41, modules/_grid.scss */
+  /* line 66, modules/_grid.scss */
   #left-small {
     width: 27.96486090775988%;
   }
 
-  /* line 45, modules/_grid.scss */
+  /* line 70, modules/_grid.scss */
   #right-large {
     width: 63.689604685212295%;
     margin: 0 4.172767203513909% 0 0;
   }
 
-  /* line 50, modules/_grid.scss */
+  /* line 75, modules/_grid.scss */
   #right-small {
     width: 27.96486090775988%;
+  }
+
+  /* line 79, modules/_grid.scss */
+  #main-content {
+    padding: 57px 4.172767203513909%;
   }
 }
 /* line 11, modules/_typography.scss */

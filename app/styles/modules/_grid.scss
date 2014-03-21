@@ -5,7 +5,7 @@
 
 #left-large {
   width: 870px;
-  float : left;
+  float: left;
   display: inline;
 }
 
@@ -25,6 +25,31 @@
   width: 382px;
   float: left;
   display: inline;
+}
+
+#main-content {
+  padding: 57px;
+}
+
+/* My work */
+
+[class*="my-work-box"] {
+  @include calc('width', '(100% / 3) - 33px');
+  padding-bottom: 20%;
+  background: black;
+  float: left;
+  border: 1px solid $boxBorder;
+  margin-right: 33px;
+}
+
+[class*="my-work-box"]:nth-of-type(3n) {
+  @include calc('width', '100% / 3');
+  background: blue;
+  margin-right: 0
+}
+
+.my-work-box-one, .my-work-box-two, .my-work-box-three {
+  margin-bottom: 33px;
 }
 
 @include breakpoint(wide) {
@@ -49,6 +74,10 @@
 
   #right-small {
     width: 27.96486090775988%;
+  }
+
+  #main-content {
+    padding: 57px 4.172767203513909%;
   }
 
 }
