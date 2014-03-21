@@ -92,6 +92,12 @@ h3.contact-header {
   color: $textTwo;
 }
 
+h3.work-box-header {
+  @include font-calculator($baseFontFamily, 30px, 0);
+  font-weight: 400;
+  color: white;
+}
+
 .footer-top-text p, ul.footer-top-text{
   @include font-calculator($baseFontFamily, 20px);
   font-weight: 300;

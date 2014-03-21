@@ -1,0 +1,56 @@
+.my-work {
+
+  [class*="my-work-box"] {
+    background-color: $imageBackground;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: contain;
+    // lets the H3 title use animation to appear
+    &:hover {
+      header h3 {
+        opacity: 1;
+        @include transform(translateY(0));
+      }
+    }
+  }
+
+  .my-work-box-one {
+    background-image: $workOne;
+  }
+
+  .my-work-box-two {
+    background-image: $workTwo;
+  }
+
+  .my-work-box-three {
+    background-image: $workThree;
+  }
+
+  .my-work-box-four {
+    background-image: $workFour;
+  }
+
+  .my-work-box-five {
+    background-image: $workFive;
+  }
+
+  .my-work-box-six {
+    visibility: hidden;
+  }
+
+  header {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+    h3 {
+      @include transitions(all 0.5s);
+      @include transform(translateY(30px));
+      margin-top: 40px;
+      opacity: 0;
+    }
+  }
+
+
+
+}

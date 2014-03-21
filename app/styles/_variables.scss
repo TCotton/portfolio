@@ -20,7 +20,10 @@ $bottomFooterBackground: #27353d;
 $topHeaderBackground: #27353d;
 $homepageStatsBackground: #00bd9c;
 $bannerBackround: #00bd9c;
-$sliderBackground: #04b4dc;
+$imageBackground: #04b4dc;
+
+// hover overlay
+$workBoxes: #4cd1ba;
 
 // borders
 $boxBorder: #cccccc;
@@ -35,3 +38,11 @@ $bottomFooterHeight: 94px;
 
 // images
 $sliderOne: url('/images/slider/thompson-reuters-japan.png');
+
+
+// work
+$workOne: url('/images/blinkbox-work.png');
+$workTwo: url('/images/reuters-japan-work.png');
+$workThree: url('/images/law-student-work.png');
+$workFour: url('/images/kaplan-work.png');
+$workFive: url('/images/newmans-clinic-work.png');

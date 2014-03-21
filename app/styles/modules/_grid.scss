@@ -34,18 +34,64 @@
 /* My work */
 
 [class*="my-work-box"] {
-  @include calc('width', '(100% / 3) - 33px');
-  padding-bottom: 20%;
-  background: black;
+  @include calc('width', '(100% / 3) - (66px / 3)');
+  height: 285px;
   float: left;
   border: 1px solid $boxBorder;
   margin-right: 33px;
+  background-clip: content-box;
+  padding: 4px;
+  position: relative;
+  cursor: pointer;
+  @include transitions(all 0.5s);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    @include calc('width', '100% - 8px');
+    @include calc('height', '100% - 8px');
+    display: block;
+    background: $workBoxes;
+    opacity: 0;
+    @include transitions(opacity 0.5s);
+  }
+
+  &::after {
+    content: '';
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: $moreWork;
+    width: 55px;
+    height: 56px;
+    display: block;
+    opacity: 0;
+    @include transitions(opacity 0.5s);
+  }
+
+  &:hover::before {
+    opacity: 0.7;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+
 }
 
+@media screen and (min--moz-device-pixel-ratio:0) {
+  /* temp Firefox hack until I can work out a solution */
+  [class*="my-work-box"] {
+    @include calc('width', '(100% / 3) - (66px / 2)');
+  }
+}
+
+
 [class*="my-work-box"]:nth-of-type(3n) {
-  @include calc('width', '100% / 3');
-  background: blue;
-  margin-right: 0
+  margin-right: 0;
+  background-clip: content-box;
 }
 
 .my-work-box-one, .my-work-box-two, .my-work-box-three {
@@ -78,6 +124,10 @@
 
   #main-content {
     padding: 57px 4.172767203513909%;
+  }
+
+  [class*="my-work-box"] {
+    height: 230px;
   }
 
 }
