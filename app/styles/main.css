@@ -435,7 +435,7 @@ h1, h2, h3, h4, h5, h6, th, td, caption {
   font-feature-settings: "liga", "kern";
 }
 
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+@media (-webkit-min-device-pixel-ratio: 2), not all, (min-resolution: 2dppx), (min-resolution: 192dpi) {
   /* line 392, _reset.scss */
   p, li {
     letter-spacing: 0.01rem;
@@ -570,13 +570,13 @@ html {
   font: 62.5% / 2 'Open Sans', sans-serif;
 }
 
-@media screen and (max-width: 767px) {
+@media (max-width: 767px) {
   /* line 12, main.scss */
   html {
     font: 62.5% / 10 'Open Sans', sans-serif;
   }
 }
-@media screen and (max-width: 767px) {
+@media (max-width: 767px) {
   /* line 20, main.scss */
   html {
     font: 62.5% / 10 'Open Sans', sans-serif;
@@ -616,7 +616,7 @@ html {
   display: inline;
 }
 
-@media screen and (max-width: 1366px) {
+@media (max-width: 1366px) {
   /* line 32, modules/_grid.scss */
   #container {
     width: 99%;
@@ -937,7 +937,7 @@ p.footer-copyright {
   color: #00bd9c;
 }
 
-@media screen and (max-width: 1366px) {
+@media (max-width: 1366px) {
   /* line 28, _header.scss */
   #header {
     padding: 0 4.172767203513909%;
@@ -1028,7 +1028,7 @@ p.footer-copyright {
   background: url("/images/svg/right-arrow-hover.svg") no-repeat center center;
 }
 
-@media screen and (max-width: 1366px) {
+@media (max-width: 1366px) {
   /* line 51, _homepage.scss */
   #slider .left-arrow {
     left: 4.172767203513909%;
@@ -1079,7 +1079,7 @@ p.footer-copyright {
   padding: 0 2% 0 0;
 }
 
-@media screen and (max-width: 1366px) {
+@media (max-width: 1366px) {
   /* line 111, _homepage.scss */
   #homepage-stats {
     padding: 0 4.172767203513909%;
@@ -1185,7 +1185,7 @@ p.footer-copyright {
   opacity: 0.5;
 }
 
-@media screen and (max-width: 1366px) {
+@media (max-width: 1366px) {
   /* line 48, _footer.scss */
   #footer-top {
     padding: 30px 4.172767203513909% 0 4.172767203513909%;
