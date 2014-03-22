@@ -424,7 +424,7 @@ h1, h2, h3, h4, h5, h6, th, td, caption {
   font-feature-settings: "liga", "kern";
 }
 
-// slight character and word gap of retina devices to make the text more legible
+/* slight character and word gap of retina devices to make the text more legible */
 @media (-webkit-min-device-pixel-ratio: 2), not all, (min-resolution: 2dppx), (min-resolution: 192dpi) {
   p, li {
     letter-spacing: 0.01rem;
@@ -432,7 +432,8 @@ h1, h2, h3, h4, h5, h6, th, td, caption {
   }
 }
 
-/* * { Box-sizing: Border-box } FTW: http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+/* { Box-sizing: Border-box } FTW: http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;

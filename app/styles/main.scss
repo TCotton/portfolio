@@ -17,7 +17,7 @@ html {
 
 }
 
-
+@import "modules/media_queries";
 @import "modules/svg";
 @import "modules/grid";
 @import "modules/typography";
@@ -25,7 +25,6 @@ html {
 @import "modules/buttons";
 @import "modules/forms";
 @import "modules/icons";
-@import "modules/media_queries";
 @import "header";
 @import "homepage";
 @import "banner";

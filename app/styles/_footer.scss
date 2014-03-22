@@ -65,6 +65,6 @@
     width: 21px;
     height: 21px;
     background: $topFooterBackground;
-    @include transform(rotate(45deg));
+    @include transform("rotate(45deg)");
   }
 }

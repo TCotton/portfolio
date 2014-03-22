@@ -48,7 +48,7 @@
 
     [class*="per"] span {
 
-      @include transform(scaleX(0));
+      @include transform("scaleX(0)");
       opacity: 0;
 
       -webkit-animation: fadeIn ease-in 1;
@@ -70,15 +70,25 @@
       -moz-animation-delay: 3s;
       -ms-animation-delay: 3s;
       animation-delay: 3s;
+
     }
 
     [class*="per"]:last-of-type {
+
       -webkit-animation-name: shake;
       -webkit-animation-delay: 6s;
       -webkit-animation-duration: 0.8s;
       -webkit-transform-origin: 50% 50%;
       -webkit-animation-iteration-count: infinite;
       -webkit-animation-timing-function: linear;
+
+      animation-name: shake;
+      animation-delay: 6s;
+      animation-duration: 0.8s;
+      transform-origin: 50% 50%;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+
     }
 
   }
@@ -157,6 +167,42 @@
     }
     100% {
       -webkit-transform: translate(1px, -2px) rotate(-1deg);
+    }
+  }
+
+  @keyframes shake {
+    0% {
+      transform: translate(2px, 1px) rotate(0deg);
+    }
+    10% {
+      transform: translate(-1px, -2px) rotate(-1deg);
+    }
+    20% {
+      transform: translate(-3px, 0px) rotate(1deg);
+    }
+    30% {
+      transform: translate(0px, 2px) rotate(0deg);
+    }
+    40% {
+      transform: translate(1px, -1px) rotate(1deg);
+    }
+    50% {
+      transform: translate(-1px, 2px) rotate(-1deg);
+    }
+    60% {
+      transform: translate(-3px, 1px) rotate(0deg);
+    }
+    70% {
+      transform: translate(2px, 1px) rotate(-1deg);
+    }
+    80% {
+      transform: translate(-1px, -1px) rotate(1deg);
+    }
+    90% {
+      transform: translate(2px, 2px) rotate(0deg);
+    }
+    100% {
+      transform: translate(1px, -2px) rotate(-1deg);
     }
   }
 

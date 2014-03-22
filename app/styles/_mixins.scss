@@ -55,7 +55,7 @@
   font: #{$fontSizeRem}#{"rem"} #{$fontFamily};
 
   @if $divider == 0 {
-    margin-bottom: 0;
+    $margin: null;
   } @else if $divider == 0.5 {
     $margin: strip-units($baseLineHeight) / $fontSizeRem / 2;
     margin-bottom: #{double-size($fontSize, $margin)}#{"rem"};
@@ -168,21 +168,21 @@
 }
 
 // css transitions
-@mixin transitions($value...) {
-  -ms-transition: $value;
-  -webkit-transition: $value;
-  transition: $value;
+@mixin transitions($value) {
+  -ms-transition: #{$value};
+  -webkit-transition: #{$value};
+  transition: #{$value};
 }
 
 // css transform
-@mixin transform($value...) {
-  -ms-transform: $value;
-  -webkit-transform: $value;
-  transform: $value;
+@mixin transform($value) {
+  -ms-transform: #{$value};
+  -webkit-transform: #{$value};
+  transform: #{$value};
 }
 
 // css boxshadow
-@mixin boxshadow($value...) {
-  -webkit-box-shadow: $value;
-  box-shadow: $value;
+@mixin boxshadow($value) {
+  -webkit-box-shadow: #{$value};
+  box-shadow: #{$value};
 }

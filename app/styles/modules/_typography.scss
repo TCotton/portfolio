@@ -96,12 +96,7 @@ h3.blog-title {
 
   a.underline {
     text-decoration: none;
-    background-image: linear-gradient(to top,
-      rgba(0,0,0,0) 11%,
-      rgba(0,0,0,.3) 11%,
-      rgba(0,0,0,.3) 16%,
-      rgba(0,0,0,0) 16%
-    );
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, .3) 11%, rgba(0, 0, 0, .3) 16%, rgba(0, 0, 0, 0) 16%);
     position: relative;
 
     // displays pop up of link attribute if it is pointing to an external site
@@ -129,31 +124,16 @@ h3.blog-title {
     }
     &:focus {
       color: $textTwo;
-      background-image: linear-gradient(to top,
-        rgba(0,0,0,0) 11%,
-        rgba(0,0,0,.1) 11%,
-        rgba(0,0,0,.1) 16%,
-        rgba(0,0,0,0) 16%
-      );
+      background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, .1) 11%, rgba(0, 0, 0, .1) 16%, rgba(0, 0, 0, 0) 16%);
     }
     &:hover {
       color: $textTwo;
-      background-image: linear-gradient(to top,
-        rgba(0,0,0,0) 11%,
-        rgba(0,0,0,.1) 11%,
-        rgba(0,0,0,.1) 16%,
-        rgba(0,0,0,0) 16%
-      );
+      background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, .1) 11%, rgba(0, 0, 0, .1) 16%, rgba(0, 0, 0, 0) 16%);
 
     }
     &:active {
       color: $textTwo;
-      background-image: linear-gradient(to top,
-        rgba(0,0,0,0) 11%,
-        rgba(0,0,0,.1) 11%,
-        rgba(0,0,0,.1) 16%,
-        rgba(0,0,0,0) 16%
-      );
+      background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, .1) 11%, rgba(0, 0, 0, .1) 16%, rgba(0, 0, 0, 0) 16%);
     }
 
   }

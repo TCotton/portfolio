@@ -34,7 +34,6 @@
 
 #pagination {
 
-
   text-align: center;
 
   [class*="pag"] {
@@ -63,7 +62,6 @@
 
   @for $i from 1 through $percentage {
     .pag#{$i * 1} {
-      //width: ((10 / $percentage) * $i);
       background: url('/images/svg/solid#{((10 / $percentage) * $i)}.svg') no-repeat center center;
       &:hover {
         background: url('/images/svg/outline#{((10 / $percentage) * $i)}.svg') no-repeat center center;
