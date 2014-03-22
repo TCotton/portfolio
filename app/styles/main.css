@@ -830,14 +830,14 @@ p.page-top-text {
   text-decoration: underline;
 }
 
-/* line 91, modules/_typography.scss */
-.content-text a {
+/* line 90, modules/_typography.scss */
+.content-text a.underline {
   text-decoration: none;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.3) 11%, rgba(0, 0, 0, 0.3) 16%, rgba(0, 0, 0, 0) 16%);
   position: relative;
 }
-/* line 102, modules/_typography.scss */
-.content-text a[rel="external"]::after {
+/* line 101, modules/_typography.scss */
+.content-text a.underline[rel="external"]::after {
   content: " " attr(href) " ";
   position: absolute;
   left: 20%;
@@ -851,35 +851,35 @@ p.page-top-text {
   transition: opacity 0.5s;
   white-space: nowrap;
 }
-/* line 114, modules/_typography.scss */
-.content-text a[rel="external"]:hover::after {
+/* line 113, modules/_typography.scss */
+.content-text a.underline[rel="external"]:hover::after {
   opacity: 1;
 }
-/* line 118, modules/_typography.scss */
-.content-text a:link {
+/* line 117, modules/_typography.scss */
+.content-text a.underline:link {
   color: #666666;
 }
-/* line 121, modules/_typography.scss */
-.content-text a:visited {
+/* line 120, modules/_typography.scss */
+.content-text a.underline:visited {
   color: gray;
 }
-/* line 124, modules/_typography.scss */
-.content-text a:focus {
+/* line 123, modules/_typography.scss */
+.content-text a.underline:focus {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
-/* line 133, modules/_typography.scss */
-.content-text a:hover {
+/* line 132, modules/_typography.scss */
+.content-text a.underline:hover {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
-/* line 143, modules/_typography.scss */
-.content-text a:active {
+/* line 142, modules/_typography.scss */
+.content-text a.underline:active {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
 
-/* line 157, modules/_typography.scss */
+/* line 156, modules/_typography.scss */
 h4.blog-sidebar-header {
   font: 3rem 'Open Sans', sans-serif;
   margin-bottom: 1.66667rem;
@@ -887,7 +887,7 @@ h4.blog-sidebar-header {
   color: #666666;
 }
 
-/* line 163, modules/_typography.scss */
+/* line 162, modules/_typography.scss */
 .blog-sidebar-text p, ul.blog-sidebar-text {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.5625rem;
@@ -895,7 +895,7 @@ h4.blog-sidebar-header {
   color: #666666;
 }
 
-/* line 169, modules/_typography.scss */
+/* line 168, modules/_typography.scss */
 h3.contact-header {
   font: 3rem 'Open Sans', sans-serif;
   margin-bottom: 1.66667rem;
@@ -903,7 +903,7 @@ h3.contact-header {
   color: #666666;
 }
 
-/* line 175, modules/_typography.scss */
+/* line 174, modules/_typography.scss */
 h3.project-header {
   font: 3rem 'Open Sans', sans-serif;
   margin-bottom: 0;
@@ -911,7 +911,7 @@ h3.project-header {
   color: white;
 }
 
-/* line 181, modules/_typography.scss */
+/* line 180, modules/_typography.scss */
 .footer-top-text p, ul.footer-top-text {
   font: 2rem 'Open Sans', sans-serif;
   margin-bottom: 1.25rem;
@@ -920,14 +920,14 @@ h3.project-header {
   color: #666666;
 }
 
-/* line 188, modules/_typography.scss */
+/* line 187, modules/_typography.scss */
 .code-preview {
   font-size: 12px;
   color: #666666;
   line-height: 16px;
 }
 
-/* line 194, modules/_typography.scss */
+/* line 193, modules/_typography.scss */
 p.footer-copyright {
   font: 1.3rem 'Open Sans', sans-serif;
   margin-bottom: 0;
@@ -1121,36 +1121,40 @@ p.footer-copyright {
 #header a:active {
   color: #00bd9c;
 }
+/* line 23, _header.scss */
+#header a.active {
+  color: #00bd9c;
+}
 
 @media (max-width: 1366px) {
-  /* line 28, _header.scss */
+  /* line 31, _header.scss */
   #header {
     padding: 0 4.172767203513909%;
   }
 }
-/* line 34, _header.scss */
+/* line 37, _header.scss */
 #logo-wrapper {
   float: left;
 }
-/* line 36, _header.scss */
+/* line 39, _header.scss */
 #logo-wrapper a {
   text-decoration: none;
 }
 
-/* line 41, _header.scss */
+/* line 44, _header.scss */
 #navigation-wrapper {
   float: right;
 }
-/* line 43, _header.scss */
+/* line 46, _header.scss */
 #navigation-wrapper li {
   display: inline;
   list-style: none;
 }
-/* line 46, _header.scss */
+/* line 49, _header.scss */
 #navigation-wrapper li + li {
   margin: 0 0 0 24px;
 }
-/* line 49, _header.scss */
+/* line 52, _header.scss */
 #navigation-wrapper li a {
   text-decoration: none;
   color: white;
@@ -1468,43 +1472,43 @@ p.footer-copyright {
 
 @media screen and (min--moz-device-pixel-ratio: 0) {
   /* another firefox bug :( */
-  /* line 53, _aboutme.scss */
+  /* line 54, _aboutme.scss */
   .aboutme .per_10 span {
     width: calc(10% - 20px );
   }
-  /* line 53, _aboutme.scss */
+  /* line 54, _aboutme.scss */
   .aboutme .per_20 span {
     width: calc(20% - 20px );
   }
-  /* line 53, _aboutme.scss */
+  /* line 54, _aboutme.scss */
   .aboutme .per_30 span {
     width: calc(30% - 20px );
   }
-  /* line 53, _aboutme.scss */
+  /* line 54, _aboutme.scss */
   .aboutme .per_40 span {
     width: calc(40% - 20px );
   }
-  /* line 53, _aboutme.scss */
+  /* line 54, _aboutme.scss */
   .aboutme .per_50 span {
     width: calc(50% - 20px );
   }
-  /* line 53, _aboutme.scss */
+  /* line 54, _aboutme.scss */
   .aboutme .per_60 span {
     width: calc(60% - 20px );
   }
-  /* line 53, _aboutme.scss */
+  /* line 54, _aboutme.scss */
   .aboutme .per_70 span {
     width: calc(70% - 20px );
   }
-  /* line 53, _aboutme.scss */
+  /* line 54, _aboutme.scss */
   .aboutme .per_80 span {
     width: calc(80% - 20px );
   }
-  /* line 53, _aboutme.scss */
+  /* line 54, _aboutme.scss */
   .aboutme .per_90 span {
     width: calc(90% - 20px );
   }
-  /* line 53, _aboutme.scss */
+  /* line 54, _aboutme.scss */
   .aboutme .per_100 span {
     width: calc(100% - 20px );
   }
