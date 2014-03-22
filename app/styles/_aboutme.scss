@@ -18,7 +18,6 @@
 
   [class*="per"] span {
     display: block;
-    width: 100%;
     height: 100%;
     background: #04b4dc;
     padding-left: 20px;
@@ -38,6 +37,24 @@
 
   .per_100 span {
     border-radius: 10px;
+  }
+
+}
+
+@media screen and (min--moz-device-pixel-ratio:0) {
+  /* another firefox bug :( */
+  // come back to this
+
+  .aboutme {
+
+    $percentage: 10;
+
+    @for $i from 1 through $percentage {
+      .per_#{$i * 10} span {
+        width: calc( #{((100 / $percentage) * $i) * 1%} - 20px );
+      }
+    }
+
   }
 
 }

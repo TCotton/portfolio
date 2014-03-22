@@ -14,7 +14,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 /**
  * Correct `block` display not defined in IE 8/9.
  */
-/* line 17, _reset.scss */
+/* line 18, _reset.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
   display: block;
 }
@@ -23,7 +23,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
  * 1. Correct `inline-block` display not defined in IE 8/9.
  * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
  */
-/* line 25, _reset.scss */
+/* line 27, _reset.scss */
 audio, canvas, progress, video {
   display: inline-block;
   /* 1 */
@@ -35,7 +35,7 @@ audio, canvas, progress, video {
  * Prevent modern browsers from displaying `audio` without controls.
  * Remove excess height in iOS 5 devices.
  */
-/* line 36, _reset.scss */
+/* line 39, _reset.scss */
 audio:not([controls]) {
   display: none;
   height: 0;
@@ -45,7 +45,7 @@ audio:not([controls]) {
  * Address `[hidden]` styling not present in IE 8/9.
  * Hide the `template` element in IE, Safari, and Firefox < 22.
  */
-/* line 45, _reset.scss */
+/* line 49, _reset.scss */
 [hidden], template {
   display: none;
 }
@@ -58,7 +58,7 @@ audio:not([controls]) {
  * 2. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
-/* line 58, _reset.scss */
+/* line 63, _reset.scss */
 html {
   font-family: sans-serif;
   /* 1 */
@@ -72,7 +72,7 @@ html {
 /**
  * Remove default margin.
  */
-/* line 71, _reset.scss */
+/* line 77, _reset.scss */
 body {
   margin: 0;
 }
@@ -83,7 +83,7 @@ body {
 /**
  * Remove the gray background color from active links in IE 10.
  */
-/* line 82, _reset.scss */
+/* line 89, _reset.scss */
 a {
   background: transparent;
 }
@@ -94,17 +94,17 @@ a {
 /**
  * Address `outline` inconsistency between Chrome and other browsers.
  */
-/* line 93, _reset.scss */
+/* line 101, _reset.scss */
 a:focus {
   outline: thin dotted #cccccc;
 }
 
-/* line 97, _reset.scss */
+/* line 105, _reset.scss */
 textarea:focus, input:focus {
   outline: thin dotted #cccccc;
 }
 
-/* line 101, _reset.scss */
+/* line 109, _reset.scss */
 :focus {
   outline: thin dotted #cccccc;
 }
@@ -112,7 +112,7 @@ textarea:focus, input:focus {
 /**
  * Address styling not present in IE 8/9, Safari 5, and Chrome.
  */
-/* line 108, _reset.scss */
+/* line 117, _reset.scss */
 abbr[title] {
   border-bottom: 1px dotted;
 }
@@ -120,7 +120,7 @@ abbr[title] {
 /**
  * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
  */
-/* line 115, _reset.scss */
+/* line 125, _reset.scss */
 b, strong {
   font-weight: bold;
 }
@@ -128,7 +128,7 @@ b, strong {
 /**
  * Address styling not present in Safari 5 and Chrome.
  */
-/* line 122, _reset.scss */
+/* line 133, _reset.scss */
 dfn {
   font-style: italic;
 }
@@ -136,7 +136,7 @@ dfn {
 /**
  * Address differences between Firefox and other browsers.
  */
-/* line 129, _reset.scss */
+/* line 141, _reset.scss */
 hr {
   -moz-box-sizing: content-box;
   box-sizing: content-box;
@@ -146,7 +146,7 @@ hr {
 /**
  * Address styling not present in IE 8/9.
  */
-/* line 138, _reset.scss */
+/* line 151, _reset.scss */
 mark {
   background: #ff0;
   color: #000;
@@ -155,7 +155,7 @@ mark {
 /**
  * Correct font family set oddly in Safari 5 and Chrome.
  */
-/* line 146, _reset.scss */
+/* line 160, _reset.scss */
 code, kbd, pre, samp {
   font-family: monospace, serif;
   font-size: 1em;
@@ -164,7 +164,7 @@ code, kbd, pre, samp {
 /**
  * Improve readability of pre-formatted text in all browsers.
  */
-/* line 154, _reset.scss */
+/* line 169, _reset.scss */
 pre {
   white-space: pre-wrap;
 }
@@ -172,7 +172,7 @@ pre {
 /**
  * Set consistent quote types.
  */
-/* line 161, _reset.scss */
+/* line 177, _reset.scss */
 q {
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
@@ -180,7 +180,7 @@ q {
 /**
  * Address inconsistent and variable font size in all browsers.
  */
-/* line 168, _reset.scss */
+/* line 185, _reset.scss */
 small {
   font-size: 80%;
 }
@@ -188,7 +188,7 @@ small {
 /**
  * Prevent `sub` and `sup` affecting `line-height` in all browsers.
  */
-/* line 175, _reset.scss */
+/* line 193, _reset.scss */
 sub, sup {
   font-size: 75%;
   line-height: 0;
@@ -196,12 +196,12 @@ sub, sup {
   vertical-align: baseline;
 }
 
-/* line 182, _reset.scss */
+/* line 200, _reset.scss */
 sup {
   top: -0.5em;
 }
 
-/* line 186, _reset.scss */
+/* line 204, _reset.scss */
 sub {
   bottom: -0.25em;
 }
@@ -212,7 +212,7 @@ sub {
 /**
  * Remove border when inside `a` element in IE 8/9.
  */
-/* line 197, _reset.scss */
+/* line 216, _reset.scss */
 img {
   border: 0;
 }
@@ -220,7 +220,7 @@ img {
 /**
  * Correct overflow displayed oddly in IE 9.
  */
-/* line 204, _reset.scss */
+/* line 224, _reset.scss */
 svg:not(:root) {
   overflow: hidden;
 }
@@ -231,7 +231,7 @@ svg:not(:root) {
 /**
  * Address margin not present in IE 8/9 and Safari 5.
  */
-/* line 215, _reset.scss */
+/* line 236, _reset.scss */
 figure {
   margin: 0;
 }
@@ -242,7 +242,7 @@ figure {
 /**
  * Define consistent border, margin, and padding.
  */
-/* line 226, _reset.scss */
+/* line 248, _reset.scss */
 fieldset {
   border: none;
   margin: 0;
@@ -253,7 +253,7 @@ fieldset {
  * 1. Correct `color` not being inherited in IE 8/9.
  * 2. Remove padding so people aren't caught out if they zero out fieldsets.
  */
-/* line 236, _reset.scss */
+/* line 259, _reset.scss */
 legend {
   border: 0;
   /* 1 */
@@ -267,7 +267,7 @@ legend {
  * 2. Correct font properties not being inherited.
  * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
  */
-/* line 247, _reset.scss */
+/* line 271, _reset.scss */
 button, input, optgroup, select, textarea {
   color: inherit;
   /* 1 */
@@ -281,7 +281,7 @@ button, input, optgroup, select, textarea {
  * Address Firefox 4+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
  */
-/* line 257, _reset.scss */
+/* line 282, _reset.scss */
 button, input {
   line-height: normal;
 }
@@ -292,7 +292,7 @@ button, input {
  * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
  * Correct `select` style inheritance in Firefox 4+ and Opera.
  */
-/* line 267, _reset.scss */
+/* line 293, _reset.scss */
 button, select {
   text-transform: none;
 }
@@ -300,7 +300,7 @@ button, select {
 /**
  * Address `overflow` set to `hidden` in IE 8/9/10.
  */
-/* line 275, _reset.scss */
+/* line 301, _reset.scss */
 button {
   overflow: visible;
 }
@@ -312,8 +312,9 @@ button {
  * 3. Improve usability and consistency of cursor style between image-type
  *    `input` and others.
  */
-/* line 286, _reset.scss */
-button, html input[type="button"], input[type="reset"], input[type="submit"] {
+/* line 314, _reset.scss */
+button, html input[type="button"],
+input[type="reset"], input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
   cursor: pointer;
@@ -323,7 +324,7 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 /**
  * Re-set default cursor for disabled elements.
  */
-/* line 294, _reset.scss */
+/* line 323, _reset.scss */
 button[disabled], html input[disabled] {
   cursor: default;
 }
@@ -332,7 +333,7 @@ button[disabled], html input[disabled] {
  * 1. Address box sizing set to `content-box` in IE 8/9/10.
  * 2. Remove excess padding in IE 8/9/10.
  */
-/* line 302, _reset.scss */
+/* line 332, _reset.scss */
 input[type="checkbox"], input[type="radio"] {
   box-sizing: border-box;
   /* 1 */
@@ -345,7 +346,7 @@ input[type="checkbox"], input[type="radio"] {
  * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
  *    (include `-moz` to future-proof).
  */
-/* line 312, _reset.scss */
+/* line 343, _reset.scss */
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -359,7 +360,7 @@ input[type="search"] {
  * Remove inner padding and search cancel button in Safari 5 and Chrome
  * on OS X.
  */
-/* line 324, _reset.scss */
+/* line 355, _reset.scss */
 input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
@@ -367,7 +368,7 @@ input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webki
 /**
  * Remove inner padding and border in Firefox 4+.
  */
-/* line 332, _reset.scss */
+/* line 363, _reset.scss */
 button::-moz-focus-inner, input::-moz-focus-inner {
   border: 0;
   padding: 0;
@@ -377,7 +378,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
  * Address Firefox 4+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
  */
-/* line 341, _reset.scss */
+/* line 373, _reset.scss */
 input {
   line-height: normal;
 }
@@ -386,7 +387,7 @@ input {
  * 1. Remove default vertical scrollbar in IE 8/9.
  * 2. Improve readability and alignment in all browsers.
  */
-/* line 349, _reset.scss */
+/* line 382, _reset.scss */
 textarea {
   overflow: auto;
   /* 1 */
@@ -400,19 +401,19 @@ textarea {
 /**
  * Remove most spacing between table cells.
  */
-/* line 361, _reset.scss */
+/* line 395, _reset.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 365, _reset.scss */
+/* line 400, _reset.scss */
 td, th {
   padding: 0;
 }
 
 /* disable / enable fort kerning and in all modern browers from ie9 upwards */
-/* line 370, _reset.scss */
+/* line 406, _reset.scss */
 body {
   /* only optimize text for headers due to performance issues */
   text-rendering: optimizeSpeed;
@@ -422,7 +423,7 @@ body {
   font-kerning: auto;
 }
 
-/* line 378, _reset.scss */
+/* line 415, _reset.scss */
 h1, h2, h3, h4, h5, h6, th, td, caption {
   font-weight: normal;
   /* just left it in the headers. Was making font less legible elsewhere */
@@ -436,25 +437,37 @@ h1, h2, h3, h4, h5, h6, th, td, caption {
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), not all, (min-resolution: 2dppx), (min-resolution: 192dpi) {
-  /* line 392, _reset.scss */
+  /* line 429, _reset.scss */
   p, li {
     letter-spacing: 0.01rem;
     word-spacing: 0.01rem;
   }
 }
 /* * { Box-sizing: Border-box } FTW: http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
-/* line 398, _reset.scss */
-*, *::before, *::after {
+/* line 436, _reset.scss */
+* {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 402, _reset.scss */
+/* line 441, _reset.scss */
+*::before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 446, _reset.scss */
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 451, _reset.scss */
 input[type=submit], input[type=button], select, a {
   cursor: pointer;
 }
 
-/* line 405, _reset.scss */
+/* line 455, _reset.scss */
 textarea {
   resize: vertical;
   overflow: auto;
@@ -466,42 +479,47 @@ textarea {
  * `font-size` values of the `input`, it causes the cursor style of the
  * decrement button to change from `default` to `text`.
  */
-/* line 417, _reset.scss */
+/* line 467, _reset.scss */
 input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
 /* Remove Search Box Buttons in WebKit: http://davidwalsh.name/remove-search-box-buttons-webkit */
-/* line 422, _reset.scss */
+/* line 472, _reset.scss */
 input[type='search']::-webkit-search-decoration, input[type='search']::-webkit-search-cancel-button, input[type='search']::-webkit-search-results-button, input[type='search']::-webkit-search-results-decoration {
   display: none;
 }
 
 /* make placeholder text disappear on focus */
-/* line 427, _reset.scss */
-::-webkit-input-placeholder:focus {
+/* line 477, _reset.scss */
+:focus::-webkit-input-placeholder {
   opacity: 0;
 }
 
-/* line 431, _reset.scss */
-:-moz-placeholder:focus {
+/* line 481, _reset.scss */
+:focus:-moz-placeholder {
   /* Firefox 18- */
   opacity: 0;
 }
 
-/* line 436, _reset.scss */
-::-moz-placeholder:focus {
+/* line 486, _reset.scss */
+:focus::-moz-placeholder {
   /* Firefox 19+ */
   opacity: 0;
 }
 
-/* line 441, _reset.scss */
-:-ms-input-placeholder:focus {
+/* line 491, _reset.scss */
+:focus:-ms-input-placeholder {
+  opacity: 0;
+}
+
+/* line 495, _reset.scss */
+:focus::input-placeholder {
   opacity: 0;
 }
 
 /* responsive images */
-/* line 446, _reset.scss */
+/* line 501, _reset.scss */
 img {
   max-width: 100%;
   height: auto;
@@ -510,36 +528,41 @@ img {
 }
 
 /* set colour links */
-/* line 454, _reset.scss */
+/* line 510, _reset.scss */
 a:link {
   color: blue;
 }
 
-/* line 458, _reset.scss */
+/* line 514, _reset.scss */
 a:visited {
   color: blue;
 }
 
-/* line 462, _reset.scss */
+/* line 518, _reset.scss */
 a:focus {
   color: blue;
 }
 
-/* line 466, _reset.scss */
+/* line 522, _reset.scss */
 a:hover {
   color: blue;
 }
 
-/* line 470, _reset.scss */
+/* line 526, _reset.scss */
 a:active {
   color: blue;
 }
 
 /* selected link */
+/* line 532, _reset.scss */
+.hide {
+  display: none;
+}
+
 /*
 * Hide only visually, but have it available for screenreaders: h5bp.com/v
 */
-/* line 479, _reset.scss */
+/* line 540, _reset.scss */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -552,7 +575,7 @@ a:active {
 }
 
 /* clearfix */
-/* line 490, _reset.scss */
+/* line 552, _reset.scss */
 .clearfix::before, .clearfix::after {
   content: "\0020";
   display: block;
@@ -560,7 +583,7 @@ a:active {
   overflow: hidden;
 }
 
-/* line 497, _reset.scss */
+/* line 559, _reset.scss */
 .clearfix::after {
   clear: both;
 }
@@ -966,7 +989,7 @@ p.footer-copyright {
 }
 
 /* line 44, modules/_buttons.scss */
-.button-contact, .button-contact {
+.button-contact {
   width: 310px;
   height: 56px;
   line-height: 54px;
@@ -975,14 +998,17 @@ p.footer-copyright {
   font-weight: 700;
   color: white;
   border-radius: 5px;
-  background: #666666;
+  background: #00bd9c;
+  clear: both;
+  float: left;
+  border: none;
 }
-/* line 53, modules/_buttons.scss */
-.button-contact:hover, .button-contact:active, .button-contact:hover, .button-contact:active {
+/* line 56, modules/_buttons.scss */
+.button-contact:hover, .button-contact:active {
   color: #e6e6e6;
 }
 
-/* line 58, modules/_buttons.scss */
+/* line 61, modules/_buttons.scss */
 .button-skills-aboutme {
   height: 58px;
   border-radius: 10px;
@@ -1017,35 +1043,54 @@ p.footer-copyright {
 
 /* line 22, modules/_forms.scss */
 .contact .input, .comments .input {
-  width: 543px;
+  width: 70%;
   height: 66px;
   padding: 10px;
-  border: #cccccc;
-  font: 3rem 'Open Sans', sans-serif;
-  margin-bottom: 1.66667rem;
+  border: 1px solid #cccccc;
+  font: 1.6rem 'Open Sans', sans-serif;
+  margin-bottom: 0;
   color: #666666;
   font-weight: 400;
+  clear: both;
+  float: left;
+  margin: 0 0 20px 0;
 }
-/* line 30, modules/_forms.scss */
+/* line 33, modules/_forms.scss */
 .contact .input:focus, .comments .input:focus {
   border: #666666;
 }
-/* line 35, modules/_forms.scss */
+/* line 38, modules/_forms.scss */
 .contact .textarea, .comments .textarea {
-  width: 822px;
+  width: 100%;
   height: 271px;
   padding: 10px;
-  border: #cccccc;
-  font: 3rem 'Open Sans', sans-serif;
-  margin-bottom: 1.66667rem;
+  border: 1px solid #cccccc;
+  font: 1.6rem 'Open Sans', sans-serif;
+  margin-bottom: 0;
   color: #666666;
   font-weight: 400;
+  clear: both;
+  float: left;
+  margin: 0 0 20px 0;
 }
-/* line 43, modules/_forms.scss */
+/* line 49, modules/_forms.scss */
 .contact .textarea:focus, .comments .textarea:focus {
   border: #666666;
 }
 
+@media screen and (min--moz-device-pixel-ratio: 0) {
+  /* another firefox bug :( */
+  /* line 62, modules/_forms.scss */
+  .contact .input, .comments .input {
+    width: calc(70% - 20px);
+    height: 56px;
+  }
+  /* line 67, modules/_forms.scss */
+  .contact .textarea, .comments .textarea {
+    width: calc(100% - 20px);
+    height: 261px;
+  }
+}
 /* line 1, _header.scss */
 #header {
   height: 84px;
@@ -1371,57 +1416,99 @@ p.footer-copyright {
 /* line 19, _aboutme.scss */
 .aboutme [class*="per"] span {
   display: block;
-  width: 100%;
   height: 100%;
   background: #04b4dc;
   padding-left: 20px;
   border-radius: 10px 0 0 10px;
 }
-/* line 34, _aboutme.scss */
+/* line 33, _aboutme.scss */
 .aboutme .per_10 span {
   width: 10%;
 }
-/* line 34, _aboutme.scss */
+/* line 33, _aboutme.scss */
 .aboutme .per_20 span {
   width: 20%;
 }
-/* line 34, _aboutme.scss */
+/* line 33, _aboutme.scss */
 .aboutme .per_30 span {
   width: 30%;
 }
-/* line 34, _aboutme.scss */
+/* line 33, _aboutme.scss */
 .aboutme .per_40 span {
   width: 40%;
 }
-/* line 34, _aboutme.scss */
+/* line 33, _aboutme.scss */
 .aboutme .per_50 span {
   width: 50%;
 }
-/* line 34, _aboutme.scss */
+/* line 33, _aboutme.scss */
 .aboutme .per_60 span {
   width: 60%;
 }
-/* line 34, _aboutme.scss */
+/* line 33, _aboutme.scss */
 .aboutme .per_70 span {
   width: 70%;
 }
-/* line 34, _aboutme.scss */
+/* line 33, _aboutme.scss */
 .aboutme .per_80 span {
   width: 80%;
 }
-/* line 34, _aboutme.scss */
+/* line 33, _aboutme.scss */
 .aboutme .per_90 span {
   width: 90%;
 }
-/* line 34, _aboutme.scss */
+/* line 33, _aboutme.scss */
 .aboutme .per_100 span {
   width: 100%;
 }
-/* line 39, _aboutme.scss */
+/* line 38, _aboutme.scss */
 .aboutme .per_100 span {
   border-radius: 10px;
 }
 
+@media screen and (min--moz-device-pixel-ratio: 0) {
+  /* another firefox bug :( */
+  /* line 53, _aboutme.scss */
+  .aboutme .per_10 span {
+    width: calc(10% - 20px );
+  }
+  /* line 53, _aboutme.scss */
+  .aboutme .per_20 span {
+    width: calc(20% - 20px );
+  }
+  /* line 53, _aboutme.scss */
+  .aboutme .per_30 span {
+    width: calc(30% - 20px );
+  }
+  /* line 53, _aboutme.scss */
+  .aboutme .per_40 span {
+    width: calc(40% - 20px );
+  }
+  /* line 53, _aboutme.scss */
+  .aboutme .per_50 span {
+    width: calc(50% - 20px );
+  }
+  /* line 53, _aboutme.scss */
+  .aboutme .per_60 span {
+    width: calc(60% - 20px );
+  }
+  /* line 53, _aboutme.scss */
+  .aboutme .per_70 span {
+    width: calc(70% - 20px );
+  }
+  /* line 53, _aboutme.scss */
+  .aboutme .per_80 span {
+    width: calc(80% - 20px );
+  }
+  /* line 53, _aboutme.scss */
+  .aboutme .per_90 span {
+    width: calc(90% - 20px );
+  }
+  /* line 53, _aboutme.scss */
+  .aboutme .per_100 span {
+    width: calc(100% - 20px );
+  }
+}
 /* line 3, _blog.scss */
 .blog a:link {
   color: #333333;
