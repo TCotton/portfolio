@@ -1209,50 +1209,51 @@ p.footer-copyright {
 
 /* line 3, _mywork.scss */
 .my-work [class*="my-work-box"] {
+  text-decoration: none;
   background-color: #04b4dc;
   background-repeat: no-repeat;
   background-position: left bottom;
   background-size: contain;
 }
-/* line 10, _mywork.scss */
+/* line 11, _mywork.scss */
 .my-work [class*="my-work-box"]:hover header h3 {
   opacity: 1;
   -ms-transform: translateY(0);
   -webkit-transform: translateY(0);
   transform: translateY(0);
 }
-/* line 17, _mywork.scss */
+/* line 18, _mywork.scss */
 .my-work .my-work-box-one {
   background-image: url("/images/blinkbox-work.png");
 }
-/* line 21, _mywork.scss */
+/* line 22, _mywork.scss */
 .my-work .my-work-box-two {
   background-image: url("/images/reuters-japan-work.png");
 }
-/* line 25, _mywork.scss */
+/* line 26, _mywork.scss */
 .my-work .my-work-box-three {
   background-image: url("/images/law-student-work.png");
 }
-/* line 29, _mywork.scss */
+/* line 30, _mywork.scss */
 .my-work .my-work-box-four {
   background-image: url("/images/kaplan-work.png");
 }
-/* line 33, _mywork.scss */
+/* line 34, _mywork.scss */
 .my-work .my-work-box-five {
   background-image: url("/images/newmans-clinic-work.png");
 }
-/* line 37, _mywork.scss */
+/* line 38, _mywork.scss */
 .my-work .my-work-box-six {
   visibility: hidden;
 }
-/* line 41, _mywork.scss */
+/* line 42, _mywork.scss */
 .my-work header {
   position: absolute;
   width: 100%;
   text-align: center;
   z-index: 1;
 }
-/* line 46, _mywork.scss */
+/* line 47, _mywork.scss */
 .my-work header h3 {
   -ms-transition: all 0.5s;
   -webkit-transition: all 0.5s;
@@ -1260,7 +1261,7 @@ p.footer-copyright {
   -ms-transform: translateY(30px);
   -webkit-transform: translateY(30px);
   transform: translateY(30px);
-  margin-top: 40px;
+  margin-top: 10%;
   opacity: 0;
 }
 

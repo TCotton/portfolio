@@ -1,6 +1,7 @@
 .my-work {
 
   [class*="my-work-box"] {
+    text-decoration: none;
     background-color: $imageBackground;
     background-repeat: no-repeat;
     background-position: left bottom;
@@ -46,7 +47,7 @@
     h3 {
       @include transitions(all 0.5s);
       @include transform(translateY(30px));
-      margin-top: 40px;
+      margin-top: 10%;
       opacity: 0;
     }
   }
