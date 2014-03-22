@@ -10,7 +10,7 @@ angular.module('portfolioApp', ['AppConstants', 'ngCookies', 'ngResource', 'ngSa
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/my-work', {
+      .when('/work-projects', {
         templateUrl: 'views/my_work.html'
       })
       .when('/side-projects', {

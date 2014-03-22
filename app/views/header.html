@@ -11,6 +11,7 @@
 
         <ul class="navigation">
             <li data-ng-repeat="item in navigation.items">
+                {{ navigation.items }}
                 <a data-ng-href="{{item.href}}" data-ng-bind="item.label"></a>
             </li>
         </ul>

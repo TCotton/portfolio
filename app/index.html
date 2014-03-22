@@ -1,13 +1,16 @@
 <!doctype html>
-<!--[if IE 9]>         <html class="ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+<!--[if IE 9]>
+<html class="ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <title></title>
     <meta name="description" content="The portfolio and blog of web developer Andy Walpole">
     <meta name="viewport" content="width=device-width">
     <meta name="fragment" content="!">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800'
+          rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Yellowtail' rel='stylesheet' type='text/css'>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css styles/vendor.css -->
@@ -24,11 +27,45 @@
 
 <div id="container">
 
-<div data-ng-include src="'views/header.html'"></div>
-<div id="content" data-ng-view></div>
-<div data-ng-include src="'views/footer.html'"></div>
+    <div id="header">
 
-</div><!-- end container -->
+        <div id="logo-wrapper">
+
+            <h1 class="logo"><a href="/#!/">Andy Walpole</a></h1>
+
+        </div>
+        <!-- end logo -->
+
+        <div id="navigation-wrapper">
+
+            <ul class="navigation">
+                <li>
+                    <a href="/#!/work-projects">Work Projects</a>
+                </li>
+                <li>
+                    <a href="/#!/side-projects">Side Projects</a>
+                </li>
+                <li>
+                    <a href="/#!/about-me">About Me</a>
+                </li>
+                <li>
+                    <a href="/#!/contact-me">Contact Me</a>
+                </li>
+                <li>
+                    <a href="/#!/blog/">Blog</a>
+                </li>
+            </ul>
+
+        </div>
+        <!-- end navigation -->
+
+    </div>
+    <!-- end header -->
+    <div id="content" data-ng-view></div>
+    <div data-ng-include src="'views/footer.html'"></div>
+
+</div>
+<!-- end container -->
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
 <script>
