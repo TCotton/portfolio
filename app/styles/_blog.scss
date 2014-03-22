@@ -34,15 +34,29 @@
 
 #pagination {
 
+
+  text-align: center;
+
   [class*="pag"] {
-    width: 56px;
-    height: 56px;
+    width: 55px;
+    height: 54px;
     display: block;
     float: left;
+    cursor: pointer;
+    background-size: contain;
+    margin: 0 14px 0 0;
+
+    &:last-of-type {
+      margin: 0;
+    }
+
   }
 
   [class*="pag"]:first-of-type {
-
+    background: $leftArrow;
+    &:hover {
+      background: $leftArrowHover;
+    }
   }
 
   $percentage: 10;
@@ -50,10 +64,18 @@
   @for $i from 1 through $percentage {
     .pag#{$i * 1} {
       //width: ((10 / $percentage) * $i);
+      background: url('/images/svg/solid#{((10 / $percentage) * $i)}.svg') no-repeat center center;
+      &:hover {
+        background: url('/images/svg/outline#{((10 / $percentage) * $i)}.svg') no-repeat center center;
+      }
     }
   }
 
   [class*="pag"]:last-of-type {
+    background: $rightArrow;
+    &:hover {
+      background: $rightArrowHover;
+    }
 
   }
 

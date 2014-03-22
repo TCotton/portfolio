@@ -1575,52 +1575,52 @@ p.footer-copyright {
       -webkit-transform: translate(2px, 1px) rotate(0deg);
     }
 
-    /* line 129, _aboutme.scss */
+    /* line 131, _aboutme.scss */
     10% {
       -webkit-transform: translate(-1px, -2px) rotate(-1deg);
     }
 
-    /* line 130, _aboutme.scss */
+    /* line 134, _aboutme.scss */
     20% {
       -webkit-transform: translate(-3px, 0px) rotate(1deg);
     }
 
-    /* line 131, _aboutme.scss */
+    /* line 137, _aboutme.scss */
     30% {
       -webkit-transform: translate(0px, 2px) rotate(0deg);
     }
 
-    /* line 132, _aboutme.scss */
+    /* line 140, _aboutme.scss */
     40% {
       -webkit-transform: translate(1px, -1px) rotate(1deg);
     }
 
-    /* line 133, _aboutme.scss */
+    /* line 143, _aboutme.scss */
     50% {
       -webkit-transform: translate(-1px, 2px) rotate(-1deg);
     }
 
-    /* line 134, _aboutme.scss */
+    /* line 146, _aboutme.scss */
     60% {
       -webkit-transform: translate(-3px, 1px) rotate(0deg);
     }
 
-    /* line 135, _aboutme.scss */
+    /* line 149, _aboutme.scss */
     70% {
       -webkit-transform: translate(2px, 1px) rotate(-1deg);
     }
 
-    /* line 136, _aboutme.scss */
+    /* line 152, _aboutme.scss */
     80% {
       -webkit-transform: translate(-1px, -1px) rotate(1deg);
     }
 
-    /* line 137, _aboutme.scss */
+    /* line 155, _aboutme.scss */
     90% {
       -webkit-transform: translate(2px, 2px) rotate(0deg);
     }
 
-    /* line 138, _aboutme.scss */
+    /* line 158, _aboutme.scss */
     100% {
       -webkit-transform: translate(1px, -2px) rotate(-1deg);
     }
@@ -1628,45 +1628,45 @@ p.footer-copyright {
 }
 @media screen and (min--moz-device-pixel-ratio: 0) {
   /* another firefox bug :( */
-  /* line 153, _aboutme.scss */
+  /* line 174, _aboutme.scss */
   .aboutme .per_10 span {
-    width: calc(10% - 20px );
+    width: calc(10% - 20px);
   }
-  /* line 153, _aboutme.scss */
+  /* line 174, _aboutme.scss */
   .aboutme .per_20 span {
-    width: calc(20% - 20px );
+    width: calc(20% - 20px);
   }
-  /* line 153, _aboutme.scss */
+  /* line 174, _aboutme.scss */
   .aboutme .per_30 span {
-    width: calc(30% - 20px );
+    width: calc(30% - 20px);
   }
-  /* line 153, _aboutme.scss */
+  /* line 174, _aboutme.scss */
   .aboutme .per_40 span {
-    width: calc(40% - 20px );
+    width: calc(40% - 20px);
   }
-  /* line 153, _aboutme.scss */
+  /* line 174, _aboutme.scss */
   .aboutme .per_50 span {
-    width: calc(50% - 20px );
+    width: calc(50% - 20px);
   }
-  /* line 153, _aboutme.scss */
+  /* line 174, _aboutme.scss */
   .aboutme .per_60 span {
-    width: calc(60% - 20px );
+    width: calc(60% - 20px);
   }
-  /* line 153, _aboutme.scss */
+  /* line 174, _aboutme.scss */
   .aboutme .per_70 span {
-    width: calc(70% - 20px );
+    width: calc(70% - 20px);
   }
-  /* line 153, _aboutme.scss */
+  /* line 174, _aboutme.scss */
   .aboutme .per_80 span {
-    width: calc(80% - 20px );
+    width: calc(80% - 20px);
   }
-  /* line 153, _aboutme.scss */
+  /* line 174, _aboutme.scss */
   .aboutme .per_90 span {
-    width: calc(90% - 20px );
+    width: calc(90% - 20px);
   }
-  /* line 153, _aboutme.scss */
+  /* line 174, _aboutme.scss */
   .aboutme .per_100 span {
-    width: calc(100% - 20px );
+    width: calc(100% - 20px);
   }
 }
 /* end for firefox hack */
@@ -1696,12 +1696,119 @@ p.footer-copyright {
   display: inline-block;
 }
 
-/* line 37, _blog.scss */
+/* line 35, _blog.scss */
+#pagination {
+  text-align: center;
+}
+/* line 40, _blog.scss */
 #pagination [class*="pag"] {
-  width: 56px;
-  height: 56px;
+  width: 55px;
+  height: 54px;
   display: block;
   float: left;
+  cursor: pointer;
+  background-size: contain;
+  margin: 0 14px 0 0;
+}
+/* line 49, _blog.scss */
+#pagination [class*="pag"]:last-of-type {
+  margin: 0;
+}
+/* line 55, _blog.scss */
+#pagination [class*="pag"]:first-of-type {
+  background: url("/images/svg/left-arrow.svg") no-repeat center center;
+}
+/* line 57, _blog.scss */
+#pagination [class*="pag"]:first-of-type:hover {
+  background: url("/images/svg/left-arrow-hover.svg") no-repeat center center;
+}
+/* line 65, _blog.scss */
+#pagination .pag1 {
+  background: url("/images/svg/solid1.svg") no-repeat center center;
+}
+/* line 68, _blog.scss */
+#pagination .pag1:hover {
+  background: url("/images/svg/outline1.svg") no-repeat center center;
+}
+/* line 65, _blog.scss */
+#pagination .pag2 {
+  background: url("/images/svg/solid2.svg") no-repeat center center;
+}
+/* line 68, _blog.scss */
+#pagination .pag2:hover {
+  background: url("/images/svg/outline2.svg") no-repeat center center;
+}
+/* line 65, _blog.scss */
+#pagination .pag3 {
+  background: url("/images/svg/solid3.svg") no-repeat center center;
+}
+/* line 68, _blog.scss */
+#pagination .pag3:hover {
+  background: url("/images/svg/outline3.svg") no-repeat center center;
+}
+/* line 65, _blog.scss */
+#pagination .pag4 {
+  background: url("/images/svg/solid4.svg") no-repeat center center;
+}
+/* line 68, _blog.scss */
+#pagination .pag4:hover {
+  background: url("/images/svg/outline4.svg") no-repeat center center;
+}
+/* line 65, _blog.scss */
+#pagination .pag5 {
+  background: url("/images/svg/solid5.svg") no-repeat center center;
+}
+/* line 68, _blog.scss */
+#pagination .pag5:hover {
+  background: url("/images/svg/outline5.svg") no-repeat center center;
+}
+/* line 65, _blog.scss */
+#pagination .pag6 {
+  background: url("/images/svg/solid6.svg") no-repeat center center;
+}
+/* line 68, _blog.scss */
+#pagination .pag6:hover {
+  background: url("/images/svg/outline6.svg") no-repeat center center;
+}
+/* line 65, _blog.scss */
+#pagination .pag7 {
+  background: url("/images/svg/solid7.svg") no-repeat center center;
+}
+/* line 68, _blog.scss */
+#pagination .pag7:hover {
+  background: url("/images/svg/outline7.svg") no-repeat center center;
+}
+/* line 65, _blog.scss */
+#pagination .pag8 {
+  background: url("/images/svg/solid8.svg") no-repeat center center;
+}
+/* line 68, _blog.scss */
+#pagination .pag8:hover {
+  background: url("/images/svg/outline8.svg") no-repeat center center;
+}
+/* line 65, _blog.scss */
+#pagination .pag9 {
+  background: url("/images/svg/solid9.svg") no-repeat center center;
+}
+/* line 68, _blog.scss */
+#pagination .pag9:hover {
+  background: url("/images/svg/outline9.svg") no-repeat center center;
+}
+/* line 65, _blog.scss */
+#pagination .pag10 {
+  background: url("/images/svg/solid10.svg") no-repeat center center;
+}
+/* line 68, _blog.scss */
+#pagination .pag10:hover {
+  background: url("/images/svg/outline10.svg") no-repeat center center;
+}
+/* line 74, _blog.scss */
+#pagination [class*="pag"]:last-of-type {
+  background: url("/images/svg/right-arrow.svg") no-repeat center center;
+}
+/* line 76, _blog.scss */
+#pagination [class*="pag"]:last-of-type:hover {
+  background: url("/images/svg/right-arrow-hover.svg") no-repeat center center;
 }
 
 /* line 1, _footer.scss */
