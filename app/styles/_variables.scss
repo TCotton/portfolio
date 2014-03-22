@@ -3,8 +3,6 @@ $baseFontSize: 62.5%;
 $baseFontFamily: unquote("'Open Sans', sans-serif");
 $secondaryFontFamily: unquote("'Yellowtail', cursive");
 
-$tableLineHeight: 10;
-
 // colors
 $textOne: #04b3da;
 $textOneHover: #00bd9c;
@@ -47,3 +45,7 @@ $workTwo: url('/images/reuters-japan-work.png');
 $workThree: url('/images/law-student-work.png');
 $workFour: url('/images/kaplan-work.png');
 $workFive: url('/images/newmans-clinic-work.png');
+
+$sideOne: url('/images/lightning-sideproject.png');
+$sideTwo: url('/images/pennybooks-sideproject.png');
+$sideThree: url('/images/twt-twt-sideproject.png');

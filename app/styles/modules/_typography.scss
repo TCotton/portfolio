@@ -63,13 +63,16 @@ h3.blog-title {
 @include blogText('li') {
   font-weight: 400;
 }
+
 @include blogText('p') {
   font-weight: 400;
 }
+
 @include blogText('p.date') {
   font-weight: 400;
   font-style: italic;
 }
+
 @include blogText('p.read-more') {
   font-weight: 700;
 }
@@ -80,7 +83,7 @@ h4.blog-sidebar-header {
   color: $textTwo;
 }
 
-.blog-sidebar-text p, ul.blog-sidebar-text  {
+.blog-sidebar-text p, ul.blog-sidebar-text {
   @include font-calculator($baseFontFamily, 16px);
   font-weight: 600;
   color: $textTwo;
@@ -92,13 +95,13 @@ h3.contact-header {
   color: $textTwo;
 }
 
-h3.work-box-header {
+h3.project-header {
   @include font-calculator($baseFontFamily, 30px, 0);
   font-weight: 400;
   color: white;
 }
 
-.footer-top-text p, ul.footer-top-text{
+.footer-top-text p, ul.footer-top-text {
   @include font-calculator($baseFontFamily, 20px);
   font-weight: 300;
   font-style: italic;
@@ -115,5 +118,5 @@ p.footer-copyright {
   @include font-calculator($baseFontFamily, 13px, 0);
   line-height: $bottomFooterHeight;
   color: white;
-  text-transform:capitalize;
+  text-transform: capitalize;
 }

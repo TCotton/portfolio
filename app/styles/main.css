@@ -570,16 +570,10 @@ html {
   font: 62.5% / 2 'Open Sans', sans-serif;
 }
 
-@media (max-width: 767px) {
-  /* line 12, main.scss */
+@media (max-width: 960px) {
+  /* line 14, main.scss */
   html {
-    font: 62.5% / 10 'Open Sans', sans-serif;
-  }
-}
-@media (max-width: 767px) {
-  /* line 20, main.scss */
-  html {
-    font: 62.5% / 10 'Open Sans', sans-serif;
+    font: 56.3% / 2 'Open Sans', sans-serif;
   }
 }
 /* line 1, modules/_grid.scss */
@@ -623,7 +617,7 @@ html {
 
 /* My work */
 /* line 36, modules/_grid.scss */
-[class*="my-work-box"] {
+[class*="project-box"] {
   width: -webkit-calc((100% / 3) - (66px / 3));
   width: calc((100% / 3) - (66px / 3));
   height: 285px;
@@ -639,7 +633,7 @@ html {
   transition: all 0.5s;
 }
 /* line 48, modules/_grid.scss */
-[class*="my-work-box"]::before {
+[class*="project-box"]::before {
   content: '';
   position: absolute;
   top: 4px;
@@ -656,7 +650,7 @@ html {
   transition: opacity 0.5s;
 }
 /* line 61, modules/_grid.scss */
-[class*="my-work-box"]::after {
+[class*="project-box"]::after {
   content: '';
   margin: auto;
   position: absolute;
@@ -674,74 +668,69 @@ html {
   transition: opacity 0.5s;
 }
 /* line 74, modules/_grid.scss */
-[class*="my-work-box"]:hover::before {
+[class*="project-box"]:hover::before {
   opacity: 0.7;
 }
 /* line 78, modules/_grid.scss */
-[class*="my-work-box"]:hover::after {
+[class*="project-box"]:hover::after {
   opacity: 1;
 }
 
 @media screen and (min--moz-device-pixel-ratio: 0) {
   /* temp Firefox hack until I can work out a solution */
   /* line 86, modules/_grid.scss */
-  [class*="my-work-box"] {
+  [class*="project-box"] {
     width: -webkit-calc((100% / 3) - (66px / 2));
     width: calc((100% / 3) - (66px / 2));
   }
 }
 /* line 92, modules/_grid.scss */
-[class*="my-work-box"]:nth-of-type(3n) {
+[class*="project-box"]:nth-of-type(3n) {
   margin-right: 0;
   background-clip: content-box;
 }
 
-/* line 97, modules/_grid.scss */
-.my-work-box-one, .my-work-box-two, .my-work-box-three {
-  margin-bottom: 33px;
-}
-
 @media (max-width: 1366px) {
-  /* line 103, modules/_grid.scss */
+  /* line 99, modules/_grid.scss */
   #container {
     width: 99%;
   }
 
-  /* line 107, modules/_grid.scss */
+  /* line 103, modules/_grid.scss */
   #left-large {
     width: 63.689604685212295%;
     margin: 0 4.172767203513909% 0 0;
   }
 
-  /* line 112, modules/_grid.scss */
+  /* line 108, modules/_grid.scss */
   #left-small {
     width: 27.96486090775988%;
   }
 
-  /* line 116, modules/_grid.scss */
+  /* line 112, modules/_grid.scss */
   #right-large {
     width: 63.689604685212295%;
     margin: 0 4.172767203513909% 0 0;
   }
 
-  /* line 121, modules/_grid.scss */
+  /* line 117, modules/_grid.scss */
   #right-small {
     width: 27.96486090775988%;
   }
 
-  /* line 125, modules/_grid.scss */
+  /* line 121, modules/_grid.scss */
   #main-content {
     padding: 57px 4.172767203513909%;
   }
 
-  /* line 129, modules/_grid.scss */
-  [class*="my-work-box"] {
+  /* line 125, modules/_grid.scss */
+  [class*="project-box"] {
     height: 230px;
   }
 }
 /* line 11, modules/_typography.scss */
 h1.logo {
-  font: 3.5rem 'Yellowtail', cursive;
+  font: 3.88889rem 'Yellowtail', cursive;
   margin-bottom: 0;
   line-height: 84px;
   color: white;
@@ -749,7 +738,7 @@ h1.logo {
 
 /* line 17, modules/_typography.scss */
 ul.navigation {
-  font: 1.5rem 'Open Sans', sans-serif;
+  font: 1.66667rem 'Open Sans', sans-serif;
   margin-bottom: 0;
   text-transform: uppercase;
   line-height: 84px;
@@ -758,40 +747,40 @@ ul.navigation {
 
 /* line 24, modules/_typography.scss */
 h2.page-top-title {
-  font: 4rem 'Open Sans', sans-serif;
-  margin-bottom: 0.5rem;
+  font: 4.44444rem 'Open Sans', sans-serif;
+  margin-bottom: 0.45rem;
   font-weight: 300;
   color: white;
 }
 
 /* line 30, modules/_typography.scss */
 p.page-top-text {
-  font: 1.8rem 'Open Sans', sans-serif;
-  margin-bottom: 1.11111rem;
+  font: 2rem 'Open Sans', sans-serif;
+  margin-bottom: 1rem;
   font-weight: 300;
   color: white;
 }
 
 /* line 36, modules/_typography.scss */
 .front-page-bottom-header {
-  font: 8rem 'Open Sans', sans-serif;
-  margin-bottom: 0.25rem;
+  font: 8.88889rem 'Open Sans', sans-serif;
+  margin-bottom: 0.225rem;
   font-weight: 300;
   color: white;
 }
 
 /* line 42, modules/_typography.scss */
 .front-page-bottom-text {
-  font: 1.3rem 'Open Sans', sans-serif;
-  margin-bottom: 1.53846rem;
+  font: 1.44444rem 'Open Sans', sans-serif;
+  margin-bottom: 1.38462rem;
   font-weight: 600;
   color: white;
 }
 
 /* line 48, modules/_typography.scss */
 h3.blog-title {
-  font: 4rem 'Open Sans', sans-serif;
-  margin-bottom: 0.5rem;
+  font: 4.44444rem 'Open Sans', sans-serif;
+  margin-bottom: 0.45rem;
   font-weight: 300;
   color: #666666;
 }
@@ -799,24 +788,24 @@ h3.blog-title {
 /* little mixin for standard blog css attributes and values */
 /* line 56, modules/_typography.scss */
 .blog-text li {
-  font: 1.6rem 'Open Sans', sans-serif;
-  margin-bottom: 1.25rem;
+  font: 1.77778rem 'Open Sans', sans-serif;
+  margin-bottom: 1.125rem;
   color: #666666;
   font-weight: 400;
 }
 
 /* line 56, modules/_typography.scss */
 .blog-text p {
-  font: 1.6rem 'Open Sans', sans-serif;
-  margin-bottom: 1.25rem;
+  font: 1.77778rem 'Open Sans', sans-serif;
+  margin-bottom: 1.125rem;
   color: #666666;
   font-weight: 400;
 }
 
 /* line 56, modules/_typography.scss */
 .blog-text p.date {
-  font: 1.6rem 'Open Sans', sans-serif;
-  margin-bottom: 1.25rem;
+  font: 1.77778rem 'Open Sans', sans-serif;
+  margin-bottom: 1.125rem;
   color: #666666;
   font-weight: 400;
   font-style: italic;
@@ -824,63 +813,63 @@ h3.blog-title {
 
 /* line 56, modules/_typography.scss */
 .blog-text p.read-more {
-  font: 1.6rem 'Open Sans', sans-serif;
-  margin-bottom: 1.25rem;
+  font: 1.77778rem 'Open Sans', sans-serif;
+  margin-bottom: 1.125rem;
   color: #666666;
   font-weight: 700;
 }
 
-/* line 77, modules/_typography.scss */
+/* line 80, modules/_typography.scss */
 h4.blog-sidebar-header {
-  font: 3rem 'Open Sans', sans-serif;
-  margin-bottom: 0.66667rem;
+  font: 3.33333rem 'Open Sans', sans-serif;
+  margin-bottom: 0.6rem;
   font-weight: 300;
   color: #666666;
 }
 
-/* line 83, modules/_typography.scss */
+/* line 86, modules/_typography.scss */
 .blog-sidebar-text p, ul.blog-sidebar-text {
-  font: 1.6rem 'Open Sans', sans-serif;
-  margin-bottom: 1.25rem;
+  font: 1.77778rem 'Open Sans', sans-serif;
+  margin-bottom: 1.125rem;
   font-weight: 600;
   color: #666666;
 }
 
-/* line 89, modules/_typography.scss */
+/* line 92, modules/_typography.scss */
 h3.contact-header {
-  font: 3rem 'Open Sans', sans-serif;
-  margin-bottom: 0.66667rem;
+  font: 3.33333rem 'Open Sans', sans-serif;
+  margin-bottom: 0.6rem;
   font-weight: 300;
   color: #666666;
 }
 
-/* line 95, modules/_typography.scss */
-h3.work-box-header {
-  font: 3rem 'Open Sans', sans-serif;
+/* line 98, modules/_typography.scss */
+h3.project-header {
+  font: 3.33333rem 'Open Sans', sans-serif;
   margin-bottom: 0;
   font-weight: 400;
   color: white;
 }
 
-/* line 101, modules/_typography.scss */
+/* line 104, modules/_typography.scss */
 .footer-top-text p, ul.footer-top-text {
-  font: 2rem 'Open Sans', sans-serif;
-  margin-bottom: 1rem;
+  font: 2.22222rem 'Open Sans', sans-serif;
+  margin-bottom: 0.9rem;
   font-weight: 300;
   font-style: italic;
   color: #666666;
 }
 
-/* line 108, modules/_typography.scss */
+/* line 111, modules/_typography.scss */
 .code-preview {
   font-size: 12px;
   color: #666666;
   line-height: 16px;
 }
 
-/* line 114, modules/_typography.scss */
+/* line 117, modules/_typography.scss */
 p.footer-copyright {
-  font: 1.3rem 'Open Sans', sans-serif;
+  font: 1.44444rem 'Open Sans', sans-serif;
   margin-bottom: 0;
   line-height: 94px;
   color: white;
@@ -890,7 +879,7 @@ p.footer-copyright {
 /* line 1, modules/_buttons.scss */
 .button-front-one {
   background: white;
-  font: 1.6rem 'Open Sans', sans-serif;
+  font: 1.77778rem 'Open Sans', sans-serif;
   margin-bottom: 0;
   font-weight: 700;
   color: #04b3da;
@@ -910,7 +899,7 @@ p.footer-copyright {
   width: 100%;
   height: 56px;
   line-height: 54px;
-  font: 1.6rem 'Open Sans', sans-serif;
+  font: 1.77778rem 'Open Sans', sans-serif;
   margin-bottom: 0;
   color: #666666;
   font-weight: 400;
@@ -927,7 +916,7 @@ p.footer-copyright {
   width: 100%;
   height: 56px;
   line-height: 54px;
-  font: 1.6rem 'Open Sans', sans-serif;
+  font: 1.77778rem 'Open Sans', sans-serif;
   margin-bottom: 0;
   color: white;
   font-weight: 400;
@@ -944,7 +933,7 @@ p.footer-copyright {
   width: 310px;
   height: 56px;
   line-height: 54px;
-  font: 1.6rem 'Open Sans', sans-serif;
+  font: 1.77778rem 'Open Sans', sans-serif;
   margin-bottom: 0;
   font-weight: 700;
   color: white;
@@ -984,8 +973,8 @@ p.footer-copyright {
   height: 66px;
   padding: 10px;
   border: #cccccc;
-  font: 3rem 'Open Sans', sans-serif;
-  margin-bottom: 0.66667rem;
+  font: 3.33333rem 'Open Sans', sans-serif;
+  margin-bottom: 0.6rem;
   color: #666666;
   font-weight: 400;
 }
@@ -999,8 +988,8 @@ p.footer-copyright {
   height: 271px;
   padding: 10px;
   border: #cccccc;
-  font: 3rem 'Open Sans', sans-serif;
-  margin-bottom: 0.66667rem;
+  font: 3.33333rem 'Open Sans', sans-serif;
+  margin-bottom: 0.6rem;
   color: #666666;
   font-weight: 400;
 }
@@ -1208,7 +1197,7 @@ p.footer-copyright {
 }
 
 /* line 3, _mywork.scss */
-.my-work [class*="my-work-box"] {
+.my-work [class*="project-box"] {
   text-decoration: none;
   background-color: #04b4dc;
   background-repeat: no-repeat;
@@ -1216,45 +1205,95 @@ p.footer-copyright {
   background-size: contain;
 }
 /* line 11, _mywork.scss */
-.my-work [class*="my-work-box"]:hover header h3 {
+.my-work [class*="project-box"]:hover header h3 {
   opacity: 1;
   -ms-transform: translateY(0);
   -webkit-transform: translateY(0);
   transform: translateY(0);
 }
 /* line 18, _mywork.scss */
-.my-work .my-work-box-one {
+.my-work .project-box-one {
   background-image: url("/images/blinkbox-work.png");
 }
 /* line 22, _mywork.scss */
-.my-work .my-work-box-two {
+.my-work .project-box-two {
   background-image: url("/images/reuters-japan-work.png");
 }
 /* line 26, _mywork.scss */
-.my-work .my-work-box-three {
+.my-work .project-box-three {
   background-image: url("/images/law-student-work.png");
 }
 /* line 30, _mywork.scss */
-.my-work .my-work-box-four {
+.my-work .project-box-four {
   background-image: url("/images/kaplan-work.png");
 }
 /* line 34, _mywork.scss */
-.my-work .my-work-box-five {
+.my-work .project-box-five {
   background-image: url("/images/newmans-clinic-work.png");
 }
 /* line 38, _mywork.scss */
-.my-work .my-work-box-six {
+.my-work .project-box-six {
   visibility: hidden;
 }
 /* line 42, _mywork.scss */
+.my-work .project-box-one, .my-work .project-box-two, .my-work .project-box-three {
+  margin-bottom: 33px;
+}
+/* line 46, _mywork.scss */
 .my-work header {
   position: absolute;
   width: 100%;
   text-align: center;
   z-index: 1;
 }
-/* line 47, _mywork.scss */
+/* line 51, _mywork.scss */
 .my-work header h3 {
+  -ms-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -ms-transform: translateY(30px);
+  -webkit-transform: translateY(30px);
+  transform: translateY(30px);
+  margin-top: 10%;
+  opacity: 0;
+}
+
+/* line 3, _sideprojects.scss */
+.side-projects [class*="project-box"] {
+  text-decoration: none;
+  background-color: #04b4dc;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: contain;
+}
+/* line 11, _sideprojects.scss */
+.side-projects [class*="project-box"]:hover header h3 {
+  opacity: 1;
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+/* line 18, _sideprojects.scss */
+.side-projects .project-box-one {
+  background-image: url("/images/lightning-sideproject.png");
+}
+/* line 22, _sideprojects.scss */
+.side-projects .project-box-two {
+  background-image: url("/images/pennybooks-sideproject.png");
+}
+/* line 26, _sideprojects.scss */
+.side-projects .project-box-three {
+  background-image: url("/images/twt-twt-sideproject.png");
+}
+/* line 30, _sideprojects.scss */
+.side-projects header {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  z-index: 1;
+}
+/* line 35, _sideprojects.scss */
+.side-projects header h3 {
   -ms-transition: all 0.5s;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;

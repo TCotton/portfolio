@@ -7,21 +7,16 @@ html {
   font: #{$baseFontSize} / #{$baseLineHeight} $baseFontFamily;
 }
 
-@include breakpoint(tablet) {
+@include breakpoint("standard") {
+
+  $baseFontSize: 56.3%;
 
   html {
-    font: #{$baseFontSize} / #{$tableLineHeight} $baseFontFamily;
+    font: #{$baseFontSize} / #{$baseLineHeight} $baseFontFamily;
   }
 
 }
 
-@include breakpoint(tablet) {
-
-  html {
-    font: #{$baseFontSize} / #{$tableLineHeight} $baseFontFamily;
-  }
-
-}
 
 @import "modules/svg";
 @import "modules/grid";
@@ -35,5 +30,6 @@ html {
 @import "homepage";
 @import "banner";
 @import "mywork";
+@import "sideprojects";
 @import "blog";
 @import "footer";

@@ -78,19 +78,19 @@
 // media queries mixin
 @mixin breakpoint($name) {
   @if $name == "wide" {
-    @media (max-width: 1366px) {
+    @media (max-width: $media_breakpoint_wide) {
       @content;
     }
   } @else if $name == "standard" {
-    @media (max-width: 960px) {
+    @media (max-width: $media_breakpoint_desktop) {
       @content;
     }
   } @else if $name == "tablet" {
-    @media (max-width: 767px) {
+    @media (max-width: $media_breakpoint_tablet) {
       @content;
     }
   } @else if $name == "mobile" {
-    @media (max-width: 500px) {
+    @media (max-width: $media_breakpoint_mobile) {
       @content;
     }
   } @else if $name == "ipad" {

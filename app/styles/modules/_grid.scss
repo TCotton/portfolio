@@ -33,7 +33,7 @@
 
 /* My work */
 
-[class*="my-work-box"] {
+[class*="project-box"] {
   @include calc('width', '(100% / 3) - (66px / 3)');
   height: 285px;
   float: left;
@@ -83,19 +83,15 @@
 
 @media screen and (min--moz-device-pixel-ratio:0) {
   /* temp Firefox hack until I can work out a solution */
-  [class*="my-work-box"] {
+  [class*="project-box"] {
     @include calc('width', '(100% / 3) - (66px / 2)');
   }
 }
 
 
-[class*="my-work-box"]:nth-of-type(3n) {
+[class*="project-box"]:nth-of-type(3n) {
   margin-right: 0;
   background-clip: content-box;
-}
-
-.my-work-box-one, .my-work-box-two, .my-work-box-three {
-  margin-bottom: 33px;
 }
 
 @include breakpoint(wide) {
@@ -126,8 +122,12 @@
     padding: 57px 4.172767203513909%;
   }
 
-  [class*="my-work-box"] {
+  [class*="project-box"] {
     height: 230px;
   }
+
+}
+
+@include breakpoint("standard") {
 
 }

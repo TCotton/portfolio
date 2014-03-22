@@ -1,4 +1,4 @@
-.my-work {
+.side-projects {
 
   [class*="project-box"] {
     text-decoration: none;
@@ -16,31 +16,15 @@
   }
 
   .project-box-one {
-    background-image: $workOne;
+    background-image: $sideOne;
   }
 
   .project-box-two {
-    background-image: $workTwo;
+    background-image: $sideTwo;
   }
 
   .project-box-three {
-    background-image: $workThree;
-  }
-
-  .project-box-four {
-    background-image: $workFour;
-  }
-
-  .project-box-five {
-    background-image: $workFive;
-  }
-
-  .project-box-six {
-    visibility: hidden;
-  }
-
-  .project-box-one, .project-box-two, .project-box-three {
-    margin-bottom: 33px;
+    background-image: $sideThree;
   }
 
   header {
