@@ -77,6 +77,82 @@ p.page-top-text {
   font-weight: 700;
 }
 
+.blog #blog-content a:hover:after {
+  content: "(Link: " attr(href) ")";
+  color: #1d7a94;
+  background: #fff;
+  margin: 0 5px;
+  text-decoration: underline;
+}
+
+
+.content-text {
+
+  a {
+    text-decoration: none;
+    background-image: linear-gradient(to top,
+      rgba(0,0,0,0) 11%,
+      rgba(0,0,0,.3) 11%,
+      rgba(0,0,0,.3) 16%,
+      rgba(0,0,0,0) 16%
+    );
+    position: relative;
+
+    // displays pop up of link attribute if it is pointing to an external site
+    &[rel="external"]::after {
+      content: " " attr(href) " ";
+      position: absolute;
+      left: 20%;
+      bottom: 100%;
+      color: white;
+      background: $textTwo;
+      padding: 1px 5px;
+      opacity: 0;
+      @include transitions(opacity 0.5s);
+    }
+    &[rel="external"]:hover::after {
+      opacity: 1;
+    }
+
+    &:link {
+      color: $textTwo;
+    }
+    &:visited {
+      color: lighten($textTwo, 10%);
+    }
+    &:focus {
+      color: $textTwo;
+      background-image: linear-gradient(to top,
+        rgba(0,0,0,0) 11%,
+        rgba(0,0,0,.1) 11%,
+        rgba(0,0,0,.1) 16%,
+        rgba(0,0,0,0) 16%
+      );
+    }
+    &:hover {
+      color: $textTwo;
+      background-image: linear-gradient(to top,
+        rgba(0,0,0,0) 11%,
+        rgba(0,0,0,.1) 11%,
+        rgba(0,0,0,.1) 16%,
+        rgba(0,0,0,0) 16%
+      );
+
+    }
+    &:active {
+      color: $textTwo;
+      background-image: linear-gradient(to top,
+        rgba(0,0,0,0) 11%,
+        rgba(0,0,0,.1) 11%,
+        rgba(0,0,0,.1) 16%,
+        rgba(0,0,0,0) 16%
+      );
+    }
+
+  }
+
+}
+
 h4.blog-sidebar-header {
   @include font-calculator($baseFontFamily, 30px);
   font-weight: 300;
