@@ -787,16 +787,25 @@ p.page-top-text {
   color: #999999;
 }
 
+/* line 54, modules/_typography.scss */
+h3.blog-title {
+  font: 4rem 'Open Sans', sans-serif;
+  margin-bottom: 1.25rem;
+  font-weight: 300;
+  color: #666666;
+}
+
 /* little mixin for standard blog css attributes and values */
-/* line 56, modules/_typography.scss */
+/* line 62, modules/_typography.scss */
 .content-text li {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.5625rem;
   color: #666666;
   font-weight: 400;
+  list-style: none;
 }
 
-/* line 56, modules/_typography.scss */
+/* line 62, modules/_typography.scss */
 .content-text p {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.5625rem;
@@ -804,7 +813,7 @@ p.page-top-text {
   font-weight: 400;
 }
 
-/* line 56, modules/_typography.scss */
+/* line 62, modules/_typography.scss */
 .content-text p.date {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.5625rem;
@@ -813,7 +822,7 @@ p.page-top-text {
   font-style: italic;
 }
 
-/* line 56, modules/_typography.scss */
+/* line 62, modules/_typography.scss */
 .content-text p.read-more {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.5625rem;
@@ -821,7 +830,7 @@ p.page-top-text {
   font-weight: 700;
 }
 
-/* line 80, modules/_typography.scss */
+/* line 87, modules/_typography.scss */
 .blog #blog-content a:hover:after {
   content: "(Link: " attr(href) ")";
   color: #1d7a94;
@@ -830,13 +839,13 @@ p.page-top-text {
   text-decoration: underline;
 }
 
-/* line 90, modules/_typography.scss */
+/* line 97, modules/_typography.scss */
 .content-text a.underline {
   text-decoration: none;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.3) 11%, rgba(0, 0, 0, 0.3) 16%, rgba(0, 0, 0, 0) 16%);
   position: relative;
 }
-/* line 101, modules/_typography.scss */
+/* line 108, modules/_typography.scss */
 .content-text a.underline[rel="external"]::after {
   content: " " attr(href) " ";
   position: absolute;
@@ -851,35 +860,35 @@ p.page-top-text {
   transition: opacity 0.5s;
   white-space: nowrap;
 }
-/* line 113, modules/_typography.scss */
+/* line 120, modules/_typography.scss */
 .content-text a.underline[rel="external"]:hover::after {
   opacity: 1;
 }
-/* line 117, modules/_typography.scss */
+/* line 124, modules/_typography.scss */
 .content-text a.underline:link {
   color: #666666;
 }
-/* line 120, modules/_typography.scss */
+/* line 127, modules/_typography.scss */
 .content-text a.underline:visited {
   color: gray;
 }
-/* line 123, modules/_typography.scss */
+/* line 130, modules/_typography.scss */
 .content-text a.underline:focus {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
-/* line 132, modules/_typography.scss */
+/* line 139, modules/_typography.scss */
 .content-text a.underline:hover {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
-/* line 142, modules/_typography.scss */
+/* line 149, modules/_typography.scss */
 .content-text a.underline:active {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
 
-/* line 156, modules/_typography.scss */
+/* line 163, modules/_typography.scss */
 h4.blog-sidebar-header {
   font: 3rem 'Open Sans', sans-serif;
   margin-bottom: 1.66667rem;
@@ -887,7 +896,7 @@ h4.blog-sidebar-header {
   color: #666666;
 }
 
-/* line 162, modules/_typography.scss */
+/* line 169, modules/_typography.scss */
 .blog-sidebar-text p, ul.blog-sidebar-text {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.5625rem;
@@ -895,7 +904,7 @@ h4.blog-sidebar-header {
   color: #666666;
 }
 
-/* line 168, modules/_typography.scss */
+/* line 175, modules/_typography.scss */
 h3.contact-header {
   font: 3rem 'Open Sans', sans-serif;
   margin-bottom: 1.66667rem;
@@ -903,7 +912,7 @@ h3.contact-header {
   color: #666666;
 }
 
-/* line 174, modules/_typography.scss */
+/* line 181, modules/_typography.scss */
 h3.project-header {
   font: 3rem 'Open Sans', sans-serif;
   margin-bottom: 0;
@@ -911,7 +920,7 @@ h3.project-header {
   color: white;
 }
 
-/* line 180, modules/_typography.scss */
+/* line 187, modules/_typography.scss */
 .footer-top-text p, ul.footer-top-text {
   font: 2rem 'Open Sans', sans-serif;
   margin-bottom: 1.25rem;
@@ -920,14 +929,14 @@ h3.project-header {
   color: #666666;
 }
 
-/* line 187, modules/_typography.scss */
+/* line 194, modules/_typography.scss */
 .code-preview {
   font-size: 12px;
   color: #666666;
   line-height: 16px;
 }
 
-/* line 193, modules/_typography.scss */
+/* line 200, modules/_typography.scss */
 p.footer-copyright {
   font: 1.3rem 'Open Sans', sans-serif;
   margin-bottom: 0;
@@ -1269,7 +1278,7 @@ p.footer-copyright {
 }
 
 @media (max-width: 1366px) {
-  /* line 111, _homepage.scss */
+  /* line 113, _homepage.scss */
   #homepage-stats {
     padding: 0 4.172767203513909%;
   }
@@ -1404,7 +1413,7 @@ p.footer-copyright {
 /* line 3, _aboutme.scss */
 .aboutme section {
   display: inline-block;
-  margin: 20px 0 0 0;
+  margin: 10px 0 0 0;
 }
 /* line 8, _aboutme.scss */
 .aboutme .button-skills-aboutme.section {
@@ -1470,70 +1479,163 @@ p.footer-copyright {
   border-radius: 10px;
 }
 
+@media (min-device-width: 768px) {
+  /* line 49, _aboutme.scss */
+  .aboutme [class*="per"] span {
+    -ms-transform: scaleX(0);
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    opacity: 0;
+    -webkit-animation: fadeIn ease-in 1;
+    -moz-animation: fadeIn ease-in 1;
+    -ms-animation: fadeIn ease-in 1;
+    animation: fadeIn ease-in 1;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-duration: 3s;
+    -moz-animation-duration: 3s;
+    -ms-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-delay: 3s;
+    -moz-animation-delay: 3s;
+    -ms-animation-delay: 3s;
+    animation-delay: 3s;
+  }
+
+  @-webkit-keyframes fadeIn {
+    /* line 78, _aboutme.scss */
+    from {
+      opacity: 0;
+      -webkit-transform: scaleX(0);
+    }
+
+    /* line 82, _aboutme.scss */
+    to {
+      opacity: 1;
+      -webkit-transform: scaleX(1);
+    }
+}
+
+  @-moz-keyframes fadeIn {
+    /* line 88, _aboutme.scss */
+    from {
+      opacity: 0;
+      -moz-transform: scaleX(0);
+    }
+
+    /* line 92, _aboutme.scss */
+    to {
+      opacity: 1;
+      -moz-transform: scaleX(1);
+    }
+}
+
+  @-ms-keyframes fadeIn {
+    /* line 98, _aboutme.scss */
+    from {
+      opacity: 0;
+      -moz-transform: scaleX(0);
+    }
+
+    /* line 102, _aboutme.scss */
+    to {
+      opacity: 1;
+      -moz-transform: scaleX(1);
+    }
+}
+
+  @keyframes fadeIn {
+    /* line 108, _aboutme.scss */
+    from {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    /* line 112, _aboutme.scss */
+    to {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+}
+}
 @media screen and (min--moz-device-pixel-ratio: 0) {
   /* another firefox bug :( */
-  /* line 54, _aboutme.scss */
+  /* line 130, _aboutme.scss */
   .aboutme .per_10 span {
     width: calc(10% - 20px );
   }
-  /* line 54, _aboutme.scss */
+  /* line 130, _aboutme.scss */
   .aboutme .per_20 span {
     width: calc(20% - 20px );
   }
-  /* line 54, _aboutme.scss */
+  /* line 130, _aboutme.scss */
   .aboutme .per_30 span {
     width: calc(30% - 20px );
   }
-  /* line 54, _aboutme.scss */
+  /* line 130, _aboutme.scss */
   .aboutme .per_40 span {
     width: calc(40% - 20px );
   }
-  /* line 54, _aboutme.scss */
+  /* line 130, _aboutme.scss */
   .aboutme .per_50 span {
     width: calc(50% - 20px );
   }
-  /* line 54, _aboutme.scss */
+  /* line 130, _aboutme.scss */
   .aboutme .per_60 span {
     width: calc(60% - 20px );
   }
-  /* line 54, _aboutme.scss */
+  /* line 130, _aboutme.scss */
   .aboutme .per_70 span {
     width: calc(70% - 20px );
   }
-  /* line 54, _aboutme.scss */
+  /* line 130, _aboutme.scss */
   .aboutme .per_80 span {
     width: calc(80% - 20px );
   }
-  /* line 54, _aboutme.scss */
+  /* line 130, _aboutme.scss */
   .aboutme .per_90 span {
     width: calc(90% - 20px );
   }
-  /* line 54, _aboutme.scss */
+  /* line 130, _aboutme.scss */
   .aboutme .per_100 span {
     width: calc(100% - 20px );
   }
 }
+/* end for firefox hack */
 /* line 3, _blog.scss */
-.blog a:link {
-  color: #333333;
-  font-weight: 600;
+.blog article {
+  border-bottom: 1px solid #cccccc;
+  margin: 0 0 30px 0;
+  padding: 0 0 20px 0;
 }
 /* line 8, _blog.scss */
-.blog a:visited {
-  color: #737373;
-  font-weight: 400;
+.blog article header {
+  border: 1px solid #cccccc;
+  background-clip: content-box;
+  padding: 4px;
+  overflow: hidden;
+  width: 100%;
+  text-align: center;
+  margin: 0 0 10px 0;
 }
-/* line 13, _blog.scss */
-.blog a:focus {
-  color: #666666;
+/* line 22, _blog.scss */
+.blog #right-small h4.content-title:nth-of-type(2) + ul li:not(:last-of-type) {
+  margin-bottom: 0;
 }
-/* line 17, _blog.scss */
-.blog a:hover {
-  color: #666666;
+/* line 26, _blog.scss */
+.blog #right-small h4.content-title + ul {
+  margin-bottom: 30px;
+  display: inline-block;
 }
-/* line 21, _blog.scss */
-.blog a:active {
-  color: #666666;
+
+/* line 37, _blog.scss */
+#pagination [class*="pag"] {
+  width: 56px;
+  height: 56px;
+  display: block;
+  float: left;
 }
 
 /* line 1, _footer.scss */

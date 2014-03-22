@@ -125,6 +125,10 @@
     @media (-webkit-min-device-pixel-ratio: 2), not all, (min-resolution: 2dppx), (min-resolution: 192dpi) {
       @content;
     }
+  } @else if $name == "mintablet" {
+    @media (min-device-width: 768px) {
+      @content;
+    }
   }
 }
 

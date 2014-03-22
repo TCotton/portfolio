@@ -51,6 +51,12 @@ p.page-top-text {
   color: $textThree;
 }
 
+h3.blog-title {
+  @include font-calculator($baseFontFamily, 40px);
+  font-weight: 300;
+  color: $textTwo;
+}
+
 /* little mixin for standard blog css attributes and values */
 @mixin contentText($tag) {
   .content-text #{$tag} {
@@ -62,6 +68,7 @@ p.page-top-text {
 
 @include contentText('li') {
   font-weight: 400;
+  list-style: none;
 }
 
 @include contentText('p') {
