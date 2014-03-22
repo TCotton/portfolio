@@ -45,35 +45,35 @@ p.page-top-text {
   color: white;
 }
 
-h3.blog-title {
-  @include font-calculator($baseFontFamily, 40px);
+.content-title {
+  @include font-calculator($baseFontFamily, 30px);
   font-weight: 300;
-  color: $textTwo;
+  color: $textThree;
 }
 
 /* little mixin for standard blog css attributes and values */
-@mixin blogText($tag) {
-  .blog-text #{$tag} {
+@mixin contentText($tag) {
+  .content-text #{$tag} {
     @include font-calculator($baseFontFamily, 16px);
     color: $textTwo;
     @content;
   }
 }
 
-@include blogText('li') {
+@include contentText('li') {
   font-weight: 400;
 }
 
-@include blogText('p') {
+@include contentText('p') {
   font-weight: 400;
 }
 
-@include blogText('p.date') {
+@include contentText('p.date') {
   font-weight: 400;
   font-style: italic;
 }
 
-@include blogText('p.read-more') {
+@include contentText('p.read-more') {
   font-weight: 700;
 }
 

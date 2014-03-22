@@ -2,6 +2,15 @@
   @return $number / ($number * 0 + 1);
 }
 
+// increases margin-bottom if font size is greater than 20px
+@function double-size($fontSize, $marginNumber) {
+  @if strip-units($fontSize) > 20  {
+    @return $marginNumber * 2;
+  } @else {
+    @return $marginNumber;
+  }
+}
+
 @function basefont-to-pixel($baseFS) {
   // see http://pxtoem.com/
   @if $baseFS == 37.5% {
@@ -42,17 +51,20 @@
   // the second is the font size in pixels - without the pixel unit value
   // font size is converted
 
-  $fontSizeRem: strip-units($fontSize)/basefont-to-pixel($baseFontSize);
-  font: unquote($fontSizeRem + "rem") #{$fontFamily};
+  $fontSizeRem: strip-units($fontSize) / basefont-to-pixel($baseFontSize);
+  font: #{$fontSizeRem}#{"rem"} #{$fontFamily};
 
   @if $divider == 0 {
     margin-bottom: 0;
   } @else if $divider == 0.5 {
-    margin-bottom: unquote((strip-units($baseLineHeight) / $fontSizeRem / 2) + "rem");
+    $margin: strip-units($baseLineHeight) / $fontSizeRem / 2;
+    margin-bottom: #{double-size($fontSize, $margin)}#{"rem"};
   } @else if $divider == 0.25 {
-    margin-bottom: unquote((strip-units($baseLineHeight) / $fontSizeRem / 4) + "rem");
+    $margin: strip-units($baseLineHeight) / $fontSizeRem / 4;
+    margin-bottom: #{double-size($fontSize, $margin)}#{"rem"};
   } @else if $divider == null {
-    margin-bottom: unquote((strip-units($baseLineHeight) / $fontSizeRem)+"rem");
+    $margin: strip-units($baseLineHeight) / $fontSizeRem;
+    margin-bottom: #{double-size($fontSize, $margin)}#{"rem"};
   }
 
 }
