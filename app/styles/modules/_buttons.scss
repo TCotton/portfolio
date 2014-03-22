@@ -54,3 +54,12 @@
     color: darken(white,10);
   }
 }
+
+.button-skills-aboutme {
+  height: 58px;
+  border-radius: 10px;
+  background: $imageBackgroundContrast;
+  @include font-calculator($baseFontFamily, 26px, 0);
+  color: white;
+  font-weight: 300;
+}

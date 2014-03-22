@@ -716,7 +716,7 @@ h1.logo {
 }
 
 /* line 17, modules/_typography.scss */
-ul.navigation {
+.navigation li {
   font: 1.5rem 'Open Sans', sans-serif;
   margin-bottom: 0;
   text-transform: uppercase;
@@ -826,36 +826,37 @@ p.page-top-text {
   -ms-transition: opacity 0.5s;
   -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s;
+  white-space: nowrap;
 }
-/* line 113, modules/_typography.scss */
+/* line 114, modules/_typography.scss */
 .content-text a[rel="external"]:hover::after {
   opacity: 1;
 }
-/* line 117, modules/_typography.scss */
+/* line 118, modules/_typography.scss */
 .content-text a:link {
   color: #666666;
 }
-/* line 120, modules/_typography.scss */
+/* line 121, modules/_typography.scss */
 .content-text a:visited {
   color: gray;
 }
-/* line 123, modules/_typography.scss */
+/* line 124, modules/_typography.scss */
 .content-text a:focus {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
-/* line 132, modules/_typography.scss */
+/* line 133, modules/_typography.scss */
 .content-text a:hover {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
-/* line 142, modules/_typography.scss */
+/* line 143, modules/_typography.scss */
 .content-text a:active {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
 
-/* line 156, modules/_typography.scss */
+/* line 157, modules/_typography.scss */
 h4.blog-sidebar-header {
   font: 3rem 'Open Sans', sans-serif;
   margin-bottom: 1.66667rem;
@@ -863,7 +864,7 @@ h4.blog-sidebar-header {
   color: #666666;
 }
 
-/* line 162, modules/_typography.scss */
+/* line 163, modules/_typography.scss */
 .blog-sidebar-text p, ul.blog-sidebar-text {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.5625rem;
@@ -871,7 +872,7 @@ h4.blog-sidebar-header {
   color: #666666;
 }
 
-/* line 168, modules/_typography.scss */
+/* line 169, modules/_typography.scss */
 h3.contact-header {
   font: 3rem 'Open Sans', sans-serif;
   margin-bottom: 1.66667rem;
@@ -879,7 +880,7 @@ h3.contact-header {
   color: #666666;
 }
 
-/* line 174, modules/_typography.scss */
+/* line 175, modules/_typography.scss */
 h3.project-header {
   font: 3rem 'Open Sans', sans-serif;
   margin-bottom: 0;
@@ -887,7 +888,7 @@ h3.project-header {
   color: white;
 }
 
-/* line 180, modules/_typography.scss */
+/* line 181, modules/_typography.scss */
 .footer-top-text p, ul.footer-top-text {
   font: 2rem 'Open Sans', sans-serif;
   margin-bottom: 1.25rem;
@@ -896,14 +897,14 @@ h3.project-header {
   color: #666666;
 }
 
-/* line 187, modules/_typography.scss */
+/* line 188, modules/_typography.scss */
 .code-preview {
   font-size: 12px;
   color: #666666;
   line-height: 16px;
 }
 
-/* line 193, modules/_typography.scss */
+/* line 194, modules/_typography.scss */
 p.footer-copyright {
   font: 1.3rem 'Open Sans', sans-serif;
   margin-bottom: 0;
@@ -979,6 +980,17 @@ p.footer-copyright {
 /* line 53, modules/_buttons.scss */
 .button-contact:hover, .button-contact:active, .button-contact:hover, .button-contact:active {
   color: #e6e6e6;
+}
+
+/* line 58, modules/_buttons.scss */
+.button-skills-aboutme {
+  height: 58px;
+  border-radius: 10px;
+  background: #81d9ed;
+  font: 2.6rem 'Open Sans', sans-serif;
+  margin-bottom: 0;
+  color: white;
+  font-weight: 300;
 }
 
 /* line 2, modules/_forms.scss */
@@ -1338,6 +1350,76 @@ p.footer-copyright {
   transform: translateY(30px);
   margin-top: 10%;
   opacity: 0;
+}
+
+/* line 3, _aboutme.scss */
+.aboutme section {
+  display: inline-block;
+  margin: 20px 0 0 0;
+}
+/* line 8, _aboutme.scss */
+.aboutme .button-skills-aboutme.section {
+  width: 48%;
+  float: left;
+  margin-bottom: 20px;
+  line-height: 58px;
+}
+/* line 15, _aboutme.scss */
+.aboutme .button-skills-aboutme.section:nth-of-type(even) {
+  margin-left: 4%;
+}
+/* line 19, _aboutme.scss */
+.aboutme [class*="per"] span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #04b4dc;
+  padding-left: 20px;
+  border-radius: 10px 0 0 10px;
+}
+/* line 34, _aboutme.scss */
+.aboutme .per_10 span {
+  width: 10%;
+}
+/* line 34, _aboutme.scss */
+.aboutme .per_20 span {
+  width: 20%;
+}
+/* line 34, _aboutme.scss */
+.aboutme .per_30 span {
+  width: 30%;
+}
+/* line 34, _aboutme.scss */
+.aboutme .per_40 span {
+  width: 40%;
+}
+/* line 34, _aboutme.scss */
+.aboutme .per_50 span {
+  width: 50%;
+}
+/* line 34, _aboutme.scss */
+.aboutme .per_60 span {
+  width: 60%;
+}
+/* line 34, _aboutme.scss */
+.aboutme .per_70 span {
+  width: 70%;
+}
+/* line 34, _aboutme.scss */
+.aboutme .per_80 span {
+  width: 80%;
+}
+/* line 34, _aboutme.scss */
+.aboutme .per_90 span {
+  width: 90%;
+}
+/* line 34, _aboutme.scss */
+.aboutme .per_100 span {
+  width: 100%;
+}
+/* line 39, _aboutme.scss */
+.aboutme .per_100 span {
+  border-radius: 10px;
 }
 
 /* line 3, _blog.scss */

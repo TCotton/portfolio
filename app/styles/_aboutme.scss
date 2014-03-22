@@ -1,5 +1,43 @@
 .aboutme {
 
+  section {
+    display: inline-block;
+    margin: 20px 0 0 0;
+  }
 
+  .button-skills-aboutme.section {
+    width: 48%;
+    float: left;
+    margin-bottom: 20px;
+    line-height: 58px;
+  }
+
+  .button-skills-aboutme.section:nth-of-type(even) {
+    margin-left: 4%;
+  }
+
+  [class*="per"] span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #04b4dc;
+    padding-left: 20px;
+    border-radius: 10px 0 0 10px;
+  }
+
+  // loop through the per_70 classes.
+  // this gives a % of width which it extends over background
+
+  $percentage: 10;
+
+  @for $i from 1 through $percentage {
+    .per_#{$i * 10} span {
+      width: ((100 / $percentage) * $i) * 1%;
+    }
+  }
+
+  .per_100 span {
+    border-radius: 10px;
+  }
 
 }

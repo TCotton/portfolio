@@ -14,7 +14,7 @@ h1.logo {
   color: white;
 }
 
-ul.navigation {
+.navigation li {
   @include font-calculator($baseFontFamily, 15px, 0);
   text-transform: uppercase;
   line-height: $headerHeight;
@@ -109,6 +109,7 @@ p.page-top-text {
       padding: 1px 5px;
       opacity: 0;
       @include transitions(opacity 0.5s);
+      white-space: nowrap;
     }
     &[rel="external"]:hover::after {
       opacity: 1;
