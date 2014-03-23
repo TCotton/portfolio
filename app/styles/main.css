@@ -714,19 +714,19 @@ html {
   width: 822px;
   float: left;
   display: inline;
-  margin: 0 32px 0 0;
 }
 
-/* line 13, modules/_grid.scss */
+/* line 12, modules/_grid.scss */
 #left-small {
   width: 398px;
   float: left;
   display: inline;
+  margin: 0 32px 0 0;
 }
 
 /* line 19, modules/_grid.scss */
 #right-large {
-  width: 824px;
+  width: 822px;
   float: left;
   display: inline;
 }
@@ -736,15 +736,16 @@ html {
   width: 398px;
   float: left;
   display: inline;
+  margin: 0 32px 0 0;
 }
 
-/* line 31, modules/_grid.scss */
+/* line 32, modules/_grid.scss */
 #main-content {
   padding: 57px;
 }
 
 /* My work */
-/* line 37, modules/_grid.scss */
+/* line 38, modules/_grid.scss */
 [class*="project-box"] {
   width: -webkit-calc((100% / 3) - (66px / 3));
   width: calc((100% / 3) - (66px / 3));
@@ -760,7 +761,7 @@ html {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
-/* line 49, modules/_grid.scss */
+/* line 50, modules/_grid.scss */
 [class*="project-box"]::before {
   content: '';
   position: absolute;
@@ -777,7 +778,7 @@ html {
   -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s;
 }
-/* line 62, modules/_grid.scss */
+/* line 63, modules/_grid.scss */
 [class*="project-box"]::after {
   content: '';
   margin: auto;
@@ -795,41 +796,41 @@ html {
   -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s;
 }
-/* line 75, modules/_grid.scss */
+/* line 76, modules/_grid.scss */
 [class*="project-box"]:hover::before {
   opacity: 0.7;
 }
-/* line 79, modules/_grid.scss */
+/* line 80, modules/_grid.scss */
 [class*="project-box"]:hover::after {
   opacity: 1;
 }
 
 @media screen and (min--moz-device-pixel-ratio: 0) {
   /* temp Firefox hack until I can work out a solution */
-  /* line 87, modules/_grid.scss */
+  /* line 88, modules/_grid.scss */
   [class*="project-box"] {
     width: -webkit-calc((100% / 3) - (66px / 2));
     width: calc((100% / 3) - (66px / 2));
   }
 }
-/* line 93, modules/_grid.scss */
+/* line 94, modules/_grid.scss */
 [class*="project-box"]:nth-of-type(3n) {
   margin-right: 0;
   background-clip: content-box;
 }
 
 @media (max-width: 1366px) {
-  /* line 100, modules/_grid.scss */
+  /* line 101, modules/_grid.scss */
   #container {
     width: 99%;
   }
 
-  /* line 122, modules/_grid.scss */
+  /* line 123, modules/_grid.scss */
   #main-content {
     padding: 57px 4.172767203513909%;
   }
 
-  /* line 126, modules/_grid.scss */
+  /* line 127, modules/_grid.scss */
   [class*="project-box"] {
     height: 230px;
   }
@@ -852,7 +853,7 @@ h1.logo {
 /* line 24, modules/_typography.scss */
 h2.page-top-title {
   font: 4rem 'Open Sans', sans-serif;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.625rem;
   font-weight: 300;
   color: white;
 }
@@ -860,7 +861,6 @@ h2.page-top-title {
 /* line 30, modules/_typography.scss */
 p.page-top-text {
   font: 1.8rem 'Open Sans', sans-serif;
-  margin-bottom: 1.38889rem;
   font-weight: 300;
   color: white;
 }
@@ -940,7 +940,15 @@ h3.blog-title {
   font-weight: 700;
 }
 
-/* line 93, modules/_typography.scss */
+/* line 68, modules/_typography.scss */
+.content-text p.minor-title {
+  font: 1.6rem 'Open Sans', sans-serif;
+  margin-bottom: 1.5625rem;
+  color: #666666;
+  font-weight: 700;
+}
+
+/* line 97, modules/_typography.scss */
 .blog #blog-content a:hover:after {
   content: "(Link: " attr(href) ")";
   color: #1d7a94;
@@ -949,13 +957,13 @@ h3.blog-title {
   text-decoration: underline;
 }
 
-/* line 103, modules/_typography.scss */
+/* line 107, modules/_typography.scss */
 .content-text a.underline {
   text-decoration: none;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.3) 11%, rgba(0, 0, 0, 0.3) 16%, rgba(0, 0, 0, 0) 16%);
   position: relative;
 }
-/* line 109, modules/_typography.scss */
+/* line 113, modules/_typography.scss */
 .content-text a.underline[rel="external"]::after {
   content: " " attr(href) " ";
   position: absolute;
@@ -970,35 +978,35 @@ h3.blog-title {
   transition: opacity 0.5s;
   white-space: nowrap;
 }
-/* line 121, modules/_typography.scss */
+/* line 125, modules/_typography.scss */
 .content-text a.underline[rel="external"]:hover::after {
   opacity: 1;
 }
-/* line 125, modules/_typography.scss */
+/* line 129, modules/_typography.scss */
 .content-text a.underline:link {
   color: #666666;
 }
-/* line 128, modules/_typography.scss */
+/* line 132, modules/_typography.scss */
 .content-text a.underline:visited {
   color: gray;
 }
-/* line 131, modules/_typography.scss */
+/* line 135, modules/_typography.scss */
 .content-text a.underline:focus {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
-/* line 135, modules/_typography.scss */
+/* line 139, modules/_typography.scss */
 .content-text a.underline:hover {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
-/* line 140, modules/_typography.scss */
+/* line 144, modules/_typography.scss */
 .content-text a.underline:active {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
 
-/* line 149, modules/_typography.scss */
+/* line 153, modules/_typography.scss */
 h4.blog-sidebar-header {
   font: 3rem 'Open Sans', sans-serif;
   margin-bottom: 1.66667rem;
@@ -1006,7 +1014,7 @@ h4.blog-sidebar-header {
   color: #666666;
 }
 
-/* line 155, modules/_typography.scss */
+/* line 159, modules/_typography.scss */
 .blog-sidebar-text p, ul.blog-sidebar-text {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.5625rem;
@@ -1014,7 +1022,7 @@ h4.blog-sidebar-header {
   color: #666666;
 }
 
-/* line 161, modules/_typography.scss */
+/* line 165, modules/_typography.scss */
 h3.contact-header {
   font: 3rem 'Open Sans', sans-serif;
   margin-bottom: 1.66667rem;
@@ -1022,14 +1030,14 @@ h3.contact-header {
   color: #666666;
 }
 
-/* line 167, modules/_typography.scss */
+/* line 171, modules/_typography.scss */
 h3.project-header {
   font: 3rem 'Open Sans', sans-serif;
   font-weight: 400;
   color: white;
 }
 
-/* line 173, modules/_typography.scss */
+/* line 177, modules/_typography.scss */
 .footer-top-text p, ul.footer-top-text {
   font: 2rem 'Open Sans', sans-serif;
   margin-bottom: 1.25rem;
@@ -1038,14 +1046,14 @@ h3.project-header {
   color: #666666;
 }
 
-/* line 180, modules/_typography.scss */
+/* line 184, modules/_typography.scss */
 .code-preview {
   font-size: 12px;
   color: #666666;
   line-height: 16px;
 }
 
-/* line 186, modules/_typography.scss */
+/* line 190, modules/_typography.scss */
 p.footer-copyright {
   font: 1.3rem 'Open Sans', sans-serif;
   line-height: 94px;
@@ -1463,6 +1471,58 @@ p.footer-copyright {
   transform: translateY(30px);
   margin-top: 10%;
   opacity: 0;
+}
+/* line 61, _mywork.scss */
+.my-work #left-small article {
+  border-bottom: 1px solid #cccccc;
+  margin: 0 0 30px 0;
+  padding: 0 0 20px 0;
+}
+/* line 71, _mywork.scss */
+.my-work #right-large img {
+  border: 1px solid #cccccc;
+  background-clip: content-box;
+  padding: 4px;
+  overflow: hidden;
+}
+/* line 82, _mywork.scss */
+.my-work .pagination [class*="pag"] {
+  width: 55px;
+  height: 54px;
+  display: block;
+  float: left;
+  cursor: pointer;
+  background-size: contain;
+  margin: 0 14px 0 0;
+  background-color: black;
+}
+/* line 92, _mywork.scss */
+.my-work .pagination [class*="pag"]:last-of-type {
+  margin: 0;
+}
+/* line 98, _mywork.scss */
+.my-work .pagination .paglast {
+  background: url("/images/svg/left-arrow.svg") no-repeat center center;
+}
+/* line 100, _mywork.scss */
+.my-work .pagination .paglast:hover {
+  background: url("/images/svg/left-arrow-hover.svg") no-repeat center center;
+}
+/* line 105, _mywork.scss */
+.my-work .pagination .pagHome {
+  background: url("/images/svg/index.svg") no-repeat center center;
+}
+/* line 107, _mywork.scss */
+.my-work .pagination .pagHome:hover {
+  background: url("/images/svg/index-hover.svg") no-repeat center center;
+}
+/* line 112, _mywork.scss */
+.my-work .pagination .pagnext {
+  background: url("/images/svg/right-arrow.svg") no-repeat center center;
+}
+/* line 114, _mywork.scss */
+.my-work .pagination .pagnext:hover {
+  background: url("/images/svg/right-arrow-hover.svg") no-repeat center center;
 }
 
 /* line 3, _sideprojects.scss */

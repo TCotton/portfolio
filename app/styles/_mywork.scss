@@ -56,4 +56,67 @@
     }
   }
 
+  #left-small {
+
+    article {
+      border-bottom: 1px solid $boxBorder;
+      margin: 0 0 30px 0;
+      padding: 0 0 20px 0;
+    }
+
+  }
+
+  #right-large {
+
+    img {
+      border: 1px solid $boxBorder;
+      background-clip: content-box;
+      padding: 4px;
+      overflow: hidden;
+    }
+
+  }
+
+  .pagination {
+
+    [class*="pag"] {
+      width: 55px;
+      height: 54px;
+      display: block;
+      float: left;
+      cursor: pointer;
+      background-size: contain;
+      margin: 0 14px 0 0;
+      background-color: black;
+
+      &:last-of-type {
+        margin: 0;
+      }
+
+    }
+
+    .paglast {
+      background: $leftArrow;
+      &:hover {
+        background: $leftArrowHover;
+      }
+    }
+
+    .pagHome {
+      background: $index;
+      &:hover {
+        background: $indexHover;
+      }
+    }
+
+    .pagnext {
+      background: $rightArrow;
+      &:hover {
+        background: $rightArrowHover;
+      }
+    }
+
+
+  }
+
 }

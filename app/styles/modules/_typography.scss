@@ -22,13 +22,13 @@ h1.logo {
 }
 
 h2.page-top-title {
-  @include font-calculator($baseFontFamily, 40px);
+  @include font-calculator($baseFontFamily, 40px, 0.5);
   font-weight: 300;
   color: white;
 }
 
 p.page-top-text {
-  @include font-calculator($baseFontFamily, 18px);
+  @include font-calculator($baseFontFamily, 18px, 0);
   font-weight: 300;
   color: white;
 }
@@ -87,6 +87,10 @@ h3.blog-title {
 }
 
 @include contentText('p.read-more') {
+  font-weight: 700;
+}
+
+@include contentText('p.minor-title') {
   font-weight: 700;
 }
 
