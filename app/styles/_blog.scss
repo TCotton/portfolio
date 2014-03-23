@@ -19,6 +19,7 @@
 
   #right-small {
 
+    // changing the margin for the list items in the Category sidebar section
     h4.content-title:nth-of-type(2) + ul li:not(:last-of-type) {
       margin-bottom: 0;
     }
@@ -51,6 +52,8 @@
 
   }
 
+  // the first pagination item which is the left arrow d
+
   [class*="pag"]:first-of-type {
     background: $leftArrow;
     &:hover {
@@ -60,6 +63,8 @@
 
   $percentage: 10;
 
+  // loops through the ten different number background images for the pagination
+
   @for $i from 1 through $percentage {
     .pag#{$i * 1} {
       background: url('/images/svg/solid#{((10 / $percentage) * $i)}.svg') no-repeat center center;
@@ -68,6 +73,8 @@
       }
     }
   }
+
+  // the last pagination item which is the the right arrow
 
   [class*="pag"]:last-of-type {
     background: $rightArrow;

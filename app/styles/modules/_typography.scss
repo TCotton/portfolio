@@ -57,6 +57,12 @@ h3.blog-title {
   color: $textTwo;
 }
 
+.blog article h4 {
+  @include font-calculator($baseFontFamily, 26px);
+  font-weight: 600;
+  color: $textTwo;
+}
+
 /* little mixin for standard blog css attributes and values */
 @mixin contentText($tag) {
   .content-text #{$tag} {

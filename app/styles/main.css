@@ -680,27 +680,27 @@ html {
 
 /* line 16, modules/_scrollbars.scss */
 ::-webkit-scrollbar-thumb:vertical {
-  background: #04b4dc;
+  background: #00bd9c;
   border-radius: 50px;
   border: 2px solid white;
 }
 
 /* line 22, modules/_scrollbars.scss */
 ::-webkit-scrollbar-thumb:vertical:hover {
-  -webkit-box-shadow: inset 5px 5px 6px #81d9ed;
+  -webkit-box-shadow: inset 5px 5px 6px #00bd9c;
   background: white;
 }
 
 /* line 27, modules/_scrollbars.scss */
 ::-webkit-scrollbar-thumb:horizontal {
-  background: #04b4dc;
+  background: #00bd9c;
   border-radius: 50px;
   border: 2px solid white;
 }
 
 /* line 33, modules/_scrollbars.scss */
 ::-webkit-scrollbar-thumb:horizontal:hover {
-  border: 1px solid #81d9ed;
+  border: 1px solid #00bd9c;
 }
 
 /* line 1, modules/_grid.scss */
@@ -897,8 +897,16 @@ h3.blog-title {
   color: #666666;
 }
 
+/* line 60, modules/_typography.scss */
+.blog article h4 {
+  font: 2.6rem 'Open Sans', sans-serif;
+  margin-bottom: 1.92308rem;
+  font-weight: 600;
+  color: #666666;
+}
+
 /* little mixin for standard blog css attributes and values */
-/* line 62, modules/_typography.scss */
+/* line 68, modules/_typography.scss */
 .content-text li {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.5625rem;
@@ -907,7 +915,7 @@ h3.blog-title {
   list-style: none;
 }
 
-/* line 62, modules/_typography.scss */
+/* line 68, modules/_typography.scss */
 .content-text p {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.5625rem;
@@ -915,7 +923,7 @@ h3.blog-title {
   font-weight: 400;
 }
 
-/* line 62, modules/_typography.scss */
+/* line 68, modules/_typography.scss */
 .content-text p.date {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.5625rem;
@@ -924,7 +932,7 @@ h3.blog-title {
   font-style: italic;
 }
 
-/* line 62, modules/_typography.scss */
+/* line 68, modules/_typography.scss */
 .content-text p.read-more {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.5625rem;
@@ -932,7 +940,7 @@ h3.blog-title {
   font-weight: 700;
 }
 
-/* line 87, modules/_typography.scss */
+/* line 93, modules/_typography.scss */
 .blog #blog-content a:hover:after {
   content: "(Link: " attr(href) ")";
   color: #1d7a94;
@@ -941,13 +949,13 @@ h3.blog-title {
   text-decoration: underline;
 }
 
-/* line 97, modules/_typography.scss */
+/* line 103, modules/_typography.scss */
 .content-text a.underline {
   text-decoration: none;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.3) 11%, rgba(0, 0, 0, 0.3) 16%, rgba(0, 0, 0, 0) 16%);
   position: relative;
 }
-/* line 103, modules/_typography.scss */
+/* line 109, modules/_typography.scss */
 .content-text a.underline[rel="external"]::after {
   content: " " attr(href) " ";
   position: absolute;
@@ -962,35 +970,35 @@ h3.blog-title {
   transition: opacity 0.5s;
   white-space: nowrap;
 }
-/* line 115, modules/_typography.scss */
+/* line 121, modules/_typography.scss */
 .content-text a.underline[rel="external"]:hover::after {
   opacity: 1;
 }
-/* line 119, modules/_typography.scss */
+/* line 125, modules/_typography.scss */
 .content-text a.underline:link {
   color: #666666;
 }
-/* line 122, modules/_typography.scss */
+/* line 128, modules/_typography.scss */
 .content-text a.underline:visited {
   color: gray;
 }
-/* line 125, modules/_typography.scss */
+/* line 131, modules/_typography.scss */
 .content-text a.underline:focus {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
-/* line 129, modules/_typography.scss */
+/* line 135, modules/_typography.scss */
 .content-text a.underline:hover {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
-/* line 134, modules/_typography.scss */
+/* line 140, modules/_typography.scss */
 .content-text a.underline:active {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
 
-/* line 143, modules/_typography.scss */
+/* line 149, modules/_typography.scss */
 h4.blog-sidebar-header {
   font: 3rem 'Open Sans', sans-serif;
   margin-bottom: 1.66667rem;
@@ -998,7 +1006,7 @@ h4.blog-sidebar-header {
   color: #666666;
 }
 
-/* line 149, modules/_typography.scss */
+/* line 155, modules/_typography.scss */
 .blog-sidebar-text p, ul.blog-sidebar-text {
   font: 1.6rem 'Open Sans', sans-serif;
   margin-bottom: 1.5625rem;
@@ -1006,7 +1014,7 @@ h4.blog-sidebar-header {
   color: #666666;
 }
 
-/* line 155, modules/_typography.scss */
+/* line 161, modules/_typography.scss */
 h3.contact-header {
   font: 3rem 'Open Sans', sans-serif;
   margin-bottom: 1.66667rem;
@@ -1014,14 +1022,14 @@ h3.contact-header {
   color: #666666;
 }
 
-/* line 161, modules/_typography.scss */
+/* line 167, modules/_typography.scss */
 h3.project-header {
   font: 3rem 'Open Sans', sans-serif;
   font-weight: 400;
   color: white;
 }
 
-/* line 167, modules/_typography.scss */
+/* line 173, modules/_typography.scss */
 .footer-top-text p, ul.footer-top-text {
   font: 2rem 'Open Sans', sans-serif;
   margin-bottom: 1.25rem;
@@ -1030,14 +1038,14 @@ h3.project-header {
   color: #666666;
 }
 
-/* line 174, modules/_typography.scss */
+/* line 180, modules/_typography.scss */
 .code-preview {
   font-size: 12px;
   color: #666666;
   line-height: 16px;
 }
 
-/* line 180, modules/_typography.scss */
+/* line 186, modules/_typography.scss */
 p.footer-copyright {
   font: 1.3rem 'Open Sans', sans-serif;
   line-height: 94px;
@@ -1842,21 +1850,21 @@ p.footer-copyright {
   text-align: center;
   margin: 0 0 10px 0;
 }
-/* line 22, _blog.scss */
+/* line 23, _blog.scss */
 .blog #right-small h4.content-title:nth-of-type(2) + ul li:not(:last-of-type) {
   margin-bottom: 0;
 }
-/* line 26, _blog.scss */
+/* line 27, _blog.scss */
 .blog #right-small h4.content-title + ul {
   margin-bottom: 30px;
   display: inline-block;
 }
 
-/* line 35, _blog.scss */
+/* line 36, _blog.scss */
 #pagination {
   text-align: center;
 }
-/* line 39, _blog.scss */
+/* line 40, _blog.scss */
 #pagination [class*="pag"] {
   width: 55px;
   height: 54px;
@@ -1866,103 +1874,103 @@ p.footer-copyright {
   background-size: contain;
   margin: 0 14px 0 0;
 }
-/* line 48, _blog.scss */
+/* line 49, _blog.scss */
 #pagination [class*="pag"]:last-of-type {
   margin: 0;
 }
-/* line 54, _blog.scss */
+/* line 57, _blog.scss */
 #pagination [class*="pag"]:first-of-type {
   background: url("/images/svg/left-arrow.svg") no-repeat center center;
 }
-/* line 56, _blog.scss */
+/* line 59, _blog.scss */
 #pagination [class*="pag"]:first-of-type:hover {
   background: url("/images/svg/left-arrow-hover.svg") no-repeat center center;
 }
-/* line 64, _blog.scss */
+/* line 69, _blog.scss */
 #pagination .pag1 {
   background: url("/images/svg/solid1.svg") no-repeat center center;
 }
-/* line 66, _blog.scss */
+/* line 71, _blog.scss */
 #pagination .pag1:hover {
   background: url("/images/svg/outline1.svg") no-repeat center center;
 }
-/* line 64, _blog.scss */
+/* line 69, _blog.scss */
 #pagination .pag2 {
   background: url("/images/svg/solid2.svg") no-repeat center center;
 }
-/* line 66, _blog.scss */
+/* line 71, _blog.scss */
 #pagination .pag2:hover {
   background: url("/images/svg/outline2.svg") no-repeat center center;
 }
-/* line 64, _blog.scss */
+/* line 69, _blog.scss */
 #pagination .pag3 {
   background: url("/images/svg/solid3.svg") no-repeat center center;
 }
-/* line 66, _blog.scss */
+/* line 71, _blog.scss */
 #pagination .pag3:hover {
   background: url("/images/svg/outline3.svg") no-repeat center center;
 }
-/* line 64, _blog.scss */
+/* line 69, _blog.scss */
 #pagination .pag4 {
   background: url("/images/svg/solid4.svg") no-repeat center center;
 }
-/* line 66, _blog.scss */
+/* line 71, _blog.scss */
 #pagination .pag4:hover {
   background: url("/images/svg/outline4.svg") no-repeat center center;
 }
-/* line 64, _blog.scss */
+/* line 69, _blog.scss */
 #pagination .pag5 {
   background: url("/images/svg/solid5.svg") no-repeat center center;
 }
-/* line 66, _blog.scss */
+/* line 71, _blog.scss */
 #pagination .pag5:hover {
   background: url("/images/svg/outline5.svg") no-repeat center center;
 }
-/* line 64, _blog.scss */
+/* line 69, _blog.scss */
 #pagination .pag6 {
   background: url("/images/svg/solid6.svg") no-repeat center center;
 }
-/* line 66, _blog.scss */
+/* line 71, _blog.scss */
 #pagination .pag6:hover {
   background: url("/images/svg/outline6.svg") no-repeat center center;
 }
-/* line 64, _blog.scss */
+/* line 69, _blog.scss */
 #pagination .pag7 {
   background: url("/images/svg/solid7.svg") no-repeat center center;
 }
-/* line 66, _blog.scss */
+/* line 71, _blog.scss */
 #pagination .pag7:hover {
   background: url("/images/svg/outline7.svg") no-repeat center center;
 }
-/* line 64, _blog.scss */
+/* line 69, _blog.scss */
 #pagination .pag8 {
   background: url("/images/svg/solid8.svg") no-repeat center center;
 }
-/* line 66, _blog.scss */
+/* line 71, _blog.scss */
 #pagination .pag8:hover {
   background: url("/images/svg/outline8.svg") no-repeat center center;
 }
-/* line 64, _blog.scss */
+/* line 69, _blog.scss */
 #pagination .pag9 {
   background: url("/images/svg/solid9.svg") no-repeat center center;
 }
-/* line 66, _blog.scss */
+/* line 71, _blog.scss */
 #pagination .pag9:hover {
   background: url("/images/svg/outline9.svg") no-repeat center center;
 }
-/* line 64, _blog.scss */
+/* line 69, _blog.scss */
 #pagination .pag10 {
   background: url("/images/svg/solid10.svg") no-repeat center center;
 }
-/* line 66, _blog.scss */
+/* line 71, _blog.scss */
 #pagination .pag10:hover {
   background: url("/images/svg/outline10.svg") no-repeat center center;
 }
-/* line 72, _blog.scss */
+/* line 79, _blog.scss */
 #pagination [class*="pag"]:last-of-type {
   background: url("/images/svg/right-arrow.svg") no-repeat center center;
 }
-/* line 74, _blog.scss */
+/* line 81, _blog.scss */
 #pagination [class*="pag"]:last-of-type:hover {
   background: url("/images/svg/right-arrow-hover.svg") no-repeat center center;
 }

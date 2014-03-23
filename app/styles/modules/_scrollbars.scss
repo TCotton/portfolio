@@ -14,22 +14,22 @@
 }
 
 ::-webkit-scrollbar-thumb:vertical {
-  background: $imageBackground;
+  background: $bannerBackround;
   border-radius: 50px;
   border: 2px solid white;
 }
 
 ::-webkit-scrollbar-thumb:vertical:hover {
-  -webkit-box-shadow: inset 5px 5px 6px $imageBackgroundContrast;
+  -webkit-box-shadow: inset 5px 5px 6px $bannerBackround;;
   background: white;
 }
 
 ::-webkit-scrollbar-thumb:horizontal {
-  background: $imageBackground;
+  background: $bannerBackround;
   border-radius: 50px;
   border: 2px solid white;
 }
 
 ::-webkit-scrollbar-thumb:horizontal:hover {
-  border: 1px solid $imageBackgroundContrast;
+  border: 1px solid $bannerBackround;
 }
