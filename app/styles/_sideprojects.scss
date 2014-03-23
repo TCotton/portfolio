@@ -33,7 +33,7 @@
     text-align: center;
     z-index: 1;
     h3 {
-      @include transitions(all 0.5s);
+      @include transitions("all 0.5s");
       @include transform("translateY(30px)");
       margin-top: 10%;
       opacity: 0;

@@ -51,10 +51,10 @@
       @include transform("scaleX(0)");
       opacity: 0;
 
-      -webkit-animation: fadeIn ease-in 1;
-      -moz-animation: fadeIn ease-in 1;
-      -ms-animation: fadeIn ease-in 1;
-      animation: fadeIn ease-in 1;
+      -webkit-animation: fadeIn ease-out 1;
+      -moz-animation: fadeIn ease-out 1;
+      -ms-animation: fadeIn ease-out 1;
+      animation: fadeIn ease-out 1;
 
       -webkit-animation-fill-mode: forwards;
       -moz-animation-fill-mode: forwards;

@@ -36,7 +36,7 @@
     background: $topFooterBackground;
     opacity: 0;
     pointer-events: none;
-    @include transitions(opacity 0.5s);
+    @include transitions("opacity 0.5s");
   }
   &:hover:before {
     opacity: 0.5;

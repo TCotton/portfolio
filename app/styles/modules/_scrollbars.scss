@@ -1,0 +1,35 @@
+// some extra styling
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+::-webkit-scrollbar-button:vertical {
+  color: white;
+  background: white;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  background: $imageBackground;
+  border-radius: 50px;
+  border: 2px solid white;
+}
+
+::-webkit-scrollbar-thumb:vertical:hover {
+  -webkit-box-shadow: inset 5px 5px 6px $imageBackgroundContrast;
+  background: white;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  background: $imageBackground;
+  border-radius: 50px;
+  border: 2px solid white;
+}
+
+::-webkit-scrollbar-thumb:horizontal:hover {
+  border: 1px solid $imageBackgroundContrast;
+}

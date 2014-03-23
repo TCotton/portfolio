@@ -662,6 +662,47 @@ html {
     display: none !important;
   }
 }
+/* line 3, modules/_scrollbars.scss */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* line 7, modules/_scrollbars.scss */
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+/* line 11, modules/_scrollbars.scss */
+::-webkit-scrollbar-button:vertical {
+  color: white;
+  background: white;
+}
+
+/* line 16, modules/_scrollbars.scss */
+::-webkit-scrollbar-thumb:vertical {
+  background: #04b4dc;
+  border-radius: 50px;
+  border: 2px solid white;
+}
+
+/* line 22, modules/_scrollbars.scss */
+::-webkit-scrollbar-thumb:vertical:hover {
+  -webkit-box-shadow: inset 5px 5px 6px #81d9ed;
+  background: white;
+}
+
+/* line 27, modules/_scrollbars.scss */
+::-webkit-scrollbar-thumb:horizontal {
+  background: #04b4dc;
+  border-radius: 50px;
+  border: 2px solid white;
+}
+
+/* line 33, modules/_scrollbars.scss */
+::-webkit-scrollbar-thumb:horizontal:hover {
+  border: 1px solid #81d9ed;
+}
+
 /* line 1, modules/_grid.scss */
 #container {
   width: 1366px;
@@ -1538,10 +1579,10 @@ p.footer-copyright {
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
     opacity: 0;
-    -webkit-animation: fadeIn ease-in 1;
-    -moz-animation: fadeIn ease-in 1;
-    -ms-animation: fadeIn ease-in 1;
-    animation: fadeIn ease-in 1;
+    -webkit-animation: fadeIn ease-out 1;
+    -moz-animation: fadeIn ease-out 1;
+    -ms-animation: fadeIn ease-out 1;
+    animation: fadeIn ease-out 1;
     -webkit-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
     -ms-animation-fill-mode: forwards;
