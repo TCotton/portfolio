@@ -65,19 +65,27 @@
 
   @if $divider == 0 {
     $margin: null;
-    @include double-line-height($fontSize);
+    //@include double-line-height($fontSize);
+  } @else if $divider == 2 {
+    $margin: (strip-units($baseLineHeight) / $fontSizeRem) * 2;
+    margin-bottom: #{double-size($fontSize, $margin)}#{"em"};
+    //@include double-line-height($fontSize);
+  } @else if $divider == 1.5 {
+    $margin: (strip-units($baseLineHeight) / $fontSizeRem) * 1.5;
+    margin-bottom: #{double-size($fontSize, $margin)}#{"em"};
+    //@include double-line-height($fontSize);
   } @else if $divider == 0.5 {
     $margin: strip-units($baseLineHeight) / $fontSizeRem / 2;
     margin-bottom: #{double-size($fontSize, $margin)}#{"em"};
-    @include double-line-height($fontSize);
+    //@include double-line-height($fontSize);
   } @else if $divider == 0.25 {
     $margin: strip-units($baseLineHeight) / $fontSizeRem / 4;
     margin-bottom: #{double-size($fontSize, $margin)}#{"em"};
-    @include double-line-height($fontSize);
+    //@include double-line-height($fontSize);
   } @else if $divider == null {
     $margin: strip-units($baseLineHeight) / $fontSizeRem;
     margin-bottom: #{double-size($fontSize, $margin)}#{"em"};
-    @include double-line-height($fontSize);
+    //@include double-line-height($fontSize);
   }
 
 }

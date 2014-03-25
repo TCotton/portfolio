@@ -22,7 +22,7 @@ h1.logo {
 }
 
 h2.page-top-title {
-  @include font-calculator($baseFontFamily, 40px, 0.5);
+  @include font-calculator($baseFontFamily, 40px);
   font-weight: 300;
   color: white;
 }
@@ -34,26 +34,27 @@ p.page-top-text {
 }
 
 .front-page-bottom-header {
-  @include font-calculator($baseFontFamily, 80px);
+  @include font-calculator($baseFontFamily, 80px, 1.5);
   font-weight: 300;
   color: white;
 }
 
 .front-page-bottom-text {
-  @include font-calculator($baseFontFamily, 13px);
+  @include font-calculator($baseFontFamily, 13px, 0);
   font-weight: 600;
   color: white;
 }
 
 .content-title {
-  @include font-calculator($baseFontFamily, 30px);
+  @include font-calculator($baseFontFamily, 30px, 1.5);
   font-weight: 300;
   color: $textThree;
 }
 
 h3.blog-title {
-  @include font-calculator($baseFontFamily, 40px);
+  @include font-calculator($baseFontFamily, 40px, 1.5);
   font-weight: 300;
+  line-height: 40px;
   color: $textTwo;
 }
 

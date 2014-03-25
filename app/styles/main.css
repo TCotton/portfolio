@@ -857,7 +857,6 @@ html {
 h1.logo {
   font-size: 3.5em;
   font-family: 'Yellowtail', cursive;
-  line-height: 25px;
   line-height: 84px;
   color: white;
 }
@@ -875,8 +874,7 @@ h1.logo {
 h2.page-top-title {
   font-size: 4em;
   font-family: 'Open Sans', sans-serif;
-  margin-bottom: 0.3125em;
-  line-height: 25px;
+  margin-bottom: 0.625em;
   font-weight: 300;
   color: white;
 }
@@ -893,8 +891,7 @@ p.page-top-text {
 .front-page-bottom-header {
   font-size: 8em;
   font-family: 'Open Sans', sans-serif;
-  margin-bottom: 0.3125em;
-  line-height: 25px;
+  margin-bottom: 0.46875em;
   font-weight: 300;
   color: white;
 }
@@ -903,7 +900,6 @@ p.page-top-text {
 .front-page-bottom-text {
   font-size: 1.3em;
   font-family: 'Open Sans', sans-serif;
-  margin-bottom: 1.92308em;
   font-weight: 600;
   color: white;
 }
@@ -912,8 +908,7 @@ p.page-top-text {
 .content-title {
   font-size: 3em;
   font-family: 'Open Sans', sans-serif;
-  margin-bottom: 0.83333em;
-  line-height: 25px;
+  margin-bottom: 1.25em;
   font-weight: 300;
   color: #999999;
 }
@@ -922,24 +917,23 @@ p.page-top-text {
 h3.blog-title {
   font-size: 4em;
   font-family: 'Open Sans', sans-serif;
-  margin-bottom: 0.625em;
-  line-height: 25px;
+  margin-bottom: 0.9375em;
   font-weight: 300;
+  line-height: 40px;
   color: #666666;
 }
 
-/* line 60, modules/_typography.scss */
+/* line 61, modules/_typography.scss */
 .blog article h4 {
   font-size: 2.6em;
   font-family: 'Open Sans', sans-serif;
   margin-bottom: 0.96154em;
-  line-height: 25px;
   font-weight: 600;
   color: #666666;
 }
 
 /* little mixin for standard blog css attributes and values */
-/* line 68, modules/_typography.scss */
+/* line 69, modules/_typography.scss */
 .content-text li {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
@@ -949,7 +943,7 @@ h3.blog-title {
   list-style: none;
 }
 
-/* line 68, modules/_typography.scss */
+/* line 69, modules/_typography.scss */
 .content-text p {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
@@ -958,7 +952,7 @@ h3.blog-title {
   font-weight: 400;
 }
 
-/* line 68, modules/_typography.scss */
+/* line 69, modules/_typography.scss */
 .content-text p.date {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
@@ -968,7 +962,7 @@ h3.blog-title {
   font-style: italic;
 }
 
-/* line 68, modules/_typography.scss */
+/* line 69, modules/_typography.scss */
 .content-text p.read-more {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
@@ -977,7 +971,7 @@ h3.blog-title {
   font-weight: 700;
 }
 
-/* line 68, modules/_typography.scss */
+/* line 69, modules/_typography.scss */
 .content-text p.minor-title {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
@@ -986,7 +980,7 @@ h3.blog-title {
   font-weight: 700;
 }
 
-/* line 97, modules/_typography.scss */
+/* line 98, modules/_typography.scss */
 .blog #blog-content a:hover:after {
   content: "(Link: " attr(href) ")";
   color: #1d7a94;
@@ -995,13 +989,13 @@ h3.blog-title {
   text-decoration: underline;
 }
 
-/* line 107, modules/_typography.scss */
+/* line 108, modules/_typography.scss */
 .content-text a.underline {
   text-decoration: none;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.3) 11%, rgba(0, 0, 0, 0.3) 16%, rgba(0, 0, 0, 0) 16%);
   position: relative;
 }
-/* line 113, modules/_typography.scss */
+/* line 114, modules/_typography.scss */
 .content-text a.underline[rel="external"]::after {
   content: " " attr(href) " ";
   position: absolute;
@@ -1016,45 +1010,44 @@ h3.blog-title {
   transition: opacity 0.5s;
   white-space: nowrap;
 }
-/* line 125, modules/_typography.scss */
+/* line 126, modules/_typography.scss */
 .content-text a.underline[rel="external"]:hover::after {
   opacity: 1;
 }
-/* line 129, modules/_typography.scss */
+/* line 130, modules/_typography.scss */
 .content-text a.underline:link {
   color: #666666;
 }
-/* line 132, modules/_typography.scss */
+/* line 133, modules/_typography.scss */
 .content-text a.underline:visited {
   color: gray;
 }
-/* line 135, modules/_typography.scss */
+/* line 136, modules/_typography.scss */
 .content-text a.underline:focus {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
-/* line 139, modules/_typography.scss */
+/* line 140, modules/_typography.scss */
 .content-text a.underline:hover {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
-/* line 144, modules/_typography.scss */
+/* line 145, modules/_typography.scss */
 .content-text a.underline:active {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
 
-/* line 153, modules/_typography.scss */
+/* line 154, modules/_typography.scss */
 h4.blog-sidebar-header {
   font-size: 3em;
   font-family: 'Open Sans', sans-serif;
   margin-bottom: 0.83333em;
-  line-height: 25px;
   font-weight: 300;
   color: #666666;
 }
 
-/* line 159, modules/_typography.scss */
+/* line 160, modules/_typography.scss */
 .blog-sidebar-text p, ul.blog-sidebar-text {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
@@ -1063,26 +1056,24 @@ h4.blog-sidebar-header {
   color: #666666;
 }
 
-/* line 165, modules/_typography.scss */
+/* line 166, modules/_typography.scss */
 h3.contact-header {
   font-size: 3em;
   font-family: 'Open Sans', sans-serif;
   margin-bottom: 0.83333em;
-  line-height: 25px;
   font-weight: 300;
   color: #666666;
 }
 
-/* line 171, modules/_typography.scss */
+/* line 172, modules/_typography.scss */
 h3.project-header {
   font-size: 3em;
   font-family: 'Open Sans', sans-serif;
-  line-height: 25px;
   font-weight: 400;
   color: white;
 }
 
-/* line 177, modules/_typography.scss */
+/* line 178, modules/_typography.scss */
 .footer-top-text p, ul.footer-top-text {
   font-size: 2em;
   font-family: 'Open Sans', sans-serif;
@@ -1092,14 +1083,14 @@ h3.project-header {
   color: #666666;
 }
 
-/* line 184, modules/_typography.scss */
+/* line 185, modules/_typography.scss */
 .code-preview {
   font-size: 12px;
   color: #666666;
   line-height: 16px;
 }
 
-/* line 190, modules/_typography.scss */
+/* line 191, modules/_typography.scss */
 p.footer-copyright {
   font-size: 1.3em;
   font-family: 'Open Sans', sans-serif;
@@ -1187,7 +1178,6 @@ p.footer-copyright {
   background: #81d9ed;
   font-size: 2.6em;
   font-family: 'Open Sans', sans-serif;
-  line-height: 25px;
   color: white;
   font-weight: 300;
 }
