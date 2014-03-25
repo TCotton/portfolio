@@ -5,7 +5,7 @@
 // increases margin-bottom if font size is greater than 20px
 @function double-size($fontSize, $marginNumber) {
   @if strip-units($fontSize) > 20  {
-    @return $marginNumber * 2;
+    @return $marginNumber * 1;
   } @else {
     @return $marginNumber;
   }
@@ -39,6 +39,12 @@
 
 }
 
+@mixin double-line-height($fontSize) {
+  @if strip-units($fontSize) > 20  {
+    line-height: #{($baseLineHeight * basefont-to-pixel($baseFontSize) * 1)}px;
+  }
+}
+
 @mixin font-calculator($fontFamily, $fontSize, $divider: null) {
 
   // the font calculator works out of a uniform vertical rhythm between font sizes and bottom margins
@@ -51,20 +57,27 @@
   // the second is the font size in pixels - without the pixel unit value
   // font size is converted
 
+  // explore this article more: http://gregrickaby.com/using-the-golden-ratio-and-rems/
+
   $fontSizeRem: strip-units($fontSize) / basefont-to-pixel($baseFontSize);
-  font: #{$fontSizeRem}#{"rem"} #{$fontFamily};
+  font-size: #{$fontSizeRem}#{"em"};
+  font-family: #{$fontFamily};
 
   @if $divider == 0 {
     $margin: null;
+    @include double-line-height($fontSize);
   } @else if $divider == 0.5 {
     $margin: strip-units($baseLineHeight) / $fontSizeRem / 2;
-    margin-bottom: #{double-size($fontSize, $margin)}#{"rem"};
+    margin-bottom: #{double-size($fontSize, $margin)}#{"em"};
+    @include double-line-height($fontSize);
   } @else if $divider == 0.25 {
     $margin: strip-units($baseLineHeight) / $fontSizeRem / 4;
-    margin-bottom: #{double-size($fontSize, $margin)}#{"rem"};
+    margin-bottom: #{double-size($fontSize, $margin)}#{"em"};
+    @include double-line-height($fontSize);
   } @else if $divider == null {
     $margin: strip-units($baseLineHeight) / $fontSizeRem;
-    margin-bottom: #{double-size($fontSize, $margin)}#{"rem"};
+    margin-bottom: #{double-size($fontSize, $margin)}#{"em"};
+    @include double-line-height($fontSize);
   }
 
 }

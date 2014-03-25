@@ -591,15 +591,11 @@ a:active {
 
 /* line 6, main.scss */
 html {
-  font: 62.5% / 2.5 'Open Sans', sans-serif;
+  font-size: 62.5%;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 2.5em;
 }
 
-@media (max-width: 960px) {
-  /* line 14, main.scss */
-  html {
-    font: 62.5% / 2.5 'Open Sans', sans-serif;
-  }
-}
 /* line 1, modules/_media_queries.scss */
 .visible-phone {
   display: none !important;
@@ -714,9 +710,10 @@ html {
   width: 822px;
   float: left;
   display: inline;
+  margin: 0 32px 0 0;
 }
 
-/* line 12, modules/_grid.scss */
+/* line 13, modules/_grid.scss */
 #left-small {
   width: 398px;
   float: left;
@@ -724,19 +721,18 @@ html {
   margin: 0 32px 0 0;
 }
 
-/* line 19, modules/_grid.scss */
+/* line 20, modules/_grid.scss */
 #right-large {
   width: 822px;
   float: left;
   display: inline;
 }
 
-/* line 25, modules/_grid.scss */
+/* line 26, modules/_grid.scss */
 #right-small {
   width: 398px;
   float: left;
   display: inline;
-  margin: 0 32px 0 0;
 }
 
 /* line 32, modules/_grid.scss */
@@ -825,6 +821,28 @@ html {
     width: 99%;
   }
 
+  /* line 105, modules/_grid.scss */
+  #left-large {
+    width: 60.17569546120058%;
+    margin: 0 2.342606149341142% 0 0;
+  }
+
+  /* line 110, modules/_grid.scss */
+  #left-small {
+    width: 29.136163982430453%;
+    margin: 0 2.342606149341142% 0 0;
+  }
+
+  /* line 115, modules/_grid.scss */
+  #right-large {
+    width: 60.17569546120058%;
+  }
+
+  /* line 119, modules/_grid.scss */
+  #right-small {
+    width: 29.136163982430453%;
+  }
+
   /* line 123, modules/_grid.scss */
   #main-content {
     padding: 57px 4.172767203513909%;
@@ -837,14 +855,17 @@ html {
 }
 /* line 11, modules/_typography.scss */
 h1.logo {
-  font: 3.5rem 'Yellowtail', cursive;
+  font-size: 3.5em;
+  font-family: 'Yellowtail', cursive;
+  line-height: 25px;
   line-height: 84px;
   color: white;
 }
 
 /* line 17, modules/_typography.scss */
 .navigation li {
-  font: 1.5rem 'Open Sans', sans-serif;
+  font-size: 1.5em;
+  font-family: 'Open Sans', sans-serif;
   text-transform: uppercase;
   line-height: 84px;
   font-weight: 700;
@@ -852,55 +873,67 @@ h1.logo {
 
 /* line 24, modules/_typography.scss */
 h2.page-top-title {
-  font: 4rem 'Open Sans', sans-serif;
-  margin-bottom: 0.625rem;
+  font-size: 4em;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 0.3125em;
+  line-height: 25px;
   font-weight: 300;
   color: white;
 }
 
 /* line 30, modules/_typography.scss */
 p.page-top-text {
-  font: 1.8rem 'Open Sans', sans-serif;
+  font-size: 1.8em;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   color: white;
 }
 
 /* line 36, modules/_typography.scss */
 .front-page-bottom-header {
-  font: 8rem 'Open Sans', sans-serif;
-  margin-bottom: 0.625rem;
+  font-size: 8em;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 0.3125em;
+  line-height: 25px;
   font-weight: 300;
   color: white;
 }
 
 /* line 42, modules/_typography.scss */
 .front-page-bottom-text {
-  font: 1.3rem 'Open Sans', sans-serif;
-  margin-bottom: 1.92308rem;
+  font-size: 1.3em;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 1.92308em;
   font-weight: 600;
   color: white;
 }
 
 /* line 48, modules/_typography.scss */
 .content-title {
-  font: 3rem 'Open Sans', sans-serif;
-  margin-bottom: 1.66667rem;
+  font-size: 3em;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 0.83333em;
+  line-height: 25px;
   font-weight: 300;
   color: #999999;
 }
 
 /* line 54, modules/_typography.scss */
 h3.blog-title {
-  font: 4rem 'Open Sans', sans-serif;
-  margin-bottom: 1.25rem;
+  font-size: 4em;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 0.625em;
+  line-height: 25px;
   font-weight: 300;
   color: #666666;
 }
 
 /* line 60, modules/_typography.scss */
 .blog article h4 {
-  font: 2.6rem 'Open Sans', sans-serif;
-  margin-bottom: 1.92308rem;
+  font-size: 2.6em;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 0.96154em;
+  line-height: 25px;
   font-weight: 600;
   color: #666666;
 }
@@ -908,8 +941,9 @@ h3.blog-title {
 /* little mixin for standard blog css attributes and values */
 /* line 68, modules/_typography.scss */
 .content-text li {
-  font: 1.6rem 'Open Sans', sans-serif;
-  margin-bottom: 1.5625rem;
+  font-size: 1.6em;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 1.5625em;
   color: #666666;
   font-weight: 400;
   list-style: none;
@@ -917,16 +951,18 @@ h3.blog-title {
 
 /* line 68, modules/_typography.scss */
 .content-text p {
-  font: 1.6rem 'Open Sans', sans-serif;
-  margin-bottom: 1.5625rem;
+  font-size: 1.6em;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 1.5625em;
   color: #666666;
   font-weight: 400;
 }
 
 /* line 68, modules/_typography.scss */
 .content-text p.date {
-  font: 1.6rem 'Open Sans', sans-serif;
-  margin-bottom: 1.5625rem;
+  font-size: 1.6em;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 1.5625em;
   color: #666666;
   font-weight: 400;
   font-style: italic;
@@ -934,16 +970,18 @@ h3.blog-title {
 
 /* line 68, modules/_typography.scss */
 .content-text p.read-more {
-  font: 1.6rem 'Open Sans', sans-serif;
-  margin-bottom: 1.5625rem;
+  font-size: 1.6em;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 1.5625em;
   color: #666666;
   font-weight: 700;
 }
 
 /* line 68, modules/_typography.scss */
 .content-text p.minor-title {
-  font: 1.6rem 'Open Sans', sans-serif;
-  margin-bottom: 1.5625rem;
+  font-size: 1.6em;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 1.5625em;
   color: #666666;
   font-weight: 700;
 }
@@ -1008,39 +1046,47 @@ h3.blog-title {
 
 /* line 153, modules/_typography.scss */
 h4.blog-sidebar-header {
-  font: 3rem 'Open Sans', sans-serif;
-  margin-bottom: 1.66667rem;
+  font-size: 3em;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 0.83333em;
+  line-height: 25px;
   font-weight: 300;
   color: #666666;
 }
 
 /* line 159, modules/_typography.scss */
 .blog-sidebar-text p, ul.blog-sidebar-text {
-  font: 1.6rem 'Open Sans', sans-serif;
-  margin-bottom: 1.5625rem;
+  font-size: 1.6em;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 1.5625em;
   font-weight: 600;
   color: #666666;
 }
 
 /* line 165, modules/_typography.scss */
 h3.contact-header {
-  font: 3rem 'Open Sans', sans-serif;
-  margin-bottom: 1.66667rem;
+  font-size: 3em;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 0.83333em;
+  line-height: 25px;
   font-weight: 300;
   color: #666666;
 }
 
 /* line 171, modules/_typography.scss */
 h3.project-header {
-  font: 3rem 'Open Sans', sans-serif;
+  font-size: 3em;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 25px;
   font-weight: 400;
   color: white;
 }
 
 /* line 177, modules/_typography.scss */
 .footer-top-text p, ul.footer-top-text {
-  font: 2rem 'Open Sans', sans-serif;
-  margin-bottom: 1.25rem;
+  font-size: 2em;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 1.25em;
   font-weight: 300;
   font-style: italic;
   color: #666666;
@@ -1055,7 +1101,8 @@ h3.project-header {
 
 /* line 190, modules/_typography.scss */
 p.footer-copyright {
-  font: 1.3rem 'Open Sans', sans-serif;
+  font-size: 1.3em;
+  font-family: 'Open Sans', sans-serif;
   line-height: 94px;
   color: white;
   text-transform: capitalize;
@@ -1064,7 +1111,8 @@ p.footer-copyright {
 /* line 1, modules/_buttons.scss */
 .button-front-one {
   background: white;
-  font: 1.6rem 'Open Sans', sans-serif;
+  font-size: 1.6em;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   color: #04b3da;
   width: 320px;
@@ -1083,7 +1131,8 @@ p.footer-copyright {
   width: 100%;
   height: 56px;
   line-height: 54px;
-  font: 1.6rem 'Open Sans', sans-serif;
+  font-size: 1.6em;
+  font-family: 'Open Sans', sans-serif;
   color: #666666;
   font-weight: 400;
   border-radius: 5px;
@@ -1099,7 +1148,8 @@ p.footer-copyright {
   width: 100%;
   height: 56px;
   line-height: 54px;
-  font: 1.6rem 'Open Sans', sans-serif;
+  font-size: 1.6em;
+  font-family: 'Open Sans', sans-serif;
   color: white;
   font-weight: 400;
   border-radius: 5px;
@@ -1115,7 +1165,8 @@ p.footer-copyright {
   width: 310px;
   height: 56px;
   line-height: 54px;
-  font: 1.6rem 'Open Sans', sans-serif;
+  font-size: 1.6em;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   color: white;
   border-radius: 5px;
@@ -1134,7 +1185,9 @@ p.footer-copyright {
   height: 58px;
   border-radius: 10px;
   background: #81d9ed;
-  font: 2.6rem 'Open Sans', sans-serif;
+  font-size: 2.6em;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 25px;
   color: white;
   font-weight: 300;
 }
@@ -1167,7 +1220,8 @@ p.footer-copyright {
   height: 66px;
   padding: 10px;
   border: 1px solid #cccccc;
-  font: 1.6rem 'Open Sans', sans-serif;
+  font-size: 1.6em;
+  font-family: 'Open Sans', sans-serif;
   color: #666666;
   font-weight: 400;
   clear: both;
@@ -1184,7 +1238,8 @@ p.footer-copyright {
   height: 271px;
   padding: 10px;
   border: 1px solid #cccccc;
-  font: 1.6rem 'Open Sans', sans-serif;
+  font-size: 1.6em;
+  font-family: 'Open Sans', sans-serif;
   color: #666666;
   font-weight: 400;
   clear: both;

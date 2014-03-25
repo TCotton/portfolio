@@ -7,6 +7,7 @@
   width: 822px;
   float: left;
   display: inline;
+  margin: 0 32px 0 0;
 }
 
 #left-small {
@@ -26,7 +27,6 @@
   width: 398px;
   float: left;
   display: inline;
-  margin: 0 32px 0 0;
 }
 
 #main-content {
@@ -102,23 +102,23 @@
     width: 99%;
   }
 
-//  #left-large {
-//    width: 63.689604685212295%;
-//    margin: 0 4.172767203513909% 0 0;
-//  }
-//
-//  #left-small {
-//    width: 27.96486090775988%;
-//  }
-//
-//  #right-large {
-//    width: 63.689604685212295%;
-//    margin: 0 4.172767203513909% 0 0;
-//  }
-//
-//  #right-small {
-//    width: 27.96486090775988%;
-//  }
+  #left-large {
+    width: 60.17569546120058%;
+    margin: 0 2.342606149341142% 0 0;
+  }
+
+  #left-small {
+    width: 29.136163982430453%;
+    margin: 0 2.342606149341142% 0 0;
+  }
+
+  #right-large {
+    width: 60.17569546120058%;
+  }
+
+  #right-small {
+    width: 29.136163982430453%;
+  }
 
   #main-content {
     padding: 57px 4.172767203513909%;

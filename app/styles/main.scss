@@ -4,18 +4,25 @@
 
 
 html {
-  font: #{$baseFontSize} / #{$baseLineHeight} $baseFontFamily;
+  //font: #{$baseFontSize} / #{$baseLineHeight} $baseFontFamily;
+  font-size: #{$baseFontSize};
+  font-family: $baseFontFamily;
+  line-height: #{$baseLineHeight}em;
 }
 
-@include breakpoint("standard") {
 
- // $baseFontSize: 56.3%;
 
-  html {
-    font: #{$baseFontSize} / #{$baseLineHeight} $baseFontFamily;
-  }
 
-}
+
+//@include breakpoint("standard") {
+//
+// // $baseFontSize: 56.3%;
+//
+//  html {
+//    font: #{$baseFontSize} / #{$baseLineHeight} $baseFontFamily;
+//  }
+//
+//}
 
 @import "modules/media_queries";
 @import "modules/scrollbars";
