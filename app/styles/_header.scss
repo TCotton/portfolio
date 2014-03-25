@@ -2,7 +2,6 @@
   height: $headerHeight;
   padding: 0 57px;
   background: $topHeaderBackground;
-  white-space: nowrap;
 
   a:link {
     color: white;
@@ -52,7 +51,6 @@
     a {
       text-decoration: none;
       color: white;
-      @include font-sharp();
     }
   }
 }

@@ -433,7 +433,6 @@ h1, h2, h3, h4, h5, h6, th, td, caption {
   font-kerning: normal;
   -webkit-font-feature-settings: "liga", "kern";
   -moz-font-feature-settings: "liga", "kern";
-  font-feature-settings: "liga", "kern";
 }
 
 /* slight character and word gap of retina devices to make the text more legible */
@@ -1259,75 +1258,67 @@ p.footer-copyright {
   height: 84px;
   padding: 0 57px;
   background: #27353d;
-  white-space: nowrap;
 }
-/* line 7, _header.scss */
+/* line 6, _header.scss */
 #header a:link {
   color: white;
   -ms-transition: color 0.3s;
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
-/* line 11, _header.scss */
+/* line 10, _header.scss */
 #header a:visited {
   color: white;
 }
-/* line 14, _header.scss */
+/* line 13, _header.scss */
 #header a:focus {
   color: #00bd9c;
 }
-/* line 17, _header.scss */
+/* line 16, _header.scss */
 #header a:hover {
   color: #00bd9c;
 }
-/* line 20, _header.scss */
+/* line 19, _header.scss */
 #header a:active {
   color: #00bd9c;
 }
-/* line 23, _header.scss */
+/* line 22, _header.scss */
 #header a.active {
   color: #00bd9c;
 }
 
 @media (max-width: 1366px) {
-  /* line 31, _header.scss */
+  /* line 30, _header.scss */
   #header {
     padding: 0 4.172767203513909%;
   }
 }
-/* line 37, _header.scss */
+/* line 36, _header.scss */
 #logo-wrapper {
   float: left;
 }
-/* line 39, _header.scss */
+/* line 38, _header.scss */
 #logo-wrapper a {
   text-decoration: none;
 }
 
-/* line 44, _header.scss */
+/* line 43, _header.scss */
 #navigation-wrapper {
   float: right;
 }
-/* line 46, _header.scss */
+/* line 45, _header.scss */
 #navigation-wrapper li {
   display: inline;
   list-style: none;
 }
-/* line 49, _header.scss */
+/* line 48, _header.scss */
 #navigation-wrapper li + li {
   margin: 0 0 0 24px;
 }
-/* line 52, _header.scss */
+/* line 51, _header.scss */
 #navigation-wrapper li a {
   text-decoration: none;
   color: white;
-  text-rendering: optimizeLegibility;
-  -webkit-font-kerning: normal;
-  -moz-font-kerning: normal;
-  font-kerning: normal;
-  -webkit-font-feature-settings: "liga";
-  -moz-font-feature-settings: "liga", "kern";
-  font-feature-settings: "liga", "kern";
 }
 
 /* line 1, _homepage.scss */
@@ -1694,22 +1685,18 @@ p.footer-copyright {
     opacity: 0;
     -webkit-animation: fadeIn ease-out 1;
     -moz-animation: fadeIn ease-out 1;
-    -ms-animation: fadeIn ease-out 1;
     animation: fadeIn ease-out 1;
     -webkit-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
-    -ms-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
     -webkit-animation-duration: 3s;
     -moz-animation-duration: 3s;
-    -ms-animation-duration: 3s;
     animation-duration: 3s;
     -webkit-animation-delay: 3s;
     -moz-animation-delay: 3s;
-    -ms-animation-delay: 3s;
     animation-delay: 3s;
   }
-  /* line 76, _aboutme.scss */
+  /* line 72, _aboutme.scss */
   .aboutme [class*="per"]:last-of-type {
     -webkit-animation-name: shake;
     -webkit-animation-delay: 6s;
@@ -1724,216 +1711,202 @@ p.footer-copyright {
     animation-iteration-count: infinite;
     animation-timing-function: linear;
   }
+}
+@-webkit-keyframes fadeIn {
+  /* line 95, _aboutme.scss */
+  from {
+    opacity: 0;
+    -webkit-transform: scaleX(0);
+  }
 
-  @-webkit-keyframes fadeIn {
-    /* line 97, _aboutme.scss */
-    from {
-      opacity: 0;
-      -webkit-transform: scaleX(0);
-    }
-
-    /* line 101, _aboutme.scss */
-    to {
-      opacity: 1;
-      -webkit-transform: scaleX(1);
-    }
+  /* line 99, _aboutme.scss */
+  to {
+    opacity: 1;
+    -webkit-transform: scaleX(1);
+  }
 }
 
-  @-moz-keyframes fadeIn {
-    /* line 107, _aboutme.scss */
-    from {
-      opacity: 0;
-      -moz-transform: scaleX(0);
-    }
+@-moz-keyframes fadeIn {
+  /* line 106, _aboutme.scss */
+  from {
+    opacity: 0;
+    -moz-transform: scaleX(0);
+  }
 
-    /* line 111, _aboutme.scss */
-    to {
-      opacity: 1;
-      -moz-transform: scaleX(1);
-    }
+  /* line 110, _aboutme.scss */
+  to {
+    opacity: 1;
+    -moz-transform: scaleX(1);
+  }
 }
 
-  @-ms-keyframes fadeIn {
-    /* line 117, _aboutme.scss */
-    from {
-      opacity: 0;
-      -moz-transform: scaleX(0);
-    }
+@keyframes fadeIn {
+  /* line 117, _aboutme.scss */
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+  }
 
-    /* line 121, _aboutme.scss */
-    to {
-      opacity: 1;
-      -moz-transform: scaleX(1);
-    }
+  /* line 121, _aboutme.scss */
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
 }
 
-  @keyframes fadeIn {
-    /* line 127, _aboutme.scss */
-    from {
-      opacity: 0;
-      transform: scaleX(0);
-    }
+@-webkit-keyframes shake {
+  /* line 128, _aboutme.scss */
+  0% {
+    -webkit-transform: translate(2px, 1px) rotate(0deg);
+  }
 
-    /* line 131, _aboutme.scss */
-    to {
-      opacity: 1;
-      transform: scaleX(1);
-    }
+  /* line 131, _aboutme.scss */
+  10% {
+    -webkit-transform: translate(-1px, -2px) rotate(-1deg);
+  }
+
+  /* line 134, _aboutme.scss */
+  20% {
+    -webkit-transform: translate(-3px, 0px) rotate(1deg);
+  }
+
+  /* line 137, _aboutme.scss */
+  30% {
+    -webkit-transform: translate(0px, 2px) rotate(0deg);
+  }
+
+  /* line 140, _aboutme.scss */
+  40% {
+    -webkit-transform: translate(1px, -1px) rotate(1deg);
+  }
+
+  /* line 143, _aboutme.scss */
+  50% {
+    -webkit-transform: translate(-1px, 2px) rotate(-1deg);
+  }
+
+  /* line 146, _aboutme.scss */
+  60% {
+    -webkit-transform: translate(-3px, 1px) rotate(0deg);
+  }
+
+  /* line 149, _aboutme.scss */
+  70% {
+    -webkit-transform: translate(2px, 1px) rotate(-1deg);
+  }
+
+  /* line 152, _aboutme.scss */
+  80% {
+    -webkit-transform: translate(-1px, -1px) rotate(1deg);
+  }
+
+  /* line 155, _aboutme.scss */
+  90% {
+    -webkit-transform: translate(2px, 2px) rotate(0deg);
+  }
+
+  /* line 158, _aboutme.scss */
+  100% {
+    -webkit-transform: translate(1px, -2px) rotate(-1deg);
+  }
 }
 
-  @-webkit-keyframes shake {
-    /* line 138, _aboutme.scss */
-    0% {
-      -webkit-transform: translate(2px, 1px) rotate(0deg);
-    }
+@keyframes shake {
+  /* line 164, _aboutme.scss */
+  0% {
+    transform: translate(2px, 1px) rotate(0deg);
+  }
 
-    /* line 141, _aboutme.scss */
-    10% {
-      -webkit-transform: translate(-1px, -2px) rotate(-1deg);
-    }
+  /* line 167, _aboutme.scss */
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
 
-    /* line 144, _aboutme.scss */
-    20% {
-      -webkit-transform: translate(-3px, 0px) rotate(1deg);
-    }
+  /* line 170, _aboutme.scss */
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
 
-    /* line 147, _aboutme.scss */
-    30% {
-      -webkit-transform: translate(0px, 2px) rotate(0deg);
-    }
+  /* line 173, _aboutme.scss */
+  30% {
+    transform: translate(0px, 2px) rotate(0deg);
+  }
 
-    /* line 150, _aboutme.scss */
-    40% {
-      -webkit-transform: translate(1px, -1px) rotate(1deg);
-    }
+  /* line 176, _aboutme.scss */
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
 
-    /* line 153, _aboutme.scss */
-    50% {
-      -webkit-transform: translate(-1px, 2px) rotate(-1deg);
-    }
+  /* line 179, _aboutme.scss */
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
 
-    /* line 156, _aboutme.scss */
-    60% {
-      -webkit-transform: translate(-3px, 1px) rotate(0deg);
-    }
+  /* line 182, _aboutme.scss */
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
 
-    /* line 159, _aboutme.scss */
-    70% {
-      -webkit-transform: translate(2px, 1px) rotate(-1deg);
-    }
+  /* line 185, _aboutme.scss */
+  70% {
+    transform: translate(2px, 1px) rotate(-1deg);
+  }
 
-    /* line 162, _aboutme.scss */
-    80% {
-      -webkit-transform: translate(-1px, -1px) rotate(1deg);
-    }
+  /* line 188, _aboutme.scss */
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
 
-    /* line 165, _aboutme.scss */
-    90% {
-      -webkit-transform: translate(2px, 2px) rotate(0deg);
-    }
+  /* line 191, _aboutme.scss */
+  90% {
+    transform: translate(2px, 2px) rotate(0deg);
+  }
 
-    /* line 168, _aboutme.scss */
-    100% {
-      -webkit-transform: translate(1px, -2px) rotate(-1deg);
-    }
+  /* line 194, _aboutme.scss */
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
 }
 
-  @keyframes shake {
-    /* line 174, _aboutme.scss */
-    0% {
-      transform: translate(2px, 1px) rotate(0deg);
-    }
-
-    /* line 177, _aboutme.scss */
-    10% {
-      transform: translate(-1px, -2px) rotate(-1deg);
-    }
-
-    /* line 180, _aboutme.scss */
-    20% {
-      transform: translate(-3px, 0px) rotate(1deg);
-    }
-
-    /* line 183, _aboutme.scss */
-    30% {
-      transform: translate(0px, 2px) rotate(0deg);
-    }
-
-    /* line 186, _aboutme.scss */
-    40% {
-      transform: translate(1px, -1px) rotate(1deg);
-    }
-
-    /* line 189, _aboutme.scss */
-    50% {
-      transform: translate(-1px, 2px) rotate(-1deg);
-    }
-
-    /* line 192, _aboutme.scss */
-    60% {
-      transform: translate(-3px, 1px) rotate(0deg);
-    }
-
-    /* line 195, _aboutme.scss */
-    70% {
-      transform: translate(2px, 1px) rotate(-1deg);
-    }
-
-    /* line 198, _aboutme.scss */
-    80% {
-      transform: translate(-1px, -1px) rotate(1deg);
-    }
-
-    /* line 201, _aboutme.scss */
-    90% {
-      transform: translate(2px, 2px) rotate(0deg);
-    }
-
-    /* line 204, _aboutme.scss */
-    100% {
-      transform: translate(1px, -2px) rotate(-1deg);
-    }
-}
-}
 @media screen and (min--moz-device-pixel-ratio: 0) {
   /* another firefox bug :( */
-  /* line 220, _aboutme.scss */
+  /* line 208, _aboutme.scss */
   .aboutme .per_10 span {
     width: calc(10% - 20px);
   }
-  /* line 220, _aboutme.scss */
+  /* line 208, _aboutme.scss */
   .aboutme .per_20 span {
     width: calc(20% - 20px);
   }
-  /* line 220, _aboutme.scss */
+  /* line 208, _aboutme.scss */
   .aboutme .per_30 span {
     width: calc(30% - 20px);
   }
-  /* line 220, _aboutme.scss */
+  /* line 208, _aboutme.scss */
   .aboutme .per_40 span {
     width: calc(40% - 20px);
   }
-  /* line 220, _aboutme.scss */
+  /* line 208, _aboutme.scss */
   .aboutme .per_50 span {
     width: calc(50% - 20px);
   }
-  /* line 220, _aboutme.scss */
+  /* line 208, _aboutme.scss */
   .aboutme .per_60 span {
     width: calc(60% - 20px);
   }
-  /* line 220, _aboutme.scss */
+  /* line 208, _aboutme.scss */
   .aboutme .per_70 span {
     width: calc(70% - 20px);
   }
-  /* line 220, _aboutme.scss */
+  /* line 208, _aboutme.scss */
   .aboutme .per_80 span {
     width: calc(80% - 20px);
   }
-  /* line 220, _aboutme.scss */
+  /* line 208, _aboutme.scss */
   .aboutme .per_90 span {
     width: calc(90% - 20px);
   }
-  /* line 220, _aboutme.scss */
+  /* line 208, _aboutme.scss */
   .aboutme .per_100 span {
     width: calc(100% - 20px);
   }
