@@ -1712,14 +1712,23 @@ p.footer-copyright {
     animation-timing-function: linear;
   }
 }
+@media (min-device-width: 768px) {
+  /* line 97, _aboutme.scss */
+  .ie9 .aboutme [class*="per"] span {
+    -ms-transform: scaleX(1);
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
 @-webkit-keyframes fadeIn {
-  /* line 95, _aboutme.scss */
+  /* line 106, _aboutme.scss */
   from {
     opacity: 0;
     -webkit-transform: scaleX(0);
   }
 
-  /* line 99, _aboutme.scss */
+  /* line 110, _aboutme.scss */
   to {
     opacity: 1;
     -webkit-transform: scaleX(1);
@@ -1727,13 +1736,13 @@ p.footer-copyright {
 }
 
 @-moz-keyframes fadeIn {
-  /* line 106, _aboutme.scss */
+  /* line 117, _aboutme.scss */
   from {
     opacity: 0;
     -moz-transform: scaleX(0);
   }
 
-  /* line 110, _aboutme.scss */
+  /* line 121, _aboutme.scss */
   to {
     opacity: 1;
     -moz-transform: scaleX(1);
@@ -1741,13 +1750,13 @@ p.footer-copyright {
 }
 
 @keyframes fadeIn {
-  /* line 117, _aboutme.scss */
+  /* line 128, _aboutme.scss */
   from {
     opacity: 0;
     transform: scaleX(0);
   }
 
-  /* line 121, _aboutme.scss */
+  /* line 132, _aboutme.scss */
   to {
     opacity: 1;
     transform: scaleX(1);
@@ -1755,114 +1764,114 @@ p.footer-copyright {
 }
 
 @-webkit-keyframes shake {
-  /* line 128, _aboutme.scss */
+  /* line 139, _aboutme.scss */
   0% {
     -webkit-transform: translate(2px, 1px) rotate(0deg);
   }
 
-  /* line 131, _aboutme.scss */
+  /* line 142, _aboutme.scss */
   10% {
     -webkit-transform: translate(-1px, -2px) rotate(-1deg);
   }
 
-  /* line 134, _aboutme.scss */
+  /* line 145, _aboutme.scss */
   20% {
     -webkit-transform: translate(-3px, 0px) rotate(1deg);
   }
 
-  /* line 137, _aboutme.scss */
+  /* line 148, _aboutme.scss */
   30% {
     -webkit-transform: translate(0px, 2px) rotate(0deg);
   }
 
-  /* line 140, _aboutme.scss */
+  /* line 151, _aboutme.scss */
   40% {
     -webkit-transform: translate(1px, -1px) rotate(1deg);
   }
 
-  /* line 143, _aboutme.scss */
+  /* line 154, _aboutme.scss */
   50% {
     -webkit-transform: translate(-1px, 2px) rotate(-1deg);
   }
 
-  /* line 146, _aboutme.scss */
+  /* line 157, _aboutme.scss */
   60% {
     -webkit-transform: translate(-3px, 1px) rotate(0deg);
   }
 
-  /* line 149, _aboutme.scss */
+  /* line 160, _aboutme.scss */
   70% {
     -webkit-transform: translate(2px, 1px) rotate(-1deg);
   }
 
-  /* line 152, _aboutme.scss */
+  /* line 163, _aboutme.scss */
   80% {
     -webkit-transform: translate(-1px, -1px) rotate(1deg);
   }
 
-  /* line 155, _aboutme.scss */
+  /* line 166, _aboutme.scss */
   90% {
     -webkit-transform: translate(2px, 2px) rotate(0deg);
   }
 
-  /* line 158, _aboutme.scss */
+  /* line 169, _aboutme.scss */
   100% {
     -webkit-transform: translate(1px, -2px) rotate(-1deg);
   }
 }
 
 @keyframes shake {
-  /* line 164, _aboutme.scss */
+  /* line 175, _aboutme.scss */
   0% {
     transform: translate(2px, 1px) rotate(0deg);
   }
 
-  /* line 167, _aboutme.scss */
+  /* line 178, _aboutme.scss */
   10% {
     transform: translate(-1px, -2px) rotate(-1deg);
   }
 
-  /* line 170, _aboutme.scss */
+  /* line 181, _aboutme.scss */
   20% {
     transform: translate(-3px, 0px) rotate(1deg);
   }
 
-  /* line 173, _aboutme.scss */
+  /* line 184, _aboutme.scss */
   30% {
     transform: translate(0px, 2px) rotate(0deg);
   }
 
-  /* line 176, _aboutme.scss */
+  /* line 187, _aboutme.scss */
   40% {
     transform: translate(1px, -1px) rotate(1deg);
   }
 
-  /* line 179, _aboutme.scss */
+  /* line 190, _aboutme.scss */
   50% {
     transform: translate(-1px, 2px) rotate(-1deg);
   }
 
-  /* line 182, _aboutme.scss */
+  /* line 193, _aboutme.scss */
   60% {
     transform: translate(-3px, 1px) rotate(0deg);
   }
 
-  /* line 185, _aboutme.scss */
+  /* line 196, _aboutme.scss */
   70% {
     transform: translate(2px, 1px) rotate(-1deg);
   }
 
-  /* line 188, _aboutme.scss */
+  /* line 199, _aboutme.scss */
   80% {
     transform: translate(-1px, -1px) rotate(1deg);
   }
 
-  /* line 191, _aboutme.scss */
+  /* line 202, _aboutme.scss */
   90% {
     transform: translate(2px, 2px) rotate(0deg);
   }
 
-  /* line 194, _aboutme.scss */
+  /* line 205, _aboutme.scss */
   100% {
     transform: translate(1px, -2px) rotate(-1deg);
   }
@@ -1870,43 +1879,43 @@ p.footer-copyright {
 
 @media screen and (min--moz-device-pixel-ratio: 0) {
   /* another firefox bug :( */
-  /* line 208, _aboutme.scss */
+  /* line 219, _aboutme.scss */
   .aboutme .per_10 span {
     width: calc(10% - 20px);
   }
-  /* line 208, _aboutme.scss */
+  /* line 219, _aboutme.scss */
   .aboutme .per_20 span {
     width: calc(20% - 20px);
   }
-  /* line 208, _aboutme.scss */
+  /* line 219, _aboutme.scss */
   .aboutme .per_30 span {
     width: calc(30% - 20px);
   }
-  /* line 208, _aboutme.scss */
+  /* line 219, _aboutme.scss */
   .aboutme .per_40 span {
     width: calc(40% - 20px);
   }
-  /* line 208, _aboutme.scss */
+  /* line 219, _aboutme.scss */
   .aboutme .per_50 span {
     width: calc(50% - 20px);
   }
-  /* line 208, _aboutme.scss */
+  /* line 219, _aboutme.scss */
   .aboutme .per_60 span {
     width: calc(60% - 20px);
   }
-  /* line 208, _aboutme.scss */
+  /* line 219, _aboutme.scss */
   .aboutme .per_70 span {
     width: calc(70% - 20px);
   }
-  /* line 208, _aboutme.scss */
+  /* line 219, _aboutme.scss */
   .aboutme .per_80 span {
     width: calc(80% - 20px);
   }
-  /* line 208, _aboutme.scss */
+  /* line 219, _aboutme.scss */
   .aboutme .per_90 span {
     width: calc(90% - 20px);
   }
-  /* line 208, _aboutme.scss */
+  /* line 219, _aboutme.scss */
   .aboutme .per_100 span {
     width: calc(100% - 20px);
   }

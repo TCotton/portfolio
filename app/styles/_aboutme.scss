@@ -91,6 +91,17 @@
 
 }
 
+@include breakpoint(mintablet) {
+  .ie9 {
+    .aboutme {
+      [class*="per"] span {
+        @include transform("scaleX(1)");
+        opacity: 1;
+      }
+    }
+  }
+}
+
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
