@@ -52,19 +52,12 @@
       opacity: 0;
 
       -webkit-animation: fadeIn ease-out 1;
-      -moz-animation: fadeIn ease-out 1;
       animation: fadeIn ease-out 1;
-
       -webkit-animation-fill-mode: forwards;
-      -moz-animation-fill-mode: forwards;
       animation-fill-mode: forwards;
-
       -webkit-animation-duration: 3s;
-      -moz-animation-duration: 3s;
       animation-duration: 3s;
-
       -webkit-animation-delay: 3s;
-      -moz-animation-delay: 3s;
       animation-delay: 3s;
 
     }
@@ -110,17 +103,6 @@
   to {
     opacity: 1;
     -webkit-transform: scaleX(1);
-  }
-}
-
-@-moz-keyframes fadeIn {
-  from {
-    opacity: 0;
-    -moz-transform: scaleX(0);
-  }
-  to {
-    opacity: 1;
-    -moz-transform: scaleX(1);
   }
 }
 

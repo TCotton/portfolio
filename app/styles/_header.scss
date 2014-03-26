@@ -4,6 +4,13 @@
   background: $topHeaderBackground;
   position: relative;
 
+  // used in the checkbox hack
+  input[type=checkbox] {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
   a:link {
     color: white;
     @include transitions(color 0.3s);
@@ -34,11 +41,49 @@
 
 }
 
+@-webkit-keyframes swipeIn {
+  from {
+    -webkit-transform: translateX(-200%);
+  }
+  to {
+    -webkit-transform: translateX(0%);
+  }
+}
+
+@keyframes swipeIn {
+  from {
+    transform: translateX(-200%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
 @include breakpoint(tablet) {
 
   #header {
-    .handheld-cross {
-      margin: 16px 0 0 0;
+    // checkbox hack
+    // makes the menu appear and disappear on click
+    input[type=checkbox] ~ #navigation-wrapper li {
+      -webkit-transform: translateX(-200%);
+      transform: translateX(-200%);
+    }
+
+    $percentage: 5;
+
+    // loops through the navigation list items to create delay staggered animation
+    @for $i from 1 through $percentage {
+      input[type=checkbox]:checked ~ #navigation-wrapper li:nth-child(#{$i * 1}) {
+        -webkit-animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) #{0.1 + ($i / 10)}s;
+        -webkit-animation-fill-mode: forwards;
+        animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) #{0.1 + ($i / 10)}s;
+        animation-fill-mode: forwards;
+      }
+    }
+
+    label.handheld-cross {
+      color: transparent;
+      margin: 18px 0 0 0;
       width: 42px;
       height: 42px;
       display: block;
@@ -83,7 +128,6 @@
     top: $headerHeight;
     left: 0;
     z-index: 10;
-
     background: transparent;
     width: 100%;
 
@@ -94,6 +138,7 @@
       line-height: 55px;
       background: $navigation_handheld;
       border-bottom: 1px solid $navigation_handheld_border;
+      border-right: 1px solid $navigation_handheld_border;
       &:last-of-type {
         border-bottom: none;
       }
@@ -104,8 +149,6 @@
         display: inline-block;
         width: 100%;
         padding: 0 0 0 4.172767203513909%;
-        text-decoration: none;
-        color: white;
         &:hover {
           background: $navigation_handheld_hover;
         }

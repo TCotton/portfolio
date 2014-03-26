@@ -14,7 +14,6 @@
       text-align: center;
       margin: 0 0 10px 0;
     }
-
   }
 
   #right-small {
@@ -28,9 +27,7 @@
       margin-bottom: 30px;
       display: inline-block;
     }
-
   }
-
 }
 
 #pagination {
@@ -49,7 +46,6 @@
     &:last-of-type {
       margin: 0;
     }
-
   }
 
   // the first pagination item which is the left arrow d
@@ -81,7 +77,5 @@
     &:hover {
       background: $rightArrowHover;
     }
-
   }
-
 }
