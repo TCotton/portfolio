@@ -34,6 +34,24 @@
 
 }
 
+@include breakpoint(tablet) {
+
+  #header {
+    .handheld-cross {
+      margin: 16px 0 0 0;
+      width: 42px;
+      height: 42px;
+      display: block;
+      background: $menu;
+      float: right;
+      cursor: pointer;
+      .active {
+        background: $menuHover;
+      }
+    }
+  }
+}
+
 #logo-wrapper {
   float: left;
   a {
