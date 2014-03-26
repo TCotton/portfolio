@@ -589,12 +589,24 @@ a:active {
 }
 
 /* line 6, main.scss */
-html {
+body {
   font-size: 62.5%;
   font-family: 'Open Sans', sans-serif;
   line-height: 2.5em;
 }
 
+@media (min-width: 979px) and (max-width: 1366px) {
+  /* line 15, main.scss */
+  body {
+    background: blue;
+  }
+}
+@media (min-width: 767px) and (max-width: 979px) {
+  /* line 23, main.scss */
+  body {
+    background: green;
+  }
+}
 /* line 1, modules/_media_queries.scss */
 .visible-phone {
   display: none !important;
@@ -615,7 +627,7 @@ html {
   display: inherit !important;
 }
 
-@media (min-width: 767px) and (max-width: 960px) {
+@media (min-width: 767px) and (max-width: 979px) {
   /* line 19, modules/_media_queries.scss */
   .hidden-desktop {
     display: inherit !important;
@@ -633,27 +645,6 @@ html {
 
   /* line 31, modules/_media_queries.scss */
   .hidden-tablet {
-    display: none !important;
-  }
-}
-@media (max-width: 500px) {
-  /* line 39, modules/_media_queries.scss */
-  .hidden-desktop {
-    display: inherit !important;
-  }
-
-  /* line 43, modules/_media_queries.scss */
-  .visible-desktop {
-    display: none !important;
-  }
-
-  /* line 47, modules/_media_queries.scss */
-  .visible-phone {
-    display: inherit !important;
-  }
-
-  /* line 51, modules/_media_queries.scss */
-  .hidden-phone {
     display: none !important;
   }
 }
@@ -865,16 +856,16 @@ h1.logo {
   font-size: 1.5em;
   font-family: 'Open Sans', sans-serif;
   text-transform: uppercase;
-  line-height: 84px;
   font-weight: 700;
 }
 
-/* line 24, modules/_typography.scss */
+/* line 23, modules/_typography.scss */
 h2.page-top-title {
   font-size: 4em;
   font-family: 'Open Sans', sans-serif;
   margin-bottom: 0.625em;
   font-weight: 300;
+  line-height: 40px;
   color: white;
 }
 
@@ -1258,69 +1249,112 @@ p.footer-copyright {
   height: 84px;
   padding: 0 57px;
   background: #27353d;
+  position: relative;
 }
-/* line 6, _header.scss */
+/* line 7, _header.scss */
 #header a:link {
   color: white;
   -ms-transition: color 0.3s;
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
-/* line 10, _header.scss */
+/* line 11, _header.scss */
 #header a:visited {
   color: white;
 }
-/* line 13, _header.scss */
+/* line 14, _header.scss */
 #header a:focus {
   color: #00bd9c;
 }
-/* line 16, _header.scss */
+/* line 17, _header.scss */
 #header a:hover {
   color: #00bd9c;
 }
-/* line 19, _header.scss */
+/* line 20, _header.scss */
 #header a:active {
   color: #00bd9c;
 }
-/* line 22, _header.scss */
+/* line 23, _header.scss */
 #header a.active {
   color: #00bd9c;
 }
 
 @media (max-width: 1366px) {
-  /* line 30, _header.scss */
+  /* line 31, _header.scss */
   #header {
     padding: 0 4.172767203513909%;
   }
 }
-/* line 36, _header.scss */
+/* line 37, _header.scss */
 #logo-wrapper {
   float: left;
 }
-/* line 38, _header.scss */
+/* line 39, _header.scss */
 #logo-wrapper a {
   text-decoration: none;
 }
 
-/* line 43, _header.scss */
+/* line 44, _header.scss */
 #navigation-wrapper {
   float: right;
 }
-/* line 45, _header.scss */
+/* line 46, _header.scss */
 #navigation-wrapper li {
   display: inline;
   list-style: none;
+  line-height: 84px;
 }
-/* line 48, _header.scss */
+/* line 50, _header.scss */
 #navigation-wrapper li + li {
   margin: 0 0 0 24px;
 }
-/* line 51, _header.scss */
+/* line 53, _header.scss */
 #navigation-wrapper li a {
   text-decoration: none;
   color: white;
 }
 
+@media (min-width: 767px) and (max-width: 979px) {
+  /* line 62, _header.scss */
+  #navigation-wrapper {
+    float: none;
+    position: absolute;
+    top: 84px;
+    left: 0;
+    z-index: 10;
+    background: transparent;
+    width: 100%;
+  }
+  /* line 72, _header.scss */
+  #navigation-wrapper li {
+    display: block;
+    list-style: none;
+    height: 55px;
+    line-height: 55px;
+    background: black;
+    border-bottom: 1px solid #333333;
+  }
+  /* line 79, _header.scss */
+  #navigation-wrapper li:last-of-type {
+    border-bottom: none;
+  }
+  /* line 82, _header.scss */
+  #navigation-wrapper li + li {
+    margin: 0 0 0 0;
+  }
+  /* line 85, _header.scss */
+  #navigation-wrapper li a {
+    display: inline-block;
+    width: 100%;
+    padding: 0 0 0 4.172767203513909%;
+    text-decoration: none;
+    color: white;
+  }
+  /* line 91, _header.scss */
+  #navigation-wrapper li a:hover {
+    background: #262626;
+  }
+}
 /* line 1, _homepage.scss */
 #slider {
   clear: both;
@@ -1371,17 +1405,17 @@ p.footer-copyright {
   background: url("/images/svg/right-arrow-hover.svg") no-repeat center center;
 }
 
-@media (max-width: 1366px) {
-  /* line 51, _homepage.scss */
+@media (min-width: 979px) and (max-width: 1366px) {
+  /* line 49, _homepage.scss */
   #slider .left-arrow {
     left: 4.172767203513909%;
   }
-  /* line 55, _homepage.scss */
+  /* line 52, _homepage.scss */
   #slider .right-arrow {
     right: 4.172767203513909%;
   }
 }
-/* line 63, _homepage.scss */
+/* line 62, _homepage.scss */
 #homepage-stats {
   padding: 0 114px;
   height: 224px;
@@ -1406,26 +1440,50 @@ p.footer-copyright {
   -ms-justify-content: center;
   justify-content: center;
 }
-/* line 87, _homepage.scss */
+/* line 86, _homepage.scss */
 #homepage-stats > span {
   width: 20%;
   padding: 0 2%;
   float: left;
   text-align: center;
 }
-/* line 93, _homepage.scss */
+/* line 92, _homepage.scss */
 #homepage-stats > span:first-of-type {
   padding: 0 2% 0 0;
 }
-/* line 96, _homepage.scss */
+/* line 95, _homepage.scss */
 #homepage-stats > span:last-of-type {
-  padding: 0 2% 0 0;
+  padding: 0 0 0 2%;
 }
 
 @media (max-width: 1366px) {
-  /* line 113, _homepage.scss */
+  /* line 103, _homepage.scss */
   #homepage-stats {
     padding: 0 4.172767203513909%;
+  }
+}
+@media (min-width: 767px) and (max-width: 979px) {
+  /* line 112, _homepage.scss */
+  #homepage-stats > span {
+    width: -webkit-calc(100% / 3);
+    width: calc(100% / 3);
+    padding: 0 2%;
+  }
+  /* line 117, _homepage.scss */
+  #homepage-stats > span:nth-of-type(1) {
+    padding: 0 2% 0 0;
+  }
+  /* line 123, _homepage.scss */
+  #homepage-stats > span:nth-of-type(3) {
+    padding: 0 0 0 2%;
+  }
+  /* line 126, _homepage.scss */
+  #homepage-stats > span:nth-of-type(4) {
+    display: none;
+  }
+  /* line 129, _homepage.scss */
+  #homepage-stats > span:nth-of-type(5) {
+    display: none;
   }
 }
 /* line 1, _banner.scss */

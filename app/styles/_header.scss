@@ -2,6 +2,7 @@
   height: $headerHeight;
   padding: 0 57px;
   background: $topHeaderBackground;
+  position: relative;
 
   a:link {
     color: white;
@@ -45,12 +46,53 @@
   li {
     display: inline;
     list-style: none;
-     + li {
-       margin : 0 0 0 24px;
-     }
+    line-height: $headerHeight;
+    + li {
+      margin: 0 0 0 24px;
+    }
     a {
       text-decoration: none;
       color: white;
     }
   }
+}
+
+@include breakpoint(tablet) {
+
+  #navigation-wrapper {
+    float: none;
+    position: absolute;
+    top: $headerHeight;
+    left: 0;
+    z-index: 10;
+
+    background: transparent;
+    width: 100%;
+
+    li {
+      display: block;
+      list-style: none;
+      height: 55px;
+      line-height: 55px;
+      background: $navigation_handheld;
+      border-bottom: 1px solid $navigation_handheld_border;
+      &:last-of-type {
+        border-bottom: none;
+      }
+      + li {
+        margin: 0 0 0 0;
+      }
+      a {
+        display: inline-block;
+        width: 100%;
+        padding: 0 0 0 4.172767203513909%;
+        text-decoration: none;
+        color: white;
+        &:hover {
+          background: $navigation_handheld_hover;
+        }
+      }
+    }
+  }
+
 }

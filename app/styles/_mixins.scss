@@ -115,11 +115,11 @@
       @content;
     }
   } @else if $name == "standard" {
-    @media (max-width: $media_breakpoint_desktop) {
+    @media (min-width: $media_breakpoint_tablet) and (max-width: $media_breakpoint_wide) {
       @content;
     }
   } @else if $name == "tablet" {
-    @media (max-width: $media_breakpoint_tablet) {
+    @media (min-width: $media_breakpoint_mobile) and (max-width: $media_breakpoint_tablet) {
       @content;
     }
   } @else if $name == "mobile" {
@@ -152,7 +152,6 @@
     }
   }
 }
-
 
 // sharper fonts
 @mixin font-sharp() {

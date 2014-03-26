@@ -3,26 +3,36 @@
 @import "mixins";
 
 
-html {
+body {
   //font: #{$baseFontSize} / #{$baseLineHeight} $baseFontFamily;
   font-size: #{$baseFontSize};
   font-family: $baseFontFamily;
   line-height: #{$baseLineHeight}em;
 }
 
+@include breakpoint("standard") {
 
+  body {
+    background: blue;
+  }
 
+}
 
+@include breakpoint("tablet") {
 
-//@include breakpoint("standard") {
-//
-// // $baseFontSize: 56.3%;
-//
-//  html {
-//    font: #{$baseFontSize} / #{$baseLineHeight} $baseFontFamily;
-//  }
-//
-//}
+  body {
+    background: green;
+  }
+
+}
+
+@include breakpoint("phone") {
+
+  body {
+    background: pink;
+  }
+
+}
 
 @import "modules/media_queries";
 @import "modules/scrollbars";

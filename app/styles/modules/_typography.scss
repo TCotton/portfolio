@@ -17,13 +17,13 @@ h1.logo {
 .navigation li {
   @include font-calculator($baseFontFamily, 15px, 0);
   text-transform: uppercase;
-  line-height: $headerHeight;
   font-weight: 700;
 }
 
 h2.page-top-title {
   @include font-calculator($baseFontFamily, 40px);
   font-weight: 300;
+  line-height: 40px;
   color: white;
 }
 

@@ -41,22 +41,21 @@
       background: $rightArrowHover;
     }
   }
-
 }
 
-@include breakpoint(wide) {
+@include breakpoint(standard) {
 
   #slider {
-
     .left-arrow {
       left: 4.172767203513909%;
     }
-
     .right-arrow {
       right: 4.172767203513909%;
     }
-
   }
+}
+
+@include breakpoint(tablet) {
 
 }
 
@@ -94,19 +93,10 @@
       padding: 0 2% 0 0;
     }
     &:last-of-type {
-      padding: 0 2% 0 0;
-    }
-    header {
-
-    }
-    section {
-
+      padding: 0 0 0 2%;
     }
   }
-
 }
-
-
 
 @include breakpoint(wide) {
 
@@ -114,4 +104,31 @@
     padding: 0 4.172767203513909%;
   }
 
+}
+
+@include breakpoint(tablet) {
+
+  #homepage-stats {
+    > span {
+      // header and content for span blocks
+
+      @include calc('width', '100% / 3');
+      padding: 0 2%;
+      &:nth-of-type(1) {
+        padding: 0 2% 0 0;
+      }
+      &:nth-of-type(2) {
+
+      }
+      &:nth-of-type(3) {
+        padding: 0 0 0 2%;
+      }
+      &:nth-of-type(4) {
+        display: none;
+      }
+      &:nth-of-type(5) {
+        display: none;
+      }
+    }
+  }
 }

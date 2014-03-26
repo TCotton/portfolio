@@ -20,17 +20,20 @@ $homepageStatsBackground: #00bd9c;
 $bannerBackround: #00bd9c;
 $imageBackground: #04b4dc;
 $imageBackgroundContrast: #81d9ed;
+$navigation_handheld: black;
+$navigation_handheld_hover: #262626;
 
 // hover overlay
 $workBoxes: #4cd1ba;
 
 // borders
 $boxBorder: #cccccc;
+$navigation_handheld_border: #333333;
+
 
 $media_breakpoint_wide: 1366px;
-$media_breakpoint_desktop: 960px;
-$media_breakpoint_tablet: 767px;
-$media_breakpoint_mobile: 500px;
+$media_breakpoint_tablet: 979px;
+$media_breakpoint_mobile: 767px;
 
 // heights
 $headerHeight: 84px;

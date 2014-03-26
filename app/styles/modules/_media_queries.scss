@@ -14,7 +14,7 @@
   display: inherit !important;
 }
 
-@media (min-width: $media_breakpoint_tablet) and (max-width: $media_breakpoint_desktop) {
+@include breakpoint("tablet") {
 
   .hidden-desktop {
     display: inherit !important;
@@ -34,7 +34,7 @@
 
 }
 
-@media (max-width: $media_breakpoint_mobile) {
+@include breakpoint("phone") {
 
   .hidden-desktop {
     display: inherit !important;
