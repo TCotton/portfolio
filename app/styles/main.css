@@ -748,6 +748,11 @@ body {
   transition: all 0.5s;
 }
 /* line 50, modules/_grid.scss */
+[class*="project-box"]:nth-of-type(3n) {
+  margin-right: 0;
+  background-clip: content-box;
+}
+/* line 55, modules/_grid.scss */
 [class*="project-box"]::before {
   content: '';
   position: absolute;
@@ -764,7 +769,7 @@ body {
   -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s;
 }
-/* line 63, modules/_grid.scss */
+/* line 68, modules/_grid.scss */
 [class*="project-box"]::after {
   content: '';
   margin: auto;
@@ -782,65 +787,74 @@ body {
   -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s;
 }
-/* line 76, modules/_grid.scss */
+/* line 81, modules/_grid.scss */
 [class*="project-box"]:hover::before {
   opacity: 0.7;
 }
-/* line 80, modules/_grid.scss */
+/* line 85, modules/_grid.scss */
 [class*="project-box"]:hover::after {
   opacity: 1;
 }
 
 @media screen and (min--moz-device-pixel-ratio: 0) {
   /* temp Firefox hack until I can work out a solution */
-  /* line 88, modules/_grid.scss */
+  /* line 93, modules/_grid.scss */
   [class*="project-box"] {
     width: -webkit-calc((100% / 3) - (66px / 2));
     width: calc((100% / 3) - (66px / 2));
   }
 }
-/* line 94, modules/_grid.scss */
-[class*="project-box"]:nth-of-type(3n) {
-  margin-right: 0;
-  background-clip: content-box;
-}
-
 @media (max-width: 1366px) {
-  /* line 101, modules/_grid.scss */
+  /* line 100, modules/_grid.scss */
   #container {
     width: 99%;
   }
 
-  /* line 105, modules/_grid.scss */
+  /* line 104, modules/_grid.scss */
   #left-large {
     width: 60.17569546120058%;
     margin: 0 2.342606149341142% 0 0;
   }
 
-  /* line 110, modules/_grid.scss */
+  /* line 109, modules/_grid.scss */
   #left-small {
     width: 29.136163982430453%;
     margin: 0 2.342606149341142% 0 0;
   }
 
-  /* line 115, modules/_grid.scss */
+  /* line 114, modules/_grid.scss */
   #right-large {
     width: 60.17569546120058%;
   }
 
-  /* line 119, modules/_grid.scss */
+  /* line 118, modules/_grid.scss */
   #right-small {
     width: 29.136163982430453%;
   }
 
-  /* line 123, modules/_grid.scss */
+  /* line 122, modules/_grid.scss */
   #main-content {
     padding: 57px 4.172767203513909%;
   }
 
-  /* line 127, modules/_grid.scss */
+  /* line 126, modules/_grid.scss */
   [class*="project-box"] {
     height: 230px;
+  }
+}
+@media (max-width: 979px) {
+  /* line 134, modules/_grid.scss */
+  [class*="project-box"] {
+    width: -webkit-calc((100% / 2) - (66px / 2));
+    width: calc((100% / 2) - (66px / 2));
+  }
+  /* line 136, modules/_grid.scss */
+  [class*="project-box"]:nth-of-type(3n) {
+    margin-right: 33px;
+  }
+  /* line 139, modules/_grid.scss */
+  [class*="project-box"]:nth-of-type(2n) {
+    margin-right: 0;
   }
 }
 /* line 11, modules/_typography.scss */
@@ -1427,6 +1441,7 @@ a.button-front-one:hover, a.button-front-one:active {
   }
   /* line 136, _header.scss */
   #navigation-wrapper li {
+    pointer-events: auto;
     display: block;
     list-style: none;
     height: 55px;
@@ -1435,21 +1450,21 @@ a.button-front-one:hover, a.button-front-one:active {
     border-bottom: 1px solid #333333;
     border-right: 1px solid #333333;
   }
-  /* line 144, _header.scss */
+  /* line 145, _header.scss */
   #navigation-wrapper li:last-of-type {
     border-bottom: none;
   }
-  /* line 147, _header.scss */
+  /* line 148, _header.scss */
   #navigation-wrapper li + li {
     margin: 0 0 0 0;
   }
-  /* line 150, _header.scss */
+  /* line 151, _header.scss */
   #navigation-wrapper li a {
     display: inline-block;
     width: 100%;
     padding: 0 0 0 4.172767203513909%;
   }
-  /* line 154, _header.scss */
+  /* line 155, _header.scss */
   #navigation-wrapper li a:hover {
     background: #262626;
   }
@@ -1730,6 +1745,20 @@ a.button-front-one:hover, a.button-front-one:active {
   background: url("/images/svg/right-arrow-hover.svg") no-repeat center center;
 }
 
+@media (max-width: 979px) {
+  /* line 122, _mywork.scss */
+  .my-work .project-box-one, .my-work .project-box-two, .my-work .project-box-three, .my-work .project-box-four {
+    margin-bottom: 33px;
+  }
+  /* line 125, _mywork.scss */
+  .my-work .project-box-five, .my-work .project-box-six {
+    margin-bottom: 0;
+  }
+  /* line 130, _mywork.scss */
+  .my-work header h3 {
+    margin-top: 5%;
+  }
+}
 /* line 3, _sideprojects.scss */
 .side-projects [class*="project-box"] {
   text-decoration: none;

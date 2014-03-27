@@ -134,6 +134,7 @@
     width: 100%;
 
     li {
+      pointer-events: auto;
       display: block;
       list-style: none;
       height: 55px;
