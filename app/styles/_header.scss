@@ -9,6 +9,7 @@
     position: absolute;
     top: -9999px;
     left: -9999px;
+    display: none;
   }
 
   a:link {
@@ -90,7 +91,7 @@
       background: $menu;
       float: right;
       cursor: pointer;
-      .active {
+      &.active {
         background: $menuHover;
       }
     }
@@ -123,6 +124,7 @@
 @include breakpoint(tablet) {
 
   #navigation-wrapper {
+    pointer-events:none;
     float: none;
     position: absolute;
     top: $headerHeight;

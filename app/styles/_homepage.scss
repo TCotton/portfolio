@@ -43,9 +43,12 @@
   }
 }
 
-@include breakpoint(standard) {
+@include breakpoint(wide) {
 
   #slider {
+    section {
+      top: 20px;
+    }
     .left-arrow {
       left: 4.172767203513909%;
     }
@@ -57,7 +60,14 @@
 
 @include breakpoint(tablet) {
 
+  #slider {
 
+    section {
+      top: 10px;
+      left: 20%;
+      width: 60%;
+    }
+  }
 }
 
 #homepage-stats {

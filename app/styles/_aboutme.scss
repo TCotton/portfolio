@@ -38,7 +38,6 @@
   .per_100 span {
     border-radius: 10px;
   }
-
 }
 
 // animation is only for desktop browsers and high spec tablets like the iPad
@@ -59,7 +58,6 @@
       animation-duration: 3s;
       -webkit-animation-delay: 3s;
       animation-delay: 3s;
-
     }
 
     [class*="per"]:last-of-type {
@@ -77,11 +75,8 @@
       transform-origin: 50% 50%;
       animation-iteration-count: infinite;
       animation-timing-function: linear;
-
     }
-
   }
-
 }
 
 @include breakpoint(mintablet) {
@@ -202,9 +197,7 @@
         width: calc(#{((100 / $percentage) * $i) * 1%} - 20px);
       }
     }
-
   }
-
 }
 
 /* end for firefox hack */

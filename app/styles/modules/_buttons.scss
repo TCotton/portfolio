@@ -1,13 +1,17 @@
-.button-front-one {
+a.button-front-one {
   background: white;
   @include font-calculator($baseFontFamily, 16px, 0);
   font-weight: 700;
   color: $textFour;
+  border: 1px solid $textFour;
   width: 320px;
-  margin: 0 8px;
+  display: inline-block;
   height: 56px;
   line-height: 56px;
   border-radius: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
   &:hover, &:active {
     color: darken($textFour,20);
   }

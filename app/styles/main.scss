@@ -26,7 +26,7 @@ body {
 
 }
 
-@include breakpoint("phone") {
+@include breakpoint("mobile") {
 
   body {
     background: pink;

@@ -21,14 +21,14 @@ h1.logo {
 }
 
 h2.page-top-title {
-  @include font-calculator($baseFontFamily, 40px);
+  @include font-calculator($baseFontFamily, 40px, 0.5);
   font-weight: 300;
-  line-height: 40px;
   color: white;
+  line-height: 40px;
 }
 
 p.page-top-text {
-  @include font-calculator($baseFontFamily, 18px, 0);
+  @include font-calculator($baseFontFamily, 18px, 0.5);
   font-weight: 300;
   color: white;
 }
@@ -47,9 +47,19 @@ p.page-top-text {
 
 .content-title {
   @include font-calculator($baseFontFamily, 30px, 1.5);
+
   font-weight: 300;
   color: $textThree;
 }
+
+@include breakpoint("wide") {
+
+  .content-title {
+    line-height: 40px;
+  }
+
+}
+
 
 h3.blog-title {
   @include font-calculator($baseFontFamily, 40px, 1.5);
