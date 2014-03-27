@@ -845,8 +845,8 @@ body {
 @media (max-width: 979px) {
   /* line 134, modules/_grid.scss */
   [class*="project-box"] {
-    width: -webkit-calc((100% / 2) - (66px / 2));
-    width: calc((100% / 2) - (66px / 2));
+    width: -webkit-calc((100% / 2) - (33px / 2));
+    width: calc((100% / 2) - (33px / 2));
   }
   /* line 136, modules/_grid.scss */
   [class*="project-box"]:nth-of-type(3n) {

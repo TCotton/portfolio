@@ -132,7 +132,7 @@
 @include breakpoint("tablet") {
 
   [class*="project-box"] {
-    @include calc('width', '(100% / 2) - (66px / 2)');
+    @include calc('width', '(100% / 2) - (33px / 2)');
     &:nth-of-type(3n) {
       margin-right: 33px;
     }
