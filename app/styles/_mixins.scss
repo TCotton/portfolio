@@ -86,7 +86,6 @@
   }
 
 }
-
 // uses same calculation method as the font-calculator
 @mixin margin-calculator($fontSize, $divider: null) {
 
@@ -182,12 +181,19 @@
 
 // Word Wrapping
 @mixin word-wrap() {
-  -ms-word-break: break-all;
   word-break: break-all;
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   hyphens: auto;
+}
+
+@mixin word-nowrap() {
+  word-break: normal;
+  word-break: normal;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  hyphens: none;
 }
 
 // calc function

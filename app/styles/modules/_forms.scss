@@ -29,7 +29,7 @@
     font-weight: 400;
     clear: both;
     float: left;
-    margin: 0 0 20px 0;
+    margin: 0 0 15px 0;
     &:focus {
       border: $textTwo;
     }
@@ -45,14 +45,14 @@
     font-weight: 400;
     clear: both;
     float: left;
-    margin: 0 0 20px 0;
+    margin: 0 0 15px 0;
     &:focus {
       border: $textTwo;
     }
   }
 }
 
-@media screen and (min--moz-device-pixel-ratio:0) {
+@media screen and (min--moz-device-pixel-ratio:0)  {
   /* another firefox bug :( */
   // come back to this
 
@@ -76,6 +76,11 @@
 
     .input {
       width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .textarea {
+      margin-bottom: 10px;
     }
   }
 }

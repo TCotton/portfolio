@@ -4,7 +4,7 @@
 
 #footer-top {
   height: 281px;
-  padding: 20px 57px 0 57px;
+  padding: 25px 57px 0 57px;
   overflow: hidden;
   background: $topFooterBackground;
   position: relative;
@@ -49,6 +49,13 @@
     padding: 30px 4.172767203513909% 0 4.172767203513909%;
   }
 
+}
+
+@include breakpoint(mobile) {
+
+  #footer-top {
+    padding: 20px 4.172767203513909% 0 4.172767203513909%;
+  }
 }
 
 #footer-bottom {

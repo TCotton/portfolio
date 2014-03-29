@@ -48,7 +48,9 @@
 
   #slider {
     section {
-      top: 20px;
+      top: 25px;
+      left: 25%;
+      width: 50%;
     }
     .left-arrow {
       left: 4.172767203513909%;
@@ -143,8 +145,6 @@
 
     > span {
       // header and content for span blocks
-
-      //@include calc('width', '100% / 2');
       width: 50%;
       padding: 0 2%;
       &:nth-of-type(1) {

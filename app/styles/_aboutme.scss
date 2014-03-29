@@ -8,12 +8,16 @@
   .button-skills-aboutme.section {
     width: 48%;
     float: left;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     line-height: 58px;
   }
 
   .button-skills-aboutme.section:nth-of-type(even) {
     margin-left: 4%;
+  }
+
+  [class*="per"] {
+    @include ellipsis();
   }
 
   [class*="per"] span {
@@ -56,8 +60,8 @@
       animation-fill-mode: forwards;
       -webkit-animation-duration: 3s;
       animation-duration: 3s;
-      -webkit-animation-delay: 3s;
-      animation-delay: 3s;
+      -webkit-animation-delay: 1s;
+      animation-delay: 1s;
     }
 
     [class*="per"]:last-of-type {
@@ -222,10 +226,7 @@
       float: none;
       display: block;
     }
-
-
   }
-
 }
 
 @include breakpoint(mobile) {
@@ -240,7 +241,7 @@
     }
 
     .button-skills-aboutme.section:nth-of-type(even) {
-      margin-left: 0 ;
+      margin-left: 0;
     }
   }
 }

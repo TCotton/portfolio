@@ -25,13 +25,27 @@
   a:hover {
     color: $textOneHover;
   }
-  a:active {
+  a:active, a.active {
     color: $textOneHover;
   }
-  a.active {
-    color: $textOneHover;
-  }
+}
 
+/* hack for advanced checkbox hack for android devices
+ check for performance, looks well dodgy
+ */
+@media (-webkit-min-device-pixel-ratio: 1.5) {
+
+  body {
+    -webkit-animation: bugfix infinite 1s;
+  }
+  @-webkit-keyframes bugfix {
+    from {
+      margin: 0;
+    }
+    to {
+      margin: 0;
+    }
+  }
 }
 
 @include breakpoint(wide) {
@@ -90,6 +104,10 @@
       background: $menu;
       float: right;
       cursor: pointer;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
       &.active {
         background: $menuHover;
       }

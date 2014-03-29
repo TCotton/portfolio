@@ -30,15 +30,15 @@
 }
 
 #main-content {
-  padding: 57px;
+  padding: 40px 57px;
 }
 
 /* My work */
 
 [class*="project-box"] {
   // three boxes per row on the desktop
-  width: 30%;
-  @include calc('width', '(100% / 3) - 33px');
+  width: 31%;
+  @include calc('width', '(100% / 3) - 24px');
   height: 285px;
   float: left;
   border: 1px solid $boxBorder;
@@ -47,6 +47,7 @@
   padding: 4px;
   position: relative;
   cursor: pointer;
+  @include transform(translate3d(0,0,0));
   @include transitions(all 0.5s);
 
   &:nth-of-type(3n) {
@@ -90,10 +91,11 @@
 }
 
 
-@include breakpoint(-webkit-hack) {
-  /* temp Firefox hack until I can work out a solution */
+//@include breakpoint(-webkit-hack) {
+@media screen and (min--moz-device-pixel-ratio:0) {
+  /* temp Webkit hack*/
   [class*="project-box"] {
-    @include calc('width', '(100% / 3) - 22px');
+    @include calc('width', '(100% / 3) - 33px');
   }
 }
 
@@ -122,7 +124,7 @@
   }
 
   #main-content {
-    padding: 57px 2.5559105431309903%;
+    padding: 40px 2.5559105431309903%;
   }
 
   [class*="project-box"] {
@@ -135,7 +137,7 @@
   [class*="project-box"] {
     height: 285px;
     // only two boxes per row
-    @include calc('width', '(100% / 2) - 27px');
+    @include calc('width', '(100% / 2) - 17px');
     //override desktop defaults
     &:nth-of-type(3n) {
       margin-right: 33px;
@@ -147,9 +149,9 @@
   }
 }
 
-@include breakpoint(-webkit-hack-tablet) {
+@media screen and (min--moz-device-pixel-ratio:0) and (max-width: $media_breakpoint_tablet)   {
   [class*="project-box"] {
-    @include calc('width', '(100% / 2) - (33px / 2)');
+    @include calc('width', '(100% / 2) - 33px');
   }
 }
 
@@ -167,5 +169,11 @@
     &:nth-of-type(2n) {
       margin-right: 0;
     }
+  }
+}
+
+@media screen and (min--moz-device-pixel-ratio:0) and (max-width: $media_breakpoint_mobile)   {
+  [class*="project-box"] {
+    width: 100%;
   }
 }

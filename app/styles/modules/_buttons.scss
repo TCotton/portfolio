@@ -17,6 +17,13 @@ a.button-front-one {
   }
 }
 
+@include breakpoint(mobile) {
+
+  a.button-front-one {
+    width: 90%;
+  }
+}
+
 .button-side-projects {
   width: 100%;
   height: 56px;

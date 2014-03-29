@@ -35,23 +35,24 @@ p.page-top-text {
   color: white;
 }
 
-.front-page-bottom-header {
-  @include font-calculator($baseFontFamily, 80px, 1.5);
+p.page-top-text-banner {
+  @include font-calculator($baseFontFamily, 18px, 0);
   font-weight: 300;
   color: white;
 }
 
-@include breakpoint(mobile) {
-
-  .front-page-bottom-header {
-    line-height: 40px;
-  }
+.front-page-bottom-header {
+  @include font-calculator($baseFontFamily, 80px, 1.5);
+  line-height: 40px;
+  font-weight: 300;
+  color: white;
 }
 
 .front-page-bottom-text {
   @include font-calculator($baseFontFamily, 13px, 0);
   font-weight: 600;
   color: white;
+  clear: both;
 }
 
 .content-title {
@@ -96,6 +97,13 @@ h3.blog-title {
 
 @include contentText('p') {
   font-weight: 400;
+  @include word-wrap();
+}
+
+@include breakpoint(mobile) {
+  @include contentText('p') {
+    @include word-wrap();
+  }
 }
 
 @include contentText('p.date') {
@@ -125,10 +133,11 @@ p.minor-title {
 .content-text {
 
   a.underline {
+    /* On the desktop this displays a URL of the external link above the link text */
     text-decoration: none;
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, .3) 11%, rgba(0, 0, 0, .3) 16%, rgba(0, 0, 0, 0) 16%);
     position: relative;
-    white-space: normal;
+    @include word-wrap();
 
     // displays pop up of link attribute if it is pointing to an external site
     &[rel="external"]::after {
@@ -165,6 +174,19 @@ p.minor-title {
     &:active {
       color: $textTwo;
       background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, .1) 11%, rgba(0, 0, 0, .1) 16%, rgba(0, 0, 0, 0) 16%);
+    }
+  }
+}
+
+@include breakpoint(tablet) {
+
+  .content-text {
+
+    a.underline {
+      // hide external ::after on handheld devices - it is affecting the layout
+      &[rel="external"]::after {
+        display: none;
+      }
     }
   }
 }

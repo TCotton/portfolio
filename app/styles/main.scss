@@ -2,7 +2,6 @@
 @import "variables";
 @import "mixins";
 
-
 body {
   //font: #{$baseFontSize} / #{$baseLineHeight} $baseFontFamily;
   font-size: #{$baseFontSize};
@@ -13,7 +12,7 @@ body {
 @include breakpoint("standard") {
 
   body {
-    background: blue;
+    //background: blue;
   }
 
 }
@@ -21,7 +20,7 @@ body {
 @include breakpoint("tablet") {
 
   body {
-    background: lightblue;
+    //background: lightblue;
   }
 
 }
@@ -29,7 +28,9 @@ body {
 @include breakpoint("mobile") {
 
   body {
-    background: lightpink;
+    font-size: 56.3%;
+    font-family: $baseFontFamily;
+    line-height: 2em;
   }
 
 }
