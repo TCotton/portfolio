@@ -99,8 +99,10 @@
 
 #logo-wrapper {
   float: left;
+
   a {
     text-decoration: none;
+    white-space: nowrap;
   }
 }
 

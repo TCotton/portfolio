@@ -15,13 +15,13 @@ describe('Controller: HeaderCtrl', function () {
     });
   }));
 
-  // there are five links in the main navigation
-  it('scope.navigation should equal 5 because there are five items in the header navigation', function () {
-    expect(scope.navigation.items.length).toBe(5);
-  });
-
-  it('scope.homepage should equal the homepage url', function () {
-    expect(scope.homepage).toContain('/#!/');
-  });
+//  // there are five links in the main navigation
+//  it('scope.navigation should equal 5 because there are five items in the header navigation', function () {
+//    expect(scope.navigation.items.length).toBe(5);
+//  });
+//
+//  it('scope.homepage should equal the homepage url', function () {
+//    expect(scope.homepage).toContain('/#!/');
+//  });
 
 });

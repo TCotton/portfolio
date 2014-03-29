@@ -12,12 +12,14 @@ h1.logo {
   @include font-calculator($secondaryFontFamily, 35px, 0);
   line-height: $headerHeight;
   color: white;
+  -webkit-font-smoothing:antialiased;
 }
 
 .navigation li {
   @include font-calculator($baseFontFamily, 15px, 0);
   text-transform: uppercase;
   font-weight: 700;
+  -webkit-font-smoothing:antialiased;
 }
 
 h2.page-top-title {
@@ -28,7 +30,7 @@ h2.page-top-title {
 }
 
 p.page-top-text {
-  @include font-calculator($baseFontFamily, 18px, 0.5);
+  @include font-calculator($baseFontFamily, 18px);
   font-weight: 300;
   color: white;
 }
@@ -98,8 +100,11 @@ h3.blog-title {
   font-weight: 700;
 }
 
-@include contentText('p.minor-title') {
+p.minor-title {
+  @include font-calculator($baseFontFamily, 16px, 0);
+  color: $textTwo;
   font-weight: 700;
+  margin-bottom: 0;
 }
 
 .blog #blog-content a:hover:after {
