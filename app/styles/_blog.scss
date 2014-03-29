@@ -131,3 +131,31 @@
     }
   }
 }
+
+@include breakpoint(mobile) {
+
+  #pagination {
+
+    text-align: center;
+
+    .left-p {
+      float: left;
+      width: 55px;
+      height: 54px;
+      margin: 0 14px 14px 0;
+    }
+
+    .center-p {
+      display: none;
+    }
+
+    .right-p {
+      float: right;
+      width: 55px;
+      height: 54px;
+    }
+
+  }
+
+
+}

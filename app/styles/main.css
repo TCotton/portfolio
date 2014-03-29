@@ -1783,11 +1783,13 @@ a.button-front-one:hover, a.button-front-one:active {
 /* line 46, _mywork.scss */
 .my-work header {
   position: absolute;
-  width: 100%;
+  left: 2.5559105431309903%;
+  right: 2.5559105431309903%;
+  width: 94.8881789137%;
   text-align: center;
   z-index: 1;
 }
-/* line 51, _mywork.scss */
+/* line 53, _mywork.scss */
 .my-work header h3 {
   -ms-transition: all 0.5s;
   -webkit-transition: all 0.5s;
@@ -1798,20 +1800,20 @@ a.button-front-one:hover, a.button-front-one:active {
   margin-top: 10%;
   opacity: 0;
 }
-/* line 61, _mywork.scss */
+/* line 63, _mywork.scss */
 .my-work #left-small article {
   border-bottom: 1px solid #cccccc;
   margin: 0 0 30px 0;
   padding: 0 0 20px 0;
 }
-/* line 70, _mywork.scss */
+/* line 72, _mywork.scss */
 .my-work #right-large img {
   border: 1px solid #cccccc;
   background-clip: content-box;
   padding: 4px;
   overflow: hidden;
 }
-/* line 80, _mywork.scss */
+/* line 82, _mywork.scss */
 .my-work .pagination [class*="pag"] {
   width: 55px;
   height: 54px;
@@ -1822,43 +1824,43 @@ a.button-front-one:hover, a.button-front-one:active {
   margin: 0 14px 0 0;
   background-color: black;
 }
-/* line 90, _mywork.scss */
+/* line 92, _mywork.scss */
 .my-work .pagination [class*="pag"]:last-of-type {
   margin: 0;
 }
-/* line 95, _mywork.scss */
+/* line 97, _mywork.scss */
 .my-work .pagination .paglast {
   background: url("/images/svg/left-arrow.svg") no-repeat center center;
 }
-/* line 97, _mywork.scss */
+/* line 99, _mywork.scss */
 .my-work .pagination .paglast:hover {
   background: url("/images/svg/left-arrow-hover.svg") no-repeat center center;
 }
-/* line 102, _mywork.scss */
+/* line 104, _mywork.scss */
 .my-work .pagination .pagHome {
   background: url("/images/svg/index.svg") no-repeat center center;
 }
-/* line 104, _mywork.scss */
+/* line 106, _mywork.scss */
 .my-work .pagination .pagHome:hover {
   background: url("/images/svg/index-hover.svg") no-repeat center center;
 }
-/* line 109, _mywork.scss */
+/* line 111, _mywork.scss */
 .my-work .pagination .pagnext {
   background: url("/images/svg/right-arrow.svg") no-repeat center center;
 }
-/* line 111, _mywork.scss */
+/* line 113, _mywork.scss */
 .my-work .pagination .pagnext:hover {
   background: url("/images/svg/right-arrow-hover.svg") no-repeat center center;
 }
 
 @media (max-width: 979px) {
-  /* line 124, _mywork.scss */
+  /* line 126, _mywork.scss */
   .my-work #left-small article {
     border-bottom: none;
     margin: 0 0 20px 0;
     padding: 0 0 20px 0;
   }
-  /* line 131, _mywork.scss */
+  /* line 133, _mywork.scss */
   .my-work #left-small {
     width: auto;
     float: none;
@@ -1866,35 +1868,35 @@ a.button-front-one:hover, a.button-front-one:active {
     margin: 0;
     border: none;
   }
-  /* line 139, _mywork.scss */
+  /* line 141, _mywork.scss */
   .my-work #right-large {
     width: auto;
     float: none;
     display: inline-block;
     padding: 0 0 0 0;
   }
-  /* line 144, _mywork.scss */
+  /* line 146, _mywork.scss */
   .my-work #right-large img {
     margin: 0 0 40px 0;
   }
-  /* line 149, _mywork.scss */
+  /* line 151, _mywork.scss */
   .my-work .pagination {
     border-top: 1px solid #cccccc;
     padding: 40px 0 0 0;
     text-align: center;
     width: 100%;
   }
-  /* line 156, _mywork.scss */
+  /* line 158, _mywork.scss */
   .my-work .project-box-one, .my-work .project-box-two, .my-work .project-box-three, .my-work .project-box-four {
     margin-bottom: 33px;
   }
-  /* line 159, _mywork.scss */
+  /* line 161, _mywork.scss */
   .my-work .project-box-five, .my-work .project-box-six {
     margin-bottom: 0;
   }
 }
 @media (max-width: 767px) {
-  /* line 169, _mywork.scss */
+  /* line 171, _mywork.scss */
   .my-work .project-box-six {
     display: none;
   }
@@ -2451,6 +2453,29 @@ a.button-front-one:hover, a.button-front-one:active {
     display: block;
     margin: 0 0 0 0;
     clear: both;
+  }
+}
+@media (max-width: 767px) {
+  /* line 137, _blog.scss */
+  #pagination {
+    text-align: center;
+  }
+  /* line 141, _blog.scss */
+  #pagination .left-p {
+    float: left;
+    width: 55px;
+    height: 54px;
+    margin: 0 14px 14px 0;
+  }
+  /* line 148, _blog.scss */
+  #pagination .center-p {
+    display: none;
+  }
+  /* line 152, _blog.scss */
+  #pagination .right-p {
+    float: right;
+    width: 55px;
+    height: 54px;
   }
 }
 @media (max-width: 979px) {
