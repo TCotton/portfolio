@@ -1820,17 +1820,41 @@ a.button-front-one:hover, a.button-front-one:active {
 }
 
 @media (max-width: 979px) {
-  /* line 122, _mywork.scss */
+  /* line 124, _mywork.scss */
+  .my-work #left-small article {
+    border-bottom: none;
+    margin: 0 0 30px 0;
+    padding: 0 0 20px 0;
+  }
+  /* line 131, _mywork.scss */
+  .my-work #left-small {
+    width: auto;
+    float: none;
+    display: inline-block;
+    margin: 0;
+    border: none;
+  }
+  /* line 139, _mywork.scss */
+  .my-work #right-large {
+    width: auto;
+    float: none;
+    display: block;
+  }
+  /* line 145, _mywork.scss */
+  .my-work .pagination {
+    display: none;
+  }
+  /* line 149, _mywork.scss */
   .my-work .project-box-one, .my-work .project-box-two, .my-work .project-box-three, .my-work .project-box-four {
     margin-bottom: 33px;
   }
-  /* line 125, _mywork.scss */
+  /* line 152, _mywork.scss */
   .my-work .project-box-five, .my-work .project-box-six {
     margin-bottom: 0;
   }
 }
 @media (max-width: 767px) {
-  /* line 135, _mywork.scss */
+  /* line 162, _mywork.scss */
   .my-work .project-box-six {
     display: none;
   }
