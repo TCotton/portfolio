@@ -598,13 +598,13 @@ body {
 @media (max-width: 979px) {
   /* line 23, main.scss */
   body {
-    background: green;
+    background: lightblue;
   }
 }
 @media (max-width: 767px) {
   /* line 31, main.scss */
   body {
-    background: pink;
+    background: lightpink;
   }
 }
 /* line 1, modules/_media_queries.scss */
@@ -733,8 +733,9 @@ body {
 /* My work */
 /* line 38, modules/_grid.scss */
 [class*="project-box"] {
-  width: -webkit-calc((100% / 3) - (66px / 3));
-  width: calc((100% / 3) - (66px / 3));
+  width: 30%;
+  width: -webkit-calc((100% / 3) - 33px);
+  width: calc((100% / 3) - 33px);
   height: 285px;
   float: left;
   border: 1px solid #cccccc;
@@ -747,12 +748,12 @@ body {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
-/* line 51, modules/_grid.scss */
+/* line 52, modules/_grid.scss */
 [class*="project-box"]:nth-of-type(3n) {
   margin-right: 0;
   background-clip: content-box;
 }
-/* line 56, modules/_grid.scss */
+/* line 57, modules/_grid.scss */
 [class*="project-box"]::before {
   content: '';
   position: absolute;
@@ -769,7 +770,7 @@ body {
   -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s;
 }
-/* line 69, modules/_grid.scss */
+/* line 70, modules/_grid.scss */
 [class*="project-box"]::after {
   content: '';
   margin: auto;
@@ -787,88 +788,95 @@ body {
   -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s;
 }
-/* line 82, modules/_grid.scss */
+/* line 83, modules/_grid.scss */
 [class*="project-box"]:hover::before {
   opacity: 0.7;
 }
-/* line 86, modules/_grid.scss */
+/* line 87, modules/_grid.scss */
 [class*="project-box"]:hover::after {
   opacity: 1;
 }
 
-@media screen and (min--moz-device-pixel-ratio: 0) {
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
   /* temp Firefox hack until I can work out a solution */
-  /* line 94, modules/_grid.scss */
+  /* line 95, modules/_grid.scss */
   [class*="project-box"] {
-    width: -webkit-calc((100% / 3) - (66px / 2));
-    width: calc((100% / 3) - (66px / 2));
+    width: -webkit-calc((100% / 3) - 22px);
+    width: calc((100% / 3) - 22px);
   }
 }
 @media (max-width: 1366px) {
-  /* line 101, modules/_grid.scss */
+  /* line 102, modules/_grid.scss */
   #container {
     width: 99%;
   }
 
-  /* line 105, modules/_grid.scss */
+  /* line 106, modules/_grid.scss */
   #left-large {
     width: 65.65495207667732%;
     margin: 0 2.5559105431309903% 0 0;
   }
 
-  /* line 110, modules/_grid.scss */
+  /* line 111, modules/_grid.scss */
   #left-small {
     width: 31.789137380191697%;
     margin: 0 2.5559105431309903% 0 0;
   }
 
-  /* line 115, modules/_grid.scss */
+  /* line 116, modules/_grid.scss */
   #right-large {
     width: 65.65495207667732%;
   }
 
-  /* line 119, modules/_grid.scss */
+  /* line 120, modules/_grid.scss */
   #right-small {
     width: 31.789137380191697%;
   }
 
-  /* line 123, modules/_grid.scss */
+  /* line 124, modules/_grid.scss */
   #main-content {
     padding: 57px 2.5559105431309903%;
   }
 
-  /* line 127, modules/_grid.scss */
+  /* line 128, modules/_grid.scss */
   [class*="project-box"] {
     height: 230px;
   }
 }
 @media (max-width: 979px) {
-  /* line 134, modules/_grid.scss */
+  /* line 135, modules/_grid.scss */
   [class*="project-box"] {
     height: 285px;
-    width: -webkit-calc((100% / 2) - (33px / 2));
-    width: calc((100% / 2) - (33px / 2));
+    width: -webkit-calc((100% / 2) - 27px);
+    width: calc((100% / 2) - 27px);
   }
-  /* line 139, modules/_grid.scss */
+  /* line 140, modules/_grid.scss */
   [class*="project-box"]:nth-of-type(3n) {
     margin-right: 33px;
   }
-  /* line 143, modules/_grid.scss */
+  /* line 144, modules/_grid.scss */
   [class*="project-box"]:nth-of-type(2n) {
     margin-right: 0;
   }
 }
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (max-width: 979px) {
+  /* line 151, modules/_grid.scss */
+  [class*="project-box"] {
+    width: -webkit-calc((100% / 2) - (33px / 2));
+    width: calc((100% / 2) - (33px / 2));
+  }
+}
 @media (max-width: 767px) {
-  /* line 150, modules/_grid.scss */
+  /* line 158, modules/_grid.scss */
   [class*="project-box"] {
     height: 285px;
     width: 100%;
   }
-  /* line 155, modules/_grid.scss */
+  /* line 163, modules/_grid.scss */
   [class*="project-box"]:nth-of-type(3n) {
     margin-right: 0;
   }
-  /* line 159, modules/_grid.scss */
+  /* line 167, modules/_grid.scss */
   [class*="project-box"]:nth-of-type(2n) {
     margin-right: 0;
   }
@@ -905,6 +913,7 @@ h2.page-top-title {
 p.page-top-text {
   font-size: 1.8em;
   font-family: 'Open Sans', sans-serif;
+  margin-bottom: 1.38889em;
   font-weight: 300;
   color: white;
 }
@@ -1521,14 +1530,14 @@ a.button-front-one:hover, a.button-front-one:active {
 #slider section {
   position: absolute;
   top: 40px;
-  left: -webkit-calc(61.7130307467% / 2);
-  left: calc(61.7130307467% / 2);
+  left: 30.0146412885%;
   text-align: center;
   width: 38.28696925329429%;
 }
 /* line 19, _homepage.scss */
 #slider [class*="arrow"] {
   position: absolute;
+  top: 45%;
   top: -webkit-calc(50% - 28px);
   top: calc(50% - 28px);
   width: 55px;
@@ -1537,41 +1546,41 @@ a.button-front-one:hover, a.button-front-one:active {
   cursor: pointer;
   background-size: contain;
 }
-/* line 29, _homepage.scss */
+/* line 30, _homepage.scss */
 #slider .left-arrow {
   left: 57px;
   background: url("/images/svg/left-arrow.svg") no-repeat center center;
 }
-/* line 32, _homepage.scss */
+/* line 33, _homepage.scss */
 #slider .left-arrow:hover {
   background: url("/images/svg/left-arrow-hover.svg") no-repeat center center;
 }
-/* line 37, _homepage.scss */
+/* line 38, _homepage.scss */
 #slider .right-arrow {
   right: 57px;
   background: url("/images/svg/right-arrow.svg") no-repeat center center;
 }
-/* line 40, _homepage.scss */
+/* line 41, _homepage.scss */
 #slider .right-arrow:hover {
   background: url("/images/svg/right-arrow-hover.svg") no-repeat center center;
 }
 
 @media (max-width: 1366px) {
-  /* line 49, _homepage.scss */
+  /* line 50, _homepage.scss */
   #slider section {
     top: 20px;
   }
-  /* line 52, _homepage.scss */
+  /* line 53, _homepage.scss */
   #slider .left-arrow {
     left: 4.172767203513909%;
   }
-  /* line 55, _homepage.scss */
+  /* line 56, _homepage.scss */
   #slider .right-arrow {
     right: 4.172767203513909%;
   }
 }
 @media (max-width: 979px) {
-  /* line 65, _homepage.scss */
+  /* line 66, _homepage.scss */
   #slider section {
     top: 10px;
     left: 20%;
@@ -1579,12 +1588,12 @@ a.button-front-one:hover, a.button-front-one:active {
   }
 }
 @media (max-width: 767px) {
-  /* line 75, _homepage.scss */
+  /* line 76, _homepage.scss */
   #slider {
     background-position: left bottom;
     padding: 0 0 79.9414348463% 0;
   }
-  /* line 79, _homepage.scss */
+  /* line 80, _homepage.scss */
   #slider section {
     top: 20px;
     left: 4.172767203513909%;
@@ -1592,12 +1601,12 @@ a.button-front-one:hover, a.button-front-one:active {
     text-align: center;
     width: auto;
   }
-  /* line 87, _homepage.scss */
+  /* line 88, _homepage.scss */
   #slider [class*="arrow"] {
     display: none;
   }
 }
-/* line 93, _homepage.scss */
+/* line 94, _homepage.scss */
 #homepage-stats {
   padding: 0 114px;
   height: 224px;
@@ -1622,62 +1631,58 @@ a.button-front-one:hover, a.button-front-one:active {
   -ms-justify-content: center;
   justify-content: center;
 }
-/* line 117, _homepage.scss */
+/* line 118, _homepage.scss */
 #homepage-stats > span {
   width: 20%;
   padding: 0 2%;
   float: left;
   text-align: center;
 }
-/* line 123, _homepage.scss */
+/* line 124, _homepage.scss */
 #homepage-stats > span:first-of-type {
   padding: 0 2% 0 0;
 }
-/* line 126, _homepage.scss */
+/* line 127, _homepage.scss */
 #homepage-stats > span:last-of-type {
   padding: 0 0 0 2%;
 }
 
 @media (max-width: 1366px) {
-  /* line 134, _homepage.scss */
+  /* line 135, _homepage.scss */
   #homepage-stats {
     padding: 0 4.172767203513909%;
   }
 }
 @media (max-width: 979px) {
-  /* line 141, _homepage.scss */
-  #homepage-stats {
-    height: auto;
-  }
   /* line 144, _homepage.scss */
   #homepage-stats > span {
-    width: -webkit-calc(100% / 3);
-    width: calc(100% / 3);
+    width: 50%;
     padding: 0 2%;
   }
-  /* line 149, _homepage.scss */
+  /* line 150, _homepage.scss */
   #homepage-stats > span:nth-of-type(1) {
     padding: 0 2% 0 0;
   }
-  /* line 155, _homepage.scss */
+  /* line 156, _homepage.scss */
   #homepage-stats > span:nth-of-type(3) {
     padding: 0 0 0 2%;
   }
-  /* line 158, _homepage.scss */
+  /* line 159, _homepage.scss */
   #homepage-stats > span:nth-of-type(4) {
     display: none;
   }
-  /* line 161, _homepage.scss */
+  /* line 162, _homepage.scss */
   #homepage-stats > span:nth-of-type(5) {
     display: none;
   }
 }
 @media (max-width: 767px) {
-  /* line 170, _homepage.scss */
+  /* line 171, _homepage.scss */
   #homepage-stats {
+    height: auto;
     display: block;
   }
-  /* line 172, _homepage.scss */
+  /* line 174, _homepage.scss */
   #homepage-stats > span {
     width: 100%;
     float: none;
@@ -1686,12 +1691,12 @@ a.button-front-one:hover, a.button-front-one:active {
     padding: 0;
     margin: 40px 0 20px 0;
   }
-  /* line 182, _homepage.scss */
+  /* line 184, _homepage.scss */
   #homepage-stats > span:nth-of-type(1) {
     padding: 0;
     margin: 60px 0 20px 0;
   }
-  /* line 186, _homepage.scss */
+  /* line 188, _homepage.scss */
   #homepage-stats > span:nth-of-type(3) {
     padding: 0;
     margin: 40px 0 40px 0;
@@ -2026,7 +2031,7 @@ a.button-front-one:hover, a.button-front-one:active {
   border-radius: 10px;
 }
 
-@media (min-device-width: 768px) {
+@media (min-width: 767px), (-webkit-min-device-pixel-ratio: 2), not all, (min-resolution: 2dppx), (min-resolution: 192dpi) {
   /* line 48, _aboutme.scss */
   .aboutme [class*="per"] span {
     -ms-transform: scaleX(0);
@@ -2058,7 +2063,7 @@ a.button-front-one:hover, a.button-front-one:active {
     animation-timing-function: linear;
   }
 }
-@media (min-device-width: 768px) {
+@media (min-width: 767px), (-webkit-min-device-pixel-ratio: 2), not all, (min-resolution: 2dppx), (min-resolution: 192dpi) {
   /* line 85, _aboutme.scss */
   .ie9 .aboutme [class*="per"] span {
     -ms-transform: scaleX(1);
@@ -2255,17 +2260,34 @@ a.button-front-one:hover, a.button-front-one:active {
 /* end for firefox hack */
 @media (max-width: 979px) {
   /* line 209, _aboutme.scss */
+  .aboutme section {
+    display: block;
+  }
+  /* line 213, _aboutme.scss */
   .aboutme #left-large {
     width: auto;
     float: none;
     display: block;
     margin: 0 0 0 0;
   }
-  /* line 216, _aboutme.scss */
+  /* line 220, _aboutme.scss */
   .aboutme #right-small {
     width: auto;
     float: none;
     display: block;
+  }
+}
+@media (max-width: 767px) {
+  /* line 235, _aboutme.scss */
+  .aboutme .button-skills-aboutme.section {
+    width: 100%;
+    float: none;
+    margin-bottom: 20px;
+    line-height: 58px;
+  }
+  /* line 242, _aboutme.scss */
+  .aboutme .button-skills-aboutme.section:nth-of-type(even) {
+    margin-left: 0;
   }
 }
 /* line 3, _blog.scss */
@@ -2572,6 +2594,7 @@ a.button-front-one:hover, a.button-front-one:active {
   content: '';
   position: absolute;
   top: -15px;
+  left: 45%;
   left: -webkit-calc(50% - 10px);
   left: calc(50% - 10px);
   width: 21px;

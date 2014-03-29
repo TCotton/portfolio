@@ -11,13 +11,14 @@
   section {
     position: absolute;
     top: 40px;
-    @include calc("left", "61.7130307467% / 2");
+    left: 30.0146412885%;
     text-align: center;
     width: 38.28696925329429%;
   }
 
   [class*="arrow"] {
     position: absolute;
+    top: 45%;
     @include calc("top", "50% - 28px");
     width: 55px;
     height: 54px;
@@ -139,12 +140,12 @@
 @include breakpoint(tablet) {
 
   #homepage-stats {
-    height: auto;
 
     > span {
       // header and content for span blocks
 
-      @include calc('width', '100% / 3');
+      //@include calc('width', '100% / 2');
+      width: 50%;
       padding: 0 2%;
       &:nth-of-type(1) {
         padding: 0 2% 0 0;
@@ -168,6 +169,7 @@
 @include breakpoint(mobile) {
 
   #homepage-stats {
+    height: auto;
     display: block;
     > span {
       // header and content for span blocks

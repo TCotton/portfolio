@@ -206,6 +206,10 @@
 
   .aboutme {
 
+    section {
+      display: block;
+    }
+
     #left-large {
       width: auto;
       float: none;
@@ -222,4 +226,21 @@
 
   }
 
+}
+
+@include breakpoint(mobile) {
+
+  .aboutme {
+
+    .button-skills-aboutme.section {
+      width: 100%;
+      float: none;
+      margin-bottom: 20px;
+      line-height: 58px;
+    }
+
+    .button-skills-aboutme.section:nth-of-type(even) {
+      margin-left: 0 ;
+    }
+  }
 }

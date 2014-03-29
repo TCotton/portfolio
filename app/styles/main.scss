@@ -21,7 +21,7 @@ body {
 @include breakpoint("tablet") {
 
   body {
-    background: green;
+    background: lightblue;
   }
 
 }
@@ -29,7 +29,7 @@ body {
 @include breakpoint("mobile") {
 
   body {
-    background: pink;
+    background: lightpink;
   }
 
 }

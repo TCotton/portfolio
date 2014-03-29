@@ -37,7 +37,8 @@
 
 [class*="project-box"] {
   // three boxes per row on the desktop
-  @include calc('width', '(100% / 3) - (66px / 3)');
+  width: 30%;
+  @include calc('width', '(100% / 3) - 33px');
   height: 285px;
   float: left;
   border: 1px solid $boxBorder;
@@ -89,10 +90,10 @@
 }
 
 
-@media screen and (min--moz-device-pixel-ratio:0) {
+@include breakpoint(-webkit-hack) {
   /* temp Firefox hack until I can work out a solution */
   [class*="project-box"] {
-    @include calc('width', '(100% / 3) - (66px / 2)');
+    @include calc('width', '(100% / 3) - 22px');
   }
 }
 
@@ -134,7 +135,7 @@
   [class*="project-box"] {
     height: 285px;
     // only two boxes per row
-    @include calc('width', '(100% / 2) - (33px / 2)');
+    @include calc('width', '(100% / 2) - 27px');
     //override desktop defaults
     &:nth-of-type(3n) {
       margin-right: 33px;
@@ -145,6 +146,13 @@
     }
   }
 }
+
+@include breakpoint(-webkit-hack-tablet) {
+  [class*="project-box"] {
+    @include calc('width', '(100% / 2) - (33px / 2)');
+  }
+}
+
 
 @include breakpoint(mobile) {
   [class*="project-box"] {

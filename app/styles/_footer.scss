@@ -61,6 +61,7 @@
     content: '';
     position: absolute;
     top: -15px;
+    left: 45%;
     @include calc(left, "50% - 10px");
     width: 21px;
     height: 21px;
