@@ -12,3 +12,23 @@
     width: 38.28696925329429%;
   }
 }
+
+@include breakpoint("mobile") {
+
+  #banner {
+    height: 194px;
+
+    background: $bannerBackround;
+    position: relative;
+
+    section {
+      margin: auto;
+      position: absolute;
+      top: 50%; left: 50%;
+      @include transform("translate(-50%,-50%)");
+      text-align: center;
+      width: 100%;
+      padding: 0 4.172767203513909%;
+    }
+  }
+}

@@ -30,7 +30,7 @@ h2.page-top-title {
 }
 
 p.page-top-text {
-  @include font-calculator($baseFontFamily, 18px);
+  @include font-calculator($baseFontFamily, 18px, 0);
   font-weight: 300;
   color: white;
 }
