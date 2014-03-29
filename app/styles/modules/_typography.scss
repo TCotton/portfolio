@@ -41,6 +41,13 @@ p.page-top-text {
   color: white;
 }
 
+@include breakpoint(mobile) {
+
+  .front-page-bottom-header {
+    line-height: 40px;
+  }
+}
+
 .front-page-bottom-text {
   @include font-calculator($baseFontFamily, 13px, 0);
   font-weight: 600;

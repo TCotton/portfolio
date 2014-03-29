@@ -852,9 +852,23 @@ body {
   /* line 140, modules/_grid.scss */
   [class*="project-box"]:nth-of-type(3n) {
     margin-right: 33px;
-    border: 1px solid black;
   }
-  /* line 145, modules/_grid.scss */
+  /* line 144, modules/_grid.scss */
+  [class*="project-box"]:nth-of-type(2n) {
+    margin-right: 0;
+  }
+}
+@media (max-width: 767px) {
+  /* line 151, modules/_grid.scss */
+  [class*="project-box"] {
+    height: 285px;
+    width: 100%;
+  }
+  /* line 156, modules/_grid.scss */
+  [class*="project-box"]:nth-of-type(3n) {
+    margin-right: 0;
+  }
+  /* line 160, modules/_grid.scss */
   [class*="project-box"]:nth-of-type(2n) {
     margin-right: 0;
   }
@@ -905,7 +919,13 @@ p.page-top-text {
   color: white;
 }
 
-/* line 44, modules/_typography.scss */
+@media (max-width: 767px) {
+  /* line 46, modules/_typography.scss */
+  .front-page-bottom-header {
+    line-height: 40px;
+  }
+}
+/* line 51, modules/_typography.scss */
 .front-page-bottom-text {
   font-size: 1.3em;
   font-family: 'Open Sans', sans-serif;
@@ -913,7 +933,7 @@ p.page-top-text {
   color: white;
 }
 
-/* line 50, modules/_typography.scss */
+/* line 57, modules/_typography.scss */
 .content-title {
   font-size: 3em;
   font-family: 'Open Sans', sans-serif;
@@ -923,12 +943,12 @@ p.page-top-text {
 }
 
 @media (max-width: 1366px) {
-  /* line 58, modules/_typography.scss */
+  /* line 65, modules/_typography.scss */
   .content-title {
     line-height: 40px;
   }
 }
-/* line 63, modules/_typography.scss */
+/* line 70, modules/_typography.scss */
 h3.blog-title {
   font-size: 4em;
   font-family: 'Open Sans', sans-serif;
@@ -938,7 +958,7 @@ h3.blog-title {
   color: #666666;
 }
 
-/* line 70, modules/_typography.scss */
+/* line 77, modules/_typography.scss */
 .blog article h4 {
   font-size: 2.6em;
   font-family: 'Open Sans', sans-serif;
@@ -948,7 +968,7 @@ h3.blog-title {
 }
 
 /* little mixin for standard blog css attributes and values */
-/* line 78, modules/_typography.scss */
+/* line 85, modules/_typography.scss */
 .content-text li {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
@@ -958,7 +978,7 @@ h3.blog-title {
   list-style: none;
 }
 
-/* line 78, modules/_typography.scss */
+/* line 85, modules/_typography.scss */
 .content-text p {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
@@ -967,7 +987,7 @@ h3.blog-title {
   font-weight: 400;
 }
 
-/* line 78, modules/_typography.scss */
+/* line 85, modules/_typography.scss */
 .content-text p.date {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
@@ -977,7 +997,7 @@ h3.blog-title {
   font-style: italic;
 }
 
-/* line 78, modules/_typography.scss */
+/* line 85, modules/_typography.scss */
 .content-text p.read-more {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
@@ -986,7 +1006,7 @@ h3.blog-title {
   font-weight: 700;
 }
 
-/* line 103, modules/_typography.scss */
+/* line 110, modules/_typography.scss */
 p.minor-title {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
@@ -995,7 +1015,7 @@ p.minor-title {
   margin-bottom: 0;
 }
 
-/* line 110, modules/_typography.scss */
+/* line 117, modules/_typography.scss */
 .blog #blog-content a:hover:after {
   content: "(Link: " attr(href) ")";
   color: #1d7a94;
@@ -1004,14 +1024,14 @@ p.minor-title {
   text-decoration: underline;
 }
 
-/* line 120, modules/_typography.scss */
+/* line 127, modules/_typography.scss */
 .content-text a.underline {
   text-decoration: none;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.3) 11%, rgba(0, 0, 0, 0.3) 16%, rgba(0, 0, 0, 0) 16%);
   position: relative;
   white-space: normal;
 }
-/* line 127, modules/_typography.scss */
+/* line 134, modules/_typography.scss */
 .content-text a.underline[rel="external"]::after {
   content: " " attr(href) " ";
   position: absolute;
@@ -1026,35 +1046,35 @@ p.minor-title {
   transition: opacity 0.5s;
   white-space: nowrap;
 }
-/* line 139, modules/_typography.scss */
+/* line 146, modules/_typography.scss */
 .content-text a.underline[rel="external"]:hover::after {
   opacity: 1;
 }
-/* line 143, modules/_typography.scss */
+/* line 150, modules/_typography.scss */
 .content-text a.underline:link {
   color: #666666;
 }
-/* line 146, modules/_typography.scss */
+/* line 153, modules/_typography.scss */
 .content-text a.underline:visited {
   color: gray;
 }
-/* line 149, modules/_typography.scss */
+/* line 156, modules/_typography.scss */
 .content-text a.underline:focus {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
-/* line 153, modules/_typography.scss */
+/* line 160, modules/_typography.scss */
 .content-text a.underline:hover {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
-/* line 158, modules/_typography.scss */
+/* line 165, modules/_typography.scss */
 .content-text a.underline:active {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
 
-/* line 165, modules/_typography.scss */
+/* line 172, modules/_typography.scss */
 h4.blog-sidebar-header {
   font-size: 3em;
   font-family: 'Open Sans', sans-serif;
@@ -1063,7 +1083,7 @@ h4.blog-sidebar-header {
   color: #666666;
 }
 
-/* line 171, modules/_typography.scss */
+/* line 178, modules/_typography.scss */
 .blog-sidebar-text p, ul.blog-sidebar-text {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
@@ -1072,7 +1092,7 @@ h4.blog-sidebar-header {
   color: #666666;
 }
 
-/* line 177, modules/_typography.scss */
+/* line 184, modules/_typography.scss */
 h3.contact-header {
   font-size: 3em;
   font-family: 'Open Sans', sans-serif;
@@ -1081,7 +1101,7 @@ h3.contact-header {
   color: #666666;
 }
 
-/* line 183, modules/_typography.scss */
+/* line 190, modules/_typography.scss */
 h3.project-header {
   font-size: 3em;
   font-family: 'Open Sans', sans-serif;
@@ -1089,7 +1109,7 @@ h3.project-header {
   color: white;
 }
 
-/* line 189, modules/_typography.scss */
+/* line 196, modules/_typography.scss */
 .footer-top-text p, ul.footer-top-text {
   font-size: 2em;
   font-family: 'Open Sans', sans-serif;
@@ -1099,14 +1119,14 @@ h3.project-header {
   color: #666666;
 }
 
-/* line 196, modules/_typography.scss */
+/* line 203, modules/_typography.scss */
 .code-preview {
   font-size: 12px;
   color: #666666;
   line-height: 16px;
 }
 
-/* line 202, modules/_typography.scss */
+/* line 209, modules/_typography.scss */
 p.footer-copyright {
   font-size: 1.3em;
   font-family: 'Open Sans', sans-serif;
@@ -1547,7 +1567,26 @@ a.button-front-one:hover, a.button-front-one:active {
     width: 60%;
   }
 }
-/* line 73, _homepage.scss */
+@media (max-width: 767px) {
+  /* line 75, _homepage.scss */
+  #slider {
+    background-position: left bottom;
+    padding: 0 0 79.9414348463% 0;
+  }
+  /* line 79, _homepage.scss */
+  #slider section {
+    top: 20px;
+    left: 4.172767203513909%;
+    right: 4.172767203513909%;
+    text-align: center;
+    width: auto;
+  }
+  /* line 87, _homepage.scss */
+  #slider [class*="arrow"] {
+    display: none;
+  }
+}
+/* line 93, _homepage.scss */
 #homepage-stats {
   padding: 0 114px;
   height: 224px;
@@ -1572,50 +1611,79 @@ a.button-front-one:hover, a.button-front-one:active {
   -ms-justify-content: center;
   justify-content: center;
 }
-/* line 97, _homepage.scss */
+/* line 117, _homepage.scss */
 #homepage-stats > span {
   width: 20%;
   padding: 0 2%;
   float: left;
   text-align: center;
 }
-/* line 103, _homepage.scss */
+/* line 123, _homepage.scss */
 #homepage-stats > span:first-of-type {
   padding: 0 2% 0 0;
 }
-/* line 106, _homepage.scss */
+/* line 126, _homepage.scss */
 #homepage-stats > span:last-of-type {
   padding: 0 0 0 2%;
 }
 
 @media (max-width: 1366px) {
-  /* line 114, _homepage.scss */
+  /* line 134, _homepage.scss */
   #homepage-stats {
     padding: 0 4.172767203513909%;
   }
 }
 @media (max-width: 979px) {
-  /* line 122, _homepage.scss */
+  /* line 141, _homepage.scss */
+  #homepage-stats {
+    height: auto;
+  }
+  /* line 144, _homepage.scss */
   #homepage-stats > span {
     width: -webkit-calc(100% / 3);
     width: calc(100% / 3);
     padding: 0 2%;
   }
-  /* line 127, _homepage.scss */
+  /* line 149, _homepage.scss */
   #homepage-stats > span:nth-of-type(1) {
     padding: 0 2% 0 0;
   }
-  /* line 133, _homepage.scss */
+  /* line 155, _homepage.scss */
   #homepage-stats > span:nth-of-type(3) {
     padding: 0 0 0 2%;
   }
-  /* line 136, _homepage.scss */
+  /* line 158, _homepage.scss */
   #homepage-stats > span:nth-of-type(4) {
     display: none;
   }
-  /* line 139, _homepage.scss */
+  /* line 161, _homepage.scss */
   #homepage-stats > span:nth-of-type(5) {
     display: none;
+  }
+}
+@media (max-width: 767px) {
+  /* line 170, _homepage.scss */
+  #homepage-stats {
+    display: block;
+  }
+  /* line 172, _homepage.scss */
+  #homepage-stats > span {
+    width: 100%;
+    float: none;
+    display: inline-block;
+    clear: both;
+    padding: 0;
+    margin: 40px 0 20px 0;
+  }
+  /* line 182, _homepage.scss */
+  #homepage-stats > span:nth-of-type(1) {
+    padding: 0;
+    margin: 60px 0 20px 0;
+  }
+  /* line 186, _homepage.scss */
+  #homepage-stats > span:nth-of-type(3) {
+    padding: 0;
+    margin: 40px 0 40px 0;
   }
 }
 /* line 1, _banner.scss */
@@ -1759,6 +1827,12 @@ a.button-front-one:hover, a.button-front-one:active {
   /* line 125, _mywork.scss */
   .my-work .project-box-five, .my-work .project-box-six {
     margin-bottom: 0;
+  }
+}
+@media (max-width: 767px) {
+  /* line 135, _mywork.scss */
+  .my-work .project-box-six {
+    display: none;
   }
 }
 /* line 3, _sideprojects.scss */

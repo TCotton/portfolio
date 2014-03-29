@@ -139,7 +139,22 @@
     //override desktop defaults
     &:nth-of-type(3n) {
       margin-right: 33px;
-      border: 1px solid black;
+    }
+    // tablet margin
+    &:nth-of-type(2n) {
+      margin-right: 0;
+    }
+  }
+}
+
+@include breakpoint(mobile) {
+  [class*="project-box"] {
+    height: 285px;
+    // only two boxes per row
+    width: 100%;
+    //override desktop defaults
+    &:nth-of-type(3n) {
+      margin-right: 0;
     }
     // tablet margin
     &:nth-of-type(2n) {

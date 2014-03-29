@@ -127,3 +127,19 @@
     }
   }
 }
+
+@include breakpoint("mobile") {
+
+  .my-work {
+
+    .project-box-six {
+      display: none;
+    }
+  }
+}
+
+
+
+
+
+

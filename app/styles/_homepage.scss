@@ -70,6 +70,26 @@
   }
 }
 
+@include breakpoint(mobile) {
+
+  #slider {
+    background-position: left bottom;
+    padding: 0 0 79.9414348463% 0;
+
+    section {
+      top: 20px;
+      left: 4.172767203513909%;
+      right: 4.172767203513909%;
+      text-align: center;
+      width: auto;
+    }
+
+    [class*="arrow"] {
+      display: none;
+    }
+  }
+}
+
 #homepage-stats {
   padding: 0 114px;
   height: 224px;
@@ -119,6 +139,8 @@
 @include breakpoint(tablet) {
 
   #homepage-stats {
+    height: auto;
+
     > span {
       // header and content for span blocks
 
@@ -138,6 +160,32 @@
       }
       &:nth-of-type(5) {
         display: none;
+      }
+    }
+  }
+}
+
+@include breakpoint(mobile) {
+
+  #homepage-stats {
+    display: block;
+    > span {
+      // header and content for span blocks
+
+      width: 100%;
+      float: none;
+      display: inline-block;
+      clear: both;
+
+      padding: 0;
+      margin: 40px 0 20px 0;
+      &:nth-of-type(1) {
+        padding: 0;
+        margin: 60px 0 20px 0;
+      }
+      &:nth-of-type(3) {
+        padding: 0;
+        margin: 40px 0 40px 0;
       }
     }
   }
