@@ -13,7 +13,7 @@ a.button-front-one {
   cursor: pointer;
   text-decoration: none;
   &:hover, &:active {
-    color: darken($textFour,20);
+    color: darken($textFour, 20);
   }
 }
 
@@ -27,7 +27,7 @@ a.button-front-one {
   border-radius: 5px;
   border: 1px solid $textTwo;
   &:hover, &:active {
-    color: darken($textTwo,20);
+    color: darken($textTwo, 20);
   }
 }
 
@@ -41,7 +41,7 @@ a.button-front-one {
   border-radius: 5px;
   background: $textTwo;
   &:hover, &:active {
-    color: darken(white,10);
+    color: darken(white, 10);
   }
 }
 
@@ -54,11 +54,11 @@ a.button-front-one {
   color: white;
   border-radius: 5px;
   background: $bannerBackround;
-  clear : both;
+  clear: both;
   float: left;
   border: none;
   &:hover, &:active {
-    color: darken(white,10);
+    color: darken(white, 10);
   }
 }
 
@@ -69,4 +69,11 @@ a.button-front-one {
   @include font-calculator($baseFontFamily, 26px, 0);
   color: white;
   font-weight: 300;
+}
+
+@include breakpoint("mobile") {
+
+  .button-contact {
+    width: 100%
+  }
 }

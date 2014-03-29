@@ -50,7 +50,6 @@
       border: $textTwo;
     }
   }
-
 }
 
 @media screen and (min--moz-device-pixel-ratio:0) {
@@ -68,7 +67,15 @@
       width: calc(100% - 20px);
       height: 261px;
     }
-
   }
+}
 
+@include breakpoint("mobile") {
+
+  .contact, .comments {
+
+    .input {
+      width: 100%;
+    }
+  }
 }

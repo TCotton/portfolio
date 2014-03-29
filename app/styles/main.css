@@ -843,32 +843,32 @@ body {
   }
 }
 @media (max-width: 979px) {
-  /* line 135, modules/_grid.scss */
+  /* line 134, modules/_grid.scss */
   [class*="project-box"] {
     height: 285px;
     width: -webkit-calc((100% / 2) - (33px / 2));
     width: calc((100% / 2) - (33px / 2));
   }
-  /* line 140, modules/_grid.scss */
+  /* line 139, modules/_grid.scss */
   [class*="project-box"]:nth-of-type(3n) {
     margin-right: 33px;
   }
-  /* line 144, modules/_grid.scss */
+  /* line 143, modules/_grid.scss */
   [class*="project-box"]:nth-of-type(2n) {
     margin-right: 0;
   }
 }
 @media (max-width: 767px) {
-  /* line 151, modules/_grid.scss */
+  /* line 150, modules/_grid.scss */
   [class*="project-box"] {
     height: 285px;
     width: 100%;
   }
-  /* line 156, modules/_grid.scss */
+  /* line 155, modules/_grid.scss */
   [class*="project-box"]:nth-of-type(3n) {
     margin-right: 0;
   }
-  /* line 160, modules/_grid.scss */
+  /* line 159, modules/_grid.scss */
   [class*="project-box"]:nth-of-type(2n) {
     margin-right: 0;
   }
@@ -1221,6 +1221,12 @@ a.button-front-one:hover, a.button-front-one:active {
   font-weight: 300;
 }
 
+@media (max-width: 767px) {
+  /* line 76, modules/_buttons.scss */
+  .button-contact {
+    width: 100%;
+  }
+}
 /* line 2, modules/_forms.scss */
 ::-webkit-input-placeholder {
   color: #999999;
@@ -1282,15 +1288,21 @@ a.button-front-one:hover, a.button-front-one:active {
 
 @media screen and (min--moz-device-pixel-ratio: 0) {
   /* another firefox bug :( */
-  /* line 62, modules/_forms.scss */
+  /* line 61, modules/_forms.scss */
   .contact .input, .comments .input {
     width: calc(70% - 20px);
     height: 56px;
   }
-  /* line 67, modules/_forms.scss */
+  /* line 66, modules/_forms.scss */
   .contact .textarea, .comments .textarea {
     width: calc(100% - 20px);
     height: 261px;
+  }
+}
+@media (max-width: 767px) {
+  /* line 77, modules/_forms.scss */
+  .contact .input, .comments .input {
+    width: 100%;
   }
 }
 /* line 1, _header.scss */
