@@ -121,6 +121,7 @@ p.minor-title {
     text-decoration: none;
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, .3) 11%, rgba(0, 0, 0, .3) 16%, rgba(0, 0, 0, 0) 16%);
     position: relative;
+    white-space: normal;
 
     // displays pop up of link attribute if it is pointing to an external site
     &[rel="external"]::after {

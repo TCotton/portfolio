@@ -201,3 +201,25 @@
 }
 
 /* end for firefox hack */
+
+@include breakpoint(tablet) {
+
+  .aboutme {
+
+    #left-large {
+      width: auto;
+      float: none;
+      display: block;
+      margin: 0 0 0 0;
+    }
+
+    #right-small {
+      width: auto;
+      float: none;
+      display: block;
+    }
+
+
+  }
+
+}

@@ -34,6 +34,25 @@
 
   text-align: center;
 
+  .left-p {
+    float: left;
+    width: 55px;
+    height: 54px;
+    margin: 0 14px 14px 0;
+  }
+
+  .center-p {
+    float: left;
+    margin: 0 7px 0 0;
+    @include calc('width', '100% - (55px * 2) - (14px * 2)');
+  }
+
+  .right-p {
+    float: left;
+    width: 55px;
+    height: 54px;
+  }
+
   [class*="pag"] {
     width: 55px;
     height: 54px;
@@ -41,7 +60,7 @@
     float: left;
     cursor: pointer;
     background-size: contain;
-    margin: 0 14px 0 0;
+    margin: 0 14px 14px 0;
 
     &:last-of-type {
       margin: 0;
@@ -50,7 +69,7 @@
 
   // the first pagination item which is the left arrow d
 
-  [class*="pag"]:first-of-type {
+  .left-p [class*="pag"]{
     background: $leftArrow;
     &:hover {
       background: $leftArrowHover;
@@ -72,10 +91,43 @@
 
   // the last pagination item which is the the right arrow
 
-  [class*="pag"]:last-of-type {
+  .right-p [class*="pag"]{
     background: $rightArrow;
     &:hover {
       background: $rightArrowHover;
+    }
+  }
+}
+
+@include breakpoint(tablet) {
+
+  .blog {
+
+    #left-large {
+      width: auto;
+      float: none;
+      display: block;
+      margin: 0 0 0 0;
+    }
+
+    #right-small {
+      display: none;
+    }
+
+    &.blog-single {
+
+      #left-large {
+        margin: 0 0 20px 0;
+        display: inline-block;
+      }
+
+      #right-small {
+        width: auto;
+        float: none;
+        display: block;
+        margin: 0 0 0 0;
+        clear: both;
+      }
     }
   }
 }

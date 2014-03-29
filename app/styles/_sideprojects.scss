@@ -40,3 +40,16 @@
     }
   }
 }
+
+@include breakpoint("tablet") {
+
+  .side-projects {
+
+    .project-box-one, .project-box-two, .project-box-three, .project-box-four {
+      margin-bottom: 33px;
+    }
+    .project-box-five, .project-box-six {
+      margin-bottom: 0;
+    }
+  }
+}

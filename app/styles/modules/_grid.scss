@@ -139,6 +139,7 @@
     //override desktop defaults
     &:nth-of-type(3n) {
       margin-right: 33px;
+      border: 1px solid black;
     }
     // tablet margin
     &:nth-of-type(2n) {

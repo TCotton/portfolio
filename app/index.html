@@ -1,25 +1,24 @@
 <!doctype html>
-<!--[if IE 9]>
-<html class="ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html> <!--<![endif]-->
+<!--[if IE 9]><html class="ie9"> <![endif]-->
+<!--[if gt IE 8]><!--><html> <!--<![endif]-->
 <head>
-    <meta charset="utf-8">
-    <title></title>
-    <meta name="description" content="The portfolio and blog of web developer Andy Walpole">
-    <meta name="viewport" content="width=device-width">
-    <meta name="fragment" content="!">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800'
-          rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Yellowtail' rel='stylesheet' type='text/css'>
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css({.tmp,app}) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="The portfolio and blog of web developer Andy Walpole">
+  <meta name="viewport" content="width=device-width">
+  <meta name="fragment" content="!">
+  <link
+      href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800'
+      rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Yellowtail' rel='stylesheet' type='text/css'>
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css styles/vendor.css -->
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css({.tmp,app}) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
 </head>
 <body data-ng-app="portfolioApp">
 
@@ -27,64 +26,65 @@
 
 <div id="container">
 
-    <div id="header">
+  <div id="header">
 
-        <div id="logo-wrapper">
-            <h1 class="logo"><a href="/#!/">Andy Walpole</a></h1>
-        </div>
-        <!-- end logo -->
+    <div id="logo-wrapper">
+      <h1 class="logo"><a href="/#!/">Andy Walpole</a></h1>
+    </div>
+    <!-- end logo -->
 
-        <label for="toggle-1" class="handheld-cross hidden-desktop">Main Menu</label>
-        <input type="checkbox" id="toggle-1" data-ng-checked="newPage">
+    <label for="toggle-1" class="handheld-cross hidden-desktop" data-ng-class="{active: !pageChange}">Main Menu</label>
+    <!-- toogle checked box on page load or click of menu item -->
+    <input type="checkbox" id="toggle-1" data-ng-checked="!pageChange" data-ng-click="pageChange = false">
 
-        <div id="navigation-wrapper">
+    <div id="navigation-wrapper">
 
-            <ul class="navigation">
-                <li>
-                    <a href="/#!/work-projects">Work Projects</a>
-                </li>
-                <li>
-                    <a href="/#!/side-projects">Side Projects</a>
-                </li>
-                <li>
-                    <a href="/#!/about-me">About Me</a>
-                </li>
-                <li>
-                    <a href="/#!/contact-me">Contact Me</a>
-                </li>
-                <li>
-                    <a href="/#!/blog/">Blog</a>
-                </li>
-            </ul>
-
-        </div>
-        <!-- end navigation -->
+      <ul class="navigation">
+        <li>
+          <a href="/#!/work-projects" data-link="work-projects">Work Projects</a>
+        </li>
+        <li>
+          <a href="/#!/side-projects" data-link="side-projects">Side Projects</a>
+        </li>
+        <li>
+          <a href="/#!/about-me" data-link="about-me">About Me</a>
+        </li>
+        <li>
+          <a href="/#!/contact-me" data-link="contant-me">Contact Me</a>
+        </li>
+        <li>
+          <a href="/#!/blog/" data-link="blog/">Blog</a>
+        </li>
+      </ul>
 
     </div>
-    <!-- end header -->
-    <div id="content" data-ng-view></div>
+    <!-- end navigation -->
 
-    <div data-ng-include src="'views/footer.html'"></div>
+  </div>
+  <!-- end header -->
+  <div id="content" data-ng-view></div>
+
+  <div data-ng-include src="'views/footer.html'"></div>
 
 </div>
 <!-- end container -->
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
 <script>
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function () {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', 'UA-XXXXX-X');
-    ga('send', 'pageview');
+  ga('create', 'UA-XXXXX-X');
+  ga('send', 'pageview');
 </script>
 
 
