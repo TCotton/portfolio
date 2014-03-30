@@ -13,7 +13,6 @@ describe('Directive: Slider', function () {
     $timeout = _$timeout_;
     scope = $rootScope;
 
-
     element = angular.element('<div data-slider-directive data-slider="slider"></div>');
     $compile(element)($rootScope);
     scope.$digest();

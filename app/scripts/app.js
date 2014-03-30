@@ -3,7 +3,7 @@
 /**
  * This entire site is coded in AngularJS. Inspect the code on GitHub: https://github.com/TCotton/portfolio
  */
-angular.module('portfolioApp', ['AppConstants', 'ngCookies', 'ngResource', 'ngSanitize', 'ngRoute', 'ngTouch', 'localization', 'fastBind.bindOnce', 'fastBind.bindAttrOnce', 'HashBangURLs', 'portfolioAppConfig' ])
+angular.module('portfolioApp', ['AppConstants', 'ngCookies', 'ngResource', 'ngSanitize', 'ngRoute', 'ngTouch', 'ngAnimate', 'localization', 'fastBind.bindOnce', 'fastBind.bindAttrOnce', 'HashBangURLs', 'portfolioAppConfig' ])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
