@@ -28,6 +28,18 @@
   a:active, a.active {
     color: $textOneHover;
   }
+
+  .logo {
+    a:focus {
+      color: white;
+    }
+    a:hover {
+      color: white;
+    }
+    a:active, a.active {
+      color: white;
+    }
+  }
 }
 
 /* hack for advanced checkbox hack for android devices

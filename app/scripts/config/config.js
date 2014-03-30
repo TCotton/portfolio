@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('portfolioAppConfig', []).run(function ($rootScope) {
+angular.module('portfolioAppConfig', []).run(function ($rootScope, $window) {
 
   $rootScope.pageChange = false;
 
@@ -9,6 +9,13 @@ angular.module('portfolioAppConfig', []).run(function ($rootScope) {
     if(!$rootScope.pageChange) {
       $rootScope.pageChange = true;
     }
+
+    // every time the page reloads make sure it loads from the top
+    // clicking links on the middle of the page results in opening a new page in the same spot
+
+    // temp solution
+    // this also forces the browser to load from the top when navigating back
+    $window.scrollTo(0,0);
 
   });
 

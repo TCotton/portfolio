@@ -1002,11 +1002,6 @@ h3.blog-title {
   margin-bottom: 1.5625em;
   color: #666666;
   font-weight: 400;
-  word-break: break-all;
-  word-break: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  hyphens: auto;
 }
 
 @media (max-width: 767px) {
@@ -1018,6 +1013,7 @@ h3.blog-title {
     color: #666666;
     word-break: break-all;
     word-break: break-word;
+    -ms-hyphens: auto;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     hyphens: auto;
@@ -1042,7 +1038,7 @@ h3.blog-title {
   font-weight: 700;
 }
 
-/* line 118, modules/_typography.scss */
+/* line 117, modules/_typography.scss */
 p.minor-title {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
@@ -1051,7 +1047,7 @@ p.minor-title {
   margin-bottom: 0;
 }
 
-/* line 125, modules/_typography.scss */
+/* line 124, modules/_typography.scss */
 .blog #blog-content a:hover:after {
   content: "(Link: " attr(href) ")";
   color: #1d7a94;
@@ -1060,7 +1056,7 @@ p.minor-title {
   text-decoration: underline;
 }
 
-/* line 135, modules/_typography.scss */
+/* line 134, modules/_typography.scss */
 .content-text a.underline {
   /* On the desktop this displays a URL of the external link above the link text */
   text-decoration: none;
@@ -1068,11 +1064,12 @@ p.minor-title {
   position: relative;
   word-break: break-all;
   word-break: break-word;
+  -ms-hyphens: auto;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   hyphens: auto;
 }
-/* line 143, modules/_typography.scss */
+/* line 142, modules/_typography.scss */
 .content-text a.underline[rel="external"]::after {
   content: " " attr(href) " ";
   position: absolute;
@@ -1087,41 +1084,41 @@ p.minor-title {
   transition: opacity 0.5s;
   white-space: nowrap;
 }
-/* line 155, modules/_typography.scss */
+/* line 154, modules/_typography.scss */
 .content-text a.underline[rel="external"]:hover::after {
   opacity: 1;
 }
-/* line 159, modules/_typography.scss */
+/* line 158, modules/_typography.scss */
 .content-text a.underline:link {
   color: #666666;
 }
-/* line 162, modules/_typography.scss */
+/* line 161, modules/_typography.scss */
 .content-text a.underline:visited {
   color: gray;
 }
-/* line 165, modules/_typography.scss */
+/* line 164, modules/_typography.scss */
 .content-text a.underline:focus {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
-/* line 169, modules/_typography.scss */
+/* line 168, modules/_typography.scss */
 .content-text a.underline:hover {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
-/* line 174, modules/_typography.scss */
+/* line 173, modules/_typography.scss */
 .content-text a.underline:active {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
 
 @media (max-width: 979px) {
-  /* line 187, modules/_typography.scss */
+  /* line 186, modules/_typography.scss */
   .content-text a.underline[rel="external"]::after {
     display: none;
   }
 }
-/* line 194, modules/_typography.scss */
+/* line 193, modules/_typography.scss */
 h4.blog-sidebar-header {
   font-size: 3em;
   font-family: 'Open Sans', sans-serif;
@@ -1130,7 +1127,7 @@ h4.blog-sidebar-header {
   color: #666666;
 }
 
-/* line 200, modules/_typography.scss */
+/* line 199, modules/_typography.scss */
 .blog-sidebar-text p, ul.blog-sidebar-text {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
@@ -1139,7 +1136,7 @@ h4.blog-sidebar-header {
   color: #666666;
 }
 
-/* line 206, modules/_typography.scss */
+/* line 205, modules/_typography.scss */
 h3.contact-header {
   font-size: 3em;
   font-family: 'Open Sans', sans-serif;
@@ -1148,7 +1145,7 @@ h3.contact-header {
   color: #666666;
 }
 
-/* line 212, modules/_typography.scss */
+/* line 211, modules/_typography.scss */
 h3.project-header {
   font-size: 3em;
   font-family: 'Open Sans', sans-serif;
@@ -1156,7 +1153,7 @@ h3.project-header {
   color: white;
 }
 
-/* line 218, modules/_typography.scss */
+/* line 217, modules/_typography.scss */
 .footer-top-text p, ul.footer-top-text {
   font-size: 2em;
   font-family: 'Open Sans', sans-serif;
@@ -1166,14 +1163,14 @@ h3.project-header {
   color: #666666;
 }
 
-/* line 225, modules/_typography.scss */
+/* line 224, modules/_typography.scss */
 .code-preview {
   font-size: 12px;
   color: #666666;
   line-height: 16px;
 }
 
-/* line 231, modules/_typography.scss */
+/* line 230, modules/_typography.scss */
 p.footer-copyright {
   font-size: 1.3em;
   font-family: 'Open Sans', sans-serif;
@@ -1340,26 +1337,38 @@ a.button-front-one:hover, a.button-front-one:active {
   border: #666666;
 }
 
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  /* line 56, modules/_forms.scss */
+  input[type='text'], textarea {
+    font-size: 16px;
+  }
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (min-width: 767px) {
+  /* line 62, modules/_forms.scss */
+  input[type='text'], textarea {
+    font-size: 15px;
+  }
+}
 @media screen and (min--moz-device-pixel-ratio: 0) {
   /* another firefox bug :( */
-  /* line 61, modules/_forms.scss */
+  /* line 73, modules/_forms.scss */
   .contact .input, .comments .input {
     width: calc(70% - 20px);
     height: 56px;
   }
-  /* line 66, modules/_forms.scss */
+  /* line 78, modules/_forms.scss */
   .contact .textarea, .comments .textarea {
     width: calc(100% - 20px);
     height: 261px;
   }
 }
 @media (max-width: 767px) {
-  /* line 77, modules/_forms.scss */
+  /* line 89, modules/_forms.scss */
   .contact .input, .comments .input {
     width: 100%;
     margin-bottom: 10px;
   }
-  /* line 82, modules/_forms.scss */
+  /* line 94, modules/_forms.scss */
   .contact .textarea, .comments .textarea {
     margin-bottom: 10px;
   }
@@ -1401,100 +1410,112 @@ a.button-front-one:hover, a.button-front-one:active {
 #header a:active, #header a.active {
   color: #00bd9c;
 }
+/* line 33, _header.scss */
+#header .logo a:focus {
+  color: white;
+}
+/* line 36, _header.scss */
+#header .logo a:hover {
+  color: white;
+}
+/* line 39, _header.scss */
+#header .logo a:active, #header .logo a.active {
+  color: white;
+}
 
 /* hack for advanced checkbox hack for android devices
  check for performance, looks well dodgy
  */
 @media (-webkit-min-device-pixel-ratio: 1.5) {
-  /* line 38, _header.scss */
+  /* line 50, _header.scss */
   body {
     -webkit-animation: bugfix infinite 1s;
   }
 
   @-webkit-keyframes bugfix {
-    /* line 42, _header.scss */
+    /* line 54, _header.scss */
     from {
       margin: 0;
     }
 
-    /* line 45, _header.scss */
+    /* line 57, _header.scss */
     to {
       margin: 0;
     }
 }
 }
 @media (max-width: 1366px) {
-  /* line 53, _header.scss */
+  /* line 65, _header.scss */
   #header {
     padding: 0 4.172767203513909%;
   }
 }
 @-webkit-keyframes swipeIn {
-  /* line 59, _header.scss */
+  /* line 71, _header.scss */
   from {
     -webkit-transform: translateX(-200%);
   }
 
-  /* line 62, _header.scss */
+  /* line 74, _header.scss */
   to {
     -webkit-transform: translateX(0%);
   }
 }
 
 @keyframes swipeIn {
-  /* line 68, _header.scss */
+  /* line 80, _header.scss */
   from {
     transform: translateX(-200%);
   }
 
-  /* line 71, _header.scss */
+  /* line 83, _header.scss */
   to {
     transform: translateX(0%);
   }
 }
 
 @media (max-width: 979px) {
-  /* line 81, _header.scss */
+  /* line 93, _header.scss */
   #header input[type=checkbox] ~ #navigation-wrapper li {
     -webkit-transform: translateX(-200%);
     transform: translateX(-200%);
   }
-  /* line 90, _header.scss */
+  /* line 102, _header.scss */
   #header input[type=checkbox]:checked ~ #navigation-wrapper li:nth-child(1) {
     -webkit-animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.2s;
     -webkit-animation-fill-mode: forwards;
     animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.2s;
     animation-fill-mode: forwards;
   }
-  /* line 90, _header.scss */
+  /* line 102, _header.scss */
   #header input[type=checkbox]:checked ~ #navigation-wrapper li:nth-child(2) {
     -webkit-animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.3s;
     -webkit-animation-fill-mode: forwards;
     animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.3s;
     animation-fill-mode: forwards;
   }
-  /* line 90, _header.scss */
+  /* line 102, _header.scss */
   #header input[type=checkbox]:checked ~ #navigation-wrapper li:nth-child(3) {
     -webkit-animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.4s;
     -webkit-animation-fill-mode: forwards;
     animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.4s;
     animation-fill-mode: forwards;
   }
-  /* line 90, _header.scss */
+  /* line 102, _header.scss */
   #header input[type=checkbox]:checked ~ #navigation-wrapper li:nth-child(4) {
     -webkit-animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.5s;
     -webkit-animation-fill-mode: forwards;
     animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.5s;
     animation-fill-mode: forwards;
   }
-  /* line 90, _header.scss */
+  /* line 102, _header.scss */
   #header input[type=checkbox]:checked ~ #navigation-wrapper li:nth-child(5) {
     -webkit-animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.6s;
     -webkit-animation-fill-mode: forwards;
     animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.6s;
     animation-fill-mode: forwards;
   }
-  /* line 98, _header.scss */
+  /* line 110, _header.scss */
   #header label.handheld-cross {
     color: transparent;
     margin: 18px 0 0 0;
@@ -1509,43 +1530,43 @@ a.button-front-one:hover, a.button-front-one:active {
     -ms-user-select: none;
     user-select: none;
   }
-  /* line 111, _header.scss */
+  /* line 123, _header.scss */
   #header label.handheld-cross.active {
     background: url("/images/svg/menu-hover.svg") no-repeat center center;
   }
 }
-/* line 118, _header.scss */
+/* line 130, _header.scss */
 #logo-wrapper {
   float: left;
 }
-/* line 121, _header.scss */
+/* line 133, _header.scss */
 #logo-wrapper a {
   text-decoration: none;
   white-space: nowrap;
 }
 
-/* line 127, _header.scss */
+/* line 139, _header.scss */
 #navigation-wrapper {
   float: right;
 }
-/* line 129, _header.scss */
+/* line 141, _header.scss */
 #navigation-wrapper li {
   display: inline;
   list-style: none;
   line-height: 84px;
 }
-/* line 133, _header.scss */
+/* line 145, _header.scss */
 #navigation-wrapper li + li {
   margin: 0 0 0 24px;
 }
-/* line 136, _header.scss */
+/* line 148, _header.scss */
 #navigation-wrapper li a {
   text-decoration: none;
   color: white;
 }
 
 @media (max-width: 979px) {
-  /* line 145, _header.scss */
+  /* line 157, _header.scss */
   #navigation-wrapper {
     pointer-events: none;
     float: none;
@@ -1556,7 +1577,7 @@ a.button-front-one:hover, a.button-front-one:active {
     background: transparent;
     width: 100%;
   }
-  /* line 155, _header.scss */
+  /* line 167, _header.scss */
   #navigation-wrapper li {
     pointer-events: auto;
     display: block;
@@ -1567,21 +1588,21 @@ a.button-front-one:hover, a.button-front-one:active {
     border-bottom: 1px solid #333333;
     border-right: 1px solid #333333;
   }
-  /* line 164, _header.scss */
+  /* line 176, _header.scss */
   #navigation-wrapper li:last-of-type {
     border-bottom: none;
   }
-  /* line 167, _header.scss */
+  /* line 179, _header.scss */
   #navigation-wrapper li + li {
     margin: 0 0 0 0;
   }
-  /* line 170, _header.scss */
+  /* line 182, _header.scss */
   #navigation-wrapper li a {
     display: inline-block;
     width: 100%;
     padding: 0 0 0 4.172767203513909%;
   }
-  /* line 174, _header.scss */
+  /* line 186, _header.scss */
   #navigation-wrapper li a:hover {
     background: #262626;
   }
@@ -2155,23 +2176,22 @@ a.button-front-one:hover, a.button-front-one:active {
     animation-timing-function: linear;
   }
 }
-@media (min-width: 767px), (-webkit-min-device-pixel-ratio: 2), not all, (min-resolution: 2dppx), (min-resolution: 192dpi) {
-  /* line 89, _aboutme.scss */
-  .ie9 .aboutme [class*="per"] span {
-    -ms-transform: scaleX(1);
-    -webkit-transform: scaleX(1);
-    transform: scaleX(1);
-    opacity: 1;
-  }
+/* line 88, _aboutme.scss */
+.ie9 .aboutme [class*="per"] span {
+  -ms-transform: scaleX(1);
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  opacity: 1;
 }
+
 @-webkit-keyframes fadeIn {
-  /* line 98, _aboutme.scss */
+  /* line 96, _aboutme.scss */
   from {
     opacity: 0;
     -webkit-transform: scaleX(0);
   }
 
-  /* line 102, _aboutme.scss */
+  /* line 100, _aboutme.scss */
   to {
     opacity: 1;
     -webkit-transform: scaleX(1);
@@ -2179,13 +2199,13 @@ a.button-front-one:hover, a.button-front-one:active {
 }
 
 @keyframes fadeIn {
-  /* line 109, _aboutme.scss */
+  /* line 107, _aboutme.scss */
   from {
     opacity: 0;
     transform: scaleX(0);
   }
 
-  /* line 113, _aboutme.scss */
+  /* line 111, _aboutme.scss */
   to {
     opacity: 1;
     transform: scaleX(1);
@@ -2193,114 +2213,114 @@ a.button-front-one:hover, a.button-front-one:active {
 }
 
 @-webkit-keyframes shake {
-  /* line 120, _aboutme.scss */
+  /* line 118, _aboutme.scss */
   0% {
     -webkit-transform: translate(2px, 1px) rotate(0deg);
   }
 
-  /* line 123, _aboutme.scss */
+  /* line 121, _aboutme.scss */
   10% {
     -webkit-transform: translate(-1px, -2px) rotate(-1deg);
   }
 
-  /* line 126, _aboutme.scss */
+  /* line 124, _aboutme.scss */
   20% {
     -webkit-transform: translate(-3px, 0px) rotate(1deg);
   }
 
-  /* line 129, _aboutme.scss */
+  /* line 127, _aboutme.scss */
   30% {
     -webkit-transform: translate(0px, 2px) rotate(0deg);
   }
 
-  /* line 132, _aboutme.scss */
+  /* line 130, _aboutme.scss */
   40% {
     -webkit-transform: translate(1px, -1px) rotate(1deg);
   }
 
-  /* line 135, _aboutme.scss */
+  /* line 133, _aboutme.scss */
   50% {
     -webkit-transform: translate(-1px, 2px) rotate(-1deg);
   }
 
-  /* line 138, _aboutme.scss */
+  /* line 136, _aboutme.scss */
   60% {
     -webkit-transform: translate(-3px, 1px) rotate(0deg);
   }
 
-  /* line 141, _aboutme.scss */
+  /* line 139, _aboutme.scss */
   70% {
     -webkit-transform: translate(2px, 1px) rotate(-1deg);
   }
 
-  /* line 144, _aboutme.scss */
+  /* line 142, _aboutme.scss */
   80% {
     -webkit-transform: translate(-1px, -1px) rotate(1deg);
   }
 
-  /* line 147, _aboutme.scss */
+  /* line 145, _aboutme.scss */
   90% {
     -webkit-transform: translate(2px, 2px) rotate(0deg);
   }
 
-  /* line 150, _aboutme.scss */
+  /* line 148, _aboutme.scss */
   100% {
     -webkit-transform: translate(1px, -2px) rotate(-1deg);
   }
 }
 
 @keyframes shake {
-  /* line 156, _aboutme.scss */
+  /* line 154, _aboutme.scss */
   0% {
     transform: translate(2px, 1px) rotate(0deg);
   }
 
-  /* line 159, _aboutme.scss */
+  /* line 157, _aboutme.scss */
   10% {
     transform: translate(-1px, -2px) rotate(-1deg);
   }
 
-  /* line 162, _aboutme.scss */
+  /* line 160, _aboutme.scss */
   20% {
     transform: translate(-3px, 0px) rotate(1deg);
   }
 
-  /* line 165, _aboutme.scss */
+  /* line 163, _aboutme.scss */
   30% {
     transform: translate(0px, 2px) rotate(0deg);
   }
 
-  /* line 168, _aboutme.scss */
+  /* line 166, _aboutme.scss */
   40% {
     transform: translate(1px, -1px) rotate(1deg);
   }
 
-  /* line 171, _aboutme.scss */
+  /* line 169, _aboutme.scss */
   50% {
     transform: translate(-1px, 2px) rotate(-1deg);
   }
 
-  /* line 174, _aboutme.scss */
+  /* line 172, _aboutme.scss */
   60% {
     transform: translate(-3px, 1px) rotate(0deg);
   }
 
-  /* line 177, _aboutme.scss */
+  /* line 175, _aboutme.scss */
   70% {
     transform: translate(2px, 1px) rotate(-1deg);
   }
 
-  /* line 180, _aboutme.scss */
+  /* line 178, _aboutme.scss */
   80% {
     transform: translate(-1px, -1px) rotate(1deg);
   }
 
-  /* line 183, _aboutme.scss */
+  /* line 181, _aboutme.scss */
   90% {
     transform: translate(2px, 2px) rotate(0deg);
   }
 
-  /* line 186, _aboutme.scss */
+  /* line 184, _aboutme.scss */
   100% {
     transform: translate(1px, -2px) rotate(-1deg);
   }
@@ -2308,61 +2328,61 @@ a.button-front-one:hover, a.button-front-one:active {
 
 @media screen and (min--moz-device-pixel-ratio: 0) {
   /* another firefox bug :( */
-  /* line 200, _aboutme.scss */
+  /* line 198, _aboutme.scss */
   .aboutme .per_10 span {
     width: calc(10% - 20px);
   }
-  /* line 200, _aboutme.scss */
+  /* line 198, _aboutme.scss */
   .aboutme .per_20 span {
     width: calc(20% - 20px);
   }
-  /* line 200, _aboutme.scss */
+  /* line 198, _aboutme.scss */
   .aboutme .per_30 span {
     width: calc(30% - 20px);
   }
-  /* line 200, _aboutme.scss */
+  /* line 198, _aboutme.scss */
   .aboutme .per_40 span {
     width: calc(40% - 20px);
   }
-  /* line 200, _aboutme.scss */
+  /* line 198, _aboutme.scss */
   .aboutme .per_50 span {
     width: calc(50% - 20px);
   }
-  /* line 200, _aboutme.scss */
+  /* line 198, _aboutme.scss */
   .aboutme .per_60 span {
     width: calc(60% - 20px);
   }
-  /* line 200, _aboutme.scss */
+  /* line 198, _aboutme.scss */
   .aboutme .per_70 span {
     width: calc(70% - 20px);
   }
-  /* line 200, _aboutme.scss */
+  /* line 198, _aboutme.scss */
   .aboutme .per_80 span {
     width: calc(80% - 20px);
   }
-  /* line 200, _aboutme.scss */
+  /* line 198, _aboutme.scss */
   .aboutme .per_90 span {
     width: calc(90% - 20px);
   }
-  /* line 200, _aboutme.scss */
+  /* line 198, _aboutme.scss */
   .aboutme .per_100 span {
     width: calc(100% - 20px);
   }
 }
 /* end for firefox hack */
 @media (max-width: 979px) {
-  /* line 213, _aboutme.scss */
+  /* line 211, _aboutme.scss */
   .aboutme section {
     display: block;
   }
-  /* line 217, _aboutme.scss */
+  /* line 215, _aboutme.scss */
   .aboutme #left-large {
     width: auto;
     float: none;
     display: block;
     margin: 0 0 0 0;
   }
-  /* line 224, _aboutme.scss */
+  /* line 222, _aboutme.scss */
   .aboutme #right-small {
     width: auto;
     float: none;
@@ -2370,14 +2390,14 @@ a.button-front-one:hover, a.button-front-one:active {
   }
 }
 @media (max-width: 767px) {
-  /* line 236, _aboutme.scss */
+  /* line 234, _aboutme.scss */
   .aboutme .button-skills-aboutme.section {
     width: 100%;
     float: none;
     margin-bottom: 20px;
     line-height: 58px;
   }
-  /* line 243, _aboutme.scss */
+  /* line 241, _aboutme.scss */
   .aboutme .button-skills-aboutme.section:nth-of-type(even) {
     margin-left: 0;
   }

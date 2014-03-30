@@ -97,7 +97,6 @@ h3.blog-title {
 
 @include contentText('p') {
   font-weight: 400;
-  @include word-wrap();
 }
 
 @include breakpoint(mobile) {

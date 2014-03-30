@@ -1,0 +1,22 @@
+{
+  "slider1":{
+    "title": "Thompson Reuters Japan",
+    "test": "Lorem ipsum dolor sit amet, consectetur adipisiing elit, sed do eiusmod tempor incididunt ut.",
+    "link": "/#!/thomson-reuters-japan"
+  },
+  "slider2": {
+    "title": "Twt Twt",
+    "test": "Lorem ipsum dolor sit amet, consectetur adipisiing elit, sed do eiusmod tempor incididunt ut.",
+    "link": "/#!/twt-twt"
+  },
+  "slider3": {
+    "title": "UK Law Student",
+    "test": "Lorem ipsum dolor sit amet, consectetur adipisiing elit, sed do eiusmod tempor incididunt ut.",
+    "link": "/#!/uk-lawstudent"
+  },
+  "slider4": {
+    "title": "Penny Books",
+    "test": "Lorem ipsum dolor sit amet, consectetur adipisiing elit, sed do eiusmod tempor incididunt ut.",
+    "link": "/#!/penny-books"
+  }
+}
