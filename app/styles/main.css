@@ -1619,6 +1619,22 @@ a.button-front-one:hover, a.button-front-one:active {
   position: relative;
 }
 /* line 11, _homepage.scss */
+#slider.slider2 {
+  background-image: url("/images/slider/thompson-reuters-japan.png");
+}
+/* line 14, _homepage.scss */
+#slider.slider2 {
+  background-image: url("/images/slider/penny-books.png");
+}
+/* line 17, _homepage.scss */
+#slider.slider3 {
+  background-image: url("/images/slider/twt-twt.png");
+}
+/* line 20, _homepage.scss */
+#slider.slider4 {
+  background-image: url("/images/slider/uk-law-student.png");
+}
+/* line 24, _homepage.scss */
 #slider section {
   position: absolute;
   top: 40px;
@@ -1626,7 +1642,7 @@ a.button-front-one:hover, a.button-front-one:active {
   text-align: center;
   width: 38.28696925329429%;
 }
-/* line 19, _homepage.scss */
+/* line 32, _homepage.scss */
 #slider [class*="arrow"] {
   position: absolute;
   top: 45%;
@@ -1638,43 +1654,43 @@ a.button-front-one:hover, a.button-front-one:active {
   cursor: pointer;
   background-size: contain;
 }
-/* line 30, _homepage.scss */
+/* line 43, _homepage.scss */
 #slider .left-arrow {
   left: 57px;
   background: url("/images/svg/left-arrow.svg") no-repeat center center;
 }
-/* line 33, _homepage.scss */
+/* line 46, _homepage.scss */
 #slider .left-arrow:hover {
   background: url("/images/svg/left-arrow-hover.svg") no-repeat center center;
 }
-/* line 38, _homepage.scss */
+/* line 51, _homepage.scss */
 #slider .right-arrow {
   right: 57px;
   background: url("/images/svg/right-arrow.svg") no-repeat center center;
 }
-/* line 41, _homepage.scss */
+/* line 54, _homepage.scss */
 #slider .right-arrow:hover {
   background: url("/images/svg/right-arrow-hover.svg") no-repeat center center;
 }
 
 @media (max-width: 1366px) {
-  /* line 50, _homepage.scss */
+  /* line 63, _homepage.scss */
   #slider section {
     top: 25px;
     left: 25%;
     width: 50%;
   }
-  /* line 55, _homepage.scss */
+  /* line 68, _homepage.scss */
   #slider .left-arrow {
     left: 4.172767203513909%;
   }
-  /* line 58, _homepage.scss */
+  /* line 71, _homepage.scss */
   #slider .right-arrow {
     right: 4.172767203513909%;
   }
 }
 @media (max-width: 979px) {
-  /* line 68, _homepage.scss */
+  /* line 81, _homepage.scss */
   #slider section {
     top: 10px;
     left: 20%;
@@ -1682,12 +1698,12 @@ a.button-front-one:hover, a.button-front-one:active {
   }
 }
 @media (max-width: 767px) {
-  /* line 78, _homepage.scss */
+  /* line 91, _homepage.scss */
   #slider {
     background-position: left bottom;
     padding: 0 0 79.9414348463% 0;
   }
-  /* line 82, _homepage.scss */
+  /* line 95, _homepage.scss */
   #slider section {
     top: 20px;
     left: 4.172767203513909%;
@@ -1695,12 +1711,12 @@ a.button-front-one:hover, a.button-front-one:active {
     text-align: center;
     width: auto;
   }
-  /* line 90, _homepage.scss */
+  /* line 103, _homepage.scss */
   #slider [class*="arrow"] {
     display: none;
   }
 }
-/* line 96, _homepage.scss */
+/* line 109, _homepage.scss */
 #homepage-stats {
   padding: 0 114px;
   height: 224px;
@@ -1725,58 +1741,58 @@ a.button-front-one:hover, a.button-front-one:active {
   -ms-justify-content: center;
   justify-content: center;
 }
-/* line 120, _homepage.scss */
+/* line 133, _homepage.scss */
 #homepage-stats > span {
   width: 20%;
   padding: 0 2%;
   float: left;
   text-align: center;
 }
-/* line 126, _homepage.scss */
+/* line 139, _homepage.scss */
 #homepage-stats > span:first-of-type {
   padding: 0 2% 0 0;
 }
-/* line 129, _homepage.scss */
+/* line 142, _homepage.scss */
 #homepage-stats > span:last-of-type {
   padding: 0 0 0 2%;
 }
 
 @media (max-width: 1366px) {
-  /* line 137, _homepage.scss */
+  /* line 150, _homepage.scss */
   #homepage-stats {
     padding: 0 4.172767203513909%;
   }
 }
 @media (max-width: 979px) {
-  /* line 146, _homepage.scss */
+  /* line 159, _homepage.scss */
   #homepage-stats > span {
     width: 50%;
     padding: 0 2%;
   }
-  /* line 150, _homepage.scss */
+  /* line 163, _homepage.scss */
   #homepage-stats > span:nth-of-type(1) {
     padding: 0 2% 0 0;
   }
-  /* line 156, _homepage.scss */
+  /* line 169, _homepage.scss */
   #homepage-stats > span:nth-of-type(3) {
     padding: 0 0 0 2%;
   }
-  /* line 159, _homepage.scss */
+  /* line 172, _homepage.scss */
   #homepage-stats > span:nth-of-type(4) {
     display: none;
   }
-  /* line 162, _homepage.scss */
+  /* line 175, _homepage.scss */
   #homepage-stats > span:nth-of-type(5) {
     display: none;
   }
 }
 @media (max-width: 767px) {
-  /* line 171, _homepage.scss */
+  /* line 184, _homepage.scss */
   #homepage-stats {
     height: auto;
     display: block;
   }
-  /* line 174, _homepage.scss */
+  /* line 187, _homepage.scss */
   #homepage-stats > span {
     width: 100%;
     float: none;
@@ -1785,12 +1801,12 @@ a.button-front-one:hover, a.button-front-one:active {
     padding: 0;
     margin: 40px 0 20px 0;
   }
-  /* line 184, _homepage.scss */
+  /* line 197, _homepage.scss */
   #homepage-stats > span:nth-of-type(1) {
     padding: 0;
     margin: 60px 0 20px 0;
   }
-  /* line 188, _homepage.scss */
+  /* line 201, _homepage.scss */
   #homepage-stats > span:nth-of-type(3) {
     padding: 0;
     margin: 40px 0 40px 0;

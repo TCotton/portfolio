@@ -8,6 +8,19 @@
   padding: 0 0 39.97071742313324% 0;
   position: relative;
 
+  &.slider2 {
+    background-image: $sliderOne;
+  }
+  &.slider2 {
+    background-image: $sliderTwo;
+  }
+  &.slider3 {
+    background-image: $sliderThree;
+  }
+  &.slider4 {
+    background-image: $sliderFour;
+  }
+
   section {
     position: absolute;
     top: 40px;

@@ -14,8 +14,8 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interva
     template: '<div id="slider" class="{{slider.sliderClass}}">' +
       '<section>' +
       '<h2 class="page-top-title">{{slider.title}}</h2>' +
-      '<p class="page-top-text">{{slider.test}}</p>' +
-      '<a href="{{slider.link}}" class="button-front-one">View Project</a>' +
+      '<p class="page-top-text">{{slider.text}}</p>' +
+      '<a href="{{slider.URL}}" class="button-front-one">View Project</a>' +
       '</section>' +
       '<div class="left-arrow"></div>' +
       '<div class="right-arrow"></div>' +

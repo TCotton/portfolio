@@ -1,22 +1,22 @@
 {
   "slider1":{
     "title": "Thompson Reuters Japan",
-    "test": "Lorem ipsum dolor sit amet, consectetur adipisiing elit, sed do eiusmod tempor incididunt ut.",
-    "link": "/#!/thomson-reuters-japan"
+    "text": "Lorem ipsum dolor sit amet, consectetur adipisiing elit, sed do eiusmod tempor incididunt ut.",
+    "URL": "/#!/thomson-reuters-japan"
   },
   "slider2": {
     "title": "Twt Twt",
-    "test": "Lorem ipsum dolor sit amet, consectetur adipisiing elit, sed do eiusmod tempor incididunt ut.",
-    "link": "/#!/twt-twt"
+    "text": "Lorem ipsum dolor sit amet, consectetur adipisiing elit, sed do eiusmod tempor incididunt ut.",
+    "URL": "/#!/twt-twt"
   },
   "slider3": {
     "title": "UK Law Student",
-    "test": "Lorem ipsum dolor sit amet, consectetur adipisiing elit, sed do eiusmod tempor incididunt ut.",
-    "link": "/#!/uk-lawstudent"
+    "text": "Lorem ipsum dolor sit amet, consectetur adipisiing elit, sed do eiusmod tempor incididunt ut.",
+    "URL": "/#!/uk-lawstudent"
   },
   "slider4": {
     "title": "Penny Books",
-    "test": "Lorem ipsum dolor sit amet, consectetur adipisiing elit, sed do eiusmod tempor incididunt ut.",
-    "link": "/#!/penny-books"
+    "text": "Lorem ipsum dolor sit amet, consectetur adipisiing elit, sed do eiusmod tempor incididunt ut.",
+    "URL": "/#!/penny-books"
   }
 }
