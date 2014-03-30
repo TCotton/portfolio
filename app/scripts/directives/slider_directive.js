@@ -19,12 +19,11 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interva
       '</section>' +
       '<div class="left-arrow"></div>' +
       '<div class="right-arrow"></div>' +
-      '</div>', // change slider.test to slider.text and slider.link to slider.URL
+      '</div>',
+
     controller: function ($scope) {
 
       $scope.currentSlide = 0;
-
-      console.log($scope);
 
       $scope.sliderForFunction = function (sliderNumber) {
 
@@ -45,36 +44,51 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interva
     },
     link: function (scope) {
 
-      var sliderTotal = _.size(SLIDER);
-      var timeGap = 1000;
+      var sliderDirectiveLink = {
 
-      var timer = $interval(function () {
+        sliderTotal: _.size(SLIDER),
+        timeGap: 1000,
 
-        if (scope.currentSlide < sliderTotal) {
+        timer: function () {
 
-          scope.sliderForFunction(scope.currentSlide + 1);
-          scope.currentSlide = scope.currentSlide + 1;
+          return $interval(function () {
 
-        } else {
+            // how do you bind 'this' to $interval anonymous function?
+            if (scope.currentSlide < sliderDirectiveLink.sliderTotal) {
 
-          scope.sliderForFunction(1);
-          scope.currentSlide = 1;
+              scope.sliderForFunction(scope.currentSlide + 1);
+              scope.currentSlide = scope.currentSlide + 1;
 
+            } else {
+
+              scope.sliderForFunction(1);
+              scope.currentSlide = 1;
+
+            }
+
+          }, this.timeGap);
+        },
+
+        destroy: function () {
+
+          scope.$on('$destroy', function () {
+
+            if (sliderDirectiveLink.timer) {
+              $interval.cancel(sliderDirectiveLink.timer);
+            }
+
+          });
+        },
+
+        init: function() {
+          sliderDirectiveLink.timer();
+          sliderDirectiveLink.destroy();
         }
+      };
 
-      }, timeGap);
-
-      scope.$on('$destroy', function () {
-
-        if (timer) {
-          $interval.cancel(timer);
-        }
-
-      });
-
+      return sliderDirectiveLink.init();
 
     }
   };
-
 
 }]);

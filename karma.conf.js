@@ -18,6 +18,7 @@ module.exports = function(config) {
       'app/components/angular-sanitize/angular-sanitize.js',
       'app/components/angular-route/angular-route.js',
       'app/components/angular-touch/angular-touch.js',
+      'app/components/underscore/underscore.js',
       'app/libs/*.js',
       'app/scripts/*.js',
       'app/scripts/**/*.js',
