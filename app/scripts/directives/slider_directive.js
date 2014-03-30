@@ -23,21 +23,48 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interva
 
     controller: function ($scope) {
 
-      $scope.currentSlide = 0;
+      $scope.slideController = {
 
-      $scope.sliderForFunction = function (sliderNumber) {
+        currentSlide: 0,
 
-        for (var key in SLIDER) {
+        sliderForMethod: function (sliderNumber) {
+          // loops through SLIDER constant and finds the right child objects
 
-          if (SLIDER.hasOwnProperty(key)) {
+          for (var key in SLIDER) {
 
-            if (key.indexOf(sliderNumber) !== -1) {
+            if (SLIDER.hasOwnProperty(key)) {
 
-              $scope.slider = SLIDER[key];
-              $scope.slider.sliderClass = 'slider' + sliderNumber;
+              if (key.indexOf(sliderNumber) !== -1) {
 
+                $scope.slider = SLIDER[key];
+                $scope.slider.sliderClass = 'slider' + sliderNumber;
+
+              }
             }
           }
+        },
+
+        sliderStartMethod: function () {
+
+          // starts off with first slider details and reduced quality image
+          $scope.slider = SLIDER.slider1;
+
+          if (!sessionStorage.getItem('homePageLoaded')) {
+
+            $scope.slider.sliderClass = 'sliderPlaceholder';
+            sessionStorage.setItem('homePageLoaded', 'true');
+
+          } else {
+
+            $scope.slider.sliderClass = 'slider1';
+
+          }
+        },
+
+        sliderReplaceMethod: function () {
+
+          $scope.slider.sliderClass = 'slider1';
+
         }
       };
 
@@ -47,40 +74,73 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interva
       var sliderDirectiveLink = {
 
         sliderTotal: _.size(SLIDER),
-        timeGap: 1000,
+        timeGap: 8000,
+        timerInterval: null,
+        startInterval: null,
+        placeholderInterval: null,
 
         timer: function () {
 
-          return $interval(function () {
+          this.timerInterval = $interval(function () {
+
+            // skip through the set interval and either reset the slider list to the beginning
+            // or carry on to the next one
 
             // how do you bind 'this' to $interval anonymous function?
-            if (scope.currentSlide < sliderDirectiveLink.sliderTotal) {
+            if (scope.slideController.currentSlide < this.sliderTotal) {
 
-              scope.sliderForFunction(scope.currentSlide + 1);
-              scope.currentSlide = scope.currentSlide + 1;
+              scope.slideController.sliderForMethod(scope.slideController.currentSlide + 1);
+              scope.slideController.currentSlide = scope.slideController.currentSlide + 1;
 
             } else {
 
-              scope.sliderForFunction(1);
-              scope.currentSlide = 1;
+              scope.slideController.sliderForMethod(1);
+              scope.slideController.currentSlide = 1;
 
             }
 
-          }, this.timeGap);
+          }.bind(this), this.timeGap);
+        },
+
+        start: function () {
+
+          // when the site first loads up the load the placeholder with the reduced PNG8 image
+
+          this.startInterval = $interval(function () {
+
+            scope.slideController.currentSlide = 1;
+            scope.slideController.sliderStartMethod();
+            $interval.cancel(this.startInterval);
+
+            this.placeholderInterval = $interval(function () {
+
+              scope.slideController.sliderReplaceMethod();
+              $interval.cancel(this.placeholderInterval);
+
+            }.bind(this), 2000);
+          }.bind(this), 0);
         },
 
         destroy: function () {
 
+          // destroy timers when scope is destroyed
           scope.$on('$destroy', function () {
 
-            if (sliderDirectiveLink.timer) {
-              $interval.cancel(sliderDirectiveLink.timer);
+            if (sliderDirectiveLink.timerInterval) {
+              $interval.cancel(sliderDirectiveLink.timerInterval);
+            }
+            if (sliderDirectiveLink.startInterval) {
+              $interval.cancel(sliderDirectiveLink.startInterval);
+            }
+            if (sliderDirectiveLink.placeholderInterval) {
+              $interval.cancel(sliderDirectiveLink.placeholderInterval);
             }
 
           });
         },
 
-        init: function() {
+        init: function () {
+          sliderDirectiveLink.start();
           sliderDirectiveLink.timer();
           sliderDirectiveLink.destroy();
         }

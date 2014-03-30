@@ -20,6 +20,9 @@
   &.slider4 {
     background-image: $sliderFour;
   }
+  &.sliderPlaceholder {
+    background-image: $sliderPlaceholderDataURI;
+  }
 
   section {
     position: absolute;
