@@ -1,3 +1,4 @@
+'use strict';
 describe('Routes test', function () {
   // Mock our module in our tests
   beforeEach(module('portfolioApp'));
