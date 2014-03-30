@@ -8,25 +8,51 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interva
   return {
     restrict: 'A',
     scope: {
-      imageUrl: '@'
+      slideClass: '@'
     },
-    link: function (scope, elem, attrs) {
+    link: function (scope) {
 
       var timeGap = 1000;
+      var recentNumber;
+      var sliderForFunction;
+      var currentSlide = 1;
+      var sliderTotal = _.size(SLIDER);
+
+      sliderForFunction = function (sliderNumber) {
+
+        for (var key in SLIDER) {
+
+          if (SLIDER.hasOwnProperty(key)) {
+
+            if (key.charAt(key.length - sliderNumber)) {
+
+              recentNumber = key.charAt(key.length - sliderNumber);
+              //currentSlide = SLIDER[key] _.pluck(stooges, 'name')
+              console.log('slider' + sliderNumber);
+              scope.slideClass = 'slider1';
+
+            }
+          }
+        }
+      };
+
+      sliderForFunction(currentSlide);
 
       var timer = $interval(function () {
 
-        console.log('run');
+        if(currentSlide <= sliderTotal) {
+
+          //sliderForFunction(currentSlide + 1);
+          currentSlide = currentSlide + 1;
+
+        } else {
+
+          //sliderForFunction(1);
+          currentSlide = 1;
+
+        }
 
       }, timeGap);
-
-
-      console.log(scope);
-      console.log(elem);
-      console.log(attrs);
-      console.log(SLIDER.slider1);
-
-      scope.imageUrl = 'slider1';
 
       scope.$on('$destroy', function () {
 
