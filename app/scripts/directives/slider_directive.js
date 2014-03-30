@@ -8,47 +8,57 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interva
   return {
     restrict: 'A',
     scope: {
-      slideClass: '@'
+      slider: '@'
     },
-    link: function (scope) {
+    replace: true,
+    template: '<div id="slider" class="{{slider.sliderClass}}">' +
+      '<section>' +
+      '<h2 class="page-top-title">{{slider.title}}</h2>' +
+      '<p class="page-top-text">{{slider.test}}</p>' +
+      '<a href="{{slider.link}}" class="button-front-one">View Project</a>' +
+      '</section>' +
+      '<div class="left-arrow"></div>' +
+      '<div class="right-arrow"></div>' +
+      '</div>', // change slider.test to slider.text and slider.link to slider.URL
+    controller: function ($scope) {
 
-      var timeGap = 1000;
-      var recentNumber;
-      var sliderForFunction;
-      var currentSlide = 1;
-      var sliderTotal = _.size(SLIDER);
+      $scope.currentSlide = 0;
 
-      sliderForFunction = function (sliderNumber) {
+      console.log($scope);
+
+      $scope.sliderForFunction = function (sliderNumber) {
 
         for (var key in SLIDER) {
 
           if (SLIDER.hasOwnProperty(key)) {
 
-            if (key.charAt(key.length - sliderNumber)) {
+            if (key.indexOf(sliderNumber) !== -1) {
 
-              recentNumber = key.charAt(key.length - sliderNumber);
-              //currentSlide = SLIDER[key] _.pluck(stooges, 'name')
-              console.log('slider' + sliderNumber);
-              scope.slideClass = 'slider1';
+              $scope.slider = SLIDER[key];
+              $scope.slider.sliderClass = 'slider' + sliderNumber;
 
             }
           }
         }
       };
 
-      sliderForFunction(currentSlide);
+    },
+    link: function (scope) {
+
+      var sliderTotal = _.size(SLIDER);
+      var timeGap = 1000;
 
       var timer = $interval(function () {
 
-        if(currentSlide <= sliderTotal) {
+        if (scope.currentSlide < sliderTotal) {
 
-          //sliderForFunction(currentSlide + 1);
-          currentSlide = currentSlide + 1;
+          scope.sliderForFunction(scope.currentSlide + 1);
+          scope.currentSlide = scope.currentSlide + 1;
 
         } else {
 
-          //sliderForFunction(1);
-          currentSlide = 1;
+          scope.sliderForFunction(1);
+          scope.currentSlide = 1;
 
         }
 
