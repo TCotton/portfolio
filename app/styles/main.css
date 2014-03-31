@@ -1363,8 +1363,9 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
 .contact [class$="-block"], .comments [class$="-block"] {
   position: relative;
   display: block;
+  clear: both;
 }
-/* line 58, modules/_forms.scss */
+/* line 59, modules/_forms.scss */
 .contact [class$="-block"] .error-message, .comments [class$="-block"] .error-message {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
@@ -1380,37 +1381,37 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
-  /* line 88, modules/_forms.scss */
+  /* line 89, modules/_forms.scss */
   input[type='text'], textarea {
     font-size: 16px;
   }
 }
 @media screen and (-webkit-min-device-pixel-ratio: 0) and (max-width: 979px) {
-  /* line 94, modules/_forms.scss */
+  /* line 95, modules/_forms.scss */
   input[type='text'], textarea {
     font-size: 15px;
   }
 }
 @media screen and (min--moz-device-pixel-ratio: 0) {
   /* another firefox bug :( */
-  /* line 105, modules/_forms.scss */
+  /* line 106, modules/_forms.scss */
   .contact .input, .comments .input {
     width: calc(70% - 20px);
     height: 56px;
   }
-  /* line 110, modules/_forms.scss */
+  /* line 111, modules/_forms.scss */
   .contact .textarea, .comments .textarea {
     width: calc(100% - 20px);
     height: 261px;
   }
 }
 @media (max-width: 767px) {
-  /* line 121, modules/_forms.scss */
+  /* line 122, modules/_forms.scss */
   .contact .input, .comments .input {
     width: 100%;
     margin-bottom: 10px;
   }
-  /* line 126, modules/_forms.scss */
+  /* line 127, modules/_forms.scss */
   .contact .textarea, .comments .textarea {
     margin-bottom: 10px;
   }

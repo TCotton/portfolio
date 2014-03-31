@@ -8,7 +8,13 @@ angular.module('portfolioApp').controller('FormCtrl', ['$scope', function ($scop
   $scope.contact = {};
   $scope.comments = {};
 
+  $scope.contact.zipRegex = /(?!.*)/;
+
+  $scope.submitted = false;
+
   $scope.submitContactForm = function(isValid) {
+
+    $scope.submitted = true;
 
     // check to make sure the form is completely valid
     if (isValid) {

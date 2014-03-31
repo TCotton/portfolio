@@ -54,6 +54,7 @@
   [class$="-block"] {
     position: relative;
     display: block;
+    clear: both;
 
     .error-message {
       @include font-calculator($baseFontFamily, 16px, 0);

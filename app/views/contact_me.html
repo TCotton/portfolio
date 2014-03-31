@@ -26,38 +26,38 @@
 
     <h3 class="content-title">Send a message</h3>
 
-    <form action="#left-large" method="post" novalidate="novalidate" name="contactForm"
+    <form novalidate="novalidate" name="contactForm"
           data-ng-submit="submitContactForm(contactForm.$valid)">
 
       <span class="name-block">
       <label for="name" class="visuallyhidden">Your full name</label>
-      <span data-ng-show="contactForm.name.$invalid && !contactForm.name.$pristine" class="error-message">Please supply your name.</span>
+      <span data-ng-show="contactForm.name.$invalid && submitted" class="error-message">Please supply your name.</span>
       <input type="text" id="name" name="name" value="" placeholder="Your full name" required="required" class="input"
              data-ng-required="true" data-ng-model="contact.name"/>
       </span>
 
       <span class="email-block">
       <label for="email" class="visuallyhidden">Your email address</label>
-      <span data-ng-show="contactForm.email.$invalid && !contactForm.email.$pristine" class="error-message">Please supply a valid email address.</span>
-      <span class="error-message">Please supply a valid email address.</span>
+      <span data-ng-show="contactForm.email.$invalid && submitted" class="error-message">Please supply a valid email address.</span>
+      <!--<span class="error-message">Please supply a valid email address.</span>-->
       <input type="email" id="email" name="email" value="" placeholder="Your email address" required="required"
              class="input" data-ng-required="true" data-ng-model="contact.email"/>
         </span>
 
       <span class="message-block">
       <label for="message" class="visuallyhidden">Please write a message</label>
-      <span data-ng-show="contactForm.message.$invalid && !contactForm.message.$pristine" class="error-message">Don't forget to write a message!</span>
+      <span data-ng-show="contactForm.message.$invalid && submitted" class="error-message">Don't forget to write a message!</span>
       <textarea id="message" cols="10" rows="10" name="message" placeholder="Your message" required="required"
                 class="textarea" data-ng-required="true" data-ng-model="contact.message"></textarea>
         </span>
 
             <span class="hide">
             <label for="zipcode" class="visuallyhidden">Your zipcode</label>
-            <input type="text" id="zipcode" name="zipcode" value="" data-ng-pattern="(?!.*)"
+            <input type="text" id="zipcode" name="zipcode" value="" data-ng-pattern="contact.zipRegex"
                    data-ng-model="contact.zipcode"/>
             </span>
 
-      <input type="submit" value="Send message" class="button-contact" data-ng-disabled="contactForm.$invalid"/>
+      <input type="submit" value="Send message" class="button-contact"/>
 
     </form>
 
