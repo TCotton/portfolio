@@ -3,7 +3,7 @@
  */
 'use strict';
 
-angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interval', '$timeout', function (SLIDER, $interval, $timeout) {
+angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interval', '$timeout', '$animate', function (SLIDER, $interval, $timeout, $animate) {
 
   return {
     restrict: 'A',
@@ -36,7 +36,7 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interva
               if (key.indexOf(sliderNumber) !== -1) {
 
                 $scope.slider = SLIDER[key];
-                $scope.slider.sliderClass = 'slider' + sliderNumber;
+                $scope.slider.sliderClass = 'slider' + sliderNumber + ' reveal-animation';
 
               }
             }
@@ -69,12 +69,12 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interva
       };
 
     },
-    link: function (scope) {
+    link: function (scope, element) {
 
       var sliderDirectiveLink = {
 
         sliderTotal: _.size(SLIDER),
-        timeGap: 4000,
+        timeGap: 8000,
         startGap: 2000,
         timerInterval: null,
 
@@ -82,11 +82,23 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interva
 
           sliderDirectiveLink.timerInterval = $interval(function () {
 
-//            $animate.addClass(element, 'reveal-animation', function() {
-//              $timeout(function() {
-//                $animate.removeClass(element, 'reveal-animation');
-//              }, 1000);
-//            });
+            $animate.addClass(angular.element(element[0].querySelector('p')), 'animate-bounceIn', function () {
+              $timeout(function () {
+                $animate.removeClass(angular.element(element[0].querySelector('p')), 'animate-bounceIn');
+              }, 7000);
+            });
+
+            $animate.addClass(angular.element(element[0].querySelector('h2')), 'animate-bounceIn', function () {
+              $timeout(function () {
+                $animate.removeClass(angular.element(element[0].querySelector('h2')), 'animate-bounceIn');
+              }, 7000);
+            });
+
+            $animate.addClass(angular.element(element[0].querySelector('a')), 'animate-bounceIn', function () {
+              $timeout(function () {
+                $animate.removeClass(angular.element(element[0].querySelector('a')), 'animate-bounceIn');
+              }, 7000);
+            });
 
             // skip through the set interval and either reset the slider list to the beginning
             // or carry on to the next one

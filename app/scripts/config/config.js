@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('portfolioAppConfig', []).run(function ($rootScope, $window) {
+angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', function ($rootScope, $window) {
 
   $rootScope.pageChange = false;
 
@@ -19,7 +19,7 @@ angular.module('portfolioAppConfig', []).run(function ($rootScope, $window) {
 
   });
 
-});
+}]);
 
 /**
  * Url modules
@@ -27,4 +27,7 @@ angular.module('portfolioAppConfig', []).run(function ($rootScope, $window) {
 //get the module from creating an angular module
 angular.module('HashBangURLs', []).config(['$locationProvider', function ($location) {
   $location.hashPrefix('!');
+}]);
+angular.module('portfolioAppConfig', []).config(['$animateProvider', function ($animateProvider) {
+  $animateProvider.classNameFilter(/animated/);
 }]);
