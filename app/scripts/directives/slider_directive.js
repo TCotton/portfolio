@@ -3,7 +3,7 @@
  */
 'use strict';
 
-angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interval', '$timeout', '$animate', function (SLIDER, $interval, $timeout, $animate) {
+angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interval', '$timeout', '$animate', '$window', function (SLIDER, $interval, $timeout, $animate, $window) {
 
   return {
     restrict: 'A',
@@ -82,29 +82,37 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interva
         timer: function () {
 
           // add and remove animate classes
+          // this is not used on mobile devices because of performance issues
+          // using matchMedia below it is possible to prevent the classes from changing
+
+
           var pTag = angular.element(element[0].querySelector('p'));
           var h2Tag = angular.element(element[0].querySelector('h2'));
           var aTag = angular.element(element[0].querySelector('a'));
 
           sliderDirectiveLink.timerInterval = $interval(function () {
 
-            $animate.addClass(pTag, 'animate-bounceIn', function () {
-              $timeout(function () {
-                $animate.removeClass(pTag, 'animate-bounceIn');
-              }, sliderDirectiveLink.animationGap);
-            });
+            if ($window.matchMedia && $window.matchMedia('(min-device-width: 768px) and (orientation: landscape)')) {
 
-            $animate.addClass(h2Tag, 'animate-bounceIn', function () {
-              $timeout(function () {
-                $animate.removeClass(h2Tag, 'animate-bounceIn');
-              }, sliderDirectiveLink.animationGap);
-            });
+              $animate.addClass(pTag, 'animate-bounceIn', function () {
+                $timeout(function () {
+                  $animate.removeClass(pTag, 'animate-bounceIn');
+                }, sliderDirectiveLink.animationGap);
+              });
 
-            $animate.addClass(aTag, 'animate-bounceIn', function () {
-              $timeout(function () {
-                $animate.removeClass(aTag, 'animate-bounceIn');
-              }, sliderDirectiveLink.animationGap);
-            });
+              $animate.addClass(h2Tag, 'animate-bounceIn', function () {
+                $timeout(function () {
+                  $animate.removeClass(h2Tag, 'animate-bounceIn');
+                }, sliderDirectiveLink.animationGap);
+              });
+
+              $animate.addClass(aTag, 'animate-bounceIn', function () {
+                $timeout(function () {
+                  $animate.removeClass(aTag, 'animate-bounceIn');
+                }, sliderDirectiveLink.animationGap);
+              });
+
+            }// end matchMedia
 
             // skip through the set interval and either reset the slider list to the beginning
             // or carry on to the next one
@@ -124,7 +132,7 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interva
 
         navigation: function () {
 
-          angular.element(element[0].querySelector('.right-arrow')).bind('click', function(){
+          angular.element(element[0].querySelector('.right-arrow')).bind('click', function () {
 
             // use the left arrow to move through the slider in a left direction
             if (scope.slideController.currentSlide < sliderDirectiveLink.sliderTotal) {
@@ -144,7 +152,7 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interva
 
           });
 
-          angular.element(element[0].querySelector('.left-arrow')).bind('click', function(){
+          angular.element(element[0].querySelector('.left-arrow')).bind('click', function () {
 
             // use the the right arrow to move through the slider in a right direction
             if (scope.slideController.currentSlide > 1) {
