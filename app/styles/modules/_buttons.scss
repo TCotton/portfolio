@@ -15,6 +15,9 @@ a.button-front-one {
   &:hover, &:active {
     color: darken($textFour, 20);
   }
+  &:disabled:hover, &:disabled:hover {
+    color: white;
+  }
 }
 
 @include breakpoint(mobile) {
@@ -36,6 +39,9 @@ a.button-front-one {
   &:hover, &:active {
     color: darken($textTwo, 20);
   }
+  &:disabled:hover, &:disabled:hover {
+    color: white;
+  }
 }
 
 .button-mywork {
@@ -49,6 +55,9 @@ a.button-front-one {
   background: $textTwo;
   &:hover, &:active {
     color: darken(white, 10);
+  }
+  &:disabled:hover, &:disabled:hover {
+    color: white;
   }
 }
 
@@ -66,6 +75,9 @@ a.button-front-one {
   border: none;
   &:hover, &:active {
     color: darken(white, 10);
+  }
+  &:disabled:hover, &:disabled:hover {
+    color: white;
   }
 }
 

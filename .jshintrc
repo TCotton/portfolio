@@ -27,6 +27,7 @@
     "inject": false,
     "afterEach": false,
     "_": false,
-    "browserTrigger": false
+    "browserTrigger": false,
+    "alert": false
   }
 }

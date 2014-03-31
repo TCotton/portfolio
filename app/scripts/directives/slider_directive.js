@@ -125,7 +125,7 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interva
               scope.slideController.currentSlide = 1;
 
             }
-          }, this.timeGap);
+          }, _this.timeGap, 0, false);
         },
 
         navigation: function () {
@@ -185,7 +185,7 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interva
               // after the defined millisecond gap defined in startGap then load the right size image
               scope.slideController.sliderReplaceMethod();
 
-            }, sliderDirectiveLink.startGap);
+            }, sliderDirectiveLink.startGap, false);
 
           }, 0);
 
@@ -212,6 +212,10 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interva
           sliderDirectiveLink.destroy();
         }
       };
+
+      // to avoid any confusion of the this keyword in the sliderDirectiveLink object
+      // use _this with an underscore to make it clear its private scope
+      var _this = sliderDirectiveLink;
 
       return sliderDirectiveLink.init();
 

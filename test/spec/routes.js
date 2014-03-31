@@ -28,4 +28,20 @@ describe('Routes test', function () {
     });
 
   });
+
+  describe('contact page route', function () {
+    beforeEach(inject(
+      function ($httpBackend) {
+        $httpBackend.expectGET('views/contact_me.html')
+          .respond(200, 'main HTML');
+      }
+    ));
+
+    it('should load the index page on successful load of /', function () {
+      location.path('/contact-me');
+      rootScope.$digest(); // call the digest loop
+      expect(route.current.controller).toBe('FormCtrl');
+    });
+
+  });
 });

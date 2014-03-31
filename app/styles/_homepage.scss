@@ -53,6 +53,7 @@
   background-size: contain;
   padding: 0 0 39.97071742313324% 0;
   position: relative;
+  @include transform(translate3d(0, 0, 0));
 
   &.slider2 {
     background-image: $sliderOne;

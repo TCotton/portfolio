@@ -50,6 +50,38 @@
       border: $textTwo;
     }
   }
+
+  [class$="-block"] {
+    position: relative;
+    display: block;
+
+    .error-message {
+      @include font-calculator($baseFontFamily, 16px, 0);
+      height: 30px;
+      line-height: 30px;
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      top: -30px;
+      color: white;
+      background: $textTwo;
+      padding: 0 5px;
+    }
+  }
+
+  .ng-valid {
+  }
+  .ng-invalid {
+  }
+  .ng-pristine {
+  }
+  .ng-dirty {
+  }
+  .ng-invalid-required {
+  }
+  .ng-invalid-email {
+
+  }
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
@@ -58,13 +90,13 @@
   }
 }
 
-@media screen and (-webkit-min-device-pixel-ratio: 0) and (min-width: $media_breakpoint_mobile) {
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (max-width: $media_breakpoint_tablet) {
   input[type='text'], textarea {
     font-size: 15px;
   }
 }
 
-@media screen and (min--moz-device-pixel-ratio:0)  {
+@media screen and (min--moz-device-pixel-ratio: 0) {
   /* another firefox bug :( */
   // come back to this
 
