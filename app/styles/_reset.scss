@@ -474,6 +474,12 @@ input[type='search']::-webkit-search-decoration, input[type='search']::-webkit-s
   display: none;
 }
 
+/* remove default webkit form field appearance */
+input, textarea {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
 /* make placeholder text disappear on focus */
 :focus::-webkit-input-placeholder {
   opacity: 0;

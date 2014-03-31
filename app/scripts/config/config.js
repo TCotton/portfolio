@@ -29,5 +29,5 @@ angular.module('HashBangURLs', []).config(['$locationProvider', function ($locat
   $location.hashPrefix('!');
 }]);
 angular.module('ngAnimate', []).config(['$animateProvider', function ($animateProvider) {
-  $animateProvider.classNameFilter(/animated/);
+  $animateProvider.classNameFilter(/\animate-/);
 }]);

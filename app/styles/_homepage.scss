@@ -70,17 +70,7 @@
     background-image: $sliderPlaceholderDataURI;
   }
 
-  .animate-bounceIn {
-    -webkit-animation-name: bounceIn;
-    -webkit-animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-name: bounceIn;
-    animation-duration: 1s;
-    animation-fill-mode: both;
-  }
-
   section {
-    -webkit-filter: blur(0px);
     position: absolute;
     z-index: 1;
     top: 40px;
