@@ -23,8 +23,7 @@ angular.module('portfolioApp', ['AppConstants', 'ngCookies', 'ngResource', 'ngSa
         templateUrl: 'views/about_me.html'
       })
       .when('/contact-me', {
-        templateUrl: 'views/contact_me.html',
-        controller: 'FormCtrl'
+        templateUrl: 'views/contact_me.html'
       })
       .when('/blog/', {
         templateUrl: 'views/blog.html'

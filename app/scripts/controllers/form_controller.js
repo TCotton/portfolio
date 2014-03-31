@@ -8,7 +8,9 @@ angular.module('portfolioApp').controller('FormCtrl', ['$scope', function ($scop
   $scope.contact = {};
   $scope.comments = {};
 
-  $scope.contact.zipRegex = /(?!.*)/;
+  /* Used in the hidden field spam trap */
+
+  $scope.zipRegex = /(?!.*)/;
 
   $scope.submitted = false;
 
@@ -18,7 +20,7 @@ angular.module('portfolioApp').controller('FormCtrl', ['$scope', function ($scop
 
     // check to make sure the form is completely valid
     if (isValid) {
-      alert('our form is amazing');
+      console.log($scope.contact);
     }
 
   };

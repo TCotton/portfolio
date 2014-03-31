@@ -8,6 +8,8 @@ describe('Controller: HeaderCtrl', function () {
   var scope;
   var $controller;
   var $rootScope;
+  var $scope;
+  var contactFormData = {name: "Andy Walpole", email: "andy_walpole@btopenworld.com", message: "This is a message here"};
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function (_$controller_, _$rootScope_) {
@@ -23,6 +25,8 @@ describe('Controller: HeaderCtrl', function () {
 
   it('The form should except a name', function () {
 
+    console.log($scope.submitContactForm);
+
   });
 
   it('The form should except a email address', function () {
@@ -36,9 +40,6 @@ describe('Controller: HeaderCtrl', function () {
   it('The form should not expect any text in the zipcode', function () {
 
   });
-
-
-
 
 
 });

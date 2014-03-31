@@ -26,7 +26,7 @@
 
     <h3 class="content-title">Send a message</h3>
 
-    <form novalidate="novalidate" name="contactForm"
+    <form data-form-directive novalidate="novalidate" name="contactForm"
           data-ng-submit="submitContactForm(contactForm.$valid)">
 
       <span class="name-block">
@@ -53,7 +53,7 @@
 
             <span class="hide">
             <label for="zipcode" class="visuallyhidden">Your zipcode</label>
-            <input type="text" id="zipcode" name="zipcode" value="" data-ng-pattern="contact.zipRegex"
+            <input type="text" id="zipcode" name="zipcode" value="" data-ng-pattern="zipRegex"
                    data-ng-model="contact.zipcode"/>
             </span>
 
