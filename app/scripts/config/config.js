@@ -28,6 +28,6 @@ angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', function 
 angular.module('HashBangURLs', []).config(['$locationProvider', function ($location) {
   $location.hashPrefix('!');
 }]);
-angular.module('portfolioAppConfig', []).config(['$animateProvider', function ($animateProvider) {
+angular.module('ngAnimate', []).config(['$animateProvider', function ($animateProvider) {
   $animateProvider.classNameFilter(/animated/);
 }]);

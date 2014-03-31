@@ -52,8 +52,6 @@ describe('Directive: Slider', function () {
 
   it('Tests slider directive for possible failures', function () {
 
-    $rootScope.$broadcast('$destroy');
-    $rootScope.$digest();
 
   });
 

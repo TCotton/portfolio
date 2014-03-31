@@ -139,7 +139,7 @@
       @content;
     }
   } @else if $name == "mintablet" {
-    @media (min-width: $media_breakpoint_mobile), (-webkit-min-device-pixel-ratio: 2), not all, (min-resolution: 2dppx), (min-resolution: 192dpi) {
+    @media (min-device-width: 768px) and (orientation: landscape) {
       @content;
     }
   }

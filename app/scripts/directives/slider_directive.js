@@ -36,7 +36,7 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interva
               if (key.indexOf(sliderNumber) !== -1) {
 
                 $scope.slider = SLIDER[key];
-                $scope.slider.sliderClass = 'slider' + sliderNumber + ' reveal-animation';
+                $scope.slider.sliderClass = 'slider' + sliderNumber;
 
               }
             }
@@ -76,28 +76,34 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interva
         sliderTotal: _.size(SLIDER),
         timeGap: 8000,
         startGap: 2000,
+        animationGap: 7000,
         timerInterval: null,
 
         timer: function () {
 
+          // add and remove animate classes
+          var pTag = angular.element(element[0].querySelector('p'));
+          var h2Tag = angular.element(element[0].querySelector('h2'));
+          var aTag = angular.element(element[0].querySelector('a'));
+
           sliderDirectiveLink.timerInterval = $interval(function () {
 
-            $animate.addClass(angular.element(element[0].querySelector('p')), 'animate-bounceIn', function () {
+            $animate.addClass(pTag, 'animate-bounceIn', function () {
               $timeout(function () {
-                $animate.removeClass(angular.element(element[0].querySelector('p')), 'animate-bounceIn');
-              }, 7000);
+                $animate.removeClass(pTag, 'animate-bounceIn');
+              }, sliderDirectiveLink.animationGap);
             });
 
-            $animate.addClass(angular.element(element[0].querySelector('h2')), 'animate-bounceIn', function () {
+            $animate.addClass(h2Tag, 'animate-bounceIn', function () {
               $timeout(function () {
-                $animate.removeClass(angular.element(element[0].querySelector('h2')), 'animate-bounceIn');
-              }, 7000);
+                $animate.removeClass(h2Tag, 'animate-bounceIn');
+              }, sliderDirectiveLink.animationGap);
             });
 
-            $animate.addClass(angular.element(element[0].querySelector('a')), 'animate-bounceIn', function () {
+            $animate.addClass(aTag, 'animate-bounceIn', function () {
               $timeout(function () {
-                $animate.removeClass(angular.element(element[0].querySelector('a')), 'animate-bounceIn');
-              }, 7000);
+                $animate.removeClass(aTag, 'animate-bounceIn');
+              }, sliderDirectiveLink.animationGap);
             });
 
             // skip through the set interval and either reset the slider list to the beginning
@@ -109,13 +115,55 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interva
 
             } else {
 
+              scope.slideController.sliderForMethod(sliderDirectiveLink.sliderTotal);
+              scope.slideController.currentSlide = sliderDirectiveLink.sliderTotal;
+
+            }
+          }, this.timeGap);
+        },
+
+        navigation: function () {
+
+          angular.element(element[0].querySelector('.right-arrow')).bind('click', function(){
+
+            // use the left arrow to move through the slider in a left direction
+            if (scope.slideController.currentSlide < sliderDirectiveLink.sliderTotal) {
+
+              scope.slideController.sliderForMethod(scope.slideController.currentSlide + 1);
+              scope.slideController.currentSlide = scope.slideController.currentSlide + 1;
+
+            } else {
+
               scope.slideController.sliderForMethod(1);
               scope.slideController.currentSlide = 1;
 
+            }
+
+            $interval.cancel(sliderDirectiveLink.timerInterval);
+            sliderDirectiveLink.timer();
+
+          });
+
+          angular.element(element[0].querySelector('.left-arrow')).bind('click', function(){
+
+            // use the the right arrow to move through the slider in a right direction
+            if (scope.slideController.currentSlide > 1) {
+
+              scope.slideController.sliderForMethod(scope.slideController.currentSlide - 1);
+              scope.slideController.currentSlide = scope.slideController.currentSlide - 1;
+
+            } else {
+
+              scope.slideController.sliderForMethod(sliderDirectiveLink.sliderTotal);
+              scope.slideController.currentSlide = sliderDirectiveLink.sliderTotal;
 
             }
 
-          }, this.timeGap);
+            $interval.cancel(sliderDirectiveLink.timerInterval);
+            sliderDirectiveLink.timer();
+
+          });
+
         },
 
         start: function () {
@@ -145,6 +193,8 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interva
             if (sliderDirectiveLink.timerInterval) {
               $interval.cancel(sliderDirectiveLink.timerInterval);
             }
+            angular.element(element[0].querySelector('.left-arrow')).unbind('click');
+            angular.element(element[0].querySelector('.right-arrow')).unbind('click');
 
           });
         },
@@ -152,6 +202,7 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interva
         init: function () {
           sliderDirectiveLink.start();
           sliderDirectiveLink.timer();
+          sliderDirectiveLink.navigation();
           sliderDirectiveLink.destroy();
         }
       };

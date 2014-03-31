@@ -1742,7 +1742,7 @@ a.button-front-one:hover, a.button-front-one:active {
   background: url("/images/svg/right-arrow-hover.svg") no-repeat center center;
 }
 
-@media (min-width: 767px), (-webkit-min-device-pixel-ratio: 2), not all, (min-resolution: 2dppx), (min-resolution: 192dpi) {
+@media (min-device-width: 768px) and (orientation: landscape) {
   /* line 123, _homepage.scss */
   #slider .animate-bounceIn {
     -webkit-animation-name: bounceIn;
@@ -2240,7 +2240,7 @@ a.button-front-one:hover, a.button-front-one:active {
   border-radius: 10px;
 }
 
-@media (min-width: 767px), (-webkit-min-device-pixel-ratio: 2), not all, (min-resolution: 2dppx), (min-resolution: 192dpi) {
+@media (min-device-width: 768px) and (orientation: landscape) {
   /* line 52, _aboutme.scss */
   .aboutme [class*="per"] span {
     -ms-transform: scaleX(0);

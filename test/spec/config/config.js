@@ -30,6 +30,7 @@ describe('Config: Config', function () {
       expect($rootScope.pageChange).toEqual(true);
     });
 
+
   });
 
 });
