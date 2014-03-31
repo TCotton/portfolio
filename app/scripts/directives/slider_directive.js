@@ -115,8 +115,8 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interva
 
             } else {
 
-              scope.slideController.sliderForMethod(sliderDirectiveLink.sliderTotal);
-              scope.slideController.currentSlide = sliderDirectiveLink.sliderTotal;
+              scope.slideController.sliderForMethod(1);
+              scope.slideController.currentSlide = 1;
 
             }
           }, this.timeGap);
