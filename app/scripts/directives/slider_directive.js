@@ -3,7 +3,7 @@
  */
 'use strict';
 
-angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interval', function (SLIDER, $interval) {
+angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interval', '$timeout', function (SLIDER, $interval, $timeout) {
 
   return {
     restrict: 'A',
@@ -36,7 +36,7 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interva
               if (key.indexOf(sliderNumber) !== -1) {
 
                 $scope.slider = SLIDER[key];
-                $scope.slider.sliderClass = 'slider' + sliderNumber + ' reveal-animation';
+                $scope.slider.sliderClass = 'slider' + sliderNumber;
 
               }
             }
@@ -77,12 +77,10 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interva
         timeGap: 4000,
         startGap: 2000,
         timerInterval: null,
-        startInterval: null,
-        placeholderInterval: null,
 
         timer: function () {
 
-          this.timerInterval = $interval(function () {
+          sliderDirectiveLink.timerInterval = $interval(function () {
 
 //            $animate.addClass(element, 'reveal-animation', function() {
 //              $timeout(function() {
@@ -92,7 +90,7 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interva
 
             // skip through the set interval and either reset the slider list to the beginning
             // or carry on to the next one
-            if (scope.slideController.currentSlide < this.sliderTotal) {
+            if (scope.slideController.currentSlide < sliderDirectiveLink.sliderTotal) {
 
               scope.slideController.sliderForMethod(scope.slideController.currentSlide + 1);
               scope.slideController.currentSlide = scope.slideController.currentSlide + 1;
@@ -102,28 +100,29 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interva
               scope.slideController.sliderForMethod(1);
               scope.slideController.currentSlide = 1;
 
+
             }
 
-          }.bind(this), this.timeGap);
+          }, this.timeGap);
         },
 
         start: function () {
 
           // when the site first loads up the load the placeholder with the reduced PNG8 image
-          this.startInterval = $interval(function () {
+          $timeout(function () {
 
             scope.slideController.currentSlide = 1;
             scope.slideController.sliderStartMethod();
-            $interval.cancel(this.startInterval);
 
-            this.placeholderInterval = $interval(function () {
+            $timeout(function () {
 
               // after the defined millisecond gap defined in startGap then load the right size iamge
               scope.slideController.sliderReplaceMethod();
-              $interval.cancel(this.placeholderInterval);
 
-            }.bind(this), this.startGap);
-          }.bind(this), 0);
+            }, sliderDirectiveLink.startGap);
+
+          }, 0);
+
         },
 
         destroy: function () {
@@ -133,12 +132,6 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interva
 
             if (sliderDirectiveLink.timerInterval) {
               $interval.cancel(sliderDirectiveLink.timerInterval);
-            }
-            if (sliderDirectiveLink.startInterval) {
-              $interval.cancel(sliderDirectiveLink.startInterval);
-            }
-            if (sliderDirectiveLink.placeholderInterval) {
-              $interval.cancel(sliderDirectiveLink.placeholderInterval);
             }
 
           });

@@ -2,67 +2,59 @@
 
 describe('Directive: Slider', function () {
 
-  var element, scope, $compile, SLIDER, $rootScope, $timeout;
+  var element, scope, $compile, SLIDER, $rootScope, $timeout, $interval;
 
   beforeEach(module('portfolioApp'));
 
-  beforeEach(inject(function(_$compile_, _$rootScope_, _SLIDER_, _$timeout_) {
+  beforeEach(inject(function (_$compile_, _$rootScope_, _SLIDER_, _$timeout_, _$interval_) {
     $rootScope = _$rootScope_;
     $compile = _$compile_;
     SLIDER = _SLIDER_;
+    $interval = _$interval_;
     $timeout = _$timeout_;
     scope = $rootScope;
 
     element = angular.element('<div data-slider-directive data-slider="slider"></div>');
-    $compile(element)($rootScope);
+    $compile(element)(scope);
     scope.$digest();
     $timeout.flush();
 
   }));
 
-  it('Test whether link changes after set interval', function () {
+  it('Test whether local scope is changed and contains title and text of slide', function () {
 
-    scope.slider = SLIDER.slider1;
+    scope.$apply(function () {
+      scope.slider = SLIDER.slider1;
+    });
 
-    //apply it to the view.
-    scope.$digest();
-
-    //console.log(element.text());
-    //console.log(element.html());
-
-
-
-   // console.log(element.scope());
-
-
-    //console.log(element.scope());
-
-    //console.log(element.scope().slider);
-
-
-   // expect(SLIDER.slider1.title).toContain('Thompson Reuters Japan');
+    expect(element.text()).toContain(SLIDER.slider1.title);
+    expect(element.text()).toContain(SLIDER.slider1.text);
 
   });
-//
-//  it('Test whether class changes after set interval', function () {
-//
-//
-//
-//  });
-//
-//  it('Test whether title changes after set interval', function () {
-//
-//
-//  });
-//
-//  it('Test whether text changes after set interval', function () {
-//
-//
-//  });
-//
-//  it('Create a test for errors ', function () {
-//
-//
-//  });
+
+  it('Tests whether the class has changed on model change', function () {
+
+    scope.$apply(function () {
+      scope.slider = SLIDER.slider1;
+    });
+
+    expect(element.hasClass(Object.keys(SLIDER)[0])).toBe(true);
+
+  });
+
+
+  it('Test if $destroy is working as expected', function () {
+
+    $rootScope.$broadcast('$destroy');
+    $rootScope.$digest();
+
+  });
+
+  it('Tests slider directive for possible failures', function () {
+
+    $rootScope.$broadcast('$destroy');
+    $rootScope.$digest();
+
+  });
 
 });

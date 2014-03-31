@@ -90,21 +90,21 @@
     background-image: $sliderPlaceholderDataURI;
   }
 
-  .fade-in {
-    @include transitions('1s linear all');
-  }
-  .fade-in.ng-enter {
-    opacity: 0;
-  }
-  .fade-in.ng-enter.ng-enter-active {
-    opacity: 1;
-  }
-  .fade-in.ng-leave {
-    opacity: 1;
-  }
-  .fade-in.ng-leave.ng-leave-active {
-    opacity: 0;
-  }
+//  .fade-in {
+//    @include transitions('1s linear all');
+//  }
+//  .fade-in.ng-enter {
+//    opacity: 0;
+//  }
+//  .fade-in.ng-enter.ng-enter-active {
+//    opacity: 1;
+//  }
+//  .fade-in.ng-leave {
+//    opacity: 1;
+//  }
+//  .fade-in.ng-leave.ng-leave-active {
+//    opacity: 0;
+//  }
 
   section {
     position: absolute;
