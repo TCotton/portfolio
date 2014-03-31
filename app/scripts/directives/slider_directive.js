@@ -84,8 +84,6 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interva
           // add and remove animate classes
           // this is not used on mobile devices because of performance issues
           // using matchMedia below it is possible to prevent the classes from changing
-
-
           var pTag = angular.element(element[0].querySelector('p'));
           var h2Tag = angular.element(element[0].querySelector('h2'));
           var aTag = angular.element(element[0].querySelector('a'));
@@ -184,7 +182,7 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interva
 
             $timeout(function () {
 
-              // after the defined millisecond gap defined in startGap then load the right size iamge
+              // after the defined millisecond gap defined in startGap then load the right size image
               scope.slideController.sliderReplaceMethod();
 
             }, sliderDirectiveLink.startGap);

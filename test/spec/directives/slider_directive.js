@@ -21,11 +21,8 @@ describe('Directive: Slider', function () {
 
   }));
 
-  it('Test whether local scope is changed and contains title and text of slide', function () {
 
-    scope.$apply(function () {
-      scope.slider = SLIDER.slider1;
-    });
+  it('Test whether local scope is changed and contains title and text of slide', function () {
 
     expect(element.text()).toContain(SLIDER.slider1.title);
     expect(element.text()).toContain(SLIDER.slider1.text);
@@ -34,10 +31,6 @@ describe('Directive: Slider', function () {
 
   it('Tests whether the class has changed on model change', function () {
 
-    scope.$apply(function () {
-      scope.slider = SLIDER.slider1;
-    });
-
     expect(element.hasClass(Object.keys(SLIDER)[0])).toBe(true);
 
   });
@@ -45,13 +38,18 @@ describe('Directive: Slider', function () {
 
   it('Test if $destroy is working as expected', function () {
 
+    // needs more work
+
     $rootScope.$broadcast('$destroy');
     $rootScope.$digest();
 
   });
 
-  it('Tests slider directive for possible failures', function () {
+  it('Make sure that the HTML does not have any empty values where the binding data should be', function () {
 
+    // needs more work
+
+    expect(angular.element(element[0].querySelector('a')).attr('href').toString()).not.toEqual('');
 
   });
 

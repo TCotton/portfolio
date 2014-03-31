@@ -26,6 +26,7 @@
     "expect": false,
     "inject": false,
     "afterEach": false,
-    "_": false
+    "_": false,
+    "browserTrigger": false
   }
 }
