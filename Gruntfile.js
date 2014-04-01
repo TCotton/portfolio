@@ -350,7 +350,8 @@ module.exports = function (grunt) {
           constants: {
             ROUTES: grunt.file.readJSON('app/scripts/config/routes.json'),
             LINKS: grunt.file.readJSON('app/scripts/config/navigation.json'),
-            SLIDER: grunt.file.readJSON('app/scripts/config/slider.json')
+            SLIDER: grunt.file.readJSON('app/scripts/config/slider.json'),
+            CONFIG: grunt.file.readJSON('app/scripts/config/config.json')
           },
           values: {
             debug: false

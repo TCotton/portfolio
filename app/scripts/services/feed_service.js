@@ -4,54 +4,27 @@
 
   var app = angular.module('portfolioApp');
 
-  var FeedService = function ($http, $q) {
+  var FeedService = function ($http, $q, CONFIG) {
     this.$http = $http;
     this.$q = $q;
+    this.CONFIG = CONFIG;
   };
 
-  FeedService.$inject = ['$http', '$q'];
-
-  FeedService.prototype.grabFeed = function () {
-
-    var _this = this;
-
-    return _this.$http({
-      method: 'GET',
-      url: 'http://www.suburban-glory.com/rss.xml',
-      cache: false
-    }).
-      success(function (data, status, headers, config) {
-        // this callback will be called asynchronously
-        // when the response is available
-    }).
-      error(function (data, status, headers, config) {
-        // called asynchronously if an error occurs
-        // or server returns response with an error status.
-    });
-
-  };
-
-
-
-  //http://www.suburban-glory.com/rss.xml
+  FeedService.$inject = ['$http', '$q', 'CONFIG'];
 
   FeedService.prototype.returnedRSS = function () {
 
     var _this = this;
 
-    return _this.$http({
-      method: 'GET',
-      url: 'http://www.suburban-glory.com/rss.xml',
-      cache: false
-    }).then(function(allData) {
+    return _this.$http.jsonp(_this.CONFIG.JSONP_GOOGLE_API + encodeURIComponent(_this.CONFIG.RSS_FEED_LINK),
+      {
+        'cache': false
+      }
+    ).success(function (data) {
 
-        return allData.data;
-
+        return data;
       });
-
-
   };
-
 
   app.service('FeedService', FeedService);
 

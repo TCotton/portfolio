@@ -8,20 +8,53 @@ angular.module('portfolioApp').directive('blogDirective', ['FeedService', functi
   return {
 
     restrict: 'A',
-    //templateUrl: 'views/blog.html',
 
-    link: function (scope) {
+    link: function () {
 
-      FeedService.returnedRSS()
-      .then(function(data) {
-        if (data.error) return;
+      var sliderDirectiveLink = {
 
-          console.log(angular.element(data).html());
+        totalArticles: null,
+        totalOldArticles: null,
+        totalNewArticles: null,
 
-      });
+        totalArticlesCount: function (){
 
+          var _this = this;
+
+          // cache the total number of articles
+          // used in pagination
+          _this.totalArticles = _this.totalOldArticles + _this.totalNewArticles;
+
+        },
+
+        returnedData: function() {
+
+          FeedService.returnedRSS()
+            .then(function (response) {
+
+              if (response.status === 200) {
+
+                //console.log(response.data.responseData.feed.entries);
+
+                // cache the total number of items returned
+                sliderDirectiveLink.totalOldArticles = _.size(response.data.responseData.feed.entries);
+                console.log(JSON.stringify(response));
+
+              }
+            });
+
+        },
+
+        init: function() {
+
+          sliderDirectiveLink.returnedData();
+
+        }
+      };
+
+      sliderDirectiveLink.init();
     }
-  }
+  };
 
 }]);
 
