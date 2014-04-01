@@ -31,7 +31,8 @@ angular.module('portfolioApp', ['AppConstants', 'ngCookies', 'ngResource', 'ngSa
         controller: 'BlogCtrl'
       })
       .when('/blog/:blogPage', {
-        templateUrl: 'views/blog_page.html'
+        templateUrl: 'views/blog_page.html',
+        controller: 'BlogCtrl'
       })
       .otherwise({
         redirectTo: '/'

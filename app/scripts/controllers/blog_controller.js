@@ -7,19 +7,32 @@
 
   var app = angular.module('portfolioApp');
 
-  var BlogCtrl = function ($http, $q, FeedService) {
-    this.$http = $http;
-    this.$q = $q;
+  var BlogCtrl = function ($q, FeedService) {
     this.FeedService = FeedService;
+    this.totalArticles = null;
+    this.totalOldArticles = null;
+    this.totalNewArticles = null;
+    this.oldBlogPosts = null;
   };
 
-  BlogCtrl.$inject = ['$http', '$q', 'FeedService'];
+  BlogCtrl.$inject = ['$q', 'FeedService'];
 
+  BlogCtrl.prototype.grabFeed = function() {
 
-  //this.FeedService.returnedRSS();
+    var _this = this;
 
-  BlogCtrl.prototype.testing = function() {
-    console.log('here');
+    _this.FeedService.returnedRSS()
+      .then(function (response) {
+
+        if (response.status === 200) {
+
+          // cache the total number of items returned
+          _this.totalOldArticles = _.size(response.data.responseData.feed.entries);
+          _this.oldBlogPosts = response.data.responseData.feed.entries;
+          _this.sortOldBlogPosts(response.data.responseData.feed.entries);
+
+        }
+      });
   };
 
 

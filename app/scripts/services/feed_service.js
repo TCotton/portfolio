@@ -18,7 +18,7 @@
 
     return _this.$http.jsonp(_this.CONFIG.JSONP_GOOGLE_API + encodeURIComponent(_this.CONFIG.RSS_FEED_LINK),
       {
-        'cache': false
+        'cache': true
       }
     ).success(function (data) {
 
