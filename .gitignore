@@ -8,3 +8,4 @@ app/components
 app/.buildignore
 test/.jshintrc
 app/scripts/config/constants.js
+test/spec/config/constants.js

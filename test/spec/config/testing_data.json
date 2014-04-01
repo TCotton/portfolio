@@ -1,9 +1,7 @@
 {
-  "data": {
-    "formController": {
-      "name": "Andy Walpole",
-      "email": "andy_walpole@btopenworld.com",
-      "message": "This is a message here"
-    }
+  "formController": {
+    "name": "Andy Walpole",
+    "email": "andy_walpole@btopenworld.com",
+    "message": "This is a message here"
   }
 }

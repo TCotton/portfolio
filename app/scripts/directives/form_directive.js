@@ -4,7 +4,7 @@
 
 'use strict';
 
-angular.module('portfolioApp').directive('formDirective', [function () {
+angular.module('portfolioApp').directive('formDirective', [, function () {
 
   return {
     restrict: 'A',
@@ -17,9 +17,9 @@ angular.module('portfolioApp').directive('formDirective', [function () {
 
       $scope.zipRegex = /(?!.*)/;
 
-      $scope.submitted = false;
+      // $scope.submitted = false;
 
-      $scope.submitContactForm = function(isValid) {
+      $scope.submitContactForm = function (isValid) {
 
         $scope.submitted = true;
 
@@ -31,8 +31,21 @@ angular.module('portfolioApp').directive('formDirective', [function () {
       };
 
     },
-    link: function () {
+    link: function (scope) {
 
+      scope.submitClicked = function (value) {
+
+        if (value) {
+
+          /** TODO: will not go fragment identifier without cancelling out error messages
+           * **/
+
+          //window.location = window.location.href.indexOf('#main-content') === -1 ? window.location.href + '#main-content' : window.location.href;
+          //scope.submitted = true;
+
+
+        }
+      };
     }
   };
 

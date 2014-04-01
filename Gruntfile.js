@@ -108,7 +108,7 @@ module.exports = function (grunt) {
         options: {
           jshintrc: '.jshintrc'
         },
-        src: ['test/spec/{,*/}*.js']
+        src: ['test/spec/{,*/}*.js', '!test/spec/config/constants.js']
       }
     },
 
@@ -359,7 +359,7 @@ module.exports = function (grunt) {
       },
       test: {
         options: {
-          dest: 'test/config/constants.js',
+          dest: 'test/spec/config/constants.js',
           name: 'testConstants'
         },
         constants: {

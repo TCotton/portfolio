@@ -37,10 +37,26 @@ describe('Routes test', function () {
       }
     ));
 
-    it('should load the index page on successful load of /', function () {
+    it('should load the contact page on successful load of /contact-me', function () {
       location.path('/contact-me');
       rootScope.$digest(); // call the digest loop
       expect(route.current.controller).toBe('FormCtrl');
+    });
+
+  });
+
+  describe('blog page route', function () {
+    beforeEach(inject(
+      function ($httpBackend) {
+        $httpBackend.expectGET('views/blog.html')
+          .respond(200, 'blog HTML');
+      }
+    ));
+
+    it('should load the blog page on successful load of /blog/', function () {
+      location.path('/blog/');
+      rootScope.$digest(); // call the digest loop
+      expect(route.current.controller).toBe('BlogCtrl');
     });
 
   });

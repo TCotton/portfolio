@@ -14,15 +14,17 @@ angular.module('portfolioApp').controller('FormCtrl', ['$scope', function ($scop
 
   $scope.submitted = false;
 
-  $scope.submitContactForm = function(isValid) {
+  $scope.submitContactForm = function (isValid) {
 
     $scope.submitted = true;
 
     // check to make sure the form is completely valid
     if (isValid) {
       console.log($scope.contact);
+      //window.location.reload(true);
     }
 
   };
+
 
 }]);

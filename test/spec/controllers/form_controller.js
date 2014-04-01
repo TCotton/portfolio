@@ -2,19 +2,19 @@
 describe('Controller: HeaderCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('portfolioApp'));
+  beforeEach(module('portfolioApp', 'testConstants'));
 
   var FormCtrl;
   var scope;
   var $controller;
   var $rootScope;
-  var $scope;
-  var contactFormData = {name: "Andy Walpole", email: "andy_walpole@btopenworld.com", message: "This is a message here"};
+  var MOCK_DATA;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function (_$controller_, _$rootScope_) {
+  beforeEach(inject(function (_$controller_, _$rootScope_, _MOCK_DATA_) {
     $controller = _$controller_;
     $rootScope = _$rootScope_;
+    MOCK_DATA = _MOCK_DATA_;
 
     scope = $rootScope.$new();
     FormCtrl = $controller('FormCtrl', {
@@ -22,24 +22,14 @@ describe('Controller: HeaderCtrl', function () {
     });
   }));
 
+  it('Checks that scope changes to true after data is passed to the submitContactForm method', function () {
 
-  it('The form should except a name', function () {
+    scope.$apply(function(){
+      scope.submitContactForm(MOCK_DATA.formController);
+    });
 
-    console.log($scope.submitContactForm);
-
-  });
-
-  it('The form should except a email address', function () {
-
-  });
-
-  it('The form should except a message', function () {
+    expect(scope.submitted).toBe(true);
 
   });
-
-  it('The form should not expect any text in the zipcode', function () {
-
-  });
-
 
 });
