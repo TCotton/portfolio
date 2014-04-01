@@ -9,38 +9,48 @@
     this.$q = $q;
   };
 
-  var _grabFeed = function(url, data) {
+  FeedService.$inject = ['$http', '$q'];
 
-    return $http({
+  FeedService.prototype.grabFeed = function () {
+
+    var _this = this;
+
+    return _this.$http({
       method: 'GET',
       url: 'http://www.suburban-glory.com/rss.xml',
       cache: false
-    }).then(
-      function(response) {
-        // The then function here is an opportunity to modify the response
-        // The return value gets picked up by the then in the controller.
-        return response;
-      },
-      function(response) { // if is there any error, it will be controlled from the controller
-        return response;
-      });
+    }).
+      success(function (data, status, headers, config) {
+        // this callback will be called asynchronously
+        // when the response is available
+    }).
+      error(function (data, status, headers, config) {
+        // called asynchronously if an error occurs
+        // or server returns response with an error status.
+    });
 
   };
 
-  FeedService.$inject = ['$http', '$q'];
+
 
   //http://www.suburban-glory.com/rss.xml
 
-  FeedService.prototype.whatever = function() {
+  FeedService.prototype.returnedRSS = function () {
 
-    console.log('here');
+    var _this = this;
+
+    return _this.$http({
+      method: 'GET',
+      url: 'http://www.suburban-glory.com/rss.xml',
+      cache: false
+    }).then(function(allData) {
+
+        return allData.data;
+
+      });
+
 
   };
-
-
-
-
-
 
 
   app.service('FeedService', FeedService);
