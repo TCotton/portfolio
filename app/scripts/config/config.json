@@ -1,4 +1,13 @@
 {
   "JSONP_GOOGLE_API": "//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=50&callback=JSON_CALLBACK&q=",
-  "RSS_FEED_LINK": "http://2223d9145efd2b35ed36-6671f2c2aa691e80e8c08f3a239bdfd7.r67.cf3.rackcdn.com/ressfeed.xml"
+  "RSS_FEED_LINK": "http://2223d9145efd2b35ed36-6671f2c2aa691e80e8c08f3a239bdfd7.r67.cf3.rackcdn.com/ressfeed.xml",
+  "BLOG": {
+    "BLOG_ONE": "images/blog-stock-images/stock-photo-one.jpg",
+    "BLOG_TWO": "images/blog-stock-images/stock-photo-two.jpg",
+    "BLOG_THREE": "images/blog-stock-images/stock-photo-three.jpg",
+    "BLOG_FOUR": "images/blog-stock-images/stock-photo-four.jpg",
+    "BLOG_FIVE": "images/blog-stock-images/stock-photo-five.jpg",
+    "BLOG_SIX": "images/blog-stock-images/stock-photo-six.jpg",
+    "BLOG_SEVEN": "images/blog-stock-images/stock-photo-seven.jpg"
+  }
 }

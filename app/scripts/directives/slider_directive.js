@@ -104,9 +104,9 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interva
                 }, sliderDirectiveLink.animationGap);
               });
 
-              $animate.addClass(aTag, 'animate-bounceIn', function () {
+              $animate.addClass(aTag, 'animate-bounceIn-later', function () {
                 $timeout(function () {
-                  $animate.removeClass(aTag, 'animate-bounceIn');
+                  $animate.removeClass(aTag, 'animate-bounceIn-later');
                 }, sliderDirectiveLink.animationGap);
               });
 
@@ -185,7 +185,7 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interva
               // after the defined millisecond gap defined in startGap then load the right size image
               scope.slideController.sliderReplaceMethod();
 
-            }, sliderDirectiveLink.startGap, false);
+            }, sliderDirectiveLink.startGap);
 
           }, 0);
 

@@ -86,13 +86,13 @@
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
-  input[type='text'], textarea {
+  input[type='text']:focus, input[type='url']:focus, input[type='email']:focus, textarea:focus {
     font-size: 16px;
   }
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) and (max-width: $media_breakpoint_tablet) {
-  input[type='text'], textarea {
+  input[type='text']:focus, input[type='url']:focus, input[type='email']:focus, textarea:focus {
     font-size: 15px;
   }
 }

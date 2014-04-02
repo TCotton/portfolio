@@ -48,7 +48,7 @@ angular.module('portfolioApp').directive('blogDirective', ['FeedService', functi
 
               if (response.status === 200) {
 
-                if(scope.oldBlogPosts === null) {
+                if(!scope.oldBlogPosts) {
                   // only sort posts below if the old blog post cache is empty
                   // avoids unnessary heavy code
 
