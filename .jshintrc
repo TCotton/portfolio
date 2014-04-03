@@ -28,6 +28,7 @@
     "afterEach": false,
     "_": false,
     "browserTrigger": false,
-    "alert": false
+    "alert": false,
+    "getSlug": false
   }
 }

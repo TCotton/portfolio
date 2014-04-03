@@ -10,6 +10,20 @@
 
     <div id="left-large" data-blog-directive>
 
+      <!--<div data-ng-repeat="blog in blog.oldBlogPosts">-->
+        <!--{{ blog }}-->
+      <!--{{ blog.oldBlogPosts }}-->
+      <!--<div data-ng-repeat="blog in blog.oldBlogPosts">-->
+        <!--{{ blog }}-->
+      <!--</div>-->
+      <!--</div>-->
+
+    <div data-ng-repeat="blog in blog.oldBlogPosts">
+      <div blog-block-directive blog="blog"></div>
+    </div>
+
+
+
         <article>
 
             <header>
