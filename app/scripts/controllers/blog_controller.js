@@ -3,7 +3,7 @@
  */
 
 'use strict';
-angular.module('portfolioApp').controller('BlogCtrl', ['FeedService', 'CONFIG', '$rootScope', '$scope', function (FeedService, CONFIG, $rootScope, $scope) {
+angular.module('portfolioApp').controller('BlogCtrl', ['FeedService', 'CONFIG', '$rootScope', '$scope', '$location', function (FeedService, CONFIG, $rootScope, $scope, $location) {
 
   $scope.totalArticles = null;
   $scope.totalOldArticles = null;
@@ -65,7 +65,7 @@ angular.module('portfolioApp').controller('BlogCtrl', ['FeedService', 'CONFIG', 
           //place redirect here
 
           // $scope.$digest(function () {
-          //$location.path("http://127.0.0.1:9000/#!/blog/");
+          $location.path('/blog/');
           // });
 
         }

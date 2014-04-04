@@ -29,6 +29,7 @@
     "_": false,
     "browserTrigger": false,
     "alert": false,
-    "getSlug": false
+    "getSlug": false,
+    "spyOn": false
   }
 }
