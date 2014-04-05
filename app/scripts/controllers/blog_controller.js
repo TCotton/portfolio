@@ -3,15 +3,18 @@
  */
 
 'use strict';
-angular.module('portfolioApp').controller('BlogCtrl', ['FeedService', 'CONFIG', '$rootScope', '$scope', '$location', function (FeedService, CONFIG, $rootScope, $scope, $location) {
+angular.module('portfolioApp').controller('BlogCtrl', ['FeedService', 'CONFIG', '$rootScope', '$scope', '$location', 'localStorageService', function (FeedService, CONFIG, $rootScope, $scope, $location, localStorageService) {
 
   $scope.totalArticles = null;
   $scope.totalOldArticles = null;
   $scope.totalNewArticles = null;
   $scope.oldBlogPosts = null;
+  /* the number of articles per page */
   $scope.paginationPageSize = 5;
+  /* used in */
   $scope.paginationPageSizeLimit = -5;
   $scope.paginationStartFrom = null;
+
   $scope.paginationTotalPages = Math.ceil($scope.totalArticles / $scope.paginationPageSize);
   $scope.click = null;
   $scope.next = null;
@@ -39,6 +42,7 @@ angular.module('portfolioApp').controller('BlogCtrl', ['FeedService', 'CONFIG', 
       }
 
       if (patt.test($scope.pagination.currentPage())) {
+        // pattern for blog index page: /blog/
 
         $scope.paginationStartFrom = $scope.pagination.currentPage().charAt($scope.pagination.currentPage().length - 1) * $scope.paginationPageSize;
 
@@ -48,6 +52,7 @@ angular.module('portfolioApp').controller('BlogCtrl', ['FeedService', 'CONFIG', 
       }
 
       if (pattTwo.test($scope.pagination.currentPage())) {
+        // pattern for blog index page pagination: /blog/?page=3
 
         if ($scope.pagination.currentPage() < $scope.totalArticles) {
 
@@ -60,7 +65,7 @@ angular.module('portfolioApp').controller('BlogCtrl', ['FeedService', 'CONFIG', 
         }
 
         if ($scope.paginationStartFrom > $scope.totalArticles) {
-
+          // if the user attempts to access a blog index page above that needed
 
           //place redirect here
 
@@ -85,33 +90,46 @@ angular.module('portfolioApp').controller('BlogCtrl', ['FeedService', 'CONFIG', 
 
     returnedData: function () {
 
+      // need to use angularJS cache here to store items
       FeedService.returnedRSS()
         .then(function (response) {
 
           if (response.status === 200) {
 
             // cache the total number of items returned
-            $scope.totalOldArticles = _.size(response.data.responseData.feed.entries);
-            // then sort old blog posts by date after changing date to native JS format
-            $scope.oldBlogPosts = BlogCtrlFun.sortOldBlogPosts(response.data.responseData.feed.entries);
-            $scope.oldBlogPosts = _.sortBy($scope.oldBlogPosts, function (o) {
-              // sort articles by publication date
+            if(localStorageService.get('totalOldArticles')) {
+              $scope.totalOldArticles = localStorageService.get('totalOldArticles');
+            } else {
+              $scope.totalOldArticles = _.size(response.data.responseData.feed.entries);
+              localStorageService.add('totalOldArticles', $scope.totalOldArticles);
+            }
 
-              return !o.publishedDate;
+            if(!localStorageService.get('oldBlogPosts')) {
 
-            });
+              // then sort old blog posts by date after changing date to native JS format
+              $scope.oldBlogPosts = BlogCtrlFun.sortOldBlogPosts(response.data.responseData.feed.entries);
+              $scope.oldBlogPosts = _.sortBy($scope.oldBlogPosts, function (o) {
+                // sort articles by publication date
+                return !o.publishedDate;
+              });
+              // old blog posts don't have a image attached that can be used in the index layout
+              // the method below adds
+              BlogCtrlFun.addReviewImage();
+              // create a seo friendly title and add it to the object in the oldBlogPosts scope
+              BlogCtrlFun.SEOFFriendlyURL();
 
-            // old blog posts don't have a image attached that can be used in the index layout
-            // the method below adds
-            BlogCtrlFun.addReviewImage();
+              localStorageService.add('oldBlogPosts', $scope.oldBlogPosts);
 
-            // create a seo friendly title and add it to the object in the oldBlogPosts scope
-            BlogCtrlFun.SEOFFriendlyURL();
+            } else {
+
+              $scope.oldBlogPosts = localStorageService.get('oldBlogPosts');
+
+            }
 
           }// end if(!scope.blog.oldBlogPosts) {
 
-          BlogCtrlFun.totalArticlesCount();
 
+          BlogCtrlFun.totalArticlesCount();
           $scope.pagination.startingPagination();
 
         });
