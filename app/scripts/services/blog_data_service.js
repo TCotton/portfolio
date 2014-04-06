@@ -7,7 +7,7 @@
 
   var app = angular.module('portfolioApp');
 
-  var BlogDataService = function ($http, $q, CONFIG, $rootScope, localStorageService, FeedService, $timeout) {
+  var BlogDataService = function ($http, $q, CONFIG, $rootScope, localStorageService, FeedService, $timeout, $interval, $log) {
 
     this.$http = $http;
     this.$q = $q;
@@ -16,17 +16,19 @@
     this.localStorageService = localStorageService;
     this.FeedService = FeedService;
     this.$timeout = $timeout;
+    this.$interval = $interval;
+    this.$log = $log;
 
     this.totalArticles = null;
-    this.totalOldArticles = localStorageService.get('totalOldArticles') || this.totalOldArticles;
+    this.totalOldArticles = localStorageService.get('totalOldArticles') || null;
     this.totalNewArticles = null;
-    this.oldBlogPosts = localStorageService.get('oldBlogPosts') || this.oldBlogPosts;
-    /* the number of articles per page */
-    this.paginationPageSize = 5;
-    /* used in */
-    this.paginationPageSizeLimit = -5;
-    this.paginationStartFrom = null;
-    this.paginationTotalPages = Math.ceil(this.totalArticles / this.paginationPageSize);
+    this.oldBlogPosts = localStorageService.get('oldBlogPosts') || null;
+//    /* the number of articles per page */
+//    this.paginationPageSize = 5;
+//    /* used in */
+//    this.paginationPageSizeLimit = -5;
+    //this.paginationStartFrom = null;
+    this.workComplete = localStorageService.get('workComplete')? true: false;
 
     this.blogData = function (data) {
       return blogData(data);
@@ -48,29 +50,61 @@
       return sortOldBlogPosts(data);
     };
 
+    this.finishDataProcessing = function () {
+      return finishDataProcessing();
+    };
+
+    this.uniqueId = function () {
+      return uniqueId();
+    };
+
 
     var blogData = function (data) {
 
-      var _this = this;
-
       // cache the total number of items returned
-      _this.totalOldArticles = _.size(data);
+      this.totalOldArticles = _.size(data);
+      this.sortOldBlogPosts(data);
+      this.addReviewImage();
+      this.seoFriendly();
+      this.totalArticlesCount();
+      this.uniqueId();
+      this.finishDataProcessing();
 
-      _this.localStorageService.add('totalOldArticles', _this.totalOldArticles);
+     /* //_this.localStorageService.add('totalOldArticles', _this.totalOldArticles);
 
-      // then sort old blog posts by date after changing date to native JS format
-      _this.oldBlogPosts = _this.sortOldBlogPosts(data);
-      _this.oldBlogPosts = _.sortBy(_this.oldBlogPosts, function (o) {
-        // sort articles by publication date
-        return !o.publishedDate;
-      });
+
       // old blog posts don't have a image attached that can be used in the index layout
       // the method below adds
       _this.addReviewImage();
       // create a seo friendly title and add it to the object in the oldBlogPosts scope
       _this.seoFriendly();
 
-      _this.localStorageService.add('oldBlogPosts', _this.oldBlogPosts);
+      //_this.localStorageService.add('oldBlogPosts', _this.oldBlogPosts);
+
+      _this.totalArticlesCount();*/
+
+    }.bind(this);
+
+    // create uniqueID for URL from the date
+
+    var uniqueId = function() {
+
+      var regex = /\D/g;
+      var posts = this.oldBlogPosts;
+
+      for (var key in posts) {
+
+        if (posts.hasOwnProperty(key)) {
+
+          if (posts[key].publishedDate) {
+
+            posts[key].uniqueId = posts[key].publishedDate.toString().replace(regex,'').slice(0,6);
+
+          }
+        }
+      }
+
+      this.oldBlogPosts = posts;
 
     }.bind(this);
 
@@ -90,30 +124,37 @@
         }
       }
 
-      return posts;
+      // then sort old blog posts by date after changing date to native JS format
+      this.oldBlogPosts = _.sortBy(posts, function (o) {
+        // sort articles by publication date
+        return !o.publishedDate;
+      });
 
-    };
+    }.bind(this);
 
 
     // cache the total number of articles
     // used in pagination
     var totalArticlesCount = function () {
 
-      var _this = this;
-
-      _this.totalArticles = _this.totalOldArticles + _this.totalNewArticles;
+      this.totalArticles = this.totalOldArticles + this.totalNewArticles;
 
     }.bind(this);
 
+    var finishDataProcessing = function (){
+
+      this.workComplete = true;
+      //_this.localStorageService.add('totalOldArticles', _this.totalOldArticles);
+      //_this.localStorageService.add('oldBlogPosts', _this.oldBlogPosts);
+
+    }.bind(this);
 
     // create SEO friendly URL from title and add it to the oldBlogPosts scope
     var seoFriendly = function () {
 
-      var _this = this;
-
       var stopwords = ['a', 'about', 'above', 'across', 'after', 'afterwards', 'again', 'against', 'all', 'almost', 'alone', 'along', 'already', 'also', 'although', 'always', 'am', 'among', 'amongst', 'amoungst', 'amount', 'an', 'and', 'another', 'any', 'anyhow', 'anyone', 'anything', 'anyway', 'anywhere', 'are', 'around', 'as', 'at', 'back', 'be', 'became', 'because', 'become', 'becomes', 'becoming', 'been', 'before', 'beforehand', 'behind', 'being', 'below', 'beside', 'besides', 'between', 'beyond', 'bill', 'both', 'bottom', 'but', 'by', 'call', 'can', 'cannot', 'cant', 'co', 'con', 'could', 'couldnt', 'cry', 'de', 'describe', 'detail', 'do', 'done', 'down', 'due', 'during', 'each', 'eg', 'eight', 'either', 'eleven', 'else', 'elsewhere', 'empty', 'enough', 'etc', 'even', 'ever', 'every', 'everyone', 'everything', 'everywhere', 'except', 'few', 'fifteen', 'fify', 'fill', 'find', 'fire', 'first', 'five', 'for', 'former', 'formerly', 'forty', 'found', 'four', 'from', 'front', 'full', 'further', 'get', 'give', 'go', 'had', 'has', 'hasnt', 'have', 'he', 'hence', 'her', 'here', 'hereafter', 'hereby', 'herein', 'hereupon', 'hers', 'herself', 'him', 'himself', 'his', 'how', 'however', 'hundred', 'ie', 'if', 'in', 'inc', 'indeed', 'interest', 'into', 'is', 'it', 'its', 'itself', 'keep', 'last', 'latter', 'latterly', 'least', 'less', 'ltd', 'made', 'many', 'may', 'me', 'meanwhile', 'might', 'mill', 'mine', 'more', 'moreover', 'most', 'mostly', 'move', 'much', 'must', 'my', 'myself', 'name', 'namely', 'neither', 'never', 'nevertheless', 'next', 'nine', 'no', 'nobody', 'none', 'noone', 'nor', 'not', 'nothing', 'now', 'nowhere', 'of', 'off', 'often', 'on', 'once', 'one', 'only', 'onto', 'or', 'other', 'others', 'otherwise', 'our', 'ours', 'ourselves', 'out', 'over', 'own', 'part', 'per', 'perhaps', 'please', 'put', 'rather', 're', 'same', 'see', 'seem', 'seemed', 'seeming', 'seems', 'serious', 'several', 'she', 'should', 'show', 'side', 'since', 'sincere', 'six', 'sixty', 'so', 'some', 'somehow', 'someone', 'something', 'sometime', 'sometimes', 'somewhere', 'still', 'such', 'system', 'take', 'ten', 'than', 'that', 'the', 'their', 'them', 'themselves', 'then', 'thence', 'there', 'thereafter', 'thereby', 'therefore', 'therein', 'thereupon', 'these', 'they', 'thickv', 'thin', 'third', 'this', 'those', 'though', 'three', 'through', 'throughout', 'thru', 'thus', 'to', 'together', 'too', 'top', 'toward', 'towards', 'twelve', 'twenty', 'two', 'un', 'under', 'until', 'up', 'upon', 'us', 'very', 'via', 'was', 'we', 'well', 'were', 'what', 'whatever', 'when', 'whence', 'whenever', 'where', 'whereafter', 'whereas', 'whereby', 'wherein', 'whereupon', 'wherever', 'whether', 'which', 'while', 'whither', 'who', 'whoever', 'whole', 'whom', 'whose', 'why', 'will', 'with', 'within', 'without', 'would', 'yet', 'you', 'your', 'yours', 'yourself', 'yourselves', 'the'];
 
-      var oldPosts = _this.oldBlogPosts;
+      var oldPosts = this.oldBlogPosts;
       var regexNonAlphaNum = /[^\-a-z0-9]/g;
       var regexWhiteSpace = /\s/gi;
       var x;
@@ -155,18 +196,16 @@
         }
       }
 
-      _this.oldBlogPosts = oldPosts;
+      this.oldBlogPosts = oldPosts;
 
     }.bind(this);
 
 
     var addReviewImage = function () {
 
-      var _this = this;
-
-      var oldPosts = _this.oldBlogPosts;
-      var numImages = _.size(_this.CONFIG.BLOG);
-      var imageArray = _.toArray(_this.CONFIG.BLOG);
+      var oldPosts = this.oldBlogPosts;
+      var numImages = _.size(this.CONFIG.BLOG);
+      var imageArray = _.toArray(this.CONFIG.BLOG);
       var x = -1;
 
       for (var key in oldPosts) {
@@ -186,28 +225,47 @@
 
   };
 
-  BlogDataService.$inject = ['$http', '$q', 'CONFIG', '$rootScope', 'localStorageService', 'FeedService', '$timeout'];
+  BlogDataService.$inject = ['$http', '$q', 'CONFIG', '$rootScope', 'localStorageService', 'FeedService', '$timeout', '$interval', '$log'];
 
   BlogDataService.prototype.retreiveData = function () {
 
-    if (this.localStorageService.get('oldBlogPosts')) {
+    var getData = function() {
+      var deferred = this.$q.defer();
+
+      if(!this.workComplete) {
+        var timer = this.$interval(function () {
+          // is there a better way than using $interval?
+          if (this.workComplete) {
+            deferred.resolve(this);
+            this.$interval.cancel(timer);
+          }
+        }.bind(this), 100);
+      } else {
+        deferred.resolve(this);
+      }
+
+      return deferred.promise;
+    }.bind(this);
+
+    if (!this.localStorageService.get('oldBlogPosts')) {
+
       //if blog articles are already stored as localstorage then don't call remote service and use values in storage
       this.FeedService.returnedRSS()
         .then(function (response) {
 
-          var _this = this;
+          if (_.isObject(response.data.responseData.feed.entries)) {
 
-          if (response.status === 200) {
-
-            _this.blogData(response.data.responseData.feed.entries);
+            this.blogData(response.data.responseData.feed.entries);
 
           }
+        }.bind(this), function(error){
+          this.$log.log('Error BlogDataService', error);
         }.bind(this));
 
     }
 
     return {
-      data: this
+      data: getData()
     };
 
   };

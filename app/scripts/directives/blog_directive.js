@@ -20,7 +20,7 @@ angular.module('portfolioApp').directive('blogBlockDirective', [function () {
       '<p data-ng-bind-html="blog.contentSnippet"></p> ' +
       '</section>' +
       '<footer>' +
-      '<p class="read-more"><a data-ng-href="/#!/blog/{{blog.url}}" class="underline">Read more...</a></p>' +
+      '<p class="read-more"><a data-ng-href="/#!/blog/{{blog.uniqueId}}/{{blog.url}}" class="underline">Read more...</a></p>' +
       '</footer>' +
       '</article>',
 
