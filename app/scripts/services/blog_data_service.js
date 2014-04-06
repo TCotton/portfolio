@@ -144,8 +144,9 @@
     var finishDataProcessing = function (){
 
       this.workComplete = true;
-      //_this.localStorageService.add('totalOldArticles', _this.totalOldArticles);
-      //_this.localStorageService.add('oldBlogPosts', _this.oldBlogPosts);
+      this.localStorageService.add('totalOldArticles', this.totalOldArticles);
+      this.localStorageService.add('oldBlogPosts', this.oldBlogPosts);
+      this.localStorageService.add('workComplete', 'true');
 
     }.bind(this);
 
