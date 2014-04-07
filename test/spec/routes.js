@@ -45,7 +45,7 @@ describe('Routes test', function () {
 
   });
 
-  describe('blog page route', function () {
+  describe('blog page index route', function () {
     beforeEach(inject(
       function ($httpBackend) {
         $httpBackend.expectGET('views/blog.html')
@@ -57,6 +57,22 @@ describe('Routes test', function () {
       location.path('/blog/');
       rootScope.$digest(); // call the digest loop
       expect(route.current.controller).toBe('BlogCtrl');
+    });
+
+  });
+
+  describe('blog page route', function () {
+    beforeEach(inject(
+      function ($httpBackend) {
+        $httpBackend.expectGET('views/blog_page.html')
+          .respond(200, 'blog HTML');
+      }
+    ));
+
+    it('should load the blog page on successful load of /blog/books-helped-become-professional-web-developer?id=182013', function () {
+      location.path('/blog/books-helped-become-professional-web-developer?id=182013');
+      rootScope.$digest(); // call the digest loop
+      expect(route.current.controller).toBe('BlogArticleCtrl');
     });
 
   });

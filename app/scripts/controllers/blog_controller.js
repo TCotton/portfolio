@@ -20,26 +20,25 @@
     this.$scope.paginationPageSize = 5;
     /* used in */
     this.$scope.paginationPageSizeLimit = -5;
+    this.$scope.returnObject = null;
 
-    var blogData;
-
-    var getPromise = BlogDataService.retreiveData().data;
+    var getPromise = this.BlogDataService.retreiveData();
 
     getPromise.then(function (data) {
 
       if (data.workComplete) {
 
-        blogData = data;
+        this.$scope.returnObject = data;
 
-        this.$scope.totalArticles = blogData.totalNewArticles;
-        this.$scope.totalOldArticles = blogData.totalOldArticles;
-        this.$scope.totalNewArticles = blogData.totalNewArticles;
+        this.$scope.totalArticles = this.$scope.returnObject.totalNewArticles;
+        this.$scope.totalOldArticles = this.$scope.returnObject.totalOldArticles;
+        this.$scope.totalNewArticles = this.$scope.returnObject.totalNewArticles;
 
 
         // why is this used for ?
         this.paginationTotalPages = Math.ceil(this.totalArticles / this.paginationPageSize);
 
-        this.$scope.oldBlogPosts = blogData.oldBlogPosts;
+        this.$scope.oldBlogPosts = this.$scope.returnObject.oldBlogPosts;
 
       }
 

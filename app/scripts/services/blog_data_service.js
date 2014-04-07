@@ -224,9 +224,7 @@
 
     }
 
-    return {
-      data: getData()
-    };
+    return getData();
 
   };
 
