@@ -25,7 +25,6 @@
 
     var getPromise = BlogDataService.retreiveData().data;
 
-    //console.log(blogData);
     getPromise.then(function (data) {
 
       if (data.workComplete) {

@@ -23,11 +23,6 @@
     this.totalOldArticles = localStorageService.get('totalOldArticles') || null;
     this.totalNewArticles = null;
     this.oldBlogPosts = localStorageService.get('oldBlogPosts') || null;
-//    /* the number of articles per page */
-//    this.paginationPageSize = 5;
-//    /* used in */
-//    this.paginationPageSizeLimit = -5;
-    //this.paginationStartFrom = null;
     this.workComplete = localStorageService.get('workComplete')? true: false;
 
     this.blogData = function (data) {
@@ -54,11 +49,6 @@
       return finishDataProcessing();
     };
 
-    this.uniqueId = function () {
-      return uniqueId();
-    };
-
-
     var blogData = function (data) {
 
       // cache the total number of items returned
@@ -67,58 +57,28 @@
       this.addReviewImage();
       this.seoFriendly();
       this.totalArticlesCount();
-      this.uniqueId();
       this.finishDataProcessing();
 
-     /* //_this.localStorageService.add('totalOldArticles', _this.totalOldArticles);
-
-
-      // old blog posts don't have a image attached that can be used in the index layout
-      // the method below adds
-      _this.addReviewImage();
-      // create a seo friendly title and add it to the object in the oldBlogPosts scope
-      _this.seoFriendly();
-
-      //_this.localStorageService.add('oldBlogPosts', _this.oldBlogPosts);
-
-      _this.totalArticlesCount();*/
-
     }.bind(this);
-
-    // create uniqueID for URL from the date
-
-    var uniqueId = function() {
-
-      var regex = /\D/g;
-      var posts = this.oldBlogPosts;
-
-      for (var key in posts) {
-
-        if (posts.hasOwnProperty(key)) {
-
-          if (posts[key].publishedDate) {
-
-            posts[key].uniqueId = posts[key].publishedDate.toString().replace(regex,'').slice(0,6);
-
-          }
-        }
-      }
-
-      this.oldBlogPosts = posts;
-
-    }.bind(this);
-
 
     // change date format on old blog posts to a native Javascript friendly format
     var sortOldBlogPosts = function (posts) {
 
+      var regex = /\D/g;
+
       for (var key in posts) {
 
         if (posts.hasOwnProperty(key)) {
 
           if (posts[key].publishedDate) {
 
-            posts[key].publishedDate = new Date(posts[key].publishedDate);
+            var newDate = new Date(posts[key].publishedDate);
+
+            posts[key].publishedDate = newDate.toString();
+            // create a unique ID from the date which is used in the URL
+            // when the individual blog post is loaded it is used to retrieve
+            // the item from the article data array
+            posts[key].uniqueId = newDate.toString().replace(regex,'').substring(0,6);
 
           }
         }
@@ -131,7 +91,6 @@
       });
 
     }.bind(this);
-
 
     // cache the total number of articles
     // used in pagination
@@ -175,7 +134,6 @@
             l = stopwords.length;
 
             // loop through the SEO watch words and replace with white space hythen
-
             do {
 
               var regEx = new RegExp('\\b\\s' + stopwords[x] + '\\s\\b', 'g');
@@ -200,7 +158,6 @@
       this.oldBlogPosts = oldPosts;
 
     }.bind(this);
-
 
     var addReviewImage = function () {
 
@@ -247,6 +204,8 @@
 
       return deferred.promise;
     }.bind(this);
+
+    this.localStorageService.clearAll();
 
     if (!this.localStorageService.get('oldBlogPosts')) {
 
