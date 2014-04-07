@@ -7,7 +7,7 @@
 
   var app = angular.module('portfolioApp');
 
-  var BlogArticleCtrl = function ($rootScope, $scope, $location, BlogDataService, $log, $timeout) {
+  var BlogArticleCtrl = function ($rootScope, $scope, $location, BlogDataService, $log, $timeout, $sce) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
@@ -15,6 +15,7 @@
     this.BlogDataService = BlogDataService;
     this.$log = $log;
     this.$timeout = $timeout;
+    this.$sce = $sce;
 
     this.$scope.title = null;
     this.$scope.content = null;
@@ -23,13 +24,13 @@
 
   };
 
-  BlogArticleCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataService', '$log', '$timeout'];
+  BlogArticleCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataService', '$log', '$timeout', '$sce'];
 
   BlogArticleCtrl.prototype.loadBlogData = function () {
 
     var blogData;
 
-    var getPromise = this.BlogDataService.retreiveData().data;
+    var getPromise = this.BlogDataService.retreiveData();
 
     getPromise.then(function (data) {
 
@@ -57,17 +58,19 @@
 
     var blogPost = _.filter(this.$scope.oldBlogPosts, function (o) {
 
-      var regex = /\D/g;
+      //var regex = /\D/g;
 
       // filter articles array to find the correct article for the page
-      if (o.publishedDate.replace(regex,'').substring(0,6) === blogId) {
+      if (o.publishedDate.substring(0,6) === blogId) {
 
         return o.publishedDate;
       }
     });
 
+
+
     this.$scope.title = blogPost[0].title;
-    this.$scope.content = blogPost[0].content;
+    this.$scope.content = this.$sce.trustAsHtml(blogPost[0].content);
     this.$scope.displayImage = blogPost[0].displayImage;
     this.$scope.publishedDate = blogPost[0].publishedDate;
 

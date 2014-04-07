@@ -64,7 +64,7 @@
     // change date format on old blog posts to a native Javascript friendly format
     var sortOldBlogPosts = function (posts) {
 
-      var regex = /\D/g;
+      //var regex = /\D/g;
 
       for (var key in posts) {
 
@@ -72,13 +72,13 @@
 
           if (posts[key].publishedDate) {
 
-            var newDate = new Date(posts[key].publishedDate);
+            var newDate = Date.parse(posts[key].publishedDate);
 
             posts[key].publishedDate = newDate.toString();
             // create a unique ID from the date which is used in the URL
             // when the individual blog post is loaded it is used to retrieve
             // the item from the article data array
-            posts[key].uniqueId = newDate.toString().replace(regex,'').substring(0,6);
+            posts[key].uniqueId = newDate.toString().substring(0,6);
 
           }
         }

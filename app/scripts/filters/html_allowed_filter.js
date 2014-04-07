@@ -4,7 +4,7 @@
 
 'use strict';
 
-angular.module('portfolioApp').filter('htmlAllowed', ['$sce', function ($sce) {
+angular.module('portfolioAppFilters', []).filter('htmlAllowed', ['$sce', function ($sce) {
   return function (val) {
     return $sce.trustAsHtml(val);
   };
