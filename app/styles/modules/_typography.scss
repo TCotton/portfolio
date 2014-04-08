@@ -110,8 +110,18 @@ h3.blog-title {
   font-style: italic;
 }
 
+.content-text section > div a {
+  color: $textTwo;
+}
+
 .content-text section > div h3, .content-text section > div h4, .content-text section > div h5, .content-text section > div h6 {
   @include font-calculator($baseFontFamily, 26px);
+  font-weight: 400;
+  color: $textTwo;
+}
+
+.content-text section > div pre {
+  @include font-calculator('monospace, serif', 16px);
   font-weight: 400;
   color: $textTwo;
 }
