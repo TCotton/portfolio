@@ -20,6 +20,9 @@
     this.$scope.company = null;
     this.$scope.workImage = null;
 
+    this.$scope.prevPage = null;
+    this.$scope.nextPage = null;
+
     this.findData();
 
   };
@@ -37,9 +40,10 @@
       }
     });
 
-    if(!_.isEmpty(wordData)) {
+    if (!_.isEmpty(wordData)) {
 
       this.bindData(wordData);
+      this.navigation();
 
     }
 
@@ -54,6 +58,59 @@
     this.$scope.company = data[0].company;
     this.$scope.workImage = data[0].workImage;
 
+  };
+
+  WorkPageCtrl.prototype.navigation = function () {
+
+    var currentPage = this.$rootScope.currentPage.substring(this.$rootScope.currentPage.lastIndexOf('/') + 1, this.$rootScope.currentPage.length);
+
+    // return the object for the current page
+    var page = _.filter(this.WORK, function (o) {
+
+      if (o.internalUrl.substring(o.internalUrl.lastIndexOf('/') + 1, o.length) === currentPage) {
+
+        return o;
+      }
+    });
+
+    if (!_.isEmpty(page)) {
+
+      var pageNumber = page[0].id;
+
+      // return the object for the previous page
+      var prevPage = _.filter(this.WORK, function (o) {
+
+        if (parseInt(o.id, 10) === (parseInt(pageNumber, 10) - 1)) {
+
+          return o;
+        }
+      });
+
+      // return the object for the next page
+      var nextPage = _.filter(this.WORK, function (o) {
+
+        if (parseInt(o.id, 10) === (parseInt(pageNumber, 10) + 1)) {
+
+          return o;
+        }
+      });
+
+      // if last page then start loop all over again
+      nextPage = !_.isEmpty(nextPage)? nextPage: _.filter(this.WORK, function (o,k) {
+
+        if (k === 'blinkbox') {
+          return o;
+        }
+      });
+
+      if (!_.isEmpty(prevPage) && !_.isEmpty(nextPage)) {
+
+        // create href attribute values
+        this.$scope.prevPage = prevPage[0].internalUrl;
+        this.$scope.nextPage = nextPage[0].internalUrl;
+
+      }
+    }
   };
 
   WorkPageCtrl.$inject = ['$rootScope', '$scope', '$log', 'WORK'];
