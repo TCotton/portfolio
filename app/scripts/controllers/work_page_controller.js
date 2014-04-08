@@ -62,6 +62,10 @@
 
   WorkPageCtrl.prototype.navigation = function () {
 
+    /**
+     * TODO: refactor pagination
+     * **/
+
     var currentPage = this.$rootScope.currentPage.substring(this.$rootScope.currentPage.lastIndexOf('/') + 1, this.$rootScope.currentPage.length);
 
     // return the object for the current page
@@ -91,6 +95,15 @@
 
         if (parseInt(o.id, 10) === (parseInt(pageNumber, 10) + 1)) {
 
+          return o;
+        }
+      });
+
+
+      // if first page then the prev link goes to the end of the pages
+      prevPage = !_.isEmpty(prevPage)? prevPage: _.filter(this.WORK, function (o,k) {
+
+        if (k === 'drnewmans') {
           return o;
         }
       });

@@ -54,5 +54,27 @@ describe('Controller: WorkPageCtrl', function () {
 
   });
 
+  it('Checks that the navigation has a prev and next link', function () {
+
+    expect($route.current).toBeUndefined();
+
+    $location.path('/work-projects/thomson-reuters-japan');
+    $httpBackend.expectGET('views/work_page.html').respond(200);
+
+    scope = $rootScope.$new();
+
+    $rootScope.$digest();
+
+    WorkPageCtrl = $controller('WorkPageCtrl', {
+      $scope: scope
+    });
+
+    $rootScope.$digest();
+
+    expect(scope.prevPage).toEqual(WORK.blinkbox.internalUrl);
+    expect(scope.nextPage).toEqual(WORK.lawstudent.internalUrl);
+
+  });
+
 
 });
