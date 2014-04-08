@@ -3,21 +3,21 @@
     "id": "001",
     "title": "lightning.gs",
     "summary": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.",
-    "details": "Lighnting is a single page website that allows the user to upload an image, shrink it (if PNG) and then create a data URI.</p><p>Technologies used on the client-side include Backbone.js, a JavaScript port of PngCrush and various HTML5 APIs including Web Workers, File and FileReader.</p><p>The site is built on a fluid layout and extensively uses CSS3 transforms, transitions and border-radius to achieve the pop art design homage.</p><p>The code is on <a href=\"https://github.com/TCotton/lightning\" rel=\"external\" class=\"underline\">GitHub</a></p>",
+    "details": "<p>Lighnting is a single page website that allows the user to upload an image, shrink it (if PNG) and then create a data URI.</p><p>Technologies used on the client-side include Backbone.js, a JavaScript port of PngCrush and various HTML5 APIs including Web Workers, File and FileReader.</p><p>The site is built on a fluid layout and extensively uses CSS3 transforms, transitions and border-radius to achieve the pop art design homage.</p><p>The code is on <a href=\"https://github.com/TCotton/lightning\" rel=\"external\" class=\"underline\">GitHub</a></p>",
     "code": "Backbone.js",
-    "internalUrl": "/#!/work-projects/lightning",
+    "internalUrl": "/#!/side-projects/lightning",
     "externalUrl": "http://lightning.gs/",
-    "workImage": "/images/blinkboxbooks-screenshot.jpg"
+    "workImage": "/images/lightning-screenshot.png"
   },
   "pennybooks": {
     "id": "002",
     "title": "Penny Books",
     "summary": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.",
-    "details": "</p>Penny Books uses the Amazon API to find books that are on sale for just one penny.</p><p>Technologies used on the server-side include the HTML5 History API, history.js and the jQuery backstretch plugin.</p><p>The site is fully responsive and works and looks great on the mobile, tablet and desktop platforms.</p>",
+    "details": "<p>Penny Books uses the Amazon API to find books that are on sale for just one penny.</p><p>Technologies used on the server-side include the HTML5 History API, history.js and the jQuery backstretch plugin.</p><p>The site is fully responsive and works and looks great on the mobile, tablet and desktop platforms.</p>",
     "code": "HTML5 APIs and PHP backend",
-    "internalUrl": "/#!/work-projects/pennybooks",
+    "internalUrl": "/#!/side-projects/pennybooks",
     "externalUrl": "http://pennybooks.info/",
-    "workImage": "/images/blinkboxbooks-screenshot.jpg"
+    "workImage": "/images/peenybooks-screenshot.png"
   },
   "twttwt": {
     "id": "003",
@@ -25,8 +25,8 @@
     "summary": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.",
     "details": "<p>twt twt uses the Twitter API to allow users to insert unicode characters into their Tweets.</p><p>Technologies used include QAuth, jQuery, jQuery Rumble plugin, Modernizr, Selectivizr and SVG.</p>",
     "code": "HTML5 APIs and PHP backend",
-    "internalUrl": "/#!/work-projects/twttwt",
+    "internalUrl": "/#!/side-projects/twttwt",
     "externalUrl": "https://twttwt.com/",
-    "workImage": "/images/blinkboxbooks-screenshot.jpg"
+    "workImage": "/images/twttwt-screenshot.png"
   }
 }

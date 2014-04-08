@@ -20,6 +20,10 @@ angular.module('portfolioApp', ['AppConstants', 'ngCookies', 'ngResource', 'ngSa
       .when('/side-projects', {
         templateUrl: 'views/side_projects.html'
       })
+      .when('/side-projects/:projectsPage', {
+        templateUrl: 'views/projects_page.html',
+        controller: 'ProjectsPageCtrl'
+      })
       .when('/about-me', {
         templateUrl: 'views/about_me.html'
       })

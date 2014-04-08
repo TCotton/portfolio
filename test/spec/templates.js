@@ -83,4 +83,12 @@ describe('Unit: Templates', function () {
     $httpBackend.flush();
   });
 
+  it('loads individual side projects page at /side-projects/pennybooks', function () {
+    $httpBackend.expectGET('views/projects_page.html')
+      .respond(200);
+    location.path('/side-projects/pennybooks');
+    rootScope.$digest(); // call the digest loop
+    $httpBackend.flush();
+  });
+
 });

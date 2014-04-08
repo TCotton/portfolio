@@ -94,4 +94,20 @@ describe('Routes test', function () {
 
   });
 
+  describe('individual side project page', function () {
+    beforeEach(inject(
+      function ($httpBackend) {
+        $httpBackend.expectGET('views/projects_page.html')
+          .respond(200, 'project page HTML');
+      }
+    ));
+
+    it('should load the side projects page on successful load of /side-projects/pennybooks', function () {
+      location.path('/side-projects/pennybooks');
+      rootScope.$digest(); // call the digest loop
+      expect(route.current.controller).toBe('ProjectsPageCtrl');
+    });
+
+  });
+
 });
