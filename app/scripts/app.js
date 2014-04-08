@@ -14,7 +14,8 @@ angular.module('portfolioApp', ['AppConstants', 'ngCookies', 'ngResource', 'ngSa
         templateUrl: 'views/my_work.html'
       })
       .when('/work-projects/:workPage', {
-        templateUrl: 'views/work_page.html'
+        templateUrl: 'views/work_page.html',
+        controller: 'WorkPageCtrl'
       })
       .when('/side-projects', {
         templateUrl: 'views/side_projects.html'
