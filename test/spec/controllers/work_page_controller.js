@@ -4,7 +4,7 @@
 
 
 'use strict';
-describe('Controller: HeaderCtrl', function () {
+describe('Controller: WorkPageCtrl', function () {
 
   // load the controller's module
   beforeEach(module('portfolioApp'));
@@ -26,25 +26,34 @@ describe('Controller: HeaderCtrl', function () {
     $httpBackend = _$httpBackend_;
     $location = _$location_;
     $route = _$route_;
+  }));
+
+
+  it('Checks that local scope is changed when thomson reuters japan page is loaded', function () {
+
+    expect($route.current).toBeUndefined();
+
+    $location.path('/work-projects/thomson-reuters-japan');
+    $httpBackend.expectGET('views/work_page.html').respond(200);
 
     scope = $rootScope.$new();
+
+    $rootScope.$digest();
+
     WorkPageCtrl = $controller('WorkPageCtrl', {
       $scope: scope
     });
 
-  }));
-
-
-  it('Checks that the scope is changed when the right page is loaded', function () {
-
-    expect($route.current).toBeUndefined();
-    $httpBackend.expectGET('views/work_page.html').respond(200);
-    $location.path('/work-projects/thomson-reuters-japan');
     $rootScope.$digest();
-    console.log($route.current);
+
+    expect(scope.title).toEqual(WORK.thomsonreuters.title);
+    expect(scope.summary).toEqual(WORK.thomsonreuters.summary);
+    expect(scope.details).toEqual(WORK.thomsonreuters.details);
+    expect(scope.code).toEqual(WORK.thomsonreuters.code);
+    expect(scope.company).toEqual(WORK.thomsonreuters.company);
+    expect(scope.workImage).toEqual(WORK.thomsonreuters.workImage);
 
   });
-
 
 
 });

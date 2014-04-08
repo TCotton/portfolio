@@ -13,6 +13,13 @@
     this.$log = $log;
     this.WORK = WORK;
 
+    this.$scope.title = null;
+    this.$scope.summary = null;
+    this.$scope.details = null;
+    this.$scope.code = null;
+    this.$scope.company = null;
+    this.$scope.workImage = null;
+
     this.findData();
 
   };
@@ -30,7 +37,11 @@
       }
     });
 
-    this.bindData(wordData);
+    if(!_.isEmpty(wordData)) {
+
+      this.bindData(wordData);
+
+    }
 
   };
 
