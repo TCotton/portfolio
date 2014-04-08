@@ -351,7 +351,8 @@ module.exports = function (grunt) {
             ROUTES: grunt.file.readJSON('app/scripts/config/routes.json'),
             LINKS: grunt.file.readJSON('app/scripts/config/navigation.json'),
             SLIDER: grunt.file.readJSON('app/scripts/config/slider.json'),
-            CONFIG: grunt.file.readJSON('app/scripts/config/config.json')
+            CONFIG: grunt.file.readJSON('app/scripts/config/config.json'),
+            WORK: grunt.file.readJSON('app/scripts/config/work_pages.json')
           },
           values: {
             debug: false

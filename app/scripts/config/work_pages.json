@@ -1,0 +1,57 @@
+{
+  "blinkbox": {
+    "id": "001",
+    "title": "Blinkboxbooks",
+    "summary": "Working as part of a world class team, Blinkboxbooks was launched in March 2014",
+    "details": "<p>Blinkboxbooks is an a ecommerce book store owned by Tesco. It is built on a full JavaScript stack using angular.js on the frontend and node.js on the backend for routing services.</p><p>My primary responsibility in this project was performance. At the initial usability tests in November 2013, the website was over 3mb in size and took 22 seconds to load on the Tesco Hudle android tablet. By January 2014 the size of the homepage had been reduced to 565kb in size and with load time of under seven seconds on the Hudle, with under 2 seconds the desktop.</p><p>The website is responsive with a heavy emphasis on visual and functionality polarity between the website and the android and iOS apps.</p>",
+    "code": "AngularJS",
+    "company": "Blinkboxbooks, Tescos",
+    "internalUrl": "/#!/work-projects/blinkbox",
+    "externalUrl": "https://www.blinkboxbooks.com/#!/",
+    "workImage": "/images/blinkboxbooks-screenshot.jpg"
+  },
+  "thomsonreuters": {
+    "id": "002",
+    "title": "Thomson Reuters Japan",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.",
+    "details": "<p>Built on the Wordpress platform, I worked with both the Japanese Thomson Reuters team and the team based in Canary Wharf to create a key website for the corporation in their expanding Japanese market. It is a customised Wordpress build with all coding – HTML, CSS, JavaScript and PHP – written by myself.</p>",
+    "code:": "Wordpress",
+    "company": "Thomson Reuters",
+    "internalUrl": "/#!/work-projects/thomson-reuters-japan",
+    "externalUrl": "http://japan.thomsonreuters.com/",
+    "workImage": "/images/thomson-reuters-japan-screenshot.png"
+  },
+  "lawstudent": {
+    "id": "003",
+    "title": "Thomson Reuters Law Student",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.",
+    "details": "<p>Using Wordpress, this was a website refresh for the law student deparment at Thomson Reuters. Technologies I choose to use included the jQuery </p>",
+    "code": "Wordpress",
+    "company": "Thomson Reuters",
+    "internalUrl": "/#!/work-projects/uk-lawstudent",
+    "externalUrl": "http://uklawstudent.thomsonreuters.com/",
+    "workImage": "/images/uk-lawstudent-screenshot.png"
+  },
+  "kaplan": {
+    "id": "004",
+    "title": "Kaplan International",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.",
+    "details": "<p>Due to staff sickness, this flagship human resources website had been put to the side for several months. During my time at Kaplan International, I was given the responsibility of working with the human resources team in order to get this project back on track.</p><p>My first task was to refactor all the code and although it is built on Wordpress, it is heavily customised to meet the needs of the department responsible for updating and maintaining the site</p>",
+    "code": "Wordpress",
+    "company": "Kaplan International",
+    "internalUrl": "/#!/work-projects/kaplan",
+    "externalUrl": "",
+    "workImage": "/images/kaplan-screenshot.png"
+  },
+  "drnewmans": {
+    "id": "005",
+    "title": "Dr Drewmans Clinic",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.",
+    "details": "<p>Working for the Barn Agency, I built with website on the Drupal 7 platform. </p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquet nibh vitae sagittis lacinia. Etiam sed nisi elementum, eleifend nisi sed, aliquam quam. Nullam at magna at felis auctor dictum ac ultricies tortor. Praesent vulputate ac eros vitae adipiscing.</p>",
+    "code": "Drupal",
+    "company": "Barn Agency",
+    "internalUrl": "/#!/work-projects/drnewmans",
+    "externalUrl": "http://www.drnewmansclinic.co.uk/",
+    "workImage": "/images/dr-newmans-screenshot.png"
+  }
+}
