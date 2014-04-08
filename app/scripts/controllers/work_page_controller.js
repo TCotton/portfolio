@@ -43,8 +43,6 @@
     this.$scope.company = data[0].company;
     this.$scope.workImage = data[0].workImage;
 
-    console.log(data[0]);
-
   };
 
   WorkPageCtrl.$inject = ['$rootScope', '$scope', '$log', 'WORK'];

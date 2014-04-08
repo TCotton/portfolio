@@ -75,4 +75,12 @@ describe('Unit: Templates', function () {
     $httpBackend.flush();
   });
 
+  it('loads individual work page at /work-projects/thomson-reuters-japan', function () {
+    $httpBackend.expectGET('views/work_page.html')
+      .respond(200);
+    location.path('/work-projects/thomson-reuters-japan');
+    rootScope.$digest(); // call the digest loop
+    $httpBackend.flush();
+  });
+
 });

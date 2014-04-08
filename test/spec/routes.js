@@ -77,4 +77,21 @@ describe('Routes test', function () {
 
   });
 
+
+  describe('individual work page', function () {
+    beforeEach(inject(
+      function ($httpBackend) {
+        $httpBackend.expectGET('views/work_page.html')
+          .respond(200, 'work page HTML');
+      }
+    ));
+
+    it('should load the work page on successful load of /work-projects/thomson-reuters-japan', function () {
+      location.path('/work-projects/thomson-reuters-japan');
+      rootScope.$digest(); // call the digest loop
+      expect(route.current.controller).toBe('WorkPageCtrl');
+    });
+
+  });
+
 });
