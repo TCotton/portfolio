@@ -25,7 +25,7 @@
 
       <span class="name-block">
       <label for="name" class="visuallyhidden">Please supply your username</label>
-      <span data-ng-show="editUserForm.name.$invalid && submitted"
+      <span data-ng-show="editUserForm.name.$invalid && editUserSubmit.submitted"
             class="error-message">Please supply your username.</span>
       <input type="text" id="name" name="name" value="" placeholder="Username" required="required" class="input"
              data-ng-required="true" data-ng-model="editUser.name"/>
@@ -33,7 +33,7 @@
 
       <span class="text-block">
       <label for="text" class="visuallyhidden">Please supply a valid password</label>
-      <span data-ng-show="editUserForm.text.$invalid && submitted"
+      <span data-ng-show="editUserForm.text.$invalid && editUserSubmit.submitted"
             class="error-message">Please supply a valid password.</span>
       <input type="text" id="text" name="text" value="" placeholder="Password" required="required"
              class="input" data-ng-required="true" data-ng-model="editUser.password"/>

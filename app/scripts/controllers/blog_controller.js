@@ -34,7 +34,6 @@
         this.$scope.totalOldArticles = this.$scope.returnObject.totalOldArticles;
         this.$scope.totalNewArticles = this.$scope.returnObject.totalNewArticles;
 
-
         // why is this used for ?
         this.paginationTotalPages = Math.ceil(this.totalArticles / this.paginationPageSize);
 

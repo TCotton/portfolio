@@ -1,11 +1,6 @@
 /**
  * Created by awalpole on 09/04/2014.
  */
-
-
-/**
- * Created by awalpole on 09/04/2014.
- */
 'use strict';
 (function () {
 
@@ -19,8 +14,10 @@
     this.UsersMongoDB = UsersMongoDB;
 
     this.$scope.addUser = new UsersMongoDB();
-    this.$scope.editUser = {};
-    //this.$scope.whatever.submitted = false;
+    this.$scope.editUser = new UsersMongoDB();
+
+    this.$scope.editUserSubmit = {};
+    this.$scope.editUserSubmit.submitted = false;
     this.$scope.addUserSubmit = {};
     this.$scope.addUserSubmit.submitted = false;
     this.$scope.allUsers = null;
@@ -32,9 +29,25 @@
 
   UserDetailsCtrl.$inject = ['$rootScope', '$scope', '$log', 'UsersMongoDB'];
 
-  UserDetailsCtrl.prototype.editUser = function () {
+  UserDetailsCtrl.prototype.editUser = function (data) {
 
     this.$scope.editThisUser = true;
+    this.$scope.editUser.name = data.name;
+    this.$scope.editUser.password = data.password;
+
+  };
+
+  UserDetailsCtrl.prototype.submitEditUserForm = function (isValid) {
+
+    console.log('submitted');
+
+    this.$scope.editUserSubmit.submitted = true;
+
+    if (isValid) {
+
+      console.log('yes');
+
+    }
 
   };
 
