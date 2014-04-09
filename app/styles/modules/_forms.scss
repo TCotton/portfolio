@@ -17,6 +17,18 @@
   color: $textThree;
 }
 
+.user-details {
+
+  form {
+    input[type="submit"] {
+      margin: 0 0 40px 0;
+    }
+    ~ p {
+      clear: both;
+    }
+  }
+}
+
 .contact, .comments, .login, .user-details {
 
   .input {

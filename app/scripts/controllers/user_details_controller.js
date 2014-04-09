@@ -20,14 +20,23 @@
     this.UsersMongoDB = UsersMongoDB;
 
     this.$scope.addUser = new UsersMongoDB();
-    this.$scope.submitted = false;
+    this.$scope.editUser = {};
+    //this.$scope.whatever.submitted = false;
+    this.$scope.addUser.submitted = false;
     this.$scope.allUsers = null;
+    this.$scope.editThisUser = null;
 
     this.listAllUsers();
 
   };
 
   UserDetailsCtrl.$inject = ['$rootScope', '$scope', '$log', 'UserDetailsService', 'UsersMongoDB'];
+
+  UserDetailsCtrl.prototype.editUser = function () {
+
+    this.$scope.editThisUser = true;
+
+  };
 
   UserDetailsCtrl.prototype.listAllUsers = function () {
 
@@ -49,7 +58,7 @@
 
   UserDetailsCtrl.prototype.submitAddUserForm = function (isValid) {
 
-    this.$scope.submitted = true;
+    this.$scope.addUser.submitted = true;
 
     // check to make sure the form is completely valid
     if (isValid) {

@@ -1346,7 +1346,16 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   color: #999999;
 }
 
-/* line 22, modules/_forms.scss */
+/* line 23, modules/_forms.scss */
+.user-details form input[type="submit"] {
+  margin: 0 0 40px 0;
+}
+/* line 26, modules/_forms.scss */
+.user-details form ~ p {
+  clear: both;
+}
+
+/* line 34, modules/_forms.scss */
 .contact .input, .comments .input, .login .input, .user-details .input {
   width: 70%;
   height: 66px;
@@ -1360,11 +1369,11 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   float: left;
   margin: 0 0 15px 0;
 }
-/* line 33, modules/_forms.scss */
+/* line 45, modules/_forms.scss */
 .contact .input:focus, .comments .input:focus, .login .input:focus, .user-details .input:focus {
   border: #666666;
 }
-/* line 38, modules/_forms.scss */
+/* line 50, modules/_forms.scss */
 .contact .textarea, .comments .textarea, .login .textarea, .user-details .textarea {
   width: 100%;
   height: 271px;
@@ -1378,17 +1387,17 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   float: left;
   margin: 0 0 15px 0;
 }
-/* line 49, modules/_forms.scss */
+/* line 61, modules/_forms.scss */
 .contact .textarea:focus, .comments .textarea:focus, .login .textarea:focus, .user-details .textarea:focus {
   border: #666666;
 }
-/* line 54, modules/_forms.scss */
+/* line 66, modules/_forms.scss */
 .contact [class$="-block"], .comments [class$="-block"], .login [class$="-block"], .user-details [class$="-block"] {
   position: relative;
   display: block;
   clear: both;
 }
-/* line 59, modules/_forms.scss */
+/* line 71, modules/_forms.scss */
 .contact [class$="-block"] .error-message, .comments [class$="-block"] .error-message, .login [class$="-block"] .error-message, .user-details [class$="-block"] .error-message {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
@@ -1404,37 +1413,37 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
-  /* line 89, modules/_forms.scss */
+  /* line 101, modules/_forms.scss */
   input[type='text']:focus, input[type='url']:focus, input[type='email']:focus, textarea:focus {
     font-size: 16px;
   }
 }
 @media screen and (-webkit-min-device-pixel-ratio: 0) and (max-width: 979px) {
-  /* line 95, modules/_forms.scss */
+  /* line 107, modules/_forms.scss */
   input[type='text']:focus, input[type='url']:focus, input[type='email']:focus, textarea:focus {
     font-size: 15px;
   }
 }
 @media screen and (min--moz-device-pixel-ratio: 0) {
   /* another firefox bug :( */
-  /* line 106, modules/_forms.scss */
+  /* line 118, modules/_forms.scss */
   .contact .input, .comments .input, .login .input, .user-details .input {
     width: calc(70% - 20px);
     height: 56px;
   }
-  /* line 111, modules/_forms.scss */
+  /* line 123, modules/_forms.scss */
   .contact .textarea, .comments .textarea, .login .textarea, .user-details .textarea {
     width: calc(100% - 20px);
     height: 261px;
   }
 }
 @media (max-width: 767px) {
-  /* line 122, modules/_forms.scss */
+  /* line 134, modules/_forms.scss */
   .contact .input, .comments .input, .login .input, .user-details .input {
     width: 100%;
     margin-bottom: 10px;
   }
-  /* line 127, modules/_forms.scss */
+  /* line 139, modules/_forms.scss */
   .contact .textarea, .comments .textarea, .login .textarea, .user-details .textarea {
     margin-bottom: 10px;
   }
