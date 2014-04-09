@@ -17,7 +17,7 @@
   color: $textThree;
 }
 
-.contact, .comments, .login {
+.contact, .comments, .login, .user-details {
 
   .input {
     width: 70%;
@@ -101,7 +101,7 @@
   /* another firefox bug :( */
   // come back to this
 
-  .contact, .comments, .login {
+  .contact, .comments, .login, .user-details {
 
     .input {
       width: calc(70% - 20px);
@@ -117,7 +117,7 @@
 
 @include breakpoint("mobile") {
 
-  .contact, .comments, .login {
+  .contact, .comments, .login, .user-details {
 
     .input {
       width: 100%;

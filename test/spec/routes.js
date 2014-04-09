@@ -110,7 +110,7 @@ describe('Routes test', function () {
 
   });
 
-  describe('login page', function () {
+  describe('admin login page', function () {
     beforeEach(inject(
       function ($httpBackend) {
         $httpBackend.expectGET('views/admin/login.html')
@@ -118,8 +118,8 @@ describe('Routes test', function () {
       }
     ));
 
-    it('should load the login page on successful load of /login', function () {
-      location.path('/login');
+    it('should load the login page on successful load of /admin/login', function () {
+      location.path('/admin/login');
       rootScope.$digest(); // call the digest loop
       expect(route.current.controller).toBe('LoginCtrl as AdminLogin');
     });

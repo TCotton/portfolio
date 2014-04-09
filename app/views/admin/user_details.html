@@ -1,0 +1,43 @@
+<div id="banner">
+
+  <section>
+    <h2 class="page-top-title">User details</h2>
+  </section>
+
+</div><!-- end banner -->
+
+<div id="main-content" class="clearfix content-text">
+
+  <div class="user-details">
+
+    <h3 class="content-title">User details</h5>
+
+    <p>Add a new user here</p>
+
+    <form novalidate="novalidate" name="addUserForm"
+          data-ng-submit="AdminUserDetailsCtrl.submitAddUserForm(addUserForm.$valid)">
+
+      <span class="name-block">
+      <label for="name" class="visuallyhidden">Please supply your username</label>
+      <span data-ng-show="addUserForm.name.$invalid && submitted" class="error-message">Please supply your username.</span>
+      <input type="text" id="name" name="name" value="" placeholder="Username" required="required" class="input"
+             data-ng-required="true" data-ng-model="addUser.name"/>
+      </span>
+
+      <span class="text-block">
+      <label for="text" class="visuallyhidden">Please supply a valid password</label>
+      <span data-ng-show="addUserForm.text.$invalid && submitted" class="error-message">Please supply a valid password.</span>
+      <input type="text" id="text" name="text" value="" placeholder="Password" required="required"
+             class="input" data-ng-required="true" data-ng-model="addUser.password"/>
+      </span>
+
+      <input type="submit" value="submit" class="button-contact"/>
+
+    </form>
+
+
+  </div>
+  <!-- end comments -->
+
+
+</div><!-- end main content -->

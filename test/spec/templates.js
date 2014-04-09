@@ -91,10 +91,10 @@ describe('Unit: Templates', function () {
     $httpBackend.flush();
   });
 
-  it('loads login page at  /login', function () {
+  it('loads login page at /admin/login', function () {
     $httpBackend.expectGET('views/admin/login.html')
       .respond(200);
-    location.path('/login');
+    location.path('/admin/login');
     rootScope.$digest(); // call the digest loop
     $httpBackend.flush();
   });
