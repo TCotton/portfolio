@@ -11,6 +11,17 @@
   "htmlFiler": {
     "textToFilter": "<p>There is enough detail in <em>Drupal 7 Module Development</em> to provide you with grounding in Drupal PHP basics: hooks, APIs and architecture overview. </p> <p><strong>Todd Tomlinson and John K. VanDyk: Pro Drupal 7 Development (2010, Apress)</strong></p> <p><img class=\"left\" alt=\"Pro Drupal 7 Development\" src=\"http://www.suburban-glory.com/images/pro-drupal-7-development.jpg\" /></p> <p>While <em>Drupal 7 Module Development</em> is a good starting point, <em>Pro Drupal 7 Development</em> is a 688 page bible that you will need close at hand if you really want to understand Drupal code.</p>"
   },
+  "adminUsers": {
+    "5345510de4b0bbfbddeb1d94": {
+      "name": "AndyW",
+      "password": "revolution"
+    },
+    "534564ade4b0bbfbddeb422e": {
+      "name": "Joe Jacobs",
+      "password": "yetanotherpassword"
+    }
+  },
+  "mongoDBUrl": "https://api.mongolab.com/api/1/databases/portfolio/collections/user?apiKey=AMGI-nBnDMvuoBtlpnB7TrOA4w3G3HuK",
   "returnedRSS": {
     "data": {
       "responseData": {

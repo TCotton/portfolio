@@ -11,18 +11,18 @@
 
   var app = angular.module('portfolioApp');
 
-  var UserDetailsCtrl = function ($rootScope, $scope, $log, UserDetailsService, UsersMongoDB) {
+  var UserDetailsCtrl = function ($rootScope, $scope, $log, UsersMongoDB) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
     this.$log = $log;
-    this.UserDetailsService = UserDetailsService;
     this.UsersMongoDB = UsersMongoDB;
 
     this.$scope.addUser = new UsersMongoDB();
     this.$scope.editUser = {};
     //this.$scope.whatever.submitted = false;
-    this.$scope.addUser.submitted = false;
+    this.$scope.addUserSubmit = {};
+    this.$scope.addUserSubmit.submitted = false;
     this.$scope.allUsers = null;
     this.$scope.editThisUser = null;
 
@@ -30,7 +30,7 @@
 
   };
 
-  UserDetailsCtrl.$inject = ['$rootScope', '$scope', '$log', 'UserDetailsService', 'UsersMongoDB'];
+  UserDetailsCtrl.$inject = ['$rootScope', '$scope', '$log', 'UsersMongoDB'];
 
   UserDetailsCtrl.prototype.editUser = function () {
 
@@ -50,6 +50,8 @@
 
     returnedPromise.then(function (value) {
 
+      console.log(JSON.stringify(value));
+
       this.$scope.allUsers = value;
 
     }.bind(this));
@@ -58,7 +60,7 @@
 
   UserDetailsCtrl.prototype.submitAddUserForm = function (isValid) {
 
-    this.$scope.addUser.submitted = true;
+    this.$scope.addUserSubmit.submitted = true;
 
     // check to make sure the form is completely valid
     if (isValid) {
