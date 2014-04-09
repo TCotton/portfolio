@@ -1,10 +1,14 @@
+/**
+ * Created by awalpole on 09/04/2014.
+ */
+
 'use strict';
 describe('Controller: FormCtrl', function () {
 
   // load the controller's module
   beforeEach(module('portfolioApp', 'testConstants'));
 
-  var FormCtrl;
+  var AdminLogin;
   var scope;
   var $controller;
   var $rootScope;
@@ -17,7 +21,7 @@ describe('Controller: FormCtrl', function () {
     MOCK_DATA = _MOCK_DATA_;
 
     scope = $rootScope.$new();
-    FormCtrl = $controller('FormCtrl', {
+    AdminLogin = $controller('LoginCtrl as AdminLogin', {
       $scope: scope
     });
   }));
@@ -25,7 +29,7 @@ describe('Controller: FormCtrl', function () {
   it('Checks that scope changes to true after data is passed to the submitContactForm method', function () {
 
     scope.$apply(function(){
-      scope.submitContactForm(MOCK_DATA.formController);
+      AdminLogin.submitLoginForm(MOCK_DATA.loginController);
     });
 
     expect(scope.submitted).toBe(true);
