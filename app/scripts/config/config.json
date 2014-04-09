@@ -9,9 +9,5 @@
     "BLOG_5": "images/blog-stock-images/stock-photo-five.jpg",
     "BLOG_6": "images/blog-stock-images/stock-photo-six.jpg",
     "BLOG_7": "images/blog-stock-images/stock-photo-seven.jpg"
-  },
-  "MONGOLAB_CONFIG": {
-    "API": "AMGI-nBnDMvuoBtlpnB7TrOA4w3G3HuK",
-    "DB_NAME": "portfolio"
   }
 }

@@ -7,7 +7,7 @@ angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$locatio
 
   $rootScope.$on('$locationChangeStart', function () {
 
-    if(!$rootScope.pageChange) {
+    if (!$rootScope.pageChange) {
       $rootScope.pageChange = true;
     }
 
@@ -18,7 +18,7 @@ angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$locatio
 
     // temp solution
     // this also forces the browser to load from the top when navigating back
-    $window.scrollTo(0,0);
+    $window.scrollTo(0, 0);
 
   });
 
@@ -34,3 +34,5 @@ angular.module('HashBangURLs', []).config(['$locationProvider', function ($locat
 angular.module('ngAnimate', []).config(['$animateProvider', function ($animateProvider) {
   $animateProvider.classNameFilter(/\animate-/);
 }]);
+
+

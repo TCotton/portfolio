@@ -11,26 +11,62 @@
 
   var app = angular.module('portfolioApp');
 
-  var UserDetailsCtrl = function ($rootScope, $scope, $log) {
+  var UserDetailsCtrl = function ($rootScope, $scope, $log, UserDetailsService, UsersMongoDB) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
     this.$log = $log;
+    this.UserDetailsService = UserDetailsService;
+    this.UsersMongoDB = UsersMongoDB;
 
-    this.$scope.addUser = {};
+    this.$scope.addUser = new UsersMongoDB();
     this.$scope.submitted = false;
+    this.$scope.allUsers = null;
+
+    this.listAllUsers();
 
   };
 
-  UserDetailsCtrl.$inject = ['$rootScope', '$scope', '$log'];
+  UserDetailsCtrl.$inject = ['$rootScope', '$scope', '$log', 'UserDetailsService', 'UsersMongoDB'];
 
-  UserDetailsCtrl.prototype.submitAddUserForm = function(isValid) {
+  UserDetailsCtrl.prototype.listAllUsers = function () {
+
+    // return all user details from the user document
+    var returnedPromise = this.UsersMongoDB.all(null, function () {
+    }, function (value) {
+
+      this.$log('Failure: UserDetailsCtrl.listAllUsers()', value);
+
+    }.bind(this));
+
+    returnedPromise.then(function (value) {
+
+      this.$scope.allUsers = value;
+
+    }.bind(this));
+
+  };
+
+  UserDetailsCtrl.prototype.submitAddUserForm = function (isValid) {
 
     this.$scope.submitted = true;
 
     // check to make sure the form is completely valid
     if (isValid) {
-      console.log(this.$scope.addUser);
+      // submit details to mongodDB
+
+      var returnedPromise = this.$scope.addUser.$save(function () {
+      }, function (value) {
+
+        this.$log('Failure: UserDetailsCtrl.submitAddUserForm', value);
+
+      }.bind(this));
+
+      returnedPromise.then(function (value) {
+
+        console.log(value);
+
+      }.bind(this));
     }
 
   };

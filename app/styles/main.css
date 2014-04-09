@@ -993,7 +993,7 @@ h3.blog-title {
 
 /* little mixin for standard blog css attributes and values */
 /* line 86, modules/_typography.scss */
-.content-text li {
+.content-text ul {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
   margin-bottom: 1.5625em;

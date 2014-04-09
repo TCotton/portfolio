@@ -90,7 +90,7 @@ h3.blog-title {
   }
 }
 
-@include contentText('li') {
+@include contentText('ul') {
   font-weight: 400;
   list-style: none;
 }
