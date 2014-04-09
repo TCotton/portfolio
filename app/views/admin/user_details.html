@@ -18,10 +18,14 @@
         <li><b>Name:</b> <span ng-bind="user.name"></span></li>
         <li><b>Password:</b> <span ng-bind="user.password"></span></li>
         <li data-ng-click="AdminUserDetailsCtrl.editUser(user)"><a href="">Edit the details of this user</a></li>
+        <li data-ng-click="AdminUserDetailsCtrl.deleteUser(user)"><a href="">Delete this user</a></li>
+
       </ul>
 
+      <p data-ng-if="formSuccess" data-ng-bind="formSuccess" class="bold"></p>
+
       <form novalidate="novalidate" name="editUserForm"
-            data-ng-submit="AdminUserDetailsCtrl.submitEditUserForm(addUserForm.$valid)" ng-if="editThisUser">
+            data-ng-submit="AdminUserDetailsCtrl.submitEditUserForm(editUserForm.$valid)" ng-if="editThisUser">
 
       <span class="name-block">
       <label for="name" class="visuallyhidden">Please supply your username</label>
@@ -38,6 +42,8 @@
       <input type="text" id="text" name="text" value="" placeholder="Password" required="required"
              class="input" data-ng-required="true" data-ng-model="editUser.password"/>
       </span>
+
+        <input type="hidden" data-ng-model="editUser._id.$oid" value="" />
 
         <input type="submit" value="submit" class="button-contact"/>
 
@@ -63,6 +69,7 @@
       <input type="text" id="text" name="text" value="" placeholder="Password" required="required"
              class="input" data-ng-required="true" data-ng-model="addUser.password"/>
       </span>
+
 
         <input type="submit" value="submit" class="button-contact"/>
 
