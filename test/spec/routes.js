@@ -124,6 +124,21 @@ describe('Routes test', function () {
       expect(route.current.controller).toBe('LoginCtrl as AdminLogin');
     });
 
+  });
+
+  describe('admin user details page', function () {
+    beforeEach(inject(
+      function ($httpBackend) {
+        $httpBackend.expectGET('views/admin/user_details.html')
+          .respond(200, 'user details page HTML');
+      }
+    ));
+
+    it('should load the admin user details page on successful load of /admin/user-details', function () {
+      location.path('/admin/user-details');
+      rootScope.$digest(); // call the digest loop
+      expect(route.current.controller).toBe('UserDetailsCtrl as AdminUserDetailsCtrl');
+    });
 
   });
 

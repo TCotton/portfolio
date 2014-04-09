@@ -99,4 +99,12 @@ describe('Unit: Templates', function () {
     $httpBackend.flush();
   });
 
+  it('loads admin user details page at /admin/user-details', function () {
+    $httpBackend.expectGET('views/admin/user_details.html')
+      .respond(200);
+    location.path('/admin/user-details');
+    rootScope.$digest(); // call the digest loop
+    $httpBackend.flush();
+  });
+
 });

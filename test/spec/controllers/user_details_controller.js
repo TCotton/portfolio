@@ -3,12 +3,12 @@
  */
 
 'use strict';
-describe('Controller: LoginCtrl as AdminLogin', function () {
+describe('Controller: UserDetailsCtrl as AdminUserDetailsCtrl', function () {
 
   // load the controller's module
   beforeEach(module('portfolioApp', 'testConstants'));
 
-  var AdminLogin;
+  var AdminUserDetailsCtrl;
   var scope;
   var $controller;
   var $rootScope;
@@ -21,15 +21,15 @@ describe('Controller: LoginCtrl as AdminLogin', function () {
     MOCK_DATA = _MOCK_DATA_;
 
     scope = $rootScope.$new();
-    AdminLogin = $controller('LoginCtrl as AdminLogin', {
+    AdminUserDetailsCtrl = $controller('UserDetailsCtrl as AdminUserDetailsCtrl', {
       $scope: scope
     });
   }));
 
-  it('Checks that scope changes to true after data is passed to the AdminLogin.submitLoginForm method', function () {
+  it('Checks that scope changes to true after data is passed to the AdminUserDetailsCtrl.submitAddUserForm method', function () {
 
     scope.$apply(function(){
-      AdminLogin.submitLoginForm(MOCK_DATA.loginController);
+      AdminUserDetailsCtrl.submitAddUserForm(MOCK_DATA.loginController);
     });
 
     expect(scope.submitted).toBe(true);
