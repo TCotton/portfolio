@@ -67,8 +67,6 @@
       }
     });
 
-
-
     this.$scope.title = blogPost[0].title;
     this.$scope.content = this.$sce.trustAsHtml(blogPost[0].content);
     this.$scope.displayImage = blogPost[0].displayImage;

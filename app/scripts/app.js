@@ -47,6 +47,10 @@ angular.module('portfolioApp', ['AppConstants', 'ngCookies', 'ngResource', 'ngSa
         templateUrl: 'views/admin/user_details.html',
         controller: 'UserDetailsCtrl as AdminUserDetailsCtrl'
       })
+      .when('/admin/blog-details', {
+        templateUrl: 'views/admin/blog_details.html',
+        controller: 'BlogDetailsCtrl as AdminBlogDetailsCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
