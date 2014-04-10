@@ -180,6 +180,12 @@
 
   };
 
+  BlogDetailsCtrl.prototype.getBlog = function () {
+
+
+
+  };
+
   BlogDetailsCtrl.$inject = ['$rootScope', '$scope', '$log', 'BlogMongoDB'];
 
   app.controller('BlogDetailsCtrl', BlogDetailsCtrl);

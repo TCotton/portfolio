@@ -74,32 +74,4 @@ describe('Controller: UserDetailsCtrl as AdminUserDetailsCtrl', function () {
 
   });
 
- /* it('Checks that the local scope changes after the user clicks to delete a user: AdminUserDetailsCtrl.deleteUser()', function () {
-
-    var deferred = $q.defer();
-    var promise = deferred.promise;
-
-    promise.then(function(value) { scope.allUsers = value; });
-    expect(scope.allUsers).toBe(null);
-
-    deferred.resolve(userObect);
-
-    expect(scope.allUsers).toBe(null);
-
-    $httpBackend.expect('GET', MOCK_DATA.mongoDBUrl).respond(200, userObect);
-
-
-    $rootScope.$apply();
-
-
-    scope.$apply(function () {
-      AdminUserDetailsCtrl.listAllUsers(userObect);
-    });
-
-    expect(scope.allUsers).toBe(userObect);
-
-    //expect(scope.$scope.deleteU).toBe(userObect);
-
-  });*/
-
 });

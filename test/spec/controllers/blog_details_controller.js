@@ -32,22 +32,6 @@ describe('Controller: BlogDetailsCtrl as AdminBlogDetailsCtrl', function () {
 
   }));
 
-  iit('Checks that scope changes to true after AdminBlogDetailsCtrl.addBlog method is run - validates the private method createContentSnippet()', function () {
-
-    scope.$apply(function(){
-      scope.addBlogFormData = MOCK_DATA.blogArticle;
-      AdminBlogDetailsCtrl.addBlog(true);
-    });
-    //$rootScope.$apply();
-
-    console.log(scope.addBlogFormData.$save);
-
-
-   // expect(scope.addBlogFormData.contentSnippet).toContain(' ...');
-
-  });
-
-
 
 
 });
