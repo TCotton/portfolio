@@ -49,7 +49,7 @@ p.page-top-text-banner {
 }
 
 .front-page-bottom-text {
-  @include font-calculator($baseFontFamily, 13px, 0);
+  @include font-calculator($baseFontFamily, 14px, 0);
   font-weight: 600;
   color: white;
   clear: both;
