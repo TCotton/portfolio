@@ -30,6 +30,7 @@
     "browserTrigger": false,
     "alert": false,
     "getSlug": false,
-    "spyOn": false
+    "spyOn": false,
+    "iit": false
   }
 }

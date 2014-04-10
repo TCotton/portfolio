@@ -21,6 +21,12 @@
       "password": "yetanotherpassword"
     }
   },
+  "blogArticle": {
+    "title": "Bringing Design and Research Closer Together",
+    "author": "Andy Walpole",
+    "category": " Code ",
+    "content": "<p>Let’s take a new product idea as an example. Say you wanted to develop a responsive tool for web designers but you weren’t sure what aspect of responsive design to focus on. First of all, you should pose a hypothesis or problem statement to gather ideas around. For example: /“How to speed up a designer’s responsive workflow./” You would then need to gather insights around this topic. You could run some interviews with freelance designers about how they work responsively. You could shadow a development team for the day to understand their processes. You could observe conversations on Twitter or IRC or wherever your target audience interact to see what people talk about. You could search out industry data and articles currently available.</p>\n\n<p>The next stage is to comb through this data and extract insights from it. You can use good old Post-it notes and a sharpie: capture one insight or thought per Post-it. If one insight leads into another, use two Post-its. The objective is volume. Try to ensure clarity in each Post-it so you don’t have to go back and reference material again (maybe you could use a key if you think it’ll get confusing).</p>"
+  },
   "mongoDBUrl": "https://api.mongolab.com/api/1/databases/portfolio/collections/user?apiKey=AMGI-nBnDMvuoBtlpnB7TrOA4w3G3HuK",
   "returnedRSS": {
     "data": {

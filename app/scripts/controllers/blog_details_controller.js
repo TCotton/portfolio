@@ -172,7 +172,8 @@
         }
 
         this.$scope.addBlogFormSubmit = false;
-        window.scrollTo(0, 0);
+        //window.scrollTo(0, 0)
+        window.location = window.location.href + '#main-content';
 
       }.bind(this));
     }
