@@ -25,7 +25,7 @@
       <p data-ng-if="formSuccess" data-ng-bind="formSuccess" class="bold"></p>
 
       <form novalidate="novalidate" name="editUserForm"
-            data-ng-submit="AdminUserDetailsCtrl.submitEditUserForm(editUserForm.$valid)" ng-if="editThisUser">
+            data-ng-submit="AdminUserDetailsCtrl.submitEditUserForm(editUserForm.$valid)" ng-if="editIndPost">
 
       <span class="name-block">
       <label for="name" class="visuallyhidden">Please supply your username</label>

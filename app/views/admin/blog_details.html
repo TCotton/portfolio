@@ -22,14 +22,14 @@
     <p data-ng-if="formSuccess" data-ng-bind="formSuccess" class="bold"></p>
 
     <form novalidate="novalidate" name="addBlogForm"
-          data-ng-submit="AdminBlogDetailsCtrl.addBlog(addBlogForm.$valid)">
+          data-ng-submit="AdminBlogDetailsCtrl.editBlog(addBlogForm.$valid)" data-ng-if="">
 
       <span class="title-block">
       <label for="title" class="visuallyhidden">Blog article title</label>
       <span data-ng-show="addBlogForm.title.$invalid && addBlogFormSubmit"
             class="error-message">Please provide a blog title.</span>
       <input type="text" id="title" name="title" value="" placeholder="Title" required="required" class="input"
-             data-ng-required="true" data-ng-model="addBlogFormData.title"/>
+             data-ng-required="true" data-ng-model="editBlogFormData.title"/>
       </span>
 
       <span class="author-block">
@@ -37,7 +37,7 @@
       <span data-ng-show="addBlogForm.author.$invalid && addBlogFormSubmit"
             class="error-message">Please provide the blog article author.</span>
       <input type="text" id="author" name="author" value="" placeholder="Author" required="required"
-             class="input" data-ng-required="true" data-ng-model="addBlogFormData.author"/>
+             class="input" data-ng-required="true" data-ng-model="editBlogFormData.author"/>
       </span>
 
       <span class="category-block">
@@ -45,14 +45,14 @@
       <span data-ng-show="addBlogForm.category.$invalid && addBlogFormSubmit"
             class="error-message">Please provide a blog category.</span>
       <input type="text" id="category" name="category" value="" placeholder="Category" required="required"
-             class="input" data-ng-required="true" data-ng-model="addBlogFormData.category"/>
+             class="input" data-ng-required="true" data-ng-model="editBlogFormData.category"/>
       </span>
 
             <span class="content-block">
             <label for="content" class="visuallyhidden">Content</label>
             <span data-ng-show="addBlogForm.content.$invalid && addBlogFormSubmit" class="error-message">Don't forget to add the content!</span>
             <textarea id="content" cols="10" rows="40" name="content" placeholder="Content" required="required"
-                      class="textarea" data-ng-required="true" data-ng-model="addBlogFormData.content"></textarea>
+                      class="textarea" data-ng-required="true" data-ng-model="editBlogFormData.content"></textarea>
             </span>
 
             <span class="displayImage-block">
@@ -60,8 +60,10 @@
         345px"</label>
       <input type="url" id="displayImage" name="displayImage" value=""
              placeholder="Display image URL. Optional. The image must be 898px x 345px"
-             class="input" data-ng-model="addBlogFormData.displayImage"/>
+             class="input" data-ng-model="editBlogFormData.displayImage"/>
       </span>
+
+        <input type="hidden" value="" data-ng-model="_id.$oid" />
 
       <input type="submit" value="submit" class="button-contact" data-ng-disabled="formSuccess"/>
 

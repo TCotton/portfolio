@@ -44,12 +44,12 @@
     };
 
     // used when blog created and when edited
-    var trimString = function(blogObject) {
+    var trimString = function (blogObject) {
 
       // trim white space off the start and end of the string values after successful form submission
-      for(var key in blogObject) {
+      for (var key in blogObject) {
 
-        if(key.isPrototypeOf(blogObject) && _.isString(blogObject)) {
+        if (key.isPrototypeOf(blogObject) && _.isString(blogObject)) {
 
           blogObject[key] = blogObject[key].toString();
 
@@ -80,7 +80,7 @@
       trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(' '))) + ' ...';
 
       //strip and HTML tags
-      return trimmedString.replace(/(<([^>]+)>)/ig,'').trim();
+      return trimmedString.replace(/(<([^>]+)>)/ig, '').trim();
 
     }.bind(this);
 
@@ -186,7 +186,38 @@
 
   };
 
-  BlogDetailsCtrl.prototype.getBlogs  = function () {
+  BlogDetailsCtrl.prototype.editBlog = function (isValid) {
+
+    this.$scope.addBlogFormSubmit = true;
+
+    // check to make sure the form is completely valid
+    if (isValid) {
+
+      this.$scope.addBlogFormData = this.trimString(this.$scope.addBlogFormData);
+      this.$scope.addBlogFormData.url = this.addSEOFriendlyURL(this.$scope.addBlogFormData.title);
+      this.$scope.addBlogFormData.contentSnippet = this.createContentSnippet(this.$scope.addBlogFormData.content);
+
+      // submit details to mongodDB
+      var returnedPromise = this.$scope.addBlogFormData.$update(function () {
+      }, function (value) {
+
+        this.$log('Failure: BlogDetailsCtrl.editBlog', value);
+
+      }.bind(this));
+
+      returnedPromise.then(function () {
+
+        this.$scope.formSuccess = 'You have successfully edited the blog post';
+
+        this.$scope.editIndPost = false;
+
+        this.$scope.addBlogFormSubmit = false;
+
+      }.bind(this));
+    }
+  };
+
+  BlogDetailsCtrl.prototype.getBlogs = function () {
     // request all blogs from the blog document
     // which is then listed using ng-repeat
 
@@ -206,7 +237,7 @@
 
   };
 
-  BlogDetailsCtrl.prototype.deleteArticle = function (data, deletePost){
+  BlogDetailsCtrl.prototype.deleteArticle = function (data, deletePost) {
 
     // default value of attribute if not defined
     deletePost = (typeof optionalArg === 'undefined') ? false : deletePost;
@@ -217,13 +248,29 @@
 
   };
 
-  BlogDetailsCtrl.prototype.editArticle = function (data){
+  BlogDetailsCtrl.prototype.editArticle = function (data) {
 
-    console.log(data);
+    // display form which uses ng-if to hide
+    this.$scope.editIndPost = true;
+
+    this.$scope.editBlogFormData = {
+      title: data.title,
+      author: data.author,
+      category: data.category,
+      content: data.content,
+      displayImage: data.displayImage
+    };
+
+    this.$scope.editBlogFormData._id = {};
+
+    this.$scope.editBlogFormData._id.$oid = data._id.$oid;
+
+    // populate form models with values passed in the 'data' attribute
+    //this.$scope.editBlogFormData.title = data
 
   };
 
-  BlogDetailsCtrl.prototype.hidePopup = function (){
+  BlogDetailsCtrl.prototype.hidePopup = function () {
 
     this.$scope.displayPopup = null;
 
