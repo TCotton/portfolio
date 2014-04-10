@@ -22,15 +22,7 @@ angular.module('portfolioApp').directive('blogBlockDirective', [function () {
       '<footer>' +
       '<p class="read-more"><a data-ng-href="/#!/blog/{{blog.url}}?id={{blog.uniqueId}}" class="underline">Read more...</a></p>' +
       '</footer>' +
-      '</article>',
-
-    link: function () {
-
-      //console.log(blogDirective);
-
-
-    }
-
+      '</article>'
   };
 
 }]);

@@ -36,6 +36,7 @@
 
   UserDetailsCtrl.prototype.editUser = function (data) {
 
+    // populate form field models with the data of the user about to be edited
     this.$scope.editThisUser = true;
     this.$scope.editUser.name = data.name;
     this.$scope.editUser.password = data.password;

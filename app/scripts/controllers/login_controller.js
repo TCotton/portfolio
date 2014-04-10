@@ -26,6 +26,9 @@
 
     // check to make sure the form is completely valid
     if (isValid) {
+
+
+      /** TODO query database for user, if successful give them a cookie and redirect them to the admin index page **/
       console.log(this.$scope.login);
     }
 

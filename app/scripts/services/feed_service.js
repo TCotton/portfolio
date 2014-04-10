@@ -16,6 +16,7 @@
 
     var _this = this;
 
+    // returns the Suburban Glory RSS feed from the rackspace cloud
     return _this.$http.jsonp(_this.CONFIG.JSONP_GOOGLE_API + encodeURIComponent(_this.CONFIG.RSS_FEED_LINK),
       {
         'cache': false

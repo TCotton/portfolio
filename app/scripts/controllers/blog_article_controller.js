@@ -58,8 +58,6 @@
 
     var blogPost = _.filter(this.$scope.oldBlogPosts, function (o) {
 
-      //var regex = /\D/g;
-
       // filter articles array to find the correct article for the page
       if (o.publishedDate.substring(0,6) === blogId) {
 

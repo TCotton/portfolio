@@ -43,7 +43,7 @@
 
     }.bind(this), function (response) {
 
-      this.$log.log('Error', response);
+      this.$log.log('Error BlogCtrl', response);
 
     }.bind(this));
 
@@ -59,6 +59,7 @@
 
   BlogCtrl.prototype.currentPage = function () {
 
+    // return the current page url id value
     return this.$rootScope.currentPage.substr(this.$rootScope.currentPage.length - 2, this.$rootScope.currentPage.length - 1);
 
   };

@@ -19,11 +19,16 @@
     this.$interval = $interval;
     this.$log = $log;
 
+    // good practice to list all local scope objects at the top so that all coder is immmediately
+    // familiar with all local scopes used in this controller
+
     this.totalArticles = null;
     this.totalOldArticles = localStorageService.get('totalOldArticles') || null;
     this.totalNewArticles = null;
     this.oldBlogPosts = localStorageService.get('oldBlogPosts') || null;
-    this.workComplete = localStorageService.get('workComplete')? true: false;
+    this.workComplete = localStorageService.get('workComplete') ? true : false;
+
+    // here are private methods
 
     this.blogData = function (data) {
       return blogData(data);
@@ -64,8 +69,6 @@
     // change date format on old blog posts to a native Javascript friendly format
     var sortOldBlogPosts = function (posts) {
 
-      //var regex = /\D/g;
-
       for (var key in posts) {
 
         if (posts.hasOwnProperty(key)) {
@@ -73,12 +76,14 @@
           if (posts[key].publishedDate) {
 
             var newDate = Date.parse(posts[key].publishedDate);
+            // use Date.parse so that the value is in millisends
+            // the inbuilt anguar filter date will format it to something easily understood
 
             posts[key].publishedDate = newDate.toString();
             // create a unique ID from the date which is used in the URL
             // when the individual blog post is loaded it is used to retrieve
             // the item from the article data array
-            posts[key].uniqueId = newDate.toString().substring(0,6);
+            posts[key].uniqueId = newDate.toString().substring(0, 6);
 
           }
         }
@@ -100,7 +105,7 @@
 
     }.bind(this);
 
-    var finishDataProcessing = function (){
+    var finishDataProcessing = function () {
 
       this.workComplete = true;
       this.localStorageService.add('totalOldArticles', this.totalOldArticles);
@@ -112,6 +117,7 @@
     // create SEO friendly URL from title and add it to the oldBlogPosts scope
     var seoFriendly = function () {
 
+      // in this array are a liist of stopwords which have less SEO value
       var stopwords = ['a', 'about', 'above', 'across', 'after', 'afterwards', 'again', 'against', 'all', 'almost', 'alone', 'along', 'already', 'also', 'although', 'always', 'am', 'among', 'amongst', 'amoungst', 'amount', 'an', 'and', 'another', 'any', 'anyhow', 'anyone', 'anything', 'anyway', 'anywhere', 'are', 'around', 'as', 'at', 'back', 'be', 'became', 'because', 'become', 'becomes', 'becoming', 'been', 'before', 'beforehand', 'behind', 'being', 'below', 'beside', 'besides', 'between', 'beyond', 'bill', 'both', 'bottom', 'but', 'by', 'call', 'can', 'cannot', 'cant', 'co', 'con', 'could', 'couldnt', 'cry', 'de', 'describe', 'detail', 'do', 'done', 'down', 'due', 'during', 'each', 'eg', 'eight', 'either', 'eleven', 'else', 'elsewhere', 'empty', 'enough', 'etc', 'even', 'ever', 'every', 'everyone', 'everything', 'everywhere', 'except', 'few', 'fifteen', 'fify', 'fill', 'find', 'fire', 'first', 'five', 'for', 'former', 'formerly', 'forty', 'found', 'four', 'from', 'front', 'full', 'further', 'get', 'give', 'go', 'had', 'has', 'hasnt', 'have', 'he', 'hence', 'her', 'here', 'hereafter', 'hereby', 'herein', 'hereupon', 'hers', 'herself', 'him', 'himself', 'his', 'how', 'however', 'hundred', 'ie', 'if', 'in', 'inc', 'indeed', 'interest', 'into', 'is', 'it', 'its', 'itself', 'keep', 'last', 'latter', 'latterly', 'least', 'less', 'ltd', 'made', 'many', 'may', 'me', 'meanwhile', 'might', 'mill', 'mine', 'more', 'moreover', 'most', 'mostly', 'move', 'much', 'must', 'my', 'myself', 'name', 'namely', 'neither', 'never', 'nevertheless', 'next', 'nine', 'no', 'nobody', 'none', 'noone', 'nor', 'not', 'nothing', 'now', 'nowhere', 'of', 'off', 'often', 'on', 'once', 'one', 'only', 'onto', 'or', 'other', 'others', 'otherwise', 'our', 'ours', 'ourselves', 'out', 'over', 'own', 'part', 'per', 'perhaps', 'please', 'put', 'rather', 're', 'same', 'see', 'seem', 'seemed', 'seeming', 'seems', 'serious', 'several', 'she', 'should', 'show', 'side', 'since', 'sincere', 'six', 'sixty', 'so', 'some', 'somehow', 'someone', 'something', 'sometime', 'sometimes', 'somewhere', 'still', 'such', 'system', 'take', 'ten', 'than', 'that', 'the', 'their', 'them', 'themselves', 'then', 'thence', 'there', 'thereafter', 'thereby', 'therefore', 'therein', 'thereupon', 'these', 'they', 'thickv', 'thin', 'third', 'this', 'those', 'though', 'three', 'through', 'throughout', 'thru', 'thus', 'to', 'together', 'too', 'top', 'toward', 'towards', 'twelve', 'twenty', 'two', 'un', 'under', 'until', 'up', 'upon', 'us', 'very', 'via', 'was', 'we', 'well', 'were', 'what', 'whatever', 'when', 'whence', 'whenever', 'where', 'whereafter', 'whereas', 'whereby', 'wherein', 'whereupon', 'wherever', 'whether', 'which', 'while', 'whither', 'who', 'whoever', 'whole', 'whom', 'whose', 'why', 'will', 'with', 'within', 'without', 'would', 'yet', 'you', 'your', 'yours', 'yourself', 'yourselves', 'the'];
 
       var oldPosts = this.oldBlogPosts;
@@ -127,13 +133,13 @@
 
           if (oldPosts[key].title) {
 
-            // initially remove hypthens and the white space to their right
+            // initially remove hyphens and the white space to their right
             newTitle = oldPosts[key].title.replace(/\–\s/g, '').toLowerCase();
 
             x = 0;
             l = stopwords.length;
 
-            // loop through the SEO watch words and replace with white space hythen
+            // loop through the SEO watch words and replace with white space hyphen
             do {
 
               var regEx = new RegExp('\\b\\s' + stopwords[x] + '\\s\\b', 'g');
@@ -149,6 +155,7 @@
             // remove all non-alpha numeric characters
             newTitle = newTitle.replace(regexNonAlphaNum, '');
 
+            // now there is an SEO friendly URN fragment available for use
             oldPosts[key].url = newTitle;
 
           }
@@ -160,6 +167,10 @@
     }.bind(this);
 
     var addReviewImage = function () {
+
+      // these are the images that appear at the top of every blog post
+      // at the time of writing there are ten different images
+      // they are placed in order one after the other
 
       var oldPosts = this.oldBlogPosts;
       var numImages = _.size(this.CONFIG.BLOG);
@@ -187,10 +198,14 @@
 
   BlogDataService.prototype.retreiveData = function () {
 
-    var getData = function() {
+    var getData = function () {
       var deferred = this.$q.defer();
 
-      if(!this.workComplete) {
+      // there is an setInterval timer of 100 milliseconds
+      // this allows time for the data to be processed and which is then passed
+      // on as a promise to the controller
+
+      if (!this.workComplete) {
         var timer = this.$interval(function () {
           // is there a better way than using $interval?
           if (this.workComplete) {
@@ -205,8 +220,10 @@
       return deferred.promise;
     }.bind(this);
 
+    // remove the line below on a production site
     this.localStorageService.clearAll();
 
+    // use a a cache means that it is possible to bypass the above methods and just serve up the data
     if (!this.localStorageService.get('oldBlogPosts')) {
 
       //if blog articles are already stored as localstorage then don't call remote service and use values in storage
@@ -218,7 +235,7 @@
             this.blogData(response.data.responseData.feed.entries);
 
           }
-        }.bind(this), function(error){
+        }.bind(this), function (error) {
           this.$log.log('Error BlogDataService', error);
         }.bind(this));
 

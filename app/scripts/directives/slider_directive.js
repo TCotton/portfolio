@@ -125,7 +125,7 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interva
               scope.slideController.currentSlide = 1;
 
             }
-          }, _this.timeGap, 0, false);
+          }, this.timeGap, 0, false);
         },
 
         navigation: function () {
@@ -212,10 +212,6 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interva
           sliderDirectiveLink.destroy();
         }
       };
-
-      // to avoid any confusion of the this keyword in the sliderDirectiveLink object
-      // use _this with an underscore to make it clear its private scope
-      var _this = sliderDirectiveLink;
 
       return sliderDirectiveLink.init();
 
