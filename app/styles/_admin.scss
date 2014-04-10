@@ -1,0 +1,162 @@
+.content-text ul {
+  width: 33%;
+}
+.effeckt-wrap {
+  background: white;
+  padding: 2em;
+  border: 1px solid #cccccc;
+  &:hover {
+    border: 1px solid $textFour;
+    cursor: pointer
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  header, section {
+    @include font-calculator($baseFontFamily, 18px, 0.5);
+    font-weight: 400;
+    color: $textTwo;
+    &:hover {
+      olor: $textFour;
+    }
+  }
+  button {
+    float : right;
+    @include font-calculator($baseFontFamily, 12px, 0);
+    color: white;
+    font-weight: 400;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    display: inline-block;
+    &:hover, &:active {
+      color: darken(white, 10);
+    }
+
+  }
+}
+
+.effeckt-modal {
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-timing-function: ease;
+  transition-timing-function: ease;
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+  -webkit-animation-duration: 1000ms;
+  animation-duration: 1000ms;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+}
+
+.effeckt-modal-wrap {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  max-width: 320px;
+  min-width: 320px;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 2000;
+  visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.effeckt-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+  background: rgba(0,0,0,0.2);
+}
+
+.effeckt-show.effeckt-modal-wrap {
+  visibility: visible;
+}
+
+.effeckt-show.effeckt-modal-wrap ~ .effeckt-modal-overlay {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tada .effeckt-content {
+  opacity: 0;
+}
+
+.effeckt-show.tada .effeckt-content {
+  opacity: 1;
+  -webkit-animation-name: tada;
+  animation-name: tada;
+}
+
+@-webkit-keyframes tada {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  10%, 20% {
+    -webkit-transform: scale(0.9) rotate(-1deg);
+    transform: scale(0.9) rotate(-1deg);
+  }
+
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1.05) rotate(1deg);
+    transform: scale(1.05) rotate(1deg);
+  }
+
+  40%, 60%, 80% {
+    -webkit-transform: scale(1.05) rotate(-1deg);
+    transform: scale(1.05) rotate(-1deg);
+  }
+
+  100% {
+    -webkit-transform: scale(1) rotate(0);
+    transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes tada {
+  0% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  10%, 20% {
+    -webkit-transform: scale(0.9) rotate(-1deg);
+    -ms-transform: scale(0.9) rotate(-1deg);
+    transform: scale(0.9) rotate(-1deg);
+  }
+
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1.05) rotate(1deg);
+    -ms-transform: scale(1.05) rotate(1deg);
+    transform: sscale(1.05) rotate(1deg);
+  }
+
+  40%, 60%, 80% {
+    -webkit-transform: scale(1.05) rotate(-1deg);
+    -ms-transform: scale(1.05) rotate(-1deg);
+    transform: scale(1.05) rotate(-1deg);
+  }
+
+  100% {
+    -webkit-transform: scale(1) rotate(0);
+    -ms-transform: scale(1) rotate(0);
+    transform: scale(1) rotate(0);
+  }
+}

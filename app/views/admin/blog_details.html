@@ -1,23 +1,28 @@
 <div id="banner">
 
-    <section>
-        <h2 class="page-top-title">Add blog article</h2>
-    </section>
+  <section>
+    <h2 class="page-top-title">Add blog article</h2>
+  </section>
 
 </div><!-- end banner -->
 
 <div id="main-content" class="clearfix content-text">
 
-    <div class="user-details">
+  <div class="user-details">
 
-        <p></p>
 
-        <h3 class="content-title">Add a new blog article below</h3>
+    <h3 class="content-title" data-ng-init="AdminBlogDetailsCtrl.getBlogs();">Blog articles listed below</h3>
 
-        <p data-ng-if="formSuccess" data-ng-bind="formSuccess" class="bold"></p>
+    <ul data-ng-repeat="blog in blogContent track by $index">
+      <li data-ng-bind="blog.title"></li>
+      <li data-ng-click="AdminBlogDetailsCtrl.editArticle(blog)"><a href="">Edit this article</a></li>
+      <li data-ng-click="AdminBlogDetailsCtrl.deleteArticle(blog)"><a href="">Delete this article</a></li>
+    </ul>
 
-        <form novalidate="novalidate" name="addBlogForm"
-              data-ng-submit="AdminBlogDetailsCtrl.addBlog(addBlogForm.$valid)">
+    <p data-ng-if="formSuccess" data-ng-bind="formSuccess" class="bold"></p>
+
+    <form novalidate="novalidate" name="addBlogForm"
+          data-ng-submit="AdminBlogDetailsCtrl.addBlog(addBlogForm.$valid)">
 
       <span class="title-block">
       <label for="title" class="visuallyhidden">Blog article title</label>
@@ -51,19 +56,32 @@
             </span>
 
             <span class="displayImage-block">
-      <label for="displayImage" class="visuallyhidden">"Display image URL. Optional. The image must be 898px x 345px"</label>
+      <label for="displayImage" class="visuallyhidden">"Display image URL. Optional. The image must be 898px x
+        345px"</label>
       <input type="url" id="displayImage" name="displayImage" value=""
              placeholder="Display image URL. Optional. The image must be 898px x 345px"
              class="input" data-ng-model="addBlogFormData.displayImage"/>
       </span>
 
-            <input type="submit" value="submit" class="button-contact" data-ng-disabled="formSuccess"/>
+      <input type="submit" value="submit" class="button-contact" data-ng-disabled="formSuccess"/>
 
-        </form>
+    </form>
 
 
+  </div>
+  <!-- end comments -->
+
+  <div data-ng-if="displayPopup" class="effeckt-wrap effeckt-modal-wrap tada effeckt-show" id="effeckt-modal-wrap">
+    <!-- for centering transform -->
+    <div class="effeckt-content effeckt-modal" id="effeckt-modal">
+      <header data-ng-click=""><a href="">Are you sure?</a></header>
+      <div class="effeckt-modal-content">
+        <section data-ng-click=""><a href="">Click here to delete article.</a></section>
+        <button data-ng-click="AdminBlogDetailsCtrl.hidePopup()" class="effeckt-modal-close">Close me!</button>
+      </div>
     </div>
-    <!-- end comments -->
-
+  </div>
+  <div data-ng-if="displayPopup" data-ng-click="AdminBlogDetailsCtrl.hidePopup()"
+       class="effeckt-overlay effeckt-modal-overlay" id="effeckt-modal-overlay"></div>
 
 </div><!-- end main content -->
