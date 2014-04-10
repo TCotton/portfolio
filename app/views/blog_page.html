@@ -32,21 +32,21 @@
             <form action="/" method="post">
 
                 <label for="name" class="visuallyhidden">Your name</label>
-                <input type="text" id="name" value="" placeholder="Name" required="required" class="input"/>
+                <input type="text" id="name" value="" placeholder="Name" required="required" class="input" maxlength="120"/>
 
                 <label for="email" class="visuallyhidden">Your email address</label>
-                <input type="email" id="email" value="" placeholder="Email" required="required" class="input"/>
+                <input type="email" id="email" value="" placeholder="Email (will be kept private)" required="required" class="input" maxlength="120"/>
 
                 <label for="url" class="visuallyhidden">Your website address</label>
-                <input type="url" id="url" value="" placeholder="Website" required="required" class="input"/>
+                <input type="url" id="url" value="" placeholder="Website" required="required" class="input" maxlength="120"/>
 
                 <label for="message" class="visuallyhidden">Your comments</label>
                 <textarea id="message" cols="10" rows="10" placeholder="Your message" required="required"
-                          class="textarea"></textarea>
+                          class="textarea" maxlength="1000"></textarea>
 
             <span class="hide">
             <label for="zipcode" class="visuallyhidden">Your zipcode</label>
-            <input type="text" id="zipcode" value=""/>
+            <input type="text" id="zipcode" value="" maxlength="64"/>
             </span>
 
                 <input type="submit" value="Post message" class="button-contact"/>

@@ -19,20 +19,20 @@
       <label for="name" class="visuallyhidden">Your full name</label>
       <span data-ng-show="loginForm.name.$invalid && submitted" class="error-message">Please supply your username.</span>
       <input type="text" id="name" name="name" value="" placeholder="Username" required="required" class="input"
-             data-ng-required="true" data-ng-model="login.name"/>
+             data-ng-required="true" data-ng-model="login.name" maxlength="32"/>
       </span>
 
       <span class="password-block">
       <label for="password" class="visuallyhidden">Your email address</label>
       <span data-ng-show="loginForm.password.$invalid && submitted" class="error-message">Please supply a valid password.</span>
       <input type="password" id="password" name="password" value="" placeholder="Password" required="required"
-             class="input" data-ng-required="true" data-ng-model="login.password"/>
+             class="input" data-ng-required="true" data-ng-model="login.password" maxlength="32"/>
         </span>
 
             <span class="hide">
             <label for="zipcode" class="visuallyhidden">Your zipcode</label>
             <input type="text" id="zipcode" name="zipcode" value="" data-ng-pattern="zipRegex"
-                   data-ng-model="login.zipcode"/>
+                   data-ng-model="login.zipcode" maxlength="64"/>
             </span>
 
       <input type="submit" value="submit" class="button-contact"/>

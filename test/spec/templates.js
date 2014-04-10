@@ -107,4 +107,12 @@ describe('Unit: Templates', function () {
     $httpBackend.flush();
   });
 
+  it('loads admin blog details page at /admin/user-details', function () {
+    $httpBackend.expectGET('views/admin/blog_details.html')
+      .respond(200);
+    location.path('/admin/blog-details');
+    rootScope.$digest(); // call the digest loop
+    $httpBackend.flush();
+  });
+
 });

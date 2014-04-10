@@ -33,27 +33,27 @@
       <label for="name" class="visuallyhidden">Your full name</label>
       <span data-ng-show="contactForm.name.$invalid && submitted" class="error-message">Please supply your name.</span>
       <input type="text" id="name" name="name" value="" placeholder="Your full name" required="required" class="input"
-             data-ng-required="true" data-ng-model="contact.name"/>
+             data-ng-required="true" data-ng-model="contact.name" maxlength="64"/>
       </span>
 
       <span class="email-block">
       <label for="email" class="visuallyhidden">Your email address</label>
       <span data-ng-show="contactForm.email.$invalid && submitted" class="error-message">Please supply a valid email address.</span>
       <input type="email" id="email" name="email" value="" placeholder="Your email address" required="required"
-             class="input" data-ng-required="true" data-ng-model="contact.email"/>
+             class="input" data-ng-required="true" data-ng-model="contact.email" maxlength="64"/>
         </span>
 
       <span class="message-block">
       <label for="message" class="visuallyhidden">Please write a message</label>
       <span data-ng-show="contactForm.message.$invalid && submitted" class="error-message">Don't forget to write a message!</span>
       <textarea id="message" cols="10" rows="10" name="message" placeholder="Your message" required="required"
-                class="textarea" data-ng-required="true" data-ng-model="contact.message"></textarea>
+                class="textarea" data-ng-required="true" data-ng-model="contact.message" maxlength="500"></textarea>
         </span>
 
             <span class="hide">
             <label for="zipcode" class="visuallyhidden">Your zipcode</label>
             <input type="text" id="zipcode" name="zipcode" value="" data-ng-pattern="zipRegex"
-                   data-ng-model="contact.zipcode"/>
+                   data-ng-model="contact.zipcode" maxlength="500"/>
             </span>
 
       <input type="submit" value="Send message" class="button-contact" />

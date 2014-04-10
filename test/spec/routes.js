@@ -142,4 +142,20 @@ describe('Routes test', function () {
 
   });
 
+  describe('admin blog details page', function () {
+    beforeEach(inject(
+      function ($httpBackend) {
+        $httpBackend.expectGET('views/admin/blog_details.html')
+          .respond(200, 'blog details page HTML');
+      }
+    ));
+
+    it('should load the admin blog details page on successful load of /admin/user-details', function () {
+      location.path('/admin/blog-details');
+      rootScope.$digest(); // call the digest loop
+      expect(route.current.controller).toBe('BlogDetailsCtrl as AdminBlogDetailsCtrl');
+    });
+
+  });
+
 });
