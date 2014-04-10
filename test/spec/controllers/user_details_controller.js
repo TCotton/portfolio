@@ -15,6 +15,7 @@ describe('Controller: UserDetailsCtrl as AdminUserDetailsCtrl', function () {
   var MOCK_DATA;
   var $httpBackend;
   var $q;
+  var userObect = {'_id':{'$oid':'5345510de4b0bbfbddeb1d94'},'name':'AndyW','password':'revolution','$$hashKey':'005'};
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function (_$controller_, _$rootScope_, _MOCK_DATA_, _$httpBackend_, _$q_) {
@@ -55,8 +56,50 @@ describe('Controller: UserDetailsCtrl as AdminUserDetailsCtrl', function () {
     });
 
     expect(scope.addUserSubmit.submitted).toBe(true);
+    expect(scope.formSuccess).toBe(null);
     expect(scope.allUsers).toEqual(MOCK_DATA.adminUsers);
 
   });
+
+  it('Checks that the local scope changes after the user clicks to edit a users details: AdminUserDetailsCtrl.editUser()', function () {
+
+    scope.$apply(function(){
+      AdminUserDetailsCtrl.editUser(userObect);
+    });
+
+    expect(scope.editThisUser).toBe(true);
+    expect(scope.editUser.name).toBe(userObect.name);
+    expect(scope.editUser.password).toBe(userObect.password);
+    expect(scope.editUser._id.$oid).toEqual(userObect._id.$oid);
+
+  });
+
+ /* it('Checks that the local scope changes after the user clicks to delete a user: AdminUserDetailsCtrl.deleteUser()', function () {
+
+    var deferred = $q.defer();
+    var promise = deferred.promise;
+
+    promise.then(function(value) { scope.allUsers = value; });
+    expect(scope.allUsers).toBe(null);
+
+    deferred.resolve(userObect);
+
+    expect(scope.allUsers).toBe(null);
+
+    $httpBackend.expect('GET', MOCK_DATA.mongoDBUrl).respond(200, userObect);
+
+
+    $rootScope.$apply();
+
+
+    scope.$apply(function () {
+      AdminUserDetailsCtrl.listAllUsers(userObect);
+    });
+
+    expect(scope.allUsers).toBe(userObect);
+
+    //expect(scope.$scope.deleteU).toBe(userObect);
+
+  });*/
 
 });
