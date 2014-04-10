@@ -12,6 +12,8 @@
 
         <h3 class="content-title">Add a new blog article below</h3>
 
+      <p data-ng-if="formSuccess" data-ng-bind="formSuccess" class="bold"></p>
+
         <form novalidate="novalidate" name="addBlogForm"
               data-ng-submit="AdminBlogDetailsCtrl.addBlog(addBlogForm.$valid)">
 
@@ -33,7 +35,7 @@
 
       <span class="category-block">
       <label for="category" class="visuallyhidden">Blog category</label>
-      <span data-ng-show="addBlogForm.author.$invalid && addBlogFormSubmit"
+      <span data-ng-show="addBlogForm.category.$invalid && addBlogFormSubmit"
             class="error-message">Please provide a blog category.</span>
       <input type="text" id="category" name="category" value="" placeholder="Category" required="required"
              class="input" data-ng-required="true" data-ng-model="addBlogFormData.category"/>
@@ -53,7 +55,7 @@
              class="input" data-ng-model="addBlogFormData.displayImage"/>
       </span>
 
-            <input type="submit" value="submit" class="button-contact"/>
+            <input type="submit" value="submit" class="button-contact" data-ng-disabled="formSuccess"/>
 
         </form>
 

@@ -59,8 +59,6 @@
       this.totalArticlesCount();
       this.finishDataProcessing();
 
-      console.log(this.oldBlogPosts);
-
     }.bind(this);
 
     // change date format on old blog posts to a native Javascript friendly format
