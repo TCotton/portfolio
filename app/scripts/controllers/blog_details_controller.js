@@ -10,16 +10,28 @@
 
   var app = angular.module('portfolioApp');
 
-  var BlogDetailsCtrl = function ($rootScope, $scope, $log, UsersMongoDB) {
+  var BlogDetailsCtrl = function ($rootScope, $scope, $log, BlogMongoDB) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
     this.$log = $log;
-    this.UsersMongoDB = UsersMongoDB;
+    this.addBlogFormData = {};
+    this.addBlogFormData = new BlogMongoDB();
+    this.$scope.addBlogFormSubmit = false;
 
   };
 
-  BlogDetailsCtrl.$inject = ['$rootScope', '$scope', '$log', 'UsersMongoDB'];
+  BlogDetailsCtrl.prototype.addBlog = function(isValid) {
+
+    this.$scope.addBlogFormSubmit = true;
+
+    if(isValid) {
+
+    }
+
+  };
+
+  BlogDetailsCtrl.$inject = ['$rootScope', '$scope', '$log', 'BlogMongoDB'];
 
   app.controller('BlogDetailsCtrl', BlogDetailsCtrl);
 
