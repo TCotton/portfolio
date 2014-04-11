@@ -153,7 +153,8 @@
       var returnedPromise = this.$scope.addBlogFormData.$save(function () {
       }, function (value) {
 
-        this.$log('Failure: BlogDetailsCtrl.addBlog', value);
+        this.$log.warn('Failure: BlogDetailsCtrl.addBlog');
+        this.$log.warn(value);
 
       }.bind(this));
 
