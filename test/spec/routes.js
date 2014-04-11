@@ -153,7 +153,23 @@ describe('Routes test', function () {
     it('should load the admin blog details page on successful load of /admin/user-details', function () {
       location.path('/admin/blog-details');
       rootScope.$digest(); // call the digest loop
-      expect(route.current.controller).toBe('BlogDetailsCtrl as AdminBlogDetailsCtrl');
+      expect(route.current.controller).toBe('EditBlogCtrl as AdminEditBlogCtrl');
+    });
+
+  });
+
+  describe('admin add blog page', function () {
+    beforeEach(inject(
+      function ($httpBackend) {
+        $httpBackend.expectGET('views/admin/add_blog.html')
+          .respond(200, 'add blog page HTML');
+      }
+    ));
+
+    it('should load the admin add blog page on successful load of /admin/add-blog', function () {
+      location.path('/admin/add-blog');
+      rootScope.$digest(); // call the digest loop
+      expect(route.current.controller).toBe('AddBlogCtrl as AdminAddBlogCtrl');
     });
 
   });

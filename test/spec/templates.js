@@ -107,10 +107,10 @@ describe('Unit: Templates', function () {
     $httpBackend.flush();
   });
 
-  it('loads admin blog details page at /admin/user-details', function () {
-    $httpBackend.expectGET('views/admin/blog_details.html')
+  it('loads admin add blog page at /admin/add-blog', function () {
+    $httpBackend.expectGET('views/admin/add_blog.html')
       .respond(200);
-    location.path('/admin/blog-details');
+    location.path('/admin/add-blog');
     rootScope.$digest(); // call the digest loop
     $httpBackend.flush();
   });

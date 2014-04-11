@@ -134,7 +134,6 @@
   EditBlogCtrl.prototype.editBlog = function (isValid) {
 
     this.$scope.editBlogFormSubmit = true;
-    //this.$scope.formSuccess = null;
 
     // check to make sure the form is completely valid
     if (isValid) {
