@@ -16,7 +16,6 @@
     this.$scope = $scope;
     this.$log = $log;
     this.$scope.editBlogFormData = new BlogMongoDB();
-    this.$scope.dataToDelete = {};
     this.$scope.dataToDelete = new BlogMongoDB();
     this.$scope.allBlgs = BlogMongoDB;
     this.$scope.blogContent = null;
@@ -113,7 +112,7 @@
 
   };
 
-  EditBlogCtrl.prototype.editArticle = function(data) {
+  EditBlogCtrl.prototype.editArticle = function (data) {
 
     // display form
     this.$scope.displayForm = true;
@@ -153,7 +152,7 @@
 
       }.bind(this));
 
-      returnedPromise.then(function() {
+      returnedPromise.then(function () {
 
         // display success message
 
@@ -176,12 +175,12 @@
         // update page again
         this.getBlogs();
 
-      }.bind(this), function(value) {
+      }.bind(this), function (value) {
 
         this.$log.warn('Failure: EditBlogCtrl.editBlog');
         this.$log.warn(value);
 
-      }.bind(this), function(value) {
+      }.bind(this), function (value) {
 
         this.$log.info('Notification: EditBlogCtrl.editBlog');
         this.$log.info(value);
@@ -210,12 +209,12 @@
 
       this.$scope.blogContent = value;
 
-    }.bind(this), function(value) {
+    }.bind(this), function (value) {
 
       this.$log.warn('Failure: EditBlogCtrl.getBlogs');
       this.$log.warn(value);
 
-    }.bind(this), function(value) {
+    }.bind(this), function (value) {
 
       this.$log.info('Notification: EditBlogCtrl.getBlogs');
       this.$log.info(value);
@@ -224,7 +223,7 @@
 
   };
 
-  EditBlogCtrl.prototype.deleteArticle = function (data){
+  EditBlogCtrl.prototype.deleteArticle = function (data) {
 
     this.$scope.displayPopup = true;
 
@@ -238,15 +237,18 @@
 
     this.$scope.dataToDelete._id.$oid = data._id.$oid;
 
+    // update page again
+    this.getBlogs();
+
   };
 
-  EditBlogCtrl.prototype.hidePopup = function (){
+  EditBlogCtrl.prototype.hidePopup = function () {
 
     this.$scope.displayPopup = false;
 
   };
 
-  EditBlogCtrl.prototype.removeArticle = function() {
+  EditBlogCtrl.prototype.removeArticle = function () {
 
     var returnedPromise = this.$scope.dataToDelete.$remove(null, function () {
     }, function (value) {
@@ -259,13 +261,24 @@
     returnedPromise.then(function () {
 
       this.$scope.displayPopup = false;
+      this.$scope.displayPopup = true;
 
-    }.bind(this), function(value) {
+      this.$scope.dataToDelete.title = null;
+      this.$scope.dataToDelete.author = null;
+      this.$scope.dataToDelete.category = null;
+      this.$scope.dataToDelete.content = null;
+      this.$scope.dataToDelete.displayImage = null;
+      this.$scope.dataToDelete._id.$oid = null;
+
+      // update page again
+      this.getBlogs();
+
+    }.bind(this), function (value) {
 
       this.$log.warn('Failure: EditBlogCtrl.removeArticle');
       this.$log.warn(value);
 
-    }.bind(this), function(value) {
+    }.bind(this), function (value) {
 
       this.$log.info('Notification: EditBlogCtrl.removeArticle');
       this.$log.info(value);
