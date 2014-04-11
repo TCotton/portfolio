@@ -10,7 +10,7 @@
 
   var app = angular.module('portfolioApp');
 
-  var SidebarCtrl = function ($rootScope, $scope, $log, FeedService) {
+  var SidebarCtrl = function ($rootScope, $scope, $log, BlogDataService) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
@@ -18,17 +18,28 @@
 
     this.$scope.blogData = null;
 
-    FeedService.returnedRSS().then(function(response){
+    var promise = BlogDataService.retreiveData();
 
-      this.$scope.blogData = response.data.responseData.feed.entries;
+    promise.then(function (data) {
+
+      if (data.workComplete) {
+
+        // retrieve blog data to be used in the ng-repeat directive in the sidebar
+        this.$scope.blogData = data.oldBlogPosts;
+
+      }
+
+    }.bind(this), function (response) {
+
+      this.$log.warn('Error SidebarCtrl');
+      this.$log.warn(response);
 
     }.bind(this));
 
   };
 
-  SidebarCtrl.$inject = ['$rootScope', '$scope', '$log', 'FeedService'];
+  SidebarCtrl.$inject = ['$rootScope', '$scope', '$log', 'BlogDataService'];
 
   app.controller('SidebarCtrl', SidebarCtrl);
 
 }());
-
