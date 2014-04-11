@@ -41,6 +41,10 @@
       return trimString();
     };
 
+    this.removeNewLines = function (){
+      return removeNewLines();
+    };
+
 
     var trimString = function() {
 
@@ -116,6 +120,13 @@
 
     }.bind(this);
 
+    var removeNewLines = function() {
+
+      // remove any new lines in the content. Just want to let the HTML tags and css set the layout
+      this.$scope.addBlogFormData.content = this.$scope.addBlogFormData.content.replace(/[\s\r\n]+$/, '');
+
+    }.bind(this);
+
 
     var addUniqueID = function () {
 
@@ -144,6 +155,7 @@
     if (isValid) {
 
       this.trimString();
+      this.removeNewLines();
       this.addDate();
       this.addUniqueID();
       this.addSEOFriendlyURL();

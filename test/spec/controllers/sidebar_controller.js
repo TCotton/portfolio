@@ -4,7 +4,7 @@
 
 
 'use strict';
-describe('Controller: ProjectsPageCtrl', function () {
+describe('Controller: SidebarCtrl', function () {
 
   // load the controller's module
   beforeEach(module('portfolioApp'));
