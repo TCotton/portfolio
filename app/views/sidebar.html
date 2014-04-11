@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-  <meta charset="UTF-8">
-  <title></title>
-</head>
-<body>
+<div id="right-small" data-ng-controller="SidebarCtrl">
 
-</body>
-</html>
+  <h4 class="content-title">Recent posts</h4>
+  <ul>
+    <a data-ng-repeat="blog in blogData | limitTo: 5" data-ng-href="blog.url"><li data-ng-bind="blog.title"></li></a>
+  </ul>
+
+</div>
+
+
