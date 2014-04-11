@@ -11,22 +11,23 @@
   <div class="user-details">
 
 
-    <h3 class="content-title" data-ng-init="AdminBlogDetailsCtrl.getBlogs();">Blog articles listed below</h3>
+    <h3 class="content-title" data-ng-init="AdminEditBlogCtrl.getBlogs();">Blog articles listed below</h3>
 
     <ul data-ng-repeat="blog in blogContent track by $index">
       <li data-ng-bind="blog.title"></li>
-      <li data-ng-click="AdminBlogDetailsCtrl.editArticle(blog)"><a href="">Edit this article</a></li>
-      <li data-ng-click="AdminBlogDetailsCtrl.deleteArticle(blog)"><a href="">Delete this article</a></li>
+      <li data-ng-click="AdminEditBlogCtrl.editArticle(blog)"><a href="">Edit this article</a></li>
+      <li data-ng-click="AdminEditBlogCtrl.deleteArticle(blog)"><a href="">Delete this article</a></li>
     </ul>
 
     <p data-ng-if="formSuccess" data-ng-bind="formSuccess" class="bold"></p>
 
-    <form novalidate="novalidate" name="addBlogForm"
-          data-ng-submit="AdminBlogDetailsCtrl.editBlog(addBlogForm.$valid)" data-ng-if="">
+
+    <form novalidate="novalidate" name="editBlogForm"
+          data-ng-submit="AdminEditBlogCtrl.editBlog(editBlogForm.$valid)" data-ng-if="displayForm">
 
       <span class="title-block">
       <label for="title" class="visuallyhidden">Blog article title</label>
-      <span data-ng-show="addBlogForm.title.$invalid && addBlogFormSubmit"
+      <span data-ng-show="editBlogForm.title.$invalid && editBlogFormSubmit"
             class="error-message">Please provide a blog title.</span>
       <input type="text" id="title" name="title" value="" placeholder="Title" required="required" class="input"
              data-ng-required="true" data-ng-model="editBlogFormData.title"/>
@@ -34,7 +35,7 @@
 
       <span class="author-block">
       <label for="author" class="visuallyhidden">Blog article author</label>
-      <span data-ng-show="addBlogForm.author.$invalid && addBlogFormSubmit"
+      <span data-ng-show="editBlogForm.author.$invalid && editBlogFormSubmit"
             class="error-message">Please provide the blog article author.</span>
       <input type="text" id="author" name="author" value="" placeholder="Author" required="required"
              class="input" data-ng-required="true" data-ng-model="editBlogFormData.author"/>
@@ -42,7 +43,7 @@
 
       <span class="category-block">
       <label for="category" class="visuallyhidden">Blog category</label>
-      <span data-ng-show="addBlogForm.category.$invalid && addBlogFormSubmit"
+      <span data-ng-show="editBlogForm.category.$invalid && editBlogFormSubmit"
             class="error-message">Please provide a blog category.</span>
       <input type="text" id="category" name="category" value="" placeholder="Category" required="required"
              class="input" data-ng-required="true" data-ng-model="editBlogFormData.category"/>
@@ -50,25 +51,23 @@
 
             <span class="content-block">
             <label for="content" class="visuallyhidden">Content</label>
-            <span data-ng-show="addBlogForm.content.$invalid && addBlogFormSubmit" class="error-message">Don't forget to add the content!</span>
+            <span data-ng-show="editBlogForm.content.$invalid && editBlogFormSubmit" class="error-message">Don't forget to add the content!</span>
             <textarea id="content" cols="10" rows="40" name="content" placeholder="Content" required="required"
                       class="textarea" data-ng-required="true" data-ng-model="editBlogFormData.content"></textarea>
             </span>
 
             <span class="displayImage-block">
-      <label for="displayImage" class="visuallyhidden">"Display image URL. Optional. The image must be 898px x
-        345px"</label>
+      <label for="displayImage" class="visuallyhidden">"Display image URL. Optional. The image must be 898px x 345px"</label>
       <input type="url" id="displayImage" name="displayImage" value=""
              placeholder="Display image URL. Optional. The image must be 898px x 345px"
              class="input" data-ng-model="editBlogFormData.displayImage"/>
       </span>
 
-        <input type="hidden" value="" data-ng-model="_id.$oid" />
+      <input type="hidden" value="" data-ng-model="editBlogFormData._id.$oid" />
 
-      <input type="submit" value="submit" class="button-contact" data-ng-disabled="formSuccess"/>
+      <input type="submit" value="submit" class="button-contact"/>
 
     </form>
-
 
   </div>
   <!-- end comments -->

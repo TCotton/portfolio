@@ -49,11 +49,11 @@ angular.module('portfolioApp', ['AppConstants', 'ngCookies', 'ngResource', 'ngSa
       })
       .when('/admin/blog-details', {
         templateUrl: 'views/admin/blog_details.html',
-        controller: 'BlogDetailsCtrl as AdminBlogDetailsCtrl'
+        controller: 'EditBlogCtrl as AdminEditBlogCtrl'
       })
       .when('/admin/add-blog', {
         templateUrl: 'views/admin/add_blog.html',
-        controller: 'BlogDetailsCtrl as AdminBlogDetailsCtrl'
+        controller: 'AddBlogCtrl as AdminAddBlogCtrl'
       })
       .otherwise({
         redirectTo: '/'

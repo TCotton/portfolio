@@ -10,26 +10,18 @@
 
   var app = angular.module('portfolioApp');
 
-  var BlogDetailsCtrl = function ($rootScope, $scope, $log, BlogMongoDB) {
+  var EditBlogCtrl = function ($rootScope, $scope, $log, BlogMongoDB) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
     this.$log = $log;
-    this.$scope.addBlogFormData = {};
-    this.$scope.addBlogFormData = new BlogMongoDB();
+    this.$scope.editBlogFormData = new BlogMongoDB();
     this.$scope.blogDelete = new BlogMongoDB();
     this.$scope.allBlgs = BlogMongoDB;
     this.$scope.blogContent = null;
-    this.$scope.addBlogFormSubmit = false;
+    this.$scope.editBlogFormSubmit = false;
     this.$scope.formSuccess = null;
-
-    this.addDate = function () {
-      return addDate();
-    };
-
-    this.addUniqueID = function () {
-      return addUniqueID();
-    };
+    this.$scope.displayForm = null;
 
     this.addSEOFriendlyURL = function () {
       return addSEOFriendlyURL();
@@ -43,30 +35,26 @@
       return trimString();
     };
 
-    // used when blog created and when edited
-    var trimString = function (blogObject) {
+    var trimString = function () {
 
       // trim white space off the start and end of the string values after successful form submission
-      for (var key in blogObject) {
+      for (var key in this.$scope.editBlogFormData) {
 
-        if (key.isPrototypeOf(blogObject) && _.isString(blogObject)) {
+        if (key.isPrototypeOf(this.$scope.editBlogFormData) && _.isString(this.$scope.editBlogFormData[key])) {
 
-          blogObject[key] = blogObject[key].toString();
+          this.$scope.editBlogFormData[key] = this.$scope.editBlogFormData[key].toString();
 
         }
       }
-
-      return blogObject;
-
     }.bind(this);
 
-    // used when blog created and when edited
-    var createContentSnippet = function (data) {
+
+    var createContentSnippet = function () {
 
       // to create a codeSnippet cut down the content to around 130 characters without cutting a whole word in half
       var snippet, maxLength, trimmedString;
 
-      snippet = data.toString();
+      snippet = this.$scope.editBlogFormData.content.toString();
 
       // maximum number of characters to extract
       maxLength = 130;
@@ -80,15 +68,13 @@
       trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(' '))) + ' ...';
 
       //strip and HTML tags
-      return trimmedString.replace(/(<([^>]+)>)/ig, '').trim();
+      this.$scope.editBlogFormData.contentSnippet = trimmedString.replace(/(<([^>]+)>)/ig, '').trim();
 
     }.bind(this);
 
-    // used when blog created and when edited in case the title has changed
-    var addSEOFriendlyURL = function (data) {
-      // create seo friendly url for blog article title
 
-      // stopwords have no SEO value and so need to be removed
+    var addSEOFriendlyURL = function () {
+
       var stopwords = ['a', 'about', 'above', 'across', 'after', 'afterwards', 'again', 'against', 'all', 'almost', 'alone', 'along', 'already', 'also', 'although', 'always', 'am', 'among', 'amongst', 'amoungst', 'amount', 'an', 'and', 'another', 'any', 'anyhow', 'anyone', 'anything', 'anyway', 'anywhere', 'are', 'around', 'as', 'at', 'back', 'be', 'became', 'because', 'become', 'becomes', 'becoming', 'been', 'before', 'beforehand', 'behind', 'being', 'below', 'beside', 'besides', 'between', 'beyond', 'bill', 'both', 'bottom', 'but', 'by', 'call', 'can', 'cannot', 'cant', 'co', 'con', 'could', 'couldnt', 'cry', 'de', 'describe', 'detail', 'do', 'done', 'down', 'due', 'during', 'each', 'eg', 'eight', 'either', 'eleven', 'else', 'elsewhere', 'empty', 'enough', 'etc', 'even', 'ever', 'every', 'everyone', 'everything', 'everywhere', 'except', 'few', 'fifteen', 'fify', 'fill', 'find', 'fire', 'first', 'five', 'for', 'former', 'formerly', 'forty', 'found', 'four', 'from', 'front', 'full', 'further', 'get', 'give', 'go', 'had', 'has', 'hasnt', 'have', 'he', 'hence', 'her', 'here', 'hereafter', 'hereby', 'herein', 'hereupon', 'hers', 'herself', 'him', 'himself', 'his', 'how', 'however', 'hundred', 'ie', 'if', 'in', 'inc', 'indeed', 'interest', 'into', 'is', 'it', 'its', 'itself', 'keep', 'last', 'latter', 'latterly', 'least', 'less', 'ltd', 'made', 'many', 'may', 'me', 'meanwhile', 'might', 'mill', 'mine', 'more', 'moreover', 'most', 'mostly', 'move', 'much', 'must', 'my', 'myself', 'name', 'namely', 'neither', 'never', 'nevertheless', 'next', 'nine', 'no', 'nobody', 'none', 'noone', 'nor', 'not', 'nothing', 'now', 'nowhere', 'of', 'off', 'often', 'on', 'once', 'one', 'only', 'onto', 'or', 'other', 'others', 'otherwise', 'our', 'ours', 'ourselves', 'out', 'over', 'own', 'part', 'per', 'perhaps', 'please', 'put', 'rather', 're', 'same', 'see', 'seem', 'seemed', 'seeming', 'seems', 'serious', 'several', 'she', 'should', 'show', 'side', 'since', 'sincere', 'six', 'sixty', 'so', 'some', 'somehow', 'someone', 'something', 'sometime', 'sometimes', 'somewhere', 'still', 'such', 'system', 'take', 'ten', 'than', 'that', 'the', 'their', 'them', 'themselves', 'then', 'thence', 'there', 'thereafter', 'thereby', 'therefore', 'therein', 'thereupon', 'these', 'they', 'thickv', 'thin', 'third', 'this', 'those', 'though', 'three', 'through', 'throughout', 'thru', 'thus', 'to', 'together', 'too', 'top', 'toward', 'towards', 'twelve', 'twenty', 'two', 'un', 'under', 'until', 'up', 'upon', 'us', 'very', 'via', 'was', 'we', 'well', 'were', 'what', 'whatever', 'when', 'whence', 'whenever', 'where', 'whereafter', 'whereas', 'whereby', 'wherein', 'whereupon', 'wherever', 'whether', 'which', 'while', 'whither', 'who', 'whoever', 'whole', 'whom', 'whose', 'why', 'will', 'with', 'within', 'without', 'would', 'yet', 'you', 'your', 'yours', 'yourself', 'yourselves', 'the'];
 
       var regexNonAlphaNum = /[^\-a-z0-9]/g;
@@ -98,7 +84,7 @@
       var newTitle;
 
       // initially remove hypthens and the white space to their right
-      newTitle = data.replace(/\–\s/g, '').toLowerCase();
+      newTitle = this.$scope.editBlogFormData.title.replace(/\–\s/g, '').toLowerCase();
 
       x = 0;
       l = stopwords.length;
@@ -119,52 +105,55 @@
       // remove all non-alpha numeric characters
       newTitle = newTitle.replace(regexNonAlphaNum, '');
 
-      return newTitle;
-
-    }.bind(this);
-
-
-    var addUniqueID = function () {
-
-      // unique id is used in the URL as a means of populating the page with data
-      this.$scope.addBlogFormData.id = this.$scope.addBlogFormData.publishedDate.substring(0, 6);
-
-    }.bind(this);
-
-
-    var addDate = function () {
-
-      // date in milliseconds. angularjs date filter displays user friendly date format on blog page
-      this.$scope.addBlogFormData.publishedDate = Date.parse(new Date()).toString();
+      this.$scope.editBlogFormData.url = newTitle;
 
     }.bind(this);
 
   };
 
+  EditBlogCtrl.prototype.editArticle = function(data) {
 
-  BlogDetailsCtrl.prototype.addBlog = function (isValid) {
+    // display form
+    this.$scope.displayForm = true;
 
-    this.$scope.addBlogFormSubmit = true;
+    // populate the ng-model with the data for the post to be edited
+
+    this.$scope.editBlogFormData.title = data.title;
+    this.$scope.editBlogFormData.author = data.author;
+    this.$scope.editBlogFormData.category = data.category;
+    this.$scope.editBlogFormData.content = data.content;
+    this.$scope.editBlogFormData.displayImage = data.displayImage;
+
+    this.$scope.editBlogFormData._id = {};
+
+    this.$scope.editBlogFormData._id.$oid = data._id.$oid;
+
+  };
+
+
+  EditBlogCtrl.prototype.editBlog = function (isValid) {
+
+    this.$scope.editBlogFormSubmit = true;
     //this.$scope.formSuccess = null;
 
     // check to make sure the form is completely valid
     if (isValid) {
 
-      this.$scope.addBlogFormData = this.trimString(this.$scope.addBlogFormData);
-      this.addDate();
-      this.addUniqueID();
-      this.$scope.addBlogFormData.url = this.addSEOFriendlyURL(this.$scope.addBlogFormData.title);
-      this.$scope.addBlogFormData.contentSnippet = this.createContentSnippet(this.$scope.addBlogFormData.content);
+      this.trimString();
+      this.addSEOFriendlyURL();
+      this.createContentSnippet();
 
       // submit details to mongodDB
-      var returnedPromise = this.$scope.addBlogFormData.$save(function () {
+      var returnedPromise = this.$scope.editBlogFormData.$update(function () {
       }, function (value) {
 
-        this.$log('Failure: BlogDetailsCtrl.addBlog', value);
+        this.$log('Failure: BlogDetailsCtrl.editBlog', value);
 
       }.bind(this));
 
-      returnedPromise.then(function () {
+      returnedPromise.then(function() {
+
+        // display success message
 
         this.$scope.formSuccess = 'You have successfully added a blog article';
 
@@ -179,45 +168,30 @@
           }
         }
 
-        this.$scope.addBlogFormSubmit = false;
+        // hide form with ng-if
+        this.$scope.displayForm = false;
+
+        // update page again
+        this.getBlogs();
+
+      }.bind(this), function(value) {
+
+        this.$log.warn('Failure: EditBlogCtrl.editBlog');
+        this.$log.warn(value);
+
+      }.bind(this), function(value) {
+
+        this.$log.info('Notification: EditBlogCtrl.editBlog');
+        this.$log.info(value);
 
       }.bind(this));
+
     }
 
   };
 
-  BlogDetailsCtrl.prototype.editBlog = function (isValid) {
 
-    this.$scope.addBlogFormSubmit = true;
-
-    // check to make sure the form is completely valid
-    if (isValid) {
-
-      this.$scope.addBlogFormData = this.trimString(this.$scope.addBlogFormData);
-      this.$scope.addBlogFormData.url = this.addSEOFriendlyURL(this.$scope.addBlogFormData.title);
-      this.$scope.addBlogFormData.contentSnippet = this.createContentSnippet(this.$scope.addBlogFormData.content);
-
-      // submit details to mongodDB
-      var returnedPromise = this.$scope.addBlogFormData.$update(function () {
-      }, function (value) {
-
-        this.$log('Failure: BlogDetailsCtrl.editBlog', value);
-
-      }.bind(this));
-
-      returnedPromise.then(function () {
-
-        this.$scope.formSuccess = 'You have successfully edited the blog post';
-
-        this.$scope.editIndPost = false;
-
-        this.$scope.addBlogFormSubmit = false;
-
-      }.bind(this));
-    }
-  };
-
-  BlogDetailsCtrl.prototype.getBlogs = function () {
+  EditBlogCtrl.prototype.getBlogs = function () {
     // request all blogs from the blog document
     // which is then listed using ng-repeat
 
@@ -233,51 +207,27 @@
 
       this.$scope.blogContent = value;
 
+    }.bind(this), function(value) {
+
+      this.$log.warn('Failure: EditBlogCtrl.getBlogs');
+      this.$log.warn(value);
+
+    }.bind(this), function(value) {
+
+      this.$log.info('Notification: EditBlogCtrl.getBlogs');
+      this.$log.info(value);
+
     }.bind(this));
 
   };
 
-  BlogDetailsCtrl.prototype.deleteArticle = function (data, deletePost) {
+  EditBlogCtrl.prototype.deleteArticle = function (){
 
-    // default value of attribute if not defined
-    deletePost = (typeof optionalArg === 'undefined') ? false : deletePost;
-
-    this.$scope.displayPopup = true;
-
-    this.$scope.blogDelete = data;
 
   };
 
-  BlogDetailsCtrl.prototype.editArticle = function (data) {
+  EditBlogCtrl.$inject = ['$rootScope', '$scope', '$log', 'BlogMongoDB'];
 
-    // display form which uses ng-if to hide
-    this.$scope.editIndPost = true;
-
-    this.$scope.editBlogFormData = {
-      title: data.title,
-      author: data.author,
-      category: data.category,
-      content: data.content,
-      displayImage: data.displayImage
-    };
-
-    this.$scope.editBlogFormData._id = {};
-
-    this.$scope.editBlogFormData._id.$oid = data._id.$oid;
-
-    // populate form models with values passed in the 'data' attribute
-    //this.$scope.editBlogFormData.title = data
-
-  };
-
-  BlogDetailsCtrl.prototype.hidePopup = function () {
-
-    this.$scope.displayPopup = null;
-
-  };
-
-  BlogDetailsCtrl.$inject = ['$rootScope', '$scope', '$log', 'BlogMongoDB'];
-
-  app.controller('BlogDetailsCtrl', BlogDetailsCtrl);
+  app.controller('EditBlogCtrl', EditBlogCtrl);
 
 }());
