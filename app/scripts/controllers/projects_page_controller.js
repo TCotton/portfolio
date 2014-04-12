@@ -14,12 +14,13 @@
     this.$log = $log;
     this.PROJECTS = PROJECTS;
 
+    /** local scope
+     * **/
     this.$scope.title = null;
     this.$scope.summary = null;
     this.$scope.details = null;
     this.$scope.code = null;
     this.$scope.workImage = null;
-
     this.$scope.prevPage = null;
     this.$scope.nextPage = null;
 
@@ -27,6 +28,8 @@
 
   };
 
+  /** Take the right data for the project page from the constants based on the current page
+   * **/
   ProjectsPageCtrl.prototype.findData = function () {
 
     var currentPage = this.$rootScope.currentPage.substring(this.$rootScope.currentPage.lastIndexOf('/') + 1, this.$rootScope.currentPage.length);
@@ -46,9 +49,10 @@
       this.navigation();
 
     }
-
   };
 
+  /** Bind the data from the constans to the local scope
+   * **/
   ProjectsPageCtrl.prototype.bindData = function (data) {
 
     this.$scope.title = data[0].title;
@@ -59,6 +63,8 @@
 
   };
 
+  /** Navigation that allows the user to go either forwards or backwards in the side projects section
+   * **/
   ProjectsPageCtrl.prototype.navigation = function () {
 
     /**
