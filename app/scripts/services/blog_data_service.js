@@ -7,7 +7,7 @@
 
   var app = angular.module('portfolioApp');
 
-  var BlogDataService = function ($http, $q, CONFIG, $rootScope, localStorageService, FeedService, $timeout, $interval, $log) {
+  var BlogDataService = function ($http, $q, CONFIG, $rootScope, localStorageService, FeedService, $timeout, $interval, $log, BlogService) {
 
     this.$http = $http;
     this.$q = $q;
@@ -15,6 +15,7 @@
     this.$rootScope = $rootScope;
     this.localStorageService = localStorageService;
     this.FeedService = FeedService;
+    this.BlogService = BlogService;
     this.$timeout = $timeout;
     this.$interval = $interval;
     this.$log = $log;
@@ -25,6 +26,7 @@
     this.totalArticles = null;
     this.totalOldArticles = localStorageService.get('totalOldArticles') || null;
     this.totalNewArticles = null;
+    this.newBlogPosts = localStorageService.get('BlogPosts') || null;
     this.oldBlogPosts = localStorageService.get('oldBlogPosts') || null;
     this.workComplete = localStorageService.get('workComplete') ? true : false;
 
@@ -37,7 +39,6 @@
       this.seoFriendly();
       this.totalArticlesCount();
       this.finishDataProcessing();
-
     };
 
     // change date format on old blog posts to a native Javascript friendly format
@@ -46,6 +47,8 @@
       for (var key in posts) {
 
         if (posts.hasOwnProperty(key)) {
+
+          console.log(posts[key]);
 
           if (posts[key].publishedDate) {
 
@@ -68,7 +71,6 @@
         // sort articles by publication date
         return !o.publishedDate;
       });
-
     };
 
     // cache the total number of articles
@@ -163,34 +165,16 @@
 
         }
       }
-
     };
-
   };
 
-  BlogDataService.$inject = ['$http', '$q', 'CONFIG', '$rootScope', 'localStorageService', 'FeedService', '$timeout', '$interval', '$log'];
+  BlogDataService.$inject = ['$http', '$q', 'CONFIG', '$rootScope', 'localStorageService', 'FeedService', '$timeout', '$interval', '$log', 'BlogService'];
 
   BlogDataService.prototype.retreiveData = function () {
 
     var getData = function () {
       var deferred = this.$q.defer();
-
-      // there is an setInterval timer of 100 milliseconds
-      // this allows time for the data to be processed and which is then passed
-      // on as a promise to the controller
-
-      if (!this.workComplete) {
-        var timer = this.$interval(function () {
-          // is there a better way than using $interval?
-          if (this.workComplete) {
-            deferred.resolve(this);
-            this.$interval.cancel(timer);
-          }
-        }.bind(this), 100);
-      } else {
-        deferred.resolve(this);
-      }
-
+      deferred.resolve(this);
       return deferred.promise;
     }.bind(this);
 
@@ -200,22 +184,41 @@
     // use a a cache means that it is possible to bypass the above methods and just serve up the data
     if (!this.localStorageService.get('oldBlogPosts')) {
 
+      var blogDataOne;
+
       //if blog articles are already stored as localstorage then don't call remote service and use values in storage
-      this.FeedService.returnedRSS()
-        .then(function (response) {
+
+      this.BlogService.returnBlogData().then(function (value) {
+
+        blogDataOne = value;
+
+        this.FeedService.returnedRSS()
+          .then(function (response) {
 
           if (_.isObject(response.data.responseData.feed.entries)) {
 
-            this.blogData(response.data.responseData.feed.entries);
+            this.blogData(angular.extend(response.data.responseData.feed.entries, blogDataOne));
 
           }
-        }.bind(this), function (error) {
-          this.$log.log('Error BlogDataService', error);
-        }.bind(this));
+        }.bind(this),function () {
+
+            //error
+
+          }).then(function () {
+
+            if (this.workComplete) {
+
+              var deferred = this.$q.defer();
+              deferred.resolve(this);
+              return deferred.promise;
+
+            }
+
+          }.bind(this));
+
+      }.bind(this));
 
     }
-
-    return getData();
 
   };
 
