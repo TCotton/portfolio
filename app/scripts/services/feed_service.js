@@ -14,15 +14,14 @@
 
   FeedService.prototype.returnedRSS = function () {
 
-    // returns the Suburban Glory RSS feed from the rackspace cloud
+    // return promise
+
     return this.$http.jsonp(this.CONFIG.JSONP_GOOGLE_API + encodeURIComponent(this.CONFIG.RSS_FEED_LINK),
       {
-        'cache': true
+        'cache': false
       }
-    ).success(function (data) {
+    );
 
-        return data;
-      });
   };
 
   app.service('FeedService', FeedService);

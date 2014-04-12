@@ -45,7 +45,8 @@
 
     }.bind(this), function (response) {
 
-      this.$log.log('Error BlogArticleCtrl', response);
+      this.$log.warn('Error BlogArticleCtrl');
+      this.$log.warn(response);
 
     }.bind(this));
 
