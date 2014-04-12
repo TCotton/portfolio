@@ -11,7 +11,7 @@
   <div id="left-large" data-blog-directive>
 
     <!-- repeat old blog posts here -->
-    <div data-ng-repeat="blog in oldBlogPosts | limitTo: paginationStartFrom | limitTo: paginationPageSizeLimit track by $index">
+    <div data-ng-repeat="blog in oldBlogPosts | limitTo: paginationStartFrom | limitTo: paginationPageSizeLimit">
 
       <div data-blog-block-directive blog="blog"></div>
     </div>
@@ -44,8 +44,6 @@
 
   </div>
   <!-- end left large -->
-
-
 
     <div data-ng-include src="'views/sidebar.html'"></div>
 

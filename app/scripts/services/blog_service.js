@@ -12,7 +12,7 @@
 
   BlogService.prototype.returnBlogData = function () {
 
-    var result = this.BlogMongoDB.query().then(function (queryResult) {
+    var result = this.BlogMongoDB.all().then(function (queryResult) {
 
       // The then function here is an opportunity to modify the response
       // The return value gets picked up by the then in the controller.

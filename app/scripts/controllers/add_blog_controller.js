@@ -7,10 +7,9 @@
 
   /** Add, edit or delete blog posts
    * */
-
   var app = angular.module('portfolioApp');
 
-  /** Declare private methods
+  /** Declare private method variables
    * **/
   var _trimString;
   var _createContentSnippet;
@@ -24,18 +23,22 @@
     this.$rootScope = $rootScope;
     this.$scope = $scope;
     this.$log = $log;
+    /** List scope here
+     * **/
     this.$scope.addBlogFormData = {};
     this.$scope.addBlogFormData = new BlogMongoDB();
     this.$scope.blogContent = null;
     this.$scope.addBlogFormSubmit = false;
     this.$scope.formSuccess = null;
 
-    _trimString = function() {
+    /** Private methods
+     ***/
+    _trimString = function () {
 
       // trim white space off the start and end of the string values after successful form submission
-      for(var key in this.$scope.addBlogFormData) {
+      for (var key in this.$scope.addBlogFormData) {
 
-        if(key.isPrototypeOf(this.$scope.addBlogFormData) && _.isString(this.$scope.addBlogFormData[key])) {
+        if (key.isPrototypeOf(this.$scope.addBlogFormData) && _.isString(this.$scope.addBlogFormData[key])) {
 
           this.$scope.addBlogFormData[key] = this.$scope.addBlogFormData[key].toString();
 
@@ -62,7 +65,7 @@
       trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(' '))) + ' ...';
 
       //strip and HTML tags
-      this.$scope.addBlogFormData.contentSnippet = trimmedString.replace(/(<([^>]+)>)/ig,'').trim();
+      this.$scope.addBlogFormData.contentSnippet = trimmedString.replace(/(<([^>]+)>)/ig, '').trim();
 
     }.bind(this);
 
@@ -76,13 +79,13 @@
       var l;
       var newTitle;
 
-      // initially remove hypthens and the white space to their right
+      // initially remove hyphens and the white space to their right
       newTitle = this.$scope.addBlogFormData.title.replace(/\–\s/g, '').toLowerCase();
 
       x = 0;
       l = stopwords.length;
 
-      // loop through the SEO watch words and replace with white space hythen
+      // loop through the SEO watch words and replace with white space hyphen
       do {
 
         var regEx = new RegExp('\\b\\s' + stopwords[x] + '\\s\\b', 'g');
@@ -93,7 +96,7 @@
 
       } while (x < l);
 
-      // remove white space and replace with hythen
+      // remove white space and replace with hyphens
       newTitle = newTitle.replace(regexWhiteSpace, '-');
       // remove all non-alpha numeric characters
       newTitle = newTitle.replace(regexNonAlphaNum, '');
@@ -102,24 +105,25 @@
 
     }.bind(this);
 
-    _removeNewLines = function() {
+    _removeNewLines = function () {
 
       // remove any new lines in the content. Just want to let the HTML tags and css set the layout
-      this.$scope.addBlogFormData.content = this.$scope.addBlogFormData.content.replace(/[\s\r\n]+$/, '');
+      this.$scope.addBlogFormData.content = this.$scope.addBlogFormData.content.toString().replace(/[\s\r\n]+$/g, '');
 
     }.bind(this);
 
     _addUniqueID = function () {
 
       // unique id is used in the URL
-      this.$scope.addBlogFormData.id = this.$scope.addBlogFormData.publishedDate.substring(0, 6);
+      this.$scope.addBlogFormData.uniqueId = this.$scope.addBlogFormData.publishedDate.substring(0, 6);
+
 
     }.bind(this);
 
     _addDate = function () {
 
       // date in milliseconds. angularjs date filter displays user friendly date format on blog page
-      this.$scope.addBlogFormData.publishedDate = Date.parse(new Date()).toString();
+      this.$scope.addBlogFormData.publishedDate = parseInt(Date.parse(new Date()),10);
 
     }.bind(this);
 
@@ -136,7 +140,7 @@
       _trimString();
       _removeNewLines();
       _addDate();
-      _addUniqueID();
+      //_addUniqueID();
       _addSEOFriendlyURL();
       _createContentSnippet();
 
@@ -166,7 +170,7 @@
 
         this.$scope.addBlogFormSubmit = false;
 
-      }.bind(this), function(value) {
+      }.bind(this), function (value) {
 
         this.$log.warn('Failure: AddBlogCtrl.addBlog');
         this.$log.warn(value);

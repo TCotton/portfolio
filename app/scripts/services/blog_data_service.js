@@ -31,10 +31,10 @@
     // good practice to list all local scope objects at the top so that all coder is immediately
     // familiar with all local scopes used in this controller
 
-    this.totalArticles = null;
+    this.totalArticles = JSON.parse(sessionStorage.getItem('totalArticles')) || null;
     this.totalOldArticles = localStorageService.get('totalOldArticles') || null;
-    this.totalNewArticles = null;
-    this.newBlogPosts = localStorageService.get('BlogPosts') || null;
+    this.totalNewArticles = JSON.parse(sessionStorage.getItem('totalNewArticles')) || null;
+    this.newBlogPosts = JSON.parse(sessionStorage.getItem('newBlogPosts')) || null;
     this.oldBlogPosts = localStorageService.get('oldBlogPosts') || null;
     this.workComplete = localStorageService.get('workComplete') ? true : false;
 
@@ -59,7 +59,16 @@
 
           if (posts[key].publishedDate) {
 
-            var newDate = Date.parse(posts[key].publishedDate);
+            var newDate;
+
+            if (posts[key].publishedDate.match(/[a-zA-Z]/g)) {
+              newDate = Date.parse(posts[key].publishedDate);
+            } else {
+              newDate = posts[key].publishedDate;
+            }
+
+            console.log(newDate);
+
             // use Date.parse so that the value is in millisends
             // the inbuilt anguar filter date will format it to something easily understood
 
@@ -78,6 +87,7 @@
         // sort articles by publication date
         return !o.publishedDate;
       });
+
     }.bind(this);
 
     // cache the total number of articles

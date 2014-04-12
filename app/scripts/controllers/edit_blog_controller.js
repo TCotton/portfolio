@@ -20,7 +20,7 @@
     this.$rootScope = $rootScope;
     this.$scope = $scope;
     this.$log = $log;
-    /** Declare sscope objects
+    /** List scope objects
      * **/
     this.$scope.editBlogFormData = new BlogMongoDB();
     this.$scope.dataToDelete = new BlogMongoDB();

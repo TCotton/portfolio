@@ -60,6 +60,11 @@
 
   BlogCtrl.prototype.currentPage = function () {
 
+
+  };
+
+  BlogCtrl.prototype.currentPage = function () {
+
     // return the current page url id value
     return this.$rootScope.currentPage.substr(this.$rootScope.currentPage.length - 2, this.$rootScope.currentPage.length - 1);
 
