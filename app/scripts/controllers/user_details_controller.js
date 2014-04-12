@@ -14,8 +14,8 @@
     this.$rootScope = $rootScope;
     this.$scope = $scope;
     this.$log = $log;
-    this.UsersMongoDB = UsersMongoDB;
 
+    this.UsersMongoDB = UsersMongoDB;
     this.$scope.addUser = new UsersMongoDB();
     this.$scope.editUser = new UsersMongoDB();
     this.$scope.deleteU = new UsersMongoDB();

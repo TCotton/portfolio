@@ -13,7 +13,6 @@
     this.$scope = $scope;
     this.$location = $location;
     this.$log = $log;
-    this.BlogDataService = BlogDataService;
     this.$timeout = $timeout;
     this.$scope.oldBlogPosts = null;
     /* the number of articles per page */
@@ -22,7 +21,7 @@
     this.$scope.paginationPageSizeLimit = -5;
     this.$scope.returnObject = null;
 
-    var getPromise = this.BlogDataService.retreiveData();
+    var getPromise = BlogDataService.retreiveData();
 
     getPromise.then(function (data) {
 
