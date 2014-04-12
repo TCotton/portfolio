@@ -42,7 +42,8 @@
 
     }.bind(this), function (response) {
 
-      this.$log.log('Error BlogCtrl', response);
+      this.$log.log('Error BlogCtrl');
+      this.$log.log(response);
 
     }.bind(this));
 

@@ -20,7 +20,7 @@
     this.$interval = $interval;
     this.$log = $log;
 
-    // good practice to list all local scope objects at the top so that all coder is immmediately
+    // good practice to list all local scope objects at the top so that all coder is immediately
     // familiar with all local scopes used in this controller
 
     this.totalArticles = null;
@@ -30,7 +30,11 @@
     this.oldBlogPosts = localStorageService.get('oldBlogPosts') || null;
     this.workComplete = localStorageService.get('workComplete') ? true : false;
 
-    this.blogData = function (data) {
+    this.blogData = function () {
+      return blogData();
+    };
+
+    var blogData = function (data) {
 
       // cache the total number of items returned
       this.totalOldArticles = _.size(data);
@@ -39,16 +43,18 @@
       this.seoFriendly();
       this.totalArticlesCount();
       this.finishDataProcessing();
+    }.bind(this);
+
+    this.sortOldBlogPosts = function () {
+      return sortOldBlogPosts();
     };
 
     // change date format on old blog posts to a native Javascript friendly format
-    this.sortOldBlogPosts = function (posts) {
+    var sortOldBlogPosts = function (posts) {
 
       for (var key in posts) {
 
         if (posts.hasOwnProperty(key)) {
-
-          console.log(posts[key]);
 
           if (posts[key].publishedDate) {
 
@@ -71,27 +77,39 @@
         // sort articles by publication date
         return !o.publishedDate;
       });
+    }.bind(this);
+
+    this.totalArticlesCount = function () {
+      return totalArticlesCount();
     };
 
     // cache the total number of articles
     // used in pagination
-    this.totalArticlesCount = function () {
+    var totalArticlesCount = function () {
 
       this.totalArticles = this.totalOldArticles + this.totalNewArticles;
 
-    };
+    }.bind(this);
 
     this.finishDataProcessing = function () {
+      return finishDataProcessing();
+    };
+
+    var finishDataProcessing = function () {
 
       this.workComplete = true;
       this.localStorageService.add('totalOldArticles', this.totalOldArticles);
       this.localStorageService.add('oldBlogPosts', this.oldBlogPosts);
       this.localStorageService.add('workComplete', 'true');
 
+    }.bind(this);
+
+    this.seoFriendly = function () {
+      return seoFriendly();
     };
 
     // create SEO friendly URL from title and add it to the oldBlogPosts scope
-    this.seoFriendly = function () {
+    var seoFriendly = function () {
 
       // in this array are a liist of stopwords which have less SEO value
       var stopwords = ['a', 'about', 'above', 'across', 'after', 'afterwards', 'again', 'against', 'all', 'almost', 'alone', 'along', 'already', 'also', 'although', 'always', 'am', 'among', 'amongst', 'amoungst', 'amount', 'an', 'and', 'another', 'any', 'anyhow', 'anyone', 'anything', 'anyway', 'anywhere', 'are', 'around', 'as', 'at', 'back', 'be', 'became', 'because', 'become', 'becomes', 'becoming', 'been', 'before', 'beforehand', 'behind', 'being', 'below', 'beside', 'besides', 'between', 'beyond', 'bill', 'both', 'bottom', 'but', 'by', 'call', 'can', 'cannot', 'cant', 'co', 'con', 'could', 'couldnt', 'cry', 'de', 'describe', 'detail', 'do', 'done', 'down', 'due', 'during', 'each', 'eg', 'eight', 'either', 'eleven', 'else', 'elsewhere', 'empty', 'enough', 'etc', 'even', 'ever', 'every', 'everyone', 'everything', 'everywhere', 'except', 'few', 'fifteen', 'fify', 'fill', 'find', 'fire', 'first', 'five', 'for', 'former', 'formerly', 'forty', 'found', 'four', 'from', 'front', 'full', 'further', 'get', 'give', 'go', 'had', 'has', 'hasnt', 'have', 'he', 'hence', 'her', 'here', 'hereafter', 'hereby', 'herein', 'hereupon', 'hers', 'herself', 'him', 'himself', 'his', 'how', 'however', 'hundred', 'ie', 'if', 'in', 'inc', 'indeed', 'interest', 'into', 'is', 'it', 'its', 'itself', 'keep', 'last', 'latter', 'latterly', 'least', 'less', 'ltd', 'made', 'many', 'may', 'me', 'meanwhile', 'might', 'mill', 'mine', 'more', 'moreover', 'most', 'mostly', 'move', 'much', 'must', 'my', 'myself', 'name', 'namely', 'neither', 'never', 'nevertheless', 'next', 'nine', 'no', 'nobody', 'none', 'noone', 'nor', 'not', 'nothing', 'now', 'nowhere', 'of', 'off', 'often', 'on', 'once', 'one', 'only', 'onto', 'or', 'other', 'others', 'otherwise', 'our', 'ours', 'ourselves', 'out', 'over', 'own', 'part', 'per', 'perhaps', 'please', 'put', 'rather', 're', 'same', 'see', 'seem', 'seemed', 'seeming', 'seems', 'serious', 'several', 'she', 'should', 'show', 'side', 'since', 'sincere', 'six', 'sixty', 'so', 'some', 'somehow', 'someone', 'something', 'sometime', 'sometimes', 'somewhere', 'still', 'such', 'system', 'take', 'ten', 'than', 'that', 'the', 'their', 'them', 'themselves', 'then', 'thence', 'there', 'thereafter', 'thereby', 'therefore', 'therein', 'thereupon', 'these', 'they', 'thickv', 'thin', 'third', 'this', 'those', 'though', 'three', 'through', 'throughout', 'thru', 'thus', 'to', 'together', 'too', 'top', 'toward', 'towards', 'twelve', 'twenty', 'two', 'un', 'under', 'until', 'up', 'upon', 'us', 'very', 'via', 'was', 'we', 'well', 'were', 'what', 'whatever', 'when', 'whence', 'whenever', 'where', 'whereafter', 'whereas', 'whereby', 'wherein', 'whereupon', 'wherever', 'whether', 'which', 'while', 'whither', 'who', 'whoever', 'whole', 'whom', 'whose', 'why', 'will', 'with', 'within', 'without', 'would', 'yet', 'you', 'your', 'yours', 'yourself', 'yourselves', 'the'];
@@ -140,9 +158,13 @@
 
       this.oldBlogPosts = oldPosts;
 
-    };
+    }.bind(this);
 
     this.addReviewImage = function () {
+      return addReviewImage();
+    };
+
+    var addReviewImage = function () {
 
       // these are the images that appear at the top of every blog post
       // at the time of writing there are ten different images
@@ -165,18 +187,14 @@
 
         }
       }
-    };
+    }.bind(this);
   };
 
   BlogDataService.$inject = ['$http', '$q', 'CONFIG', '$rootScope', 'localStorageService', 'FeedService', '$timeout', '$interval', '$log', 'BlogService'];
 
   BlogDataService.prototype.retreiveData = function () {
 
-    var getData = function () {
-      var deferred = this.$q.defer();
-      deferred.resolve(this);
-      return deferred.promise;
-    }.bind(this);
+    var deferred = this.$q.defer();
 
     // remove the line below on a production site
     this.localStorageService.clearAll();
@@ -195,30 +213,25 @@
         this.FeedService.returnedRSS()
           .then(function (response) {
 
-          if (_.isObject(response.data.responseData.feed.entries)) {
+            if (_.isObject(response.data.responseData.feed.entries)) {
 
-            this.blogData(angular.extend(response.data.responseData.feed.entries, blogDataOne));
+              this.blogData(angular.extend(response.data.responseData.feed.entries, blogDataOne));
 
-          }
-        }.bind(this),function () {
+            }
+          }.bind(this), function () {}).then(function () {
 
-            //error
-
-          }).then(function () {
+            // make sure all methods above for manipulating data have
 
             if (this.workComplete) {
 
-              var deferred = this.$q.defer();
               deferred.resolve(this);
-              return deferred.promise;
 
             }
-
           }.bind(this));
-
       }.bind(this));
-
     }
+
+    return deferred.promise;
 
   };
 
