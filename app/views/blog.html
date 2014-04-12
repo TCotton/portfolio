@@ -11,8 +11,7 @@
   <div id="left-large" data-blog-directive>
 
     <!-- repeat old blog posts here -->
-    <div data-ng-repeat="blog in oldBlogPosts | limitTo: paginationStartFrom | limitTo: paginationPageSizeLimit">
-
+    <div data-ng-repeat="blog in oldBlogPosts | limitTo: paginationStartFrom | limitTo: paginationPageSizeLimit | orderBy: '-publishedDate' track by $index">
       <div data-blog-block-directive blog="blog"></div>
     </div>
 

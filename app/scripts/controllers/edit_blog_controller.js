@@ -9,7 +9,7 @@
    * */
 
   var app = angular.module('portfolioApp');
-  /** Declare private methods
+  /** Declare private method variable names
    * **/
   var _trimString;
   var _createContentSnippet;
@@ -47,6 +47,7 @@
       }
     }.bind(this);
 
+
     _createContentSnippet = function () {
 
       // to create a codeSnippet cut down the content to around 130 characters without cutting a whole word in half
@@ -69,6 +70,7 @@
       this.$scope.editBlogFormData.contentSnippet = trimmedString.replace(/(<([^>]+)>)/ig, '').trim();
 
     }.bind(this);
+
 
     _addSEOFriendlyURL = function () {
 

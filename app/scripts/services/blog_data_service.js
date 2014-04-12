@@ -2,21 +2,23 @@
  * Created by awalpole on 05/04/2014.
  */
 'use strict';
-
 (function () {
 
   var app = angular.module('portfolioApp');
-  /** Declare private methods
+  /** Declare private method variables
    * **/
-  var _blogData;
+  var _oldblogData;
+  var _newblogData;
   var _sortOldBlogPosts;
   var _totalArticlesCount;
-  var _finishDataProcessing;
+  var _cache;
   var _seoFriendly;
   var _addReviewImage;
 
   var BlogDataService = function ($http, $q, CONFIG, $rootScope, localStorageService, FeedService, $timeout, $interval, $log, BlogService) {
 
+    /** angularjs stuff
+     * **/
     this.$http = $http;
     this.$q = $q;
     this.CONFIG = CONFIG;
@@ -28,6 +30,8 @@
     this.$interval = $interval;
     this.$log = $log;
 
+    /** local scope
+     * **/
     // good practice to list all local scope objects at the top so that all coder is immediately
     // familiar with all local scopes used in this controller
 
@@ -36,24 +40,42 @@
     this.totalNewArticles = JSON.parse(sessionStorage.getItem('totalNewArticles')) || null;
     this.newBlogPosts = JSON.parse(sessionStorage.getItem('newBlogPosts')) || null;
     this.oldBlogPosts = localStorageService.get('oldBlogPosts') || null;
-    this.workComplete = localStorageService.get('workComplete') ? true : false;
+    this.oldBlogComplete = localStorageService.get('oldBlogComplete') ? true : false;
+    this.newBlogComplete = JSON.parse(sessionStorage.getItem('newBlogComplete')) ? true : false;
 
-    _blogData = function (data) {
+    /** method used for the data taken from the old blog RSS feed
+     * **/
+    _oldblogData = function (data) {
 
       // cache the total number of items returned
       this.totalOldArticles = _.size(data);
-      _sortOldBlogPosts(data);
-      _addReviewImage();
-
-      this.oldBlogPosts =  _addReviewImage(this.oldBlogPosts);
-
-      _seoFriendly();
-      _totalArticlesCount();
-      _finishDataProcessing();
+      this.oldBlogPosts = data;
+      this.oldBlogPosts = _sortOldBlogPosts(this.oldBlogPosts);
+      this.oldBlogPosts = _addReviewImage(this.oldBlogPosts);
+      this.oldBlogPosts = _addReviewImage(this.oldBlogPosts);
+      this.oldBlogPosts = _seoFriendly(this.oldBlogPosts);
+      this.oldBlogComplete = true;
 
     }.bind(this);
 
-    // change date format on old blog posts to a native Javascript friendly format
+    /** method used for the data taken from the MongodDB NoSQL database
+     * **/
+    _newblogData = function (data) {
+
+      // cache the total number of items returned
+      this.totalNewArticles = _.size(data);
+      this.newBlogPosts = data;
+      this.newBlogPosts = _sortOldBlogPosts(this.newBlogPosts);
+      this.newBlogPosts = _addReviewImage(this.newBlogPosts);
+      this.newBlogPosts = _addReviewImage(this.newBlogPosts);
+      this.newBlogPosts = _seoFriendly(this.newBlogPosts);
+      this.newBlogComplete = true;
+
+    }.bind(this);
+
+    /** 1. Create the right date format
+     *  2. Using the date create a unique ID for the blog post which is used in the URL
+     * **/
     _sortOldBlogPosts = function (posts) {
 
       for (var key in posts) {
@@ -70,12 +92,10 @@
               newDate = posts[key].publishedDate;
             }
 
-            console.log(newDate);
-
             // use Date.parse so that the value is in millisends
-            // the inbuilt anguar filter date will format it to something easily understood
-
+            // the inbuilt angular filter date will format it to something easily understood
             posts[key].publishedDate = newDate.toString();
+
             // create a unique ID from the date which is used in the URL
             // when the individual blog post is loaded it is used to retrieve
             // the item from the article data array
@@ -85,38 +105,39 @@
         }
       }
 
-      // then sort old blog posts by date after changing date to native JS format
-      this.oldBlogPosts = _.sortBy(posts, function (o) {
-        // sort articles by publication date
-        return !o.publishedDate;
-      });
+      return posts;
 
     }.bind(this);
 
-    // cache the total number of articles
-    // used in pagination
+    /** Count the total number of articles
+     * **/
     _totalArticlesCount = function () {
 
       this.totalArticles = this.totalOldArticles + this.totalNewArticles;
 
     }.bind(this);
 
-    _finishDataProcessing = function () {
+    /* cache the relevant data in either session or storage
+    * **/
+    _cache = function () {
 
-      this.workComplete = true;
       this.localStorageService.add('totalOldArticles', this.totalOldArticles);
+      sessionStorage.setItem('totalNewArticles', JSON.stringify(this.totalNewArticles));
+      sessionStorage.setItem('newBlogPosts', JSON.stringify(this.newBlogPosts));
       this.localStorageService.add('oldBlogPosts', this.oldBlogPosts);
-      this.localStorageService.add('workComplete', 'true');
+      this.localStorageService.add('oldBlogComplete', 'true');
+      sessionStorage.setItem('newBlogComplete', 'true');
 
     }.bind(this);
 
-    // create SEO friendly URL from title and add it to the oldBlogPosts scope
-    _seoFriendly = function () {
+    /** create SEO friendly URL from title and add it to the scope
+     * **/
+    _seoFriendly = function (data) {
 
       // in this array are a liist of stopwords which have less SEO value
       var stopwords = ['a', 'about', 'above', 'across', 'after', 'afterwards', 'again', 'against', 'all', 'almost', 'alone', 'along', 'already', 'also', 'although', 'always', 'am', 'among', 'amongst', 'amoungst', 'amount', 'an', 'and', 'another', 'any', 'anyhow', 'anyone', 'anything', 'anyway', 'anywhere', 'are', 'around', 'as', 'at', 'back', 'be', 'became', 'because', 'become', 'becomes', 'becoming', 'been', 'before', 'beforehand', 'behind', 'being', 'below', 'beside', 'besides', 'between', 'beyond', 'bill', 'both', 'bottom', 'but', 'by', 'call', 'can', 'cannot', 'cant', 'co', 'con', 'could', 'couldnt', 'cry', 'de', 'describe', 'detail', 'do', 'done', 'down', 'due', 'during', 'each', 'eg', 'eight', 'either', 'eleven', 'else', 'elsewhere', 'empty', 'enough', 'etc', 'even', 'ever', 'every', 'everyone', 'everything', 'everywhere', 'except', 'few', 'fifteen', 'fify', 'fill', 'find', 'fire', 'first', 'five', 'for', 'former', 'formerly', 'forty', 'found', 'four', 'from', 'front', 'full', 'further', 'get', 'give', 'go', 'had', 'has', 'hasnt', 'have', 'he', 'hence', 'her', 'here', 'hereafter', 'hereby', 'herein', 'hereupon', 'hers', 'herself', 'him', 'himself', 'his', 'how', 'however', 'hundred', 'ie', 'if', 'in', 'inc', 'indeed', 'interest', 'into', 'is', 'it', 'its', 'itself', 'keep', 'last', 'latter', 'latterly', 'least', 'less', 'ltd', 'made', 'many', 'may', 'me', 'meanwhile', 'might', 'mill', 'mine', 'more', 'moreover', 'most', 'mostly', 'move', 'much', 'must', 'my', 'myself', 'name', 'namely', 'neither', 'never', 'nevertheless', 'next', 'nine', 'no', 'nobody', 'none', 'noone', 'nor', 'not', 'nothing', 'now', 'nowhere', 'of', 'off', 'often', 'on', 'once', 'one', 'only', 'onto', 'or', 'other', 'others', 'otherwise', 'our', 'ours', 'ourselves', 'out', 'over', 'own', 'part', 'per', 'perhaps', 'please', 'put', 'rather', 're', 'same', 'see', 'seem', 'seemed', 'seeming', 'seems', 'serious', 'several', 'she', 'should', 'show', 'side', 'since', 'sincere', 'six', 'sixty', 'so', 'some', 'somehow', 'someone', 'something', 'sometime', 'sometimes', 'somewhere', 'still', 'such', 'system', 'take', 'ten', 'than', 'that', 'the', 'their', 'them', 'themselves', 'then', 'thence', 'there', 'thereafter', 'thereby', 'therefore', 'therein', 'thereupon', 'these', 'they', 'thickv', 'thin', 'third', 'this', 'those', 'though', 'three', 'through', 'throughout', 'thru', 'thus', 'to', 'together', 'too', 'top', 'toward', 'towards', 'twelve', 'twenty', 'two', 'un', 'under', 'until', 'up', 'upon', 'us', 'very', 'via', 'was', 'we', 'well', 'were', 'what', 'whatever', 'when', 'whence', 'whenever', 'where', 'whereafter', 'whereas', 'whereby', 'wherein', 'whereupon', 'wherever', 'whether', 'which', 'while', 'whither', 'who', 'whoever', 'whole', 'whom', 'whose', 'why', 'will', 'with', 'within', 'without', 'would', 'yet', 'you', 'your', 'yours', 'yourself', 'yourselves', 'the'];
 
-      var oldPosts = this.oldBlogPosts;
+      var oldPosts = data;
       var regexNonAlphaNum = /[^\-a-z0-9]/g;
       var regexWhiteSpace = /\s/gi;
       var x;
@@ -158,15 +179,16 @@
         }
       }
 
-      this.oldBlogPosts = oldPosts;
+      return oldPosts;
 
     }.bind(this);
 
+    /**
+     // these are the images that appear at the top of every blog post
+     // at the time of writing there are ten different images
+     // they are placed in order one after the other
+     * **/
     _addReviewImage = function (data) {
-
-      // these are the images that appear at the top of every blog post
-      // at the time of writing there are ten different images
-      // they are placed in order one after the other
 
       var oldPosts = data;
       var numImages = _.size(this.CONFIG.BLOG);
@@ -187,7 +209,8 @@
       }
 
       return oldPosts;
-    };
+
+    }.bind(this);
   };
 
 
@@ -203,32 +226,45 @@
     // use a a cache means that it is possible to bypass the above methods and just serve up the data
     if (!this.localStorageService.get('oldBlogPosts')) {
 
-      var blogDataOne;
-
       //if blog articles are already stored as localstorage then don't call remote service and use values in storage
 
       this.BlogService.returnBlogData().then(function (value) {
 
-        blogDataOne = value;
+        if (_.isObject(value)) {
+
+          _newblogData(value);
+
+        }
 
         this.FeedService.returnedRSS()
           .then(function (response) {
 
             if (_.isObject(response.data.responseData.feed.entries)) {
 
-              //_blogData(angular.extend(response.data.responseData.feed.entries, blogDataOne));
-              _blogData(angular.extend(response.data.responseData.feed.entries, blogDataOne));
+              _oldblogData(response.data.responseData.feed.entries);
 
             }
+
           }.bind(this), function () {}).then(function () {
 
+            // flip on a timer after a two seconds anyway as an emergency backup
+            var timer = this.$timeout(function(){
+              this.oldBlogComplete = true;
+              this.newBlogComplete = true;
+              this.$timeout.cancel(timer);
+            }.bind(this));
+
             // make sure all methods above for manipulating data have
-
-            if (this.workComplete) {
-
-              deferred.resolve(this);
-
+            if (this.oldBlogComplete && this.newBlogComplete) {
+//              console.log(this.newBlogPosts);
+//              console.log(this.oldBlogPosts);
+              angular.extend(this.oldBlogPosts, this.newBlogPosts);
             }
+
+          }.bind(this), function(){}).then(function(){
+
+            deferred.resolve(this);
+
           }.bind(this));
       }.bind(this));
     }

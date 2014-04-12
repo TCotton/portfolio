@@ -7,7 +7,6 @@
 
   /** Add, edit or delete blog posts
    * */
-
   var app = angular.module('portfolioApp');
 
   var SidebarCtrl = function ($rootScope, $scope, $log, BlogDataService) {
@@ -18,16 +17,10 @@
 
     this.$scope.blogData = null;
 
-    var promise = BlogDataService.retreiveData();
+    BlogDataService.retreiveData().then(function (data) {
 
-    promise.then(function (data) {
-
-      if (data.workComplete) {
-
-        // retrieve blog data to be used in the ng-repeat directive in the sidebar
-        this.$scope.blogData = data.oldBlogPosts;
-
-      }
+      // retrieve blog data to be used in the ng-repeat directive in the sidebar
+      this.$scope.blogData = data.oldBlogPosts;
 
     }.bind(this), function (response) {
 

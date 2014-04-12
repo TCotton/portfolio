@@ -2,7 +2,9 @@
 
   <h4 class="content-title">Recent posts</h4>
   <ul>
-    <a data-ng-repeat="blog in blogData | limitTo: 5" data-ng-href="blog.url"><li data-ng-bind="blog.title"></li></a>
+    <a data-ng-repeat="blog in blogData | limitTo: 5 | orderBy: '-publishedDate'" data-ng-href="blog.url">
+      <li data-ng-bind="blog.title"></li>
+    </a>
   </ul>
 
 </div>

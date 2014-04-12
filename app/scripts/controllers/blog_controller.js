@@ -25,20 +25,16 @@
 
     getPromise.then(function (data) {
 
-      if (data.workComplete) {
+      this.$scope.returnObject = data;
 
-        this.$scope.returnObject = data;
+      this.$scope.totalArticles = this.$scope.returnObject.totalNewArticles;
+      this.$scope.totalOldArticles = this.$scope.returnObject.totalOldArticles;
+      this.$scope.totalNewArticles = this.$scope.returnObject.totalNewArticles;
 
-        this.$scope.totalArticles = this.$scope.returnObject.totalNewArticles;
-        this.$scope.totalOldArticles = this.$scope.returnObject.totalOldArticles;
-        this.$scope.totalNewArticles = this.$scope.returnObject.totalNewArticles;
+      // why is this used for ?
+      this.paginationTotalPages = Math.ceil(this.totalArticles / this.paginationPageSize);
 
-        // why is this used for ?
-        this.paginationTotalPages = Math.ceil(this.totalArticles / this.paginationPageSize);
-
-        this.$scope.oldBlogPosts = this.$scope.returnObject.oldBlogPosts;
-
-      }
+      this.$scope.oldBlogPosts = this.$scope.returnObject.oldBlogPosts;
 
     }.bind(this), function (response) {
 
