@@ -44,6 +44,9 @@
       this.totalOldArticles = _.size(data);
       _sortOldBlogPosts(data);
       _addReviewImage();
+
+      this.oldBlogPosts =  _addReviewImage(this.oldBlogPosts);
+
       _seoFriendly();
       _totalArticlesCount();
       _finishDataProcessing();
@@ -159,13 +162,13 @@
 
     }.bind(this);
 
-    _addReviewImage = function () {
+    _addReviewImage = function (data) {
 
       // these are the images that appear at the top of every blog post
       // at the time of writing there are ten different images
       // they are placed in order one after the other
 
-      var oldPosts = this.oldBlogPosts;
+      var oldPosts = data;
       var numImages = _.size(this.CONFIG.BLOG);
       var imageArray = _.toArray(this.CONFIG.BLOG);
       var x = -1;
@@ -182,7 +185,9 @@
 
         }
       }
-    }.bind(this);
+
+      return oldPosts;
+    };
   };
 
 
@@ -211,6 +216,7 @@
 
             if (_.isObject(response.data.responseData.feed.entries)) {
 
+              //_blogData(angular.extend(response.data.responseData.feed.entries, blogDataOne));
               _blogData(angular.extend(response.data.responseData.feed.entries, blogDataOne));
 
             }
