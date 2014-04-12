@@ -21,7 +21,32 @@
     this.$scope.addBlogFormSubmit = false;
     this.$scope.formSuccess = null;
 
-    this.trimString = function() {
+    this.addDate = function () {
+      return addDate();
+    };
+
+    this.addUniqueID = function () {
+      return addUniqueID();
+    };
+
+    this.addSEOFriendlyURL = function () {
+      return addSEOFriendlyURL();
+    };
+
+    this.createContentSnippet = function () {
+      return createContentSnippet();
+    };
+
+    this.trimString = function () {
+      return trimString();
+    };
+
+    this.removeNewLines = function (){
+      return removeNewLines();
+    };
+
+
+    var trimString = function() {
 
       // trim white space off the start and end of the string values after successful form submission
       for(var key in this.$scope.addBlogFormData) {
@@ -32,10 +57,10 @@
 
         }
       }
-    };
+    }.bind(this);
 
 
-    this.createContentSnippet = function () {
+    var createContentSnippet = function () {
 
       // to create a codeSnippet cut down the content to around 130 characters without cutting a whole word in half
       var snippet, maxLength, trimmedString;
@@ -56,10 +81,10 @@
       //strip and HTML tags
       this.$scope.addBlogFormData.contentSnippet = trimmedString.replace(/(<([^>]+)>)/ig,'').trim();
 
-    };
+    }.bind(this);
 
 
-    this.addSEOFriendlyURL = function () {
+    var addSEOFriendlyURL = function () {
 
       var stopwords = ['a', 'about', 'above', 'across', 'after', 'afterwards', 'again', 'against', 'all', 'almost', 'alone', 'along', 'already', 'also', 'although', 'always', 'am', 'among', 'amongst', 'amoungst', 'amount', 'an', 'and', 'another', 'any', 'anyhow', 'anyone', 'anything', 'anyway', 'anywhere', 'are', 'around', 'as', 'at', 'back', 'be', 'became', 'because', 'become', 'becomes', 'becoming', 'been', 'before', 'beforehand', 'behind', 'being', 'below', 'beside', 'besides', 'between', 'beyond', 'bill', 'both', 'bottom', 'but', 'by', 'call', 'can', 'cannot', 'cant', 'co', 'con', 'could', 'couldnt', 'cry', 'de', 'describe', 'detail', 'do', 'done', 'down', 'due', 'during', 'each', 'eg', 'eight', 'either', 'eleven', 'else', 'elsewhere', 'empty', 'enough', 'etc', 'even', 'ever', 'every', 'everyone', 'everything', 'everywhere', 'except', 'few', 'fifteen', 'fify', 'fill', 'find', 'fire', 'first', 'five', 'for', 'former', 'formerly', 'forty', 'found', 'four', 'from', 'front', 'full', 'further', 'get', 'give', 'go', 'had', 'has', 'hasnt', 'have', 'he', 'hence', 'her', 'here', 'hereafter', 'hereby', 'herein', 'hereupon', 'hers', 'herself', 'him', 'himself', 'his', 'how', 'however', 'hundred', 'ie', 'if', 'in', 'inc', 'indeed', 'interest', 'into', 'is', 'it', 'its', 'itself', 'keep', 'last', 'latter', 'latterly', 'least', 'less', 'ltd', 'made', 'many', 'may', 'me', 'meanwhile', 'might', 'mill', 'mine', 'more', 'moreover', 'most', 'mostly', 'move', 'much', 'must', 'my', 'myself', 'name', 'namely', 'neither', 'never', 'nevertheless', 'next', 'nine', 'no', 'nobody', 'none', 'noone', 'nor', 'not', 'nothing', 'now', 'nowhere', 'of', 'off', 'often', 'on', 'once', 'one', 'only', 'onto', 'or', 'other', 'others', 'otherwise', 'our', 'ours', 'ourselves', 'out', 'over', 'own', 'part', 'per', 'perhaps', 'please', 'put', 'rather', 're', 'same', 'see', 'seem', 'seemed', 'seeming', 'seems', 'serious', 'several', 'she', 'should', 'show', 'side', 'since', 'sincere', 'six', 'sixty', 'so', 'some', 'somehow', 'someone', 'something', 'sometime', 'sometimes', 'somewhere', 'still', 'such', 'system', 'take', 'ten', 'than', 'that', 'the', 'their', 'them', 'themselves', 'then', 'thence', 'there', 'thereafter', 'thereby', 'therefore', 'therein', 'thereupon', 'these', 'they', 'thickv', 'thin', 'third', 'this', 'those', 'though', 'three', 'through', 'throughout', 'thru', 'thus', 'to', 'together', 'too', 'top', 'toward', 'towards', 'twelve', 'twenty', 'two', 'un', 'under', 'until', 'up', 'upon', 'us', 'very', 'via', 'was', 'we', 'well', 'were', 'what', 'whatever', 'when', 'whence', 'whenever', 'where', 'whereafter', 'whereas', 'whereby', 'wherein', 'whereupon', 'wherever', 'whether', 'which', 'while', 'whither', 'who', 'whoever', 'whole', 'whom', 'whose', 'why', 'will', 'with', 'within', 'without', 'would', 'yet', 'you', 'your', 'yours', 'yourself', 'yourselves', 'the'];
 
@@ -93,23 +118,30 @@
 
       this.$scope.addBlogFormData.url = newTitle;
 
-    };
+    }.bind(this);
+
+    var removeNewLines = function() {
+
+      // remove any new lines in the content. Just want to let the HTML tags and css set the layout
+      this.$scope.addBlogFormData.content = this.$scope.addBlogFormData.content.replace(/[\s\r\n]+$/, '');
+
+    }.bind(this);
 
 
-    this.addUniqueID = function () {
+    var addUniqueID = function () {
 
       // unique id is used in the URL
       this.$scope.addBlogFormData.id = this.$scope.addBlogFormData.publishedDate.substring(0, 6);
 
-    };
+    }.bind(this);
 
 
-    this.addDate = function () {
+    var addDate = function () {
 
       // date in milliseconds. angularjs date filter displays user friendly date format on blog page
       this.$scope.addBlogFormData.publishedDate = Date.parse(new Date()).toString();
 
-    };
+    }.bind(this);
 
   };
 
@@ -123,6 +155,7 @@
     if (isValid) {
 
       this.trimString();
+      this.removeNewLines();
       this.addDate();
       this.addUniqueID();
       this.addSEOFriendlyURL();
@@ -132,7 +165,8 @@
       var returnedPromise = this.$scope.addBlogFormData.$save(function () {
       }, function (value) {
 
-        this.$log('Failure: BlogDetailsCtrl.addBlog', value);
+        this.$log.warn('Failure: BlogDetailsCtrl.addBlog');
+        this.$log.warn(value);
 
       }.bind(this));
 
