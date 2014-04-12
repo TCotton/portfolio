@@ -6,6 +6,8 @@
 (function () {
 
   var app = angular.module('portfolioApp');
+  /** Declare private methods
+   * **/
   var _blogData;
   var _sortOldBlogPosts;
   var _totalArticlesCount;
@@ -40,11 +42,12 @@
 
       // cache the total number of items returned
       this.totalOldArticles = _.size(data);
-      this.sortOldBlogPosts(data);
-      this.addReviewImage();
-      this.seoFriendly();
-      this.totalArticlesCount();
-      this.finishDataProcessing();
+      _sortOldBlogPosts(data);
+      _addReviewImage();
+      _seoFriendly();
+      _totalArticlesCount();
+      _finishDataProcessing();
+
     }.bind(this);
 
     // change date format on old blog posts to a native Javascript friendly format
@@ -221,4 +224,3 @@
   app.service('BlogDataService', BlogDataService);
 
 }());
-
