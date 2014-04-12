@@ -55,6 +55,7 @@
 
   };
 
+
   BlogCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataService', '$log'];
 
   BlogCtrl.prototype.currentPage = function () {

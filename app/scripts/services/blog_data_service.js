@@ -6,6 +6,12 @@
 (function () {
 
   var app = angular.module('portfolioApp');
+  var _blogData;
+  var _sortOldBlogPosts;
+  var _totalArticlesCount;
+  var _finishDataProcessing;
+  var _seoFriendly;
+  var _addReviewImage;
 
   var BlogDataService = function ($http, $q, CONFIG, $rootScope, localStorageService, FeedService, $timeout, $interval, $log, BlogService) {
 
@@ -30,11 +36,7 @@
     this.oldBlogPosts = localStorageService.get('oldBlogPosts') || null;
     this.workComplete = localStorageService.get('workComplete') ? true : false;
 
-    this.blogData = function () {
-      return blogData();
-    };
-
-    var blogData = function (data) {
+    _blogData = function (data) {
 
       // cache the total number of items returned
       this.totalOldArticles = _.size(data);
@@ -45,12 +47,8 @@
       this.finishDataProcessing();
     }.bind(this);
 
-    this.sortOldBlogPosts = function () {
-      return sortOldBlogPosts();
-    };
-
     // change date format on old blog posts to a native Javascript friendly format
-    var sortOldBlogPosts = function (posts) {
+    _sortOldBlogPosts = function (posts) {
 
       for (var key in posts) {
 
@@ -79,23 +77,15 @@
       });
     }.bind(this);
 
-    this.totalArticlesCount = function () {
-      return totalArticlesCount();
-    };
-
     // cache the total number of articles
     // used in pagination
-    var totalArticlesCount = function () {
+    _totalArticlesCount = function () {
 
       this.totalArticles = this.totalOldArticles + this.totalNewArticles;
 
     }.bind(this);
 
-    this.finishDataProcessing = function () {
-      return finishDataProcessing();
-    };
-
-    var finishDataProcessing = function () {
+    _finishDataProcessing = function () {
 
       this.workComplete = true;
       this.localStorageService.add('totalOldArticles', this.totalOldArticles);
@@ -104,12 +94,8 @@
 
     }.bind(this);
 
-    this.seoFriendly = function () {
-      return seoFriendly();
-    };
-
     // create SEO friendly URL from title and add it to the oldBlogPosts scope
-    var seoFriendly = function () {
+    _seoFriendly = function () {
 
       // in this array are a liist of stopwords which have less SEO value
       var stopwords = ['a', 'about', 'above', 'across', 'after', 'afterwards', 'again', 'against', 'all', 'almost', 'alone', 'along', 'already', 'also', 'although', 'always', 'am', 'among', 'amongst', 'amoungst', 'amount', 'an', 'and', 'another', 'any', 'anyhow', 'anyone', 'anything', 'anyway', 'anywhere', 'are', 'around', 'as', 'at', 'back', 'be', 'became', 'because', 'become', 'becomes', 'becoming', 'been', 'before', 'beforehand', 'behind', 'being', 'below', 'beside', 'besides', 'between', 'beyond', 'bill', 'both', 'bottom', 'but', 'by', 'call', 'can', 'cannot', 'cant', 'co', 'con', 'could', 'couldnt', 'cry', 'de', 'describe', 'detail', 'do', 'done', 'down', 'due', 'during', 'each', 'eg', 'eight', 'either', 'eleven', 'else', 'elsewhere', 'empty', 'enough', 'etc', 'even', 'ever', 'every', 'everyone', 'everything', 'everywhere', 'except', 'few', 'fifteen', 'fify', 'fill', 'find', 'fire', 'first', 'five', 'for', 'former', 'formerly', 'forty', 'found', 'four', 'from', 'front', 'full', 'further', 'get', 'give', 'go', 'had', 'has', 'hasnt', 'have', 'he', 'hence', 'her', 'here', 'hereafter', 'hereby', 'herein', 'hereupon', 'hers', 'herself', 'him', 'himself', 'his', 'how', 'however', 'hundred', 'ie', 'if', 'in', 'inc', 'indeed', 'interest', 'into', 'is', 'it', 'its', 'itself', 'keep', 'last', 'latter', 'latterly', 'least', 'less', 'ltd', 'made', 'many', 'may', 'me', 'meanwhile', 'might', 'mill', 'mine', 'more', 'moreover', 'most', 'mostly', 'move', 'much', 'must', 'my', 'myself', 'name', 'namely', 'neither', 'never', 'nevertheless', 'next', 'nine', 'no', 'nobody', 'none', 'noone', 'nor', 'not', 'nothing', 'now', 'nowhere', 'of', 'off', 'often', 'on', 'once', 'one', 'only', 'onto', 'or', 'other', 'others', 'otherwise', 'our', 'ours', 'ourselves', 'out', 'over', 'own', 'part', 'per', 'perhaps', 'please', 'put', 'rather', 're', 'same', 'see', 'seem', 'seemed', 'seeming', 'seems', 'serious', 'several', 'she', 'should', 'show', 'side', 'since', 'sincere', 'six', 'sixty', 'so', 'some', 'somehow', 'someone', 'something', 'sometime', 'sometimes', 'somewhere', 'still', 'such', 'system', 'take', 'ten', 'than', 'that', 'the', 'their', 'them', 'themselves', 'then', 'thence', 'there', 'thereafter', 'thereby', 'therefore', 'therein', 'thereupon', 'these', 'they', 'thickv', 'thin', 'third', 'this', 'those', 'though', 'three', 'through', 'throughout', 'thru', 'thus', 'to', 'together', 'too', 'top', 'toward', 'towards', 'twelve', 'twenty', 'two', 'un', 'under', 'until', 'up', 'upon', 'us', 'very', 'via', 'was', 'we', 'well', 'were', 'what', 'whatever', 'when', 'whence', 'whenever', 'where', 'whereafter', 'whereas', 'whereby', 'wherein', 'whereupon', 'wherever', 'whether', 'which', 'while', 'whither', 'who', 'whoever', 'whole', 'whom', 'whose', 'why', 'will', 'with', 'within', 'without', 'would', 'yet', 'you', 'your', 'yours', 'yourself', 'yourselves', 'the'];
@@ -160,11 +146,7 @@
 
     }.bind(this);
 
-    this.addReviewImage = function () {
-      return addReviewImage();
-    };
-
-    var addReviewImage = function () {
+    _addReviewImage = function () {
 
       // these are the images that appear at the top of every blog post
       // at the time of writing there are ten different images
@@ -189,6 +171,7 @@
       }
     }.bind(this);
   };
+
 
   BlogDataService.$inject = ['$http', '$q', 'CONFIG', '$rootScope', 'localStorageService', 'FeedService', '$timeout', '$interval', '$log', 'BlogService'];
 
@@ -215,7 +198,7 @@
 
             if (_.isObject(response.data.responseData.feed.entries)) {
 
-              this.blogData(angular.extend(response.data.responseData.feed.entries, blogDataOne));
+              _blogData(angular.extend(response.data.responseData.feed.entries, blogDataOne));
 
             }
           }.bind(this), function () {}).then(function () {
@@ -238,3 +221,4 @@
   app.service('BlogDataService', BlogDataService);
 
 }());
+
