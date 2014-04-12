@@ -256,8 +256,6 @@
 
             // make sure all methods above for manipulating data have
             if (this.oldBlogComplete && this.newBlogComplete) {
-//              console.log(this.newBlogPosts);
-//              console.log(this.oldBlogPosts);
               angular.extend(this.oldBlogPosts, this.newBlogPosts);
             }
 

@@ -34,6 +34,8 @@
     /** Private methods
      * **/
 
+    /** Remove any white space from the beginning and end of the inputed values
+     * **/
     _trimString = function () {
 
       // trim white space off the start and end of the string values after successful form submission
@@ -47,7 +49,8 @@
       }
     }.bind(this);
 
-
+    /** Take the content and create a snippet to be used in the blog index
+     * **/
     _createContentSnippet = function () {
 
       // to create a codeSnippet cut down the content to around 130 characters without cutting a whole word in half
@@ -71,7 +74,8 @@
 
     }.bind(this);
 
-
+    /** Create a SEO-friendly URL from the blog post title
+     * **/
     _addSEOFriendlyURL = function () {
 
       var stopwords = ['a', 'about', 'above', 'across', 'after', 'afterwards', 'again', 'against', 'all', 'almost', 'alone', 'along', 'already', 'also', 'although', 'always', 'am', 'among', 'amongst', 'amoungst', 'amount', 'an', 'and', 'another', 'any', 'anyhow', 'anyone', 'anything', 'anyway', 'anywhere', 'are', 'around', 'as', 'at', 'back', 'be', 'became', 'because', 'become', 'becomes', 'becoming', 'been', 'before', 'beforehand', 'behind', 'being', 'below', 'beside', 'besides', 'between', 'beyond', 'bill', 'both', 'bottom', 'but', 'by', 'call', 'can', 'cannot', 'cant', 'co', 'con', 'could', 'couldnt', 'cry', 'de', 'describe', 'detail', 'do', 'done', 'down', 'due', 'during', 'each', 'eg', 'eight', 'either', 'eleven', 'else', 'elsewhere', 'empty', 'enough', 'etc', 'even', 'ever', 'every', 'everyone', 'everything', 'everywhere', 'except', 'few', 'fifteen', 'fify', 'fill', 'find', 'fire', 'first', 'five', 'for', 'former', 'formerly', 'forty', 'found', 'four', 'from', 'front', 'full', 'further', 'get', 'give', 'go', 'had', 'has', 'hasnt', 'have', 'he', 'hence', 'her', 'here', 'hereafter', 'hereby', 'herein', 'hereupon', 'hers', 'herself', 'him', 'himself', 'his', 'how', 'however', 'hundred', 'ie', 'if', 'in', 'inc', 'indeed', 'interest', 'into', 'is', 'it', 'its', 'itself', 'keep', 'last', 'latter', 'latterly', 'least', 'less', 'ltd', 'made', 'many', 'may', 'me', 'meanwhile', 'might', 'mill', 'mine', 'more', 'moreover', 'most', 'mostly', 'move', 'much', 'must', 'my', 'myself', 'name', 'namely', 'neither', 'never', 'nevertheless', 'next', 'nine', 'no', 'nobody', 'none', 'noone', 'nor', 'not', 'nothing', 'now', 'nowhere', 'of', 'off', 'often', 'on', 'once', 'one', 'only', 'onto', 'or', 'other', 'others', 'otherwise', 'our', 'ours', 'ourselves', 'out', 'over', 'own', 'part', 'per', 'perhaps', 'please', 'put', 'rather', 're', 'same', 'see', 'seem', 'seemed', 'seeming', 'seems', 'serious', 'several', 'she', 'should', 'show', 'side', 'since', 'sincere', 'six', 'sixty', 'so', 'some', 'somehow', 'someone', 'something', 'sometime', 'sometimes', 'somewhere', 'still', 'such', 'system', 'take', 'ten', 'than', 'that', 'the', 'their', 'them', 'themselves', 'then', 'thence', 'there', 'thereafter', 'thereby', 'therefore', 'therein', 'thereupon', 'these', 'they', 'thickv', 'thin', 'third', 'this', 'those', 'though', 'three', 'through', 'throughout', 'thru', 'thus', 'to', 'together', 'too', 'top', 'toward', 'towards', 'twelve', 'twenty', 'two', 'un', 'under', 'until', 'up', 'upon', 'us', 'very', 'via', 'was', 'we', 'well', 'were', 'what', 'whatever', 'when', 'whence', 'whenever', 'where', 'whereafter', 'whereas', 'whereby', 'wherein', 'whereupon', 'wherever', 'whether', 'which', 'while', 'whither', 'who', 'whoever', 'whole', 'whom', 'whose', 'why', 'will', 'with', 'within', 'without', 'would', 'yet', 'you', 'your', 'yours', 'yourself', 'yourselves', 'the'];
@@ -110,16 +114,18 @@
 
   };
 
-  /** Prototype functions
+  /** Public methods
    * **/
 
+
+  /** When the user clicks to edit a blog post the input fields are populated by the relevant data
+   * **/
   EditBlogCtrl.prototype.editArticle = function (data) {
 
     // display form
     this.$scope.displayForm = true;
 
     // populate the ng-model with the data for the post to be edited
-
     this.$scope.editBlogFormData.title = data.title;
     this.$scope.editBlogFormData.author = data.author;
     this.$scope.editBlogFormData.category = data.category;
@@ -132,7 +138,8 @@
 
   };
 
-
+  /** Called when the user submits the form
+   * **/
   EditBlogCtrl.prototype.editBlog = function (isValid) {
 
     this.$scope.editBlogFormSubmit = true;
@@ -185,10 +192,10 @@
     }
   };
 
-
+  /** request all blogs from the blog document
+   * which is then listed using ng-repeat
+   * **/
   EditBlogCtrl.prototype.getBlogs = function () {
-    // request all blogs from the blog document
-    // which is then listed using ng-repeat
 
     // return all user details from the user document
     var returnedPromise = this.$scope.allBlgs.all(null, function () {
@@ -212,6 +219,10 @@
 
   };
 
+  /** When the user clicks to delete a blog article the popup appears
+   * asking again for confirmation and the local scope is populated with the
+   * blog data ready for submission to the remote service
+   * **/
   EditBlogCtrl.prototype.deleteArticle = function (data) {
 
     this.$scope.displayPopup = true;
@@ -231,11 +242,17 @@
 
   };
 
+  /** On the confirmation popup is a chance for the user to cancel the delete action
+   * **/
   EditBlogCtrl.prototype.hidePopup = function () {
 
     this.$scope.displayPopup = false;
 
   };
+
+  /** On successful deletion of the blog article the pop-up is hidden,
+   *  local scope is reset to null and the list of blog articles is updated
+   * **/
 
   EditBlogCtrl.prototype.removeArticle = function () {
 
@@ -250,7 +267,6 @@
     returnedPromise.then(function () {
 
       this.$scope.displayPopup = false;
-      this.$scope.displayPopup = true;
 
       this.$scope.dataToDelete.title = null;
       this.$scope.dataToDelete.author = null;

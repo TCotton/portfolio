@@ -34,6 +34,9 @@
 
     /** Private methods
      ***/
+
+    /** Remove any white space from the beginning and end of the inputed values
+     * **/
     _trimString = function () {
 
       // trim white space off the start and end of the string values after successful form submission
