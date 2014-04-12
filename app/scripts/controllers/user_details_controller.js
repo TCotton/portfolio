@@ -52,7 +52,8 @@
     var returnedPromise = this.$scope.deleteU.$remove(function () {
     }, function (value) {
 
-      this.$log('Failure: UserDetailsCtrl.deleteUser', value);
+      this.$log.warn('Failure: UserDetailsCtrl.deleteUser');
+      this.$log.warn(value);
 
     }.bind(this));
 
@@ -79,7 +80,8 @@
       var returnedPromise = this.$scope.editUser.$update(function () {
       }, function (value) {
 
-        this.$log('Failure: UserDetailsCtrl.submitEditUserForm', value);
+        this.$log.warn('Failure: UserDetailsCtrl.submitEditUserForm');
+        this.$log.warn(value);
 
       }.bind(this));
 
@@ -95,7 +97,6 @@
 
       }.bind(this));
     }
-
   };
 
   // list all users
@@ -106,7 +107,8 @@
     var returnedPromise = this.UsersMongoDB.all(null, function () {
     }, function (value) {
 
-      this.$log('Failure: UserDetailsCtrl.listAllUsers()', value);
+      this.$log.warn('Failure: UserDetailsCtrl.listAllUsers()');
+      this.$log.warn(value);
 
     }.bind(this));
 
@@ -133,7 +135,8 @@
       var returnedPromise = this.$scope.addUser.$save(function () {
       }, function (value) {
 
-        this.$log('Failure: UserDetailsCtrl.submitAddUserForm', value);
+        this.$log.warn('Failure: UserDetailsCtrl.submitAddUserForm');
+        this.$log.warn(value);
 
       }.bind(this));
 

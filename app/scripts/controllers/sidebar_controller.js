@@ -5,8 +5,6 @@
 'use strict';
 (function () {
 
-  /** Add, edit or delete blog posts
-   * */
   var app = angular.module('portfolioApp');
 
   var SidebarCtrl = function ($rootScope, $scope, $log, BlogDataService) {
@@ -17,6 +15,8 @@
 
     this.$scope.blogData = null;
 
+    /** Take blog object from service ready to be used in the side bar lists
+     * **/
     BlogDataService.retreiveData().then(function (data) {
 
       // retrieve blog data to be used in the ng-repeat directive in the sidebar
