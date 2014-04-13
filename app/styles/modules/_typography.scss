@@ -124,10 +124,11 @@ h3.blog-title {
   color: $textTwo;
 }
 
-.content-text section > div pre {
+.content-text section > div pre, .content-text section > div code {
   @include font-calculator('monospace, serif', 16px);
   font-weight: 400;
   color: $textTwo;
+  display: block;
 }
 
 @include contentText('p.read-more') {

@@ -14,7 +14,6 @@
   var _trimString;
   var _createContentSnippet;
   var _addSEOFriendlyURL;
-  var _removeNewLines;
   var _addUniqueID;
   var _addDate;
 
@@ -113,14 +112,6 @@
 
     }.bind(this);
 
-    /** Remove any now lines from the content
-     * **/
-    _removeNewLines = function () {
-
-      this.$scope.addBlogFormData.content = this.$scope.addBlogFormData.content.toString().replace(/[\s\r\n]+$/g, '');
-
-    }.bind(this);
-
     /** unique id is used at the end of the blog page URL
      * **/
     _addUniqueID = function () {
@@ -147,7 +138,6 @@
     if (isValid) {
 
       _trimString();
-      _removeNewLines();
       _addDate();
       _addUniqueID();
       _addSEOFriendlyURL();
