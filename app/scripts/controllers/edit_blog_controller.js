@@ -43,7 +43,7 @@
 
         if (key.isPrototypeOf(this.$scope.editBlogFormData) && _.isString(this.$scope.editBlogFormData[key])) {
 
-          this.$scope.editBlogFormData[key] = this.$scope.editBlogFormData[key].toString();
+          this.$scope.editBlogFormData[key] = this.$scope.editBlogFormData[key].toString().trim();
 
         }
       }
@@ -131,6 +131,8 @@
     this.$scope.editBlogFormData.category = data.category;
     this.$scope.editBlogFormData.content = data.content;
     this.$scope.editBlogFormData.displayImage = data.displayImage;
+    this.$scope.editBlogFormData.uniqueId = data.uniqueId;
+    this.$scope.editBlogFormData.publishedDate = data.publishedDate;
 
     this.$scope.editBlogFormData._id = {};
 
