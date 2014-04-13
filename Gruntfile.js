@@ -173,7 +173,7 @@ module.exports = function (grunt) {
           lineNumbers: false
         },
         files: {
-          '<%= yeoman.app %>/styles/main.css': '<%= yeoman.app %>/styles/main.scss'
+          '<%= yeoman.dist %>/styles/main.css': '<%= yeoman.dist %>/styles/main.scss'
         }
       }
     },
