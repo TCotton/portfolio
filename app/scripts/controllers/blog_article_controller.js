@@ -31,6 +31,11 @@
 
   BlogArticleCtrl.prototype.loadBlogData = function () {
 
+    if (localStorage.getItem('oldBlogPosts')) {
+      this.$scope.oldBlogPosts = angular.extend(JSON.parse(localStorage.getItem('oldBlogPosts')), JSON.parse(sessionStorage.getItem('totalNewArticles')));
+      this.populatePage();
+    }
+
     this.BlogDataService.retreiveData().then(function (data) {
 
       this.$scope.oldBlogPosts = data.oldBlogPosts;
