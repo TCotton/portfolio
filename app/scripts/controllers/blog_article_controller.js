@@ -26,6 +26,9 @@
 
   BlogArticleCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataService', '$log', '$timeout', '$sce'];
 
+  /** Load blog data from either the service or cache and then populate the page with the values
+   * **/
+
   BlogArticleCtrl.prototype.loadBlogData = function () {
 
     this.BlogDataService.retreiveData().then(function (data) {

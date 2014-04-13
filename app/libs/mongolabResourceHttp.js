@@ -78,9 +78,7 @@ angular.module('mongolabResourceHttp', []).factory('$mongolabResourceHttp', ['MO
     };
 
     Resource.all = function (options, successcb, errorcb) {
-      defaultParams = angular.extend(defaultParams, {
-        headers: {'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}
-      });
+      defaultParams = angular.extend(defaultParams);
       if (angular.isFunction(options)) {
         errorcb = successcb;
         successcb = options;

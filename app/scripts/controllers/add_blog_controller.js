@@ -70,7 +70,7 @@
       //re-trim if we are in the middle of a word
       trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(' '))) + ' ...';
 
-      //strip and HTML tags
+      //strip andy HTML tags
       this.$scope.addBlogFormData.contentSnippet = trimmedString.replace(/(<([^>]+)>)/ig, '').trim();
 
     }.bind(this);

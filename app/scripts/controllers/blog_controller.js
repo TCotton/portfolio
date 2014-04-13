@@ -21,7 +21,7 @@
     if (localStorage.getItem('oldBlogPosts')) {
       this.$scope.totalBlogPosts = angular.extend(JSON.parse(localStorage.getItem('oldBlogPosts')), JSON.parse(sessionStorage.getItem('totalNewArticles')));
     }
-    //this.$scope.oldBlogPosts = localStorageService.get('oldBlogPosts') || null;
+  
     this.$scope.totalArticles = JSON.parse(sessionStorage.getItem('totalArticles')) || null;
     this.$scope.totalOldArticles = JSON.parse(localStorage.getItem('totalOldArticles')) || null;
     this.$scope.totalNewArticles = JSON.parse(sessionStorage.getItem('totalNewArticles')) || null;
@@ -33,6 +33,8 @@
     this.$scope.returnObject = null;
 
     BlogDataService.retreiveData().then(function (data) {
+
+      //console.log(data);
 
       this.$scope.returnObject = data;
 

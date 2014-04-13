@@ -222,7 +222,8 @@
     var deferred = this.$q.defer();
 
     // remove the line below on a production site
-    //localStorage.clear();
+/*    localStorage.clear();
+    sessionStorage.clear();*/
 
     // use a a cache means that it is possible to bypass the above methods and just serve up the data
     if (!localStorage.getItem('oldBlogPosts') || !sessionStorage.getItem('newBlogPosts')) {
