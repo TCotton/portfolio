@@ -28,20 +28,10 @@
 
   BlogArticleCtrl.prototype.loadBlogData = function () {
 
-    var blogData;
+    this.BlogDataService.retreiveData().then(function (data) {
 
-    var getPromise = this.BlogDataService.retreiveData();
-
-    getPromise.then(function (data) {
-
-      if (data.workComplete) {
-
-        blogData = data;
-
-        this.$scope.oldBlogPosts = blogData.oldBlogPosts;
-        this.populatePage();
-
-      }
+      this.$scope.oldBlogPosts = data.oldBlogPosts;
+      this.populatePage();
 
     }.bind(this), function (response) {
 
@@ -49,18 +39,17 @@
       this.$log.warn(response);
 
     }.bind(this));
-
   };
 
-  BlogArticleCtrl.prototype.populatePage = function() {
+  BlogArticleCtrl.prototype.populatePage = function () {
 
     // find blogId number at the end of the URL, ie ?id=182013
-    var blogId = this.$rootScope.currentPage.slice(this.$rootScope.currentPage.indexOf('?id=') + 4, this.$rootScope.currentPage.length );
+    var blogId = this.$rootScope.currentPage.slice(this.$rootScope.currentPage.indexOf('?id=') + 4, this.$rootScope.currentPage.length);
 
     var blogPost = _.filter(this.$scope.oldBlogPosts, function (o) {
 
       // filter articles array to find the correct article for the page
-      if (o.publishedDate.substring(0,6) === blogId) {
+      if (o.publishedDate.substring(0, 6) === blogId) {
 
         return o.publishedDate;
       }
