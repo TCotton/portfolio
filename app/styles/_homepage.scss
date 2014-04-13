@@ -67,6 +67,18 @@
   &.slider4 {
     background-image: $sliderFour;
   }
+  &.slider5 {
+    background-image: $sliderFive;
+  }
+  &.slider6 {
+    background-image: $sliderSix;
+  }
+  &.slider7 {
+    background-image: $sliderSeven;
+  }
+  &.slider8 {
+    background-image: $sliderEight;
+  }
   &.sliderPlaceholder {
     background-image: $sliderPlaceholderDataURI;
   }
@@ -205,14 +217,19 @@
   > span {
     // header and content for span blocks
     width: 20%;
-    padding: 0 2%;
+    padding: 0 1%;
     float: left;
     text-align: center;
     &:first-of-type {
-      padding: 0 2% 0 0;
+      padding: 0 1% 0 0;
     }
     &:last-of-type {
-      padding: 0 0 0 2%;
+      padding: 0 0 0 1%;
+    }
+    sup {
+      position: relative;
+      top: -0.7em;
+      font-size: 50%;
     }
   }
 }

@@ -3,7 +3,7 @@
  */
 'use strict';
 
-angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', 'PROJECTS', 'WORK', '$interval', '$timeout', '$animate', '$window', function (SLIDER, PROJECTS, WORK, $interval, $timeout, $animate, $window) {
+angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interval', '$timeout', '$animate', '$window', function (SLIDER, $interval, $timeout, $animate, $window) {
 
   return {
     restrict: 'A',
@@ -23,24 +23,9 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', 'PROJECTS
 
     controller: function ($scope) {
 
-      var SLIDE = angular.extend(WORK, PROJECTS);
-      //console.log(SLIDE);
-
-      var filterSLIDE = function (match) {
-
-        return _.filter(SLIDE, function (o) {
-
-          // filter articles array to find the correct article for the page
-          if (o === match) {
-
-            return o;
-          }
-        });
-
-      };
-
       $scope.slideController = {
         currentSlide: 0,
+
 
         sliderForMethod: function (sliderNumber) {
           // loops through SLIDER constant and finds the right child objects
@@ -236,8 +221,8 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', 'PROJECTS
 
 }]);
 
-angular.module('portfolioApp').filter('slice', function () {
-  return function (arr, start, end) {
+angular.module('portfolioApp').filter('slice', function() {
+  return function(arr, start, end) {
     return arr.slice(start, end);
   };
 });

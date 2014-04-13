@@ -1,22 +1,42 @@
 {
   "slider1":{
     "title": "Thompson Reuters Japan",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipisiing elit, sed do eiusmod tempor incididunt ut.",
+    "text": "A vital website for Thomson Reuters in their expanding Far East market.",
     "URL": "/#!/thomson-reuters-japan"
   },
   "slider2": {
-    "title": "Twt Twt",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipisiing elit, sed do eiusmod tempor incididunt ut.",
-    "URL": "/#!/twt-twt"
+    "title": "Blinkboxbooks",
+    "text": "Tesco's new flagship eCommerce site built with AngularJS by a world-class in-house team",
+    "URL": "/#!/work-projects/blinkbox"
   },
   "slider3": {
-    "title": "UK Law Student",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipisiing elit, sed do eiusmod tempor incididunt ut.",
-    "URL": "/#!/uk-lawstudent"
+    "title": "lightning.gs",
+    "text": "Optimizes and coverts PNG images to Data URIs using the latest HTML5 APIs.",
+    "URL": "/#!/side-projects/lightning"
   },
   "slider4": {
+    "title": "UK Law Student",
+    "text": "A clean, easy to navigate site for Thomson Reuters that is intended to engage university law students.",
+    "URL": "/#!/work-projects/uk-lawstudent"
+  },
+  "slider5": {
+    "title": "Kaplan International",
+    "text": "Owned by the Washington Post Group, Kaplan International is the worlds leading education provider for those seeking to speak English",
+    "URL": "/#!/work-projects/kaplan"
+  },
+  "slider6": {
+    "title": "Dr Newmans Clinic",
+    "text": "One of Harley Street's leading specialist private clinics.",
+    "URL": "/#!/work-projects/drnewmans"
+  },
+  "slider7": {
     "title": "Penny Books",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipisiing elit, sed do eiusmod tempor incididunt ut.",
-    "URL": "/#!/penny-books"
+    "text": "Uses the Amazon API to search for books on sale for only one penny.",
+    "URL": "/#!/side-projects/pennybooks"
+  },
+  "slider8": {
+    "title": "Twt Twt",
+    "text": "Send Tweets with fun UTF-8 character symbols that make a simple message so much more descriptive.",
+    "URL": "/#!/side-projects/twttwt"
   }
 }

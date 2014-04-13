@@ -13,7 +13,7 @@
   "thomsonreuters": {
     "id": "002",
     "title": "Thomson Reuters Japan",
-    "summary": "A critical website for Thomson Reuters in their expanding Far East market.",
+    "summary": "A vital website for Thomson Reuters in their expanding Far East market.",
     "details": "<p>Built on the Wordpress platform, I worked with both the Japanese Thomson Reuters team and the team based in Canary Wharf to create a key website for the corporation in their expanding Japanese market. It is a customised Wordpress build with all coding – HTML, CSS, JavaScript and PHP – written by myself.</p>",
     "code": "Wordpress",
     "company": "Thomson Reuters",
@@ -24,7 +24,7 @@
   "lawstudent": {
     "id": "003",
     "title": "Thomson Reuters<br> Law Student",
-    "summary": "A clean, easy to navigate site for Thomson Reuters that is intended to appeal to university law students.",
+    "summary": "A clean, easy-to-navigate site for Thomson Reuters that is intended to engage university law students.",
     "details": "<p>Using Wordpress, this was a website refresh for the law student deparment at Thomson Reuters. Technologies I choose to use included the jQuery </p>",
     "code": "Wordpress",
     "company": "Thomson Reuters",
