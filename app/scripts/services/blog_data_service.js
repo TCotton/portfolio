@@ -54,6 +54,7 @@
       this.oldBlogPosts = _addReviewImage(this.oldBlogPosts);
       this.oldBlogPosts = _addReviewImage(this.oldBlogPosts);
       this.oldBlogPosts = _seoFriendly(this.oldBlogPosts);
+      _totalArticlesCount();
       this.oldBlogComplete = true;
 
     }.bind(this);
@@ -69,6 +70,7 @@
       this.newBlogPosts = _addReviewImage(this.newBlogPosts);
       this.newBlogPosts = _addReviewImage(this.newBlogPosts);
       this.newBlogPosts = _seoFriendly(this.newBlogPosts);
+      _totalArticlesCount();
       this.newBlogComplete = true;
 
     }.bind(this);
@@ -224,7 +226,7 @@
     this.localStorageService.clearAll();
 
     // use a a cache means that it is possible to bypass the above methods and just serve up the data
-    if (!this.localStorageService.get('oldBlogPosts')) {
+    if (!this.localStorageService.get('oldBlogPosts') || !sessionStorage.getItem('newBlogPosts')) {
 
       //if blog articles are already stored as localstorage then don't call remote service and use values in storage
 
@@ -257,6 +259,7 @@
             // make sure all methods above for manipulating data have
             if (this.oldBlogComplete && this.newBlogComplete) {
               angular.extend(this.oldBlogPosts, this.newBlogPosts);
+              _cache();
             }
 
           }.bind(this), function(){}).then(function(){

@@ -13,7 +13,7 @@ angular.module('portfolioApp').directive('blogBlockDirective', [function () {
       blog: '='
     },
     template: '<article>' +
-      '<header><img data-ng-src="/{{blog.displayImage}}" alt="" /></header>' +
+      '<header><a data-ng-href="/#!/blog/{{blog.url}}?id={{blog.uniqueId}}"><img data-ng-src="/{{blog.displayImage}}" alt="" /></a></header>' +
       '<section>' +
       '<h3 class="blog-title" data-ng-bind-html="blog.title"></h3>' +
       '<p class="date" data-ng-bind="blog.publishedDate | date"></p>' +

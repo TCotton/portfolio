@@ -7,23 +7,32 @@
 
   var app = angular.module('portfolioApp');
 
-  var BlogCtrl = function ($rootScope, $scope, $location, BlogDataService, $log, $timeout) {
+  var BlogCtrl = function ($rootScope, $scope, $location, BlogDataService, $log, $timeout, localStorageService) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
     this.$location = $location;
     this.$log = $log;
     this.$timeout = $timeout;
-    this.$scope.oldBlogPosts = null;
+
+    /** Either receive data from BlogDataService or from the cache
+     * **/
+
+    if (localStorageService.get('oldBlogPosts')) {
+      this.$scope.totalBlogPosts = angular.extend(localStorageService.get('oldBlogPosts'), JSON.parse(sessionStorage.getItem('totalNewArticles')));
+    }
+    this.$scope.oldBlogPosts = localStorageService.get('oldBlogPosts') || null;
+    this.$scope.totalArticles = JSON.parse(sessionStorage.getItem('totalArticles')) || null;
+    this.$scope.totalOldArticles = localStorageService.get('totalOldArticles') || null;
+    this.$scope.totalNewArticles = JSON.parse(sessionStorage.getItem('totalNewArticles')) || null;
+
     /* the number of articles per page */
     this.$scope.paginationPageSize = 5;
     /* used in */
     this.$scope.paginationPageSizeLimit = -5;
     this.$scope.returnObject = null;
 
-    var getPromise = BlogDataService.retreiveData();
-
-    getPromise.then(function (data) {
+    BlogDataService.retreiveData().then(function (data) {
 
       this.$scope.returnObject = data;
 
@@ -34,7 +43,7 @@
       // why is this used for ?
       this.paginationTotalPages = Math.ceil(this.totalArticles / this.paginationPageSize);
 
-      this.$scope.oldBlogPosts = this.$scope.returnObject.oldBlogPosts;
+      this.$scope.totalBlogPosts = this.$scope.returnObject.oldBlogPosts;
 
     }.bind(this), function (response) {
 
@@ -51,13 +60,7 @@
 
   };
 
-
-  BlogCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataService', '$log'];
-
-  BlogCtrl.prototype.currentPage = function () {
-
-
-  };
+  BlogCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataService', '$log', 'localStorageService'];
 
   BlogCtrl.prototype.currentPage = function () {
 
