@@ -9,7 +9,7 @@
    * */
   var app = angular.module('portfolioApp');
 
-  /** Declare private method variables
+  /** Declare private method variable names
    * **/
   var _trimString;
   var _createContentSnippet;
