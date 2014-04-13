@@ -71,8 +71,9 @@ describe('Controller: BlogCtrl', function () {
     });
 
   }));
+  
 
-
+/*
   describe('Run BlogCtrl with FeedService dependency', function () {
     beforeEach(function () {
 
@@ -85,7 +86,7 @@ describe('Controller: BlogCtrl', function () {
 
     });
 
-  });
+  });*/
 
 
 });
