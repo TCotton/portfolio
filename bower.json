@@ -3,16 +3,16 @@
   "version": "0.0.1",
   "dependencies": {
     "underscore": "~1.6.0",
-    "angular": "1.2.9",
-    "angular-resource": "1.2.9",
-    "angular-cookies": "1.2.9",
-    "angular-sanitize": "1.2.9",
-    "angular-route": "1.2.9",
-    "angular-touch": "1.2.9",
-    "angular-animate": "1.2.9"
+    "angular": "1.2.15",
+    "angular-resource": "1.2.15",
+    "angular-cookies": "1.2.15",
+    "angular-sanitize": "1.2.15",
+    "angular-route": "1.2.15",
+    "angular-touch": "1.2.15",
+    "angular-animate": "1.2.15"
   },
   "devDependencies": {
-    "angular-mocks": "1.2.9",
-    "angular-scenario": "1.2.9"
+    "angular-mocks": "1.2.15",
+    "angular-scenario": "1.2.15"
   }
 }
