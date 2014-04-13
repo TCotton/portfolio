@@ -1,68 +1,70 @@
 <div id="banner">
 
-    <section>
-        <h2 class="page-top-title">My blog</h2>
-    </section>
+  <section>
+    <h2 class="page-top-title">My blog</h2>
+  </section>
 
 </div><!-- end banner -->
 
 <div id="main-content" class="clearfix blog blog-single content-text">
 
-    <div id="left-large">
+  <div id="left-large">
 
-        <article>
+    <article>
 
-            <header><img data-ng-src="/{{displayImage}}" alt="" /></header>
-            <section>
+      <header><img data-ng-src="/{{displayImage}}" alt=""/></header>
+      <section>
 
-              <h3 class="blog-title" data-ng-bind="title"></h3>
+        <h3 class="blog-title" data-ng-bind="title"></h3>
 
-              <p class="date">Andy Walpole / Category: <span rel="tag">General</span> / <span data-ng-bind="publishedDate | date"></span></p>
+        <p class="date">Andy Walpole / Category: <span rel="tag">General</span> / <span
+            data-ng-bind="publishedDate | date"></span></p>
 
-              <div data-ng-bind-html="content"></div>
+        <div data-ng-bind-html="content"></div>
 
-            </section>
+      </section>
 
-        </article>
+    </article>
 
-        <div class="comments">
+    <div class="comments">
 
-            <h5 class="content-title">Blog comments will be open soon</h5>
+      <h5 class="content-title">Blog comments will be open soon</h5>
 
-            <form action="/" method="post" data-ng-if="commentsOpen">
+      <form action="/" method="post" data-ng-if="commentsOpen">
 
-                <label for="name" class="visuallyhidden">Your name</label>
-                <input type="text" id="name" value="" placeholder="Name" required="required" class="input" maxlength="120"/>
+        <label for="name" class="visuallyhidden">Your name</label>
+        <input type="text" id="name" value="" placeholder="Name" required="required" class="input" maxlength="120"/>
 
-                <label for="email" class="visuallyhidden">Your email address</label>
-                <input type="email" id="email" value="" placeholder="Email (will be kept private)" required="required" class="input" maxlength="120"/>
+        <label for="email" class="visuallyhidden">Your email address</label>
+        <input type="email" id="email" value="" placeholder="Email (will be kept private)" required="required"
+               class="input" maxlength="120"/>
 
-                <label for="url" class="visuallyhidden">Your website address</label>
-                <input type="url" id="url" value="" placeholder="Website" required="required" class="input" maxlength="120"/>
+        <label for="url" class="visuallyhidden">Your website address</label>
+        <input type="url" id="url" value="" placeholder="Website" required="required" class="input" maxlength="120"/>
 
-                <label for="message" class="visuallyhidden">Your comments</label>
-                <textarea id="message" cols="10" rows="10" placeholder="Your message" required="required"
-                          class="textarea" maxlength="1000"></textarea>
+        <label for="message" class="visuallyhidden">Your comments</label>
+        <textarea id="message" cols="10" rows="10" placeholder="Your message" required="required"
+                  class="textarea" maxlength="1000"></textarea>
 
             <span class="hide">
             <label for="zipcode" class="visuallyhidden">Your zipcode</label>
             <input type="text" id="zipcode" value="" maxlength="64"/>
             </span>
 
-                <input type="submit" value="Post message" class="button-contact"/>
+        <input type="submit" value="Post message" class="button-contact"/>
 
-            </form>
-
-        </div>
-        <!-- end comments -->
-
+      </form>
 
     </div>
-    <!-- end left large -->
+    <!-- end comments -->
 
 
-    <div data-ng-include src="'views/sidebar.html'"></div>
-    <!-- end right small -->
+  </div>
+  <!-- end left large -->
+
+
+  <div data-ng-include src="'views/sidebar.html'"></div>
+  <!-- end right small -->
 
 
 </div><!-- end main content -->

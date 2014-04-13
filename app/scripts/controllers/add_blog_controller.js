@@ -121,9 +121,10 @@
 
     }.bind(this);
 
+    /** unique id is used at the end of the blog page URL
+     * **/
     _addUniqueID = function () {
 
-      // unique id is used at the end of the blog page URL
       this.$scope.addBlogFormData.uniqueId = this.$scope.addBlogFormData.publishedDate.substring(0, 6);
 
     }.bind(this);
@@ -132,7 +133,7 @@
      * **/
     _addDate = function () {
 
-      this.$scope.addBlogFormData.publishedDate = parseInt(Date.parse(new Date()),10);
+      this.$scope.addBlogFormData.publishedDate = parseInt(Date.parse(new Date()),10).toString();
 
     }.bind(this);
 
@@ -141,7 +142,6 @@
   AddBlogCtrl.prototype.addBlog = function (isValid) {
 
     this.$scope.addBlogFormSubmit = true;
-    //this.$scope.formSuccess = null;
 
     // check to make sure the form is completely valid
     if (isValid) {
