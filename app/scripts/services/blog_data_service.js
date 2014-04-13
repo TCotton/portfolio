@@ -15,7 +15,7 @@
   var _seoFriendly;
   var _addReviewImage;
 
-  var BlogDataService = function ($http, $q, CONFIG, $rootScope, localStorageService, FeedService, $timeout, $interval, $log, BlogService) {
+  var BlogDataService = function ($http, $q, CONFIG, $rootScope, FeedService, $timeout, $interval, $log, BlogService) {
 
     /** angularjs stuff
      * **/
@@ -23,7 +23,6 @@
     this.$q = $q;
     this.CONFIG = CONFIG;
     this.$rootScope = $rootScope;
-    this.localStorageService = localStorageService;
     this.FeedService = FeedService;
     this.BlogService = BlogService;
     this.$timeout = $timeout;
@@ -36,11 +35,11 @@
     // familiar with all local scopes used in this controller
 
     this.totalArticles = JSON.parse(sessionStorage.getItem('totalArticles')) || null;
-    this.totalOldArticles = localStorageService.get('totalOldArticles') || null;
+    this.totalOldArticles = JSON.parse(localStorage.getItem('totalOldArticles')) || null;
     this.totalNewArticles = JSON.parse(sessionStorage.getItem('totalNewArticles')) || null;
     this.newBlogPosts = JSON.parse(sessionStorage.getItem('newBlogPosts')) || null;
-    this.oldBlogPosts = localStorageService.get('oldBlogPosts') || null;
-    this.oldBlogComplete = localStorageService.get('oldBlogComplete') ? true : false;
+    this.oldBlogPosts = JSON.parse(localStorage.getItem('oldBlogPosts')) || null;
+    this.oldBlogComplete = JSON.parse(localStorage.getItem('oldBlogComplete')) ? true : false;
     this.newBlogComplete = JSON.parse(sessionStorage.getItem('newBlogComplete')) ? true : false;
 
     /** method used for the data taken from the old blog RSS feed
@@ -123,12 +122,12 @@
     * **/
     _cache = function () {
 
-      this.localStorageService.add('totalOldArticles', this.totalOldArticles);
+      localStorage.setItem('totalOldArticles', JSON.stringify(this.totalOldArticles));
       sessionStorage.setItem('totalNewArticles', JSON.stringify(this.totalNewArticles));
       sessionStorage.setItem('newBlogPosts', JSON.stringify(this.newBlogPosts));
-      this.localStorageService.add('oldBlogPosts', this.oldBlogPosts);
-      this.localStorageService.add('oldBlogComplete', 'true');
-      sessionStorage.setItem('newBlogComplete', 'true');
+      localStorage.setItem('oldBlogPosts', JSON.stringify(this.oldBlogPosts));
+      localStorage.setItem('oldBlogComplete', JSON.stringify('true'));
+      sessionStorage.setItem('newBlogComplete', JSON.stringify('true'));
 
     }.bind(this);
 
@@ -216,17 +215,17 @@
   };
 
 
-  BlogDataService.$inject = ['$http', '$q', 'CONFIG', '$rootScope', 'localStorageService', 'FeedService', '$timeout', '$interval', '$log', 'BlogService'];
+  BlogDataService.$inject = ['$http', '$q', 'CONFIG', '$rootScope', 'FeedService', '$timeout', '$interval', '$log', 'BlogService'];
 
   BlogDataService.prototype.retreiveData = function () {
 
     var deferred = this.$q.defer();
 
     // remove the line below on a production site
-    this.localStorageService.clearAll();
+    //localStorage.clear();
 
     // use a a cache means that it is possible to bypass the above methods and just serve up the data
-    if (!this.localStorageService.get('oldBlogPosts') || !sessionStorage.getItem('newBlogPosts')) {
+    if (!localStorage.getItem('oldBlogPosts') || !sessionStorage.getItem('newBlogPosts')) {
 
       //if blog articles are already stored as localstorage then don't call remote service and use values in storage
 

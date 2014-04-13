@@ -7,16 +7,14 @@
 
   var app = angular.module('portfolioApp');
 
-  var SidebarCtrl = function ($rootScope, $scope, $log, BlogDataService, localStorageService) {
+  var SidebarCtrl = function ($rootScope, $scope, $log, BlogDataService) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
     this.$log = $log;
 
-    console.log(localStorageService);
-
-    if (localStorageService.get('oldBlogPosts')) {
-      this.$scope.totalBlogPosts = angular.extend(localStorageService.get('oldBlogPosts'), JSON.parse(sessionStorage.getItem('totalNewArticles')));
+    if (sessionStorage.getItem('newBlogPosts')) {
+      this.$scope.blogData = angular.extend(JSON.parse(localStorage.getItem('oldBlogPosts')), JSON.parse(sessionStorage.getItem('newBlogPosts')));
     }
 
     /** Take blog object from service ready to be used in the side bar lists
@@ -35,7 +33,7 @@
 
   };
 
-  SidebarCtrl.$inject = ['$rootScope', '$scope', '$log', 'BlogDataService', 'localStorageService'];
+  SidebarCtrl.$inject = ['$rootScope', '$scope', '$log', 'BlogDataService'];
 
   app.controller('SidebarCtrl', SidebarCtrl);
 

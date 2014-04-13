@@ -7,7 +7,7 @@
 
   var app = angular.module('portfolioApp');
 
-  var BlogCtrl = function ($rootScope, $scope, $location, BlogDataService, $log, $timeout, localStorageService) {
+  var BlogCtrl = function ($rootScope, $scope, $location, BlogDataService, $log, $timeout) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
@@ -18,12 +18,12 @@
     /** Either receive data from BlogDataService or from the cache
      * **/
 
-    if (localStorageService.get('oldBlogPosts')) {
-      this.$scope.totalBlogPosts = angular.extend(localStorageService.get('oldBlogPosts'), JSON.parse(sessionStorage.getItem('totalNewArticles')));
+    if (localStorage.getItem('oldBlogPosts')) {
+      this.$scope.totalBlogPosts = angular.extend(JSON.parse(localStorage.getItem('oldBlogPosts')), JSON.parse(sessionStorage.getItem('totalNewArticles')));
     }
-    this.$scope.oldBlogPosts = localStorageService.get('oldBlogPosts') || null;
+    //this.$scope.oldBlogPosts = localStorageService.get('oldBlogPosts') || null;
     this.$scope.totalArticles = JSON.parse(sessionStorage.getItem('totalArticles')) || null;
-    this.$scope.totalOldArticles = localStorageService.get('totalOldArticles') || null;
+    this.$scope.totalOldArticles = JSON.parse(localStorage.getItem('totalOldArticles')) || null;
     this.$scope.totalNewArticles = JSON.parse(sessionStorage.getItem('totalNewArticles')) || null;
 
     /* the number of articles per page */
@@ -60,7 +60,7 @@
 
   };
 
-  BlogCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataService', '$log', 'localStorageService'];
+  BlogCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataService', '$log'];
 
   BlogCtrl.prototype.currentPage = function () {
 
