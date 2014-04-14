@@ -9,16 +9,20 @@
 
   var app = angular.module('portfolioApp');
 
-  var UserDetailsCtrl = function ($rootScope, $scope, $log, UsersMongoDB) {
+  var UserDetailsCtrl = function ($rootScope, $scope, $log, UsersMongoDB, MongoUserService) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
     this.$log = $log;
 
     this.UsersMongoDB = UsersMongoDB;
-    this.$scope.addUser = new UsersMongoDB();
+    this.MongoUserService = MongoUserService;
+    //this.$scope.addUser = new UsersMongoDB();
     this.$scope.editUser = new UsersMongoDB();
     this.$scope.deleteU = new UsersMongoDB();
+
+    this.$scope.addUser = {};
+
 
     this.$scope.editUserSubmit = {};
     this.$scope.editUserSubmit.submitted = false;
@@ -32,7 +36,7 @@
 
   };
 
-  UserDetailsCtrl.$inject = ['$rootScope', '$scope', '$log', 'UsersMongoDB'];
+  UserDetailsCtrl.$inject = ['$rootScope', '$scope', '$log', 'UsersMongoDB', 'MongoUserService'];
 
   UserDetailsCtrl.prototype.editUser = function (data) {
 
@@ -124,23 +128,14 @@
 
   UserDetailsCtrl.prototype.submitAddUserForm = function (isValid) {
 
-    this.$scope.addUserSubmit.submitted = true;
     // reset formSuccess scope
     this.$scope.formSuccess = null;
 
-    // check to make sure the form is completely valid
     if (isValid) {
-      // submit details to mongodDB
 
-      var returnedPromise = this.$scope.addUser.$save(function () {
-      }, function (value) {
+      var returnedData = this.MongoUserService.addUser(this.$scope.addUser);
 
-        this.$log.warn('Failure: UserDetailsCtrl.submitAddUserForm');
-        this.$log.warn(value);
-
-      }.bind(this));
-
-      returnedPromise.then(function () {
+      returnedData.then(function () {
 
         this.$scope.formSuccess = 'You have successfully added a new user';
         // reset scope to remove values from input fields
@@ -152,7 +147,13 @@
         // repopulate list of users
         this.listAllUsers();
 
+      }.bind(this), function (value) {
+
+        this.$log.warn('Failure: UserDetailsCtrl.submitAddUserForm');
+        this.$log.warn(value);
+
       }.bind(this));
+
     }
 
   };
