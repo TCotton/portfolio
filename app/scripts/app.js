@@ -58,7 +58,10 @@ angular.module('portfolioApp', ['AppConstants', 'ngCookies', 'ngResource', 'ngSa
       .when('/admin/', {
         templateUrl: 'views/admin/admin.html'
       })
+      .when('/404', {
+        templateUrl: 'views/404.html'
+      })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/404'
       });
   });
