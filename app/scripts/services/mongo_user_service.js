@@ -8,12 +8,13 @@
 
   var app = angular.module('portfolioApp');
 
-  var MongoUserService = function ($http, $q) {
+  var MongoUserService = function ($http, $q, CONFIG) {
     this.$http = $http;
     this.$q = $q;
+    this.CONFIG = CONFIG;
   };
 
-  MongoUserService.$inject = ['$http', '$q'];
+  MongoUserService.$inject = ['$http', '$q', 'CONFIG'];
 
   MongoUserService.prototype.addUser = function (formData) {
 
@@ -22,7 +23,7 @@
     var deferred = this.$q.defer();
 
     var returnedMessage = this.$http({
-      url: 'phppages/mongolab_adduser.php',
+      url: this.CONFIG.CURRENT_DOMAIN + 'phppages/mongolab_adduser.php',
       method: 'POST',
       params: formData,
       headers : {

@@ -151,51 +151,29 @@
 
         var returnedData = this.MongoBlogService.addBlogPost(this.$scope.addBlogFormData);
 
-        returnedData.then(function(value) {
-          console.log('success');
-          console.log(value);
-        }, function(value) {
-          console.log('failure');
-          console.log(value);
-        }, function(value) {
-          console.log('notification');
-          console.log(value);
-        });
+        returnedData.then(function() {
+
+          this.$scope.formSuccess = 'You have successfully added a blog article';
+
+          // reset scope to remove values from input fields
+          // loop over form field models
+          for (var key in this.$scope.addBlogFormData) {
+
+            if (this.$scope.addBlogFormData.hasOwnProperty(key)) {
+
+              this.$scope.addBlogFormData[key] = null;
+
+            }
+          }
+
+          this.$scope.addBlogFormSubmit = false;
+
+        }.bind(this), function(value) {
+          this.$log.warn('Failure: BlogDetailsCtrl.addBlog');
+          this.$log.warn(value);
+        }.bind(this));
 
       }
-
-   /*   // submit details to mongodDB
-      var returnedPromise = this.$scope.addBlogFormData.$save(function () {
-      }, function (value) {
-
-        this.$log.warn('Failure: BlogDetailsCtrl.addBlog');
-        this.$log.warn(value);
-
-      }.bind(this));
-
-      returnedPromise.then(function () {
-
-        this.$scope.formSuccess = 'You have successfully added a blog article';
-
-        // reset scope to remove values from input fields
-        // loop over form field models
-        for (var key in this.$scope.addBlogFormData) {
-
-          if (this.$scope.addBlogFormData.hasOwnProperty(key)) {
-
-            this.$scope.addBlogFormData[key] = null;
-
-          }
-        }
-
-        this.$scope.addBlogFormSubmit = false;
-
-      }.bind(this), function (value) {
-
-        this.$log.warn('Failure: AddBlogCtrl.addBlog');
-        this.$log.warn(value);
-
-      }.bind(this));*/
     }
 
   };

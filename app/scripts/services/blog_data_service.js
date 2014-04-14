@@ -15,7 +15,7 @@
   var _seoFriendly;
   var _addReviewImage;
 
-  var BlogDataService = function ($http, $q, CONFIG, $rootScope, FeedService, $timeout, $interval, $log, BlogService) {
+  var BlogDataService = function ($http, $q, CONFIG, $rootScope, FeedService, $timeout, $interval, $log, BlogService, MongoBlogService) {
 
     /** angularjs stuff
      * **/
@@ -28,6 +28,7 @@
     this.$timeout = $timeout;
     this.$interval = $interval;
     this.$log = $log;
+    this.MongoBlogService = MongoBlogService;
 
     /** local scope
      * **/
@@ -215,7 +216,7 @@
   };
 
 
-  BlogDataService.$inject = ['$http', '$q', 'CONFIG', '$rootScope', 'FeedService', '$timeout', '$interval', '$log', 'BlogService'];
+  BlogDataService.$inject = ['$http', '$q', 'CONFIG', '$rootScope', 'FeedService', '$timeout', '$interval', '$log', 'BlogService', 'MongoBlogService'];
 
   BlogDataService.prototype.retreiveData = function () {
 
@@ -230,7 +231,7 @@
 
       //if blog articles are already stored as localstorage then don't call remote service and use values in storage
 
-      this.BlogService.returnBlogData().then(function (value) {
+      this.MongoBlogService.getBlogPosts().then(function (value) {
 
         if (_.isObject(value)) {
 

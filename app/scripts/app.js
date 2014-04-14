@@ -5,6 +5,12 @@
  */
 angular.module('portfolioApp', ['AppConstants', 'ngCookies', 'ngResource', 'ngSanitize', 'ngRoute', 'ngTouch', 'ngAnimate', 'HashBangURLs', 'portfolioAppConfig', 'portfolioAppFilters', 'mongolabResourceHttp', 'DBConstants' ])
   .config(function ($routeProvider, $httpProvider) {
+
+    // Needed for CORS
+    // http://better-inter.net/enabling-cors-in-angular-js/
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
