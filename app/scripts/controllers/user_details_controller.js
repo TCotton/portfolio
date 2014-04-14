@@ -51,21 +51,22 @@
 
   UserDetailsCtrl.prototype.deleteUser = function (data) {
 
-    this.$scope.deleteU = data;
+    //this.$scope.deleteU = data;
 
-    var returnedPromise = this.$scope.deleteU.$remove(function () {
-    }, function (value) {
+    console.log({id: data._id.$oid});
 
-      this.$log.warn('Failure: UserDetailsCtrl.deleteUser');
-      this.$log.warn(value);
-
-    }.bind(this));
+    var returnedPromise = this.MongoUserService.deleteUsers({id: data._id.$oid});
 
     returnedPromise.then(function () {
 
       this.$scope.formSuccess = 'You have successfully deleted the user';
       // repopulate list of users
       this.listAllUsers();
+
+    }.bind(this), function (value) {
+
+      this.$log.warn('Failure: UserDetailsCtrl.deleteUser');
+      this.$log.warn(value);
 
     }.bind(this));
 
@@ -109,11 +110,11 @@
 
     var returnedPromise = this.MongoUserService.getUsers();
 
-    returnedPromise.then(function(value) {
+    returnedPromise.then(function (value) {
 
       this.$scope.allUsers = value.data;
 
-    }.bind(this), function(value) {
+    }.bind(this), function (value) {
 
       this.$log.warn('Failure: UserDetailsCtrl.listAllUsers()');
       this.$log.warn(value);

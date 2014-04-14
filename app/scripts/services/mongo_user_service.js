@@ -54,6 +54,29 @@
 
   };
 
+  MongoUserService.prototype.deleteUsers = function(formData) {
+
+
+    // return promise
+
+    var deferred = this.$q.defer();
+
+    var returnedMessage = this.$http({
+      url: this.CONFIG.CURRENT_DOMAIN + 'phppages/mongolab_deleteuser.php',
+      method: 'get',
+      params: formData,
+      headers : {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
+    });
+
+    deferred.resolve(returnedMessage);
+
+    return deferred.promise;
+
+
+  };
+
   app.service('MongoUserService', MongoUserService);
 
 }());
