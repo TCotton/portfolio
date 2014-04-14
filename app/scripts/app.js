@@ -29,7 +29,7 @@ angular.module('portfolioApp', ['AppConstants', 'ngCookies', 'ngResource', 'ngSa
       })
       .when('/contact-me', {
         templateUrl: 'views/contact_me.html',
-        controller: 'FormCtrl'
+        controller: 'FormCtrl as AdminFormCtrl'
       })
       .when('/blog/', {
         templateUrl: 'views/blog.html',
@@ -58,10 +58,7 @@ angular.module('portfolioApp', ['AppConstants', 'ngCookies', 'ngResource', 'ngSa
       .when('/admin/', {
         templateUrl: 'views/admin/admin.html'
       })
-      .when('/404', {
-        templateUrl: 'views/404.html'
-      })
       .otherwise({
-        redirectTo: '/404'
+        redirectTo: '/'
       });
   });

@@ -26,8 +26,10 @@
 
     <h3 class="content-title">Send a message</h3>
 
+    <p data-ng-bind="contact.successMessage"></p>
+
     <form novalidate="novalidate" name="contactForm"
-          data-ng-submit="submitContactForm(contactForm.$valid)">
+          data-ng-submit="AdminFormCtrl.submitContactForm(contactForm.$valid)">
 
       <span class="name-block">
       <label for="name" class="visuallyhidden">Your full name</label>
@@ -56,7 +58,7 @@
                    data-ng-model="contact.zipcode" maxlength="500"/>
             </span>
 
-      <input type="submit" value="Send message" class="button-contact" />
+      <input type="submit" value="Send message" class="button-contact" data-ng-disabled="contact.successMessageDisable" />
 
     </form>
 
