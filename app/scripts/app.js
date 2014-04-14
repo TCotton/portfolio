@@ -39,7 +39,7 @@ angular.module('portfolioApp', ['AppConstants', 'ngCookies', 'ngResource', 'ngSa
         templateUrl: 'views/blog_page.html',
         controller: 'BlogArticleCtrl'
       })
-      .when('/admin/login', {
+      .when('/login', {
         templateUrl: 'views/admin/login.html',
         controller: 'LoginCtrl as AdminLogin'
       })
