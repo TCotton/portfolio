@@ -13,6 +13,21 @@ angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$locatio
 
     $rootScope.currentPage = $location.absUrl();
 
+    // basic login detection service
+    var admin = new RegExp('\/admin\/');
+    var currentPage = $rootScope.currentPage.toString();
+
+    if(admin.test(currentPage)) {
+
+      if (!sessionStorage.getItem('logginIn')) {
+
+        $location.path("/login");
+
+      }
+    }
+
+
+
     // every time the page reloads make sure it loads from the top
     // clicking links on the middle of the page results in opening a new page in the same spot
 
