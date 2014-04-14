@@ -107,18 +107,16 @@
 
   UserDetailsCtrl.prototype.listAllUsers = function () {
 
-    // return all user details from the user document
-    var returnedPromise = this.UsersMongoDB.all(null, function () {
-    }, function (value) {
+    var returnedPromise = this.MongoUserService.getUsers();
+
+    returnedPromise.then(function(value) {
+
+      this.$scope.allUsers = value.data;
+
+    }.bind(this), function(value) {
 
       this.$log.warn('Failure: UserDetailsCtrl.listAllUsers()');
       this.$log.warn(value);
-
-    }.bind(this));
-
-    returnedPromise.then(function (value) {
-
-      this.$scope.allUsers = value;
 
     }.bind(this));
 

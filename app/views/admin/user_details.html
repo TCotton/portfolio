@@ -16,7 +16,6 @@
 
       <ul data-ng-repeat="user in allUsers">
         <li><b>Name:</b> <span ng-bind="user.name"></span></li>
-        <li><b>Password:</b> <span ng-bind="user.password"></span></li>
         <li data-ng-click="AdminUserDetailsCtrl.editUser(user)"><a href="">Edit the details of this user</a></li>
         <li data-ng-click="AdminUserDetailsCtrl.deleteUser(user)"><a href="">Delete this user</a></li>
 

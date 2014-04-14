@@ -37,6 +37,23 @@
 
   };
 
+  MongoUserService.prototype.getUsers = function() {
+
+    // return promise
+
+    var deferred = this.$q.defer();
+
+    var returnedMessage = this.$http({
+      url: this.CONFIG.CURRENT_DOMAIN + 'phppages/mongolab_getusers.php',
+      method: 'GET'
+    });
+
+    deferred.resolve(returnedMessage);
+
+    return deferred.promise;
+
+  };
+
   app.service('MongoUserService', MongoUserService);
 
 }());
