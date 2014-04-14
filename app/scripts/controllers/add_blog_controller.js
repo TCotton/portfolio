@@ -16,17 +16,19 @@
   var _addSEOFriendlyURL;
   var _addUniqueID;
   var _addDate;
+  var _finished = false;
 
-  var AddBlogCtrl = function ($rootScope, $scope, $log, BlogMongoDB) {
+  var AddBlogCtrl = function ($rootScope, $scope, $log, BlogMongoDB, MongoBlogService) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
     this.$log = $log;
+    this.MongoBlogService = MongoBlogService;
 
     /** List scope here
      * **/
     this.$scope.addBlogFormData = {};
-    this.$scope.addBlogFormData = new BlogMongoDB();
+   // this.$scope.addBlogFormData = new BlogMongoDB();
     this.$scope.blogContent = null;
     this.$scope.addBlogFormSubmit = false;
     this.$scope.formSuccess = null;
@@ -69,8 +71,10 @@
       //re-trim if we are in the middle of a word
       trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(' '))) + ' ...';
 
-      //strip andy HTML tags
+      //strip any HTML tags
       this.$scope.addBlogFormData.contentSnippet = trimmedString.replace(/(<([^>]+)>)/ig, '').trim();
+
+      _finished = true;
 
     }.bind(this);
 
@@ -143,7 +147,24 @@
       _addSEOFriendlyURL();
       _createContentSnippet();
 
-      // submit details to mongodDB
+      if(_finished) {
+
+        var returnedData = this.MongoBlogService.addBlogPost(this.$scope.addBlogFormData);
+
+        returnedData.then(function(value) {
+          console.log('success');
+          console.log(value);
+        }, function(value) {
+          console.log('failure');
+          console.log(value);
+        }, function(value) {
+          console.log('notification');
+          console.log(value);
+        });
+
+      }
+
+   /*   // submit details to mongodDB
       var returnedPromise = this.$scope.addBlogFormData.$save(function () {
       }, function (value) {
 
@@ -174,12 +195,12 @@
         this.$log.warn('Failure: AddBlogCtrl.addBlog');
         this.$log.warn(value);
 
-      }.bind(this));
+      }.bind(this));*/
     }
 
   };
 
-  AddBlogCtrl.$inject = ['$rootScope', '$scope', '$log', 'BlogMongoDB'];
+  AddBlogCtrl.$inject = ['$rootScope', '$scope', '$log', 'BlogMongoDB', 'MongoBlogService'];
 
   app.controller('AddBlogCtrl', AddBlogCtrl);
 
