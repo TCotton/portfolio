@@ -49,40 +49,30 @@
   LoginCtrl.prototype.submitLoginForm = function (isValid) {
 
     this.$scope.submitted = true;
+    this.$scope.messages = {};
+    this.$scope.messages.success = null;
+    this.$scope.messages.error = null;
 
     // check to make sure the form is completely valid
     if (isValid) {
-
-      console.log(this.$scope.login);
 
       _userQuery().then(function(response) {
 
         if(_.isEmpty(response)){
 
-          console.log('no user here');
-
-
-          this.$scope.$apply(function() {
-            console.log('yes');
-
-          }.bind(this));
+          this.$scope.messages.error = 'There seems to be an issue with your username or password';
 
         } else {
 
-          console.log('user is here');
           sessionStorage.setItem('logginIn', 'true');
           this.$location.path('/admin/');
 
         }
 
       }.bind(this), function(reason) {
-        console.log('reason: ');
-        console.log(reason);
-      });
-
-
-      /** TODO query database for user, if successful give them a cookie and redirect them to the admin index page **/
-      //console.log(this.$scope.login);
+        this.$log.warn('Failure: ');
+        this.$log.warn(reason);
+      }.bind(this));
     }
 
   };

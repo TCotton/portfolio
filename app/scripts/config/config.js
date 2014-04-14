@@ -21,12 +21,10 @@ angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$locatio
 
       if (!sessionStorage.getItem('logginIn')) {
 
-        $location.path("/login");
+        $location.path('/login');
 
       }
     }
-
-
 
     // every time the page reloads make sure it loads from the top
     // clicking links on the middle of the page results in opening a new page in the same spot
