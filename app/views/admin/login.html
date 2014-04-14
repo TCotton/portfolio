@@ -12,6 +12,8 @@
 
     <h5 class="content-title">Admin login</h5>
 
+    <p data-ng-bind="messages.error"></p>
+
     <form novalidate="novalidate" name="loginForm"
           data-ng-submit="AdminLogin.submitLoginForm(loginForm.$valid)">
 

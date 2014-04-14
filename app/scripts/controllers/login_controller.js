@@ -50,7 +50,6 @@
 
     this.$scope.submitted = true;
     this.$scope.messages = {};
-    this.$scope.messages.success = null;
     this.$scope.messages.error = null;
 
     // check to make sure the form is completely valid
