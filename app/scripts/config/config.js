@@ -19,9 +19,9 @@ angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$locatio
 
     if(admin.test(currentPage)) {
 
-      if (!sessionStorage.getItem('logginIn')) {
+      if (!sessionStorage.getItem('logginIn') && sessionStorage.getItem('logginIn') !== $rootScope.userid ) {
 
-        //$location.path('/login');
+        $location.path('/login');
 
       }
     }
