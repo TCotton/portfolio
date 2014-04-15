@@ -75,8 +75,6 @@
 
     if (isValid) {
 
-      console.log(this.$scope.editUser);
-
       var returnedPromise = this.MongoUserService.editUsers({id: this.$scope.editUser._id, name: this.$scope.editUser.name, password: this.$scope.editUser.password});
 
       returnedPromise.then(function () {

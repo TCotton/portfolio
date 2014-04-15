@@ -15,16 +15,17 @@
   var _createContentSnippet;
   var _addSEOFriendlyURL;
 
-  var EditBlogCtrl = function ($rootScope, $scope, $log, BlogMongoDB) {
+  var EditBlogCtrl = function ($rootScope, $scope, $log, MongoBlogService) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
     this.$log = $log;
+    this.MongoBlogService = MongoBlogService;
     /** List scope objects
      * **/
-    this.$scope.editBlogFormData = new BlogMongoDB();
-    this.$scope.dataToDelete = new BlogMongoDB();
-    this.$scope.allBlgs = BlogMongoDB;
+    this.$scope.editBlogFormData = {};
+    this.$scope.dataToDelete = {};
+    //this.$scope.allBlgs = {};
     this.$scope.blogContent = null;
     this.$scope.editBlogFormSubmit = false;
     this.$scope.formSuccess = null;
@@ -134,9 +135,7 @@
     this.$scope.editBlogFormData.uniqueId = data.uniqueId;
     this.$scope.editBlogFormData.publishedDate = data.publishedDate;
 
-    this.$scope.editBlogFormData._id = {};
-
-    this.$scope.editBlogFormData._id.$oid = data._id.$oid;
+    this.$scope.editBlogFormData._id = data._id.$oid;
 
   };
 
@@ -153,44 +152,53 @@
       _addSEOFriendlyURL();
       _createContentSnippet();
 
-      // submit details to mongodDB
-      var returnedPromise = this.$scope.editBlogFormData.$update(function () {
-      }, function (value) {
+      var formData = {
+        title: this.$scope.editBlogFormData.title,
+        author: this.$scope.editBlogFormData.author,
+        category: this.$scope.editBlogFormData.category,
+        content: this.$scope.editBlogFormData.content,
+        displayImage: this.$scope.editBlogFormData.displayImage,
+        uniqueId: this.$scope.editBlogFormData.uniqueId,
+        publishedDate: this.$scope.editBlogFormData.publishedDate,
+        id: this.$scope.editBlogFormData._id,
+        url: this.$scope.editBlogFormData.url,
+        contentSnippet: this.$scope.editBlogFormData.contentSnippet
+      };
 
-        this.$log.warn('Failure: EditBlogCtrl.editBlog');
-        this.$log.warn(value);
+      if (isValid) {
 
-      }.bind(this));
+        var returnedPromise = this.MongoBlogService.editBlogPosts(formData);
 
-      returnedPromise.then(function () {
+        returnedPromise.then(function () {
 
-        // display success message
+          // display success message
 
-        this.$scope.formSuccess = 'You have successfully added a blog article';
+          this.$scope.formSuccess = 'You have successfully updated the blog article';
 
-        // reset scope to remove values from input fields
-        // loop over form field models
-        for (var key in this.$scope.addBlogFormData) {
+          // reset scope to remove values from input fields
+          // loop over form field models
+          for (var key in this.$scope.addBlogFormData) {
 
-          if (this.$scope.addBlogFormData.hasOwnProperty(key)) {
+            if (this.$scope.addBlogFormData.hasOwnProperty(key)) {
 
-            this.$scope.addBlogFormData[key] = null;
+              this.$scope.addBlogFormData[key] = null;
 
+            }
           }
-        }
 
-        // hide form with ng-if
-        this.$scope.displayForm = false;
+          // hide form with ng-if
+          this.$scope.displayForm = false;
 
-        // update page again
-        this.getBlogs();
+          // update page again
+          this.getBlogs();
 
-      }.bind(this), function (value) {
+        }.bind(this), function (value) {
 
-        this.$log.warn('Failure: EditBlogCtrl.editBlog');
-        this.$log.warn(value);
+          this.$log.warn('Failure: EditBlogCtrl.editBlog');
+          this.$log.warn(value);
 
-      }.bind(this));
+        }.bind(this));
+      }
     }
   };
 
@@ -199,18 +207,15 @@
    * **/
   EditBlogCtrl.prototype.getBlogs = function () {
 
-    // return all user details from the user document
-    var returnedPromise = this.$scope.allBlgs.all(null, function () {
-    }, function (value) {
-
-      this.$log.warn('Failure: EditBlogCtrl.getBlogs()');
-      this.$log.warn(value);
-
-    }.bind(this));
+    var returnedPromise = this.MongoBlogService.getBlogPosts();
 
     returnedPromise.then(function (value) {
 
-      this.$scope.blogContent = value;
+      if (_.isObject(value.data)) {
+
+        this.$scope.blogContent = value.data;
+
+      }
 
     }.bind(this), function (value) {
 
@@ -235,12 +240,7 @@
     this.$scope.dataToDelete.content = data.content;
     this.$scope.dataToDelete.displayImage = data.displayImage;
 
-    this.$scope.dataToDelete._id = {};
-
-    this.$scope.dataToDelete._id.$oid = data._id.$oid;
-
-    // update page again
-    this.getBlogs();
+    this.$scope.dataToDelete._id = data._id.$oid;
 
   };
 
@@ -258,38 +258,36 @@
 
   EditBlogCtrl.prototype.removeArticle = function () {
 
-    var returnedPromise = this.$scope.dataToDelete.$remove(null, function () {
-    }, function (value) {
+    var returnedPromise = this.MongoBlogService.deleteBlogPost({id: this.$scope.dataToDelete._id});
+
+    returnedPromise.then(function (value) {
+
+      if (value) {
+
+        this.$scope.displayPopup = false;
+
+        this.$scope.dataToDelete.title = null;
+        this.$scope.dataToDelete.author = null;
+        this.$scope.dataToDelete.category = null;
+        this.$scope.dataToDelete.content = null;
+        this.$scope.dataToDelete.displayImage = null;
+        this.$scope.dataToDelete._id.$oid = null;
+
+        // update page again
+        this.getBlogs();
+
+      }
+
+    }.bind(this), function (value) {
 
       this.$log.warn('Failure: EditBlogCtrl.removeArticle()');
       this.$log.warn(value);
 
     }.bind(this));
 
-    returnedPromise.then(function () {
-
-      this.$scope.displayPopup = false;
-
-      this.$scope.dataToDelete.title = null;
-      this.$scope.dataToDelete.author = null;
-      this.$scope.dataToDelete.category = null;
-      this.$scope.dataToDelete.content = null;
-      this.$scope.dataToDelete.displayImage = null;
-      this.$scope.dataToDelete._id.$oid = null;
-
-      // update page again
-      this.getBlogs();
-
-    }.bind(this), function (value) {
-
-      this.$log.warn('Failure: EditBlogCtrl.removeArticle');
-      this.$log.warn(value);
-
-    }.bind(this));
-
   };
 
-  EditBlogCtrl.$inject = ['$rootScope', '$scope', '$log', 'BlogMongoDB'];
+  EditBlogCtrl.$inject = ['$rootScope', '$scope', '$log', 'MongoBlogService'];
 
   app.controller('EditBlogCtrl', EditBlogCtrl);
 
