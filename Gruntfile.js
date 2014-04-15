@@ -173,7 +173,7 @@ module.exports = function (grunt) {
           lineNumbers: false
         },
         files: {
-          '<%= yeoman.dist %>/styles/main.css': '<%= yeoman.dist %>/styles/main.scss'
+          '<%= yeoman.dist %>/styles/main.css': '<%= yeoman.app %>/styles/main.scss'
         }
       }
     },
@@ -215,7 +215,7 @@ module.exports = function (grunt) {
           src: [
             '<%= yeoman.dist %>/scripts/{,*/}*.js',
             '<%= yeoman.dist %>/styles/{,*/}*.css',
-            '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+           /* '<%= yeoman.dist %>/images/{,*//*}*.{png,jpg,jpeg,gif,webp,svg}',*/
             '<%= yeoman.dist %>/styles/fonts/*'
           ]
         }
@@ -380,9 +380,9 @@ module.exports = function (grunt) {
         'sass:dev'
       ],
       dist: [
-        'sass:dist',
-        'imagemin',
-        'svgmin'
+        'sass:dist'
+   /*     'imagemin',
+        'svgmin'*/
       ]
     },
 
@@ -456,7 +456,11 @@ module.exports = function (grunt) {
     'bower-install',
     'useminPrepare',
     'concurrent:dist',
+    'imagemin',
+    'svgmin',
+/*
     'autoprefixer',
+*/
     'ngconstant',
     'concat',
     'ngmin',
