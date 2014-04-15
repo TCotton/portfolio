@@ -19,7 +19,7 @@
     this.MongoUserService = MongoUserService;
     //this.$scope.addUser = new UsersMongoDB();
     this.$scope.editUser = {};
-   // this.$scope.deleteU = new UsersMongoDB();
+    // this.$scope.deleteU = new UsersMongoDB();
 
     this.$scope.addUser = {};
 
@@ -79,26 +79,6 @@
 
       var returnedPromise = this.MongoUserService.editUsers({id: this.$scope.editUser._id, name: this.$scope.editUser.name, password: this.$scope.editUser.password});
 
-      returnedPromise.then(function (value) {
-
-        console.log(value);
-
-      }.bind(this), function (value) {
-
-        this.$log.warn('Failure: UserDetailsCtrl.deleteUser');
-        this.$log.warn(value);
-
-      }.bind(this));
-
-/*
-      var returnedPromise = this.$scope.editUser.$update(function () {
-      }, function (value) {
-
-        this.$log.warn('Failure: UserDetailsCtrl.submitEditUserForm');
-        this.$log.warn(value);
-
-      }.bind(this));
-
       returnedPromise.then(function () {
 
         this.$scope.formSuccess = 'You have successfully updated the user details';
@@ -109,7 +89,12 @@
         // repopulate list of users after successfully changing user details
         this.listAllUsers();
 
-      }.bind(this));*/
+      }.bind(this), function (value) {
+
+        this.$log.warn('Failure: UserDetailsCtrl.deleteUser');
+        this.$log.warn(value);
+
+      }.bind(this));
     }
   };
 
