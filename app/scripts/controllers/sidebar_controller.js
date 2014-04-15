@@ -7,7 +7,7 @@
 
   var app = angular.module('portfolioApp');
 
-  var SidebarCtrl = function ($rootScope, $scope, $log, BlogDataService) {
+  var SidebarCtrl = function ($rootScope, $scope, $log) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
@@ -17,18 +17,10 @@
       this.$scope.blogData = angular.extend(JSON.parse(localStorage.getItem('oldBlogPosts')), JSON.parse(sessionStorage.getItem('newBlogPosts')));
     }
 
-    /** Take blog object from service ready to be used in the side bar lists
+    /** Until I sort the backend server out inherit blog posts from the parent scope
      * **/
-    BlogDataService.retreiveData().then(function (data) {
-
-      // retrieve blog data to be used in the ng-repeat directive in the sidebar
-      this.$scope.blogData = data.oldBlogPosts;
-
-    }.bind(this), function (response) {
-
-      this.$log.warn('Error SidebarCtrl');
-      this.$log.warn(response);
-
+    this.$scope.$on('blog_posts', function(events, args){
+      this.$scope.blogData = args;
     }.bind(this));
 
   };

@@ -39,6 +39,7 @@
     this.BlogDataService.retreiveData().then(function (data) {
 
       this.$scope.oldBlogPosts = data.oldBlogPosts;
+      this.$scope.$broadcast('blog_posts', this.$scope.oldBlogPosts);
       this.populatePage();
 
     }.bind(this), function (response) {

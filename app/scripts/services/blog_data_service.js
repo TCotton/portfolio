@@ -233,9 +233,9 @@
 
       this.MongoBlogService.getBlogPosts().then(function (value) {
 
-        if (_.isObject(value)) {
+        if (_.isObject(value.data)) {
 
-          _newblogData(value);
+          _newblogData(value.data);
 
         }
 

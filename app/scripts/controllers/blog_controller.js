@@ -33,8 +33,6 @@
 
     BlogDataService.retreiveData().then(function (data) {
 
-      //console.log(data);
-
       this.$scope.returnObject = data;
 
       this.$scope.totalArticles = this.$scope.returnObject.totalNewArticles;
@@ -45,6 +43,8 @@
       this.paginationTotalPages = Math.ceil(this.totalArticles / this.paginationPageSize);
 
       this.$scope.totalBlogPosts = this.$scope.returnObject.oldBlogPosts;
+
+      this.$scope.$broadcast('blog_posts', this.$scope.totalBlogPosts);
 
     }.bind(this), function (response) {
 
