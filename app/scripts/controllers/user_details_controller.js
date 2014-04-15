@@ -15,11 +15,8 @@
     this.$scope = $scope;
     this.$log = $log;
 
-    //this.UsersMongoDB = UsersMongoDB;
     this.MongoUserService = MongoUserService;
-    //this.$scope.addUser = new UsersMongoDB();
     this.$scope.editUser = {};
-    // this.$scope.deleteU = new UsersMongoDB();
 
     this.$scope.addUser = {};
 

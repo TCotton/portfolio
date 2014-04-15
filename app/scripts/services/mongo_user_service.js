@@ -95,8 +95,29 @@
 
     return deferred.promise;
 
+  };
+
+  MongoUserService.prototype.findUsers = function(data) {
+
+    // return promise
+
+    var deferred = this.$q.defer();
+
+    var returnedMessage = this.$http({
+      url: this.CONFIG.CURRENT_DOMAIN + 'phppages/mongolab_finduser.php',
+      method: 'post',
+      params: data,
+      headers : {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
+    });
+
+    deferred.resolve(returnedMessage);
+
+    return deferred.promise;
 
   };
+
 
   app.service('MongoUserService', MongoUserService);
 

@@ -6,17 +6,13 @@
 
   var app = angular.module('portfolioApp');
 
-  /** Declare variable names for private functions
-   * **/
-
-  var _userQuery;
-
-  var LoginCtrl = function ($rootScope, $scope, $log, UsersMongoDB, $location) {
+  var LoginCtrl = function ($rootScope, $scope, $log, UsersMongoDB, $location, MongoUserService) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
     this.$log = $log;
     this.UsersMongoDB = UsersMongoDB;
+    this.MongoUserService = MongoUserService;
     this.$location = $location;
 
     /** Local scope
@@ -25,24 +21,10 @@
     this.$scope.zipRegex = /(?!.*)/;
     this.$scope.submitted = false;
 
-    /** Check services to see if user is registered
-     * **/
-    _userQuery = function () {
-
-      return this.UsersMongoDB.query(this.$scope.login,  {fields: {name: 1, password: 1} }).then(function (queryResult) {
-
-        // The then function here is an opportunity to modify the response
-        // The return value gets picked up by the then in the controller.
-
-        return queryResult;
-
-      });
-
-    }.bind(this);
 
   };
 
-  LoginCtrl.$inject = ['$rootScope', '$scope', '$log', 'UsersMongoDB', '$location'];
+  LoginCtrl.$inject = ['$rootScope', '$scope', '$log', 'UsersMongoDB', '$location', 'MongoUserService', '$rootScope'];
 
   /** Admin log-in page
    * **/
@@ -55,23 +37,34 @@
     // check to make sure the form is completely valid
     if (isValid) {
 
-      _userQuery().then(function(response) {
+      var user = {
+        'name': this.$scope.login.name,
+        'password': this.$scope.login.password
+      };
 
-        if(_.isEmpty(response)){
+      var returnedPromise = this.MongoUserService.findUsers(user);
 
-          this.$scope.messages.error = 'There seems to be an issue with your username or password';
+      returnedPromise.then(function (value) {
+
+        if(value.data !== 'false') {
+
+          sessionStorage.setItem('logginIn', value.data);
+          this.$rootScope.userid = value.data;
+          this.$location.path('/admin/');
 
         } else {
 
-          sessionStorage.setItem('logginIn', 'true');
-          this.$location.path('/admin/');
+          this.$scope.messages.error = 'There seems to be an issue with your username or password';
 
         }
 
-      }.bind(this), function(reason) {
-        this.$log.warn('Failure: ');
-        this.$log.warn(reason);
+      }.bind(this), function (value) {
+
+        this.$log.warn('Failure: UserDetailsCtrl.deleteUser');
+        this.$log.warn(value);
+
       }.bind(this));
+
     }
 
   };

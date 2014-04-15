@@ -25,7 +25,6 @@
      * **/
     this.$scope.editBlogFormData = {};
     this.$scope.dataToDelete = {};
-    //this.$scope.allBlgs = {};
     this.$scope.blogContent = null;
     this.$scope.editBlogFormSubmit = false;
     this.$scope.formSuccess = null;
