@@ -7,8 +7,8 @@
 /**
  * This entire site is coded in AngularJS. Inspect the code on GitHub: https://github.com/TCotton/portfolio
  */
-angular.module('portfolioApp', ['AppConstants', 'ngCookies', 'ngResource', 'ngSanitize', 'ngRoute', 'ngTouch', 'ngAnimate', 'HashBangURLs', 'portfolioAppConfig', 'LocalStorageModule', 'portfolioAppFilters', 'mongolabResourceHttp', 'DBConstants' ])
-  .config(function ($routeProvider) {
+angular.module('portfolioApp', ['AppConstants', 'ngCookies', 'ngResource', 'ngSanitize', 'ngRoute', 'ngTouch', 'ngAnimate', 'HashBangURLs', 'portfolioAppConfig'])
+  .config(function ($routeProvider, $httpProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -33,7 +33,7 @@ angular.module('portfolioApp', ['AppConstants', 'ngCookies', 'ngResource', 'ngSa
       })
       .when('/contact-me', {
         templateUrl: 'views/contact_me.html',
-        controller: 'FormCtrl'
+        controller: 'FormCtrl as AdminFormCtrl'
       })
       .when('/blog/', {
         templateUrl: 'views/blog.html',
@@ -43,7 +43,7 @@ angular.module('portfolioApp', ['AppConstants', 'ngCookies', 'ngResource', 'ngSa
         templateUrl: 'views/blog_page.html',
         controller: 'BlogArticleCtrl'
       })
-      .when('/admin/login', {
+      .when('/login', {
         templateUrl: 'views/admin/login.html',
         controller: 'LoginCtrl as AdminLogin'
       })
@@ -58,6 +58,9 @@ angular.module('portfolioApp', ['AppConstants', 'ngCookies', 'ngResource', 'ngSa
       .when('/admin/add-blog', {
         templateUrl: 'views/admin/add_blog.html',
         controller: 'AddBlogCtrl as AdminAddBlogCtrl'
+      })
+      .when('/admin/', {
+        templateUrl: 'views/admin/admin.html'
       })
       .otherwise({
         redirectTo: '/'
