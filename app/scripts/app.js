@@ -3,7 +3,7 @@
 /**
  * This entire site is coded in AngularJS. Inspect the code on GitHub: https://github.com/TCotton/portfolio
  */
-angular.module('portfolioApp', ['AppConstants', 'ngCookies', 'ngResource', 'ngSanitize', 'ngRoute', 'ngTouch', 'ngAnimate', 'HashBangURLs', 'portfolioAppConfig', 'portfolioAppFilters', 'mongolabResourceHttp', 'DBConstants' ])
+angular.module('portfolioApp', ['AppConstants', 'ngCookies', 'ngResource', 'ngSanitize', 'ngRoute', 'ngTouch', 'ngAnimate', 'HashBangURLs', 'portfolioAppConfig', 'portfolioAppFilters'])
   .config(function ($routeProvider, $httpProvider) {
 
     // Needed for CORS

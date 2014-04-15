@@ -18,7 +18,7 @@
   var _addDate;
   var _finished = false;
 
-  var AddBlogCtrl = function ($rootScope, $scope, $log, BlogMongoDB, MongoBlogService) {
+  var AddBlogCtrl = function ($rootScope, $scope, $log, MongoBlogService) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
@@ -178,7 +178,7 @@
 
   };
 
-  AddBlogCtrl.$inject = ['$rootScope', '$scope', '$log', 'BlogMongoDB', 'MongoBlogService'];
+  AddBlogCtrl.$inject = ['$rootScope', '$scope', '$log', 'MongoBlogService'];
 
   app.controller('AddBlogCtrl', AddBlogCtrl);
 

@@ -25,7 +25,7 @@
 
   };
 
-  SidebarCtrl.$inject = ['$rootScope', '$scope', '$log', 'BlogDataService'];
+  SidebarCtrl.$inject = ['$rootScope', '$scope', '$log'];
 
   app.controller('SidebarCtrl', SidebarCtrl);
 

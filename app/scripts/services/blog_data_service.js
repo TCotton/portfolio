@@ -15,7 +15,7 @@
   var _seoFriendly;
   var _addReviewImage;
 
-  var BlogDataService = function ($http, $q, CONFIG, $rootScope, FeedService, $timeout, $interval, $log, BlogService, MongoBlogService) {
+  var BlogDataService = function ($http, $q, CONFIG, $rootScope, FeedService, $timeout, $interval, $log, MongoBlogService) {
 
     /** angularjs stuff
      * **/
@@ -24,7 +24,6 @@
     this.CONFIG = CONFIG;
     this.$rootScope = $rootScope;
     this.FeedService = FeedService;
-    this.BlogService = BlogService;
     this.$timeout = $timeout;
     this.$interval = $interval;
     this.$log = $log;
@@ -216,7 +215,7 @@
   };
 
 
-  BlogDataService.$inject = ['$http', '$q', 'CONFIG', '$rootScope', 'FeedService', '$timeout', '$interval', '$log', 'BlogService', 'MongoBlogService'];
+  BlogDataService.$inject = ['$http', '$q', 'CONFIG', '$rootScope', 'FeedService', '$timeout', '$interval', '$log', 'MongoBlogService'];
 
   BlogDataService.prototype.retreiveData = function () {
 

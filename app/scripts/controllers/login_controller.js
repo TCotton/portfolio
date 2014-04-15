@@ -6,12 +6,11 @@
 
   var app = angular.module('portfolioApp');
 
-  var LoginCtrl = function ($rootScope, $scope, $log, UsersMongoDB, $location, MongoUserService) {
+  var LoginCtrl = function ($rootScope, $scope, $log, $location, MongoUserService) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
     this.$log = $log;
-    this.UsersMongoDB = UsersMongoDB;
     this.MongoUserService = MongoUserService;
     this.$location = $location;
 
@@ -24,7 +23,7 @@
 
   };
 
-  LoginCtrl.$inject = ['$rootScope', '$scope', '$log', 'UsersMongoDB', '$location', 'MongoUserService', '$rootScope'];
+  LoginCtrl.$inject = ['$rootScope', '$scope', '$log', '$location', 'MongoUserService', '$rootScope'];
 
   /** Admin log-in page
    * **/

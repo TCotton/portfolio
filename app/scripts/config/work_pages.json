@@ -3,12 +3,12 @@
     "id": "001",
     "title": "Blinkboxbooks",
     "summary": "Tesco's new flagship eCommerce site built with AngularJS",
-    "details": "<p>I worked with a world class in-house team for several months to help build this JavaScript full-stack eBooks website which is intended to be a serious rival to Amazon's UK dominance of the sector.</p><p>My primary responsibility in this project was to provide solutions to the performance problem. At the initial usability tests in November 2013, the website was over 3mb in size and took 22 seconds to load on the Tesco Hudle android tablet. By January 2014 the size of the homepage had been reduced to 565kb in size and with a load time of under seven seconds on the low-spec Android table the Hudle, and load time of just a few seconds on the desktop.</p><p>The website is responsive with a heavy emphasis on visual and functionality polarity between the website and the android and iOS apps.</p>",
+    "details": "<p>I worked with a world class in-house team for several months to help build this JavaScript full-stack eBooks website which is intended to be a serious rival to Amazon's UK dominance of the sector.</p><p>My primary responsibility in this project was to provide solutions to the performance problem. At the initial usability tests in November 2013, the website was over 3mb in size and took 22 seconds to load on the Tesco Hudle Android tablet. By January 2014 the size of the homepage had been reduced to 565kb in size and with a load time of under seven seconds on the low-spec Android tablet the Hudle, and load time of just a few seconds on the desktop.</p><p>The website is responsive with a heavy emphasis on visual and functionality polarity between the website and the android and iOS apps.</p>",
     "code": "AngularJS",
     "company": "Blinkboxbooks, Tescos",
     "internalUrl": "/#!/work-projects/blinkbox",
     "externalUrl": "https://www.blinkboxbooks.com/#!/",
-    "workImage": "/images/blinkboxbooks-screenshot.jpg"
+    "workImage": "/images/blinkboxbooks-screenshot.png"
   },
   "thomsonreuters": {
     "id": "002",

@@ -49,6 +49,3 @@ angular.module('ngAnimate', []).config(['$animateProvider', function ($animatePr
 }]);
 
 
-angular.module('DBConstants', []).constant('MONGOLAB_CONFIG', {API_KEY: 'AMGI-nBnDMvuoBtlpnB7TrOA4w3G3HuK', DB_NAME: 'portfolio'});
-
-
