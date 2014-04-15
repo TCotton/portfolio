@@ -431,7 +431,7 @@ module.exports = function (grunt) {
       'clean:server',
       'bower-install',
       'concurrent:server',
-      'autoprefixer',
+ /*     'autoprefixer',*/
       'ngconstant',
       'connect:livereload',
       'watch'
@@ -446,7 +446,7 @@ module.exports = function (grunt) {
   grunt.registerTask('test', [
     'clean:server',
     'concurrent:test',
-    'autoprefixer',
+  /*  'autoprefixer',*/
     'connect:test',
     'karma'
   ]);
