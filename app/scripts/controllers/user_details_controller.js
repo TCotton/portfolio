@@ -9,43 +9,40 @@
 
   var app = angular.module('portfolioApp');
 
-  var UserDetailsCtrl = function ($rootScope, $scope, $log, UsersMongoDB, MongoUserService) {
+  var UserDetailsCtrl = function ($rootScope, $scope, $log, MongoUserService) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
     this.$log = $log;
 
-    this.UsersMongoDB = UsersMongoDB;
+    //this.UsersMongoDB = UsersMongoDB;
     this.MongoUserService = MongoUserService;
     //this.$scope.addUser = new UsersMongoDB();
-    this.$scope.editUser = new UsersMongoDB();
-    this.$scope.deleteU = new UsersMongoDB();
+    this.$scope.editUser = {};
+   // this.$scope.deleteU = new UsersMongoDB();
 
     this.$scope.addUser = {};
-
 
     this.$scope.editUserSubmit = {};
     this.$scope.editUserSubmit.submitted = false;
     this.$scope.addUserSubmit = {};
     this.$scope.addUserSubmit.submitted = false;
     this.$scope.allUsers = null;
-    this.$scope.editThisUser = null;
+    this.$scope.editThisUser = false;
     this.$scope.formSuccess = null;
 
     this.listAllUsers();
 
   };
 
-  UserDetailsCtrl.$inject = ['$rootScope', '$scope', '$log', 'UsersMongoDB', 'MongoUserService'];
+  UserDetailsCtrl.$inject = ['$rootScope', '$scope', '$log', 'MongoUserService'];
 
-  UserDetailsCtrl.prototype.editUser = function (data) {
+  UserDetailsCtrl.prototype.editUserFun = function (data) {
 
     // populate form field models with the data of the user about to be edited
     this.$scope.editThisUser = true;
     this.$scope.editUser.name = data.name;
-    this.$scope.editUser.password = data.password;
-    this.$scope.editUser._id = {};
-    this.$scope.editUser._id.$oid = data._id.$oid;
+    this.$scope.editUser._id = data._id.$oid;
 
   };
 
@@ -78,6 +75,22 @@
 
     if (isValid) {
 
+      console.log(this.$scope.editUser);
+
+      var returnedPromise = this.MongoUserService.editUsers({id: this.$scope.editUser._id, name: this.$scope.editUser.name, password: this.$scope.editUser.password});
+
+      returnedPromise.then(function (value) {
+
+        console.log(value);
+
+      }.bind(this), function (value) {
+
+        this.$log.warn('Failure: UserDetailsCtrl.deleteUser');
+        this.$log.warn(value);
+
+      }.bind(this));
+
+/*
       var returnedPromise = this.$scope.editUser.$update(function () {
       }, function (value) {
 
@@ -96,7 +109,7 @@
         // repopulate list of users after successfully changing user details
         this.listAllUsers();
 
-      }.bind(this));
+      }.bind(this));*/
     }
   };
 

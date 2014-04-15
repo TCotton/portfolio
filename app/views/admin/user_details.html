@@ -14,17 +14,19 @@
 
       <p>Current users</p>
 
-      <ul data-ng-repeat="user in allUsers">
+      <ul data-ng-repeat="user in allUsers track by $index">
         <li><b>Name:</b> <span ng-bind="user.name"></span></li>
-        <li data-ng-click="AdminUserDetailsCtrl.editUser(user)"><a href="">Edit the details of this user</a></li>
+        <li data-ng-click="AdminUserDetailsCtrl.editUserFun(user)"><a href="">Edit the details of this user</a></li>
         <li data-ng-click="AdminUserDetailsCtrl.deleteUser(user)"><a href="">Delete this user</a></li>
 
       </ul>
 
       <p data-ng-if="formSuccess" data-ng-bind="formSuccess" class="bold"></p>
 
+      <p class="clearfix" ng-if="editThisUser">Edit the user details of {{editUser.name}}</p>
+
       <form novalidate="novalidate" name="editUserForm"
-            data-ng-submit="AdminUserDetailsCtrl.submitEditUserForm(editUserForm.$valid)" ng-if="editIndPost">
+            data-ng-submit="AdminUserDetailsCtrl.submitEditUserForm(editUserForm.$valid)" ng-if="editThisUser">
 
       <span class="name-block">
       <label for="name" class="visuallyhidden">Please supply your username</label>
@@ -48,10 +50,10 @@
 
       </form>
 
-      <p class="clearfix">Add a new user here</p>
+      <p class="clearfix" ng-if="!editThisUser">Add a new user here</p>
 
       <form novalidate="novalidate" name="addUserForm"
-            data-ng-submit="AdminUserDetailsCtrl.submitAddUserForm(addUserForm.$valid)">
+            data-ng-submit="AdminUserDetailsCtrl.submitAddUserForm(addUserForm.$valid)" ng-if="!editThisUser">
 
       <span class="name-block">
       <label for="name" class="visuallyhidden">Please supply your username</label>

@@ -74,6 +74,27 @@
 
     return deferred.promise;
 
+  };
+
+  MongoUserService.prototype.editUsers = function(data) {
+
+    // return promise
+
+    var deferred = this.$q.defer();
+
+    var returnedMessage = this.$http({
+      url: this.CONFIG.CURRENT_DOMAIN + 'phppages/mongolab_edituser.php',
+      method: 'post',
+      params: data,
+      headers : {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
+    });
+
+    deferred.resolve(returnedMessage);
+
+    return deferred.promise;
+
 
   };
 
