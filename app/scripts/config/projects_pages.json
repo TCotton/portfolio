@@ -3,7 +3,7 @@
     "id": "001",
     "title": "lightning.gs",
     "summary": "Optimizes and coverts PNG images to Data URIs using the latest HTML5 API technology",
-    "details": "<p>Lighnting is a single page website that allows the user to upload an image, shrink it (if PNG) and then create a data URI.</p><p>Technologies used on the client-side include Backbone.js, a JavaScript port of PngCrush and various HTML5 APIs including Web Workers, File and FileReader.</p><p>The site is built on a fluid layout and extensively uses CSS3 transforms, transitions and border-radius to achieve the pop art design homage.</p><p>The code is on <a href=\"https://github.com/TCotton/lightning\" rel=\"external\" class=\"underline\">GitHub</a></p>",
+    "details": "<p>Lighnting is a single page website that allows the user to upload an image, optimize it (if PNG) and then create a data URI.</p><p>Technologies used on the client-side include Backbone.js, a JavaScript port of PngCrush and various HTML5 APIs including Web Workers, File and FileReader.</p><p>The site is built on a fluid layout and extensively uses CSS3 transforms, transitions and border-radius to achieve the pop art design homage.</p><p>The code is on <a href=\"https://github.com/TCotton/lightning\" rel=\"external\" class=\"underline\">GitHub</a></p>",
     "code": "Backbone.js",
     "internalUrl": "/#!/side-projects/lightning",
     "externalUrl": "http://lightning.gs/",
