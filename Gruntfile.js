@@ -386,6 +386,35 @@ module.exports = function (grunt) {
       ]
     },
 
+    nodemon: {
+      dev: {
+        script: 'server.js',
+        options: {
+          args: ['dev'],
+          nodeArgs: ['--debug'],
+          callback: function (nodemon) {
+            nodemon.on('log', function (event) {
+              console.log(event.colour);
+            });
+          },
+          env: {
+            PORT: '9000'
+          },
+          cwd: __dirname,
+          ignore: ['node_modules/**', 'app/**', 'dist/**'],
+          ext: 'js,coffee',
+          watch: ['server'],
+          delay: 1,
+          legacyWatch: true
+        }
+      },
+      exec: {
+        options: {
+          exec: 'less'
+        }
+      }
+    },
+
     // By default, your `index.html`'s <!-- Usemin block --> will take care of
     // minification. These next options are pre-configured if you do not wish
     // to use the Usemin blocks.

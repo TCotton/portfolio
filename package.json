@@ -22,6 +22,7 @@
     "grunt-google-cdn": "~0.2.0",
     "grunt-newer": "~0.5.4",
     "grunt-ngmin": "~0.0.2",
+    "grunt-nodemon": "~0.2.1",
     "grunt-rev": "~0.1.0",
     "grunt-svgmin": "~0.2.0",
     "grunt-usemin": "~2.0.0",
@@ -79,5 +80,8 @@
   "bugs": {
     "url": "https://github.com/TCotton/portfolio/issues"
   },
-  "homepage": "https://github.com/TCotton/portfolio"
+  "homepage": "https://github.com/TCotton/portfolio",
+  "devDependencies": {
+    "grunt-nodemon": "~0.2.1"
+  }
 }
