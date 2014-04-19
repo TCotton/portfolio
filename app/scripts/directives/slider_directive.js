@@ -13,7 +13,7 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interva
     replace: true,
     template: '<div id="slider" class="{{slider.sliderClass}}">' +
       '<section>' +
-      '<h2 class="page-top-title">{{slider.title}}</h2>' +
+      '<h2 class="page-top-title" class="slider1">{{slider.title}}</h2>' +
       '<p class="page-top-text" >{{slider.text}}</p>' +
       '<a href="{{slider.URL}}" class="button-front-one">View Project</a>' +
       '</section>' +
@@ -186,6 +186,19 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interva
               // after the defined millisecond gap defined in startGap then load the right size image
               scope.slideController.sliderReplaceMethod();
 
+              // force images to download in the background
+              // otherwise there is a noticeable lag in image download every new slide
+              var imgs = '<div style="display:none">' +
+                '<img src="/images/slider/blinkbox.png" />' +
+                '<img src="/images/slider/lightning.png" />' +
+                '<img src="/images/slider/uk-law-student.png" />' +
+                '<img src="/images/slider/kaplan.png" />' +
+                '<img src="/images/slider/drnewmans.png" />' +
+                '<img src="/images/slider/penny-books.png" />' +
+                '<img src="/images/slider/twt-twt.png" /></div>';
+
+              element.append(imgs);
+
             }, sliderDirectiveLink.startGap);
 
           }, 0);
@@ -221,8 +234,8 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interva
 
 }]);
 
-angular.module('portfolioApp').filter('slice', function() {
-  return function(arr, start, end) {
+angular.module('portfolioApp').filter('slice', function () {
+  return function (arr, start, end) {
     return arr.slice(start, end);
   };
 });
