@@ -187,15 +187,15 @@ angular.module('portfolioApp').directive('sliderDirective', ['SLIDER', '$interva
               scope.slideController.sliderReplaceMethod();
 
               // force images to download in the background
-              // otherwise there is a noticeable lag in image download every new slide
-              var imgs = '<div style="display:none">' +
-                '<img src="/images/slider/blinkbox.png" />' +
-                '<img src="/images/slider/lightning.png" />' +
-                '<img src="/images/slider/uk-law-student.png" />' +
-                '<img src="/images/slider/kaplan.png" />' +
-                '<img src="/images/slider/drnewmans.png" />' +
-                '<img src="/images/slider/penny-books.png" />' +
-                '<img src="/images/slider/twt-twt.png" /></div>';
+              // otherwise there is a noticeable lag in image download with every new slide
+              var imgs = '<div style="display:none" aria-hidden="true">' +
+                '<img src="/images/slider/blinkbox.png" alt="" />' +
+                '<img src="/images/slider/lightning.png" alt="" />' +
+                '<img src="/images/slider/uk-law-student.png" alt="" />' +
+                '<img src="/images/slider/kaplan.png" alt="" />' +
+                '<img src="/images/slider/drnewmans.png" alt="" />' +
+                '<img src="/images/slider/penny-books.png" alt="" />' +
+                '<img src="/images/slider/twt-twt.png" alt="" /></div>';
 
               element.append(imgs);
 

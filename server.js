@@ -14,12 +14,9 @@ var compress = require('compression');
 var app = express(); 								// create our app w/ express
 var mongoose = require('mongoose'); 					// mongoose for mongodb
 
-mongoose.connect('mongodb://AndyW:revolution@novus.modulusmongo.net:27017/sOzes7an'); 	// connect to mongoDB database on modulus.io
-
 app.set('port', process.env.PORT || 9000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-
 
 app.use(morgan('dev')); 						// log every request to the console
 app.use(compress());

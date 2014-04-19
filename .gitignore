@@ -11,3 +11,4 @@ app/scripts/config/constants.js
 test/spec/config/constants.js
 coverage
 app/phppages
+server/config/database.js
