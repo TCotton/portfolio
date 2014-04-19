@@ -52,8 +52,8 @@
 
   BlogArticleCtrl.prototype.populatePage = function () {
 
-    // find blogId number at the end of the URL, ie ?id=182013
-    var blogId = this.$rootScope.currentPage.slice(this.$rootScope.currentPage.indexOf('?id=') + 4, this.$rootScope.currentPage.length);
+    // find blogId number form the URL string, ie /#!/136324/using-autoload-in-object-orientated-wordpress-plugin
+    var blogId = this.$rootScope.currentPage.substring(this.$rootScope.currentPage.indexOf('/#!/') + 4, this.$rootScope.currentPage.indexOf('/#!/') + 10);
 
     var blogPost = _.filter(this.$scope.oldBlogPosts, function (o) {
 
