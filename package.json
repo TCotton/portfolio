@@ -55,7 +55,12 @@
     "response-time": "~1.0.0",
     "errorhandler": "~1.0.0",
     "mongoose": "~3.8.8",
-    "method-override": "~1.0.0"
+    "method-override": "~1.0.0",
+    "sax": "~0.6.0",
+    "addressparser": "~0.2.1",
+    "resanitize": "~0.3.0",
+    "array-indexofobject": "~0.0.1",
+    "feedparser": "~0.16.6"
   },
   "engines": {
     "node": ">=0.10.26"
