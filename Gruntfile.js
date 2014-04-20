@@ -388,30 +388,7 @@ module.exports = function (grunt) {
 
     nodemon: {
       dev: {
-        script: 'server.js',
-        options: {
-          args: ['dev'],
-          nodeArgs: ['--debug'],
-          callback: function (nodemon) {
-            nodemon.on('log', function (event) {
-              console.log(event.colour);
-            });
-          },
-          env: {
-            PORT: '9000'
-          },
-          cwd: __dirname,
-          ignore: ['node_modules/**', 'app/**', 'dist/**'],
-          ext: 'js,coffee',
-          watch: ['server'],
-          delay: 1,
-          legacyWatch: true
-        }
-      },
-      exec: {
-        options: {
-          exec: 'less'
-        }
+        script: 'server.js'
       }
     },
 

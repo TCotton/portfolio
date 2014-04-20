@@ -41,7 +41,7 @@ angular.module('portfolioApp', ['AppConstants', 'ngCookies', 'ngResource', 'ngSa
         templateUrl: 'views/blog.html',
         controller: 'BlogCtrl'
       })
-      .when('/:blogId/:blogPage', {
+      .when('/blog/:blogId/:blogPage', {
         templateUrl: 'views/blog_page.html',
         controller: 'BlogArticleCtrl'
       })

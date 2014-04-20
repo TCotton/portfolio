@@ -23,9 +23,9 @@
     var deferred = this.$q.defer();
 
     var returnedMessage = this.$http({
-      url: this.CONFIG.CURRENT_DOMAIN + 'phppages/mongolab_adduser.php',
+      url: '/api/users/',
       method: 'POST',
-      params: formData,
+      data: formData,
       headers : {
         'Content-Type': 'application/x-www-form-urlencoded'
       }
