@@ -183,30 +183,29 @@ module.exports = function (app) {
 
   app.route('/api/blog/delete/:id').delete(function (req, res) {
 
-    console.log('delete user');
+    Blog.remove({
 
-    //console.log(req);
+      _id : req.params.id
 
-    console.log(req.param);
+    }, function(err, blogs) {
 
-    console.log(req.query);
-    console.log(req.query._id);
-    /*
+      if (err) {
+        res.send(err);
+      }
 
-     Blog.remove({
+      // get and return all the users after you delete one
+      Blog.find(function(err, blog) {
 
-     _id: req.query._id
+        if (err) {
+          res.send(err);
+        }
 
-     }, function (err) {
+        res.json(blog);
 
-     if (err) {
-     res.send(err);
-     }
+      });
 
-     });
-     */
+    });
 
   });
-
 
 };

@@ -80,26 +80,18 @@
 
   MongoBlogService.prototype.deleteBlogPost = function (formData) {
 
-    return this.$http.delete( '/api/blog/delete/' + formData);
-
     // return promise
-    /*
-     console.log(formData);
 
-     var deferred = this.$q.defer();
+    var deferred = this.$q.defer();
 
-     var url = '/api/blog/delete/' + formData;
+    var returnedMessage = this.$http({
+      url: '/api/blog/delete/' + formData,
+      method: 'DELETE'
+    });
 
-     var returnedMessage = this.$http({
-     url: url,
-     method: 'DELETE'
-     });
+    deferred.resolve(returnedMessage);
 
-     deferred.resolve(returnedMessage);
-
-     return deferred.promise;
-
-     };*/
+    return deferred.promise;
 
   };
 

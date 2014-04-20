@@ -258,36 +258,32 @@
 
   EditBlogCtrl.prototype.removeArticle = function () {
 
-    console.log(this.$scope.dataToDelete._id);
-
     var returnedPromise = this.MongoBlogService.deleteBlogPost(this.$scope.dataToDelete._id);
 
-    console.log(returnedPromise);
+    returnedPromise.then(function (value) {
 
-//    returnedPromise.then(function (value) {
-//
-//      if (value) {
-//
-//        this.$scope.displayPopup = false;
-//
-//        this.$scope.dataToDelete.title = null;
-//        this.$scope.dataToDelete.author = null;
-//        this.$scope.dataToDelete.category = null;
-//        this.$scope.dataToDelete.content = null;
-//        this.$scope.dataToDelete.displayImage = null;
-//        this.$scope.dataToDelete._id.$oid = null;
-//
-//        // update page again
-//        this.getBlogs();
-//
-//      }
-//
-//    }.bind(this), function (value) {
-//
-//      this.$log.warn('Failure: EditBlogCtrl.removeArticle()');
-//      this.$log.warn(value);
-//
-//    }.bind(this));
+      if (value) {
+
+        this.$scope.displayPopup = false;
+
+        this.$scope.dataToDelete.title = null;
+        this.$scope.dataToDelete.author = null;
+        this.$scope.dataToDelete.category = null;
+        this.$scope.dataToDelete.content = null;
+        this.$scope.dataToDelete.displayImage = null;
+        this.$scope.dataToDelete._id.$oid = null;
+
+        // update page again
+        this.getBlogs();
+
+      }
+
+    }.bind(this), function (value) {
+
+      this.$log.warn('Failure: EditBlogCtrl.removeArticle()');
+      this.$log.warn(value);
+
+    }.bind(this));
 
   };
 
