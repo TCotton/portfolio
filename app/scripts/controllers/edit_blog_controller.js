@@ -161,43 +161,44 @@
         publishedDate: this.$scope.editBlogFormData.publishedDate,
         id: this.$scope.editBlogFormData._id,
         url: this.$scope.editBlogFormData.url,
-        contentSnippet: this.$scope.editBlogFormData.contentSnippet
+        contentSnippet: this.$scope.editBlogFormData.contentSnippet,
+        update: true
       };
 
-      if (isValid) {
+      var returnedPromise = this.MongoBlogService.editBlogPosts(formData);
 
-        var returnedPromise = this.MongoBlogService.editBlogPosts(formData);
+      returnedPromise.then(function (value) {
 
-        returnedPromise.then(function () {
+        console.log(value);
 
-          // display success message
+        // display success message
 
-          this.$scope.formSuccess = 'You have successfully updated the blog article';
+        this.$scope.formSuccess = 'You have successfully updated the blog article';
 
-          // reset scope to remove values from input fields
-          // loop over form field models
-          for (var key in this.$scope.addBlogFormData) {
+        // reset scope to remove values from input fields
+        // loop over form field models
+        for (var key in this.$scope.addBlogFormData) {
 
-            if (this.$scope.addBlogFormData.hasOwnProperty(key)) {
+          if (this.$scope.addBlogFormData.hasOwnProperty(key)) {
 
-              this.$scope.addBlogFormData[key] = null;
+            this.$scope.addBlogFormData[key] = null;
 
-            }
           }
+        }
 
-          // hide form with ng-if
-          this.$scope.displayForm = false;
+        // hide form with ng-if
+        this.$scope.displayForm = false;
 
-          // update page again
-          this.getBlogs();
+        // update page again
+        this.getBlogs();
 
-        }.bind(this), function (value) {
+      }.bind(this), function (value) {
 
-          this.$log.warn('Failure: EditBlogCtrl.editBlog');
-          this.$log.warn(value);
+        this.$log.warn('Failure: EditBlogCtrl.editBlog');
+        this.$log.warn(value);
 
-        }.bind(this));
-      }
+      }.bind(this));
+
     }
   };
 
@@ -239,7 +240,7 @@
     this.$scope.dataToDelete.content = data.content;
     this.$scope.dataToDelete.displayImage = data.displayImage;
 
-    this.$scope.dataToDelete._id = data._id.$oid;
+    this.$scope.dataToDelete._id = data._id;
 
   };
 
@@ -257,32 +258,36 @@
 
   EditBlogCtrl.prototype.removeArticle = function () {
 
-    var returnedPromise = this.MongoBlogService.deleteBlogPost({id: this.$scope.dataToDelete._id});
+    console.log(this.$scope.dataToDelete._id);
 
-    returnedPromise.then(function (value) {
+    var returnedPromise = this.MongoBlogService.deleteBlogPost(this.$scope.dataToDelete._id);
 
-      if (value) {
+    console.log(returnedPromise);
 
-        this.$scope.displayPopup = false;
-
-        this.$scope.dataToDelete.title = null;
-        this.$scope.dataToDelete.author = null;
-        this.$scope.dataToDelete.category = null;
-        this.$scope.dataToDelete.content = null;
-        this.$scope.dataToDelete.displayImage = null;
-        this.$scope.dataToDelete._id.$oid = null;
-
-        // update page again
-        this.getBlogs();
-
-      }
-
-    }.bind(this), function (value) {
-
-      this.$log.warn('Failure: EditBlogCtrl.removeArticle()');
-      this.$log.warn(value);
-
-    }.bind(this));
+//    returnedPromise.then(function (value) {
+//
+//      if (value) {
+//
+//        this.$scope.displayPopup = false;
+//
+//        this.$scope.dataToDelete.title = null;
+//        this.$scope.dataToDelete.author = null;
+//        this.$scope.dataToDelete.category = null;
+//        this.$scope.dataToDelete.content = null;
+//        this.$scope.dataToDelete.displayImage = null;
+//        this.$scope.dataToDelete._id.$oid = null;
+//
+//        // update page again
+//        this.getBlogs();
+//
+//      }
+//
+//    }.bind(this), function (value) {
+//
+//      this.$log.warn('Failure: EditBlogCtrl.removeArticle()');
+//      this.$log.warn(value);
+//
+//    }.bind(this));
 
   };
 

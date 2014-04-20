@@ -23,7 +23,7 @@
     var deferred = this.$q.defer();
 
     var returnedMessage = this.$http({
-      url: '/api/users/',
+      url: '/api/users/add',
       method: 'POST',
       data: formData,
       headers : {
@@ -44,7 +44,7 @@
     var deferred = this.$q.defer();
 
     var returnedMessage = this.$http({
-      url: '/api/users/',
+      url: '/api/users/get',
       method: 'GET'
     });
 

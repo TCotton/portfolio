@@ -23,7 +23,7 @@
     var deferred = this.$q.defer();
 
     var returnedMessage = this.$http({
-      url: '/api/blog/',
+      url: '/api/blog/add',
       method: 'POST',
       data: formData,
       headers : {
@@ -44,7 +44,7 @@
     var deferred = this.$q.defer();
 
     var returnedMessage = this.$http({
-      url: '/api/blog/',
+      url: '/api/blog/get',
       method: 'GET'
     });
 
@@ -56,12 +56,14 @@
 
   MongoBlogService.prototype.editBlogPosts = function (formData) {
 
+    console.log(formData);
+
     // return promise
 
     var deferred = this.$q.defer();
 
     var returnedMessage = this.$http({
-      url: this.CONFIG.CURRENT_DOMAIN + 'phppages/mongolab_editblogpost.php',
+      url: '/api/blog/update',
       method: 'POST',
       data: formData,
       headers : {
@@ -78,22 +80,26 @@
 
   MongoBlogService.prototype.deleteBlogPost = function (formData) {
 
+    return this.$http.delete( '/api/blog/delete/' + formData);
+
     // return promise
+    /*
+     console.log(formData);
 
-    var deferred = this.$q.defer();
+     var deferred = this.$q.defer();
 
-    var returnedMessage = this.$http({
-      url: this.CONFIG.CURRENT_DOMAIN + 'phppages/mongolab_deleteblogpost.php',
-      method: 'POST',
-      data: formData,
-      headers : {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      }
-    });
+     var url = '/api/blog/delete/' + formData;
 
-    deferred.resolve(returnedMessage);
+     var returnedMessage = this.$http({
+     url: url,
+     method: 'DELETE'
+     });
 
-    return deferred.promise;
+     deferred.resolve(returnedMessage);
+
+     return deferred.promise;
+
+     };*/
 
   };
 

@@ -28,7 +28,8 @@ module.exports = function (grunt) {
 
   try {
     yeomanConfig.app = require('./bower.json').appPath || yeomanConfig.app;
-  } catch (e) {}
+  } catch (e) {
+  }
 
   grunt.initConfig({
     yeoman: yeomanConfig,
@@ -187,26 +188,26 @@ module.exports = function (grunt) {
         src: ['test/spec/{,*/}*.js', '!test/spec/config/constants.js']
       }
     },
-   /* coffee: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.app %>/scripts',
-          src: '{,*//*}*.coffee',
-          dest: '.tmp/scripts',
-          ext: '.js'
-        }]
-      },
-      test: {
-        files: [{
-          expand: true,
-          cwd: 'test/spec',
-          src: '{,*//*}*.coffee',
-          dest: '.tmp/spec',
-          ext: '.js'
-        }]
-      }
-    },*/
+    /* coffee: {
+     dist: {
+     files: [{
+     expand: true,
+     cwd: '<%= yeoman.app %>/scripts',
+     src: '{,*//*}*.coffee',
+     dest: '.tmp/scripts',
+     ext: '.js'
+     }]
+     },
+     test: {
+     files: [{
+     expand: true,
+     cwd: 'test/spec',
+     src: '{,*//*}*.coffee',
+     dest: '.tmp/spec',
+     ext: '.js'
+     }]
+     }
+     },*/
     // not used since Uglify task does concat,
     // but still available if needed
     /*concat: {
@@ -247,22 +248,26 @@ module.exports = function (grunt) {
 
     imagemin: {
       dist: {
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.app %>/images',
-          src: '{,*/}*.{png,jpg,jpeg}',
-          dest: '<%= yeoman.dist %>/images'
-        }]
+        files: [
+          {
+            expand: true,
+            cwd: '<%= yeoman.app %>/images',
+            src: '{,*/}*.{png,jpg,jpeg}',
+            dest: '<%= yeoman.dist %>/images'
+          }
+        ]
       }
     },
     svgmin: {
       dist: {
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.app %>/images',
-          src: '{,*/}*.svg',
-          dest: '<%= yeoman.dist %>/images'
-        }]
+        files: [
+          {
+            expand: true,
+            cwd: '<%= yeoman.app %>/images',
+            src: '{,*/}*.svg',
+            dest: '<%= yeoman.dist %>/images'
+          }
+        ]
       }
     },
     cssmin: {
@@ -291,12 +296,14 @@ module.exports = function (grunt) {
            removeEmptyAttributes: true,
            removeOptionalTags: true*/
         },
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.app %>',
-          src: ['*.html', 'views/*.html'],
-          dest: '<%= yeoman.dist %>'
-        }]
+        files: [
+          {
+            expand: true,
+            cwd: '<%= yeoman.app %>',
+            src: ['*.html', 'views/*.html'],
+            dest: '<%= yeoman.dist %>'
+          }
+        ]
       }
     },
     // Copies remaining files to places other tasks can use
@@ -389,23 +396,25 @@ module.exports = function (grunt) {
     },
     ngmin: {
       dist: {
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.dist %>/scripts',
-          src: '*.js',
-          dest: '<%= yeoman.dist %>/scripts'
-        }]
+        files: [
+          {
+            expand: true,
+            cwd: '<%= yeoman.dist %>/scripts',
+            src: '*.js',
+            dest: '<%= yeoman.dist %>/scripts'
+          }
+        ]
       }
     }
-   /* uglify: {
-      dist: {
-        files: {
-          '<%= yeoman.dist %>/scripts/scripts.js': [
-            '<%= yeoman.dist %>/scripts/scripts.js'
-          ]
-        }
-      }
-    }*/
+    /* uglify: {
+     dist: {
+     files: {
+     '<%= yeoman.dist %>/scripts/scripts.js': [
+     '<%= yeoman.dist %>/scripts/scripts.js'
+     ]
+     }
+     }
+     }*/
   });
 
   grunt.registerTask('server', function (target) {
@@ -445,24 +454,24 @@ module.exports = function (grunt) {
     'concat',
     'ngmin',
     'copy:dist',
- /*   'cdnify',*/
+    /*   'cdnify',*/
     'cssmin',
     'uglify',
     'rev',
     'usemin',
     'htmlmin'
 
-   /* 'clean:dist',
-    'useminPrepare',
-    'concurrent:dist',
-    'concat',
-    'copy',
-    'cdnify',
-    'ngmin',
-    'cssmin',
-    'uglify',
-    'rev',
-    'usemin'*/
+    /* 'clean:dist',
+     'useminPrepare',
+     'concurrent:dist',
+     'concat',
+     'copy',
+     'cdnify',
+     'ngmin',
+     'cssmin',
+     'uglify',
+     'rev',
+     'usemin'*/
   ]);
 
   grunt.registerTask('default', [

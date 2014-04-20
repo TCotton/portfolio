@@ -239,9 +239,10 @@
         }
 
         this.FeedService.returnedRSS()
+
           .then(function (response) {
 
-            if (_.isObject(response.data.responseData.feed.entries)) {
+            if (!_.isNull(response.data.responseData)) {
 
               _oldblogData(response.data.responseData.feed.entries);
 
