@@ -1,6 +1,7 @@
 /**
  * Created by andywalpole on 19/04/2014.
  */
+'use strict';
 // set up ========================
 var express = require('express');
 var http = require('http');
@@ -13,7 +14,6 @@ var methodOverride = require('method-override');
 var compress = require('compression');
 var app = express(); 								// create our app w/ express
 var mongoose = require('mongoose'); 					// mongoose for mongodb
-var crypto = require('crypto');
 
 var database = require('./server/config/database'); 			// load the database config
 

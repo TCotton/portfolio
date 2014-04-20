@@ -56,7 +56,6 @@
 
   MongoUserService.prototype.deleteUsers = function(formData) {
 
-
     // return promise
 
     var deferred = this.$q.defer();
