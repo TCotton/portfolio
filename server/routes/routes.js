@@ -28,34 +28,22 @@ module.exports = function (app) {
       // read out hmac digest
       var hash = hmac.read();
 
-      console.log(hash);
-
       // create a user with name and password hashed
       Users.create({
 
-        text: req.body.name,
+        name: req.body.name,
         password: hash
 
-      }, function (err, users) {
+      }, function (err) {
 
         if (err) {
           res.send(err);
         }
 
-        // get and return all the users after creating a new one
-        Users.find(function (err, todos) {
-
-          if (err) {
-            res.send(err);
-          }
-
-          res.json(todos);
-
-        });
       });
     }).get(function (req, res) {
 
-      // use mongoose to get all todos in the database
+      // use mongoose to get all users in the database
       Users.find(function (err, users) {
 
         // if there is an error retrieving, send the error. nothing after res.send(err) will execute
@@ -63,7 +51,7 @@ module.exports = function (app) {
           res.send(err);
         }
 
-        res.json(users); // return all todos in JSON format
+        res.json(users); // return all users in JSON format
 
       });
     });

@@ -44,7 +44,7 @@
     var deferred = this.$q.defer();
 
     var returnedMessage = this.$http({
-      url: this.CONFIG.CURRENT_DOMAIN + 'phppages/mongolab_getusers.php',
+      url: '/api/users/',
       method: 'GET'
     });
 
