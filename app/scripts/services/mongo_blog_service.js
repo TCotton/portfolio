@@ -23,7 +23,7 @@
     var deferred = this.$q.defer();
 
     var returnedMessage = this.$http({
-      url: this.CONFIG.CURRENT_DOMAIN + 'phppages/mongolab_addblogpost.php',
+      url: '/api/blog/',
       method: 'POST',
       data: formData,
       headers : {
@@ -44,11 +44,8 @@
     var deferred = this.$q.defer();
 
     var returnedMessage = this.$http({
-      url: this.CONFIG.CURRENT_DOMAIN + 'phppages/mongolab_getblogposts.php',
-      method: 'GET',
-      headers : {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      }
+      url: '/api/blog/',
+      method: 'GET'
     });
 
     deferred.resolve(returnedMessage);

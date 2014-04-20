@@ -45,7 +45,7 @@
 
   UserDetailsCtrl.prototype.deleteUser = function (data) {
 
-    var returnedPromise = this.MongoUserService.deleteUsers({id: data._id.$oid});
+    var returnedPromise = this.MongoUserService.deleteUsers({_id: data._id});
 
     returnedPromise.then(function () {
 

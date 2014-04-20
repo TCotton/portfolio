@@ -75,7 +75,9 @@ var server = http.createServer(app);
 // routes ======================================================================
 require('./server/routes/routes.js')(app);
 
-// redirect http://codenimbus.com/2014/01/15/redirecting-www-domain-to-non-www-on-ghost/
+
+
+// redirect www to no www: http://codenimbus.com/2014/01/15/redirecting-www-domain-to-non-www-on-ghost/
 app.get('', function(req, res, next) {
   if (req.headers.host.match(/^www/) !== null ) {
     res.redirect(301, 'http://' + req.headers.host.replace(/^www\./, '') + req.url);

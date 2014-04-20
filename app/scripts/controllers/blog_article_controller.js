@@ -52,8 +52,8 @@
 
   BlogArticleCtrl.prototype.populatePage = function () {
 
-    // find blogId number form the URL string, ie /#!/136324/using-autoload-in-object-orientated-wordpress-plugin
-    var blogId = this.$rootScope.currentPage.substring(this.$rootScope.currentPage.indexOf('/#!/') + 4, this.$rootScope.currentPage.indexOf('/#!/') + 10);
+    // find blogId number form the URL string, ie /#!/blog/136324/using-autoload-in-object-orientated-wordpress-plugin
+    var blogId = this.$rootScope.currentPage.substring(this.$rootScope.currentPage.indexOf('/#!/') + 9, this.$rootScope.currentPage.indexOf('/#!/') + 15);
 
     var blogPost = _.filter(this.$scope.oldBlogPosts, function (o) {
 

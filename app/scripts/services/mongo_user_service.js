@@ -61,8 +61,8 @@
     var deferred = this.$q.defer();
 
     var returnedMessage = this.$http({
-      url: this.CONFIG.CURRENT_DOMAIN + 'phppages/mongolab_deleteuser.php',
-      method: 'get',
+      url: '/api/users/',
+      method: 'DELETE',
       params: formData,
       headers : {
         'Content-Type': 'application/x-www-form-urlencoded'
