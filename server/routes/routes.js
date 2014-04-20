@@ -92,7 +92,6 @@ module.exports = function (app) {
 
   });
 
-
   app.route('/api/users/get').get(function (req, res) {
 
     // use mongoose to get all users in the database
@@ -124,26 +123,31 @@ module.exports = function (app) {
   });
 
 
-  app.route('/api/users/delete').delete(function (req, res) {
-
-    console.log('delete user');
-
-    //console.log(req);
-
-    console.log(req.query);
-    console.log(req.query._id);
+  app.route('/api/users/delete/:id').delete(function (req, res) {
 
     Users.remove({
 
-      _id: req.query._id
+      _id : req.params.id
 
-    }, function (err) {
+    }, function(err, users) {
 
       if (err) {
         res.send(err);
       }
 
+      // get and return all the users after you delete one
+      Users.find(function(err, users) {
+
+        if (err) {
+          res.send(err);
+        }
+
+        res.json(users);
+
+      });
+
     });
+
   });
 
   app.route('/api/blog/update').post(function (req, res) {

@@ -12,22 +12,20 @@
 
     <h3 class="content-title">User details</h3>
 
-      <p>Current users</p>
+    <p>Current users</p>
 
-      <ul data-ng-repeat="user in allUsers track by $index">
-        {{user}}
-        <li><b>Name:</b> <span ng-bind="user.name"></span></li>
-        <li data-ng-click="AdminUserDetailsCtrl.editUserFun(user)"><a href="">Edit the details of this user</a></li>
-        <li data-ng-click="AdminUserDetailsCtrl.deleteUser(user)"><a href="">Delete this user</a></li>
+    <ul data-ng-repeat="user in allUsers track by $index">
+      <li><b>Name:</b> <span ng-bind="user.name"></span></li>
+      <li data-ng-click="AdminUserDetailsCtrl.editUserFun(user)"><a href="">Edit the details of this user</a></li>
+      <li data-ng-click="AdminUserDetailsCtrl.deleteUser(user)"><a href="">Delete this user</a></li>
+    </ul>
 
-      </ul>
+    <p data-ng-if="formSuccess" data-ng-bind="formSuccess" class="bold"></p>
 
-      <p data-ng-if="formSuccess" data-ng-bind="formSuccess" class="bold"></p>
+    <p class="clearfix" ng-if="editThisUser">Edit the user details of {{editUser.name}}</p>
 
-      <p class="clearfix" ng-if="editThisUser">Edit the user details of {{editUser.name}}</p>
-
-      <form novalidate="novalidate" name="editUserForm"
-            data-ng-submit="AdminUserDetailsCtrl.submitEditUserForm(editUserForm.$valid)" ng-if="editThisUser">
+    <form novalidate="novalidate" name="editUserForm"
+          data-ng-submit="AdminUserDetailsCtrl.submitEditUserForm(editUserForm.$valid)" ng-if="editThisUser">
 
       <span class="name-block">
       <label for="name" class="visuallyhidden">Please supply your username</label>
@@ -45,16 +43,16 @@
              class="input" data-ng-required="true" data-ng-model="editUser.password"/>
       </span>
 
-        <input type="hidden" data-ng-model="editUser._id.$oid" value="" />
+      <input type="hidden" data-ng-model="editUser._id.$oid" value=""/>
 
-        <input type="submit" value="submit" class="button-contact"/>
+      <input type="submit" value="submit" class="button-contact"/>
 
-      </form>
+    </form>
 
-      <p class="clearfix" ng-if="!editThisUser">Add a new user here</p>
+    <p class="clearfix" ng-if="!editThisUser">Add a new user here</p>
 
-      <form novalidate="novalidate" name="addUserForm"
-            data-ng-submit="AdminUserDetailsCtrl.submitAddUserForm(addUserForm.$valid)" ng-if="!editThisUser">
+    <form novalidate="novalidate" name="addUserForm"
+          data-ng-submit="AdminUserDetailsCtrl.submitAddUserForm(addUserForm.$valid)" ng-if="!editThisUser">
 
       <span class="name-block">
       <label for="name" class="visuallyhidden">Please supply your username</label>
@@ -73,9 +71,9 @@
       </span>
 
 
-        <input type="submit" value="submit" class="button-contact"/>
+      <input type="submit" value="submit" class="button-contact"/>
 
-      </form>
+    </form>
 
 
   </div>

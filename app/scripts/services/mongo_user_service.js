@@ -61,12 +61,8 @@
     var deferred = this.$q.defer();
 
     var returnedMessage = this.$http({
-      url: '/api/users/',
-      method: 'DELETE',
-      params: formData,
-      headers : {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      }
+      url: '/api/users/delete/' + formData,
+      method: 'DELETE'
     });
 
     deferred.resolve(returnedMessage);
