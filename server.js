@@ -20,7 +20,7 @@ var database = require('./server/config/database'); 			// load the database conf
 // configuration ===============================================================
 mongoose.connect(database.url); 	// connect to mongoDB database on modulus.io
 
-app.set('port', process.env.PORT || 9000);
+app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
@@ -70,11 +70,10 @@ if (app.get('env') === 'production') {
   });
 }
 
-var server = http.createServer(app);
+/*var server = http.createServer(app);*/
 
 // routes ======================================================================
 require('./server/routes/routes.js')(app);
-
 
 
 // redirect www to no www: http://codenimbus.com/2014/01/15/redirecting-www-domain-to-non-www-on-ghost/
@@ -86,7 +85,8 @@ app.get('', function(req, res, next) {
   }
 });
 
-server.listen(app.get('port'), function () {
+module.exports = app;
+
+http.createServer(app).listen(app.get('port'), function () {
   console.log('Express server listening on port ' + app.get('port'));
 });
-
