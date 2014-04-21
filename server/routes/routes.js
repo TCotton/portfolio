@@ -48,17 +48,9 @@ module.exports = function (app) {
         res.send(err);
       }
 
-      // use mongoose to get all users in the database
-      Users.find(function (err, users) {
-
-        // if there is an error retrieving, send the error. nothing after res.send(err) will execute
-        if (err) {
-          res.send(err);
-        }
-
-        res.json(users); // return all users in JSON format
-
-      });
+      if (user) {
+        res.json(user);
+      }
 
     });
 
