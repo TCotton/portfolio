@@ -1,12 +1,12 @@
 {
   "slider1":{
     "title": "Thompson Reuters Japan",
-    "text": "A key website in Thomson Reuters expanding Far East Market.",
+    "text": "A key website for Thomson Reuters expanding Far East market.",
     "URL": "/#!/work-projects/thomson-reuters-japan"
   },
   "slider2": {
     "title": "Blinkboxbooks",
-    "text": "Tesco's new flagship eCommerce site built with AngularJS by a world-class in-house team",
+    "text": "Tesco's new flagship eCommerce site built with AngularJS by a world-class in-house team.",
     "URL": "/#!/work-projects/blinkbox"
   },
   "slider3": {
@@ -16,12 +16,12 @@
   },
   "slider4": {
     "title": "UK Law Student",
-    "text": "A clean, easy to navigate site for Thomson Reuters that is intended to engage university law students.",
+    "text": "A clean, easy to navigate site for Thomson Reuters that engages with university law students.",
     "URL": "/#!/work-projects/uk-lawstudent"
   },
   "slider5": {
     "title": "Kaplan International",
-    "text": "Owned by the Washington Post Group, Kaplan International is the worlds leading education provider for those seeking to speak English",
+    "text": "Owned by the Washington Post Group, Kaplan International is the worlds leading education provider for those seeking to speak English.",
     "URL": "/#!/work-projects/kaplan"
   },
   "slider6": {
@@ -36,7 +36,7 @@
   },
   "slider8": {
     "title": "Twt Twt",
-    "text": "Send Tweets with fun UTF-8 character symbols that make a simple message so much more descriptive.",
+    "text": "Send Tweets with UTF-8 character symbols to make a simple message fun - ♘ ❤ ♬ ♡ ❄ ♘",
     "URL": "/#!/side-projects/twttwt"
   }
 }

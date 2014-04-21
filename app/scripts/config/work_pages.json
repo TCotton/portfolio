@@ -2,8 +2,8 @@
   "blinkbox": {
     "id": "001",
     "title": "Blinkboxbooks",
-    "summary": "Tesco's new flagship eCommerce site built with AngularJS",
-    "details": "<p>I worked with a world class in-house team for several months to help build this full-stack JavaScript eBooks website which is intended to be a serious rival to Amazon's UK dominance of the sector.</p><p>My primary responsibility in this project was to provide solutions to the performance problem. At the initial usability tests in November 2013, the website was over 3mb in size and took 22 seconds to load on the Tesco Hudle Android tablet. By January 2014 the size of the homepage had been reduced to 565kb in size and with a load time of under seven seconds on the low-spec Android tablet the Hudle, and load time of just a few seconds on the desktop.</p><p>The website is responsive with a heavy emphasis on visual and functionality polarity between the website and the Android and iOS apps.</p>",
+    "summary": "Tesco's new flagship eCommerce site built with AngularJS.",
+    "details": "<p>I worked with a world class in-house team for several months to help build this full-stack JavaScript eBooks website which is intended to be a serious rival to Amazon's UK dominance of the sector.</p><p>My primary responsibility in this project was to provide solutions to the performance problem. At the initial usability tests in November 2013, the website was over 3mb in size and took 22 seconds to load on the Tesco Hudle Android tablet. By January 2014 the size of the homepage had been reduced to 565kb in size and with a load time of under seven seconds on the low-spec Android tablet the Hudle, and just a few seconds on the desktop.</p><p>The website is responsive with a heavy emphasis on visual and functionality polarity between the website and the Android and iOS apps.</p>",
     "code": "AngularJS",
     "company": "Blinkboxbooks, Tescos",
     "internalUrl": "/#!/work-projects/blinkbox",
@@ -13,8 +13,8 @@
   "thomsonreuters": {
     "id": "002",
     "title": "Thomson Reuters Japan",
-    "summary": "A key website in Thomson Reuters expanding Far East Market.",
-    "details": "<p>I spent several months from 2012 to 2013 working at the Canary Wharf office of Thomson Reuters.</p><p>The company was created after the merger of Thomson Corporation with the Reuters news agency in 2008.</p><p>The company had two large creative services departments in London and in Eagan, Minnesota; with a smaller team at their New York headquarters.</p><p>The preferred CMS of the small web design team in London was Wordpress. They considered that this Open Source platform had the right blend of easy software extendability and user-friendly admin areas.</p><p>Due to the international reach of the company the work often involved liaising between individuals across several different countries. In the case of this project, it meant closely working with the Japanese team who provided text and guidance.</p><p>All coding – CSS, HTML, JavaScript and PHP – was undertaken by myself.</p>",
+    "summary": "A key website for Thomson Reuters expanding Far East market.",
+    "details": "<p>I spent several months from 2012 to 2013 working at the Canary Wharf office of Thomson Reuters.</p><p>The company was created after the merger of Thomson Corporation with the Reuters news agency in 2008.</p><p>The company has two large creative services departments in London and in Eagan, Minnesota; with a smaller team at their New York headquarters.</p><p>The preferred CMS of the small web design team in London was Wordpress. They considered that this Open Source platform had the right blend of easy software extendability and user-friendly admin areas.</p><p>Due to the international reach of the company the work often involved liaising between individuals across several different countries. In the case of this project, it meant closely working with the Japanese team who provided text and guidance.</p><p>All coding – CSS, HTML, JavaScript and PHP – was undertaken by myself.</p>",
     "code": "Wordpress",
     "company": "Thomson Reuters",
     "internalUrl": "/#!/work-projects/thomson-reuters-japan",
@@ -24,8 +24,8 @@
   "lawstudent": {
     "id": "003",
     "title": "Thomson Reuters<br> Law Student",
-    "summary": "A clean, easy-to-navigate site for Thomson Reuters that is intended to engage university law students.",
-    "details": "<p>This project was a refresh of an existing website that had been online for several years.</p><p>The London-based Creative Services web design team were particularly keen on Wordpress because of the ease that non-technical staff could update content.</p><p>Due to its liberal API, Wordpress is best used as a framework; which helps to limit dependency on third-party plugins. There can be both security and performance concerns when using additional plugins so they are best avoided where possible.</p><p>The Thomson Reuters Law Student site is heavily customised so as to achieve the complex layouts. As with the Thomson Reuters Japan site, I was responsible for all server and client-side development work.</p>",
+    "summary": "A clean, easy to navigate site for Thomson Reuters that engages with university law students.",
+    "details": "<p>This project was a refresh of an existing website that had been online for several years.</p><p>The London-based Creative Services web design team were particularly keen on Wordpress because of the ease that non-technical staff could update content.</p><p>Due to its liberal API, Wordpress is best used as a framework, which helps to limit dependency on third-party plugins. There can be both security and performance concerns when using additional plugins so they are best avoided where possible.</p><p>The Thomson Reuters Law Student site is heavily customised so as to achieve the complex layouts. As with the Thomson Reuters Japan site, I was responsible for all server and client-side development work.</p>",
     "code": "Wordpress",
     "company": "Thomson Reuters",
     "internalUrl": "/#!/work-projects/uk-lawstudent",
@@ -35,7 +35,7 @@
   "kaplan": {
     "id": "004",
     "title": "Kaplan International",
-    "summary": "Owned by the Washington Post Group, Kaplan International is the worlds leading education provider for those seeking to speak English",
+    "summary": "Owned by the Washington Post Group, Kaplan International is the worlds leading education provider for those seeking to speak English.",
     "details": "<p>Although not a household name, Kaplan International is a multinational corporation with a multi-billion dollar turnover.</p><p>Due to staff sickness, this flagship human resources website had been put to the side for several months. During my time at Kaplan International, I was given the responsibility of working with the human resources team in order to get this project back on track.</p><p>Built with Wordpress, my first task was to refactor all the code. It is heavily customised on both the backend and frontend so as to allow the Human Resources personnel to easily update the website.</p>",
     "code": "Wordpress",
     "company": "Kaplan International",
