@@ -58,8 +58,6 @@
 
     // return promise
 
-    console.log(formData);
-
     var deferred = this.$q.defer();
 
     var returnedMessage = this.$http({

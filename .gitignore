@@ -12,5 +12,6 @@ test/spec/config/constants.js
 coverage
 app/phppages
 server/config/database.js
-erver/config/salt.js
+server/config/salt.js
+server/config/user_id.js
 server/config/

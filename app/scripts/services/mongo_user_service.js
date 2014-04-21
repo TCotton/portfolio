@@ -75,12 +75,14 @@
 
     // return promise
 
+    console.log(data);
+
     var deferred = this.$q.defer();
 
     var returnedMessage = this.$http({
-      url: this.CONFIG.CURRENT_DOMAIN + 'phppages/mongolab_edituser.php',
-      method: 'post',
-      params: data,
+      url: '/api/user/update',
+      method: 'PUT',
+      data: data,
       headers : {
         'Content-Type': 'application/x-www-form-urlencoded'
       }

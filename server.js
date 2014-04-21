@@ -24,7 +24,7 @@ app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-app.use(favicon());
+
 app.use(morgan('dev')); 						// log every request to the console
 app.use(compress());
 app.use(bodyParser()); 							// pull information from html in POST
@@ -38,6 +38,7 @@ if (app.get('env') === 'development') {
   // This will change in production since we'll be using the dist folder
   // This covers serving up the index page
 
+  app.use(favicon(path.join(__dirname,  'app/favicon.ico')));
   app.use(express.static(path.join(__dirname, 'app'))); 		// set the static files location /public/img will be /img for users
 
   // Error Handling
@@ -57,6 +58,7 @@ if (app.get('env') === 'production') {
 
   var oneDay = 86400000;
 
+  app.use(favicon(path.join(__dirname,  'dist/favicon.ico')));
   app.use(express.static(path.join(__dirname, 'dist'), { maxAge: oneDay })); 		// set the static files location /public/img will be /img for users
 
   // production error handler

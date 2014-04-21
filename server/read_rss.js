@@ -1,6 +1,12 @@
 /**
  * Created by awalpole on 19/04/2014.
  */
+
+/** TODO: parse and use RSS feed here rather than calling it from a CDN
+ *  and doing the heavy work in the browser
+ * **/
+
+/*
 var FeedParser = require('feedparser')
   , request = require('request');
 
@@ -33,3 +39,4 @@ feedparser.on('readable', function () {
     console.log(item);
   }
 });
+*/

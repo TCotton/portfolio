@@ -9,23 +9,31 @@ var Blog = require('./models/blog_model');
 var hashing = require('../config/salt');
 var crypto = require('crypto');
 
+function createPasswordHash(password) {
+
+  var hmac = crypto.createHmac('sha512', hashing.salt);
+
+  // change to 'binary' if you want a binary digest
+  hmac.setEncoding('hex');
+
+  // write in the text that you want the hmac digest for
+  hmac.write(password);
+
+  // you can't read from the stream until you call end()
+  hmac.end();
+
+  // read out hmac digest
+  return hmac.read();
+
+}
+
 module.exports = function (app) {
+
 
   app.route('/api/users/add').post(function (req, res) {
 
-    var hmac = crypto.createHmac('sha512', hashing.salt);
-
-    // change to 'binary' if you want a binary digest
-    hmac.setEncoding('hex');
-
-    // write in the text that you want the hmac digest for
-    hmac.write(req.body.password);
-
-    // you can't read from the stream until you call end()
-    hmac.end();
-
     // read out hmac digest
-    var hash = hmac.read();
+    var hash = createPasswordHash(req.body.password);
 
     // create a user with name and password hashed
     Users.create({
@@ -107,6 +115,7 @@ module.exports = function (app) {
     });
   });
 
+
   app.route('/api/blog/get').get(function (req, res) {
 
     // use mongoose to get all blogs in the database
@@ -150,6 +159,35 @@ module.exports = function (app) {
 
   });
 
+
+  app.route('/api/blog/delete/:id').delete(function (req, res) {
+
+    Blog.remove({
+
+      _id: req.params.id
+
+    }, function (err, blogs) {
+
+      if (err) {
+        res.send(err);
+      }
+
+      // get and return all the users after you delete one
+      Blog.find(function (err, blog) {
+
+        if (err) {
+          res.send(err);
+        }
+
+        res.json(blog);
+
+      });
+
+    });
+
+  });
+
+
   app.route('/api/blog/update').put(function (req, res) {
 
     Blog.findById(req.body.id, function (err, bl) {
@@ -160,7 +198,7 @@ module.exports = function (app) {
 
       if (!bl) {
 
-        return new Error('Could not load Document');
+        return new Error('Could not load Blog document');
 
       } else {
 
@@ -190,28 +228,39 @@ module.exports = function (app) {
   });
 
 
-  app.route('/api/blog/delete/:id').delete(function (req, res) {
 
-    Blog.remove({
+  app.route('/api/user/update').put(function (req, res) {
 
-      _id: req.params.id
-
-    }, function (err, blogs) {
+    User.findById(req.body.id, function (err, usr) {
 
       if (err) {
         res.send(err);
       }
 
-      // get and return all the users after you delete one
-      Blog.find(function (err, blog) {
+      if (!usr) {
 
-        if (err) {
-          res.send(err);
-        }
+        return new Error('Could not load User document');
 
-        res.json(blog);
+      } else {
 
-      });
+        // read out hmac digest
+        var hash = createPasswordHash(req.body.password);
+
+        // update here
+        usr.name = req.body.name;
+        usr.password = hash;
+
+        usr.save(function (err) {
+
+          if (err) {
+            res.send(err);
+          } else {
+            res.json('Success');
+          }
+
+        });
+
+      }
 
     });
 
