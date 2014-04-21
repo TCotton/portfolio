@@ -7,6 +7,9 @@ angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$locatio
 
   $rootScope.$on('$locationChangeStart', function () {
 
+    /** Value used in the tablet / mobile dropdown menu code
+     * Dropdown menu disappears on page change if it is down
+     * **/
     if (!$rootScope.pageChange) {
       $rootScope.pageChange = true;
     }

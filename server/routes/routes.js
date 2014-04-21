@@ -145,16 +145,9 @@ module.exports = function (app) {
         res.send(err);
       }
 
-      // get and return all the users after you delete one
-      Users.find(function (err, users) {
-
-        if (err) {
-          res.send(err);
-        }
-
+      if (users) {
         res.json(users);
-
-      });
+      }
 
     });
 
@@ -229,7 +222,6 @@ module.exports = function (app) {
   });
 
 
-
   app.route('/api/user/update').put(function (req, res) {
 
     Users.findById(req.body.id, function (err, usr) {
@@ -273,13 +265,15 @@ module.exports = function (app) {
     // read out hmac digest
     var hash = createPasswordHash(req.body.password);
 
-    Users.findOne({ name: req.body.name, password: hash }, function(err, usr) {
+    Users.findOne({ name: req.body.name, password: hash }, function (err, usr) {
 
       if (err) {
         res.send(err);
       }
 
-      if(usr === null) {
+      // if successful a user id is returned
+      // this is used as the value in the session cookie
+      if (usr === null) {
         res.json(usr);
       } else {
         usr = userId.id;
