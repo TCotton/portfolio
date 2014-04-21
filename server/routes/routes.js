@@ -77,17 +77,9 @@ module.exports = function (app) {
         res.send(err);
       }
 
-      // use mongoose to get all blogs in the database
-      Blog.find(function (err, blogs) {
-
-        // if there is an error retrieving, send the error. nothing after res.send(err) will execute
-        if (err) {
-          res.send(err);
-        }
-
-        res.json(blogs); // return all users in JSON format
-
-      });
+      if (blog) {
+        res.json(blog);
+      }
 
     });
 
@@ -158,16 +150,9 @@ module.exports = function (app) {
         res.send(err);
       }
 
-      // get and return all the users after you delete one
-      Blog.find(function (err, blog) {
-
-        if (err) {
-          res.send(err);
-        }
-
-        res.json(blog);
-
-      });
+      if (blogs) {
+        res.json(blogs);
+      }
 
     });
 
