@@ -45,7 +45,9 @@
 
       returnedPromise.then(function (value) {
 
-        if(value.data !== 'false') {
+        console.log(value);
+
+        if(value.data !== 'null') {
 
           sessionStorage.setItem('logginIn', value.data);
           this.$rootScope.userid = value.data;

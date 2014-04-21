@@ -99,9 +99,9 @@
     var deferred = this.$q.defer();
 
     var returnedMessage = this.$http({
-      url: this.CONFIG.CURRENT_DOMAIN + 'phppages/mongolab_finduser.php',
-      method: 'post',
-      params: data,
+      url: '/api/user/find',
+      method: 'POST',
+      data: data,
       headers : {
         'Content-Type': 'application/x-www-form-urlencoded'
       }

@@ -7,6 +7,7 @@
 var Users = require('./models/user_model');
 var Blog = require('./models/blog_model');
 var hashing = require('../config/salt');
+var userId = require('../config/user_id');
 var crypto = require('crypto');
 
 function createPasswordHash(password) {
@@ -260,6 +261,29 @@ module.exports = function (app) {
 
         });
 
+      }
+
+    });
+
+  });
+
+
+  app.route('/api/user/find').post(function (req, res) {
+
+    // read out hmac digest
+    var hash = createPasswordHash(req.body.password);
+
+    Users.findOne({ name: req.body.name, password: hash }, function(err, usr) {
+
+      if (err) {
+        res.send(err);
+      }
+
+      if(usr === null) {
+        res.json(usr);
+      } else {
+        usr = userId.id;
+        res.json(usr);
       }
 
     });

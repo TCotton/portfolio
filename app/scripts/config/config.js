@@ -17,11 +17,11 @@ angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$locatio
     var admin = new RegExp('\/admin\/');
     var currentPage = $rootScope.currentPage.toString();
 
-    if(admin.test(currentPage)) {
+    if (admin.test(currentPage)) {
 
-      if (!sessionStorage.getItem('logginIn') && sessionStorage.getItem('logginIn') !== $rootScope.userid ) {
+      if (!sessionStorage.getItem('logginIn') && sessionStorage.getItem('logginIn') !== $rootScope.userid) {
 
-       // $location.path('/login');
+        $location.path('/login');
 
       }
     }
