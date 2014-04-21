@@ -56,15 +56,15 @@
 
   MongoBlogService.prototype.editBlogPosts = function (formData) {
 
-    console.log(formData);
-
     // return promise
+
+    console.log(formData);
 
     var deferred = this.$q.defer();
 
     var returnedMessage = this.$http({
       url: '/api/blog/update',
-      method: 'POST',
+      method: 'PUT',
       data: formData,
       headers : {
         'Content-Type': 'application/x-www-form-urlencoded'

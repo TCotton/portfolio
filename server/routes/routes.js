@@ -127,16 +127,16 @@ module.exports = function (app) {
 
     Users.remove({
 
-      _id : req.params.id
+      _id: req.params.id
 
-    }, function(err, users) {
+    }, function (err, users) {
 
       if (err) {
         res.send(err);
       }
 
       // get and return all the users after you delete one
-      Users.find(function(err, users) {
+      Users.find(function (err, users) {
 
         if (err) {
           res.send(err);
@@ -150,33 +150,42 @@ module.exports = function (app) {
 
   });
 
-  app.route('/api/blog/update').post(function (req, res) {
+  app.route('/api/blog/update').put(function (req, res) {
 
-    // update a blog post
-    var update = Blog.update(
-      {
-        id: req.body.id
-      },
-      {
-        title: req.body.title,
-        author: req.body.author,
-        category: req.body.category,
-        content: req.body.content,
-        contentSnippet: req.body.contentSnippet,
-        publishedDate: req.body.publishedDate,
-        url: req.body.url,
-        uniqueId: req.body.uniqueId,
-        displayImage: req.body.displayImage
+    Blog.findById(req.body.id, function (err, bl) {
 
-      }, function (err) {
+      if (err) {
+        res.send(err);
+      }
 
-        if (err) {
-          res.send(err);
-        }
+      if (!bl) {
 
-      });
+        return new Error('Could not load Document');
 
-    res.json(update);
+      } else {
+
+        // update here
+        bl.title = req.body.title;
+        bl.author = req.body.author;
+        bl.category = req.body.category;
+        bl.content = req.body.content;
+        bl.contentSnippet = req.body.contentSnippet;
+        bl.url = req.body.url;
+        bl.displayImage = req.body.displayImage;
+
+        bl.save(function (err) {
+
+          if (err) {
+            res.send(err);
+          } else {
+            res.json('Success');
+          }
+
+        });
+
+      }
+
+    });
 
   });
 
@@ -185,16 +194,16 @@ module.exports = function (app) {
 
     Blog.remove({
 
-      _id : req.params.id
+      _id: req.params.id
 
-    }, function(err, blogs) {
+    }, function (err, blogs) {
 
       if (err) {
         res.send(err);
       }
 
       // get and return all the users after you delete one
-      Blog.find(function(err, blog) {
+      Blog.find(function (err, blog) {
 
         if (err) {
           res.send(err);

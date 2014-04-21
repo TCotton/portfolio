@@ -133,8 +133,7 @@
     this.$scope.editBlogFormData.displayImage = data.displayImage;
     this.$scope.editBlogFormData.uniqueId = data.uniqueId;
     this.$scope.editBlogFormData.publishedDate = data.publishedDate;
-
-    this.$scope.editBlogFormData._id = data._id.$oid;
+    this.$scope.editBlogFormData._id = data._id;
 
   };
 
@@ -143,6 +142,7 @@
   EditBlogCtrl.prototype.editBlog = function (isValid) {
 
     this.$scope.editBlogFormSubmit = true;
+
 
     // check to make sure the form is completely valid
     if (isValid) {
@@ -161,15 +161,12 @@
         publishedDate: this.$scope.editBlogFormData.publishedDate,
         id: this.$scope.editBlogFormData._id,
         url: this.$scope.editBlogFormData.url,
-        contentSnippet: this.$scope.editBlogFormData.contentSnippet,
-        update: true
+        contentSnippet: this.$scope.editBlogFormData.contentSnippet
       };
 
       var returnedPromise = this.MongoBlogService.editBlogPosts(formData);
 
-      returnedPromise.then(function (value) {
-
-        console.log(value);
+      returnedPromise.then(function () {
 
         // display success message
 
