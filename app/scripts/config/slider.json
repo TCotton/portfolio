@@ -16,7 +16,7 @@
   },
   "slider4": {
     "title": "UK Law Student",
-    "text": "A clean, easy to navigate site for Thomson Reuters that engages with university law students.",
+    "text": "A clean, easy-to-navigate site to help Thomson Reuters engage with law under-graduates.",
     "URL": "/#!/work-projects/uk-lawstudent"
   },
   "slider5": {
@@ -36,7 +36,7 @@
   },
   "slider8": {
     "title": "Twt Twt",
-    "text": "Send Tweets with UTF-8 character symbols to make a simple message fun - ♘ ❤ ♬ ♡ ❄ ♘",
+    "text": "Send Tweets with UTF-8 character symbols to make a simple message fun → ♘ ❤ ♬ ♡ ❄ ♘",
     "URL": "/#!/side-projects/twttwt"
   }
 }
