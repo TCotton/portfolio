@@ -8,10 +8,11 @@
 
   var app = angular.module('portfolioApp');
 
-  var FormCtrl = function ($scope, PostFormService) {
+  var FormCtrl = function ($scope, PostFormService, $sanitize) {
 
     this.$scope = $scope;
     this.PostFormService = PostFormService;
+    this.$sanitize = $sanitize;
 
     // declare scope
 
@@ -25,11 +26,12 @@
 
   };
 
-  FormCtrl.$inject = ['$scope', 'PostFormService'];
+  FormCtrl.$inject = ['$scope', 'PostFormService', '$sanitize'];
 
   /** Submit form and display message to user
    * Also delete form model values and disable the submit button
    * **/
+
 
   FormCtrl.prototype.submitContactForm = function (isValid) {
 
@@ -38,11 +40,29 @@
     // check to make sure the form is completely valid
     if (isValid) {
 
-      var promise = this.PostFormService.submitForm(this.$scope.contact);
+      // sanitise and remove naughty spam stuff from email
+      // TODO: move to server
+      var formData = _.object(_.map(this.$scope.contact, function (value, key) {
+        var x, l, badValues = ['to:', 'cc:', 'bcc:', 'content-type:', 'mime-version:', 'multipart-mixed:', 'content-transfer-encoding:'];
 
-      promise.then(function(value) {
+        if (value !== null) {
 
-        if(value.data.success) {
+          for (x = 0, l = badValues.length; x < l; x += 1) {
+            var regEx = new RegExp(badValues[x], 'gi');
+            value = value.replace(regEx, '');
+          }
+
+          value = this.$sanitize(value).trim();
+        }
+
+        return [key, value];
+      }.bind(this)));
+
+      var promise = this.PostFormService.submitForm(formData);
+
+      promise.then(function (value) {
+
+        if (value.data.success) {
 
           this.$scope.contact.successMessage = value.data.message;
           this.$scope.contact.successMessageDisable = value.data.success;
@@ -55,7 +75,7 @@
 
         }
 
-      }.bind(this), function() {
+      }.bind(this), function () {
 
         this.$scope.$log('Error: FormCtrl.submitContactForm');
 

@@ -18,7 +18,8 @@
     "addressparser": "~0.2.1",
     "resanitize": "~0.3.0",
     "array-indexofobject": "~0.0.1",
-    "feedparser": "~0.16.6"
+    "feedparser": "~0.16.6",
+    "nodemailer": "~0.6.3"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

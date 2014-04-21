@@ -9,6 +9,8 @@ var Blog = require('./models/blog_model');
 var hashing = require('../config/salt');
 var userId = require('../config/user_id');
 var crypto = require('crypto');
+var nodemailer = require('nodemailer');
+var mail = require('nodemailer').mail;
 
 function createPasswordHash(password) {
 
@@ -260,5 +262,19 @@ module.exports = function (app) {
     });
 
   });
+
+  app.route('/api/sendmail').post(function (req, res) {
+
+    mail({
+      from: req.body.name + ' ' + req.body.email, // sender address
+      to: 'me@andywalpole.me', // list of receivers
+      subject: 'Contact from portfolio', // Subject line
+      text: req.body.message, // plaintext body
+      html: req.body.message // html body
+    });
+
+    res.json({'success': 'Thank you for taking the time to fill out the form. I will contact you as soon as I can!'});
+
+  })
 
 };

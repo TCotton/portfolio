@@ -23,7 +23,7 @@
     var deferred = this.$q.defer();
 
     var returnedMessage = this.$http({
-      url: this.CONFIG.CURRENT_DOMAIN + 'phppages/form_completion.php',
+      url: '/api/sendmail',
       method: 'POST',
       data: formData,
       headers : {
