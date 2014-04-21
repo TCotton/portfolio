@@ -25,7 +25,7 @@ angular.module('portfolioApp').directive('formDirective', [function () {
 
         // check to make sure the form is completely valid
         if (isValid) {
-          console.log($scope.contact);
+
         }
 
       };

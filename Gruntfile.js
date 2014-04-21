@@ -18,11 +18,16 @@ var path = require('path');
 
 module.exports = function (grunt) {
   // load all grunt tasks
-  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+  // Load grunt tasks automatically
+  require('load-grunt-tasks')(grunt);
+
+  // Time how long tasks take. Can help when optimizing build times
+  require('time-grunt')(grunt);
 
   // configurable paths
   var yeomanConfig = {
-    app: 'app',
+    // configurable paths
+    app: require('./bower.json').appPath || 'app',
     dist: 'dist'
   };
 
@@ -34,63 +39,39 @@ module.exports = function (grunt) {
   grunt.initConfig({
     yeoman: yeomanConfig,
     watch: {
-      coffee: {
-        files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
-        tasks: ['coffee:dist']
+      js: {
+        files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
+        tasks: ['newer:jshint:all'],
+        options: {
+          livereload: true
+        }
       },
-      coffeeTest: {
-        files: ['test/spec/{,*/}*.coffee'],
-        tasks: ['coffee:test']
+      jsTest: {
+        files: ['test/spec/{,*/}*.js'],
+        tasks: ['newer:jshint:test', 'karma']
+      },
+      sass: {
+        files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
+        tasks: ['sass:dev']
+      },
+      gruntfile: {
+        files: ['Gruntfile.js']
+      },
+      livereload: {
+        options: {
+          livereload: '<%= connect.options.livereload %>'
+        },
+        files: [
+          '<%= yeoman.app %>/views/{,*/}*.html',
+          '.tmp/styles/{,*/}*.css',
+          '<%= yeoman.app %>/{,*/}*.css',
+          '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+          '<%= yeoman.app %>/index.html'
+        ]
       }
-//      livereload: {
-//        options: {
-//          livereload: LIVERELOAD_PORT
-//        },
-//        files: [
-//          '<%= yeoman.app %>/{,*/}*.html',
-//          '{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
-//          '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
-//          '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
-//        ]
-//      }
     },
-//    express: {
-//      options: {
-//        port: 9000,
-//        // Change this to '0.0.0.0' to access the server from outside.
-//        hostname: 'localhost'
-//      },
-//      livereload: {
-//        options: {
-//          middleware: function (express) {
-//            return [
-//              lrSnippet,
-//              mountFolder(express, '.tmp'),
-//              mountFolder(express, yeomanConfig.app)
-//            ];
-//          }
-//        }
-//      },
-//      test: {
-//        options: {
-//          middleware: function (express) {
-//            return [
-//              mountFolder(express, '.tmp'),
-//              mountFolder(express, 'test')
-//            ];
-//          }
-//        }
-//      },
-//      dist: {
-//        options: {
-//          middleware: function (express) {
-//            return [
-//              mountFolder(express, yeomanConfig.dist)
-//            ];
-//          }
-//        }
-//      }
-//    },
+
+
     express: {
       options: {
         port: 9000,
@@ -188,31 +169,6 @@ module.exports = function (grunt) {
         src: ['test/spec/{,*/}*.js', '!test/spec/config/constants.js']
       }
     },
-    /* coffee: {
-     dist: {
-     files: [{
-     expand: true,
-     cwd: '<%= yeoman.app %>/scripts',
-     src: '{,*//*}*.coffee',
-     dest: '.tmp/scripts',
-     ext: '.js'
-     }]
-     },
-     test: {
-     files: [{
-     expand: true,
-     cwd: 'test/spec',
-     src: '{,*//*}*.coffee',
-     dest: '.tmp/spec',
-     ext: '.js'
-     }]
-     }
-     },*/
-    // not used since Uglify task does concat,
-    // but still available if needed
-    /*concat: {
-     dist: {}
-     },*/
     // Renames files for browser caching purposes
     rev: {
       dist: {
@@ -226,7 +182,6 @@ module.exports = function (grunt) {
         }
       }
     },
-
     // Reads HTML for usemin blocks to enable smart builds that automatically
     // concat, minify and revision files. Creates configurations in memory so
     // additional tasks can operate on them
@@ -246,13 +201,14 @@ module.exports = function (grunt) {
       }
     },
 
+    // The following *-min tasks produce minified files in the dist folder
     imagemin: {
       dist: {
         files: [
           {
             expand: true,
             cwd: '<%= yeoman.app %>/images',
-            src: '{,*/}*.{png,jpg,jpeg}',
+            src: '{,*/}*.{png,jpg,jpeg,gif}',
             dest: '<%= yeoman.dist %>/images'
           }
         ]
@@ -270,37 +226,19 @@ module.exports = function (grunt) {
         ]
       }
     },
-    cssmin: {
-      // By default, your `index.html` <!-- Usemin Block --> will take care of
-      // minification. This option is pre-configured if you do not wish to use
-      // Usemin blocks.
-      // dist: {
-      //   files: {
-      //     '<%= yeoman.dist %>/styles/main.css': [
-      //       '.tmp/styles/{,*/}*.css',
-      //       '<%= yeoman.app %>/styles/{,*/}*.css'
-      //     ]
-      //   }
-      // }
-    },
     htmlmin: {
       dist: {
         options: {
-          /*removeCommentsFromCDATA: true,
-           // https://github.com/yeoman/grunt-usemin/issues/44
-           //collapseWhitespace: true,
-           collapseBooleanAttributes: true,
-           removeAttributeQuotes: true,
-           removeRedundantAttributes: true,
-           useShortDoctype: true,
-           removeEmptyAttributes: true,
-           removeOptionalTags: true*/
+          collapseWhitespace: true,
+          collapseBooleanAttributes: true,
+          removeCommentsFromCDATA: true,
+          removeOptionalTags: true
         },
         files: [
           {
             expand: true,
-            cwd: '<%= yeoman.app %>',
-            src: ['*.html', 'views/*.html'],
+            cwd: '<%= yeoman.dist %>',
+            src: ['*.html', 'views/{,*/}*.html'],
             dest: '<%= yeoman.dist %>'
           }
         ]
@@ -394,27 +332,27 @@ module.exports = function (grunt) {
         html: ['<%= yeoman.dist %>/*.html']
       }
     },
+    // Allow the use of non-minsafe AngularJS files. Automatically makes it
+    // minsafe compatible so Uglify does not destroy the ng references
     ngmin: {
       dist: {
         files: [
           {
             expand: true,
-            cwd: '<%= yeoman.dist %>/scripts',
+            cwd: '.tmp/concat/scripts',
             src: '*.js',
-            dest: '<%= yeoman.dist %>/scripts'
+            dest: '.tmp/concat/scripts'
           }
         ]
       }
     }
-    /* uglify: {
-     dist: {
-     files: {
-     '<%= yeoman.dist %>/scripts/scripts.js': [
-     '<%= yeoman.dist %>/scripts/scripts.js'
-     ]
-     }
-     }
-     }*/
+    // Test settings
+ /*   karma: {
+      unit: {
+        configFile: 'karma.conf.js',
+        singleRun: true
+      }
+    }*/
   });
 
   grunt.registerTask('server', function (target) {
@@ -447,14 +385,10 @@ module.exports = function (grunt) {
     'concurrent:dist',
     'imagemin',
     'svgmin',
-    /*
-     'autoprefixer',
-     */
     'ngconstant',
     'concat',
     'ngmin',
     'copy:dist',
-    /*   'cdnify',*/
     'cssmin',
     'uglify',
     'rev',

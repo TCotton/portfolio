@@ -20,7 +20,6 @@
     this.$scope.zipRegex = /(?!.*)/;
     this.$scope.submitted = false;
 
-
   };
 
   LoginCtrl.$inject = ['$rootScope', '$scope', '$log', '$location', 'MongoUserService', '$rootScope'];
@@ -44,8 +43,6 @@
       var returnedPromise = this.MongoUserService.findUsers(user);
 
       returnedPromise.then(function (value) {
-
-        console.log(value);
 
         if(value.data !== 'null') {
 

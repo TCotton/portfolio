@@ -273,7 +273,7 @@ module.exports = function (app) {
       html: req.body.message // html body
     });
 
-    res.json({'success': 'Thank you for taking the time to fill out the form. I will contact you as soon as I can!'});
+    res.json({'success': true, 'message': 'Thank you for taking the time to fill out the form. I will contact you as soon as I can!'});
 
   })
 

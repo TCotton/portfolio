@@ -72,8 +72,6 @@
 
     if (isValid) {
 
-      //console.log(this.$scope.editUser);
-
       var userData = {
         id: this.$scope.editUser._id,
         name: this.$scope.editUser.name,
