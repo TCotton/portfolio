@@ -267,7 +267,7 @@ module.exports = function (app) {
 
     mail({
       from: req.body.name + ' ' + req.body.email, // sender address
-      to: 'me@andywalpole.me', // list of receivers
+      to: 'andy_walpole@btopenworld.com', // list of receivers
       subject: 'Contact from portfolio', // Subject line
       text: req.body.message, // plaintext body
       html: req.body.message // html body
