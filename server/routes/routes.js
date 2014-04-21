@@ -231,7 +231,7 @@ module.exports = function (app) {
 
   app.route('/api/user/update').put(function (req, res) {
 
-    User.findById(req.body.id, function (err, usr) {
+    Users.findById(req.body.id, function (err, usr) {
 
       if (err) {
         res.send(err);

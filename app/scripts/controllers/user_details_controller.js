@@ -39,7 +39,7 @@
     // populate form field models with the data of the user about to be edited
     this.$scope.editThisUser = true;
     this.$scope.editUser.name = data.name;
-    this.$scope.editUser._id = data._id.$oid;
+    this.$scope.editUser._id = data._id;
 
   };
 
@@ -72,7 +72,15 @@
 
     if (isValid) {
 
-      var returnedPromise = this.MongoUserService.editUsers({id: this.$scope.editUser._id, name: this.$scope.editUser.name, password: this.$scope.editUser.password});
+      //console.log(this.$scope.editUser);
+
+      var userData = {
+        id: this.$scope.editUser._id,
+        name: this.$scope.editUser.name,
+        password: this.$scope.editUser.password
+      };
+
+      var returnedPromise = this.MongoUserService.editUsers(userData);
 
       returnedPromise.then(function () {
 

@@ -71,18 +71,16 @@
 
   };
 
-  MongoUserService.prototype.editUsers = function(data) {
+  MongoUserService.prototype.editUsers = function(userData) {
 
     // return promise
-
-    console.log(data);
 
     var deferred = this.$q.defer();
 
     var returnedMessage = this.$http({
       url: '/api/user/update',
       method: 'PUT',
-      data: data,
+      data: userData,
       headers : {
         'Content-Type': 'application/x-www-form-urlencoded'
       }
