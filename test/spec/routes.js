@@ -69,8 +69,8 @@ describe('Routes test', function () {
       }
     ));
 
-    it('should load the blog page on successful load of /blog/books-helped-become-professional-web-developer?id=182013', function () {
-      location.path('/blog/books-helped-become-professional-web-developer?id=182013');
+    it('should load the blog page on successful load of /blog/136324/using-autoload-in-object-orientated-wordpress-plugin', function () {
+      location.path('/blog/136324/using-autoload-in-object-orientated-wordpress-plugin');
       rootScope.$digest(); // call the digest loop
       expect(route.current.controller).toBe('BlogArticleCtrl');
     });

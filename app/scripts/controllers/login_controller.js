@@ -6,13 +6,14 @@
 
   var app = angular.module('portfolioApp');
 
-  var LoginCtrl = function ($rootScope, $scope, $log, $location, MongoUserService) {
+  var LoginCtrl = function ($rootScope, $scope, $log, $location, MongoUserService, authCache) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
     this.$log = $log;
     this.MongoUserService = MongoUserService;
     this.$location = $location;
+    this.authCache = authCache;
 
     /** Local scope
      * **/
@@ -22,7 +23,7 @@
 
   };
 
-  LoginCtrl.$inject = ['$rootScope', '$scope', '$log', '$location', 'MongoUserService', '$rootScope'];
+  LoginCtrl.$inject = ['$rootScope', '$scope', '$log', '$location', 'MongoUserService', 'authCache'];
 
   /** Admin log-in page
    * **/
@@ -46,7 +47,7 @@
 
         if(value.data !== 'null') {
 
-          sessionStorage.setItem('logginIn', value.data);
+          this.authCache.put('logginIn', value.data);
           this.$rootScope.userid = value.data;
           this.$location.path('/admin/');
 

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$location', function ($rootScope, $window, $location) {
+angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$location', 'authCache', function ($rootScope, $window, $location, authCache) {
 
   $rootScope.pageChange = false;
   $rootScope.currentPage = $location.absUrl();
@@ -22,7 +22,7 @@ angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$locatio
 
     if (admin.test(currentPage)) {
 
-      if (!sessionStorage.getItem('logginIn') && sessionStorage.getItem('logginIn') !== $rootScope.userid) {
+      if (!authCache.get('logginIn') && authCache.get('logginIn') !== $rootScope.userid) {
 
         $location.path('/login');
 

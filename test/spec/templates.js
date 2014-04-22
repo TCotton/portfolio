@@ -70,7 +70,7 @@ describe('Unit: Templates', function () {
   it('loads individual blog page at /blog/-an-article', function () {
     $httpBackend.expectGET('views/blog_page.html')
       .respond(200);
-    location.path('/blog/books-helped-become-professional-web-developer?id=182013');
+    location.path('/blog/136324/using-autoload-in-object-orientated-wordpress-plugin');
     rootScope.$digest(); // call the digest loop
     $httpBackend.flush();
   });
