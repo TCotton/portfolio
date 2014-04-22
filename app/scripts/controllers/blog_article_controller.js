@@ -7,7 +7,7 @@
 
   var app = angular.module('portfolioApp');
 
-  var BlogArticleCtrl = function ($rootScope, $scope, $location, BlogDataService, $log, $timeout, $sce) {
+  var BlogArticleCtrl = function ($rootScope, $scope, $location, BlogDataService, $log, $timeout, $sce, newBlogDataCache) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
@@ -16,6 +16,7 @@
     this.$log = $log;
     this.$timeout = $timeout;
     this.$sce = $sce;
+    this.newBlogDataCache = newBlogDataCache;
 
     this.$scope.title = null;
     this.$scope.content = null;
@@ -24,15 +25,15 @@
 
   };
 
-  BlogArticleCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataService', '$log', '$timeout', '$sce'];
+  BlogArticleCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataService', '$log', '$timeout', '$sce', 'newBlogDataCache'];
 
   /** Load blog data from either the service or cache and then populate the page with the values
    * **/
 
   BlogArticleCtrl.prototype.loadBlogData = function () {
 
-    if (localStorage.getItem('oldBlogPosts')) {
-      this.$scope.oldBlogPosts = angular.extend(JSON.parse(localStorage.getItem('oldBlogPosts')), JSON.parse(sessionStorage.getItem('totalNewArticles')));
+    if (this.newBlogDataCache.get('totalNewArticles')) {
+      this.$scope.oldBlogPosts = angular.extend(JSON.parse(localStorage.getItem('oldBlogPosts')), this.newBlogDataCache.get('totalNewArticles'));
       this.populatePage();
     }
 
