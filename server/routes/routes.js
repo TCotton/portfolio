@@ -267,13 +267,13 @@ module.exports = function (app) {
 
     mail({
       from: req.body.name + ' ' + req.body.email, // sender address
-      to: 'andy_walpole@btopenworld.com', // list of receivers
+      to: 'me@andywalpole.me', // list of receivers
       subject: 'Contact from portfolio', // Subject line
       text: req.body.message, // plaintext body
       html: req.body.message // html body
     });
 
-    res.json({'success': true, 'message': 'Thank you for taking the time to fill out the form. I will contact you as soon as I can!'});
+    res.json({'success': ture'success': 'Thank you for taking the time to fill out the form. I will contact you as soon as I can!'});
 
   })
 

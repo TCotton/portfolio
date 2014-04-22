@@ -40,7 +40,7 @@ describe('Routes test', function () {
     it('should load the contact page on successful load of /contact-me', function () {
       location.path('/contact-me');
       rootScope.$digest(); // call the digest loop
-      expect(route.current.controller).toBe('FormCtrl');
+      expect(route.current.controller).toBe('FormCtrl as AdminFormCtrl');
     });
 
   });
@@ -119,7 +119,7 @@ describe('Routes test', function () {
     ));
 
     it('should load the login page on successful load of /admin/login', function () {
-      location.path('/admin/login');
+      location.path('/login');
       rootScope.$digest(); // call the digest loop
       expect(route.current.controller).toBe('LoginCtrl as AdminLogin');
     });

@@ -4,6 +4,18 @@
     "email": "andy_walpole@btopenworld.com",
     "message": "This is a message here"
   },
+  "API": {
+    "users_add": "/api/users/add",
+    "blog_add": "/api/blog/add",
+    "user_get": "/api/users/get",
+    "blog_get": "/api/blog/get",
+    "user_delete": "/api/users/delete/:id",
+    "blog_delete": "/api/blog/delete/:id",
+    "blog_update": "/api/blog/update",
+    "user_update": "/api/user/update",
+    "user_find": "/api/user/find",
+    "send_mail": "/api/sendmail"
+  },
   "loginController": {
     "username": "Andy Walpole",
     "password": "aPassword"
