@@ -118,6 +118,10 @@ h3.blog-title {
   color: $textTwo;
 }
 
+.content-text section > div table {
+  @include font-calculator($baseFontFamily, 16px);
+}
+
 .content-text section > div h3, .content-text section > div h4, .content-text section > div h5, .content-text section > div h6 {
   @include font-calculator($baseFontFamily, 26px);
   font-weight: 400;

@@ -31,11 +31,6 @@
     this.newBlogDataCache = newBlogDataCache;
     this.oldBlogDataCache = oldBlogDataCache;
 
-    /** local scope
-     * **/
-      // good practice to list all local scope objects at the top so that all coder is immediately
-      // familiar with all local scopes used in this controller
-
     this.totalArticles = this.newBlogDataCache.get('totalArticles') || null;
     this.totalNewArticles = this.newBlogDataCache.get('totalNewArticles') || null;
     this.newBlogPosts = this.newBlogDataCache.get('newBlogPosts') || null;
@@ -129,6 +124,7 @@
       this.oldBlogDataCache.put('oldBlogPosts', this.oldBlogPosts);
       this.oldBlogDataCache.put('oldBlogComplete', 'true');
       this.oldBlogDataCache.put('totalOldArticles', this.totalOldArticles);
+      this.newBlogDataCache.put('totalArticles', this.totalArticles);
 
     }.bind(this);
 
@@ -229,7 +225,7 @@
     // use a a cache means that it is possible to bypass the above methods and just serve up the data
     if (!this.oldBlogDataCache.get('oldBlogPosts') || !this.newBlogDataCache.get('newBlogPosts')) {
 
-      //if blog articles are already stored as localstorage then don't call remote service and use values in storage
+      //if blog articles are already stored as session storage then don't call remote service and use values in storage
 
       this.MongoBlogService.getBlogPosts().then(function (value) {
 

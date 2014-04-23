@@ -38,6 +38,7 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
     yeoman: yeomanConfig,
+    pkg: grunt.file.readJSON('package.json'),
     watch: {
       js: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
@@ -59,7 +60,7 @@ module.exports = function (grunt) {
       },
       livereload: {
         options: {
-          livereload: '<%= connect.options.livereload %>'
+          livereload: '<%= express.options.livereload %>'
         },
         files: [
           '<%= yeoman.app %>/views/{,*/}*.html',
@@ -76,20 +77,22 @@ module.exports = function (grunt) {
       options: {
         port: 9000,
         // Change this to '0.0.0.0' to access the server from outside.
-        hostname: 'localhost'
-      },
-      livereload: {
-        options: {
-          server: path.resolve('./server.js'),
-          livereload: true,
-          serverreload: false,
-          bases: [path.resolve('./.tmp'), path.resolve(__dirname, yeomanConfig.app)]
+        hostname: 'localhost',
+        livereload: {
+          options: {
+            server: path.resolve('./server.js'),
+            livereload: true,
+            serverreload: false,
+            open: true,
+            bases: [path.resolve('./.tmp'), path.resolve(__dirname, yeomanConfig.app)]
+          }
         }
       },
+
       test: {
         options: {
           server: path.resolve('./server.js'),
-          bases: [path.resolve('./.tmp'), path.resolve(__dirname, 'test')]
+          bases: [path.resolve('./.tmp'), path.resolve(__dirname, 'test'), '<%= yeoman.app %>']
         }
       },
       dist: {
@@ -346,13 +349,6 @@ module.exports = function (grunt) {
         ]
       }
     }
-    // Test settings
- /*   karma: {
-      unit: {
-        configFile: 'karma.conf.js',
-        singleRun: true
-      }
-    }*/
   });
 
   grunt.registerTask('server', function (target) {
