@@ -15,7 +15,7 @@
   var _seoFriendly;
   var _addReviewImage;
 
-  var BlogDataService = function ($http, $q, CONFIG, $rootScope, FeedService, $timeout, $interval, $log, MongoBlogService, newBlogDataCache) {
+  var BlogDataService = function ($http, $q, CONFIG, $rootScope, FeedService, $timeout, $interval, $log, MongoBlogService, newBlogDataCache, $cookieStore) {
 
     /** angularjs stuff
      * **/
@@ -29,18 +29,19 @@
     this.$log = $log;
     this.MongoBlogService = MongoBlogService;
     this.newBlogDataCache = newBlogDataCache;
+    this.$cookieStore = $cookieStore;
 
     /** local scope
      * **/
-    // good practice to list all local scope objects at the top so that all coder is immediately
-    // familiar with all local scopes used in this controller
+      // good practice to list all local scope objects at the top so that all coder is immediately
+      // familiar with all local scopes used in this controller
 
     this.totalArticles = this.newBlogDataCache.get('totalArticles') || null;
-    this.totalOldArticles = JSON.parse(localStorage.getItem('totalOldArticles')) || null;
+    this.totalOldArticles = this.$cookieStore.get('totalOldArticles') || null;
     this.totalNewArticles = this.newBlogDataCache.get('totalNewArticles') || null;
     this.newBlogPosts = this.newBlogDataCache.get('newBlogPosts') || null;
-    this.oldBlogPosts = JSON.parse(localStorage.getItem('oldBlogPosts')) || null;
-    this.oldBlogComplete = JSON.parse(localStorage.getItem('oldBlogComplete')) ? true : false;
+    this.oldBlogPosts = this.$cookieStore.get('oldBlogPosts') || null;
+    this.oldBlogComplete = this.newBlogDataCache.get('newBlogComplete') ? true : false;
     this.newBlogComplete = this.newBlogDataCache.get('newBlogComplete') ? true : false;
 
     /** method used for the data taken from the old blog RSS feed
@@ -120,7 +121,7 @@
     }.bind(this);
 
     /* cache the relevant data in either session or storage
-    * **/
+     * **/
     _cache = function () {
 
       localStorage.setItem('totalOldArticles', JSON.stringify(this.totalOldArticles));
@@ -135,6 +136,9 @@
       this.newBlogDataCache.put('totalNewArticles', this.totalNewArticles);
       this.newBlogDataCache.put('newBlogPosts', this.newBlogPosts);
       this.newBlogDataCache.put('newBlogComplete', 'true');
+      this.$cookieStore.put('oldBlogPosts', this.oldBlogPosts);
+      this.$cookieStore.put('oldBlogComplete', 'true');
+      this.$cookieStore.put('totalOldArticles', this.totalOldArticles);
       //console.log(this.newBlogData.get);
 
 
@@ -224,7 +228,7 @@
   };
 
 
-  BlogDataService.$inject = ['$http', '$q', 'CONFIG', '$rootScope', 'FeedService', '$timeout', '$interval', '$log', 'MongoBlogService', 'newBlogDataCache'];
+  BlogDataService.$inject = ['$http', '$q', 'CONFIG', '$rootScope', 'FeedService', '$timeout', '$interval', '$log', 'MongoBlogService', 'newBlogDataCache', '$cookieStore'];
 
   BlogDataService.prototype.retreiveData = function () {
 
@@ -234,8 +238,12 @@
     localStorage.clear();
     sessionStorage.clear();
 
+    this.$cookieStore.remove('oldBlogPosts');
+    this.$cookieStore.remove('totalOldArticles');
+    this.$cookieStore.remove('oldBlogComplete');
+
     // use a a cache means that it is possible to bypass the above methods and just serve up the data
-    if (!localStorage.getItem('oldBlogPosts') || !this.newBlogDataCache.get('newBlogPosts')) {
+    if (!this.$cookieStore.get('oldBlogPosts') || !this.newBlogDataCache.get('newBlogPosts')) {
 
       //if blog articles are already stored as localstorage then don't call remote service and use values in storage
 
@@ -260,7 +268,7 @@
           }.bind(this), function () {}).then(function () {
 
             // flip on a timer after a two seconds anyway as an emergency backup
-            var timer = this.$timeout(function(){
+            var timer = this.$timeout(function () {
               this.oldBlogComplete = true;
               this.newBlogComplete = true;
               this.$timeout.cancel(timer);
@@ -272,7 +280,7 @@
               _cache();
             }
 
-          }.bind(this), function(){}).then(function(){
+          }.bind(this), function () {}).then(function () {
 
             deferred.resolve(this);
 
