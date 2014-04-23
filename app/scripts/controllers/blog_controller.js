@@ -7,7 +7,7 @@
 
   var app = angular.module('portfolioApp');
 
-  var BlogCtrl = function ($rootScope, $scope, $location, BlogDataService, $log, $timeout, newBlogDataCache) {
+  var BlogCtrl = function ($rootScope, $scope, $location, BlogDataService, $log, $timeout, newBlogDataCache, oldBlogDataCache) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
@@ -15,15 +15,16 @@
     this.$log = $log;
     this.$timeout = $timeout;
     this.newBlogDataCache = newBlogDataCache;
+    this.oldBlogDataCache = oldBlogDataCache;
 
     /** Either receive data from BlogDataService or from the cache
      * **/
     if (this.newBlogDataCache.get('newBlogPosts')) {
-      this.$scope.totalBlogPosts = angular.extend(JSON.parse(localStorage.getItem('oldBlogPosts')), this.newBlogDataCache.get('newBlogPosts'));
+      this.$scope.totalBlogPosts = angular.extend(this.oldBlogDataCache.get('oldBlogPosts'), this.newBlogDataCache.get('newBlogPosts'));
     }
 
-    this.$scope.totalArticles = this.newBlogDataCache.get('totalArticles')|| null;
-    this.$scope.totalOldArticles = JSON.parse(localStorage.getItem('totalOldArticles')) || null;
+    this.$scope.totalArticles = this.newBlogDataCache.get('totalArticles') || null;
+    this.$scope.totalOldArticles = this.oldBlogDataCache.get('totalOldArticles') || null;
 
     this.$scope.totalNewArticles = this.newBlogDataCache.get('totalNewArticles') || null;
 
@@ -64,7 +65,7 @@
 
   };
 
-  BlogCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataService', '$log', '$timeout', 'newBlogDataCache'];
+  BlogCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataService', '$log', '$timeout', 'newBlogDataCache', 'oldBlogDataCache'];
 
   BlogCtrl.prototype.currentPage = function () {
 

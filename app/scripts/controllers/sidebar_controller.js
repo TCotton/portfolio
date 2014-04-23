@@ -7,15 +7,16 @@
 
   var app = angular.module('portfolioApp');
 
-  var SidebarCtrl = function ($rootScope, $scope, $log, newBlogDataCache) {
+  var SidebarCtrl = function ($rootScope, $scope, $log, newBlogDataCache, oldBlogDataCache) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
     this.$log = $log;
     this.newBlogDataCache = newBlogDataCache;
+    this.oldBlogDataCache = oldBlogDataCache;
 
     if (this.newBlogDataCache.get('newBlogPosts')) {
-      this.$scope.blogData = angular.extend(JSON.parse(localStorage.getItem('oldBlogPosts')), this.newBlogDataCache.get('newBlogPosts'));
+      this.$scope.blogData = angular.extend(this.oldBlogDataCache.get('oldBlogPosts'), this.newBlogDataCache.get('newBlogPosts'));
     }
 
     /** Until I sort the backend server out inherit blog posts from the parent scope
@@ -26,7 +27,7 @@
 
   };
 
-  SidebarCtrl.$inject = ['$rootScope', '$scope', '$log', 'newBlogDataCache'];
+  SidebarCtrl.$inject = ['$rootScope', '$scope', '$log', 'newBlogDataCache', 'oldBlogDataCache'];
 
   app.controller('SidebarCtrl', SidebarCtrl);
 

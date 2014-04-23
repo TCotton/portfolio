@@ -15,7 +15,7 @@
   var _seoFriendly;
   var _addReviewImage;
 
-  var BlogDataService = function ($http, $q, CONFIG, $rootScope, FeedService, $timeout, $interval, $log, MongoBlogService, newBlogDataCache, $cookieStore) {
+  var BlogDataService = function ($http, $q, CONFIG, $rootScope, FeedService, $timeout, $interval, $log, MongoBlogService, newBlogDataCache, oldBlogDataCache) {
 
     /** angularjs stuff
      * **/
@@ -29,7 +29,7 @@
     this.$log = $log;
     this.MongoBlogService = MongoBlogService;
     this.newBlogDataCache = newBlogDataCache;
-    this.$cookieStore = $cookieStore;
+    this.oldBlogDataCache = oldBlogDataCache;
 
     /** local scope
      * **/
@@ -37,12 +37,11 @@
       // familiar with all local scopes used in this controller
 
     this.totalArticles = this.newBlogDataCache.get('totalArticles') || null;
-    this.totalOldArticles = this.$cookieStore.get('totalOldArticles') || null;
     this.totalNewArticles = this.newBlogDataCache.get('totalNewArticles') || null;
     this.newBlogPosts = this.newBlogDataCache.get('newBlogPosts') || null;
-    this.oldBlogPosts = this.$cookieStore.get('oldBlogPosts') || null;
-    this.oldBlogComplete = this.newBlogDataCache.get('newBlogComplete') ? true : false;
-    this.newBlogComplete = this.newBlogDataCache.get('newBlogComplete') ? true : false;
+    this.oldBlogPosts = this.oldBlogDataCache.get('oldBlogPosts') || null;
+    this.oldBlogComplete = this.oldBlogDataCache.get('oldBlogComplete')? true : false;
+    this.newBlogComplete = this.newBlogDataCache.get('newBlogComplete')? true : false;
 
     /** method used for the data taken from the old blog RSS feed
      * **/
@@ -124,23 +123,12 @@
      * **/
     _cache = function () {
 
-      localStorage.setItem('totalOldArticles', JSON.stringify(this.totalOldArticles));
-      sessionStorage.setItem('totalNewArticles', JSON.stringify(this.totalNewArticles));
-      sessionStorage.setItem('newBlogPosts', JSON.stringify(this.newBlogPosts));
-      localStorage.setItem('oldBlogPosts', JSON.stringify(this.oldBlogPosts));
-      localStorage.setItem('oldBlogComplete', JSON.stringify('true'));
-      sessionStorage.setItem('newBlogComplete', JSON.stringify('true'));
-
-      // remove sessionStorage
-
       this.newBlogDataCache.put('totalNewArticles', this.totalNewArticles);
       this.newBlogDataCache.put('newBlogPosts', this.newBlogPosts);
       this.newBlogDataCache.put('newBlogComplete', 'true');
-      this.$cookieStore.put('oldBlogPosts', this.oldBlogPosts);
-      this.$cookieStore.put('oldBlogComplete', 'true');
-      this.$cookieStore.put('totalOldArticles', this.totalOldArticles);
-      //console.log(this.newBlogData.get);
-
+      this.oldBlogDataCache.put('oldBlogPosts', this.oldBlogPosts);
+      this.oldBlogDataCache.put('oldBlogComplete', 'true');
+      this.oldBlogDataCache.put('totalOldArticles', this.totalOldArticles);
 
     }.bind(this);
 
@@ -228,22 +216,18 @@
   };
 
 
-  BlogDataService.$inject = ['$http', '$q', 'CONFIG', '$rootScope', 'FeedService', '$timeout', '$interval', '$log', 'MongoBlogService', 'newBlogDataCache', '$cookieStore'];
+  BlogDataService.$inject = ['$http', '$q', 'CONFIG', '$rootScope', 'FeedService', '$timeout', '$interval', '$log', 'MongoBlogService', 'newBlogDataCache', 'oldBlogDataCache'];
 
   BlogDataService.prototype.retreiveData = function () {
 
     var deferred = this.$q.defer();
 
     // remove the line below on a production site
-    localStorage.clear();
-    sessionStorage.clear();
-
-    this.$cookieStore.remove('oldBlogPosts');
-    this.$cookieStore.remove('totalOldArticles');
-    this.$cookieStore.remove('oldBlogComplete');
+    //localStorage.clear();
+    //sessionStorage.clear();
 
     // use a a cache means that it is possible to bypass the above methods and just serve up the data
-    if (!this.$cookieStore.get('oldBlogPosts') || !this.newBlogDataCache.get('newBlogPosts')) {
+    if (!this.oldBlogDataCache.get('oldBlogPosts') || !this.newBlogDataCache.get('newBlogPosts')) {
 
       //if blog articles are already stored as localstorage then don't call remote service and use values in storage
 
