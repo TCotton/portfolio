@@ -14,8 +14,8 @@
     this.$log = $log;
     this.newBlogDataCache = newBlogDataCache;
 
-    if (sessionStorage.getItem('newBlogPosts')) {
-      this.$scope.blogData = angular.extend(JSON.parse(localStorage.getItem('oldBlogPosts')), this.newBlogDataCache.get('totalNewArticles'));
+    if (this.newBlogDataCache.get('newBlogPosts')) {
+      this.$scope.blogData = angular.extend(JSON.parse(localStorage.getItem('oldBlogPosts')), this.newBlogDataCache.get('newBlogPosts'));
     }
 
     /** Until I sort the backend server out inherit blog posts from the parent scope

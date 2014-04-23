@@ -7,23 +7,26 @@
 
   var app = angular.module('portfolioApp');
 
-  var BlogCtrl = function ($rootScope, $scope, $location, BlogDataService, $log, $timeout) {
+  var BlogCtrl = function ($rootScope, $scope, $location, BlogDataService, $log, $timeout, newBlogDataCache) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
     this.$location = $location;
     this.$log = $log;
     this.$timeout = $timeout;
+    this.newBlogDataCache = newBlogDataCache;
 
     /** Either receive data from BlogDataService or from the cache
      * **/
-    if (localStorage.getItem('oldBlogPosts')) {
-      this.$scope.totalBlogPosts = angular.extend(JSON.parse(localStorage.getItem('oldBlogPosts')), JSON.parse(sessionStorage.getItem('totalNewArticles')));
+    if (this.newBlogDataCache.get('newBlogPosts')) {
+      this.$scope.totalBlogPosts = angular.extend(JSON.parse(localStorage.getItem('oldBlogPosts')), this.newBlogDataCache.get('newBlogPosts'));
     }
 
-    this.$scope.totalArticles = JSON.parse(sessionStorage.getItem('totalArticles')) || null;
+    this.$scope.totalArticles = this.newBlogDataCache.get('totalArticles')|| null;
     this.$scope.totalOldArticles = JSON.parse(localStorage.getItem('totalOldArticles')) || null;
-    this.$scope.totalNewArticles = JSON.parse(sessionStorage.getItem('totalNewArticles')) || null;
+
+    this.$scope.totalNewArticles = this.newBlogDataCache.get('totalNewArticles') || null;
+
 
     /* the number of articles per page */
     this.$scope.paginationPageSize = 5;
@@ -61,7 +64,7 @@
 
   };
 
-  BlogCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataService', '$log'];
+  BlogCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataService', '$log', '$timeout', 'newBlogDataCache'];
 
   BlogCtrl.prototype.currentPage = function () {
 

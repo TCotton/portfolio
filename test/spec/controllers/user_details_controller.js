@@ -33,7 +33,7 @@ describe('Controller: UserDetailsCtrl as AdminUserDetailsCtrl', function () {
       $scope: scope
     });
 
-    $httpBackend.expect('POST', MOCK_DATA.mongoDBUrl).respond(200, MOCK_DATA.adminUsers);
+    $httpBackend.expect('POST', MOCK_DATA.API.).respond(200, MOCK_DATA.adminUsers);
 
   }));
 

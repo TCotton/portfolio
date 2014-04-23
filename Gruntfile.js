@@ -373,6 +373,7 @@ module.exports = function (grunt) {
   grunt.registerTask('test', [
     'clean:server',
     'concurrent:test',
+    'ngconstant:test',
     'express:test',
     'karma'
   ]);

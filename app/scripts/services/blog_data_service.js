@@ -130,11 +130,11 @@
       localStorage.setItem('oldBlogComplete', JSON.stringify('true'));
       sessionStorage.setItem('newBlogComplete', JSON.stringify('true'));
 
+      // remove sessionStorage
+
       this.newBlogDataCache.put('totalNewArticles', this.totalNewArticles);
       this.newBlogDataCache.put('newBlogPosts', this.newBlogPosts);
       this.newBlogDataCache.put('newBlogComplete', 'true');
-
-
       //console.log(this.newBlogData.get);
 
 
