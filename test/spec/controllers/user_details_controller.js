@@ -21,7 +21,7 @@ describe('Controller: UserDetailsCtrl as AdminUserDetailsCtrl', function () {
     {'__v': 0, '_id': '5354ce5c3c2dec290a2db608', 'name': 'JohnJones', 'password': '61719d7f2aac2f1a649543a2245444048064dd6d516ae63b3c9c18792fadd0d9ceba7aa1713b2fa690551c96a3f72bf9a374b63b417369f6d21b2b076d61d366'},
     {'name': 'JohnRoad', 'password': '61719d7f2aac2f1a649543a2245444048064dd6d516ae63b3c9c18792fadd0d9ceba7aa1713b2fa690551c96a3f72bf9a374b63b417369f6d21b2b076d61d366', '_id': '5358b892fec18e00008a9585', '__v': 0}
   ];
-  //var newUser = {name: 'JohnRoad', password: 'revolution'};
+  var userDetails = {name: 'JohnRoad', _id: 'awrva4938hrvawovas'};
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function (_$controller_, _$rootScope_, _MOCK_DATA_, _$httpBackend_, _$q_) {
@@ -48,7 +48,7 @@ describe('Controller: UserDetailsCtrl as AdminUserDetailsCtrl', function () {
     $httpBackend.verifyNoOutstandingRequest();
   });
 
-  iit('Checks that scope changes to true after data is passed to the AdminUserDetailsCtrl.submitAddUserForm method and that the deferred promise is returned', function () {
+  it('Checks that scope changes to true after data is passed to the AdminUserDetailsCtrl.submitAddUserForm method and that the deferred promise is returned', function () {
 
     scope.addUser.name = 'JohnRoad';
     scope.addUser.password = 'aPassword';
@@ -71,17 +71,16 @@ describe('Controller: UserDetailsCtrl as AdminUserDetailsCtrl', function () {
 
   });
 
-  /*it('Checks that the local scope changes after the user clicks to edit a users details: AdminUserDetailsCtrl.editUser()', function () {
+  it('Checks that the local scope changes after the user clicks to edit a users details: AdminUserDetailsCtrl.editUserFun()', function () {
 
-   scope.$apply(function(){
-   AdminUserDetailsCtrl.editUser(userObect);
-   });
+    scope.$apply(function () {
+      AdminUserDetailsCtrl.editUserFun(userDetails);
+    });
 
-   expect(scope.editThisUser).toBe(true);
-   expect(scope.editUser.name).toBe(userObect.name);
-   expect(scope.editUser.password).toBe(userObect.password);
-   expect(scope.editUser._id.$oid).toEqual(userObect._id.$oid);
+    expect(scope.editThisUser).toBe(true);
+    expect(scope.editUser.name).toBe(userDetails.name);
+    expect(scope.editUser._id).toEqual(userDetails._id);
 
-   });*/
+  });
 
 });
