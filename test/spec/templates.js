@@ -3,15 +3,19 @@ describe('Unit: Templates', function () {
 
   // checks template routes
 
-  var $httpBackend, location, rootScope, route;
+  var $httpBackend, location, rootScope, route, authCache;
+  var userID = '20f4q3foiawnfaoi';
 
   beforeEach(module('portfolioApp'));
 
-  beforeEach(inject(function (_$rootScope_, _$route_, _$httpBackend_, _$location_) {
+  beforeEach(inject(function (_$rootScope_, _$route_, _$httpBackend_, _$location_, _authCache_) {
     location = _$location_;
     rootScope = _$rootScope_;
     route = _$route_;
     $httpBackend = _$httpBackend_;
+    authCache = _authCache_;
+    authCache.put('logginIn', userID);
+    rootScope.userid = userID;
   }));
 
   afterEach(function () {
@@ -108,6 +112,8 @@ describe('Unit: Templates', function () {
   });
 
   it('loads admin add blog page at /admin/add-blog', function () {
+
+
     $httpBackend.expectGET('views/admin/add_blog.html')
       .respond(200);
     location.path('/admin/add-blog');

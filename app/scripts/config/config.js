@@ -22,7 +22,7 @@ angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$locatio
 
     if (admin.test(currentPage)) {
 
-      if (!authCache.get('logginIn') && authCache.get('logginIn') !== $rootScope.userid) {
+      if (!authCache.get('logginIn') || authCache.get('logginIn') !== $rootScope.userid) {
 
         $location.path('/login');
 

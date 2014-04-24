@@ -3,13 +3,18 @@ describe('Routes test', function () {
   // Mock our module in our tests
   beforeEach(module('portfolioApp'));
 
-  var location, route, rootScope;
+  var location, route, rootScope, authCache;
+  var userID = '20f4q3foiawnfaoi';
+
 
   beforeEach(inject(
-    function (_$location_, _$route_, _$rootScope_) {
+    function (_$location_, _$route_, _$rootScope_, _authCache_) {
       location = _$location_;
       route = _$route_;
       rootScope = _$rootScope_;
+      authCache = _authCache_;
+      authCache.put('logginIn', userID);
+      rootScope.userid = userID;
     }
   ));
 
