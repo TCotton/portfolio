@@ -132,4 +132,21 @@ describe('Controller: UserDetailsCtrl as AdminUserDetailsCtrl', function () {
 
   });
 
+  it('Checks that the local scope changes after: AdminUserDetailsCtrl.submitEditUserForm()', function () {
+
+    $httpBackend.expect('PUT', '/api/user/update').respond(200);
+
+    scope.$apply(function () {
+      AdminUserDetailsCtrl.submitEditUserForm(true);
+    });
+
+    $httpBackend.expect('GET', MOCK_DATA.API.userGet).respond(200, allUsers);
+
+    $httpBackend.flush();
+
+    expect(scope.formSuccess).toContain('You have successfully updated the user details');
+    expect(scope.editThisUser).toBe(null);
+
+  });
+
 });
