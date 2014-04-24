@@ -99,4 +99,18 @@ describe('Controller: UserDetailsCtrl as AdminUserDetailsCtrl', function () {
 
   });
 
+  it('Checks that the local scope changes after: AdminUserDetailsCtrl.listAllUsers()', function () {
+
+    $httpBackend.expect('GET', MOCK_DATA.API.userGet).respond(200, allUsers);
+
+    scope.$apply(function () {
+      AdminUserDetailsCtrl.listAllUsers();
+    });
+
+    $httpBackend.flush();
+
+    expect(scope.allUsers).toEqual(allUsers);
+
+  });
+
 });
