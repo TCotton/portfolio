@@ -78,17 +78,17 @@ module.exports = function (grunt) {
         port: 9000,
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: 'localhost',
-        livereload: {
-          options: {
-            server: path.resolve('./server.js'),
-            livereload: true,
-            serverreload: false,
-            open: true,
-            bases: [path.resolve('./.tmp'), path.resolve(__dirname, yeomanConfig.app)]
-          }
+        livereload: 35729
+      },
+      livereload: {
+        options: {
+          server: path.resolve('./server.js'),
+          livereload: true,
+          serverreload: false,
+          open: true,
+          bases: [path.resolve('./.tmp'), path.resolve(__dirname, yeomanConfig.app)]
         }
       },
-
       test: {
         options: {
           server: path.resolve('./server.js'),

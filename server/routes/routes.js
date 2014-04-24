@@ -9,7 +9,6 @@ var Blog = require('./models/blog_model');
 var hashing = require('../config/salt');
 var userId = require('../config/user_id');
 var crypto = require('crypto');
-var nodemailer = require('nodemailer');
 var mail = require('nodemailer').mail;
 
 function createPasswordHash(password) {
@@ -240,6 +239,8 @@ module.exports = function (app) {
 
 
   app.route('/api/user/find').post(function (req, res) {
+
+    console.log(req.body);
 
     // read out hmac digest
     var hash = createPasswordHash(req.body.password);
