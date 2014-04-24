@@ -80,6 +80,9 @@ if (app.get('env') === 'production') {
 // routes ======================================================================
 require('./server/routes/routes.js')(app);
 
+// XML sitemap =================================================================
+require('./server/sitemap.js')(app);
+
 
 module.exports = app;
 
