@@ -23,6 +23,7 @@ describe('Unit: Templates', function () {
     $httpBackend.verifyNoOutstandingRequest();
   });
 
+
   it('loads the home template at /', function () {
     $httpBackend.expectGET('views/main.html')
       .respond(200);

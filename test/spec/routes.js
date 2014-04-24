@@ -18,22 +18,6 @@ describe('Routes test', function () {
     }
   ));
 
-  describe('index route', function () {
-    beforeEach(inject(
-      function ($httpBackend) {
-        $httpBackend.expectGET('views/main.html')
-          .respond(200, 'main HTML');
-      }
-    ));
-
-    it('should load the index page on successful load of /', function () {
-      location.path('/');
-      rootScope.$digest(); // call the digest loop
-      expect(route.current.controller).toBe('MainCtrl');
-    });
-
-  });
-
   describe('contact page route', function () {
     beforeEach(inject(
       function ($httpBackend) {
