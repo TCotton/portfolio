@@ -276,7 +276,7 @@ module.exports = function (app) {
 
     res.json({'success': 'true', 'message': 'Thank you for taking the time to fill out the form. I will contact you as soon as I can!'});
 
-  })
+  });
 
   // redirect www to no www: http://codenimbus.com/2014/01/15/redirecting-www-domain-to-non-www-on-ghost/
   app.get('', function(req, res, next) {
