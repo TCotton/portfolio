@@ -89,5 +89,15 @@ describe('Controller: EditBlogCtrl as AdminEditBlogCtrl', function () {
 
   });
 
+  it('The user can change their mind and not delete the article when the popup appears: AdminAddBlogCtrl.hidePopup()', function () {
+
+    scope.$apply(function () {
+      AdminEditBlogCtrl.hidePopup();
+    });
+
+    expect(scope.displayPopup).toBe(false);
+
+  });
+
 
 });
