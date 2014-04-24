@@ -174,11 +174,11 @@
 
         // reset scope to remove values from input fields
         // loop over form field models
-        for (var key in this.$scope.addBlogFormData) {
+        for (var key in this.$scope.editBlogFormData) {
 
-          if (this.$scope.addBlogFormData.hasOwnProperty(key)) {
+          if (this.$scope.editBlogFormData.hasOwnProperty(key)) {
 
-            this.$scope.addBlogFormData[key] = null;
+            this.$scope.editBlogFormData[key] = null;
 
           }
         }

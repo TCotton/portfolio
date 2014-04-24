@@ -41,5 +41,32 @@ describe('Controller: EditBlogCtrl as AdminEditBlogCtrl', function () {
 
   });
 
+  it('Test for local scope changes after successful edit of blog: AdminEditBlogCtrl.editBlog()', function () {
+
+    scope.editBlogFormData = {};
+    scope.editBlogFormData.title = MOCK_DATA.editedBlogDataSubmit.title;
+    scope.editBlogFormData.author = MOCK_DATA.editedBlogDataSubmit.author;
+    scope.editBlogFormData.category = MOCK_DATA.editedBlogDataSubmit.category;
+    scope.editBlogFormData.content = MOCK_DATA.editedBlogDataSubmit.content;
+
+    $httpBackend.expect('PUT', '/api/blog/update').respond(200);
+
+    scope.$apply(function () {
+      AdminEditBlogCtrl.editBlog(true);
+    });
+
+    $httpBackend.expect('GET', '/api/blog/get').respond(200, MOCK_DATA.allBlogData.data);
+
+    $httpBackend.flush();
+
+    expect(scope.formSuccess).toContain('You have successfully updated the blog article');
+    expect(scope.editBlogFormData.title).toBe(null);
+    expect(scope.editBlogFormData.author).toBe(null);
+    expect(scope.editBlogFormData.category).toBe(null);
+    expect(scope.editBlogFormData.content).toBe(null);
+    expect(scope.displayForm).toBe(false);
+
+  });
+
 
 });
