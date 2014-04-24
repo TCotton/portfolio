@@ -288,7 +288,6 @@ module.exports = function (grunt) {
           name: 'AppConstants',
           dest: '<%= yeoman.app %>/scripts/config/constants.js',
           constants: {
-            ROUTES: grunt.file.readJSON('app/scripts/config/routes.json'),
             LINKS: grunt.file.readJSON('app/scripts/config/navigation.json'),
             SLIDER: grunt.file.readJSON('app/scripts/config/slider.json'),
             CONFIG: grunt.file.readJSON('app/scripts/config/config.json'),
