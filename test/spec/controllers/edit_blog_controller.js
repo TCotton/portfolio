@@ -11,6 +11,7 @@ describe('Controller: EditBlogCtrl as AdminEditBlogCtrl', function () {
   var scope;
   var AdminEditBlogCtrl;
 
+
   // Initialize the controller and a mock scope
   beforeEach(inject(function (_$controller_, _$rootScope_, _MOCK_DATA_, _$httpBackend_, _$q_) {
     $controller = _$controller_;
@@ -99,5 +100,31 @@ describe('Controller: EditBlogCtrl as AdminEditBlogCtrl', function () {
 
   });
 
+/*
+  iit('After successful deletion of blog article check that local scope is changed: AdminAddBlogCtrl.hidePopup()', function () {
+
+    var blogId = 'q24f8b3fn9q3faowrvfa';
+
+    $httpBackend.expect('DELETE',  '/api/blog/delete/' + blogId).respond(200);
+
+
+    scope.$apply(function () {
+      AdminEditBlogCtrl.removeArticle();
+    });
+
+    $httpBackend.expect('GET', '/api/blog/get').respond(200, MOCK_DATA.allBlogData.data);
+
+    $httpBackend.flush();
+
+    expect(scope.displayPopup).toBe(false);
+    expect(scope.dataToDelete.title).toBe(null);
+    expect(scope.dataToDelete.author).toBe(null);
+    expect(scope.dataToDelete.category).toBe(null);
+    expect(scope.dataToDelete.content).toBe(null);
+    expect(scope.dataToDelete.displayImage).toBe(null);
+    expect(scope.dataToDelete._id.$oid).toBe(null);
+
+  });
+*/
 
 });
