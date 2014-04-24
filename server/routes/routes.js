@@ -278,4 +278,14 @@ module.exports = function (app) {
 
   })
 
+  // redirect www to no www: http://codenimbus.com/2014/01/15/redirecting-www-domain-to-non-www-on-ghost/
+  app.get('', function(req, res, next) {
+    console.log(req.headers);
+    if (req.headers.host.match(/^www/) !== null ) {
+      res.redirect(301, 'http://' + req.headers.host.replace(/^www\./, '') + req.url);
+    } else {
+      next();
+    }
+  });
+
 };

@@ -14,6 +14,7 @@ var methodOverride = require('method-override');
 var compress = require('compression');
 var app = express(); 								// create our app w/ express
 var mongoose = require('mongoose'); 					// mongoose for mongodb
+app.use(require('prerender-node').set('prerenderToken', 'V9elFcuI9mP8exKuOZ0Z'));
 
 var database = require('./server/config/database'); 			// load the database config
 
@@ -79,15 +80,6 @@ if (app.get('env') === 'production') {
 // routes ======================================================================
 require('./server/routes/routes.js')(app);
 
-
-// redirect www to no www: http://codenimbus.com/2014/01/15/redirecting-www-domain-to-non-www-on-ghost/
-app.get('', function(req, res, next) {
-  if (req.headers.host.match(/^www/) !== null ) {
-    res.redirect(301, 'http://' + req.headers.host.replace(/^www\./, '') + req.url);
-  } else {
-    next();
-  }
-});
 
 module.exports = app;
 
