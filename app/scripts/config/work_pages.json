@@ -24,7 +24,7 @@
   "lawstudent": {
     "id": "003",
     "title": "Thomson Reuters<br> Law Student",
-    "summary": "A clean, easy to navigate site for Thomson Reuters that engages with university law students.",
+    "summary": "A clean, easy-to-navigate site to help Thomson Reuters engage with law undergraduates.",
     "details": "<p>This project was a refresh of an existing website that had been online for several years.</p><p>The London-based Creative Services web design team were particularly keen on Wordpress because of the ease that non-technical staff could update content.</p><p>Due to its liberal API, Wordpress is best used as a framework, which helps to limit dependency on third-party plugins. There can be both security and performance concerns when using additional plugins so they are best avoided where possible.</p><p>The Thomson Reuters Law Student site is heavily customised so as to achieve the complex layouts. As with the Thomson Reuters Japan site, I was responsible for all server and client-side development work.</p>",
     "code": "Wordpress",
     "company": "Thomson Reuters",
