@@ -20,7 +20,8 @@
     "array-indexofobject": "~0.0.1",
     "feedparser": "~0.16.6",
     "nodemailer": "~0.6.3",
-    "prerender-node": "~1.0.1"
+    "prerender-node": "~1.0.1",
+    "sitemap": "~0.7.2"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
