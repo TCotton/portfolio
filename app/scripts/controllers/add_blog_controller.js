@@ -15,7 +15,6 @@
   var _addSEOFriendlyURL;
   var _addUniqueID;
   var _addDate;
-  var _finished = false;
 
   var AddBlogCtrl = function ($rootScope, $scope, $log, MongoBlogService) {
 
@@ -55,9 +54,7 @@
       trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(' '))) + ' ...';
 
       //strip any HTML tags
-      this.$scope.addBlogFormData.contentSnippet = trimmedString.replace(/(<([^>]+)>)/ig, '').trim();
-
-      _finished = true;
+      this.$scope.addBlogFormData.contentSnippet = trimmedString.replace(/(<([^>]+)>)/ig, '');
 
     }.bind(this);
 
@@ -111,7 +108,7 @@
      * **/
     _addDate = function () {
 
-      this.$scope.addBlogFormData.publishedDate = parseInt(Date.parse(new Date()),10).toString();
+      this.$scope.addBlogFormData.publishedDate = parseInt(Date.parse(new Date()), 10).toString();
 
     }.bind(this);
 
@@ -129,33 +126,30 @@
       _addSEOFriendlyURL();
       _createContentSnippet();
 
-      if(_finished) {
+      var returnedData = this.MongoBlogService.addBlogPost(this.$scope.addBlogFormData);
 
-        var returnedData = this.MongoBlogService.addBlogPost(this.$scope.addBlogFormData);
+      returnedData.then(function () {
 
-        returnedData.then(function() {
+        this.$scope.formSuccess = 'You have successfully added a blog article';
 
-          this.$scope.formSuccess = 'You have successfully added a blog article';
+        // reset scope to remove values from input fields
+        // loop over form field models
+        for (var key in this.$scope.addBlogFormData) {
 
-          // reset scope to remove values from input fields
-          // loop over form field models
-          for (var key in this.$scope.addBlogFormData) {
+          if (this.$scope.addBlogFormData.hasOwnProperty(key)) {
 
-            if (this.$scope.addBlogFormData.hasOwnProperty(key)) {
+            this.$scope.addBlogFormData[key] = null;
 
-              this.$scope.addBlogFormData[key] = null;
-
-            }
           }
+        }
 
-          this.$scope.addBlogFormSubmit = false;
+        this.$scope.addBlogFormSubmit = false;
 
-        }.bind(this), function(value) {
-          this.$log.warn('Failure: BlogDetailsCtrl.addBlog');
-          this.$log.warn(value);
-        }.bind(this));
+      }.bind(this), function (value) {
+        this.$log.warn('Failure: BlogDetailsCtrl.addBlog');
+        this.$log.warn(value);
+      }.bind(this));
 
-      }
     }
 
   };
