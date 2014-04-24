@@ -29,7 +29,7 @@ describe('Controller: AddBlogCtrl as AdminAddBlogCtrl', function () {
 
   }));
 
-  it('After submission of blog of local scope form fields will be null', function () {
+  it('After submission of blog of local scope form fields will be null: AdminAddBlogCtrl.addBlog()', function () {
 
     expect(scope.addBlogFormData.title).toBe(MOCK_DATA.blogArticle.title);
     expect(scope.addBlogFormData.author).toBe(MOCK_DATA.blogArticle.author);
@@ -51,5 +51,6 @@ describe('Controller: AddBlogCtrl as AdminAddBlogCtrl', function () {
     expect(scope.addBlogFormSubmit).toBe(false);
 
   });
+
 
 });

@@ -69,4 +69,25 @@ describe('Controller: EditBlogCtrl as AdminEditBlogCtrl', function () {
   });
 
 
+  it('After clicking to delete blog article local scope will change with value of blog article to be deleted: AdminAddBlogCtrl.addBlog()', function () {
+
+    expect(scope.displayPopup).toBe(false);
+    expect(scope.dataToDelete.title).not.toBeDefined();
+    expect(scope.dataToDelete.author).not.toBeDefined();
+    expect(scope.dataToDelete.category).not.toBeDefined();
+    expect(scope.dataToDelete.content).not.toBeDefined();
+
+    scope.$apply(function () {
+      AdminEditBlogCtrl.deleteArticle(MOCK_DATA.editedBlogDataSubmit);
+    });
+
+    expect(scope.displayPopup).toBe(true);
+    expect(scope.dataToDelete.title).toContain(MOCK_DATA.editedBlogDataSubmit.title);
+    expect(scope.dataToDelete.author).toContain(MOCK_DATA.editedBlogDataSubmit.author);
+    expect(scope.dataToDelete.category).toContain(MOCK_DATA.editedBlogDataSubmit.category);
+    expect(scope.dataToDelete.content).toContain(MOCK_DATA.editedBlogDataSubmit.content);
+
+  });
+
+
 });
