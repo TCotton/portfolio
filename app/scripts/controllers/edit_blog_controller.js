@@ -11,7 +11,6 @@
   var app = angular.module('portfolioApp');
   /** Declare private method variable names
    * **/
-  var _trimString;
   var _createContentSnippet;
   var _addSEOFriendlyURL;
 
@@ -33,21 +32,6 @@
 
     /** Private methods
      * **/
-
-    /** Remove any white space from the beginning and end of the inputed values
-     * **/
-    _trimString = function () {
-
-      // trim white space off the start and end of the string values after successful form submission
-      for (var key in this.$scope.editBlogFormData) {
-
-        if (key.isPrototypeOf(this.$scope.editBlogFormData) && _.isString(this.$scope.editBlogFormData[key])) {
-
-          this.$scope.editBlogFormData[key] = this.$scope.editBlogFormData[key].toString().trim();
-
-        }
-      }
-    }.bind(this);
 
     /** Take the content and create a snippet to be used in the blog index
      * **/
@@ -147,7 +131,6 @@
     // check to make sure the form is completely valid
     if (isValid) {
 
-      _trimString();
       _addSEOFriendlyURL();
       _createContentSnippet();
 
