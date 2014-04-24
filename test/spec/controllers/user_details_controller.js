@@ -15,7 +15,7 @@ describe('Controller: UserDetailsCtrl as AdminUserDetailsCtrl', function () {
   var MOCK_DATA;
   var $httpBackend;
   var $q;
-  //var userDetailsReturn = {'data': {'__v': 0, 'name': 'JohnRoad', 'password': '61719d7f2aac2f1a649543a2245444048064dd6d516ae63b3c9c18792fadd0d9ceba7aa1713b2fa690551c96a3f72bf9a374b63b417369f6d21b2b076d61d366', '_id': '5358b892fec18e00008a9585'}, 'status': 200, 'config': {'method': 'POST', 'transformRequest': [null], 'transformResponse': [null], 'url': '/api/users/add', 'data': {'name': 'JohnRoad', 'password': 'revolution'}, 'headers': {'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/json, text/plain, */*'}}};
+  var userDetailsDelete = {name: 'MarkWilliams', password: '61719d7f2aac2f1a649543a2245444048064dd6d516ae63b3c…690551c96a3f72bf9a374b63b417369f6d21b2b076d61d366', _id: '5358b9f0fec18e00008a9586', __v: 0};
   var allUsers = [
     {'name': 'AndyW', 'password': 'ea06f421fe6b8814abeb83478a948448a16cab7a5c7dfce24bcdca8676eb4b6e6204c6a9502eb7b2730c4f2c6ce71c671275425d4da3b12c767353a085a72b22', '_id': '5353e401bea8fa60f05a04fa', '__v': 0},
     {'__v': 0, '_id': '5354ce5c3c2dec290a2db608', 'name': 'JohnJones', 'password': '61719d7f2aac2f1a649543a2245444048064dd6d516ae63b3c9c18792fadd0d9ceba7aa1713b2fa690551c96a3f72bf9a374b63b417369f6d21b2b076d61d366'},
@@ -48,7 +48,7 @@ describe('Controller: UserDetailsCtrl as AdminUserDetailsCtrl', function () {
     $httpBackend.verifyNoOutstandingRequest();
   });
 
-  it('Checks that scope changes to true after data is passed to the AdminUserDetailsCtrl.submitAddUserForm method and that the deferred promise is returned', function () {
+  it('Checks that scope changes after data is passed to the AdminUserDetailsCtrl.submitAddUserForm method and that the deferred promise is returned', function () {
 
     scope.addUser.name = 'JohnRoad';
     scope.addUser.password = 'aPassword';
@@ -80,6 +80,22 @@ describe('Controller: UserDetailsCtrl as AdminUserDetailsCtrl', function () {
     expect(scope.editThisUser).toBe(true);
     expect(scope.editUser.name).toBe(userDetails.name);
     expect(scope.editUser._id).toEqual(userDetails._id);
+
+  });
+
+  it('Checks that the local scope changes after a user is deleted: AdminUserDetailsCtrl.deleteUser()', function () {
+
+    $httpBackend.expect('DELETE', '/api/users/delete/' + userDetailsDelete._id).respond(200);
+
+    scope.$apply(function () {
+      AdminUserDetailsCtrl.deleteUser(userDetailsDelete);
+    });
+
+    $httpBackend.expect('GET', MOCK_DATA.API.userGet).respond(200, allUsers);
+
+    $httpBackend.flush();
+
+    expect(scope.formSuccess).toContain('You have successfully deleted the user');
 
   });
 
