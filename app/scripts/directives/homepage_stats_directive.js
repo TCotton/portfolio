@@ -4,13 +4,13 @@
 
 'use strict';
 
-angular.module('portfolioApp').directive('homepageStatsDirective', ['STATS', '$window', function (STATS, $window) {
+angular.module('portfolioApp').directive('homepageStatsDirective', ['STATS', '$window', '$timeout', function (STATS, $window, $timeout) {
 
   return {
     restrict: 'A',
     templateUrl: 'views/homepage_stats.html',
 
-    link: function (scope) {
+    link: function (scope, element) {
 
       /** Only display the data that fits the screen width
        * Less than 979px = display three blocks of data
@@ -42,6 +42,22 @@ angular.module('portfolioApp').directive('homepageStatsDirective', ['STATS', '$w
         scope.stats = STATS;
 
       }
+
+      $timeout(function () {
+
+        // work out the number of day I have been a full time web developer since April 1 2008
+        // now milliseconds minus milliseconds from April 1, 2008 then calculate the days from this figure
+        var start = Date.parse('April 1, 2008');
+        var now = Date.parse(new Date());
+        var totalDays = Math.round((now - start) / (1000 * 60 * 60 * 24));
+
+        // find the DOM element where the days are displayed
+        var days = element[0].querySelector('span:first-child header');
+
+        // now add the days to the DOM element
+        days.innerText = totalDays;
+
+      });
     }
   };
 
