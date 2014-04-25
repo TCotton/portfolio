@@ -9,6 +9,10 @@ angular.module('portfolioApp').directive('homepageStatsDirective', ['STATS', '$w
   return {
     restrict: 'A',
     templateUrl: 'views/homepage_stats.html',
+    scope: {
+      header: '@header',
+      section: '@section'
+    },
 
     link: function (scope, element) {
 
