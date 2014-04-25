@@ -60,7 +60,7 @@ module.exports = function (grunt) {
       },
       livereload: {
         options: {
-          livereload: '<%= express.options.livereload %>'
+          livereload: '<%= express.livereload %>'
         },
         files: [
           '<%= yeoman.app %>/views/{,*/}*.html',

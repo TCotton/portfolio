@@ -7,7 +7,7 @@
 describe('Controller: SidebarCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('portfolioApp'));
+  beforeEach(module('portfolioApp', 'testConstants'));
 
   var $controller;
   var $rootScope;
@@ -25,13 +25,27 @@ describe('Controller: SidebarCtrl', function () {
     MOCK_DATA = _MOCK_DATA_;
     $httpBackend = _$httpBackend_;
 
-    scope = $rootScope.new();
+    scope = $rootScope.$new();
+
+    scope.$parent.$broadcast('blog_posts', MOCK_DATA.returnedRSS.data.responseData.feed.entries);
+
+    spyOn(scope, '$on').andCallThrough();
 
     SidebarCtrl = $controller('SidebarCtrl', {
       $scope: scope
     });
 
+    scope.$apply();
+
   }));
+
+/*  iit('something here', function () {
+
+    console.log(scope.blogData);
+
+
+
+  });*/
 
 
 });

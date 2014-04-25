@@ -48,8 +48,6 @@
 
       this.$scope.totalBlogPosts = this.$scope.returnObject.oldBlogPosts;
 
-      this.$scope.$broadcast('blog_posts', this.$scope.totalBlogPosts);
-
     }.bind(this), function (response) {
 
       this.$log.log('Error BlogCtrl');
