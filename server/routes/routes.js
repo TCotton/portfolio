@@ -288,10 +288,4 @@ module.exports = function (app) {
   });
 
 
-  app.get('/#!/404', function(req, res){
-    res.location('/404.html');
-    res.redirect('/404.html');
-  });
-
-
 };

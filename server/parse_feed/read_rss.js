@@ -6,9 +6,29 @@
  *  and doing the heavy work in the browser
  * **/
 
+
+var feed = require("feed-read");
+
+feed('rss.xml', function(err, articles) {
+  if (err) throw err;
+
+  console.log(articles);
+  // Each article has the following properties:
+  //
+  //   * "title"     - The article title (String).
+  //   * "author"    - The author's name (String).
+  //   * "link"      - The original article link (String).
+  //   * "content"   - The HTML content of the article (String).
+  //   * "published" - The date that the article was published (Date).
+  //   * "feed"      - {name, source, link}
+  //
+});
+
+/*var FeedParser = require('feedparser');
+var request = require('request');
+
+var req = request('rss.xml')*/
 /*
-var FeedParser = require('feedparser')
-  , request = require('request');
 
 var req = request('rss.xml')
   , feedparser = new FeedParser([options]);

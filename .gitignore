@@ -15,3 +15,4 @@ server/config/database.js
 server/config/salt.js
 server/config/user_id.js
 server/config/
+.DS_Store
