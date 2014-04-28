@@ -7,27 +7,22 @@
 
   var app = angular.module('portfolioApp');
 
-  var BlogCtrl = function ($rootScope, $scope, $location, BlogDataService, $log, $timeout, newBlogDataCache, oldBlogDataCache, $angularCacheFactory) {
+  var BlogCtrl = function ($rootScope, $scope, $location, BlogDataService, $log, $timeout, $angularCacheFactory) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
     this.$location = $location;
     this.$log = $log;
     this.$timeout = $timeout;
-    this.newBlogDataCache = newBlogDataCache;
-    this.oldBlogDataCache = oldBlogDataCache;
 
     /** Either receive data from BlogDataService or from the cache
      * **/
-    if (this.newBlogDataCache.get('newBlogPosts')) {
-      this.$scope.totalBlogPosts = angular.extend(this.oldBlogDataCache.get('oldBlogPosts'), this.newBlogDataCache.get('newBlogPosts'));
+    if ($angularCacheFactory.get('blogCache').get('newBlogPosts')) {
+      this.$scope.totalBlogPosts = angular.extend($angularCacheFactory.get('blogCache').get('oldBlogPosts'), $angularCacheFactory.get('blogCache').get('newBlogPosts'));
+      this.$scope.totalArticles = $angularCacheFactory.get('blogCache').get('totalArticles') || null;
+      this.$scope.totalOldArticles = $angularCacheFactory.get('blogCache').get('totalOldArticles') || null;
+      this.$scope.totalNewArticles = $angularCacheFactory.get('blogCache').get('totalNewArticles') || null;
     }
-
-
-    this.$scope.totalArticles = this.newBlogDataCache.get('totalArticles') || null;
-    this.$scope.totalOldArticles = this.oldBlogDataCache.get('totalOldArticles') || null;
-
-    this.$scope.totalNewArticles = this.newBlogDataCache.get('totalNewArticles') || null;
 
 
     /* the number of articles per page */
@@ -62,13 +57,9 @@
 
     this.startingPagination();
 
-    //console.log($angularCacheFactory.info());
-
-    console.log($angularCacheFactory.get('blogCache').get('oldBlogPosts'));
-
   };
 
-  BlogCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataService', '$log', '$timeout', 'newBlogDataCache', 'oldBlogDataCache', '$angularCacheFactory'];
+  BlogCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataService', '$log', '$timeout', '$angularCacheFactory'];
 
   BlogCtrl.prototype.currentPage = function () {
 

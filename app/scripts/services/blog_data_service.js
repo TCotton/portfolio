@@ -14,7 +14,7 @@
   var _cache;
   var _seoFriendly;
   var _addReviewImage;
-  var BlogDataService = function ($http, $q, CONFIG, $rootScope, FeedService, $timeout, $interval, $log, MongoBlogService, newBlogDataCache, oldBlogDataCache, $angularCacheFactory) {
+  var BlogDataService = function ($http, $q, CONFIG, $rootScope, FeedService, $timeout, $interval, $log, MongoBlogService, $angularCacheFactory) {
 
     /** angularjs stuff
      * **/
@@ -27,16 +27,14 @@
     this.$interval = $interval;
     this.$log = $log;
     this.MongoBlogService = MongoBlogService;
-    this.newBlogDataCache = newBlogDataCache;
-    this.oldBlogDataCache = oldBlogDataCache;
     this.$angularCacheFactory = $angularCacheFactory;
 
-    this.totalArticles = this.newBlogDataCache.get('totalArticles') || null;
-    this.totalNewArticles = this.newBlogDataCache.get('totalNewArticles') || null;
-    this.newBlogPosts = this.newBlogDataCache.get('newBlogPosts') || null;
-    this.oldBlogPosts = this.oldBlogDataCache.get('oldBlogPosts') || null;
-    this.oldBlogComplete = this.oldBlogDataCache.get('oldBlogComplete')? true : false;
-    this.newBlogComplete = this.newBlogDataCache.get('newBlogComplete')? true : false;
+    this.totalArticles = this.$angularCacheFactory.get('blogCache').get('totalArticles') || null;
+    this.totalNewArticles = this.$angularCacheFactory.get('blogCache').get('totalNewArticles') || null;
+    this.newBlogPosts = this.$angularCacheFactory.get('blogCache').get('newBlogPosts') || null;
+    this.oldBlogPosts = this.$angularCacheFactory.get('blogCache').get('oldBlogPosts') || null;
+    this.oldBlogComplete = this.$angularCacheFactory.get('blogCache').get('oldBlogComplete')? true : false;
+    this.newBlogComplete = this.$angularCacheFactory.get('blogCache').get('newBlogComplete')? true : false;
 
     /** method used for the data taken from the old blog RSS feed
      * **/
@@ -118,21 +116,13 @@
      * **/
     _cache = function () {
 
-      this.newBlogDataCache.put('totalNewArticles', this.totalNewArticles);
-      this.newBlogDataCache.put('newBlogPosts', this.newBlogPosts);
-      this.newBlogDataCache.put('newBlogComplete', 'true');
-      this.oldBlogDataCache.put('oldBlogPosts', this.oldBlogPosts);
-      this.oldBlogDataCache.put('oldBlogComplete', 'true');
-      this.oldBlogDataCache.put('totalOldArticles', this.totalOldArticles);
-      this.newBlogDataCache.put('totalArticles', this.totalArticles);
-
       this.$angularCacheFactory.get('blogCache').put('totalNewArticles', this.totalNewArticles);
       this.$angularCacheFactory.get('blogCache').put('newBlogPosts', this.totalNewArticles);
-      this.$angularCacheFactory.get('blogCache').put('totalNewArticles', this.newBlogPosts);
-      this.$angularCacheFactory.get('blogCache').put('totalNewArticles', this.totalNewArticles);
-      this.$angularCacheFactory.get('blogCache').put('totalNewArticles', this.totalNewArticles);
-      this.$angularCacheFactory.get('blogCache').put('totalNewArticles', this.totalNewArticles);
-      this.$angularCacheFactory.get('blogCache').put('totalNewArticles', this.totalNewArticles);
+      this.$angularCacheFactory.get('blogCache').put('newBlogComplete', 'true');
+      this.$angularCacheFactory.get('blogCache').put('oldBlogPosts', this.oldBlogPosts);
+      this.$angularCacheFactory.get('blogCache').put('oldBlogComplete', 'true');
+      this.$angularCacheFactory.get('blogCache').put('totalOldArticles', this.totalOldArticles);
+      this.$angularCacheFactory.get('blogCache').put('totalArticles', this.totalArticles);
 
     }.bind(this);
 
@@ -220,7 +210,7 @@
   };
 
 
-  BlogDataService.$inject = ['$http', '$q', 'CONFIG', '$rootScope', 'FeedService', '$timeout', '$interval', '$log', 'MongoBlogService', 'newBlogDataCache', 'oldBlogDataCache', '$angularCacheFactory'];
+  BlogDataService.$inject = ['$http', '$q', 'CONFIG', '$rootScope', 'FeedService', '$timeout', '$interval', '$log', 'MongoBlogService', '$angularCacheFactory'];
 
   BlogDataService.prototype.retreiveData = function () {
 
