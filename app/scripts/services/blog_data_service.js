@@ -5,7 +5,7 @@
 (function () {
 
   var app = angular.module('portfolioApp');
-  /** Declare private method variable names
+  /** Declare enclosed scope function names
    * **/
   var _oldblogData;
   var _newblogData;
@@ -14,8 +14,7 @@
   var _cache;
   var _seoFriendly;
   var _addReviewImage;
-
-  var BlogDataService = function ($http, $q, CONFIG, $rootScope, FeedService, $timeout, $interval, $log, MongoBlogService, newBlogDataCache, oldBlogDataCache) {
+  var BlogDataService = function ($http, $q, CONFIG, $rootScope, FeedService, $timeout, $interval, $log, MongoBlogService, newBlogDataCache, oldBlogDataCache, $angularCacheFactory) {
 
     /** angularjs stuff
      * **/
@@ -30,6 +29,7 @@
     this.MongoBlogService = MongoBlogService;
     this.newBlogDataCache = newBlogDataCache;
     this.oldBlogDataCache = oldBlogDataCache;
+    this.$angularCacheFactory = $angularCacheFactory;
 
     this.totalArticles = this.newBlogDataCache.get('totalArticles') || null;
     this.totalNewArticles = this.newBlogDataCache.get('totalNewArticles') || null;
@@ -126,6 +126,14 @@
       this.oldBlogDataCache.put('totalOldArticles', this.totalOldArticles);
       this.newBlogDataCache.put('totalArticles', this.totalArticles);
 
+      this.$angularCacheFactory.get('blogCache').put('totalNewArticles', this.totalNewArticles);
+      this.$angularCacheFactory.get('blogCache').put('newBlogPosts', this.totalNewArticles);
+      this.$angularCacheFactory.get('blogCache').put('totalNewArticles', this.newBlogPosts);
+      this.$angularCacheFactory.get('blogCache').put('totalNewArticles', this.totalNewArticles);
+      this.$angularCacheFactory.get('blogCache').put('totalNewArticles', this.totalNewArticles);
+      this.$angularCacheFactory.get('blogCache').put('totalNewArticles', this.totalNewArticles);
+      this.$angularCacheFactory.get('blogCache').put('totalNewArticles', this.totalNewArticles);
+
     }.bind(this);
 
     /** create SEO friendly URL from title and add it to the scope
@@ -212,7 +220,7 @@
   };
 
 
-  BlogDataService.$inject = ['$http', '$q', 'CONFIG', '$rootScope', 'FeedService', '$timeout', '$interval', '$log', 'MongoBlogService', 'newBlogDataCache', 'oldBlogDataCache'];
+  BlogDataService.$inject = ['$http', '$q', 'CONFIG', '$rootScope', 'FeedService', '$timeout', '$interval', '$log', 'MongoBlogService', 'newBlogDataCache', 'oldBlogDataCache', '$angularCacheFactory'];
 
   BlogDataService.prototype.retreiveData = function () {
 

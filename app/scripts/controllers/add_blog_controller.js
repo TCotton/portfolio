@@ -9,7 +9,7 @@
    * */
   var app = angular.module('portfolioApp');
 
-  /** Declare private method variable names
+  /** Declare enclosed scope variable names
    * **/
   var _createContentSnippet;
   var _addSEOFriendlyURL;

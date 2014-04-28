@@ -7,7 +7,7 @@
 
   var app = angular.module('portfolioApp');
 
-  var BlogCtrl = function ($rootScope, $scope, $location, BlogDataService, $log, $timeout, newBlogDataCache, oldBlogDataCache) {
+  var BlogCtrl = function ($rootScope, $scope, $location, BlogDataService, $log, $timeout, newBlogDataCache, oldBlogDataCache, $angularCacheFactory) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
@@ -22,6 +22,7 @@
     if (this.newBlogDataCache.get('newBlogPosts')) {
       this.$scope.totalBlogPosts = angular.extend(this.oldBlogDataCache.get('oldBlogPosts'), this.newBlogDataCache.get('newBlogPosts'));
     }
+
 
     this.$scope.totalArticles = this.newBlogDataCache.get('totalArticles') || null;
     this.$scope.totalOldArticles = this.oldBlogDataCache.get('totalOldArticles') || null;
@@ -61,9 +62,13 @@
 
     this.startingPagination();
 
+    //console.log($angularCacheFactory.info());
+
+    console.log($angularCacheFactory.get('blogCache').get('oldBlogPosts'));
+
   };
 
-  BlogCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataService', '$log', '$timeout', 'newBlogDataCache', 'oldBlogDataCache'];
+  BlogCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataService', '$log', '$timeout', 'newBlogDataCache', 'oldBlogDataCache', '$angularCacheFactory'];
 
   BlogCtrl.prototype.currentPage = function () {
 
