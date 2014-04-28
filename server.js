@@ -80,6 +80,9 @@ if (app.get('env') === 'production') {
 // routes ======================================================================
 require('./server/routes/routes.js')(app);
 
+//RSS feed parsing
+require('./server/parse_feed/read_rss.js')(app);
+
 // XML sitemap =================================================================
 require('./server/sitemap.js')(app);
 
