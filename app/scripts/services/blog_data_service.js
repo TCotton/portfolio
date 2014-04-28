@@ -221,7 +221,7 @@
     //sessionStorage.clear();
 
     // use a a cache means that it is possible to bypass the above methods and just serve up the data
-    if (!this.oldBlogDataCache.get('oldBlogPosts') || !this.newBlogDataCache.get('newBlogPosts')) {
+    if (!this.$angularCacheFactory.get('blogCache').get('oldBlogPosts') || !this.$angularCacheFactory.get('blogCache').get('newBlogPosts')) {
 
       //if blog articles are already stored as session storage then don't call remote service and use values in storage
 
