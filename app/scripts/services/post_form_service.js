@@ -8,15 +8,14 @@
 
   var app = angular.module('portfolioApp');
 
-  var PostFormService = function ($http, $q, CONFIG) {
+  var PostFormService = function ($http, $q) {
 
     this.$http = $http;
     this.$q = $q;
-    this.CONFIG = CONFIG;
 
   };
 
-  PostFormService.$inject = ['$http', '$q', 'CONFIG'];
+  PostFormService.$inject = ['$http', '$q'];
 
   PostFormService.prototype.submitForm = function (formData) {
 

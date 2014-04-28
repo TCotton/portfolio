@@ -1,5 +1,6 @@
 /**
  * Created by awalpole on 05/04/2014.
+ * TODO: move all this RSS sorting into the backend nodejs server
  */
 'use strict';
 (function () {
@@ -14,20 +15,35 @@
   var _cache;
   var _seoFriendly;
   var _addReviewImage;
+
+
   var BlogDataService = function ($http, $q, CONFIG, $rootScope, FeedService, $timeout, $interval, $log, MongoBlogService, $angularCacheFactory) {
 
     /** angularjs stuff
      * **/
     this.$http = $http;
     this.$q = $q;
-    this.CONFIG = CONFIG;
     this.$rootScope = $rootScope;
-    this.FeedService = FeedService;
     this.$timeout = $timeout;
     this.$interval = $interval;
     this.$log = $log;
+
+    this.CONFIG = CONFIG;
+    this.FeedService = FeedService;
     this.MongoBlogService = MongoBlogService;
     this.$angularCacheFactory = $angularCacheFactory;
+
+    $angularCacheFactory('blogCache', {
+      maxAge: 86400000,
+      deleteOnExpire: 'aggressive',
+      storageMode: 'sessionStorage'
+    });
+
+    $angularCacheFactory('authCache', {
+      maxAge: 86400000,
+      deleteOnExpire: 'aggressive',
+      storageMode: 'sessionStorage'
+    });
 
     this.totalArticles = this.$angularCacheFactory.get('blogCache').get('totalArticles') || null;
     this.totalNewArticles = this.$angularCacheFactory.get('blogCache').get('totalNewArticles') || null;

@@ -9,13 +9,16 @@
 
   var app = angular.module('portfolioApp');
 
+  var _UserDetailsCtrl = {};
+
   var UserDetailsCtrl = function ($rootScope, $scope, $log, MongoUserService) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
     this.$log = $log;
 
-    this.MongoUserService = MongoUserService;
+    _UserDetailsCtrl.MongoUserService = MongoUserService;
+
     this.$scope.editUser = {};
 
     this.$scope.addUser = {};
@@ -45,7 +48,7 @@
 
   UserDetailsCtrl.prototype.deleteUser = function (data) {
 
-    var returnedPromise = this.MongoUserService.deleteUsers(data._id);
+    var returnedPromise = _UserDetailsCtrl.MongoUserService.deleteUsers(data._id);
 
     returnedPromise.then(function () {
 
@@ -78,7 +81,7 @@
         password: this.$scope.editUser.password
       };
 
-      var returnedPromise = this.MongoUserService.editUsers(userData);
+      var returnedPromise = _UserDetailsCtrl.MongoUserService.editUsers(userData);
 
       returnedPromise.then(function () {
 
@@ -103,7 +106,7 @@
 
   UserDetailsCtrl.prototype.listAllUsers = function () {
 
-    var returnedPromise = this.MongoUserService.getUsers();
+    var returnedPromise = _UserDetailsCtrl.MongoUserService.getUsers();
 
     returnedPromise.then(function (value) {
 
@@ -127,7 +130,7 @@
 
     if (isValid) {
 
-      var returnedData = this.MongoUserService.addUser(this.$scope.addUser);
+      var returnedData = _UserDetailsCtrl.MongoUserService.addUser(this.$scope.addUser);
 
       returnedData.then(function () {
 

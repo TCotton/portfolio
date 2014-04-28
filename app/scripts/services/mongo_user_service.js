@@ -8,13 +8,12 @@
 
   var app = angular.module('portfolioApp');
 
-  var MongoUserService = function ($http, $q, CONFIG) {
+  var MongoUserService = function ($http, $q) {
     this.$http = $http;
     this.$q = $q;
-    this.CONFIG = CONFIG;
   };
 
-  MongoUserService.$inject = ['$http', '$q', 'CONFIG'];
+  MongoUserService.$inject = ['$http', '$q'];
 
   MongoUserService.prototype.addUser = function (formData) {
 

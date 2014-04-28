@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$location', '$angularCacheFactory', function ($rootScope, $window, $location, $angularCacheFactory) {
+angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$location', '$angularCacheFactory', function ($rootScope, $window, $location, authCache, $angularCacheFactory) {
 
   $rootScope.pageChange = false;
   $rootScope.currentPage = $location.absUrl();
@@ -15,18 +15,6 @@ angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$locatio
     }
 
     $rootScope.currentPage = $location.absUrl();
-
-    $angularCacheFactory('blogCache', {
-      maxAge: 86400000,
-      deleteOnExpire: 'aggressive',
-      storageMode: 'sessionStorage'
-    });
-
-    $angularCacheFactory('authCache', {
-      maxAge: 86400000,
-      deleteOnExpire: 'aggressive',
-      storageMode: 'sessionStorage'
-    });
 
     // basic login detection service
     var admin = new RegExp('\/admin\/');

@@ -16,12 +16,14 @@
   var _addUniqueID;
   var _addDate;
 
+  var _AddBlogCtrl = {};
+
   var AddBlogCtrl = function ($rootScope, $scope, $log, MongoBlogService) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
     this.$log = $log;
-    this.MongoBlogService = MongoBlogService;
+    _AddBlogCtrl.MongoBlogService = MongoBlogService;
 
     /** List scope here
      * **/
@@ -126,7 +128,7 @@
       _addSEOFriendlyURL();
       _createContentSnippet();
 
-      var returnedData = this.MongoBlogService.addBlogPost(this.$scope.addBlogFormData);
+      var returnedData = _AddBlogCtrl.MongoBlogService.addBlogPost(this.$scope.addBlogFormData);
 
       returnedData.then(function () {
 

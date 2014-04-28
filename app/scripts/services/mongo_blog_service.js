@@ -8,13 +8,12 @@
 
   var app = angular.module('portfolioApp');
 
-  var MongoBlogService = function ($http, $q, CONFIG) {
+  var MongoBlogService = function ($http, $q) {
     this.$http = $http;
     this.$q = $q;
-    this.CONFIG = CONFIG;
   };
 
-  MongoBlogService.$inject = ['$http', '$q', 'CONFIG'];
+  MongoBlogService.$inject = ['$http', '$q'];
 
   MongoBlogService.prototype.addBlogPost = function (formData) {
 

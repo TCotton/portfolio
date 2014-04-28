@@ -7,16 +7,19 @@
 
   var app = angular.module('portfolioApp');
 
+  var _BlogArticleCtrl = {};
+
   var BlogArticleCtrl = function ($rootScope, $scope, $location, BlogDataService, $log, $timeout, $sce, $angularCacheFactory) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
     this.$location = $location;
-    this.BlogDataService = BlogDataService;
     this.$log = $log;
     this.$timeout = $timeout;
     this.$sce = $sce;
     this.$angularCacheFactory = $angularCacheFactory;
+
+    _BlogArticleCtrl.BlogDataService = BlogDataService;
 
     this.$scope.title = null;
     this.$scope.content = null;
@@ -37,7 +40,7 @@
       this.populatePage();
     }
 
-    this.BlogDataService.retreiveData().then(function (data) {
+    _BlogArticleCtrl.BlogDataService.retreiveData().then(function (data) {
 
       this.$scope.oldBlogPosts = data.oldBlogPosts;
       this.populatePage();

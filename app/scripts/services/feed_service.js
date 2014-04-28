@@ -4,10 +4,12 @@
 
   var app = angular.module('portfolioApp');
 
+  var _FeedService = {};
+
   var FeedService = function ($http, $q, CONFIG) {
     this.$http = $http;
     this.$q = $q;
-    this.CONFIG = CONFIG;
+    _FeedService.CONFIG = CONFIG;
   };
 
   FeedService.$inject = ['$http', '$q', 'CONFIG'];
@@ -16,7 +18,7 @@
 
     // return promise
 
-    return this.$http.jsonp(this.CONFIG.JSONP_GOOGLE_API + encodeURIComponent(this.CONFIG.RSS_FEED_LINK),
+    return this.$http.jsonp(_FeedService.CONFIG.JSONP_GOOGLE_API + encodeURIComponent(_FeedService.CONFIG.RSS_FEED_LINK),
       {
         'cache': true
       }

@@ -20,6 +20,7 @@ module.exports = function(config) {
       'app/components/angular-touch/angular-touch.js',
       'app/components/angular-animate/angular-animate.js',
       'app/components/underscore/underscore.js',
+      'app/components/angular-cache/dist/angular-cache.min.js',
       'app/libs/*.js',
       'app/scripts/*.js',
       'app/scripts/**/*.js',

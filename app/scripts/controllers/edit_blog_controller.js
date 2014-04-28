@@ -14,12 +14,15 @@
   var _createContentSnippet;
   var _addSEOFriendlyURL;
 
+  var _EditBlogCtrl = {};
+
   var EditBlogCtrl = function ($rootScope, $scope, $log, MongoBlogService) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
     this.$log = $log;
-    this.MongoBlogService = MongoBlogService;
+
+    _EditBlogCtrl.MongoBlogService = MongoBlogService;
     /** List scope objects
      * **/
     this.$scope.editBlogFormData = {};
@@ -147,7 +150,7 @@
         contentSnippet: this.$scope.editBlogFormData.contentSnippet
       };
 
-      var returnedPromise = this.MongoBlogService.editBlogPosts(formData);
+      var returnedPromise = _EditBlogCtrl.MongoBlogService.editBlogPosts(formData);
 
       returnedPromise.then(function () {
 
@@ -187,7 +190,7 @@
    * **/
   EditBlogCtrl.prototype.getBlogs = function () {
 
-    var returnedPromise = this.MongoBlogService.getBlogPosts();
+    var returnedPromise = _EditBlogCtrl.MongoBlogService.getBlogPosts();
 
     returnedPromise.then(function (value) {
 
@@ -238,7 +241,7 @@
 
   EditBlogCtrl.prototype.removeArticle = function () {
 
-    var returnedPromise = this.MongoBlogService.deleteBlogPost(this.$scope.dataToDelete._id);
+    var returnedPromise = _EditBlogCtrl.MongoBlogService.deleteBlogPost(this.$scope.dataToDelete._id);
 
     returnedPromise.then(function (value) {
 
