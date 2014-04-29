@@ -11,7 +11,7 @@
   var _cache;
   var _blogData;
 
-  var BlogDataService = function ($http, $q, FeedService, $log, MongoBlogService, $angularCacheFactory) {
+  var BlogDataService = function ($http, $q, $log, MongoBlogService, $angularCacheFactory) {
 
     /** angularjs stuff
      * **/
@@ -34,7 +34,7 @@
   };
 
 
-  BlogDataService.$inject = ['$http', '$q', 'FeedService', '$log', 'MongoBlogService', '$angularCacheFactory'];
+  BlogDataService.$inject = ['$http', '$q', '$log', 'MongoBlogService', '$angularCacheFactory'];
 
   BlogDataService.prototype.retrieveData = function () {
 
