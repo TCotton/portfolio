@@ -240,8 +240,6 @@ module.exports = function (app) {
 
   app.route('/api/user/find').post(function (req, res) {
 
-    console.log(req.body);
-
     // read out hmac digest
     var hash = createPasswordHash(req.body.password);
 

@@ -31,14 +31,18 @@
     this.$scope.paginationPageSizeLimit = -5;
     this.$scope.returnObject = null;
 
-    NewBlogDataService.retreiveData().then(function (data) {
+    NewBlogDataService.retrieveData().then(function (result) {
 
-      console.log(data);
+      this.$scope.totalBlogPosts = result.data.BlogPosts;
+      this.$scope.totalArticles = result.data.totalArticles;
 
-    });
+      // why is this used for ?
+      this.paginationTotalPages = Math.ceil(this.totalArticles / this.paginationPageSize);
+
+    }.bind(this));
 
 
-    BlogDataService.retreiveData().then(function (data) {
+    /*BlogDataService.retreiveData().then(function (data) {
 
       this.$scope.returnObject = data;
 
@@ -56,7 +60,7 @@
       this.$log.log('Error BlogCtrl');
       this.$log.log(response);
 
-    }.bind(this));
+    }.bind(this));*/
 
     this.$scope.click = null;
     this.$scope.next = null;

@@ -58,7 +58,7 @@
 
   NewBlogDataService.$inject = ['$http', '$q', 'CONFIG', '$rootScope', 'FeedService', '$timeout', '$interval', '$log', 'MongoBlogService', '$angularCacheFactory'];
 
-  NewBlogDataService.prototype.retreiveData = function () {
+  NewBlogDataService.prototype.retrieveData = function () {
 
     var deferred = this.$q.defer();
 

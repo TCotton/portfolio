@@ -231,6 +231,8 @@
 
         if (_.isObject(value.data)) {
 
+          console.log(value.data);
+
           _newblogData(value.data);
 
         }
