@@ -9,6 +9,7 @@ var gfeed = require('google-feed-api');
 var _ = require('underscore');
 var q = require('q');
 var Blog = require('../routes/models/blog_model');
+var moment = require('moment');
 
 var _sortOldBlogPosts;
 var _totalArticlesCount;
@@ -49,32 +50,34 @@ var RSSClass = function () {
 
     var posts = this.oldBlogPosts;
 
-    for (var key in posts) {
+    Object.keys(posts).forEach(function (key) {
 
-      if (posts.hasOwnProperty(key)) {
+      if (posts[key].publishedDate) {
 
-        if (posts[key].publishedDate) {
+        var newDate;
 
-          var newDate;
+        if (posts[key].publishedDate.match(/[a-zA-Z]/g)) {
 
-          if (posts[key].publishedDate.match(/[a-zA-Z]/g)) {
-            newDate = Date.parse(posts[key].publishedDate);
-          } else {
-            newDate = posts[key].publishedDate;
-          }
+          newDate = moment(posts[key].publishedDate).valueOf();
 
-          // use Date.parse so that the value is in millisends
-          // the inbuilt angular filter date will format it to something easily understood
-          posts[key].publishedDate = newDate.toString();
+        } else {
 
-          // create a unique ID from the date which is used in the URL
-          // when the individual blog post is loaded it is used to retrieve
-          // the item from the article data array
-          posts[key].uniqueId = newDate.toString().substring(0, 6);
+          newDate = posts[key].publishedDate;
 
         }
+
+        // use Date.parse so that the value is in millisends
+        // the inbuilt angular filter date will format it to something easily understood
+        posts[key].publishedDate = newDate.toString();
+
+        // create a unique ID from the date which is used in the URL
+        // when the individual blog post is loaded it is used to retrieve
+        // the item from the article data array
+        posts[key].uniqueId = newDate.toString().substring(0, 6);
+
       }
-    }
+
+    });
 
     defer.resolve(posts);
 
@@ -116,40 +119,38 @@ var RSSClass = function () {
     var l;
     var newTitle;
 
-    for (var key in oldPosts) {
+    Object.keys(oldPosts).forEach(function (key) {
 
-      if (oldPosts.hasOwnProperty(key)) {
+      if (oldPosts[key].title) {
 
-        if (oldPosts[key].title) {
+        // initially remove hyphens and the white space to their right
+        newTitle = oldPosts[key].title.replace(/\–\s/g, '').toLowerCase();
 
-          // initially remove hyphens and the white space to their right
-          newTitle = oldPosts[key].title.replace(/\–\s/g, '').toLowerCase();
+        x = 0;
+        l = stopwords.length;
 
-          x = 0;
-          l = stopwords.length;
+        // loop through the SEO watch words and replace with white space hyphen
+        do {
 
-          // loop through the SEO watch words and replace with white space hyphen
-          do {
+          var regEx = new RegExp('\\b\\s' + stopwords[x] + '\\s\\b', 'g');
 
-            var regEx = new RegExp('\\b\\s' + stopwords[x] + '\\s\\b', 'g');
+          newTitle = newTitle.replace(regEx, '-').trim();
 
-            newTitle = newTitle.replace(regEx, '-').trim();
+          x += 1;
 
-            x += 1;
+        } while (x < l);
 
-          } while (x < l);
+        // remove white space and replace with hythen
+        newTitle = newTitle.replace(regexWhiteSpace, '-');
+        // remove all non-alpha numeric characters
+        newTitle = newTitle.replace(regexNonAlphaNum, '');
 
-          // remove white space and replace with hythen
-          newTitle = newTitle.replace(regexWhiteSpace, '-');
-          // remove all non-alpha numeric characters
-          newTitle = newTitle.replace(regexNonAlphaNum, '');
+        // now there is an SEO friendly URN fragment available for use
+        oldPosts[key].url = newTitle;
 
-          // now there is an SEO friendly URN fragment available for use
-          oldPosts[key].url = newTitle;
-
-        }
       }
-    }
+
+    });
 
     defer.resolve(oldPosts);
 
@@ -172,18 +173,15 @@ var RSSClass = function () {
     var imageArray = _.toArray(this.BLOG);
     var x = -1;
 
-    for (var key in oldPosts) {
+    Object.keys(oldPosts).forEach(function (key) {
 
-      if (oldPosts.hasOwnProperty(key)) {
-
-        if (x === (numImages - 1)) {
-          x = -1;
-        }
-
-        oldPosts[key].displayImage = imageArray[(x += 1)];
-
+      if (x === (numImages - 1)) {
+        x = -1;
       }
-    }
+
+      oldPosts[key].displayImage = imageArray[(x += 1)];
+
+    });
 
     this.blogs.BlogPosts = oldPosts;
 
@@ -196,7 +194,7 @@ var RSSClass = function () {
 
   /** Store to cache all new blog posts
    * **/
-  _newBlogPosts = function() {
+  _newBlogPosts = function () {
 
     var defer = q.defer();
 
@@ -222,11 +220,11 @@ var RSSClass = function () {
 
   /** Merge old and new posts. This is what will be provided to teh frontend
    * **/
-  _mergeBlogPosts = function(data) {
+  _mergeBlogPosts = function (data) {
 
     var defer = q.defer();
 
-    this.blogs.BlogPosts = _.extend(this.oldBlogPosts, data);
+    this.blogs.BlogPosts = _.union(data, this.oldBlogPosts)
 
     defer.resolve(this.blogs.BlogPosts);
 
