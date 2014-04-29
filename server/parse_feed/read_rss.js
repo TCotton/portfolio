@@ -24,7 +24,6 @@ var RSSClass = function () {
   this.blogs.BlogPosts = null;
   this.totalNewArticles = null;
   this.totalOldArticles = null;
-  this.newBlogPosts = null;
   this.oldBlogPosts = null;
 
   this.BLOG = {
@@ -247,7 +246,6 @@ RSSClass.prototype.parseFeed = function (url, callback) {
 
     /** After retrieving data using Google RSS API store it into the cache and count number of old blog posts
      * **/
-
     if (data.error) {
       new throwError('Error fetching feeds');
     }
@@ -256,6 +254,8 @@ RSSClass.prototype.parseFeed = function (url, callback) {
     this.oldBlogPosts = data.feed.entries;
 
     /** use promises to filter and sort old and new blogs
+     * These don't need to be chained together in synchronous order
+     * Call new blogs in tandem with parsing the RSS feed of the old blog posts
      * **/
     q.fcall(_sortOldBlogPosts).then(_seoFriendly).then(_newBlogPosts).then(_mergeBlogPosts).then(_addReviewImage).then(_totalArticlesCount).then(function (data) {
       callback(data);
