@@ -1,5 +1,6 @@
 /**
  * Created by awalpole on 09/04/2014.
+ * TODO: move blog processing methods to backend server along with parallel methods in AddBlogCtrl
  */
 
 'use strict';
