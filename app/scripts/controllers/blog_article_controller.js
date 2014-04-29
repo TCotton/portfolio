@@ -7,8 +7,6 @@
 
   var app = angular.module('portfolioApp');
 
-  var _BlogArticleCtrl = {};
-
   var BlogArticleCtrl = function ($rootScope, $scope, $location, BlogDataService, $log, $timeout, $sce, $angularCacheFactory) {
 
     this.$rootScope = $rootScope;
@@ -19,30 +17,20 @@
     this.$sce = $sce;
     this.$angularCacheFactory = $angularCacheFactory;
 
-    _BlogArticleCtrl.BlogDataService = BlogDataService;
-
     this.$scope.title = null;
     this.$scope.content = null;
 
-    this.loadBlogData();
+    /** Load blog data from either the service or cache and then populate the page with the values
+     * **/
 
-  };
-
-  BlogArticleCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataService', '$log', '$timeout', '$sce', '$angularCacheFactory'];
-
-  /** Load blog data from either the service or cache and then populate the page with the values
-   * **/
-
-  BlogArticleCtrl.prototype.loadBlogData = function () {
-
-    if (this.$angularCacheFactory.get('blogCache').get('totalNewArticles')) {
-      this.$scope.oldBlogPosts = angular.extend(this.$angularCacheFactory.get('blogCache').get('oldBlogPosts'), this.$angularCacheFactory.get('blogCache').get('totalNewArticles'));
+    if ($angularCacheFactory.get('blogCache').get('allBlogPosts')) {
+      this.$scope.oldBlogPosts = $angularCacheFactory.get('blogCache').get('allBlogPosts');
       this.populatePage();
     }
 
-    _BlogArticleCtrl.BlogDataService.retreiveData().then(function (data) {
+    BlogDataService.retrieveData().then(function (result) {
 
-      this.$scope.oldBlogPosts = data.oldBlogPosts;
+      this.$scope.oldBlogPosts = result.data.BlogPosts;
       this.populatePage();
 
     }.bind(this), function (response) {
@@ -51,7 +39,10 @@
       this.$log.warn(response);
 
     }.bind(this));
+
   };
+
+  BlogArticleCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataService', '$log', '$timeout', '$sce', '$angularCacheFactory'];
 
   BlogArticleCtrl.prototype.populatePage = function () {
 

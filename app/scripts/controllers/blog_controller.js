@@ -7,7 +7,7 @@
 
   var app = angular.module('portfolioApp');
 
-  var BlogCtrl = function ($rootScope, $scope, $location, BlogDataService, $log, $timeout, $angularCacheFactory, NewBlogDataService) {
+  var BlogCtrl = function ($rootScope, $scope, $location, BlogDataService, $log, $timeout, $angularCacheFactory) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
@@ -17,13 +17,10 @@
 
     /** Either receive data from BlogDataService or from the cache
      * **/
-    if ($angularCacheFactory.get('blogCache').get('newBlogPosts')) {
-      this.$scope.totalBlogPosts = angular.extend($angularCacheFactory.get('blogCache').get('oldBlogPosts'), $angularCacheFactory.get('blogCache').get('newBlogPosts'));
-      this.$scope.totalArticles = $angularCacheFactory.get('blogCache').get('totalArticles') || null;
-      this.$scope.totalOldArticles = $angularCacheFactory.get('blogCache').get('totalOldArticles') || null;
-      this.$scope.totalNewArticles = $angularCacheFactory.get('blogCache').get('totalNewArticles') || null;
+    if ($angularCacheFactory.get('blogCache').get('allBlogPosts')) {
+      this.$scope.totalBlogPosts = $angularCacheFactory.get('blogCache').get('allBlogPosts');
+      this.$scope.totalArticles = $angularCacheFactory.get('blogCache').get('totalArticles');
     }
-
 
     /* the number of articles per page */
     this.$scope.paginationPageSize = 5;
@@ -31,7 +28,7 @@
     this.$scope.paginationPageSizeLimit = -5;
     this.$scope.returnObject = null;
 
-    NewBlogDataService.retrieveData().then(function (result) {
+    BlogDataService.retrieveData().then(function (result) {
 
       this.$scope.totalBlogPosts = result.data.BlogPosts;
       this.$scope.totalArticles = result.data.totalArticles;
@@ -41,27 +38,6 @@
 
     }.bind(this));
 
-
-    /*BlogDataService.retreiveData().then(function (data) {
-
-      this.$scope.returnObject = data;
-
-      this.$scope.totalArticles = this.$scope.returnObject.totalNewArticles;
-      this.$scope.totalOldArticles = this.$scope.returnObject.totalOldArticles;
-      this.$scope.totalNewArticles = this.$scope.returnObject.totalNewArticles;
-
-      // why is this used for ?
-      this.paginationTotalPages = Math.ceil(this.totalArticles / this.paginationPageSize);
-
-      this.$scope.totalBlogPosts = this.$scope.returnObject.oldBlogPosts;
-
-    }.bind(this), function (response) {
-
-      this.$log.log('Error BlogCtrl');
-      this.$log.log(response);
-
-    }.bind(this));*/
-
     this.$scope.click = null;
     this.$scope.next = null;
     this.$scope.prev = null;
@@ -70,7 +46,7 @@
 
   };
 
-  BlogCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataService', '$log', '$timeout', '$angularCacheFactory', 'NewBlogDataService'];
+  BlogCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataService', '$log', '$timeout', '$angularCacheFactory'];
 
   BlogCtrl.prototype.currentPage = function () {
 
