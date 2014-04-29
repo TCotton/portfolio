@@ -34,7 +34,7 @@
 
     var currentPage = this.$rootScope.currentPage.substring(this.$rootScope.currentPage.lastIndexOf('/') + 1, this.$rootScope.currentPage.length);
 
-    var wordData = _.filter(this.WORK, function (o) {
+    var wordData = _.filter(_WorkPageCtrl.WORK, function (o) {
 
       if (o.internalUrl.substring(o.internalUrl.lastIndexOf('/') + 1, o.internalUrl.length) === currentPage) {
 

@@ -31,34 +31,5 @@ describe('Testing the BlogDataService', function () {
 //    $httpBackend.verifyNoOutstandingRequest();
   });
 
-  describe('Run BlogCtrl with FeedService dependency', function () {
-
-    it('Test that there is an SEO safe URL in the article object - only contains alpha numeric characters and hyphens', function () {
-
-      $httpBackend.expect('JSONP', CONFIG.JSONP_GOOGLE_API + encodeURIComponent(CONFIG.RSS_FEED_LINK)).respond(200, MOCK_DATA.returnedRSS);
-
-      //var result = null;
-
-      BlogDataService.retreiveData();
-
-//      deferred.resolve(MOCK_DATA.retreiveData);
-//
-//      spyOn(BlogDataService, 'retreiveData').andReturn(deferred.promise);
-
-      //spyOn(BlogDataService, 'retreiveData').andCallThrough();
-
-      //$httpBackend.flush();
-
-
-
-      //console.log(BlogDataService);
-
-      //$httpBackend.flush();
-
-    });
-
-
-  });
-
 
 });
