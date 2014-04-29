@@ -1,5 +1,6 @@
 /**
  * Created by awalpole on 09/04/2014.
+ * TODO: move all this blog post processing to the backend, nodejs
  */
 
 'use strict';

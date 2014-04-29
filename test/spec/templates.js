@@ -3,18 +3,23 @@ describe('Unit: Templates', function () {
 
   // checks template routes
 
-  var $httpBackend, location, rootScope, route, authCache;
+  var $httpBackend, location, rootScope, route, $angularCacheFactory;
   var userID = '20f4q3foiawnfaoi';
 
   beforeEach(module('portfolioApp'));
 
-  beforeEach(inject(function (_$rootScope_, _$route_, _$httpBackend_, _$location_, _authCache_) {
+  beforeEach(inject(function (_$rootScope_, _$route_, _$httpBackend_, _$location_, _$angularCacheFactory_) {
     location = _$location_;
     rootScope = _$rootScope_;
     route = _$route_;
     $httpBackend = _$httpBackend_;
-    authCache = _authCache_;
-    authCache.put('logginIn', userID);
+    $angularCacheFactory = _$angularCacheFactory_;
+    $angularCacheFactory('authCache', {
+      maxAge: 86400000,
+      deleteOnExpire: 'aggressive',
+      storageMode: 'sessionStorage'
+    });
+    $angularCacheFactory.get('authCache').put('logginIn', userID);
     rootScope.userid = userID;
   }));
 

@@ -33,18 +33,6 @@
     this.MongoBlogService = MongoBlogService;
     this.$angularCacheFactory = $angularCacheFactory;
 
-    $angularCacheFactory('blogCache', {
-      maxAge: 86400000,
-      deleteOnExpire: 'aggressive',
-      storageMode: 'sessionStorage'
-    });
-
-    $angularCacheFactory('authCache', {
-      maxAge: 86400000,
-      deleteOnExpire: 'aggressive',
-      storageMode: 'sessionStorage'
-    });
-
     this.totalArticles = this.$angularCacheFactory.get('blogCache').get('totalArticles') || null;
     this.totalNewArticles = this.$angularCacheFactory.get('blogCache').get('totalNewArticles') || null;
     this.newBlogPosts = this.$angularCacheFactory.get('blogCache').get('newBlogPosts') || null;

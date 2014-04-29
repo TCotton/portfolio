@@ -80,7 +80,7 @@
 
       }.bind(this), function () {
 
-        this.$scope.$log('Error: FormCtrl.submitContactForm');
+        this.$log('Error: FormCtrl.submitContactForm');
 
       }.bind(this));
     }

@@ -3,17 +3,22 @@ describe('Routes test', function () {
   // Mock our module in our tests
   beforeEach(module('portfolioApp'));
 
-  var location, route, rootScope, authCache;
+  var location, route, rootScope, $angularCacheFactory;
   var userID = '20f4q3foiawnfaoi';
 
 
   beforeEach(inject(
-    function (_$location_, _$route_, _$rootScope_, _authCache_) {
+    function (_$location_, _$route_, _$rootScope_, _$angularCacheFactory_) {
       location = _$location_;
       route = _$route_;
       rootScope = _$rootScope_;
-      authCache = _authCache_;
-      authCache.put('logginIn', userID);
+      $angularCacheFactory = _$angularCacheFactory_;
+      $angularCacheFactory('authCache', {
+        maxAge: 86400000,
+        deleteOnExpire: 'aggressive',
+        storageMode: 'sessionStorage'
+      });
+      $angularCacheFactory.get('authCache').put('logginIn', userID);
       rootScope.userid = userID;
     }
   ));

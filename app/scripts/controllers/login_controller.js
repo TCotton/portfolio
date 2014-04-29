@@ -18,6 +18,7 @@
 
     _LoginCtrl.MongoUserService = MongoUserService;
 
+
     /** Local scope
      * **/
     this.$scope.login = {};

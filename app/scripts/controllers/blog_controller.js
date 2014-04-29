@@ -7,6 +7,8 @@
 
   var app = angular.module('portfolioApp');
 
+  var _BlogCtrl = {};
+
   var BlogCtrl = function ($rootScope, $scope, $location, BlogDataService, $log, $timeout, $angularCacheFactory) {
 
     this.$rootScope = $rootScope;
@@ -14,6 +16,7 @@
     this.$location = $location;
     this.$log = $log;
     this.$timeout = $timeout;
+    _BlogCtrl.BlogDataService = BlogDataService;
 
     /** Either receive data from BlogDataService or from the cache
      * **/
@@ -31,7 +34,7 @@
     this.$scope.paginationPageSizeLimit = -5;
     this.$scope.returnObject = null;
 
-    BlogDataService.retreiveData().then(function (data) {
+    _BlogCtrl.BlogDataService.retreiveData().then(function (data) {
 
       this.$scope.returnObject = data;
 
