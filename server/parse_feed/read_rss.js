@@ -1,5 +1,6 @@
 /**
  * Created by awalpole on 19/04/2014.
+ * TODO: refactor this code so as to use ECMAScript 5 objects and properties
  */
 
 'use strict';
