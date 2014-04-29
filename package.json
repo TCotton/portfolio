@@ -22,7 +22,9 @@
     "nodemailer": "~0.6.3",
     "prerender-node": "~1.0.1",
     "sitemap": "~0.7.2",
-    "google-feed-api": "~0.0.2"
+    "google-feed-api": "~0.0.2",
+    "promise": "~5.0.0",
+    "q": "~1.0.1"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

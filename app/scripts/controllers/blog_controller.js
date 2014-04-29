@@ -7,16 +7,13 @@
 
   var app = angular.module('portfolioApp');
 
-  var _BlogCtrl = {};
-
-  var BlogCtrl = function ($rootScope, $scope, $location, BlogDataService, $log, $timeout, $angularCacheFactory) {
+  var BlogCtrl = function ($rootScope, $scope, $location, BlogDataService, $log, $timeout, $angularCacheFactory, NewBlogDataService) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
     this.$location = $location;
     this.$log = $log;
     this.$timeout = $timeout;
-    _BlogCtrl.BlogDataService = BlogDataService;
 
     /** Either receive data from BlogDataService or from the cache
      * **/
@@ -34,7 +31,14 @@
     this.$scope.paginationPageSizeLimit = -5;
     this.$scope.returnObject = null;
 
-    _BlogCtrl.BlogDataService.retreiveData().then(function (data) {
+    NewBlogDataService.retreiveData().then(function (data) {
+
+      console.log(data);
+
+    });
+
+
+    BlogDataService.retreiveData().then(function (data) {
 
       this.$scope.returnObject = data;
 
@@ -62,7 +66,7 @@
 
   };
 
-  BlogCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataService', '$log', '$timeout', '$angularCacheFactory'];
+  BlogCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataService', '$log', '$timeout', '$angularCacheFactory', 'NewBlogDataService'];
 
   BlogCtrl.prototype.currentPage = function () {
 

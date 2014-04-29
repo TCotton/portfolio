@@ -75,8 +75,6 @@ if (app.get('env') === 'production') {
   });
 }
 
-/*var server = http.createServer(app);*/
-
 // routes ======================================================================
 require('./server/routes/routes.js')(app);
 
@@ -85,7 +83,6 @@ require('./server/parse_feed/read_rss.js')(app);
 
 // XML sitemap =================================================================
 require('./server/sitemap.js')(app);
-
 
 module.exports = app;
 

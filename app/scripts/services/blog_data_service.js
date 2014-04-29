@@ -49,7 +49,6 @@
       this.oldBlogPosts = data;
       this.oldBlogPosts = _sortOldBlogPosts(this.oldBlogPosts);
       this.oldBlogPosts = _addReviewImage(this.oldBlogPosts);
-      this.oldBlogPosts = _addReviewImage(this.oldBlogPosts);
       this.oldBlogPosts = _seoFriendly(this.oldBlogPosts);
       _totalArticlesCount();
       this.oldBlogComplete = true;
@@ -64,7 +63,6 @@
       this.totalNewArticles = _.size(data);
       this.newBlogPosts = data;
       this.newBlogPosts = _sortOldBlogPosts(this.newBlogPosts);
-      this.newBlogPosts = _addReviewImage(this.newBlogPosts);
       this.newBlogPosts = _addReviewImage(this.newBlogPosts);
       this.newBlogPosts = _seoFriendly(this.newBlogPosts);
       _totalArticlesCount();

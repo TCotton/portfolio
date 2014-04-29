@@ -92,6 +92,23 @@
 
   };
 
+  MongoBlogService.prototype.getOldBlogPosts = function () {
+
+    // return promise
+
+    var deferred = this.$q.defer();
+
+    var returnedMessage = this.$http({
+      url: '/api/oldBlog/get',
+      method: 'GET'
+    });
+
+    deferred.resolve(returnedMessage);
+
+    return deferred.promise;
+
+  };
+
   app.service('MongoBlogService', MongoBlogService);
 
 }());
