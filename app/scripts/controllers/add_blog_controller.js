@@ -4,7 +4,8 @@
  */
 
 'use strict';
-(function () {
+
+(function (moment) {
 
   /** Add, edit or delete blog posts
    * */
@@ -111,7 +112,7 @@
      * **/
     _addDate = function () {
 
-      this.$scope.addBlogFormData.publishedDate = parseInt(Date.parse(new Date()), 10).toString();
+      this.$scope.addBlogFormData.publishedDate = parseInt(moment(new Date()).valueOf(), 10).toString();
 
     }.bind(this);
 
@@ -161,4 +162,4 @@
 
   app.controller('AddBlogCtrl', AddBlogCtrl);
 
-}());
+}(moment));
