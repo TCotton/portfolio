@@ -62,7 +62,7 @@
     if (!_.isEmpty(blogPost) && this.$rootScope.currentPage.indexOf(blogPost[0].url) !== -1) {
 
       this.$scope.title = blogPost[0].title;
-      this.$rootScope = this.$route.current.$$route.title;
+      this.$rootScope.pageTitle = blogPost[0].title;
       this.$scope.content = this.$sce.trustAsHtml(blogPost[0].content);
       this.$scope.displayImage = blogPost[0].displayImage;
       this.$scope.publishedDate = blogPost[0].publishedDate;

@@ -51,7 +51,7 @@ angular.module('portfolioApp').directive('homepageStatsDirective', ['STATS', '$w
 
         // work out the number of day I have been a full time web developer since April 1 2008
         // now milliseconds minus milliseconds from April 1, 2008 then calculate the days from this figure
-        var start = Date.parse('April 1, 2008');
+        var start = Date.parse('April 1, 2009');
         var now = Date.parse(new Date());
         var totalDays = Math.round((now - start) / (1000 * 60 * 60 * 24));
 
