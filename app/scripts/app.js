@@ -14,32 +14,38 @@ angular.module('portfolioApp', ['AppConstants', 'ngCookies', 'ngResource', 'ngSa
 
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html'
+        templateUrl: 'views/main.html',
+        title: 'Portfolio and blog of web developer Andy Walpole'
       })
       .when('/work-projects', {
-        templateUrl: 'views/my_work.html'
+        templateUrl: 'views/my_work.html',
+        title: 'Noteworthy work projects from the past 18 months'
       })
       .when('/work-projects/:workPage', {
         templateUrl: 'views/work_page.html',
         controller: 'WorkPageCtrl'
       })
       .when('/side-projects', {
-        templateUrl: 'views/side_projects.html'
+        templateUrl: 'views/side_projects.html',
+        title: 'Noteworthy personal side projects from the past 18 months'
       })
       .when('/side-projects/:projectsPage', {
         templateUrl: 'views/projects_page.html',
         controller: 'ProjectsPageCtrl'
       })
       .when('/about-me', {
-        templateUrl: 'views/about_me.html'
+        templateUrl: 'views/about_me.html',
+        title: 'Skills and contract details'
       })
       .when('/contact-me', {
         templateUrl: 'views/contact_me.html',
-        controller: 'FormCtrl as AdminFormCtrl'
+        controller: 'FormCtrl as AdminFormCtrl',
+        title: 'Contact form'
       })
       .when('/blog/', {
         templateUrl: 'views/blog.html',
-        controller: 'BlogCtrl'
+        controller: 'BlogCtrl',
+        title: 'Web development blog'
       })
       .when('/blog/:blogId/:blogPage', {
         templateUrl: 'views/blog_page.html',
@@ -47,22 +53,27 @@ angular.module('portfolioApp', ['AppConstants', 'ngCookies', 'ngResource', 'ngSa
       })
       .when('/login', {
         templateUrl: 'views/admin/login.html',
-        controller: 'LoginCtrl as AdminLogin'
+        controller: 'LoginCtrl as AdminLogin',
+        title: 'Admin login form'
       })
       .when('/admin/user-details', {
         templateUrl: 'views/admin/user_details.html',
-        controller: 'UserDetailsCtrl as AdminUserDetailsCtrl'
+        controller: 'UserDetailsCtrl as AdminUserDetailsCtrl',
+        title: 'Admin area - add, edit or delete users with admin privledges'
       })
       .when('/admin/blog-details', {
         templateUrl: 'views/admin/blog_details.html',
-        controller: 'EditBlogCtrl as AdminEditBlogCtrl'
+        controller: 'EditBlogCtrl as AdminEditBlogCtrl',
+        title: 'Admin area - edit or delete blog posts'
       })
       .when('/admin/add-blog', {
         templateUrl: 'views/admin/add_blog.html',
-        controller: 'AddBlogCtrl as AdminAddBlogCtrl'
+        controller: 'AddBlogCtrl as AdminAddBlogCtrl',
+        title: 'Admin area - add new blog articles'
       })
       .when('/admin/', {
-        templateUrl: 'views/admin/admin.html'
+        templateUrl: 'views/admin/admin.html',
+        title: 'Admin area'
       })
       .otherwise({
         redirectTo: '/'
@@ -71,7 +82,7 @@ angular.module('portfolioApp', ['AppConstants', 'ngCookies', 'ngResource', 'ngSa
     /** Solution to make server side code accept data submitted with angularjs via POST
      * **/
 
-    // Use x-www-form-urlencoded Content-Type
+      // Use x-www-form-urlencoded Content-Type
     $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
 
     /**

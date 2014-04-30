@@ -239,7 +239,7 @@ var RSSClass = function () {
 
     var defer = q.defer();
 
-    var oldPosts = this.blogs.BlogPosts;
+    var oldPosts = this.oldBlogPosts;
 
     Object.keys(oldPosts).forEach(function (key) {
 

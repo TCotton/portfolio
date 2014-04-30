@@ -162,4 +162,4 @@
 
   app.controller('AddBlogCtrl', AddBlogCtrl);
 
-}(moment));
+}());

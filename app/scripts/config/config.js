@@ -1,9 +1,13 @@
 'use strict';
 
-angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$location', '$angularCacheFactory', function ($rootScope, $window, $location, $angularCacheFactory) {
+angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$location', '$angularCacheFactory', '$route', function ($rootScope, $window, $location, $angularCacheFactory, $route) {
 
   $rootScope.pageChange = false;
   $rootScope.currentPage = $location.absUrl();
+
+  $rootScope.$on('$routeChangeSuccess', function() {
+    $rootScope.pageTitle = $route.current.$$route.title;
+  });
 
   $rootScope.$on('$locationChangeStart', function () {
 
@@ -48,6 +52,8 @@ angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$locatio
 
       }
     }
+
+
 
     // every time the page reloads make sure it loads from the top
     // clicking links on the middle of the page results in opening a new page in the same spot

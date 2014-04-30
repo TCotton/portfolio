@@ -7,7 +7,7 @@
 
   var app = angular.module('portfolioApp');
 
-  var BlogArticleCtrl = function ($rootScope, $scope, $location, BlogDataService, $log, $timeout, $sce, $angularCacheFactory) {
+  var BlogArticleCtrl = function ($rootScope, $scope, $location, BlogDataService, $log, $timeout, $sce, $angularCacheFactory, $route) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
@@ -16,6 +16,7 @@
     this.$timeout = $timeout;
     this.$sce = $sce;
     this.$angularCacheFactory = $angularCacheFactory;
+    this.$route = $route;
 
     this.$scope.title = null;
     this.$scope.content = null;
@@ -42,7 +43,7 @@
 
   };
 
-  BlogArticleCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataService', '$log', '$timeout', '$sce', '$angularCacheFactory'];
+  BlogArticleCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataService', '$log', '$timeout', '$sce', '$angularCacheFactory', '$route'];
 
   BlogArticleCtrl.prototype.populatePage = function () {
 
@@ -61,6 +62,7 @@
     if (!_.isEmpty(blogPost) && this.$rootScope.currentPage.indexOf(blogPost[0].url) !== -1) {
 
       this.$scope.title = blogPost[0].title;
+      this.$rootScope = this.$route.current.$$route.title;
       this.$scope.content = this.$sce.trustAsHtml(blogPost[0].content);
       this.$scope.displayImage = blogPost[0].displayImage;
       this.$scope.publishedDate = blogPost[0].publishedDate;
