@@ -11,6 +11,10 @@
     text-align: center;
     width: 38.28696925329429%;
   }
+
+  a {
+    text-decoration: none;
+  }
 }
 
 @include breakpoint("mobile") {

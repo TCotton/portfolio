@@ -1,6 +1,6 @@
 /**
  * Created by awalpole on 19/04/2014.
- * TODO: refactor this code so as to use ECMAScript 5 objects and properties
+ * TODO: Send BLOG object and URL for remote RSS feed from the frontend configuration rather than hard code them in
  */
 
 'use strict';
@@ -270,6 +270,13 @@ RSSClass.prototype.parseFeed = function (url, callback) {
       new throwError('Error fetching feeds');
     }
 
+    /** Refactor. Even if remote RSS feed is unavailable the blog posts from the database should still appear
+     * **/
+
+    if(!data.feed.entries) {
+      return;
+    }
+
     this.totalOldArticles = _.size(data.feed.entries);
     this.oldBlogPosts = data.feed.entries;
 
@@ -298,7 +305,7 @@ module.exports = function (app) {
   app.get('/api/oldBlog/get', function (req, res) {
 
     var OldBlogFeed = new RSSClass();
-    OldBlogFeed.parseFeed('http://2223d9145efd2b35ed36-6671f2c2aa691e80e8c08f3a239bdfd7.r67.cf3.rackcdn.com/rss.xml', function (data) {
+    OldBlogFeed.parseFeed('http://2223d9145efd2b35ed36-6671f2c2aa691e80e8c08f3a239bdfd7.r67.cf3.rackcdn.com/rss_feed.xml', function (data) {
 
       res.json(data);
 

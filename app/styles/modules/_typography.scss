@@ -71,7 +71,7 @@ p.page-top-text-banner {
 h3.blog-title {
   @include font-calculator($baseFontFamily, 40px, 1.5);
   font-weight: 300;
-  line-height: 40px;
+  line-height: 45px;
   color: $textTwo;
 }
 
