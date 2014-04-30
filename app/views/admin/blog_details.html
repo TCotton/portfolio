@@ -13,7 +13,7 @@
 
     <h3 class="content-title" data-ng-init="AdminEditBlogCtrl.getBlogs();">Blog articles listed below</h3>
 
-    <ul data-ng-repeat="blog in blogContent track by $index">
+    <ul data-ng-repeat="blog in blogContent | orderBy: '-publishedDate' track by $index">
       <li data-ng-bind="blog.title"></li>
       <li data-ng-click="AdminEditBlogCtrl.editArticle(blog)"><a href="">Edit this article</a></li>
       <li data-ng-click="AdminEditBlogCtrl.deleteArticle(blog)"><a href="">Delete this article</a></li>
