@@ -2,6 +2,8 @@
  * Created by awalpole on 20/04/2014.
  */
 
+'use strict';
+
 var mongoose = require('mongoose');
 
 module.exports = mongoose.model('Blog', {
