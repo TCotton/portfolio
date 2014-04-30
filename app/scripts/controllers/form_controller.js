@@ -8,14 +8,17 @@
 
   var app = angular.module('portfolioApp');
 
-  var _FormCtrl = {};
-
   var FormCtrl = function ($scope, PostFormService, $sanitize) {
 
     this.$scope = $scope;
     this.$sanitize = $sanitize;
 
-    _FormCtrl.PostFormService = PostFormService;
+    Object.defineProperty(this, 'PostFormService', {
+      enumerable: false,
+      configurable: false,
+      writable: false,
+      value: PostFormService
+    });
 
     // declare scope
 
@@ -61,7 +64,7 @@
         return [key, value];
       }.bind(this)));
 
-      var promise = _FormCtrl.PostFormService.submitForm(formData);
+      var promise = this.PostFormService.submitForm(formData);
 
       promise.then(function (value) {
 

@@ -7,15 +7,18 @@
 
   var app = angular.module('portfolioApp');
 
-  var _ProjectsPageCtrl = {};
-
   var ProjectsPageCtrl = function ($rootScope, $scope, $log, PROJECTS) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
     this.$log = $log;
 
-    _ProjectsPageCtrl.PROJECTS = PROJECTS;
+    Object.defineProperty(this, 'PROJECTS', {
+      enumerable: false,
+      configurable: false,
+      writable: false,
+      value: PROJECTS
+    });
 
     /** local scope
      * **/
@@ -37,7 +40,7 @@
 
     var currentPage = this.$rootScope.currentPage.substring(this.$rootScope.currentPage.lastIndexOf('/') + 1, this.$rootScope.currentPage.length);
 
-    var wordData = _.filter(_ProjectsPageCtrl.PROJECTS, function (o) {
+    var wordData = _.filter(this.PROJECTS, function (o) {
 
       if (o.internalUrl.substring(o.internalUrl.lastIndexOf('/') + 1, o.internalUrl.length) === currentPage) {
 
@@ -77,7 +80,7 @@
     var currentPage = this.$rootScope.currentPage.substring(this.$rootScope.currentPage.lastIndexOf('/') + 1, this.$rootScope.currentPage.length);
 
     // return the object for the current page
-    var page = _.filter(_ProjectsPageCtrl.PROJECTS, function (o) {
+    var page = _.filter(this.PROJECTS, function (o) {
 
       if (o.internalUrl.substring(o.internalUrl.lastIndexOf('/') + 1, o.length) === currentPage) {
 
@@ -90,7 +93,7 @@
       var pageNumber = page[0].id;
 
       // return the object for the previous page
-      var prevPage = _.filter(_ProjectsPageCtrl.PROJECTS, function (o) {
+      var prevPage = _.filter(this.PROJECTS, function (o) {
 
         if (parseInt(o.id, 10) === (parseInt(pageNumber, 10) - 1)) {
 
@@ -99,7 +102,7 @@
       });
 
       // return the object for the next page
-      var nextPage = _.filter(_ProjectsPageCtrl.PROJECTS, function (o) {
+      var nextPage = _.filter(this.PROJECTS, function (o) {
 
         if (parseInt(o.id, 10) === (parseInt(pageNumber, 10) + 1)) {
 
@@ -109,7 +112,7 @@
 
 
       // if first page then the prev link goes to the end of the pages
-      prevPage = !_.isEmpty(prevPage)? prevPage: _.filter(_ProjectsPageCtrl.PROJECTS, function (o,k) {
+      prevPage = !_.isEmpty(prevPage)? prevPage: _.filter(this.PROJECTS, function (o,k) {
 
         if (k === 'twttwt') {
           return o;
@@ -117,7 +120,7 @@
       });
 
       // if last page then start loop all over again
-      nextPage = !_.isEmpty(nextPage)? nextPage: _.filter(_ProjectsPageCtrl.PROJECTS, function (o,k) {
+      nextPage = !_.isEmpty(nextPage)? nextPage: _.filter(this.PROJECTS, function (o,k) {
 
         if (k === 'lightning') {
           return o;

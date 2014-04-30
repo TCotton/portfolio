@@ -17,7 +17,12 @@
     this.$scope = $scope;
     this.$log = $log;
 
-    _UserDetailsCtrl.MongoUserService = MongoUserService;
+    Object.defineProperty(this, 'MongoUserService', {
+      enumerable: false,
+      configurable: false,
+      writable: false,
+      value: MongoUserService
+    });
 
     this.$scope.editUser = {};
 
@@ -48,7 +53,7 @@
 
   UserDetailsCtrl.prototype.deleteUser = function (data) {
 
-    var returnedPromise = _UserDetailsCtrl.MongoUserService.deleteUsers(data._id);
+    var returnedPromise = this.MongoUserService.deleteUsers(data._id);
 
     returnedPromise.then(function () {
 
@@ -81,7 +86,7 @@
         password: this.$scope.editUser.password
       };
 
-      var returnedPromise = _UserDetailsCtrl.MongoUserService.editUsers(userData);
+      var returnedPromise = this.MongoUserService.editUsers(userData);
 
       returnedPromise.then(function () {
 
@@ -130,7 +135,7 @@
 
     if (isValid) {
 
-      var returnedData = _UserDetailsCtrl.MongoUserService.addUser(this.$scope.addUser);
+      var returnedData = this.MongoUserService.addUser(this.$scope.addUser);
 
       returnedData.then(function () {
 

@@ -6,8 +6,6 @@
 
   var app = angular.module('portfolioApp');
 
-  var _LoginCtrl = {};
-
   var LoginCtrl = function ($rootScope, $scope, $log, $location, MongoUserService, $angularCacheFactory) {
 
     this.$rootScope = $rootScope;
@@ -16,8 +14,12 @@
     this.$location = $location;
     this.$angularCacheFactory = $angularCacheFactory;
 
-    _LoginCtrl.MongoUserService = MongoUserService;
-
+    Object.defineProperty(this, 'MongoUserService', {
+      enumerable: false,
+      configurable: false,
+      writable: false,
+      value: MongoUserService
+    });
 
     /** Local scope
      * **/
@@ -45,7 +47,7 @@
         'password': this.$scope.login.password
       };
 
-      var returnedPromise = _LoginCtrl.MongoUserService.findUsers(user);
+      var returnedPromise = this.MongoUserService.findUsers(user);
 
       returnedPromise.then(function (value) {
 
