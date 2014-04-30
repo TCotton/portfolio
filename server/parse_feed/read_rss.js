@@ -17,6 +17,7 @@ var _seoFriendly;
 var _addReviewImage;
 var _newBlogPosts;
 var _mergeBlogPosts;
+var _closeBlogComments;
 
 var RSSClass = function () {
 
@@ -232,6 +233,26 @@ var RSSClass = function () {
 
   }.bind(this);
 
+  /** For old blog posts taken from Suburban Glory keep comments closed
+   * **/
+  _closeBlogComments = function () {
+
+    var defer = q.defer();
+
+    var oldPosts = this.blogs.BlogPosts;
+
+    Object.keys(oldPosts).forEach(function (key) {
+
+      oldPosts[key].commentsOpen = false;
+
+    });
+
+    defer.resolve(oldPosts);
+
+    return defer.promise;
+
+  }.bind(this);
+
 
 };
 
@@ -256,9 +277,16 @@ RSSClass.prototype.parseFeed = function (url, callback) {
      * These don't need to be chained together in synchronous order
      * Call new blogs in tandem with parsing the RSS feed of the old blog posts
      * **/
-    q.fcall(_sortOldBlogPosts).then(_seoFriendly).then(_newBlogPosts).then(_mergeBlogPosts).then(_addReviewImage).then(_totalArticlesCount).then(function (data) {
-      callback(data);
-    }).done();
+    q.fcall(_sortOldBlogPosts)
+      .then(_seoFriendly)
+      .then(_closeBlogComments)
+      .then(_newBlogPosts)
+      .then(_mergeBlogPosts)
+      .then(_addReviewImage)
+      .then(_totalArticlesCount)
+      .then(function (data) {
+        callback(data);
+      }).done();
 
   }.bind(this));
 
