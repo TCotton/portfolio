@@ -25,7 +25,13 @@
     BlogDataService.retrieveData().then(function (result) {
 
       // retrieve blog data to be used in the ng-repeat directive in the sidebar
-      this.$scope.blogData = result.data.BlogPosts;
+
+      if(_.isObject(result.data.BlogPosts)) {
+
+        this.$scope.blogData = result.data.BlogPosts;
+
+      }
+
 
     }.bind(this), function (response) {
 

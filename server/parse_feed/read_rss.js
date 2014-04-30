@@ -273,9 +273,9 @@ RSSClass.prototype.parseFeed = function (url, callback) {
     /** Refactor. Even if remote RSS feed is unavailable the blog posts from the database should still appear
      * **/
 
-    if(!data.feed.entries) {
+   /* if(!data.feed.entries) {
       return;
-    }
+    }*/
 
     this.totalOldArticles = _.size(data.feed.entries);
     this.oldBlogPosts = data.feed.entries;

@@ -31,8 +31,12 @@
 
     BlogDataService.retrieveData().then(function (result) {
 
-      this.$scope.oldBlogPosts = result.data.BlogPosts;
-      this.populatePage();
+      if (_.isObject(result.data.BlogPosts)) {
+
+        this.$scope.oldBlogPosts = result.data.BlogPosts;
+        this.populatePage();
+
+      }
 
     }.bind(this), function (response) {
 

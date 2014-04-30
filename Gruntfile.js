@@ -60,7 +60,7 @@ module.exports = function (grunt) {
       },
       livereload: {
         options: {
-          livereload: '<%= express.livereload %>'
+          livereload: '<%= express.livereload.options %>'
         },
         files: [
           '<%= yeoman.app %>/views/{,*/}*.html',
@@ -77,14 +77,13 @@ module.exports = function (grunt) {
       options: {
         port: 9000,
         // Change this to '0.0.0.0' to access the server from outside.
-        hostname: 'localhost',
-        livereload: 35729
+        hostname: 'localhost'
       },
       livereload: {
         options: {
           server: path.resolve('./server.js'),
           livereload: true,
-          serverreload: true,
+          serverreload: false,
           open: true,
           bases: [path.resolve('./.tmp'), path.resolve(__dirname, yeomanConfig.app)]
         }

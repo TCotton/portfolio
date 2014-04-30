@@ -5,6 +5,10 @@
     margin: 0 0 25px 0;
     padding: 0 0 25px 0;
 
+    ol {
+      list-style-position:inside;
+    }
+
     header {
       border: 1px solid $boxBorder;
       background-clip: content-box;

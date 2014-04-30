@@ -30,11 +30,15 @@
 
     BlogDataService.retrieveData().then(function (result) {
 
-      this.$scope.totalBlogPosts = result.data.BlogPosts;
-      this.$scope.totalArticles = result.data.totalArticles;
+      if (_.isObject(result.data.BlogPosts)) {
 
-      // why is this used for ?
-      this.paginationTotalPages = Math.ceil(this.totalArticles / this.paginationPageSize);
+        this.$scope.totalBlogPosts = result.data.BlogPosts;
+        this.$scope.totalArticles = result.data.totalArticles;
+
+        // why is this used for ?
+        this.paginationTotalPages = Math.ceil(this.totalArticles / this.paginationPageSize);
+
+      }
 
     }.bind(this));
 
