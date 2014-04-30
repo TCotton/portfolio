@@ -18,8 +18,8 @@
     /** Either receive data from BlogDataService or from the cache
      * **/
     if ($angularCacheFactory.get('blogCache').get('allBlogPosts')) {
-      //this.$scope.totalBlogPosts = $angularCacheFactory.get('blogCache').get('allBlogPosts');
-     // this.$scope.totalArticles = $angularCacheFactory.get('blogCache').get('totalArticles');
+        this.$scope.totalBlogPosts = $angularCacheFactory.get('blogCache').get('allBlogPosts');
+        this.$scope.totalArticles = $angularCacheFactory.get('blogCache').get('totalArticles');
     }
 
     /* the number of articles per page */
