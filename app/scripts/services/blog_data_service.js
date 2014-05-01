@@ -5,7 +5,7 @@
 'use strict';
 (function () {
 
-  var app = angular.module('portfolioApp');
+  var app = angular.module('portfolioApp.services');
   /** Declare enclosed scope function names
    * **/
   var _cache;

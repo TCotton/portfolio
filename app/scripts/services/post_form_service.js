@@ -6,7 +6,7 @@
 
 (function () {
 
-  var app = angular.module('portfolioApp');
+  var app = angular.module('portfolioApp.services');
 
   var PostFormService = function ($http, $q) {
 

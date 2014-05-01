@@ -1,9 +1,13 @@
 'use strict';
 
+angular.module('portfolioApp.controllers', []);
+angular.module('portfolioApp.directives', []);
+angular.module('portfolioApp.services', []);
+
 /**
  * This entire site is coded in AngularJS. Inspect the code on GitHub: https://github.com/TCotton/portfolio
  */
-angular.module('portfolioApp', ['AppConstants', 'ngCookies', 'ngResource', 'ngSanitize', 'ngRoute', 'ngTouch', 'ngAnimate', 'HashBangURLs', 'portfolioAppConfig', 'jmdobry.angular-cache'])
+angular.module('portfolioApp', ['portfolioApp.controllers', 'portfolioApp.directives', 'portfolioApp.services', 'AppConstants', 'ngCookies', 'ngResource', 'ngSanitize', 'ngRoute', 'ngTouch', 'ngAnimate', 'HashBangURLs', 'portfolioAppConfig', 'jmdobry.angular-cache'])
   .config(function ($routeProvider, $httpProvider) {
 
     // Needed for CORS

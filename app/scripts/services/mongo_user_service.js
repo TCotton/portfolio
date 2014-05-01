@@ -6,7 +6,7 @@
 
 (function () {
 
-  var app = angular.module('portfolioApp');
+  var app = angular.module('portfolioApp.services');
 
   var MongoUserService = function ($http, $q) {
     this.$http = $http;

@@ -164,8 +164,7 @@ var RSSClass = function () {
     var oldPosts = this.blogs.BlogPosts;
     var numImages = _.size(this.BLOG);
     var imageArray = _.toArray(this.BLOG);
-    console.log('asfasdfasd');
-    console.log(this.BLOG);
+
     var x = -1;
 
     Object.keys(oldPosts).forEach(function (key) {
