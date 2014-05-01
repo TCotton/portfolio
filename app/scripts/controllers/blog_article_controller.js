@@ -23,7 +23,6 @@
 
     /** Load blog data from either the service or cache and then populate the page with the values
      * **/
-
     if ($angularCacheFactory.get('blogCache').get('allBlogPosts')) {
       this.$scope.oldBlogPosts = $angularCacheFactory.get('blogCache').get('allBlogPosts');
       this.populatePage();

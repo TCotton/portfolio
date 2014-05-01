@@ -13,7 +13,7 @@
     this.$scope = $scope;
     this.$log = $log;
 
-    /** Using defineProperty prevents injected constants being exposed to the temmplate
+    /** Using defineProperty prevents injected constants being exposed to the template
      * **/
     Object.defineProperty(this, 'PROJECTS', {
       enumerable: false,

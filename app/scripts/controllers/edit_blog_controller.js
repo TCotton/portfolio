@@ -23,7 +23,6 @@
 
     /** By using EMCAScript 5 defineProperty we can prevent the service or config file from appearing in the template as a model
      * **/
-
     Object.defineProperty(this, 'MongoBlogService', {
       enumerable: false,
       configurable: false,

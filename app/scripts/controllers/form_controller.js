@@ -13,7 +13,7 @@
     this.$scope = $scope;
     this.$sanitize = $sanitize;
 
-    /** Using defineProperty prevents injected service being exposed to the temmplate
+    /** Using defineProperty prevents injected service being exposed to the template
      * **/
     Object.defineProperty(this, 'PostFormService', {
       enumerable: false,

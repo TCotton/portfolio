@@ -12,7 +12,7 @@
     this.$scope = $scope;
     this.$log = $log;
 
-    /** Using defineProperty prevents injected contants being exposed to the template
+    /** Using defineProperty prevents injected constants being exposed to the template
      * **/
     Object.defineProperty(this, 'WORK', {
       enumerable: false,
