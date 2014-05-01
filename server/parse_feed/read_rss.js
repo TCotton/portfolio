@@ -1,6 +1,5 @@
 /**
  * Created by awalpole on 19/04/2014.
- * TODO: Send BLOG object and URL for remote RSS feed from the frontend configuration rather than hard code them in
  */
 
 'use strict';
@@ -43,7 +42,7 @@ var OldBlogPostTotal = new BlogCacheClass();
 var RSSClass = function () {
 
   /** Set defaults
-   * Will come in handy to use later for getters setters
+   * Will come in handy to use later for getters setters or other requirements if needed
    * **/
   Object.defineProperty(this, 'blogs', {
     value: {}
@@ -94,7 +93,7 @@ var RSSClass = function () {
 
         }
 
-        // use Date.parse so that the value is in millisends
+        // use moment().valueOf() so that the value is in milliseconds
         // the inbuilt angular filter date will format it to something easily understood
         posts[key].publishedDate = newDate.toString();
 
@@ -122,6 +121,7 @@ var RSSClass = function () {
 
     this.blogs.totalArticles = this.totalOldArticles + this.totalNewArticles;
 
+    // new pass in the promise the blog posts ready to send to the browser
     defer.resolve(this.blogs);
 
     return this.blogs;
@@ -190,7 +190,6 @@ var RSSClass = function () {
   /**
    // these are the images that appear at the top of every blog post
    // at the time of writing there are ten different images
-   // they are placed in order one after the other
    * **/
   _addReviewImage = function () {
 
@@ -221,7 +220,7 @@ var RSSClass = function () {
   }.bind(this);
 
 
-  /** Store to cache all new blog posts
+  /** Retreive all new blog posts and pass on in the function promise
    * **/
   _newBlogPosts = function () {
 
@@ -283,10 +282,12 @@ var RSSClass = function () {
 
 };
 
+/** If the old blog posts are cached the just run the functions used for the new blog posts
+ * **/
+
 RSSClass.prototype.blogItems = function (callback) {
 
-  // call the cache here
-  // cache old RSS feed and data
+  // retrieve the cache
   this.oldBlogPosts = OldBlogPosts.cache;
   this.totalOldArticles = OldBlogPostTotal.cache;
 
