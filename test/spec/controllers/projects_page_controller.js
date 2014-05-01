@@ -1,9 +1,6 @@
 /**
  * Created by andywalpole on 08/04/2014.
  */
-/**
- * Created by andywalpole on 08/04/2014.
- */
 
 'use strict';
 describe('Controller: ProjectsPageCtrl', function () {
@@ -28,6 +25,8 @@ describe('Controller: ProjectsPageCtrl', function () {
     $httpBackend = _$httpBackend_;
     $location = _$location_;
     $route = _$route_;
+
+    $rootScope.currentPage = 'http://localhost:9000/#!/side-projects/pennybooks';
   }));
 
 
