@@ -4,7 +4,7 @@
 
 'use strict';
 
-angular.module('portfolioApp').directive('homepageStatsDirective', ['STATS', '$window', '$timeout', function (STATS, $window, $timeout) {
+angular.module('portfolioApp.directives').directive('homepageStatsDirective', ['STATS', '$window', '$timeout', function (STATS, $window, $timeout) {
 
   return {
     restrict: 'A',

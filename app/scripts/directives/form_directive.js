@@ -4,7 +4,7 @@
 
 'use strict';
 
-angular.module('portfolioApp').directive('formDirective', [function () {
+angular.module('portfolioApp.directives').directive('formDirective', [function () {
 
   return {
     restrict: 'A',
