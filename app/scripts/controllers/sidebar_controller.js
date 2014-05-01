@@ -5,8 +5,7 @@
 'use strict';
 (function () {
 
-  var app = angular.module('portfolioApp');
-
+  var app = angular.module('portfolioApp.controllers');
 
   var SidebarCtrl = function ($rootScope, $scope, $log, BlogDataService, $angularCacheFactory) {
 

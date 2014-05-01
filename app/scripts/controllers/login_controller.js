@@ -4,7 +4,7 @@
 'use strict';
 (function () {
 
-  var app = angular.module('portfolioApp');
+  var app = angular.module('portfolioApp.controllers');
 
   var LoginCtrl = function ($rootScope, $scope, $log, $location, MongoUserService, $angularCacheFactory) {
 

@@ -5,7 +5,7 @@
 'use strict';
 (function () {
 
-  var app = angular.module('portfolioApp');
+  var app = angular.module('portfolioApp.controllers');
 
   var ProjectsPageCtrl = function ($rootScope, $scope, $log, PROJECTS) {
 

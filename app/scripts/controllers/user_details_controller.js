@@ -7,7 +7,7 @@
   /** Add, edit or delete user details
    * */
 
-  var app = angular.module('portfolioApp');
+  var app = angular.module('portfolioApp.controllers');
 
   var UserDetailsCtrl = function ($rootScope, $scope, $log, MongoUserService) {
 

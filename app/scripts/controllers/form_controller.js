@@ -6,7 +6,7 @@
 
 (function () {
 
-  var app = angular.module('portfolioApp');
+  var app = angular.module('portfolioApp.controllers');
 
   var FormCtrl = function ($scope, PostFormService, $sanitize) {
 

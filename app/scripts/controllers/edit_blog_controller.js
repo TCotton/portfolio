@@ -9,7 +9,7 @@
   /** Add, edit or delete blog posts
    * */
 
-  var app = angular.module('portfolioApp');
+  var app = angular.module('portfolioApp.controllers');
   /** Declare private method variable names
    * **/
   var _createContentSnippet;
