@@ -65,6 +65,7 @@
     this.$scope.code = data[0].code;
     this.$scope.company = data[0].company;
     this.$scope.workImage = data[0].workImage;
+    this.$rootScope.pageTitle = data[0].title + ' ' + data[0].summary;
 
   };
 
