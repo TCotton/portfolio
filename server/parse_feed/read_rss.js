@@ -21,18 +21,33 @@ var _closeBlogComments;
 
 var RSSClass = function () {
 
-  this.blogs = {};
-
-  this.blogs.totalArticles = null;
-  this.blogs.BlogPosts = null;
-  this.totalNewArticles = null;
-  this.totalOldArticles = null;
-  this.oldBlogPosts = null;
-  this.newBlogPosts = null;
-
-  this.RSSFeed = null;
-  this.BLOG = null;
-
+  /** Set defaults
+   * Will come in handy to use later for getters setters
+   * **/
+  Object.defineProperty(this, 'blogs', {
+    value: {}
+  });
+  Object.defineProperty(this, 'blogs.totalArticles', {
+    value: null
+  });
+  Object.defineProperty(this, 'blogs.BlogPosts', {
+    value: null
+  });
+  Object.defineProperty(this, 'totalNewArticles', {
+    value: null
+  });
+  Object.defineProperty(this, 'totalOldArticles', {
+    value: null
+  });
+  Object.defineProperty(this, 'oldBlogPosts', {
+    value: null
+  });
+  Object.defineProperty(this, 'RSSFeed', {
+    value: null
+  });
+  Object.defineProperty(this, 'BLOG', {
+    value: null
+  });
 
   /** 1. Create the right date format
    *  2. Using the date create a unique ID for the blog post which is used in the URL
