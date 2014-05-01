@@ -14,6 +14,8 @@
     this.$location = $location;
     this.$angularCacheFactory = $angularCacheFactory;
 
+    /** Using defineProperty prevents injected service being exposed to the temmplate
+     * **/
     Object.defineProperty(this, 'MongoUserService', {
       enumerable: false,
       configurable: false,

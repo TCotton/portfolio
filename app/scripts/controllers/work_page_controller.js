@@ -6,15 +6,20 @@
 
   var app = angular.module('portfolioApp');
 
-  var _WorkPageCtrl = {};
-
   var WorkPageCtrl = function ($rootScope, $scope, $log, WORK) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
     this.$log = $log;
 
-    _WorkPageCtrl.WORK = WORK;
+    /** Using defineProperty prevents injected contants being exposed to the template
+     * **/
+    Object.defineProperty(this, 'WORK', {
+      enumerable: false,
+      configurable: false,
+      writable: false,
+      value: WORK
+    });
 
     this.$scope.title = null;
     this.$scope.summary = null;
@@ -34,7 +39,7 @@
 
     var currentPage = this.$rootScope.currentPage.substring(this.$rootScope.currentPage.lastIndexOf('/') + 1, this.$rootScope.currentPage.length);
 
-    var wordData = _.filter(_WorkPageCtrl.WORK, function (o) {
+    var wordData = _.filter(this.WORK, function (o) {
 
       if (o.internalUrl.substring(o.internalUrl.lastIndexOf('/') + 1, o.internalUrl.length) === currentPage) {
 
@@ -72,7 +77,7 @@
     var currentPage = this.$rootScope.currentPage.substring(this.$rootScope.currentPage.lastIndexOf('/') + 1, this.$rootScope.currentPage.length);
 
     // return the object for the current page
-    var page = _.filter(_WorkPageCtrl.WORK, function (o) {
+    var page = _.filter(this.WORK, function (o) {
 
       if (o.internalUrl.substring(o.internalUrl.lastIndexOf('/') + 1, o.length) === currentPage) {
 
@@ -85,7 +90,7 @@
       var pageNumber = page[0].id;
 
       // return the object for the previous page
-      var prevPage = _.filter(_WorkPageCtrl.WORK, function (o) {
+      var prevPage = _.filter(this.WORK, function (o) {
 
         if (parseInt(o.id, 10) === (parseInt(pageNumber, 10) - 1)) {
 
@@ -94,7 +99,7 @@
       });
 
       // return the object for the next page
-      var nextPage = _.filter(_WorkPageCtrl.WORK, function (o) {
+      var nextPage = _.filter(this.WORK, function (o) {
 
         if (parseInt(o.id, 10) === (parseInt(pageNumber, 10) + 1)) {
 
@@ -104,7 +109,7 @@
 
 
       // if first page then the prev link goes to the end of the pages
-      prevPage = !_.isEmpty(prevPage)? prevPage: _.filter(_WorkPageCtrl.WORK, function (o,k) {
+      prevPage = !_.isEmpty(prevPage)? prevPage: _.filter(this.WORK, function (o,k) {
 
         if (k === 'drnewmans') {
           return o;
@@ -112,7 +117,7 @@
       });
 
       // if last page then start loop all over again
-      nextPage = !_.isEmpty(nextPage)? nextPage: _.filter(_WorkPageCtrl.WORK, function (o,k) {
+      nextPage = !_.isEmpty(nextPage)? nextPage: _.filter(this.WORK, function (o,k) {
 
         if (k === 'blinkbox') {
           return o;

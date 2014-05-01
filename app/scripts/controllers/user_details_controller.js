@@ -9,14 +9,14 @@
 
   var app = angular.module('portfolioApp');
 
-  var _UserDetailsCtrl = {};
-
   var UserDetailsCtrl = function ($rootScope, $scope, $log, MongoUserService) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
     this.$log = $log;
 
+    /** Using defineProperty prevents injected service being exposed to the temmplate
+     * **/
     Object.defineProperty(this, 'MongoUserService', {
       enumerable: false,
       configurable: false,
@@ -111,7 +111,7 @@
 
   UserDetailsCtrl.prototype.listAllUsers = function () {
 
-    var returnedPromise = _UserDetailsCtrl.MongoUserService.getUsers();
+    var returnedPromise = this.MongoUserService.getUsers();
 
     returnedPromise.then(function (value) {
 
