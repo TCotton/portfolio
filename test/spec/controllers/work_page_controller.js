@@ -6,7 +6,7 @@
 describe('Controller: WorkPageCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('portfolioApp.controllers'));
+  beforeEach(module('portfolioApp.controllers', 'AppConstants', 'ngRoute'));
 
   var WorkPageCtrl;
   var scope;
@@ -68,6 +68,7 @@ describe('Controller: WorkPageCtrl', function () {
     WorkPageCtrl = $controller('WorkPageCtrl', {
       $scope: scope
     });
+
 
     $rootScope.$digest();
 
