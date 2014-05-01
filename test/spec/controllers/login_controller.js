@@ -5,6 +5,7 @@
 'use strict';
 describe('Controller: LoginCtrl as AdminLogin', function () {
 
+
   // load the controller's module
   beforeEach(module('portfolioApp.controllers', 'testConstants', 'portfolioApp.services', 'jmdobry.angular-cache'));
 

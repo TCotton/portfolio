@@ -25,6 +25,7 @@ describe('Controller: WorkPageCtrl', function () {
     $httpBackend = _$httpBackend_;
     $location = _$location_;
     $route = _$route_;
+    $rootScope.currentPage = 'http://localhost:9000/#!/work-projects/thomson-reuters-japan';
   }));
 
 
@@ -68,7 +69,6 @@ describe('Controller: WorkPageCtrl', function () {
     WorkPageCtrl = $controller('WorkPageCtrl', {
       $scope: scope
     });
-
 
     $rootScope.$digest();
 
