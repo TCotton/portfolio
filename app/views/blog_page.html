@@ -28,7 +28,9 @@
 
     <div class="comments">
 
-      <h5 class="content-title">Blog comments will be open soon</h5>
+      <h5 class="content-title" data-ng-if="!commentsOpen">Blog comments are not open for this article</h5>
+
+      <h5 class="content-title" data-ng-if="commentsOpen">Comments below</h5>
 
       <form action="/" method="post" data-ng-if="commentsOpen">
 
