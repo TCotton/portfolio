@@ -164,6 +164,8 @@ var RSSClass = function () {
     var oldPosts = this.blogs.BlogPosts;
     var numImages = _.size(this.BLOG);
     var imageArray = _.toArray(this.BLOG);
+    console.log('asfasdfasd');
+    console.log(this.BLOG);
     var x = -1;
 
     Object.keys(oldPosts).forEach(function (key) {
@@ -225,6 +227,7 @@ var RSSClass = function () {
 
   }.bind(this);
 
+
   /** For old blog posts taken from Suburban Glory keep comments closed
    * **/
   _closeBlogComments = function () {
@@ -245,7 +248,6 @@ var RSSClass = function () {
 
   }.bind(this);
 
-
 };
 
 
@@ -263,7 +265,8 @@ RSSClass.prototype.parseFeed = function (url, callback) {
     }
 
     this.totalOldArticles = _.size(data.feed.entries);
-    this.oldBlogPosts = data.feed.entries;
+    // if empty provide value of empty object to see if it stops nasty JS errors appearing
+    this.oldBlogPosts = data.feed.entries || {};
 
     /** use promises to filter and sort old and new blogs
      * These don't need to be chained together in synchronous order
@@ -302,12 +305,9 @@ module.exports = function (app) {
       enumerable: false,
       configurable: false,
       writable: false,
-      value: req.query.BLOG
+      value: JSON.parse(req.query.BLOG)
     });
 
-    console.log(OldBlogFeed.RSSFeed);
-
-    console.log(OldBlogFeed.BLOG);
     OldBlogFeed.parseFeed(OldBlogFeed.RSSFeed, function (data) {
 
       res.json(data);

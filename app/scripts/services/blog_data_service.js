@@ -19,9 +19,8 @@
     this.$q = $q;
     this.$log = $log;
 
-    /** Using defineProperty prevents injected service and constants from being injected with the BlogDataService into a contoller
+    /** Using defineProperty with these values prevents service and constants from being injected with the BlogDataService into a controller
      * **/
-
     Object.defineProperty(this, 'CONFIG', {
       enumerable: false,
       configurable: false,
