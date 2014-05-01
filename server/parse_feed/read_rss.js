@@ -19,6 +19,27 @@ var _newBlogPosts;
 var _mergeBlogPosts;
 var _closeBlogComments;
 
+
+/** Simple getter setter cache class
+ * **/
+var BlogCacheClass = function (val) {
+
+  var value = val;
+
+  this.__defineGetter__('cache', function () {
+    return value;
+  });
+
+  this.__defineSetter__('cache', function (val) {
+    value = val;
+  });
+
+};
+
+var _oldBlogPosts = new BlogCacheClass();
+var _oldBlogPostTotal = new BlogCacheClass();
+
+
 var RSSClass = function () {
 
   /** Set defaults
@@ -28,25 +49,24 @@ var RSSClass = function () {
     value: {}
   });
   Object.defineProperty(this, 'blogs.totalArticles', {
-    value: null
+    value: null,
+    writable: true
   });
   Object.defineProperty(this, 'blogs.BlogPosts', {
-    value: null
+    value: null,
+    writable: true
   });
   Object.defineProperty(this, 'totalNewArticles', {
-    value: null
+    value: null,
+    writable: true
   });
   Object.defineProperty(this, 'totalOldArticles', {
-    value: null
+    value: null,
+    writable: true
   });
   Object.defineProperty(this, 'oldBlogPosts', {
-    value: null
-  });
-  Object.defineProperty(this, 'RSSFeed', {
-    value: null
-  });
-  Object.defineProperty(this, 'BLOG', {
-    value: null
+    value: null,
+    writable: true
   });
 
   /** 1. Create the right date format
@@ -216,7 +236,6 @@ var RSSClass = function () {
       }
 
       this.totalNewArticles = _.size(blogs);
-      this.newBlogPosts = blogs;
 
       defer.resolve(blogs);
 
@@ -264,6 +283,24 @@ var RSSClass = function () {
 
 };
 
+RSSClass.prototype.blogItems = function (callback) {
+
+  // call the cache here
+  // cache old RSS feed and data
+  this.oldBlogPosts = _oldBlogPosts.cache;
+  this.totalOldArticles = _oldBlogPostTotal.cache;
+
+  q.fcall(_newBlogPosts)
+    .then(_mergeBlogPosts)
+    .then(_addReviewImage)
+    .then(_totalArticlesCount)
+    .then(function (data) {
+
+      callback(data);
+
+    }).done();
+};
+
 
 RSSClass.prototype.parseFeed = function (url, callback) {
 
@@ -294,8 +331,15 @@ RSSClass.prototype.parseFeed = function (url, callback) {
       .then(_addReviewImage)
       .then(_totalArticlesCount)
       .then(function (data) {
+
+        // set cache here
+        // cache old RSS feed and data
+        _oldBlogPosts.cache = this.oldBlogPosts;
+        _oldBlogPostTotal.cache = this.totalOldArticles;
+
         callback(data);
-      }).done();
+
+      }.bind(this)).done();
 
   }.bind(this));
 
@@ -322,11 +366,25 @@ module.exports = function (app) {
       value: JSON.parse(req.query.BLOG)
     });
 
-    OldBlogFeed.parseFeed(OldBlogFeed.RSSFeed, function (data) {
+    // if oldBlogPosts are in the cache then don't use the parseFeed method
+    // just retrieve them from the cache
+    if (_oldBlogPosts.cache || _oldBlogPostTotal.cache) {
 
-      res.json(data);
+      OldBlogFeed.blogItems(function (data) {
 
-    });
+        res.json(data);
+
+      });
+
+    } else {
+
+      OldBlogFeed.parseFeed(OldBlogFeed.RSSFeed, function (data) {
+
+        res.json(data);
+
+      });
+
+    }
 
   });
 
