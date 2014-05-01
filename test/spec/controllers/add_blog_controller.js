@@ -1,8 +1,6 @@
 'use strict';
 describe('Controller: AddBlogCtrl as AdminAddBlogCtrl', function () {
 
-  beforeEach(module('portfolioApp.controllers', 'testConstants', 'portfolioApp.services'));
-
   var $controller;
   var $rootScope;
   var MOCK_DATA;
@@ -10,6 +8,8 @@ describe('Controller: AddBlogCtrl as AdminAddBlogCtrl', function () {
   var $q;
   var scope;
   var AdminAddBlogCtrl;
+
+  beforeEach(module('portfolioApp.controllers', 'testConstants', 'portfolioApp.services'));
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function (_$controller_, _$rootScope_, _MOCK_DATA_, _$httpBackend_, _$q_) {
@@ -20,7 +20,6 @@ describe('Controller: AddBlogCtrl as AdminAddBlogCtrl', function () {
     $q = _$q_;
 
     scope = $rootScope.$new();
-
 
     AdminAddBlogCtrl = $controller('AddBlogCtrl as AdminAddBlogCtrl', {
       $scope: scope
@@ -52,6 +51,5 @@ describe('Controller: AddBlogCtrl as AdminAddBlogCtrl', function () {
     expect(scope.addBlogFormSubmit).toBe(false);
 
   });
-
 
 });

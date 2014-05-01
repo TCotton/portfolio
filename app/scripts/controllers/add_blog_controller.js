@@ -5,7 +5,7 @@
 
 'use strict';
 
-(function (moment) {
+(function () {
 
   /** Add, edit or delete blog posts
    * */
@@ -118,12 +118,14 @@
      * **/
     _addDate = function () {
 
-      // using moment library so as to synch with backend code
+      // using moment.js library so as to synch with backend code
       this.$scope.addBlogFormData.publishedDate = parseInt(moment(new Date()).valueOf(), 10).toString();
 
     }.bind(this);
 
   };
+
+  AddBlogCtrl.$inject = ['$rootScope', '$scope', '$log', 'MongoBlogService'];
 
   AddBlogCtrl.prototype.addBlog = function (isValid) {
 
@@ -157,15 +159,13 @@
         this.$scope.addBlogFormSubmit = false;
 
       }.bind(this), function (value) {
-        this.$log.warn('Failure: BlogDetailsCtrl.addBlog');
+        this.$log.warn('Failure: AddBlogCtrl.addBlog');
         this.$log.warn(value);
       }.bind(this));
 
     }
 
   };
-
-  AddBlogCtrl.$inject = ['$rootScope', '$scope', '$log', 'MongoBlogService'];
 
   app.controller('AddBlogCtrl', AddBlogCtrl);
 
