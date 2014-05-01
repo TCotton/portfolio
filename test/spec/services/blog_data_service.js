@@ -14,7 +14,7 @@ describe('Testing the BlogDataService', function () {
   var $q;
   var deferred;
 
-  beforeEach(module('portfolioApp', 'testConstants'));
+  beforeEach(module('portfolioApp.service', 'testConstants', 'portfolioAppConfig'));
 
   beforeEach(inject(function (_$httpBackend_, _FeedService_, _MOCK_DATA_, _CONFIG_, _BlogDataService_, _$q_) {
     $httpBackend = _$httpBackend_;

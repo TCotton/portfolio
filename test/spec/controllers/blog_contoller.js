@@ -6,7 +6,7 @@
 describe('Controller: BlogCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('portfolioApp', 'testConstants'));
+  beforeEach(module('portfolioApp.controllers', 'testConstants'));
 
   var $controller;
   var $rootScope;

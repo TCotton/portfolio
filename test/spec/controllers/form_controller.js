@@ -2,7 +2,7 @@
 describe('Controller: FormCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('portfolioApp', 'testConstants'));
+  beforeEach(module('portfolioApp.controllers', 'testConstants'));
 
   var AdminFormCtrl;
   var scope;

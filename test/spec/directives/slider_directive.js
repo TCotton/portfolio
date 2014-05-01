@@ -4,7 +4,8 @@ describe('Directive: Slider', function () {
 
   var element, scope, $compile, SLIDER, $rootScope, $timeout, $interval;
 
-  beforeEach(module('portfolioApp'));
+
+  beforeEach(module('portfolioApp.directives', 'portfolioAppConfig', 'jmdobry.angular-cache', 'ngRoute', 'AppConstants'));
 
   beforeEach(inject(function (_$compile_, _$rootScope_, _SLIDER_, _$timeout_, _$interval_) {
     $rootScope = _$rootScope_;

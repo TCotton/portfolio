@@ -6,7 +6,7 @@
 describe('Controller: WorkPageCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('portfolioApp'));
+  beforeEach(module('portfolioApp.controllers'));
 
   var WorkPageCtrl;
   var scope;

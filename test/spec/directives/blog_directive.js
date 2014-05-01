@@ -8,7 +8,7 @@ describe('Directive: blogBlockDirective', function () {
 
   var element, scope, $compile, SLIDER, $rootScope, $timeout, $interval, MOCK_DATA;
 
-  beforeEach(module('portfolioApp', 'testConstants'));
+  beforeEach(module('portfolioApp.directives', 'testConstants', 'AppConstants', 'ngSanitize'));
 
   beforeEach(inject(function (_$compile_, _$rootScope_, _SLIDER_, _$timeout_, _$interval_, _MOCK_DATA_) {
     $rootScope = _$rootScope_;

@@ -9,7 +9,7 @@
 describe('Controller: ProjectsPageCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('portfolioApp'));
+  beforeEach(module('portfolioApp.controllers'));
 
   var ProjectsPageCtrl;
   var scope;
