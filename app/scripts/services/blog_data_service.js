@@ -11,7 +11,7 @@
   var _cache;
   var _blogData;
 
-  var BlogDataService = function ($http, $q, $log, MongoBlogService, $angularCacheFactory) {
+  var BlogDataService = function ($http, $q, $log, MongoBlogService, $angularCacheFactory, CONFIG) {
 
     /** angularjs stuff
      * **/
@@ -19,7 +19,20 @@
     this.$q = $q;
     this.$log = $log;
 
-    this.MongoBlogService = MongoBlogService;
+    Object.defineProperty(this, 'CONFIG', {
+      enumerable: false,
+      configurable: false,
+      writable: false,
+      value: CONFIG
+    });
+
+    Object.defineProperty(this, 'MongoBlogService', {
+      enumerable: false,
+      configurable: false,
+      writable: false,
+      value: MongoBlogService
+    });
+
     this.$angularCacheFactory = $angularCacheFactory;
 
     /* cache the relevant data in either session or storage
@@ -34,7 +47,7 @@
   };
 
 
-  BlogDataService.$inject = ['$http', '$q', '$log', 'MongoBlogService', '$angularCacheFactory'];
+  BlogDataService.$inject = ['$http', '$q', '$log', 'MongoBlogService', '$angularCacheFactory', 'CONFIG'];
 
   BlogDataService.prototype.retrieveData = function () {
 
@@ -43,7 +56,8 @@
     // use a a cache means that it is possible to bypass the above methods and just serve up the data
     if (!this.$angularCacheFactory.get('blogCache').get('allBlogPosts')) {
 
-      this.MongoBlogService.getOldBlogPosts().then(function (value) {
+      // through a POST service supply the RSS url and the images in the CONFIG.BLOG object to be added the individual blog post objects
+      this.MongoBlogService.getOldBlogPosts({RSSFeed: this.CONFIG.RSS_FEED_LINK, BLOG: this.CONFIG.BLOG}).then(function (value) {
 
         _blogData = value;
         _cache(value);

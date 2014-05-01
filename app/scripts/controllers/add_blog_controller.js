@@ -24,6 +24,8 @@
     this.$scope = $scope;
     this.$log = $log;
 
+    /** Using defineProperty prevents injected service being exposed to the temmplate
+     * **/
     Object.defineProperty(this, 'MongoBlogService', {
       enumerable: false,
       configurable: false,

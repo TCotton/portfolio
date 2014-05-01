@@ -92,7 +92,7 @@
 
   };
 
-  MongoBlogService.prototype.getOldBlogPosts = function () {
+  MongoBlogService.prototype.getOldBlogPosts = function (data) {
 
     // return promise
 
@@ -100,7 +100,8 @@
 
     var returnedMessage = this.$http({
       url: '/api/oldBlog/get',
-      method: 'GET'
+      method: 'GET',
+      params: data
     });
 
     deferred.resolve(returnedMessage);

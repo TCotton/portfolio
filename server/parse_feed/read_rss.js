@@ -28,19 +28,11 @@ var RSSClass = function () {
   this.totalNewArticles = null;
   this.totalOldArticles = null;
   this.oldBlogPosts = null;
+  this.newBlogPosts = null;
 
-  this.BLOG = {
-    BLOG_1: 'images/blog-stock-images/stock-photo-one.jpg',
-    BLOG_2: 'images/blog-stock-images/stock-photo-two.jpg',
-    BLOG_3: 'images/blog-stock-images/stock-photo-three.jpg',
-    BLOG_4: 'images/blog-stock-images/stock-photo-four.jpg',
-    BLOG_5: 'images/blog-stock-images/stock-photo-five.jpg',
-    BLOG_6: 'images/blog-stock-images/stock-photo-six.jpg',
-    BLOG_7: 'images/blog-stock-images/stock-photo-seven.jpg',
-    BLOG_8: 'images/blog-stock-images/stock-photo-eight.jpg',
-    BLOG_9: 'images/blog-stock-images/stock-photo-nine.jpg',
-    BLOG_10: 'images/blog-stock-images/stock-photo-ten.jpg'
-  };
+  this.RSSFeed = null;
+  this.BLOG = null;
+
 
   /** 1. Create the right date format
    *  2. Using the date create a unique ID for the blog post which is used in the URL
@@ -270,13 +262,6 @@ RSSClass.prototype.parseFeed = function (url, callback) {
       new throwError('Error fetching feeds');
     }
 
-    /** Refactor. Even if remote RSS feed is unavailable the blog posts from the database should still appear
-     * **/
-
-   /* if(!data.feed.entries) {
-      return;
-    }*/
-
     this.totalOldArticles = _.size(data.feed.entries);
     this.oldBlogPosts = data.feed.entries;
 
@@ -305,7 +290,25 @@ module.exports = function (app) {
   app.get('/api/oldBlog/get', function (req, res) {
 
     var OldBlogFeed = new RSSClass();
-    OldBlogFeed.parseFeed('http://2223d9145efd2b35ed36-6671f2c2aa691e80e8c08f3a239bdfd7.r67.cf3.rackcdn.com/rss_feed.xml', function (data) {
+
+    Object.defineProperty(OldBlogFeed, 'RSSFeed', {
+      enumerable: false,
+      configurable: false,
+      writable: false,
+      value: req.query.RSSFeed
+    });
+
+    Object.defineProperty(OldBlogFeed, 'BLOG', {
+      enumerable: false,
+      configurable: false,
+      writable: false,
+      value: req.query.BLOG
+    });
+
+    console.log(OldBlogFeed.RSSFeed);
+
+    console.log(OldBlogFeed.BLOG);
+    OldBlogFeed.parseFeed(OldBlogFeed.RSSFeed, function (data) {
 
       res.json(data);
 

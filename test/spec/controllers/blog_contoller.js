@@ -16,8 +16,6 @@ describe('Controller: BlogCtrl', function () {
   var scope;
   var BlogCtrl;
 
-
-
   // Initialize the controller and a mock scope
   beforeEach(inject(function (_$interval_, _$httpBackend_, _$controller_, _$rootScope_, _MOCK_DATA_, _CONFIG_, _FeedService_, _$location_, _BlogDataService_, _$q_) {
 

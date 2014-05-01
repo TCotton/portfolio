@@ -18,7 +18,6 @@ describe('Directive: Slider', function () {
     $compile(element)(scope);
     scope.$digest();
     $timeout.flush();
-
   }));
 
 
