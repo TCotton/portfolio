@@ -21,7 +21,8 @@
     this.$scope = $scope;
     this.$log = $log;
 
-    /** By using EMCAScript 5 defineProperty we can prevent the service or config file from appearing in the template as a model
+    /** By using EMCAScript 5 defineProperty we can prevent the service or config file
+     * from appearing in the template as a model
      * **/
     Object.defineProperty(this, 'MongoBlogService', {
       enumerable: false,
@@ -40,7 +41,7 @@
     this.$scope.displayForm = null;
     this.$scope.displayPopup = false;
 
-    /** Private methods
+    /** Private functions
      * **/
 
     /** Take the content and create a snippet to be used in the blog index

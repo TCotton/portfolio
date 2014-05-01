@@ -21,6 +21,7 @@ describe('Controller: AddBlogCtrl as AdminAddBlogCtrl', function () {
 
     scope = $rootScope.$new();
 
+
     AdminAddBlogCtrl = $controller('AddBlogCtrl as AdminAddBlogCtrl', {
       $scope: scope
     });

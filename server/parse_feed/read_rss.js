@@ -36,8 +36,8 @@ var BlogCacheClass = function (val) {
 
 };
 
-var _oldBlogPosts = new BlogCacheClass();
-var _oldBlogPostTotal = new BlogCacheClass();
+var OldBlogPosts = new BlogCacheClass();
+var OldBlogPostTotal = new BlogCacheClass();
 
 
 var RSSClass = function () {
@@ -252,7 +252,7 @@ var RSSClass = function () {
 
     var defer = q.defer();
 
-    this.blogs.BlogPosts = _.union(data, this.oldBlogPosts)
+    this.blogs.BlogPosts = _.union(data, this.oldBlogPosts);
 
     defer.resolve(this.blogs.BlogPosts);
 
@@ -287,8 +287,8 @@ RSSClass.prototype.blogItems = function (callback) {
 
   // call the cache here
   // cache old RSS feed and data
-  this.oldBlogPosts = _oldBlogPosts.cache;
-  this.totalOldArticles = _oldBlogPostTotal.cache;
+  this.oldBlogPosts = OldBlogPosts.cache;
+  this.totalOldArticles = OldBlogPostTotal.cache;
 
   q.fcall(_newBlogPosts)
     .then(_mergeBlogPosts)
@@ -311,7 +311,7 @@ RSSClass.prototype.parseFeed = function (url, callback) {
 
     /** After retrieving data using Google RSS API store it into the cache and count number of old blog posts
      * **/
-    if (data.error) {
+    if (data.error || !data) {
       new throwError('Error fetching feeds');
     }
 
@@ -334,8 +334,8 @@ RSSClass.prototype.parseFeed = function (url, callback) {
 
         // set cache here
         // cache old RSS feed and data
-        _oldBlogPosts.cache = this.oldBlogPosts;
-        _oldBlogPostTotal.cache = this.totalOldArticles;
+        OldBlogPosts.cache = this.oldBlogPosts;
+        OldBlogPostTotal.cache = this.totalOldArticles;
 
         callback(data);
 
@@ -353,22 +353,16 @@ module.exports = function (app) {
     var OldBlogFeed = new RSSClass();
 
     Object.defineProperty(OldBlogFeed, 'RSSFeed', {
-      enumerable: false,
-      configurable: false,
-      writable: false,
       value: req.query.RSSFeed
     });
 
     Object.defineProperty(OldBlogFeed, 'BLOG', {
-      enumerable: false,
-      configurable: false,
-      writable: false,
       value: JSON.parse(req.query.BLOG)
     });
 
     // if oldBlogPosts are in the cache then don't use the parseFeed method
     // just retrieve them from the cache
-    if (_oldBlogPosts.cache || _oldBlogPostTotal.cache) {
+    if (OldBlogPosts.cache && OldBlogPostTotal.cache) {
 
       OldBlogFeed.blogItems(function (data) {
 

@@ -26,6 +26,7 @@ describe('Controller: FormCtrl', function () {
     });
   }));
 
+
   it('Checks that scope changes to true after data is passed to the submitContactForm method', function () {
 
     scope.contact = {};

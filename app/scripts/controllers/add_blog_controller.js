@@ -40,7 +40,7 @@
     this.$scope.addBlogFormSubmit = false;
     this.$scope.formSuccess = null;
 
-    /** Private methods
+    /** Private functions
      ***/
 
     /** Take the content and create a snippet to be used in the blog index
@@ -118,6 +118,7 @@
      * **/
     _addDate = function () {
 
+      // using moment library so as to synch with backend code
       this.$scope.addBlogFormData.publishedDate = parseInt(moment(new Date()).valueOf(), 10).toString();
 
     }.bind(this);
