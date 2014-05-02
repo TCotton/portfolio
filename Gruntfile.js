@@ -28,7 +28,8 @@ module.exports = function (grunt) {
   var yeomanConfig = {
     // configurable paths
     app: require('./bower.json').appPath || 'app',
-    dist: 'dist'
+    dist: 'dist',
+    server: 'server'
   };
 
   try {
@@ -162,6 +163,7 @@ module.exports = function (grunt) {
       all: [
         'Gruntfile.js',
         '<%= yeoman.app %>/scripts/{,*/}*.js',
+        '<%= yeoman.server %>/{,*/}*.js',
         '!<%= yeoman.app %>/**/scripts/config/constants.js', // ignore auto generated constants file'
       ],
       test: {
@@ -373,7 +375,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build', [
-
+    'test',
     'clean:dist',
     'bower-install',
     'useminPrepare',

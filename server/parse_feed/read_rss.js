@@ -3,6 +3,7 @@
  * TODO:
  * 1. Cache isn't working as expected
  * 2. Consider using node-cache: https://www.npmjs.org/package/node-cache
+ * 3. Refactor to completely use EMCAScript 5
  * 3. Refactor functions and promises to make it more efficient
  */
 
@@ -13,6 +14,7 @@ var _ = require('underscore');
 var q = require('q');
 var Blog = require('../routes/models/blog_model');
 var moment = require('moment');
+var NodeCache = require( "node-cache" );
 
 var _sortOldBlogPosts;
 var _totalArticlesCount;
@@ -22,26 +24,7 @@ var _newBlogPosts;
 var _mergeBlogPosts;
 var _closeBlogComments;
 
-
-/** Simple getter setter cache class
- * **/
-var BlogCacheClass = function (val) {
-
-  var value = val;
-
-  Object.defineProperty(this, 'cache', {
-    get: function () {
-      return value;
-    },
-    set: function (val) {
-      value = val;
-    }
-  });
-
-};
-
-var OldBlogPosts = new BlogCacheClass();
-var OldBlogPostTotal = new BlogCacheClass();
+var myCache = new NodeCache();
 
 var RSSClass = function () {
 
@@ -261,9 +244,23 @@ var RSSClass = function () {
 
 RSSClass.prototype.blogItems = function (callback) {
 
-  // retrieve the cache
-  this.oldBlogPosts = OldBlogPosts.cache;
-  this.totalOldArticles = OldBlogPostTotal.cache;
+  myCache.get('oldBlogPosts', function (err, value) {
+    if (err) {
+      console.log(err);
+    }
+
+    this.oldBlogPosts = value;
+
+  }.bind(this));
+
+  myCache.get('totalOldArticles', function (err, value) {
+    if (err) {
+      console.log(err);
+    }
+
+    this.totalOldArticles = value;
+
+  }.bind(this));
 
   q.fcall(_newBlogPosts)
     .then(_mergeBlogPosts)
@@ -290,11 +287,6 @@ RSSClass.prototype.parseFeed = function (url, callback) {
       new throwError('Error fetching feeds');
     }
 
-    // there is a bug with the cache and I don't know why
-    // start off with flushing it
-    OldBlogPosts.cache = null;
-    OldBlogPostTotal.cache = null;
-
     this.totalOldArticles = _.size(data.feed.entries);
     // if empty provide value of empty object to see if it stops nasty JS errors appearing
     this.oldBlogPosts = data.feed.entries || {};
@@ -313,15 +305,17 @@ RSSClass.prototype.parseFeed = function (url, callback) {
       .then(_totalArticlesCount)
       .then(function (data) {
 
-        // set cache here
-        // cache old RSS feed and data
-        OldBlogPosts.cache = this.oldBlogPosts;
-        OldBlogPostTotal.cache = this.totalOldArticles;
+        myCache.set('OldBlogPosts', this.oldBlogPosts, function (err) {
+          if (err) {
+            console.log(err);
+          }
+        });
 
-        // there is a bug with the cache and I don't know why
-        // delete data afterwards
-        this.oldBlogPosts = null;
-        this.totalOldArticles = null;
+        myCache.set('totalOldArticles', this.totalOldArticles, function (err) {
+          if (err) {
+            console.log(err);
+          }
+        });
 
         callback(data);
 
@@ -336,8 +330,6 @@ module.exports = function (app) {
 
   app.get('/api/oldBlog/get', function (req, res) {
 
-    var OldBlogFeed = new RSSClass();
-
     Object.defineProperty(OldBlogFeed, 'RSSFeed', {
       value: req.query.RSSFeed
     });
@@ -346,19 +338,9 @@ module.exports = function (app) {
       value: JSON.parse(req.query.BLOG)
     });
 
-    OldBlogFeed.parseFeed(OldBlogFeed.RSSFeed, function (data) {
-
-      res.json(data);
-
-    });
-
-    /** TODO: This cache isn't working.
-     *  Need to investigate why
-     * **/
-
-   /* // if oldBlogPosts are in the cache then don't use the parseFeed method
+    // if oldBlogPosts are in the cache then don't use the parseFeed method
     // just retrieve them from the cache
-    if (OldBlogPosts.cache && OldBlogPostTotal.cache) {
+    if (!_.isEmpty(myCache.get('OldBlogPosts')) && !_.isEmpty(myCache.get('OldBlogPostTotal'))) {
 
       OldBlogFeed.blogItems(function (data) {
 
@@ -374,7 +356,7 @@ module.exports = function (app) {
 
       });
 
-    }*/
+    }
 
   });
 
