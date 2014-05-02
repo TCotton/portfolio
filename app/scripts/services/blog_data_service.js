@@ -57,7 +57,7 @@
 
     // remove cache for debugging purposes
 
-    this.$angularCacheFactory.get('blogCache').removeAll();
+    //this.$angularCacheFactory.get('blogCache').removeAll();
 
     // use a a cache means that it is possible to bypass the above methods and just serve up the data
     if (!this.$angularCacheFactory.get('blogCache').get('allBlogPosts')) {

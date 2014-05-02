@@ -1,5 +1,9 @@
 /**
  * Created by awalpole on 19/04/2014.
+ * TODO:
+ * 1. Cache isn't working as expected
+ * 2. Consider using node-cache: https://www.npmjs.org/package/node-cache
+ * 3. Refactor functions and promises to make it more efficient
  */
 
 'use strict';
@@ -220,7 +224,7 @@ var RSSClass = function () {
   }.bind(this);
 
 
-  /** Retreive all new blog posts and pass on in the function promise
+  /** Retrieve all new blog posts and pass on in the function promise
    * **/
   _newBlogPosts = function () {
 
@@ -361,7 +365,17 @@ module.exports = function (app) {
       value: JSON.parse(req.query.BLOG)
     });
 
-    // if oldBlogPosts are in the cache then don't use the parseFeed method
+    OldBlogFeed.parseFeed(OldBlogFeed.RSSFeed, function (data) {
+
+      res.json(data);
+
+    });
+
+    /** TODO: This cache isn't working.
+     *  Need to investigate why
+     * **/
+
+   /* // if oldBlogPosts are in the cache then don't use the parseFeed method
     // just retrieve them from the cache
     if (OldBlogPosts.cache && OldBlogPostTotal.cache) {
 
@@ -379,7 +393,7 @@ module.exports = function (app) {
 
       });
 
-    }
+    }*/
 
   });
 
