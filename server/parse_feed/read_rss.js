@@ -137,8 +137,6 @@ var RSSClass = function () {
    * **/
   _seoFriendly = function () {
 
-    var defer = q.defer();
-
     var data = this.oldBlogPosts;
 
     // in this array are a liist of stopwords which have less SEO value
@@ -184,10 +182,6 @@ var RSSClass = function () {
 
     });
 
-    defer.resolve(oldPosts);
-
-    return true;
-
   }.bind(this);
 
 
@@ -196,8 +190,6 @@ var RSSClass = function () {
    // at the time of writing there are ten different images
    * **/
   _addReviewImage = function () {
-
-    var defer = q.defer();
 
     var oldPosts = this.blogs.BlogPosts;
     var numImages = _.size(this.BLOG);
@@ -216,10 +208,6 @@ var RSSClass = function () {
     });
 
     this.blogs.BlogPosts = oldPosts;
-
-    defer.resolve(oldPosts);
-
-    return true;
 
   }.bind(this);
 
@@ -253,13 +241,7 @@ var RSSClass = function () {
    * **/
   _mergeBlogPosts = function (data) {
 
-    var defer = q.defer();
-
     this.blogs.BlogPosts = _.union(data, this.oldBlogPosts);
-
-    defer.resolve(this.blogs.BlogPosts);
-
-    return defer.promise;
 
   }.bind(this);
 
@@ -268,8 +250,6 @@ var RSSClass = function () {
    * **/
   _closeBlogComments = function () {
 
-    var defer = q.defer();
-
     var oldPosts = this.oldBlogPosts;
 
     Object.keys(oldPosts).forEach(function (key) {
@@ -277,10 +257,6 @@ var RSSClass = function () {
       oldPosts[key].commentsOpen = false;
 
     });
-
-    defer.resolve(oldPosts);
-
-    return defer.promise;
 
   }.bind(this);
 
@@ -328,10 +304,11 @@ RSSClass.prototype.parseFeed = function (url, callback) {
      * These don't need to be chained together in synchronous order
      * Call new blogs in tandem with parsing the RSS feed of the old blog posts
      * **/
-    q.fcall(_sortOldBlogPosts)
-      .then(_seoFriendly)
-      .then(_closeBlogComments)
-      .then(_newBlogPosts)
+    q.fcall(function(){
+      _sortOldBlogPosts();
+      _seoFriendly();
+      _closeBlogComments();
+    }).then(_newBlogPosts)
       .then(_mergeBlogPosts)
       .then(_addReviewImage)
       .then(_totalArticlesCount)
