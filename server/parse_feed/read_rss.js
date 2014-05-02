@@ -77,8 +77,6 @@ var RSSClass = function () {
    * **/
   _sortOldBlogPosts = function () {
 
-    var defer = q.defer();
-
     var posts = this.oldBlogPosts;
 
     Object.keys(posts).forEach(function (key) {
@@ -109,10 +107,6 @@ var RSSClass = function () {
       }
 
     });
-
-    defer.resolve(posts);
-
-    return defer.promise;
 
   }.bind(this);
 
@@ -296,6 +290,11 @@ RSSClass.prototype.parseFeed = function (url, callback) {
       new throwError('Error fetching feeds');
     }
 
+    // there is a bug with the cache and I don't know why
+    // start off with flushing it
+    OldBlogPosts.cache = null;
+    OldBlogPostTotal.cache = null;
+
     this.totalOldArticles = _.size(data.feed.entries);
     // if empty provide value of empty object to see if it stops nasty JS errors appearing
     this.oldBlogPosts = data.feed.entries || {};
@@ -318,6 +317,11 @@ RSSClass.prototype.parseFeed = function (url, callback) {
         // cache old RSS feed and data
         OldBlogPosts.cache = this.oldBlogPosts;
         OldBlogPostTotal.cache = this.totalOldArticles;
+
+        // there is a bug with the cache and I don't know why
+        // delete data afterwards
+        this.oldBlogPosts = null;
+        this.totalOldArticles = null;
 
         callback(data);
 
