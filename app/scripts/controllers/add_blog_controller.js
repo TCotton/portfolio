@@ -119,7 +119,7 @@
     _addDate = function () {
 
       // using moment.js library so as to synch with backend code
-      this.$scope.addBlogFormData.publishedDate = parseInt(moment(new Date()).valueOf(), 10).toString();
+      this.$scope.addBlogFormData.publishedDate = parseInt(moment().valueOf(), 10).toString();
 
     }.bind(this);
 
