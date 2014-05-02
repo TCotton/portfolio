@@ -29,19 +29,19 @@ var BlogCacheClass = function (val) {
 
   var value = val;
 
-  this.__defineGetter__('cache', function () {
-    return value;
-  });
-
-  this.__defineSetter__('cache', function (val) {
-    value = val;
+  Object.defineProperty(this, 'cache', {
+    get: function () {
+      return value;
+    },
+    set: function (val) {
+      value = val;
+    }
   });
 
 };
 
 var OldBlogPosts = new BlogCacheClass();
 var OldBlogPostTotal = new BlogCacheClass();
-
 
 var RSSClass = function () {
 
