@@ -25,7 +25,6 @@
     "google-feed-api": "~0.0.2",
     "q": "~1.0.1",
     "moment": "~2.6.0",
-    "node-cache": "~1.0.0",
     "helmet": "~0.2.1"
   },
   "devDependencies": {
