@@ -15,4 +15,5 @@ server/config/database.js
 server/config/salt.js
 server/config/user_id.js
 server/config/
+server/blogposts.json
 .DS_Store

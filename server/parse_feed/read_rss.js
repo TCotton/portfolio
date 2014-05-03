@@ -9,6 +9,7 @@ var _ = require('underscore');
 var q = require('q');
 var Blog = require('../routes/models/blog_model');
 var moment = require('moment');
+var fs = require('fs');
 
 var _sortOldBlogPosts;
 var _totalArticlesCount;
@@ -17,7 +18,6 @@ var _addReviewImage;
 var _newBlogPosts;
 var _mergeBlogPosts;
 var _closeBlogComments;
-
 
 /** Simple getter setter cache class
  * **/
@@ -38,6 +38,20 @@ var BlogCacheClass = function (val) {
 
 var OldBlogPosts = new BlogCacheClass();
 var OldBlogPostTotal = new BlogCacheClass();
+
+var createJSONFile = function() {
+
+  if(OldBlogPosts.cache) {
+
+    fs.writeFile('./server/blogposts.json', OldBlogPosts.cache, function (err) {
+      if (err) {
+        return console.log(err);
+      }
+    });
+
+  }
+
+};
 
 var RSSClass = function () {
 
@@ -331,6 +345,8 @@ module.exports = function (app) {
     Object.defineProperty(OldBlogFeed, 'BLOG', {
       value: JSON.parse(req.query.BLOG)
     });
+
+    createJSONFile();
 
     // if oldBlogPosts are in the cache then don't use the parseFeed method
     // just retrieve them from the cache
