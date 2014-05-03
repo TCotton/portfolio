@@ -99,6 +99,11 @@ h3.blog-title {
   font-weight: 400;
 }
 
+@include contentText('.form-label') {
+  font-weight: 600;
+  float: left;
+}
+
 @include contentText('p.bold') {
   font-weight: 700;
 }

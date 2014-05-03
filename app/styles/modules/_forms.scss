@@ -43,7 +43,7 @@
     float: left;
     margin: 0 0 15px 0;
     &:focus {
-      border: $textTwo;
+      border: 1px solid $textTwo;
     }
   }
 
@@ -59,8 +59,16 @@
     float: left;
     margin: 0 0 15px 0;
     &:focus {
-      border: $textTwo;
+      border: 1px solid $textTwo;
     }
+  }
+
+  .checkbox {
+    width: 20px;
+    height: 20px;
+    border: 1px solid $border;
+    margin: 0 10px 15px 0;
+    float: left;
   }
 
   [class$="-block"] {

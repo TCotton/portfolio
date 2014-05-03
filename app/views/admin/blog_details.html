@@ -56,15 +56,21 @@
             </span>
 
             <span class="displayImage-block">
-      <label for="displayImage" class="visuallyhidden">"Display image URL. Optional. The image must be 898px x 345px"</label>
+      <label for="displayImage" class="visuallyhidden">"Display image URL. Optional. The image must be 898px x
+        345px"</label>
       <input type="url" id="displayImage" name="displayImage" value=""
              placeholder="Display image URL. Optional. The image must be 898px x 345px"
              class="input" data-ng-model="editBlogFormData.displayImage"/>
       </span>
 
-      <input type="hidden" value="" data-ng-model="editBlogFormData._id" />
-      <input type="hidden" value="" data-ng-model="editBlogFormData.uniqueId" />
-      <input type="hidden" value="" data-ng-model="editBlogFormData.publishedDate" />
+      <span class="clearfix comment-block">
+      <input id="allowComments" type="checkbox" class="checkbox" name="allowComments" data-ng-model="editBlogFormData.allowComments" />
+      <label for="allowComments" class="form-label">Open comments on this blog article</label>
+      </span>
+
+      <input type="hidden" value="" data-ng-model="editBlogFormData._id"/>
+      <input type="hidden" value="" data-ng-model="editBlogFormData.uniqueId"/>
+      <input type="hidden" value="" data-ng-model="editBlogFormData.publishedDate"/>
 
       <input type="submit" value="submit" class="button-contact"/>
 
@@ -78,7 +84,8 @@
     <div class="effeckt-content effeckt-modal" id="effeckt-modal">
       <header data-ng-click=""><a href="">Are you sure?</a></header>
       <div class="effeckt-modal-content">
-        <section data-ng-click=""><a href="" data-ng-click="AdminEditBlogCtrl.removeArticle()">Click here to delete article.</a></section>
+        <section data-ng-click=""><a href="" data-ng-click="AdminEditBlogCtrl.removeArticle()">Click here to delete
+          article.</a></section>
         <button data-ng-click="AdminEditBlogCtrl.hidePopup()" class="effeckt-modal-close">Close me!</button>
       </div>
     </div>

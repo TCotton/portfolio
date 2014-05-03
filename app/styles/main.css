@@ -1012,6 +1012,16 @@ h3.blog-title {
 }
 
 /* line 86, modules/_typography.scss */
+.content-text .form-label {
+  font-size: 1.6em;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 1.5625em;
+  color: #666666;
+  font-weight: 600;
+  float: left;
+}
+
+/* line 86, modules/_typography.scss */
 .content-text p.bold {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
@@ -1045,19 +1055,19 @@ h3.blog-title {
   font-style: italic;
 }
 
-/* line 117, modules/_typography.scss */
+/* line 122, modules/_typography.scss */
 .content-text section > div a {
   color: #666666;
 }
 
-/* line 121, modules/_typography.scss */
+/* line 126, modules/_typography.scss */
 .content-text section > div table {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
   margin-bottom: 1.5625em;
 }
 
-/* line 125, modules/_typography.scss */
+/* line 130, modules/_typography.scss */
 .content-text section > div h3, .content-text section > div h4, .content-text section > div h5, .content-text section > div h6 {
   font-size: 2.6em;
   font-family: 'Open Sans', sans-serif;
@@ -1066,7 +1076,7 @@ h3.blog-title {
   color: #666666;
 }
 
-/* line 131, modules/_typography.scss */
+/* line 136, modules/_typography.scss */
 .content-text section > div pre {
   font-size: 1.6em;
   font-family: monospace, serif;
@@ -1084,7 +1094,7 @@ h3.blog-title {
   font-weight: 700;
 }
 
-/* line 141, modules/_typography.scss */
+/* line 146, modules/_typography.scss */
 p.minor-title {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
@@ -1093,7 +1103,7 @@ p.minor-title {
   margin-bottom: 0;
 }
 
-/* line 148, modules/_typography.scss */
+/* line 153, modules/_typography.scss */
 .blog #blog-content a:hover:after {
   content: "(Link: " attr(href) ")";
   color: #1d7a94;
@@ -1102,7 +1112,7 @@ p.minor-title {
   text-decoration: underline;
 }
 
-/* line 158, modules/_typography.scss */
+/* line 163, modules/_typography.scss */
 .content-text a.underline {
   /* On the desktop this displays a URL of the external link above the link text */
   text-decoration: none;
@@ -1115,7 +1125,7 @@ p.minor-title {
   -moz-hyphens: auto;
   hyphens: auto;
 }
-/* line 166, modules/_typography.scss */
+/* line 171, modules/_typography.scss */
 .content-text a.underline[rel="external"]::after {
   content: " " attr(href) " ";
   position: absolute;
@@ -1130,41 +1140,41 @@ p.minor-title {
   transition: opacity 0.5s;
   white-space: nowrap;
 }
-/* line 178, modules/_typography.scss */
+/* line 183, modules/_typography.scss */
 .content-text a.underline[rel="external"]:hover::after {
   opacity: 1;
 }
-/* line 181, modules/_typography.scss */
+/* line 186, modules/_typography.scss */
 .content-text a.underline:link {
   color: #666666;
 }
-/* line 184, modules/_typography.scss */
+/* line 189, modules/_typography.scss */
 .content-text a.underline:visited {
   color: gray;
 }
-/* line 187, modules/_typography.scss */
+/* line 192, modules/_typography.scss */
 .content-text a.underline:focus {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
-/* line 191, modules/_typography.scss */
+/* line 196, modules/_typography.scss */
 .content-text a.underline:hover {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
-/* line 196, modules/_typography.scss */
+/* line 201, modules/_typography.scss */
 .content-text a.underline:active {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
 
 @media (max-width: 979px) {
-  /* line 209, modules/_typography.scss */
+  /* line 214, modules/_typography.scss */
   .content-text a.underline[rel="external"]::after {
     display: none;
   }
 }
-/* line 216, modules/_typography.scss */
+/* line 221, modules/_typography.scss */
 h4.blog-sidebar-header {
   font-size: 3em;
   font-family: 'Open Sans', sans-serif;
@@ -1173,7 +1183,7 @@ h4.blog-sidebar-header {
   color: #666666;
 }
 
-/* line 222, modules/_typography.scss */
+/* line 227, modules/_typography.scss */
 .blog-sidebar-text p, ul.blog-sidebar-text {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
@@ -1182,7 +1192,7 @@ h4.blog-sidebar-header {
   color: #666666;
 }
 
-/* line 228, modules/_typography.scss */
+/* line 233, modules/_typography.scss */
 h3.contact-header {
   font-size: 3em;
   font-family: 'Open Sans', sans-serif;
@@ -1191,7 +1201,7 @@ h3.contact-header {
   color: #666666;
 }
 
-/* line 234, modules/_typography.scss */
+/* line 239, modules/_typography.scss */
 h3.project-header {
   font-size: 3em;
   font-family: 'Open Sans', sans-serif;
@@ -1199,7 +1209,7 @@ h3.project-header {
   color: white;
 }
 
-/* line 240, modules/_typography.scss */
+/* line 245, modules/_typography.scss */
 .footer-top-text p, ul.footer-top-text {
   font-size: 2em;
   font-family: 'Open Sans', sans-serif;
@@ -1209,14 +1219,14 @@ h3.project-header {
   color: #666666;
 }
 
-/* line 247, modules/_typography.scss */
+/* line 252, modules/_typography.scss */
 .code-preview {
   font-size: 12px;
   color: #666666;
   line-height: 16px;
 }
 
-/* line 253, modules/_typography.scss */
+/* line 258, modules/_typography.scss */
 p.footer-copyright {
   font-size: 1.3em;
   font-family: 'Open Sans', sans-serif;
@@ -1387,7 +1397,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
 }
 /* line 45, modules/_forms.scss */
 .contact .input:focus, .comments .input:focus, .login .input:focus, .user-details .input:focus {
-  border: #666666;
+  border: 1px solid #666666;
 }
 /* line 50, modules/_forms.scss */
 .contact .textarea, .comments .textarea, .login .textarea, .user-details .textarea {
@@ -1405,15 +1415,23 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
 }
 /* line 61, modules/_forms.scss */
 .contact .textarea:focus, .comments .textarea:focus, .login .textarea:focus, .user-details .textarea:focus {
-  border: #666666;
+  border: 1px solid #666666;
 }
 /* line 66, modules/_forms.scss */
+.contact .checkbox, .comments .checkbox, .login .checkbox, .user-details .checkbox {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #cccccc;
+  margin: 0 10px 15px 0;
+  float: left;
+}
+/* line 74, modules/_forms.scss */
 .contact [class$="-block"], .comments [class$="-block"], .login [class$="-block"], .user-details [class$="-block"] {
   position: relative;
   display: block;
   clear: both;
 }
-/* line 71, modules/_forms.scss */
+/* line 79, modules/_forms.scss */
 .contact [class$="-block"] .error-message, .comments [class$="-block"] .error-message, .login [class$="-block"] .error-message, .user-details [class$="-block"] .error-message {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
@@ -1429,37 +1447,37 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
-  /* line 101, modules/_forms.scss */
+  /* line 109, modules/_forms.scss */
   input[type='text']:focus, input[type='url']:focus, input[type='email']:focus, textarea:focus {
     font-size: 16px;
   }
 }
 @media screen and (-webkit-min-device-pixel-ratio: 0) and (max-width: 979px) {
-  /* line 107, modules/_forms.scss */
+  /* line 115, modules/_forms.scss */
   input[type='text']:focus, input[type='url']:focus, input[type='email']:focus, textarea:focus {
     font-size: 15px;
   }
 }
 @media screen and (min--moz-device-pixel-ratio: 0) {
   /* another firefox bug :( */
-  /* line 118, modules/_forms.scss */
+  /* line 126, modules/_forms.scss */
   .contact .input, .comments .input, .login .input, .user-details .input {
     width: calc(70% - 20px);
     height: 56px;
   }
-  /* line 123, modules/_forms.scss */
+  /* line 131, modules/_forms.scss */
   .contact .textarea, .comments .textarea, .login .textarea, .user-details .textarea {
     width: calc(100% - 20px);
     height: 261px;
   }
 }
 @media (max-width: 767px) {
-  /* line 134, modules/_forms.scss */
+  /* line 142, modules/_forms.scss */
   .contact .input, .comments .input, .login .input, .user-details .input {
     width: 100%;
     margin-bottom: 10px;
   }
-  /* line 139, modules/_forms.scss */
+  /* line 147, modules/_forms.scss */
   .contact .textarea, .comments .textarea, .login .textarea, .user-details .textarea {
     margin-bottom: 10px;
   }
