@@ -1,10 +1,5 @@
 /**
  * Created by awalpole on 19/04/2014.
- * TODO:
- * 1. Cache isn't working as expected
- * 2. Consider using node-cache: https://www.npmjs.org/package/node-cache
- * 3. Refactor to completely use EMCAScript 5
- * 3. Refactor functions and promises to make it more efficient
  */
 
 'use strict';
