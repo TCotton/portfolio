@@ -7,13 +7,18 @@
 var sm = require('sitemap');
 var fs = require('fs');
 
-if (fs.existsSync('./server/blogposts.json')) {
 
-  var createBlogLinks = function () {
+var createBlogLinks = function () {
 
-    var data;
-    var posts;
-    var url;
+  var data;
+  var posts;
+  var url;
+
+  url = [];
+
+  url.push({url: '/#!/', changefreq: 'monthly', priority: 1.0});
+
+  if (fs.existsSync('./server/blogposts.json')) {
 
     data = fs.readFileSync('./server/blogposts.json', 'utf8', function (err) {
       if (err) {
@@ -23,10 +28,6 @@ if (fs.existsSync('./server/blogposts.json')) {
 
     posts = JSON.parse(data);
 
-    url = [];
-
-    url.push({url: '/#!/', changefreq: 'monthly', priority: 1.0});
-
     Object.keys(posts).forEach(function (key) {
 
       var blogURl = '/#!/blog/' + posts[key].uniqueId + '/' + posts[key].url;
@@ -35,11 +36,12 @@ if (fs.existsSync('./server/blogposts.json')) {
 
     });
 
-    return url;
+  }
 
-  };
+  return url;
 
-}
+};
+
 
 /* create sitemap below - needed for SEO purposes */
 
