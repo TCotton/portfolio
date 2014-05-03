@@ -91,8 +91,9 @@
       do {
 
         var regEx = new RegExp('\\b\\s' + stopwords[x] + '\\s\\b', 'g');
+        var regExTwo = new RegExp('^' + stopwords[x] + '\\s\\b');
 
-        newTitle = newTitle.replace(regEx, '-').trim();
+        newTitle = newTitle.replace(regEx, '-').trim().replace(regExTwo, '');
 
         x += 1;
 

@@ -17,13 +17,15 @@ if (fs.existsSync('./server/blogposts.json')) {
 
     data = fs.readFileSync('./server/blogposts.json', 'utf8', function (err) {
       if (err) {
-        throw err;
+        console.log(err);
       }
     });
 
     posts = JSON.parse(data);
 
     url = [];
+
+    url.push({url: '/#!/', changefreq: 'monthly', priority: 1.0});
 
     Object.keys(posts).forEach(function (key) {
 
@@ -32,8 +34,6 @@ if (fs.existsSync('./server/blogposts.json')) {
       url.push({url: blogURl, changefreq: 'weekly', priority: 0.7});
 
     });
-
-    url.push({url: '/#!/', changefreq: 'monthly', priority: 1.0});
 
     return url;
 
