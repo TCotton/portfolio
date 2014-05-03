@@ -163,7 +163,7 @@ module.exports = function (grunt) {
       all: [
         'Gruntfile.js',
         '<%= yeoman.app %>/scripts/{,*/}*.js',
-        '<%= yeoman.server %>/{,*/}*.js',
+        '<%= yeoman.server %>/**/*.js',
         '!<%= yeoman.app %>/**/scripts/config/constants.js', // ignore auto generated constants file'
       ],
       test: {

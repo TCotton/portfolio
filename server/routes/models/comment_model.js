@@ -11,6 +11,7 @@ module.exports = mongoose.model('Comments', {
   email: String,
   url: String,
   message: String,
+  blogId: String,
   published: Boolean,
   publishedDate: Date
 });
