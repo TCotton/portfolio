@@ -9,13 +9,11 @@
 
 'use strict';
 
-
 var gfeed = require('google-feed-api');
 var _ = require('underscore');
 var q = require('q');
 var Blog = require('../routes/models/blog_model');
 var moment = require('moment');
-var NodeCache = require( 'node-cache' );
 
 var _sortOldBlogPosts;
 var _totalArticlesCount;
@@ -25,7 +23,26 @@ var _newBlogPosts;
 var _mergeBlogPosts;
 var _closeBlogComments;
 
-var myCache = new NodeCache();
+
+/** Simple getter setter cache class
+ * **/
+var BlogCacheClass = function (val) {
+
+  var value = val;
+
+  Object.defineProperty(this, 'cache', {
+    get: function () {
+      return value;
+    },
+    set: function (val) {
+      value = val;
+    }
+  });
+
+};
+
+var OldBlogPosts = new BlogCacheClass();
+var OldBlogPostTotal = new BlogCacheClass();
 
 var RSSClass = function () {
 
@@ -201,7 +218,7 @@ var RSSClass = function () {
 
       // if there is an error retrieving, send the error. nothing after res.send(err) will execute
       if (err) {
-        return new Error('Could not load Blog document');
+        return new Error(err);
       }
 
       this.totalNewArticles = _.size(blogs);
@@ -245,23 +262,9 @@ var RSSClass = function () {
 
 RSSClass.prototype.blogItems = function (callback) {
 
-  myCache.get('oldBlogPosts', function (err, value) {
-    if (err) {
-      console.log(err);
-    }
-
-    this.oldBlogPosts = value;
-
-  }.bind(this));
-
-  myCache.get('totalOldArticles', function (err, value) {
-    if (err) {
-      console.log(err);
-    }
-
-    this.totalOldArticles = value;
-
-  }.bind(this));
+  // retrieve the cache
+  this.oldBlogPosts = JSON.parse(OldBlogPosts.cache);
+  this.totalOldArticles = JSON.parse(OldBlogPostTotal.cache);
 
   q.fcall(_newBlogPosts)
     .then(_mergeBlogPosts)
@@ -296,7 +299,7 @@ RSSClass.prototype.parseFeed = function (url, callback) {
      * These don't need to be chained together in synchronous order
      * Call new blogs in tandem with parsing the RSS feed of the old blog posts
      * **/
-    q.fcall(function(){
+    q.fcall(function () {
       _sortOldBlogPosts();
       _seoFriendly();
       _closeBlogComments();
@@ -306,17 +309,10 @@ RSSClass.prototype.parseFeed = function (url, callback) {
       .then(_totalArticlesCount)
       .then(function (data) {
 
-        myCache.set('OldBlogPosts', this.oldBlogPosts, function (err) {
-          if (err) {
-            console.log(err);
-          }
-        });
-
-        myCache.set('totalOldArticles', this.totalOldArticles, function (err) {
-          if (err) {
-            console.log(err);
-          }
-        });
+        // set cache here
+        // cache old RSS feed and data
+        OldBlogPosts.cache = JSON.stringify(this.oldBlogPosts);
+        OldBlogPostTotal.cache = JSON.stringify(this.totalOldArticles);
 
         callback(data);
 
@@ -343,7 +339,7 @@ module.exports = function (app) {
 
     // if oldBlogPosts are in the cache then don't use the parseFeed method
     // just retrieve them from the cache
-    if (!_.isEmpty(myCache.get('OldBlogPosts')) && !_.isEmpty(myCache.get('OldBlogPostTotal'))) {
+    if (OldBlogPosts.cache && OldBlogPostTotal.cache) {
 
       OldBlogFeed.blogItems(function (data) {
 
