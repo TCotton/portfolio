@@ -118,11 +118,17 @@ describe('Unit: Templates', function () {
   });
 
   it('loads admin add blog page at /admin/add-blog', function () {
-
-
     $httpBackend.expectGET('views/admin/add_blog.html')
       .respond(200);
     location.path('/admin/add-blog');
+    rootScope.$digest(); // call the digest loop
+    $httpBackend.flush();
+  });
+
+  it('loads admin edit comments page at /admin/blog-comments', function () {
+    $httpBackend.expectGET('views/admin/comment_details.html')
+      .respond(200);
+    location.path('/admin/blog-comments');
     rootScope.$digest(); // call the digest loop
     $httpBackend.flush();
   });

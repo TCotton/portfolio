@@ -1,7 +1,7 @@
 /**
  * Created by awalpole on 19/04/2014.
  */
-"use strict";
+'use strict';
 
 var gfeed = require('google-feed-api');
 //var _ = require('underscore');
