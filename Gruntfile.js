@@ -371,7 +371,8 @@ module.exports = function (grunt) {
     'concurrent:test',
     'ngconstant:test',
     'express:test',
-    'karma'
+    'karma',
+    'validate-package'
   ]);
 
   grunt.registerTask('build', [

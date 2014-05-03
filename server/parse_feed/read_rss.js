@@ -9,12 +9,13 @@
 
 'use strict';
 
+
 var gfeed = require('google-feed-api');
 var _ = require('underscore');
 var q = require('q');
 var Blog = require('../routes/models/blog_model');
 var moment = require('moment');
-var NodeCache = require( "node-cache" );
+var NodeCache = require( 'node-cache' );
 
 var _sortOldBlogPosts;
 var _totalArticlesCount;
@@ -200,7 +201,7 @@ var RSSClass = function () {
 
       // if there is an error retrieving, send the error. nothing after res.send(err) will execute
       if (err) {
-        new throwError(err);
+        return new Error('Could not load Blog document');
       }
 
       this.totalNewArticles = _.size(blogs);
@@ -284,7 +285,7 @@ RSSClass.prototype.parseFeed = function (url, callback) {
     /** After retrieving data using Google RSS API store it into the cache and count number of old blog posts
      * **/
     if (data.error || !data) {
-      new throwError('Error fetching feeds');
+      return new Error('Error fetching feeds');
     }
 
     this.totalOldArticles = _.size(data.feed.entries);
@@ -329,6 +330,8 @@ RSSClass.prototype.parseFeed = function (url, callback) {
 module.exports = function (app) {
 
   app.get('/api/oldBlog/get', function (req, res) {
+
+    var OldBlogFeed = new RSSClass();
 
     Object.defineProperty(OldBlogFeed, 'RSSFeed', {
       value: req.query.RSSFeed

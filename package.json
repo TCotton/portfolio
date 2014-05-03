@@ -25,7 +25,8 @@
     "google-feed-api": "~0.0.2",
     "q": "~1.0.1",
     "moment": "~2.6.0",
-    "node-cache": "~1.0.0"
+    "node-cache": "~1.0.0",
+    "helmet": "~0.2.1"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
@@ -73,7 +74,8 @@
     "matchdep": "~0.3.0",
     "grunt-express": "~1.2.1",
     "grunt-open": "~0.2.3",
-    "grunt-livereload": "~0.1.3"
+    "grunt-livereload": "~0.1.3",
+    "grunt-nsp-package": "~0.0.4"
   },
   "engines": {
     "node": ">=0.10.26"

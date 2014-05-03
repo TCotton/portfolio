@@ -2,9 +2,9 @@
  * Created by awalpole on 30/04/2014.
  */
 
-var mail = require('nodemailer').mail;
-
 'use strict';
+
+var mail = require('nodemailer').mail;
 
 module.exports = function (app) {
 

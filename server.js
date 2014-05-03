@@ -7,6 +7,7 @@ var express = require('express');
 var http = require('http');
 var path = require('path');
 var morgan = require('morgan');
+var helmet = require('helmet')
 var bodyParser = require('body-parser');
 var favicon = require('static-favicon');
 var cookieParser = require('cookie-parser');
@@ -15,6 +16,10 @@ var compress = require('compression');
 var app = express(); 								// create our app w/ express
 var mongoose = require('mongoose'); 					// mongoose for mongodb
 app.use(require('prerender-node').set('prerenderToken', 'V9elFcuI9mP8exKuOZ0Z'));
+app.use(helmet.xframe('deny'));
+app.use(helmet.iexss());
+app.use(helmet.contentTypeOptions());
+app.use(helmet.hidePoweredBy());
 
 var database = require('./server/config/database'); 			// load the database config
 
