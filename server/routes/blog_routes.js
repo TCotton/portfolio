@@ -96,7 +96,10 @@ module.exports = function (app) {
         bl.contentSnippet = req.body.contentSnippet;
         bl.url = req.body.url;
         bl.displayImage = req.body.displayImage;
-        bl.commentsOpen = req.body.allowComments;
+        bl.commentsOpen = req.body.commentsOpen;
+
+        console.log(bl);
+        console.log(req.body);
 
         bl.save(function (err) {
 

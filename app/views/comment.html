@@ -4,6 +4,8 @@
 
   <h5 class="content-title" data-ng-if="commentsOpen">Comments below</h5>
 
+  <p data-ng-bind="commentFormData.message"></p>
+
   <form novalidate="novalidate" name="commentForm" data-ng-if="commentsOpen"
         data-ng-submit="BlogCommentCtrl.submitComment(commentForm.$valid)">
 
@@ -43,6 +45,8 @@
             <label for="zipcode" class="visuallyhidden">Your zipcode</label>
             <input type="text" id="zipcode" value="" maxlength="64" autocomplete="off"/>
             </span>
+
+    <input type="hidden" value="" data-ng-model="commentFormData.blogId" />
 
     <input type="submit" value="Post message" class="button-contact"/>
 

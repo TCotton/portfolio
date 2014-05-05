@@ -16,6 +16,12 @@
     "userFind": "/api/user/find",
     "sendMail": "/api/sendmail"
   },
+  "commentDetails": {
+    "name": "Andy Walpole",
+    "email": "me@andywalpole.me",
+    "url": "http://web.andywalpole.me/#!/",
+    "message": "This is a blog comment"
+  },
   "editedBlogData": {
     "title": "AngularJS and CORs support in Internet Explorer 9",
     "author": "Andy Walpole",
