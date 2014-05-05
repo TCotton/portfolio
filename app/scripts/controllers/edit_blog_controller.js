@@ -130,7 +130,7 @@
     this.$scope.editBlogFormData.uniqueId = data.uniqueId;
     this.$scope.editBlogFormData.publishedDate = data.publishedDate;
     this.$scope.editBlogFormData._id = data._id;
-
+    this.$scope.editBlogFormData.commentsOpen = data.commentsOpen;
   };
 
   /** Called when the user submits the form
@@ -156,7 +156,8 @@
         publishedDate: this.$scope.editBlogFormData.publishedDate,
         id: this.$scope.editBlogFormData._id,
         url: this.$scope.editBlogFormData.url,
-        contentSnippet: this.$scope.editBlogFormData.contentSnippet
+        contentSnippet: this.$scope.editBlogFormData.contentSnippet,
+        allowComments: this.$scope.editBlogFormData.commentsOpen
       };
 
       var returnedPromise = this.MongoBlogService.editBlogPosts(formData);
@@ -263,7 +264,8 @@
         this.$scope.dataToDelete.category = null;
         this.$scope.dataToDelete.content = null;
         this.$scope.dataToDelete.displayImage = null;
-        this.$scope.dataToDelete._id.$oid = null;
+        this.$scope.dataToDelete._id = null;
+        this.$scope.dataToDelete.commentsOpen = null;
 
         // update page again
         this.getBlogs();

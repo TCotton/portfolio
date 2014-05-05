@@ -14,6 +14,7 @@
     <h3 class="content-title" data-ng-init="AdminEditBlogCtrl.getBlogs();">Blog articles listed below</h3>
 
     <ul data-ng-repeat="blog in blogContent | orderBy: '-publishedDate' track by $index">
+      {{ blog.commentsOpen }}
       <li data-ng-bind="blog.title"></li>
       <li data-ng-click="AdminEditBlogCtrl.editArticle(blog)"><a href="">Edit this article</a></li>
       <li data-ng-click="AdminEditBlogCtrl.deleteArticle(blog)"><a href="">Delete this article</a></li>
@@ -64,7 +65,7 @@
       </span>
 
       <span class="clearfix comment-block">
-      <input id="allowComments" type="checkbox" class="checkbox" name="allowComments" data-ng-model="editBlogFormData.allowComments" />
+      <input id="allowComments" type="checkbox" class="checkbox" name="allowComments" data-ng-model="editBlogFormData.commentsOpen" />
       <label for="allowComments" class="form-label">Open comments on this blog article</label>
       </span>
 

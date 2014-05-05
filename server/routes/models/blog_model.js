@@ -15,5 +15,6 @@ module.exports = mongoose.model('Blog', {
   publishedDate: String,
   url: String,
   uniqueId: String,
-  displayImage: String
+  displayImage: String,
+  commentsOpen: Boolean
 });
