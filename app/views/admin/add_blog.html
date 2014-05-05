@@ -55,6 +55,10 @@
              class="input" data-ng-model="addBlogFormData.displayImage"/>
       </span>
 
+      <span class="clearfix comment-block">
+      <input id="allowComments" type="checkbox" class="checkbox" name="allowComments" data-ng-model="addBlogFormData.allowComments" />
+      <label for="allowComments" class="form-label">Open comments on this blog article</label>
+      </span>
             <input type="submit" value="submit" class="button-contact" data-ng-disabled="formSuccess"/>
 
         </form>

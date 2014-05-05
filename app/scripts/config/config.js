@@ -48,7 +48,7 @@ angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$locatio
 
       if (!$angularCacheFactory.get('authCache').get('logginIn') || $angularCacheFactory.get('authCache').get('logginIn') !== $rootScope.userid) {
 
-        $location.path('/login');
+        //$location.path('/login');
 
       }
     }
