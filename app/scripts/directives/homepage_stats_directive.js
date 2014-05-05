@@ -21,16 +21,14 @@ angular.module('portfolioApp.directives').directive('homepageStatsDirective', ['
 
       // work out the number of day I have been a full time web developer since April 1 2008
       // now milliseconds minus milliseconds from April 1, 2009 then calculate the days from this figure
-      var calculateDate = function() {
 
-        var start = moment('April 1, 2009').valueOf();
-        var now = moment().valueOf();
-        var totalDays = (now - start) / (1000 * 60 * 60 * 24);
+      var start = moment('April 1, 2009').valueOf();
+      var now = moment().valueOf();
+      var totalDays = (now - start) / (1000 * 60 * 60 * 24);
 
-        // now add the days to the scope
-        return Math.round(totalDays).toString();
+      // now add the days to the scope
+      var calculateDate = Math.round(totalDays).toString();
 
-      };
 
       /** Only display the data that fits the screen width
        * Less than 979px = display three blocks of data
@@ -43,12 +41,12 @@ angular.module('portfolioApp.directives').directive('homepageStatsDirective', ['
         if (!mql.matches) {
 
           scope.stats = STATS;
-          scope.stats.block1.header = calculateDate();
+          scope.stats.block1.header = calculateDate;
 
         } else {
 
           scope.stats = _.toArray(STATS).slice(0, 3);
-          scope.stats[0].header = calculateDate();
+          scope.stats[0].header = calculateDate;
 
         }
 
@@ -63,7 +61,7 @@ angular.module('portfolioApp.directives').directive('homepageStatsDirective', ['
       } else {
 
         scope.stats = STATS;
-        scope.stats.block1.header = calculateDate();
+        scope.stats.block1.header = calculateDate;
 
       }
 
