@@ -3,7 +3,6 @@
  */
 
 'use strict';
-/*
 
 var Comments = require('./models/comment_model');
 
@@ -13,4 +12,3 @@ module.exports = function (app) {
 
 
 };
-*/

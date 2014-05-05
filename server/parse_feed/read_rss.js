@@ -4,10 +4,10 @@
 'use strict';
 
 var gfeed = require('google-feed-api');
-//var _ = require('underscore');
+var _ = require('underscore');
 var q = require('q');
 var Blog = require('../routes/models/blog_model');
-//var moment = require('moment');
+var moment = require('moment');
 var fs = require('fs');
 
 var _sortOldBlogPosts;

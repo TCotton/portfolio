@@ -43,13 +43,15 @@ angular.module('portfolioApp.directives').directive('homepageStatsDirective', ['
         if (!mql.matches) {
 
           scope.stats = STATS;
+          scope.stats.block1.header = calculateDate();
 
         } else {
 
           scope.stats = _.toArray(STATS).slice(0, 3);
+          scope.stats[0].header = calculateDate();
 
         }
-        scope.stats.block1.header = calculateDate();
+
       };
 
       if ($window.matchMedia) {
