@@ -1,0 +1,52 @@
+<div class="comments" data-ng-controller="CommentCtrl as BlogCommentCtrl">
+
+  <h5 class="content-title" data-ng-if="!commentsOpen">Blog comments are not open for this article</h5>
+
+  <h5 class="content-title" data-ng-if="commentsOpen">Comments below</h5>
+
+  <form novalidate="novalidate" name="commentForm" data-ng-if="commentsOpen"
+        data-ng-submit="BlogCommentCtrl.submitComment(commentForm.$valid)">
+
+        <span class="title-block">
+        <label for="name" class="visuallyhidden">Your name</label>
+          <span data-ng-show="commentForm.name.$invalid && commentBlogFormSubmit"
+                class="error-message">Please provide a name.</span>
+        <input type="text" name="name" id="name" value="" placeholder="Name" required="required"
+               data-ng-model="commentFormData.name" data-ng-required="true" class="input" maxlength="120"/>
+        </span>
+
+        <span class="email-block">
+        <label for="email" class="visuallyhidden">Your email address</label>
+           <span data-ng-show="commentForm.email.$invalid && commentBlogFormSubmit"
+                 class="error-message">Please provide an email address.</span>
+        <input type="email" name="email" id="email" value="" placeholder="Email (will be kept private)"
+               required="required" data-ng-model="commentFormData.email" data-ng-required="true"
+               class="input" maxlength="200"/>
+        </span>
+
+        <span class="url-block">
+        <label for="url" class="visuallyhidden">Your website address</label>
+        <input type="url" id="url" name="url" value="" placeholder="Website" class="input"
+               data-ng-model="commentFormData.url" maxlength="200"/>
+        </span>
+
+         <span class="message-block">
+        <label for="message" class="visuallyhidden">Your comments</label>
+             <span data-ng-show="commentForm.message.$invalid && commentBlogFormSubmit"
+                   class="error-message">Please provide a comment.</span>
+        <textarea id="message" cols="10" rows="10" placeholder="Your message" required="required"
+                  data-ng-required="true" data-ng-model="commentFormData.message" name="message"
+                  class="textarea" maxlength="2000"></textarea>
+           </span>
+
+            <span class="hide">
+            <label for="zipcode" class="visuallyhidden">Your zipcode</label>
+            <input type="text" id="zipcode" value="" maxlength="64" autocomplete="off"/>
+            </span>
+
+    <input type="submit" value="Post message" class="button-contact"/>
+
+  </form>
+
+</div>
+<!-- end comments -->

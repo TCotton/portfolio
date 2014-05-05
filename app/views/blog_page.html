@@ -26,47 +26,12 @@
 
     </article>
 
-    <div class="comments">
-
-      <h5 class="content-title" data-ng-if="!commentsOpen">Blog comments are not open for this article</h5>
-
-      <h5 class="content-title" data-ng-if="commentsOpen">Comments below</h5>
-
-      <form action="/" method="post" data-ng-if="commentsOpen">
-
-        <label for="name" class="visuallyhidden">Your name</label>
-        <input type="text" id="name" value="" placeholder="Name" required="required" class="input" maxlength="120"/>
-
-        <label for="email" class="visuallyhidden">Your email address</label>
-        <input type="email" id="email" value="" placeholder="Email (will be kept private)" required="required"
-               class="input" maxlength="120"/>
-
-        <label for="url" class="visuallyhidden">Your website address</label>
-        <input type="url" id="url" value="" placeholder="Website" required="required" class="input" maxlength="120"/>
-
-        <label for="message" class="visuallyhidden">Your comments</label>
-        <textarea id="message" cols="10" rows="10" placeholder="Your message" required="required"
-                  class="textarea" maxlength="1000"></textarea>
-
-            <span class="hide">
-            <label for="zipcode" class="visuallyhidden">Your zipcode</label>
-            <input type="text" id="zipcode" value="" maxlength="64" autocomplete="off"/>
-            </span>
-
-        <input type="submit" value="Post message" class="button-contact"/>
-
-      </form>
-
-    </div>
-    <!-- end comments -->
-
+    <div data-ng-include src="'views/comment.html'"></div>
 
   </div>
   <!-- end left large -->
 
-
   <div data-ng-include src="'views/sidebar.html'"></div>
   <!-- end right small -->
-
 
 </div><!-- end main content -->

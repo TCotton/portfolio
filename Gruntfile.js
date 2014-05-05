@@ -84,7 +84,7 @@ module.exports = function (grunt) {
         options: {
           server: path.resolve('./server.js'),
           livereload: true,
-          serverreload: true,
+          serverreload: false,
           open: true,
           bases: [path.resolve('./.tmp'), path.resolve(__dirname, yeomanConfig.app)]
         }
@@ -163,7 +163,7 @@ module.exports = function (grunt) {
       all: [
         'Gruntfile.js',
         '<%= yeoman.app %>/scripts/{,*/}*.js',
-        '<%= yeoman.server %>/**/*.js',
+        //'<%= yeoman.server %>/**/*.js',
         '!<%= yeoman.app %>/**/scripts/config/constants.js', // ignore auto generated constants file'
       ],
       test: {
