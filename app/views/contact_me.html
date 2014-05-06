@@ -35,7 +35,7 @@
       <label for="name" class="visuallyhidden">Your full name</label>
       <span data-ng-show="contactForm.name.$invalid && submitted" class="error-message">Please supply your name.</span>
       <input type="text" id="name" name="name" value="" placeholder="Your full name" required="required" class="input"
-             data-ng-required="true" data-ng-model="contact.name" maxlength="64" autocorrect="off" autocapitalize="off"/>
+             data-ng-required="true" data-ng-model="contact.name" maxlength="64" />
       </span>
 
       <span class="email-block">
@@ -49,7 +49,7 @@
       <label for="message" class="visuallyhidden">Please write a message</label>
       <span data-ng-show="contactForm.message.$invalid && submitted" class="error-message">Don't forget to write a message!</span>
       <textarea id="message" cols="10" rows="10" name="message" placeholder="Your message" required="required"
-                class="textarea" data-ng-required="true" data-ng-model="contact.message" maxlength="500"></textarea>
+                class="textarea" data-ng-required="true" data-ng-model="contact.message" maxlength="1000"></textarea>
         </span>
 
             <span class="hide">
