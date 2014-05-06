@@ -2,7 +2,7 @@
  * Created by awalpole on 05/05/2014.
  */
 'use strict';
-describe('Controller: AddBlogCtrl as AdminAddBlogCtrl', function () {
+describe('Controller: ACommentCtrl as BlogCommentCtrl', function () {
 
   var $controller;
   var $rootScope;
@@ -24,6 +24,8 @@ describe('Controller: AddBlogCtrl as AdminAddBlogCtrl', function () {
 
     scope = $rootScope.$new();
 
+    $rootScope.currentPage = 'http://localhost:9000/#!/blog/139938/css-reset-starter-kit';
+
     BlogCommentCtrl = $controller('CommentCtrl as BlogCommentCtrl', {
       $scope: scope
     });
@@ -32,20 +34,20 @@ describe('Controller: AddBlogCtrl as AdminAddBlogCtrl', function () {
 
   }));
 
-  iit('After submission of blog of local scope form fields will be null: BlogCommentCtrl.submitComment()', function () {
+  it('After submission of blog of local scope form fields will be null: BlogCommentCtrl.submitComment()', function () {
 
     expect(scope.commentFormData.name).toBe(MOCK_DATA.commentDetails.name);
     expect(scope.commentFormData.email).toBe(MOCK_DATA.commentDetails.email);
     expect(scope.commentFormData.url).toBe(MOCK_DATA.commentDetails.url);
     expect(scope.commentFormData.message).toBe(MOCK_DATA.commentDetails.message);
 
-    //$httpBackend.expect('POST', '/api/blog/add').respond(200);
+    $httpBackend.expect('POST', '/api/comment/add').respond(200);
 
     scope.$apply(function () {
       BlogCommentCtrl.submitComment(true);
     });
 
-   // $httpBackend.flush();
+    $httpBackend.flush();
 
     expect(scope.commentFormData.name).toBe(null);
     expect(scope.commentFormData.email).toBe(null);
