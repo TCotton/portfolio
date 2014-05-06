@@ -48,7 +48,25 @@
 
   };
 
-  CommentAdminCtrl.prototype.deleteComment = function() {
+  CommentAdminCtrl.prototype.deleteComment = function(data) {
+
+    var returnedPromise = this.MongoCommentService.deleteComment(data._id);
+
+    returnedPromise.then(function (value) {
+
+      if (value) {
+
+        // update page again
+        this.getComments();
+
+      }
+
+    }.bind(this), function (value) {
+
+      this.$log.warn('Failure: CommentAdminCtrl.deleteComment()');
+      this.$log.warn(value);
+
+    }.bind(this));
 
   };
 
