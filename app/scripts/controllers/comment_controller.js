@@ -25,6 +25,7 @@
     this.$scope.commentBlogFormSubmit = false;
     this.$scope.publishComments = null;
     this.$scope.commentFormData = {};
+    this.$scope.zipRegex = /(?!.*)/;
 
     // find blogId number form the URL string, ie /#!/blog/136324/using-autoload-in-object-orientated-wordpress-plugin
     this.$scope.commentFormData.blogId = $rootScope.currentPage.substring($rootScope.currentPage.indexOf('/#!/') + 9, $rootScope.currentPage.indexOf('/#!/') + 15);
