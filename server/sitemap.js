@@ -6,7 +6,7 @@
 
 var sm = require('sitemap');
 var fs = require('fs');
-
+var Blog = require('./routes/models/blog_model');
 
 var createBlogLinks = function () {
 
@@ -30,10 +30,27 @@ var createBlogLinks = function () {
   url.push({url: '/#!/contact-me', changefreq: 'monthly', priority: 0.7});
   url.push({url: '/#!/blog/', changefreq: 'weekly', priority: 0.7});
 
+  Blog.find(function (err, blogs) {
+
+    // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+    if (!err) {
+
+      Object.keys(blogs).forEach(function (key) {
+
+         var blogURl = '/#!/blog/' + blogs[key].uniqueId + '/' + blogs[key].url;
+
+         url.push({url: blogURl, changefreq: 'weekly', priority: 0.7});
+
+      });
+
+    }
+
+  });
+
   if (fs.existsSync('./server/blogposts.json')) {
 
     data = fs.readFileSync('./server/blogposts.json', 'utf8', function (err) {
-      if (err) {
+      if (err) {/**/
         console.log(err);
       }
     });
