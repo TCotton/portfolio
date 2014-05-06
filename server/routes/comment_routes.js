@@ -6,7 +6,7 @@
 
 var Comments = require('./models/comment_model');
 var moment = require('moment');
-
+var mail = require('nodemailer').mail;
 
 module.exports = function (app) {
 
@@ -22,14 +22,30 @@ module.exports = function (app) {
       published: false,
       publishedDate: moment().valueOf()
 
-    }, function (err, blog) {
+    }, function (err, comment) {
 
       if (err) {
         res.send(err);
       }
 
-      if (blog) {
-        res.json(blog);
+      // send email on successful blog comment
+      if (comment) {
+
+        var message = 'Name: ' + req.body.name + '\n' +
+          'Email: ' + req.body.email + '\n' +
+          'Url: ' + req.body.url + '\n' +
+          'Message: ' + req.body.message + '\n';
+
+        mail({
+          from: 'admin@andywalpole.me', // sender address
+          to: 'me@andywalpole.me', // list of receivers
+          subject: 'New comment on website', // Subject line
+          text: message, // plaintext body
+          html: message // html body
+        });
+
+        res.json(comment);
+
       }
 
     });
@@ -51,11 +67,11 @@ module.exports = function (app) {
       } else {
 
         // update here
-       /* cm.name = req.body.name;
-        cm.email = req.body.email;
-        cm.url = req.body.url;
-        cm.message = req.body.message;
-        cm.blogId = req.body.blogId;*/
+        /* cm.name = req.body.name;
+         cm.email = req.body.email;
+         cm.url = req.body.url;
+         cm.message = req.body.message;
+         cm.blogId = req.body.blogId;*/
         cm.published = req.body.published;
 
         cm.save(function (err) {
@@ -94,7 +110,7 @@ module.exports = function (app) {
   app.route('/api/comment/getPublished').get(function (req, res) {
 
     // use mongoose to get all blogs in the database that are published and with the right blog id
-    Comments.find({published: true, blogId: req.query.blogId },function (err, comments) {
+    Comments.find({published: true, blogId: req.query.blogId }, function (err, comments) {
 
       // if there is an error retrieving, send the error. nothing after res.send(err) will execute
       if (err) {
