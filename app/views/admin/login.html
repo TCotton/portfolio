@@ -21,14 +21,14 @@
       <label for="name" class="visuallyhidden">Your full name</label>
       <span data-ng-show="loginForm.name.$invalid && submitted" class="error-message">Please supply your username.</span>
       <input type="text" id="name" name="name" value="" placeholder="Username" required="required" class="input"
-             data-ng-required="true" data-ng-model="login.name" maxlength="32"/>
+             data-ng-required="true" data-ng-model="login.name" maxlength="32"  autocorrect="off" autocapitalize="off"/>
       </span>
 
       <span class="password-block">
       <label for="password" class="visuallyhidden">Your email address</label>
       <span data-ng-show="loginForm.password.$invalid && submitted" class="error-message">Please supply a valid password.</span>
       <input type="password" id="password" name="password" value="" placeholder="Password" required="required"
-             class="input" data-ng-required="true" data-ng-model="login.password" maxlength="32"/>
+             class="input" data-ng-required="true" data-ng-model="login.password" maxlength="32"  autocorrect="off" autocapitalize="off"/>
         </span>
 
             <span class="hide">

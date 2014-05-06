@@ -35,14 +35,14 @@
       <label for="name" class="visuallyhidden">Your full name</label>
       <span data-ng-show="contactForm.name.$invalid && submitted" class="error-message">Please supply your name.</span>
       <input type="text" id="name" name="name" value="" placeholder="Your full name" required="required" class="input"
-             data-ng-required="true" data-ng-model="contact.name" maxlength="64"/>
+             data-ng-required="true" data-ng-model="contact.name" maxlength="64" autocorrect="off" autocapitalize="off"/>
       </span>
 
       <span class="email-block">
       <label for="email" class="visuallyhidden">Your email address</label>
       <span data-ng-show="contactForm.email.$invalid && submitted" class="error-message">Please supply a valid email address.</span>
       <input type="email" id="email" name="email" value="" placeholder="Your email address" required="required"
-             class="input" data-ng-required="true" data-ng-model="contact.email" maxlength="64"/>
+             class="input" data-ng-required="true" data-ng-model="contact.email" maxlength="64"  autocorrect="off" autocapitalize="off"/>
         </span>
 
       <span class="message-block">

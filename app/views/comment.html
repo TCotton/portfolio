@@ -9,8 +9,8 @@
     <div data-comment-directive data-comment="comment"></div>
   </div>
 
-  <p data-ng-if="formSuccess" data-ng-bind="formSuccess"></p>
-  <p data-ng-bind="commentFormData.message"></p>
+  <p class="comment-form-success" data-ng-bind="formSuccess"></p>
+  <div class="comment-form-entry" data-ng-bind="commentFormData.message"></div>
 
   <form novalidate="novalidate" name="commentForm" data-ng-if="commentsOpen"
         data-ng-submit="BlogCommentCtrl.submitComment(commentForm.$valid)">
@@ -29,13 +29,13 @@
                  class="error-message">Please provide an email address.</span>
         <input type="email" name="email" id="email" value="" placeholder="Email (will be kept private)"
                required="required" data-ng-model="commentFormData.email" data-ng-required="true"
-               class="input" maxlength="200"/>
+               class="input" maxlength="200"  autocorrect="off" autocapitalize="off"/>
         </span>
 
         <span class="url-block">
         <label for="url" class="visuallyhidden">Your website address</label>
         <input type="url" id="url" name="url" value="" placeholder="Website" class="input"
-               data-ng-model="commentFormData.url" maxlength="200"/>
+               data-ng-model="commentFormData.url" maxlength="200"  autocorrect="off" autocapitalize="off"/>
         </span>
 
          <span class="message-block">
