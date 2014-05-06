@@ -43,8 +43,6 @@
 
       if(!_.isEmpty(result.data)) {
 
-        console.log(result.data);
-
         this.$scope.publishComments = result.data;
 
       }
