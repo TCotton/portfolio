@@ -48,11 +48,31 @@
 
   };
 
-  CommentAdminCtrl.prototype.deleteComment = function(data) {
+  CommentAdminCtrl.prototype.deleteComment = function() {
 
   };
 
   CommentAdminCtrl.prototype.publishComment = function(data) {
+
+    var formData = {
+      id: data._id,
+      published: data.published !== true || false
+    };
+
+    var returnedPromise = this.MongoCommentService.editComment(formData);
+
+    returnedPromise.then(function () {
+
+      // update page again
+      this.getComments();
+
+    }.bind(this), function (value) {
+
+      this.$log.warn('Failure: CommentAdminCtrl.publishComment');
+      this.$log.warn(value);
+
+    }.bind(this));
+
 
   };
 
