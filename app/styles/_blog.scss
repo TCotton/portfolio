@@ -26,6 +26,9 @@
     padding: 0 0 25px 0;
     display: inline-block;
     white-space: pre-line;
+    p:first-of-type {
+      font-weight: 600;
+    }
   }
 
   #right-small {
