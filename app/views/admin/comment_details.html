@@ -35,6 +35,9 @@
           <dd data-ng-bind="comment.published"></dd>
         </dl>
 
+        <p><a data-ng-click="AdminCommentAdminCtrl.publishComment(comment)" href="">Published / un-publish this comment</a></p>
+        <p><a data-ng-click="AdminCommentAdminCtrl.deleteComment(comment)" href="">Delete this comment</a></p>
+
       </div>
 
     </div>

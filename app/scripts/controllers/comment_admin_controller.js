@@ -48,6 +48,14 @@
 
   };
 
+  CommentAdminCtrl.prototype.deleteComment = function(data) {
+
+  };
+
+  CommentAdminCtrl.prototype.publishComment = function(data) {
+
+  };
+
   CommentAdminCtrl.$inject = ['$scope', '$rootScope', 'MongoCommentService', '$log'];
 
   app.controller('CommentAdminCtrl', CommentAdminCtrl);
