@@ -54,6 +54,46 @@
 
   };
 
+
+  MongoCommentService.prototype.editComment = function (formData) {
+
+    // return promise
+
+    var deferred = this.$q.defer();
+
+    var returnedMessage = this.$http({
+      url: '/api/comment/update',
+      method: 'PUT',
+      data: formData,
+      headers : {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
+    });
+
+    deferred.resolve(returnedMessage);
+
+    return deferred.promise;
+
+  };
+
+
+  MongoCommentService.prototype.deleteComment = function (formData) {
+
+    // return promise
+
+    var deferred = this.$q.defer();
+
+    var returnedMessage = this.$http({
+      url: '/api/comment/delete/' + formData,
+      method: 'DELETE'
+    });
+
+    deferred.resolve(returnedMessage);
+
+    return deferred.promise;
+
+  };
+
   app.service('MongoCommentService', MongoCommentService);
 
 }());

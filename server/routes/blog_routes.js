@@ -98,9 +98,6 @@ module.exports = function (app) {
         bl.displayImage = req.body.displayImage;
         bl.commentsOpen = req.body.commentsOpen;
 
-        console.log(bl);
-        console.log(req.body);
-
         bl.save(function (err) {
 
           if (err) {
