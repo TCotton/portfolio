@@ -19,7 +19,7 @@ module.exports = function (app) {
       name: req.body.name,
       email: req.body.email,
       url: req.body.url,
-      message: req.body.messsage,
+      message: req.body.message,
       blogId: req.body.blogId,
       published: false,
       publishedDate: moment().valueOf()

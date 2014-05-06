@@ -261,3 +261,13 @@ p.footer-copyright {
   color: white;
   text-transform: capitalize;
 }
+
+.admin-comments dt {
+  @include font-calculator($baseFontFamily, 14px, 0);
+  font-weight: 600;
+}
+
+.admin-comments dd {
+  @include font-calculator($baseFontFamily, 14px, 0.5);
+  font-weight: 400;
+}

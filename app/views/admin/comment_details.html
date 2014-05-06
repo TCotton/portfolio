@@ -6,7 +6,7 @@
 
 </div><!-- end banner -->
 
-<div id="main-content" class="clearfix content-text">
+<div id="main-content" class="clearfix content-text admin-comments">
 
   <div class="comment-details">
 
@@ -16,10 +16,28 @@
 
     <div data-ng-repeat="comment in comments | orderBy: '-publishedDate' track by $index">
 
-      {{ comment }}
+      <div class="comment-block">
+
+        <dl>
+          <dt>Date:</dt>
+          <dd data-ng-bind="comment.publishedDate | date"></dd>
+          <dt>Name:</dt>
+          <dd data-ng-bind="comment.name"></dd>
+          <dt>Email:</dt>
+          <dd data-ng-bind="comment.email"></dd>
+          <dt>Website:</dt>
+          <dd data-ng-bind="comment.url"></dd>
+          <dt>Comment:</dt>
+          <dd data-ng-bind-html="comment.message | linky"></dd>
+          <dt>Blog ID:</dt>
+          <dd data-ng-bind-html="comment.blogId"></dd>
+          <dt>Published:</dt>
+          <dd data-ng-bind="comment.published"></dd>
+        </dl>
+
+      </div>
+
     </div>
-
-
 
   </div>
   <!-- end comment details -->

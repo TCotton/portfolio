@@ -1235,6 +1235,21 @@ p.footer-copyright {
   text-transform: capitalize;
 }
 
+/* line 265, modules/_typography.scss */
+.admin-comments dt {
+  font-size: 1.4em;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+}
+
+/* line 270, modules/_typography.scss */
+.admin-comments dd {
+  font-size: 1.4em;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 0.89286em;
+  font-weight: 400;
+}
+
 /* line 1, modules/_buttons.scss */
 a.button-front-one {
   background: white;
@@ -3066,6 +3081,13 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     transform: scale(1) rotate(0);
   }
 }
+/* line 164, _admin.scss */
+.admin-comments .comment-block {
+  border-bottom: 1px solid #cccccc;
+  padding: 0 0 20px 0;
+  margin: 0 0 20px 0;
+}
+
 /* line 1, _footer.scss */
 #footer {
   clear: both;
