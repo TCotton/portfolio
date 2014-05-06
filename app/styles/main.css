@@ -603,7 +603,7 @@ body {
 }
 
 @media (max-width: 767px) {
-  /* line 30, main.scss */
+  /* line 15, main.scss */
   body {
     font-size: 56.3%;
     font-family: 'Open Sans', sans-serif;
@@ -1064,7 +1064,6 @@ h3.blog-title {
 .content-text .user-comments section {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
-  margin-bottom: 1.5625em;
   color: #666666;
 }
 
@@ -2679,8 +2678,8 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
 /* line 23, _blog.scss */
 .blog .user-comments {
   border-bottom: 1px solid #cccccc;
-  margin: 0 0 20px 0;
-  padding: 0 0 10px 0;
+  margin: 0 0 25px 0;
+  padding: 0 0 25px 0;
   display: inline-block;
 }
 /* line 33, _blog.scss */
@@ -3205,4 +3204,92 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   -ms-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+@media print {
+  /* line 2, _print.scss */
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* line 9, _print.scss */
+  #header, #footer, #banner {
+    display: none !important;
+  }
+
+  @page {
+    margin: 0.5cm;
+}
+
+  /* line 18, _print.scss */
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  /* line 22, _print.scss */
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  /* line 26, _print.scss */
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  /* line 36, _print.scss */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+
+  /* line 41, _print.scss */
+  pre,
+  blockquote {
+    page-break-inside: avoid;
+  }
+
+  /* line 45, _print.scss */
+  thead {
+    display: table-header-group;
+    /* h5bp.com/t */
+  }
+
+  /* line 50, _print.scss */
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  /* line 54, _print.scss */
+  img {
+    max-width: 100% !important;
+  }
+
+  /* line 58, _print.scss */
+  p a {
+    word-wrap: break-word;
+  }
+
+  /* line 64, _print.scss */
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* line 70, _print.scss */
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
 }

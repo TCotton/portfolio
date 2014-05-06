@@ -9,21 +9,6 @@ body {
   line-height: #{$baseLineHeight}em;
 }
 
-@include breakpoint("standard") {
-
-  body {
-    //background: blue;
-  }
-
-}
-
-@include breakpoint("tablet") {
-
-  body {
-    //background: lightblue;
-  }
-
-}
 
 @include breakpoint("mobile") {
 
@@ -54,3 +39,4 @@ body {
 @import "contact";
 @import "admin";
 @import "footer";
+@import "print";
