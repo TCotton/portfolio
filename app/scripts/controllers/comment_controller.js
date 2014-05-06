@@ -23,10 +23,36 @@
     });
 
     this.$scope.commentBlogFormSubmit = false;
+    this.$scope.publishComments = null;
     this.$scope.commentFormData = {};
 
     // find blogId number form the URL string, ie /#!/blog/136324/using-autoload-in-object-orientated-wordpress-plugin
     this.$scope.commentFormData.blogId = $rootScope.currentPage.substring($rootScope.currentPage.indexOf('/#!/') + 9, $rootScope.currentPage.indexOf('/#!/') + 15);
+
+  };
+
+  CommentCtrl.prototype.retreiveComment = function() {
+
+    var data = {
+      blogId: this.$scope.commentFormData.blogId
+    };
+
+    var returnedData = this.MongoCommentService.getPubilshedComments(data);
+
+    returnedData.then(function (result) {
+
+      if(!_.isEmpty(result.data)) {
+
+        console.log(result.data);
+
+        this.$scope.publishComments = result.data;
+
+      }
+
+    }.bind(this), function (result) {
+      this.$log.warn('Failure: CommentCtrl.retreiveComment');
+      this.$log.warn(result);
+    }.bind(this));
 
   };
 

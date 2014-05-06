@@ -2,7 +2,12 @@
 
   <h5 class="content-title" data-ng-if="!commentsOpen">Blog comments are not open for this article</h5>
 
-  <h5 class="content-title" data-ng-if="commentsOpen">Comments below</h5>
+  <h5 class="content-title" data-ng-if="commentsOpen" data-ng-init="BlogCommentCtrl.retreiveComment()">Comments
+    below</h5>
+
+  <div data-ng-repeat="comment in publishComments | orderBy: 'publishedDate' track by $index">
+    <div data-comment-directive data-comment="comment"></div>
+  </div>
 
   <p data-ng-bind="formSuccess"></p>
 
@@ -46,7 +51,7 @@
             <input type="text" id="zipcode" value="" maxlength="64" autocomplete="off"/>
             </span>
 
-    <input type="hidden" value="" data-ng-model="commentFormData.blogId" />
+    <input type="hidden" value="" data-ng-model="commentFormData.blogId"/>
 
     <input type="submit" value="Post message" class="button-contact"/>
 

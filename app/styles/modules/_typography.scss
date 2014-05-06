@@ -123,6 +123,11 @@ h3.blog-title {
   color: $textTwo;
 }
 
+.content-text .user-comments section {
+  @include font-calculator($baseFontFamily, 16px);
+  color: $textTwo;
+}
+
 .content-text section > div table {
   @include font-calculator($baseFontFamily, 16px);
 }

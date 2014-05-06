@@ -59,8 +59,6 @@
 
     var deferred = this.$q.defer();
 
-    console.log(formData);
-
     var returnedMessage = this.$http({
       url: '/api/comment/update',
       method: 'PUT',
@@ -76,6 +74,23 @@
 
   };
 
+  MongoCommentService.prototype.getPubilshedComments = function (data) {
+
+    // return promise
+
+    var deferred = this.$q.defer();
+
+    var returnedMessage = this.$http({
+      url: '/api/comment/getPublished',
+      method: 'GET',
+      params: data
+    });
+
+    deferred.resolve(returnedMessage);
+
+    return deferred.promise;
+
+  };
 
   MongoCommentService.prototype.deleteComment = function (formData) {
 

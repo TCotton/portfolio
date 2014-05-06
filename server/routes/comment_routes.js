@@ -91,6 +91,22 @@ module.exports = function (app) {
 
   });
 
+  app.route('/api/comment/getPublished').get(function (req, res) {
+
+    // use mongoose to get all blogs in the database that are published and with the right blog id
+    Comments.find({published: true, blogId: req.query.blogId },function (err, comments) {
+
+      // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+      if (err) {
+        res.send(err);
+      }
+
+      res.json(comments);
+
+    });
+
+  });
+
 
   app.route('/api/comment/delete/:id').delete(function (req, res) {
 

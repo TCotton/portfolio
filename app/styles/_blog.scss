@@ -20,6 +20,13 @@
     }
   }
 
+  .user-comments {
+    border-bottom: 1px solid $boxBorder;
+    margin: 0 0 20px 0;
+    padding: 0 0 10px 0;
+    display: inline-block;
+  }
+
   #right-small {
 
     // changing the margin for the list items in the Category sidebar section
