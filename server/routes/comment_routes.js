@@ -5,10 +5,8 @@
 'use strict';
 
 var Comments = require('./models/comment_model');
-var Blog = require('./models/blog_model');
-var _ = require('underscore');
-
 var moment = require('moment');
+
 
 module.exports = function (app) {
 
