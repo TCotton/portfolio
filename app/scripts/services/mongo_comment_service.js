@@ -15,9 +15,11 @@
 
   MongoCommentService.$inject = ['$http', '$q'];
 
-  MongoCommentService.prototype.addBlogPost = function (formData) {
+  MongoCommentService.prototype.addComment = function (formData) {
 
     // return promise
+
+    console.log(formData);
 
     var deferred = this.$q.defer();
 
@@ -33,6 +35,23 @@
     deferred.resolve(returnedMessage);
 
     return deferred.promise;
+  };
+
+  MongoCommentService.prototype.getComments = function () {
+
+    // return promise
+
+    var deferred = this.$q.defer();
+
+    var returnedMessage = this.$http({
+      url: '/api/comment/get',
+      method: 'GET'
+    });
+
+    deferred.resolve(returnedMessage);
+
+    return deferred.promise;
+
   };
 
   app.service('MongoCommentService', MongoCommentService);

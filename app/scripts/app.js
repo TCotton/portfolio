@@ -81,6 +81,7 @@ angular.module('portfolioApp', ['portfolioApp.controllers', 'portfolioApp.direct
       })
       .when('/admin/blog-comments', {
         templateUrl: 'views/admin/comment_details.html',
+        controller: 'CommentAdminCtrl as AdminCommentAdminCtrl',
         title: 'Admin area - edit blog comments'
       })
       .otherwise({

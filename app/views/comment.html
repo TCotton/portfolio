@@ -4,7 +4,7 @@
 
   <h5 class="content-title" data-ng-if="commentsOpen">Comments below</h5>
 
-  <p data-ng-bind="commentFormData.message"></p>
+  <p data-ng-bind="formSuccess"></p>
 
   <form novalidate="novalidate" name="commentForm" data-ng-if="commentsOpen"
         data-ng-submit="BlogCommentCtrl.submitComment(commentForm.$valid)">

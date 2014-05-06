@@ -36,7 +36,9 @@
 
     if(isValid) {
 
-      var returnedData = this.MongoCommentService.addBlogPost(this.$scope.addBlogFormData);
+      console.log(this.$scope.commentFormData);
+
+      var returnedData = this.MongoCommentService.addComment(this.$scope.commentFormData);
 
       returnedData.then(function () {
 
