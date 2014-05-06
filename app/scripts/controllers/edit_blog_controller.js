@@ -1,6 +1,7 @@
 /**
  * Created by awalpole on 09/04/2014.
  * TODO: move blog processing methods to backend server along with parallel methods in AddBlogCtrl
+ * TODO: refactor regex for _addSEOFriendlyURL
  */
 
 'use strict';
@@ -77,6 +78,7 @@
 
       var regexNonAlphaNum = /[^\-a-z0-9]/g;
       var regexWhiteSpace = /\s/gi;
+      var twoDashes = /[\-]{2}/g;
       var x;
       var l;
       var newTitle;
@@ -99,10 +101,15 @@
 
       } while (x < l);
 
+
       // remove white space and replace with hythen
       newTitle = newTitle.replace(regexWhiteSpace, '-');
+
       // remove all non-alpha numeric characters
       newTitle = newTitle.replace(regexNonAlphaNum, '');
+
+      newTitle = newTitle.replace(twoDashes, '-');
+
 
       this.$scope.editBlogFormData.url = newTitle;
 

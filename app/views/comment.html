@@ -9,7 +9,8 @@
     <div data-comment-directive data-comment="comment"></div>
   </div>
 
-  <p data-ng-bind="formSuccess"></p>
+  <p data-ng-if="formSuccess" data-ng-bind="formSuccess"></p>
+  <p data-ng-bind="commentFormData.message"></p>
 
   <form novalidate="novalidate" name="commentForm" data-ng-if="commentsOpen"
         data-ng-submit="BlogCommentCtrl.submitComment(commentForm.$valid)">
