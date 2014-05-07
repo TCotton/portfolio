@@ -85,8 +85,10 @@ angular.module('portfolioApp', ['portfolioApp.controllers', 'portfolioApp.direct
         title: 'Admin area - edit blog comments'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/404',
+        templateUrl: 'views/404.html'
       });
+
 
     /** Solution to make server side code accept data submitted with angularjs via POST
      * **/

@@ -27,8 +27,8 @@ var database = require('./server/config/database'); 			// load the database conf
 mongoose.connect(database.url); 	// connect to mongoDB database on modulus.io
 
 app.set('port', process.env.PORT || 3000);
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+/*app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');*/
 
 
 app.use(morgan('dev')); 						// log every request to the console
@@ -44,11 +44,11 @@ if (app.get('env') === 'development') {
   // This will change in production since we'll be using the dist folder
   // This covers serving up the index page
 
-  app.use(favicon(path.join(__dirname,  'app/favicon.ico')));
+  app.use(favicon(path.join(__dirname, 'app/favicon.ico')));
   app.use(express.static(path.join(__dirname, 'app'))); 		// set the static files location /public/img will be /img for users
 
   // Error Handling
-  app.use(function(err, req, res, next) {
+  app.use(function (err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
       message: err.message,
@@ -58,7 +58,6 @@ if (app.get('env') === 'development') {
 }
 
 
-
 /**
  * Production Settings
  */
@@ -66,12 +65,12 @@ if (app.get('env') === 'production') {
 
   var oneDay = 86400000;
 
-  app.use(favicon(path.join(__dirname,  'dist/favicon.ico')));
+  app.use(favicon(path.join(__dirname, 'dist/favicon.ico')));
   app.use(express.static(path.join(__dirname, 'dist'), { maxAge: oneDay })); 		// set the static files location /public/img will be /img for users
 
   // production error handler
   // no stacktraces leaked to user
-  app.use(function(err, req, res, next) {
+  app.use(function (err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
       message: err.message,

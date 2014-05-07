@@ -6,7 +6,12 @@ angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$locatio
   $rootScope.currentPage = $location.absUrl();
 
   $rootScope.$on('$routeChangeSuccess', function() {
-    $rootScope.pageTitle = $route.current.$$route.title;
+    if($route.current.$$route) {
+      $rootScope.pageTitle = $route.current.$$route.title;
+    } else {
+      $rootScope.pageTitle = 'Not Found';
+      $rootScope.status = '404';
+    }
   });
 
   $rootScope.$on('$locationChangeStart', function () {
