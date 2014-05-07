@@ -23,9 +23,9 @@
     }
 
     /* the number of articles per page */
-    this.$scope.paginationPageSize = 5;
+    this.$scope.paginationPageSize = 6;
     /* used in */
-    this.$scope.paginationPageSizeLimit = -5;
+    this.$scope.paginationPageSizeLimit = -6;
     this.$scope.returnObject = null;
 
     BlogDataService.retrieveData().then(function (result) {
@@ -59,6 +59,9 @@
 
   };
 
+  /** TODO refactor pagination
+   * **/
+
   BlogCtrl.prototype.startingPagination = function () {
 
     var patt = /^=\d{1}$/; // if end of string is an equal sign and one digit
@@ -83,6 +86,7 @@
     }
 
     if (pattTwo.test(this.currentPage())) {
+
       // pattern for blog index page pagination: /blog/?page=3
 
       if (this.currentPage() < this.$scope.totalArticles) {
