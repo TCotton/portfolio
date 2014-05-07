@@ -75,7 +75,7 @@ var createBlogLinks = function () {
 /* create sitemap below - needed for SEO purposes */
 
 var sitemap = sm.createSitemap({
-  hostname: 'http://web.andywalpole.me',
+  hostname: 'http://andywalpole.me',
   cacheTime: 600000,        // 600 sec - cache purge period
   urls: createBlogLinks ? createBlogLinks() : null
 });

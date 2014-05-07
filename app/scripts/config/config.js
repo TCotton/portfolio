@@ -6,17 +6,10 @@ angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$locatio
   $rootScope.currentPage = $location.absUrl();
 
   $rootScope.$on('$routeChangeSuccess', function() {
-    if($route.current.$$route) {
-      $rootScope.pageTitle = $route.current.$$route.title;
-    } else {
-      $rootScope.pageTitle = 'Not Found';
-      $rootScope.status = '404';
-    }
+    $rootScope.pageTitle = $route.current.$$route.title;
   });
 
   $rootScope.$on('$locationChangeStart', function () {
-
-    $rootScope.hideFooter = false;
 
     /** Value used in the tablet / mobile dropdown menu code
      * Dropdown menu disappears on page change if it is down
@@ -27,6 +20,10 @@ angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$locatio
 
     $rootScope.currentPage = $location.absUrl();
 
+    $rootScope.canonical = 'http://andywalpole/#!' + $location.path();
+
+    $rootScope.hideFooter = false;
+
     if($rootScope.currentPage.indexOf('blog') !== -1) {
       $rootScope.hideFooter = true;
     }
@@ -36,14 +33,36 @@ angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$locatio
     var admin = new RegExp('\/admin\/');
     var currentPage = $rootScope.currentPage.toString();
 
+    if(!$angularCacheFactory.get('authCache')) {
+
+      $angularCacheFactory('authCache', {
+        maxAge: 86400000,
+        deleteOnExpire: 'aggressive',
+        storageMode: 'sessionStorage'
+      });
+
+    }
+
+    if(!$angularCacheFactory.get('blogCache')) {
+
+      $angularCacheFactory('blogCache', {
+        maxAge: 86400000,
+        deleteOnExpire: 'aggressive',
+        storageMode: 'sessionStorage'
+      });
+
+    }
+
     if (admin.test(currentPage)) {
 
       if (!$angularCacheFactory.get('authCache').get('logginIn') || $angularCacheFactory.get('authCache').get('logginIn') !== $rootScope.userid) {
 
-        $location.path('/login');
+        //$location.path('/login');
 
       }
     }
+
+
 
     // every time the page reloads make sure it loads from the top
     // clicking links on the middle of the page results in opening a new page in the same spot
@@ -53,27 +72,6 @@ angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$locatio
     $window.scrollTo(0, 0);
 
   });
-
-
-  if(!$angularCacheFactory.get('authCache')) {
-
-    $angularCacheFactory('authCache', {
-      maxAge: 86400000,
-      deleteOnExpire: 'aggressive',
-      storageMode: 'sessionStorage'
-    });
-
-  }
-
-  if(!$angularCacheFactory.get('blogCache')) {
-
-    $angularCacheFactory('blogCache', {
-      maxAge: 86400000,
-      deleteOnExpire: 'aggressive',
-      storageMode: 'sessionStorage'
-    });
-
-  }
 
 }]);
 
