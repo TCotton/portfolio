@@ -207,7 +207,11 @@ var RSSClass = function () {
         x = -1;
       }
 
-      oldPosts[key].displayImage = imageArray[(x += 1)];
+      if(!oldPosts[key].displayImage) {
+
+        oldPosts[key].displayImage = imageArray[(x += 1)];
+
+      }
 
     });
 

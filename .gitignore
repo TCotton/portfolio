@@ -17,3 +17,4 @@ server/config/user_id.js
 server/config/
 server/blogposts.json
 .DS_Store
+app/images/blog-images/
