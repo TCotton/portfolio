@@ -2,7 +2,7 @@
 
   <h4 class="content-title">Recent posts</h4>
   <ul>
-    <a data-ng-repeat="blog in blogData | limitTo: 10 | orderBy: '-publishedDate' track by $index" data-ng-href="/#!/blog/{{blog.uniqueId}}/{{blog.url}}">
+    <a data-ng-repeat="blog in blogData | limitTo: 10 | orderBy: '-publishedDate' track by $index" data-ng-href="/blog/{{blog.uniqueId}}/{{blog.url}}">
       <li data-ng-bind="blog.title"></li>
     </a>
   </ul>
