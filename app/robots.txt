@@ -1,7 +1,6 @@
 User-agent: *
-Disallow: 
 Disallow: /#!/work-projects/drnewmans
 Disallow: /?_escaped_fragment_=/work-projects/drnewmans
 Disallow: /#!/blog/?page=*
 Disallow: /?_escaped_fragment_=/blog/?page=*
-Sitemap: /sitemap.xml
+Sitemap: sitemap.xml
