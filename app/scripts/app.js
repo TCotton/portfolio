@@ -4,6 +4,8 @@
  * This entire site is coded in AngularJS. Inspect the code on GitHub: https://github.com/TCotton/portfolio
  */
 
+window.prerenderReady = false;
+
 angular.module('portfolioApp.controllers', []);
 angular.module('portfolioApp.directives', []);
 angular.module('portfolioApp.services', []);
