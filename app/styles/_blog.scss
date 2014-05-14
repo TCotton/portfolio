@@ -62,6 +62,13 @@
     blockquote p {
       display: inline;
     }
+
+    aside {
+      width: 33%;
+      margin: 0 0 0 1%;
+      padding: 0 1% 0 0;
+      float: right;
+    }
   }
 
   .user-comments {

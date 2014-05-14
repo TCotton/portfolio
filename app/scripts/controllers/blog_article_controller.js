@@ -20,6 +20,7 @@
 
     this.$scope.title = null;
     this.$scope.content = null;
+    this.$scope.aside = null;
 
     /** Load blog data from either the service or cache and then populate the page with the values
      * **/
@@ -67,6 +68,7 @@
       this.$scope.title = blogPost[0].title;
       this.$rootScope.pageTitle = blogPost[0].title;
       this.$scope.content = this.$sce.trustAsHtml(blogPost[0].content);
+      this.$scope.aside = this.$sce.trustAsHtml(blogPost[0].aside);
       this.$scope.displayImage = blogPost[0].displayImage;
       this.$scope.publishedDate = blogPost[0].publishedDate;
       this.$scope.commentsOpen = blogPost[0].commentsOpen;
