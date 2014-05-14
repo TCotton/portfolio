@@ -6,7 +6,7 @@
     text-shadow: none !important;
   }
 
-  #header, #footer, #banner {
+  #header, #footer, #banner, form, .video-container {
     display: none!important
   }
 
@@ -38,7 +38,8 @@
   }
 
   pre,
-  blockquote {
+  blockquote,
+  p{
     page-break-inside: avoid;
   }
 
