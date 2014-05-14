@@ -15,7 +15,9 @@ var methodOverride = require('method-override');
 var compress = require('compression');
 var app = express(); 								// create our app w/ express
 var mongoose = require('mongoose'); 					// mongoose for mongodb
-app.use(require('prerender-node').set('prerenderToken', 'V9elFcuI9mP8exKuOZ0Z'));
+
+var conf = require('./server/config/prerender'); 			// load the prerender config
+app.use(require('prerender-node').set('prerenderToken', conf.prerender));
 app.use(helmet.xframe('deny'));
 app.use(helmet.iexss());
 app.use(helmet.contentTypeOptions());
