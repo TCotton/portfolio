@@ -84,8 +84,8 @@ angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$locatio
  * Url modules
  */
 //get the module from creating an angular module
-angular.module('HashBangURLs', []).config(['$locationProvider', function ($location) {
-  $location.hashPrefix('!');
+angular.module('HashBangURLs', []).config(['$locationProvider', function ($locationProvider) {
+  $locationProvider.html5Mode(false).hashPrefix('!');
 }]);
 angular.module('ngAnimate', []).config(['$animateProvider', function ($animateProvider) {
   $animateProvider.classNameFilter(/\animate-/);
