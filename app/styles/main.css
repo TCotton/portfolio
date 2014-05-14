@@ -312,7 +312,7 @@ button {
  * 3. Improve usability and consistency of cursor style between image-type
  *    `input` and others.
  */
-/* line 313, _reset.scss */
+/* line 314, _reset.scss */
 button, html input[type="button"],
 input[type="reset"], input[type="submit"] {
   -webkit-appearance: button;
@@ -1132,16 +1132,10 @@ p.minor-title {
 .content-text a.underline {
   /* On the desktop this displays a URL of the external link above the link text */
   text-decoration: none;
-  background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.3) 11%, rgba(0, 0, 0, 0.3) 16%, transparent 16%);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.3) 11%, rgba(0, 0, 0, 0.3) 16%, rgba(0, 0, 0, 0) 16%);
   position: relative;
-  word-break: break-all;
-  word-break: break-word;
-  -ms-hyphens: auto;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  hyphens: auto;
 }
-/* line 182, modules/_typography.scss */
+/* line 181, modules/_typography.scss */
 .content-text a.underline[rel="external"]::after {
   content: " " attr(href) " ";
   position: absolute;
@@ -1155,42 +1149,44 @@ p.minor-title {
   -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s;
   white-space: nowrap;
+  pointer-events: none;
 }
 /* line 194, modules/_typography.scss */
 .content-text a.underline[rel="external"]:hover::after {
   opacity: 1;
+  pointer-events: auto;
 }
-/* line 197, modules/_typography.scss */
+/* line 198, modules/_typography.scss */
 .content-text a.underline:link {
   color: #666666;
 }
-/* line 200, modules/_typography.scss */
+/* line 201, modules/_typography.scss */
 .content-text a.underline:visited {
   color: gray;
 }
-/* line 203, modules/_typography.scss */
+/* line 204, modules/_typography.scss */
 .content-text a.underline:focus {
   color: #666666;
-  background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
-/* line 207, modules/_typography.scss */
+/* line 208, modules/_typography.scss */
 .content-text a.underline:hover {
   color: #666666;
-  background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
-/* line 212, modules/_typography.scss */
+/* line 213, modules/_typography.scss */
 .content-text a.underline:active {
   color: #666666;
-  background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
 
 @media (max-width: 979px) {
-  /* line 225, modules/_typography.scss */
+  /* line 226, modules/_typography.scss */
   .content-text a.underline[rel="external"]::after {
     display: none;
   }
 }
-/* line 232, modules/_typography.scss */
+/* line 233, modules/_typography.scss */
 h4.blog-sidebar-header {
   font-size: 3em;
   font-family: 'Open Sans', sans-serif;
@@ -1199,7 +1195,7 @@ h4.blog-sidebar-header {
   color: #666666;
 }
 
-/* line 238, modules/_typography.scss */
+/* line 239, modules/_typography.scss */
 .blog-sidebar-text p, ul.blog-sidebar-text {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
@@ -1208,7 +1204,7 @@ h4.blog-sidebar-header {
   color: #666666;
 }
 
-/* line 244, modules/_typography.scss */
+/* line 245, modules/_typography.scss */
 h3.contact-header {
   font-size: 3em;
   font-family: 'Open Sans', sans-serif;
@@ -1217,7 +1213,7 @@ h3.contact-header {
   color: #666666;
 }
 
-/* line 250, modules/_typography.scss */
+/* line 251, modules/_typography.scss */
 h3.project-header {
   font-size: 3em;
   font-family: 'Open Sans', sans-serif;
@@ -1225,7 +1221,7 @@ h3.project-header {
   color: white;
 }
 
-/* line 256, modules/_typography.scss */
+/* line 257, modules/_typography.scss */
 .footer-top-text p, ul.footer-top-text {
   font-size: 2em;
   font-family: 'Open Sans', sans-serif;
@@ -1235,14 +1231,14 @@ h3.project-header {
   color: #666666;
 }
 
-/* line 263, modules/_typography.scss */
+/* line 264, modules/_typography.scss */
 .code-preview {
   font-size: 12px;
   color: #666666;
   line-height: 16px;
 }
 
-/* line 269, modules/_typography.scss */
+/* line 270, modules/_typography.scss */
 p.footer-copyright {
   font-size: 1.3em;
   font-family: 'Open Sans', sans-serif;
@@ -1251,14 +1247,14 @@ p.footer-copyright {
   text-transform: capitalize;
 }
 
-/* line 276, modules/_typography.scss */
+/* line 277, modules/_typography.scss */
 .admin-comments dt {
   font-size: 1.4em;
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
 }
 
-/* line 281, modules/_typography.scss */
+/* line 282, modules/_typography.scss */
 .admin-comments dd {
   font-size: 1.4em;
   font-family: 'Open Sans', sans-serif;
@@ -1582,7 +1578,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     to {
       margin: 0;
     }
-  }
+}
 }
 @media (max-width: 1366px) {
   /* line 65, _header.scss */
@@ -1601,6 +1597,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     -webkit-transform: translateX(0%);
   }
 }
+
 @keyframes swipeIn {
   /* line 80, _header.scss */
   from {
@@ -1612,6 +1609,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     transform: translateX(0%);
   }
 }
+
 @media (max-width: 979px) {
   /* line 93, _header.scss */
   #header input[type=checkbox] ~ #navigation-wrapper li {
@@ -1771,6 +1769,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     -webkit-transform: scale(1);
   }
 }
+
 @keyframes bounceIn {
   /* line 25, _homepage.scss */
   0% {
@@ -1797,6 +1796,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     transform: scale(1);
   }
 }
+
 /* line 47, _homepage.scss */
 #slider {
   clear: both;
@@ -2455,6 +2455,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     -webkit-transform: scaleX(1);
   }
 }
+
 @keyframes fadeIn {
   /* line 107, _aboutme.scss */
   from {
@@ -2468,6 +2469,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     transform: scaleX(1);
   }
 }
+
 @-webkit-keyframes shake {
   /* line 118, _aboutme.scss */
   0% {
@@ -2524,6 +2526,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     -webkit-transform: translate(1px, -2px) rotate(-1deg);
   }
 }
+
 @keyframes shake {
   /* line 154, _aboutme.scss */
   0% {
@@ -2580,6 +2583,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     transform: translate(1px, -2px) rotate(-1deg);
   }
 }
+
 @media screen and (min--moz-device-pixel-ratio: 0) {
   /* another firefox bug :( */
   /* line 198, _aboutme.scss */
@@ -2693,7 +2697,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   height: 0;
   overflow: hidden;
 }
-/* line 37, _blog.scss */
+/* line 39, _blog.scss */
 .blog article .video-container iframe,
 .blog article .video-container object,
 .blog article .video-container embed {
@@ -3121,6 +3125,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     transform: scale(1) rotate(0);
   }
 }
+
 @keyframes tada {
   /* line 133, _admin.scss */
   0% {
@@ -3157,6 +3162,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     transform: scale(1) rotate(0);
   }
 }
+
 /* line 164, _admin.scss */
 .admin-comments .comment-block {
   border-bottom: 1px solid #cccccc;
@@ -3275,8 +3281,9 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
 
   @page {
     margin: 0.5cm;
-  }
-  /* line 17, _print.scss */
+}
+
+  /* line 18, _print.scss */
   a,
   a:visited {
     text-decoration: underline;
@@ -3296,13 +3303,13 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
    * Don't show links that are fragment identifiers,
    * or use the `javascript:` pseudo protocol
    */
-  /* line 35, _print.scss */
+  /* line 36, _print.scss */
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
     content: "";
   }
 
-  /* line 40, _print.scss */
+  /* line 42, _print.scss */
   pre,
   blockquote,
   p {
@@ -3315,7 +3322,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     /* h5bp.com/t */
   }
 
-  /* line 50, _print.scss */
+  /* line 51, _print.scss */
   tr,
   img {
     page-break-inside: avoid;
@@ -3331,7 +3338,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     word-wrap: break-word;
   }
 
-  /* line 63, _print.scss */
+  /* line 65, _print.scss */
   p,
   h2,
   h3 {
@@ -3339,7 +3346,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     widows: 3;
   }
 
-  /* line 70, _print.scss */
+  /* line 71, _print.scss */
   h2,
   h3 {
     page-break-after: avoid;

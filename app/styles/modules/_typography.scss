@@ -176,7 +176,6 @@ p.minor-title {
     text-decoration: none;
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, .3) 11%, rgba(0, 0, 0, .3) 16%, rgba(0, 0, 0, 0) 16%);
     position: relative;
-    @include word-wrap();
 
     // displays pop up of link attribute if it is pointing to an external site
     &[rel="external"]::after {
@@ -190,9 +189,11 @@ p.minor-title {
       opacity: 0;
       @include transitions(opacity 0.5s);
       white-space: nowrap;
+      pointer-events: none;
     }
     &[rel="external"]:hover::after {
       opacity: 1;
+      pointer-events: auto;
     }
     &:link {
       color: $textTwo;
