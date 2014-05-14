@@ -5,8 +5,8 @@ angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$locatio
   $rootScope.pageChange = false;
   $rootScope.currentPage = $location.absUrl();
 
-  $rootScope.$on('$routeChangeSuccess', function() {
-    if($route.current.$$route) {
+  $rootScope.$on('$routeChangeSuccess', function () {
+    if ($route.current.$$route) {
       $rootScope.pageTitle = $route.current.$$route.title;
       $rootScope.status = null;
     } else {
@@ -30,7 +30,7 @@ angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$locatio
 
     $rootScope.hideFooter = false;
 
-    if($rootScope.currentPage.indexOf('blog') !== -1) {
+    if ($rootScope.currentPage.indexOf('blog') !== -1) {
       $rootScope.hideFooter = true;
     }
 
@@ -39,7 +39,7 @@ angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$locatio
     var admin = new RegExp('\/admin\/');
     var currentPage = $rootScope.currentPage.toString();
 
-    if(!$angularCacheFactory.get('authCache')) {
+    if (!$angularCacheFactory.get('authCache')) {
 
       $angularCacheFactory('authCache', {
         maxAge: 86400000,
@@ -49,7 +49,7 @@ angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$locatio
 
     }
 
-    if(!$angularCacheFactory.get('blogCache')) {
+    if (!$angularCacheFactory.get('blogCache')) {
 
       $angularCacheFactory('blogCache', {
         maxAge: 86400000,
@@ -63,11 +63,10 @@ angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$locatio
 
       if (!$angularCacheFactory.get('authCache').get('logginIn') || $angularCacheFactory.get('authCache').get('logginIn') !== $rootScope.userid) {
 
-        //$location.path('/login');
+        $location.path('/login');
 
       }
     }
-
 
 
     // every time the page reloads make sure it loads from the top
