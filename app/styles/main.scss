@@ -3,7 +3,6 @@
 @import "mixins";
 
 body {
-  //font: #{$baseFontSize} / #{$baseLineHeight} $baseFontFamily;
   font-size: #{$baseFontSize};
   font-family: $baseFontFamily;
   line-height: #{$baseLineHeight}em;

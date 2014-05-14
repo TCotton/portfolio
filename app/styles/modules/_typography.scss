@@ -274,12 +274,39 @@ p.footer-copyright {
   text-transform: capitalize;
 }
 
-.admin-comments dt {
+.admin-comments dt, .content-text aside dt {
   @include font-calculator($baseFontFamily, 14px, 0);
   font-weight: 600;
 }
 
-.admin-comments dd {
+.admin-comments dd, .content-text aside dd {
   @include font-calculator($baseFontFamily, 14px, 0.5);
   font-weight: 400;
+}
+
+.content-text aside a {
+
+  text-decoration: none;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, .3) 11%, rgba(0, 0, 0, .3) 16%, rgba(0, 0, 0, 0) 16%);
+
+  &:link {
+    color: $textTwo;
+  }
+  &:visited {
+    color: lighten($textTwo, 10%);
+  }
+  &:focus {
+    color: $textTwo;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, .1) 11%, rgba(0, 0, 0, .1) 16%, rgba(0, 0, 0, 0) 16%);
+  }
+  &:hover {
+    color: $textTwo;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, .1) 11%, rgba(0, 0, 0, .1) 16%, rgba(0, 0, 0, 0) 16%);
+
+  }
+  &:active {
+    color: $textTwo;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, .1) 11%, rgba(0, 0, 0, .1) 16%, rgba(0, 0, 0, 0) 16%);
+  }
+
 }

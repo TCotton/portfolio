@@ -65,9 +65,14 @@
 
     aside {
       width: 33%;
-      margin: 0 0 0 1%;
-      padding: 0 1% 0 0;
+      margin: 0 0 0 2%;
+      padding: 0 0 0 2%;
       float: right;
+      border-left: 1px solid $boxBorder;
+    }
+
+    aside:empty {
+      display: none;
     }
   }
 
@@ -81,12 +86,6 @@
       font-weight: 600;
     }
   }
-
-  p.comment-form-success {
-
-  }
-
-
 
   #right-small {
 
@@ -237,6 +236,14 @@
 }
 
 @include breakpoint(mobile) {
+
+  .blog {
+    article {
+      aside {
+        display: none;
+      }
+    }
+  }
 
   #pagination {
 
