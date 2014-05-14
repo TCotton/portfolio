@@ -16,6 +16,7 @@ module.exports = function (app) {
       author: req.body.author,
       category: req.body.category,
       content: req.body.content,
+      aside: req.body.aside,
       contentSnippet: req.body.contentSnippet,
       publishedDate: req.body.publishedDate,
       url: req.body.url,
@@ -93,6 +94,7 @@ module.exports = function (app) {
         bl.author = req.body.author;
         bl.category = req.body.category;
         bl.content = req.body.content;
+        bl.aside = req.body.aside;
         bl.contentSnippet = req.body.contentSnippet;
         bl.url = req.body.url;
         bl.displayImage = req.body.displayImage;
@@ -113,6 +115,5 @@ module.exports = function (app) {
     });
 
   });
-
 
 };

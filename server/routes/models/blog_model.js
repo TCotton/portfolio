@@ -54,7 +54,7 @@ var BlogSchema = new Schema({
     type: String,
     default: '',
     trim: true,
-    unique: true,
+    unique: true
   },
   displayImage: {
     type: String,
@@ -62,8 +62,7 @@ var BlogSchema = new Schema({
   },
   commentsOpen: {
     type: Boolean,
-    default: false,
-    trim: true
+    default: false
   }
 
 });

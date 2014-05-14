@@ -133,6 +133,7 @@
     this.$scope.editBlogFormData.author = data.author;
     this.$scope.editBlogFormData.category = data.category;
     this.$scope.editBlogFormData.content = data.content;
+    this.$scope.editBlogFormData.aside = data.aside;
     this.$scope.editBlogFormData.displayImage = data.displayImage;
     this.$scope.editBlogFormData.uniqueId = data.uniqueId;
     this.$scope.editBlogFormData.publishedDate = data.publishedDate;
@@ -146,7 +147,6 @@
 
     this.$scope.editBlogFormSubmit = true;
 
-
     // check to make sure the form is completely valid
     if (isValid) {
 
@@ -158,6 +158,7 @@
         author: this.$scope.editBlogFormData.author,
         category: this.$scope.editBlogFormData.category,
         content: this.$scope.editBlogFormData.content,
+        aside: this.$scope.editBlogFormData.aside,
         displayImage: this.$scope.editBlogFormData.displayImage,
         uniqueId: this.$scope.editBlogFormData.uniqueId,
         publishedDate: this.$scope.editBlogFormData.publishedDate,
@@ -270,6 +271,7 @@
         this.$scope.dataToDelete.author = null;
         this.$scope.dataToDelete.category = null;
         this.$scope.dataToDelete.content = null;
+        this.$scope.dataToDelete.aside = null;
         this.$scope.dataToDelete.displayImage = null;
         this.$scope.dataToDelete._id = null;
         this.$scope.dataToDelete.commentsOpen = null;

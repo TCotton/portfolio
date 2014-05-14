@@ -54,7 +54,13 @@
                       class="textarea" data-ng-required="true" data-ng-model="editBlogFormData.content"></textarea>
             </span>
 
-            <span class="displayImage-block">
+      <span class="aside-block">
+      <label for="aside" class="visuallyhidden">Summary side block</label>
+        <textarea id="aside" cols="10" rows="20" name="aside" placeholder="Summary side block - optional"
+                  class="textarea" data-ng-model="editBlogFormData.aside"></textarea>
+      </span>
+
+      <span class="displayImage-block">
       <label for="displayImage" class="visuallyhidden">"Display image URL. Optional. The image must be 898px x
         345px"</label>
       <input type="text" id="displayImage" name="displayImage" value=""
@@ -63,7 +69,8 @@
       </span>
 
       <span class="clearfix comment-block">
-      <input id="allowComments" type="checkbox" class="checkbox" name="allowComments" data-ng-model="editBlogFormData.commentsOpen" />
+      <input id="allowComments" type="checkbox" class="checkbox" name="allowComments"
+             data-ng-model="editBlogFormData.commentsOpen"/>
       <label for="allowComments" class="form-label">Open comments on this blog article</label>
       </span>
 
