@@ -15,6 +15,8 @@
     this.$log = $log;
     this.$timeout = $timeout;
 
+    var _this = this;
+
     /** Either receive data from BlogDataService or from the cache
      * **/
     if ($angularCacheFactory.get('blogCache').get('allBlogPosts')) {
@@ -32,15 +34,15 @@
 
       if (_.isObject(result.data.BlogPosts)) {
 
-        this.$scope.totalBlogPosts = result.data.BlogPosts;
-        this.$scope.totalArticles = result.data.totalArticles;
+        _this.$scope.totalBlogPosts = result.data.BlogPosts;
+        _this.$scope.totalArticles = result.data.totalArticles;
 
         // why is this used for ?
-        this.paginationTotalPages = Math.ceil(this.totalArticles / this.paginationPageSize);
+        _this.paginationTotalPages = Math.ceil(this.totalArticles / this.paginationPageSize);
 
       }
 
-    }.bind(this));
+    });
 
     this.$scope.click = null;
     this.$scope.next = null;

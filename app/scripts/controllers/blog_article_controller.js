@@ -22,6 +22,8 @@
     this.$scope.content = null;
     this.$scope.aside = null;
 
+    var _this = this;
+
     /** Load blog data from either the service or cache and then populate the page with the values
      * **/
     if ($angularCacheFactory.get('blogCache').get('allBlogPosts')) {
@@ -33,17 +35,17 @@
 
       if (_.isObject(result.data.BlogPosts)) {
 
-        this.$scope.oldBlogPosts = result.data.BlogPosts;
-        this.populatePage();
+        _this.$scope.oldBlogPosts = result.data.BlogPosts;
+        _this.populatePage();
 
       }
 
-    }.bind(this), function (response) {
+    }, function (response) {
 
-      this.$log.warn('Error BlogArticleCtrl');
-      this.$log.warn(response);
+      _this.$log.warn('Error BlogArticleCtrl');
+      _this.$log.warn(response);
 
-    }.bind(this));
+    });
 
   };
 

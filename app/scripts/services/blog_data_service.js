@@ -19,6 +19,8 @@
     this.$q = $q;
     this.$log = $log;
 
+    var _this = this;
+
     /** Using defineProperty with these values prevents service and constants from being injected with the BlogDataService into a controller
      * **/
     Object.defineProperty(this, 'CONFIG', {
@@ -41,10 +43,10 @@
      * **/
     _cache = function (blog) {
 
-      this.$angularCacheFactory.get('blogCache').put('totalArticles', blog.data.totalArticles);
-      this.$angularCacheFactory.get('blogCache').put('allBlogPosts', blog.data.BlogPosts);
+      _this.$angularCacheFactory.get('blogCache').put('totalArticles', blog.data.totalArticles);
+      _this.$angularCacheFactory.get('blogCache').put('allBlogPosts', blog.data.BlogPosts);
 
-    }.bind(this);
+    };
 
   };
 
@@ -57,7 +59,7 @@
 
     // remove cache for debugging purposes
 
-    this.$angularCacheFactory.get('blogCache').removeAll();
+    //this.$angularCacheFactory.get('blogCache').removeAll();
 
     // use a a cache means that it is possible to bypass the above methods and just serve up the data
     if (!this.$angularCacheFactory.get('blogCache').get('allBlogPosts')) {
@@ -68,7 +70,7 @@
         _blogData = value;
         _cache(value);
 
-      }.bind(this), function () {}).then(function () {
+      }, function () {}).then(function () {
 
         deferred.resolve(_blogData);
 
