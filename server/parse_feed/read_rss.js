@@ -17,6 +17,8 @@ var _addReviewImage;
 var _newBlogPosts;
 var _mergeBlogPosts;
 var _closeBlogComments;
+var _promise_with_array;
+var _grab_old_blog_posts;
 
 /** Simple getter setter cache class
  * **/
@@ -38,9 +40,9 @@ var BlogCacheClass = function (val) {
 var OldBlogPosts = new BlogCacheClass();
 var OldBlogPostTotal = new BlogCacheClass();
 
-var createJSONFile = function() {
+var createJSONFile = function () {
 
-  if(OldBlogPosts.cache) {
+  if (OldBlogPosts.cache) {
 
     fs.writeFile('./server/blogposts.json', OldBlogPosts.cache, function (err) {
       if (err) {
@@ -72,21 +74,16 @@ var RSSClass = function () {
     value: null,
     writable: true
   });
-  Object.defineProperty(this, 'totalOldArticles', {
-    value: null,
-    writable: true
-  });
-  Object.defineProperty(this, 'oldBlogPosts', {
-    value: null,
-    writable: true
-  });
 
   /** 1. Create the right date format
    *  2. Using the date create a unique ID for the blog post which is used in the URL
    * **/
-  _sortOldBlogPosts = function () {
+  _sortOldBlogPosts = function (data) {
 
-    var posts = this.oldBlogPosts;
+    console.log('_sortOldBlogPosts');
+    console.log(data);
+
+    var posts = data;
 
     Object.keys(posts).forEach(function (key) {
 
@@ -117,6 +114,8 @@ var RSSClass = function () {
 
     });
 
+    return q.resolve(posts);
+
   }.bind(this);
 
 
@@ -138,9 +137,9 @@ var RSSClass = function () {
 
   /** create SEO friendly URL from title and add it to the scope
    * **/
-  _seoFriendly = function () {
+  _seoFriendly = function (data) {
 
-    var data = this.oldBlogPosts;
+    console.log('_seoFriendly');
 
     // in this array are a liist of stopwords which have less SEO value
     var stopwords = ['a', 'about', 'above', 'across', 'after', 'afterwards', 'again', 'against', 'all', 'almost', 'alone', 'along', 'already', 'also', 'although', 'always', 'am', 'among', 'amongst', 'amoungst', 'amount', 'an', 'and', 'another', 'any', 'anyhow', 'anyone', 'anything', 'anyway', 'anywhere', 'are', 'around', 'as', 'at', 'back', 'be', 'became', 'because', 'become', 'becomes', 'becoming', 'been', 'before', 'beforehand', 'behind', 'being', 'below', 'beside', 'besides', 'between', 'beyond', 'bill', 'both', 'bottom', 'but', 'by', 'call', 'can', 'cannot', 'cant', 'co', 'con', 'could', 'couldnt', 'cry', 'de', 'describe', 'detail', 'do', 'done', 'down', 'due', 'during', 'each', 'eg', 'eight', 'either', 'eleven', 'else', 'elsewhere', 'empty', 'enough', 'etc', 'even', 'ever', 'every', 'everyone', 'everything', 'everywhere', 'except', 'few', 'fifteen', 'fify', 'fill', 'find', 'fire', 'first', 'five', 'for', 'former', 'formerly', 'forty', 'found', 'four', 'from', 'front', 'full', 'further', 'get', 'give', 'go', 'had', 'has', 'hasnt', 'have', 'he', 'hence', 'her', 'here', 'hereafter', 'hereby', 'herein', 'hereupon', 'hers', 'herself', 'him', 'himself', 'his', 'how', 'however', 'hundred', 'ie', 'if', 'in', 'inc', 'indeed', 'interest', 'into', 'is', 'it', 'its', 'itself', 'keep', 'last', 'latter', 'latterly', 'least', 'less', 'ltd', 'made', 'many', 'may', 'me', 'meanwhile', 'might', 'mill', 'mine', 'more', 'moreover', 'most', 'mostly', 'move', 'much', 'must', 'my', 'myself', 'name', 'namely', 'neither', 'never', 'nevertheless', 'next', 'nine', 'no', 'nobody', 'none', 'noone', 'nor', 'not', 'nothing', 'now', 'nowhere', 'of', 'off', 'often', 'on', 'once', 'one', 'only', 'onto', 'or', 'other', 'others', 'otherwise', 'our', 'ours', 'ourselves', 'out', 'over', 'own', 'part', 'per', 'perhaps', 'please', 'put', 'rather', 're', 'same', 'see', 'seem', 'seemed', 'seeming', 'seems', 'serious', 'several', 'she', 'should', 'show', 'side', 'since', 'sincere', 'six', 'sixty', 'so', 'some', 'somehow', 'someone', 'something', 'sometime', 'sometimes', 'somewhere', 'still', 'such', 'system', 'take', 'ten', 'than', 'that', 'the', 'their', 'them', 'themselves', 'then', 'thence', 'there', 'thereafter', 'thereby', 'therefore', 'therein', 'thereupon', 'these', 'they', 'thickv', 'thin', 'third', 'this', 'those', 'though', 'three', 'through', 'throughout', 'thru', 'thus', 'to', 'together', 'too', 'top', 'toward', 'towards', 'twelve', 'twenty', 'two', 'un', 'under', 'until', 'up', 'upon', 'us', 'very', 'via', 'was', 'we', 'well', 'were', 'what', 'whatever', 'when', 'whence', 'whenever', 'where', 'whereafter', 'whereas', 'whereby', 'wherein', 'whereupon', 'wherever', 'whether', 'which', 'while', 'whither', 'who', 'whoever', 'whole', 'whom', 'whose', 'why', 'will', 'with', 'within', 'without', 'would', 'yet', 'you', 'your', 'yours', 'yourself', 'yourselves', 'the'];
@@ -186,6 +185,10 @@ var RSSClass = function () {
 
     });
 
+    var posts = oldPosts;
+
+    return q.resolve(posts);
+
   }.bind(this);
 
 
@@ -207,7 +210,7 @@ var RSSClass = function () {
         x = -1;
       }
 
-      if(!oldPosts[key].displayImage) {
+      if (!oldPosts[key].displayImage) {
 
         oldPosts[key].displayImage = imageArray[(x += 1)];
 
@@ -223,6 +226,8 @@ var RSSClass = function () {
   /** Retrieve all new blog posts and pass on in the function promise
    * **/
   _newBlogPosts = function () {
+
+    console.log('_newBlogPosts');
 
     var defer = q.defer();
 
@@ -249,6 +254,8 @@ var RSSClass = function () {
    * **/
   _mergeBlogPosts = function (data) {
 
+    console.log('_mergeBlogPosts');
+
     this.blogs.BlogPosts = _.union(data, this.oldBlogPosts);
 
   }.bind(this);
@@ -256,7 +263,19 @@ var RSSClass = function () {
 
   /** For old blog posts taken from Suburban Glory keep comments closed
    * **/
-  _closeBlogComments = function () {
+  _closeBlogComments = function (data) {
+
+    console.log('_closeBlogComments');
+
+    Object.defineProperty(this, 'totalOldArticles', {
+      value: _.size(data),
+      writable: true
+    });
+
+    Object.defineProperty(this, 'oldBlogPosts', {
+      value: data,
+      writable: true
+    });
 
     var oldPosts = this.oldBlogPosts;
 
@@ -265,6 +284,49 @@ var RSSClass = function () {
       oldPosts[key].commentsOpen = false;
 
     });
+
+  }.bind(this);
+
+  _promise_with_array = function (anArray) {
+
+    var the_promises = [];
+    var deferred;
+    var get_an_array;
+
+    anArray.forEach(function (firstResult) {
+      deferred = Q.defer();
+      get_an_array(firstResult, function (secondResult) {
+        deferred.resolve(secondResult);
+      });
+
+      the_promises.push(deferred.promise);
+
+    });
+
+    return q.all(the_promises);
+  };
+
+  _grab_old_blog_posts = function (url) {
+
+    var deferred = q.defer();
+
+    var feed = new gfeed.Feed(url);
+
+    feed.setNumEntries(50);
+
+    feed.load(function (data) {
+
+      /** After retrieving data using Google RSS API store it into the cache and count number of old blog posts
+       * **/
+      if (data.error || !data) {
+        return new Error('Error fetching feeds');
+      }
+
+      deferred.resolve(data.feed.entries);
+
+    }.bind(this));
+
+    return deferred.promise;
 
   }.bind(this);
 
@@ -287,51 +349,88 @@ RSSClass.prototype.blogItems = function (callback) {
 
       callback(data);
 
+    }).catch(function (error) {
+
+      return new Error(error);
+
     }).done();
+
 };
 
 
 RSSClass.prototype.parseFeed = function (url, callback) {
 
-  var feed = new gfeed.Feed(url);
+  var _this = this;
 
-  feed.setNumEntries(50);
-  feed.load(function (data) {
+  return _grab_old_blog_posts(url).then(function (posts) {
+    return _sortOldBlogPosts(posts).then(function (posts) {
+      return _seoFriendly(posts).then(function (posts) {
+        return _closeBlogComments(posts).then(function () {
+          return _newBlogPosts(posts).then(function (posts) {
+            return _mergeBlogPosts(posts).then(function (posts) {
 
-    /** After retrieving data using Google RSS API store it into the cache and count number of old blog posts
-     * **/
-    if (data.error || !data) {
-      return new Error('Error fetching feeds');
-    }
+            });
+          });
+        })
+          .then(_addReviewImage)
+          .then(_totalArticlesCount)
+          .finally(function (data) {
+            // set cache here
+            // cache old RSS feed and data
+            OldBlogPosts.cache = JSON.stringify(_this.oldBlogPosts);
+            OldBlogPostTotal.cache = JSON.stringify(_this.totalOldArticles);
 
-    this.totalOldArticles = _.size(data.feed.entries);
-    // if empty provide value of empty object to see if it stops nasty JS errors appearing
-    this.oldBlogPosts = data.feed.entries || {};
+            callback(data);
+          });
+      });
+    });
+  });
 
-    /** use promises to filter and sort old and new blogs
-     * These don't need to be chained together in synchronous order
-     * Call new blogs in tandem with parsing the RSS feed of the old blog posts
-     * **/
-    q.fcall(function () {
-      _sortOldBlogPosts();
-      _seoFriendly();
-      _closeBlogComments();
-    }).then(_newBlogPosts)
-      .then(_mergeBlogPosts)
-      .then(_addReviewImage)
-      .then(_totalArticlesCount)
-      .then(function (data) {
+  /*
+   return _grab_old_blog_posts().then(function (posts) {
+   return _sortOldBlogPosts(posts).then(function (posts) {
+   return _seoFriendly(posts).then(function (posts) {
+   return _closeBlogComments(posts).then(function (posts) {
 
-        // set cache here
-        // cache old RSS feed and data
-        OldBlogPosts.cache = JSON.stringify(this.oldBlogPosts);
-        OldBlogPostTotal.cache = JSON.stringify(this.totalOldArticles);
+   }).then(_newBlogPosts)
+   .then(_mergeBlogPosts)
+   .then(_addReviewImage)
+   .then(_totalArticlesCount)
+   .finally(function (data) {
+   // set cache here
+   // cache old RSS feed and data
+   OldBlogPosts.cache = JSON.stringify(_this.oldBlogPosts);
+   OldBlogPostTotal.cache = JSON.stringify(_this.totalOldArticles);
 
-        callback(data);
+   callback(data);
+   }.bind(this));
+   });*/
 
-      }.bind(this)).done();
+  /*
+   return q.fcall(function () {
+   _sortOldBlogPosts();
+   _seoFriendly();
+   _closeBlogComments();
+   }).then(_newBlogPosts)
+   .then(_mergeBlogPosts)
+   .then(_addReviewImage)
+   .then(_totalArticlesCount)
+   .then(function (data) {
 
-  }.bind(this));
+   // set cache here
+   // cache old RSS feed and data
+   OldBlogPosts.cache = JSON.stringify(this.oldBlogPosts);
+   OldBlogPostTotal.cache = JSON.stringify(this.totalOldArticles);
+
+   callback(data);
+
+   }.bind(this))
+   .catch(function (error) {
+
+   return new Error(error);
+
+   }).done();
+   */
 
 };
 
@@ -352,26 +451,32 @@ module.exports = function (app) {
 
     createJSONFile();
 
+    OldBlogFeed.parseFeed(OldBlogFeed.RSSFeed, function (data) {
+
+      res.json(data);
+
+    });
+
     // if oldBlogPosts are in the cache then don't use the parseFeed method
     // just retrieve them from the cache
-    if (OldBlogPosts.cache && OldBlogPostTotal.cache) {
+    /* if (OldBlogPosts.cache && OldBlogPostTotal.cache) {
 
-      OldBlogFeed.blogItems(function (data) {
+     OldBlogFeed.blogItems(function (data) {
 
-        res.json(data);
+     res.json(data);
 
-      });
+     });
 
-    } else {
+     } else {
 
-      OldBlogFeed.parseFeed(OldBlogFeed.RSSFeed, function (data) {
+     OldBlogFeed.parseFeed(OldBlogFeed.RSSFeed, function (data) {
 
-        res.json(data);
+     res.json(data);
 
-      });
+     });
 
-    }
-
+     }
+     */
   });
 
 };
