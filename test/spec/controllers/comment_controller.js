@@ -2,7 +2,7 @@
  * Created by awalpole on 05/05/2014.
  */
 'use strict';
-describe('Controller: ACommentCtrl as BlogCommentCtrl', function () {
+describe('Controller: CommentCtrl as BlogCommentCtrl', function () {
 
   var $controller;
   var $rootScope;
