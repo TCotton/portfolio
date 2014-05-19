@@ -13,8 +13,6 @@
     this.$scope = $scope;
     this.$log = $log;
 
-    var _this = this;
-
     /** Either receive data from BlogDataService or from the cache
     * **/
     if ($angularCacheFactory.get('blogCache').get('allBlogPosts')) {
@@ -29,17 +27,17 @@
 
       if(_.isObject(result.data.BlogPosts)) {
 
-        _this.$scope.blogData = result.data.BlogPosts;
+        this.$scope.blogData = result.data.BlogPosts;
 
       }
 
 
-    }, function (response) {
+    }.bind(this), function (response) {
 
-      _this.$log.warn('Error SidebarCtrl');
-      _this.$log.warn(response);
+      this.$log.warn('Error SidebarCtrl');
+      this.$log.warn(response);
 
-    });
+    }.bind(this));
 
   };
 
