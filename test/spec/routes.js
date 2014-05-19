@@ -1,5 +1,5 @@
 'use strict';
-describe('Routes test', function () {
+describe('Routes test with log in', function () {
   // Mock our module in our tests
   beforeEach(module('portfolioApp'));
 
@@ -167,5 +167,105 @@ describe('Routes test', function () {
     });
 
   });
+
+  describe('admin comments page', function () {
+    beforeEach(inject(
+      function ($httpBackend) {
+        $httpBackend.expectGET('views/admin/comment_details.html')
+          .respond(200, 'admin comments HTML');
+      }
+    ));
+
+    it('should load the admin comments page on successful load of /admin/blog-comments', function () {
+      location.path('/admin/blog-comments');
+      rootScope.$digest(); // call the digest loop
+      expect(route.current.controller).toBe('CommentAdminCtrl as AdminCommentAdminCtrl');
+    });
+
+  });
+
+});
+
+
+describe('Routes test without log in', function () {
+
+  // Mock our module in our tests
+  beforeEach(module('portfolioApp'));
+
+  var location, route, rootScope;
+
+  beforeEach(inject(
+    function (_$location_, _$route_, _$rootScope_) {
+      location = _$location_;
+      route = _$route_;
+      rootScope = _$rootScope_;
+    }
+  ));
+
+  describe('admin add blog page without loggin in', function () {
+    beforeEach(inject(
+      function ($httpBackend) {
+        $httpBackend.expectGET('views/admin/login.html')
+          .respond(200, 'login page HTML');
+      }
+    ));
+
+    it('should load views/admin/login.html if the user navigates to /admin/add-blog without logging in first', function () {
+      location.path('/admin/add-blog');
+      rootScope.$digest(); // call the digest loop
+      expect(route.current.controller).toBe('LoginCtrl as AdminLogin');
+    });
+
+  });
+
+  describe('admin blog details page without logging in', function () {
+    beforeEach(inject(
+      function ($httpBackend) {
+        $httpBackend.expectGET('views/admin/login.html')
+          .respond(200, 'login page HTML');
+      }
+    ));
+
+    it('should load views/admin/login.html if the user navigates to /admin/blog-details without logging in first', function () {
+      location.path('/admin/blog-details');
+      rootScope.$digest(); // call the digest loop
+      expect(route.current.controller).toBe('LoginCtrl as AdminLogin');
+    });
+
+  });
+
+  describe('admin user details page without logging in', function () {
+    beforeEach(inject(
+      function ($httpBackend) {
+        $httpBackend.expectGET('views/admin/login.html')
+          .respond(200, 'login page HTML');
+      }
+    ));
+
+    it('should load views/admin/login.html if the user navigates to /admin/user-details without logging in first', function () {
+      location.path('/admin/user-details');
+      rootScope.$digest(); // call the digest loop
+      expect(route.current.controller).toBe('LoginCtrl as AdminLogin');
+    });
+
+  });
+
+  describe('admin comments page without logging in', function () {
+    beforeEach(inject(
+      function ($httpBackend) {
+        $httpBackend.expectGET('views/admin/login.html')
+          .respond(200, 'login page HTML');
+      }
+    ));
+
+    it('should load the admin comments page on successful load of /admin/blog-comments', function () {
+      location.path('/admin/blog-comments');
+      rootScope.$digest(); // call the digest loop
+      expect(route.current.controller).toBe('LoginCtrl as AdminLogin');
+    });
+
+  });
+
+
 
 });
