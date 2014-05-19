@@ -2752,7 +2752,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
 /* line 54, _blog.scss */
 .blog article blockquote:before {
   color: #ccc;
-  content: open-quote;
+  content: "\201C";
   font-size: 4em;
   line-height: 0.1em;
   margin-right: 0.25em;
