@@ -11,6 +11,7 @@ describe('Controller: ACommentCtrl as BlogCommentCtrl', function () {
   var $q;
   var scope;
   var BlogCommentCtrl;
+  var returnedCommentData;
 
   beforeEach(module('portfolioApp.controllers', 'testConstants', 'portfolioApp.services'));
 
@@ -32,9 +33,11 @@ describe('Controller: ACommentCtrl as BlogCommentCtrl', function () {
 
     scope.commentFormData = MOCK_DATA.commentDetails;
 
+    returnedCommentData = [{'name':'John Williams','email':'andy_walpole@btopenworld.com','url':'http://portfolio-12501.onmodulus.net/#!/','message':'This is a message here','blogId':'139938','published':true,'publishedDate':'2014-05-19T17:54:14.384Z','_id':'537a4546fd2831630749de1b','__v':0},{'name':'John Williams','email':'andy_walpole@btopenworld.com','url':'http://andywalpole.me/#!/blog/137153/books-helped-become-professional-web-developer','message':'This is another comment message here','blogId':'139938','published':true,'publishedDate':'2014-05-19T17:55:09.537Z','_id':'537a457dfd2831630749de1c','__v':0}];
+
   }));
 
-  it('After submission of blog of local scope form fields will be null: BlogCommentCtrl.submitComment()', function () {
+  it('After submission of comment of local scope form fields will be null: BlogCommentCtrl.submitComment()', function () {
 
     expect(scope.commentFormData.name).toBe(MOCK_DATA.commentDetails.name);
     expect(scope.commentFormData.email).toBe(MOCK_DATA.commentDetails.email);
@@ -57,5 +60,20 @@ describe('Controller: ACommentCtrl as BlogCommentCtrl', function () {
 
   });
 
+  it('Retrieve all comments for blog article: BlogCommentCtrl.retreiveComment()', function () {
+
+    expect(scope.publishComments).toBe(null);
+
+    $httpBackend.expect('GET', '/api/comment/getPublished').respond(200, returnedCommentData);
+
+    scope.$apply(function () {
+      BlogCommentCtrl.retreiveComment();
+    });
+
+    $httpBackend.flush();
+
+    expect(scope.publishComments).toEqual(returnedCommentData);
+    
+  });
 
 });
