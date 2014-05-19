@@ -67,7 +67,7 @@ angular.module('portfolioApp', ['portfolioApp.controllers', 'portfolioApp.direct
       .when('/admin/user-details', {
         templateUrl: 'views/admin/user_details.html',
         controller: 'UserDetailsCtrl as AdminUserDetailsCtrl',
-        title: 'Admin area - add, edit or delete users with admin privledges'
+        title: 'Admin area - add, edit or delete users with admin privileges'
       })
       .when('/admin/blog-details', {
         templateUrl: 'views/admin/blog_details.html',
