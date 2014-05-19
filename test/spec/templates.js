@@ -1,5 +1,5 @@
 'use strict';
-describe('Unit: Templates', function () {
+describe('Unit: Templates - logged in', function () {
 
   // checks template routes
 
@@ -117,7 +117,15 @@ describe('Unit: Templates', function () {
     $httpBackend.flush();
   });
 
-  it('loads admin add blog page at /admin/add-blog', function () {
+  it('loads admin add blog page at /admin/blog-details', function () {
+    $httpBackend.expectGET('views/admin/blog_details.html')
+      .respond(200);
+    location.path('/admin/blog-details');
+    rootScope.$digest(); // call the digest loop
+    $httpBackend.flush();
+  });
+
+  it('loads admin edit blog page at /admin/add-blog', function () {
     $httpBackend.expectGET('views/admin/add_blog.html')
       .respond(200);
     location.path('/admin/add-blog');
@@ -132,5 +140,59 @@ describe('Unit: Templates', function () {
     rootScope.$digest(); // call the digest loop
     $httpBackend.flush();
   });
+
+});
+
+describe('Unit: Templates - not logged in', function () {
+
+  // checks template routes
+  var $httpBackend, location, rootScope, route;
+
+  beforeEach(module('portfolioApp'));
+
+  beforeEach(inject(function (_$rootScope_, _$route_, _$httpBackend_, _$location_) {
+    location = _$location_;
+    rootScope = _$rootScope_;
+    route = _$route_;
+    $httpBackend = _$httpBackend_;
+  }));
+
+  afterEach(function () {
+    $httpBackend.verifyNoOutstandingExpectation();
+    $httpBackend.verifyNoOutstandingRequest();
+  });
+
+  it('loads login page when navigating to /admin/blog-comments because user is not logged in', function () {
+    $httpBackend.expectGET('views/admin/login.html')
+      .respond(200);
+    location.path('/admin/blog-comments');
+    rootScope.$digest(); // call the digest loop
+    $httpBackend.flush();
+  });
+
+  it('loads login page when navigating to /admin/user-details because user is not logged in', function () {
+    $httpBackend.expectGET('views/admin/login.html')
+      .respond(200);
+    location.path('/admin/user-details');
+    rootScope.$digest(); // call the digest loop
+    $httpBackend.flush();
+  });
+
+  it('loads login page when navigating to /admin/add-blog because user is not logged in', function () {
+    $httpBackend.expectGET('views/admin/login.html')
+      .respond(200);
+    location.path('/admin/add-blog');
+    rootScope.$digest(); // call the digest loop
+    $httpBackend.flush();
+  });
+
+  it('loads login page when navigating to /admin/blog-details because user is not logged in', function () {
+    $httpBackend.expectGET('views/admin/login.html')
+      .respond(200);
+    location.path('/admin/blog-details');
+    rootScope.$digest(); // call the digest loop
+    $httpBackend.flush();
+  });
+
 
 });
