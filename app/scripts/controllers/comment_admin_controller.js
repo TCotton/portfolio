@@ -54,7 +54,7 @@
 
     returnedPromise.then(function (value) {
 
-      if (value) {
+      if (value.data) {
 
         // update page again
         this.getComments();
@@ -79,10 +79,14 @@
 
     var returnedPromise = this.MongoCommentService.editComment(formData);
 
-    returnedPromise.then(function () {
+    returnedPromise.then(function (value) {
 
-      // update page again
-      this.getComments();
+      if(value.data) {
+
+        // update page again
+        this.getComments();
+
+      }
 
     }.bind(this), function (value) {
 
