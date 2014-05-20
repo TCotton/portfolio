@@ -13,8 +13,6 @@
     this.$scope = $scope;
     this.$log = $log;
 
-    var _this = this;
-
     /** Either receive data from BlogDataService or from the cache
     * **/
     if ($angularCacheFactory.get('blogCache').get('allBlogPosts')) {

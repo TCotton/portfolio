@@ -4,6 +4,7 @@ var RSS = require('rss');
 var fs = require('fs');
 var Blog = require('./routes/models/blog_model');
 var _ = require('underscore');
+var q = require('q');
 
 var feedOptions = {
   title: 'The blog of web developer Andy Walpole',
@@ -15,66 +16,108 @@ var feedOptions = {
 
 var feed = new RSS(feedOptions);
 
-var feedItems = [];
+/** loop through blogs in monogdb and create RSS friendly objects
+ * **/
 
+var blogs_database = function () {
 
-Blog.find(function (err, blogs) {
+  var feedItems = {}, deferred, blogURl;
 
-  // if there is an error retrieving, send the error. nothing after res.send(err) will execute
-  if (!err) {
+  deferred = q.defer();
 
-    Object.keys(blogs).forEach(function (key) {
+  Blog.find(function (err, blogs) {
 
-      var blogURl = 'http://andywalpole.me/#!/blog/' + blogs[key].uniqueId + '/' + blogs[key].url;
+    // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+    if (!err) {
 
-      var feedObject = {
-        title: blogs[key].title,
-        description: blogs[key].content,
-        url: blogURl,
-        guid: blogs[key].uniqueId,
-        author: blogs[key].author,
-        date: parseInt(blogs[key].publishedDate, 10)
-      };
+      Object.keys(blogs).forEach(function (key) {
 
-      feed.item(feedObject);
+        blogURl = 'http://andywalpole.me/#!/blog/' + blogs[key].uniqueId + '/' + blogs[key].url;
 
-    });
+        feedItems[key] = {
+          title: blogs[key].title,
+          description: blogs[key].content,
+          url: blogURl,
+          guid: blogs[key].uniqueId,
+          author: blogs[key].author,
+          date: parseInt(blogs[key].publishedDate, 10)
+        };
 
-  }
+      });
 
-});
+      deferred.resolve(feedItems);
 
-
-if (fs.existsSync('./server/blogposts.json')) {
-
-  var data = fs.readFileSync('./server/blogposts.json', 'utf8', function (err) {
-
-    if (err) {
-      console.log(err);
     }
 
   });
 
-  var posts = JSON.parse(data);
+  return deferred.promise;
 
-  Object.keys(posts).forEach(function (key) {
+};
 
-    var blogURl = 'http://andywalpole.me/#!/blog/' + posts[key].uniqueId + '/' + posts[key].url;
+/** loop through blogs in json file and create RSS friendly objects
+ * **/
 
-    var feedObject = {
-      title: posts[key].title,
-      description: posts[key].content,
-      url: blogURl,
-      guid: posts[key].uniqueId,
-      author: posts[key].author,
-      date: parseInt(posts[key].publishedDate, 10)
-    };
+var blogs_feed = function () {
 
-    feed.item(feedObject);
+  var feedItems = {}, deferred, posts, data, blogURl;
 
-  });
+  deferred = q.defer();
 
-}
+  if (fs.existsSync('./server/blogposts.json')) {
+
+    data = fs.readFileSync('./server/blogposts.json', 'utf8', function (err) {
+
+      if (err) {
+        console.log(err);
+      }
+
+    });
+
+    posts = JSON.parse(data);
+
+    Object.keys(posts).forEach(function (key) {
+
+      blogURl = 'http://andywalpole.me/#!/blog/' + posts[key].uniqueId + '/' + posts[key].url;
+
+      feedItems[key] = {
+        title: posts[key].title,
+        description: posts[key].content,
+        url: blogURl,
+        guid: posts[key].uniqueId,
+        author: posts[key].author,
+        date: parseInt(posts[key].publishedDate, 10)
+      };
+
+    });
+
+    deferred.resolve(feedItems);
+
+  }
+
+  return deferred.promise;
+
+};
+
+/** Use promise all to make sure that both functions return data
+ * **/
+
+q.all([blogs_database(), blogs_feed()]).spread(function (a, b) {
+
+  var x, l, feedItems;
+
+  /** Join them with union function after using sortBy function to rearrange them in correct data order
+   * **/
+
+  feedItems = _.union(_.sortBy(a, function (o) { return o.date * -1; }), _.sortBy(b, function (o) { return !o.date; }));
+
+  for (x = 0, l = feedItems.length; x !== l; x += 1) {
+
+    feed.item(feedItems[x]);
+
+  }
+
+});
 
 module.exports = function (app) {
 
