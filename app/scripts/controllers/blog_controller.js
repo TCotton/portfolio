@@ -25,9 +25,9 @@
     }
 
     /* the number of articles per page */
-    this.$scope.paginationPageSize = 6;
+    this.$scope.paginationPageSize = 7;
     /* used in */
-    this.$scope.paginationPageSizeLimit = -6;
+    this.$scope.paginationPageSizeLimit = -7;
     this.$scope.returnObject = null;
 
     BlogDataService.retrieveData().then(function (result) {

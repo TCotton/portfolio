@@ -93,6 +93,8 @@ require('./server/parse_feed/read_rss.js')(app);
 // XML sitemap =================================================================
 require('./server/sitemap.js')(app);
 
+require('./server/rss.js')(app);
+
 module.exports = app;
 
 http.createServer(app).listen(app.get('port'), function () {

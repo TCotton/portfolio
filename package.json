@@ -25,7 +25,8 @@
     "google-feed-api": "~0.0.2",
     "q": "~1.0.1",
     "moment": "~2.6.0",
-    "helmet": "~0.2.1"
+    "helmet": "~0.2.1",
+    "rss": "~0.3.2"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
