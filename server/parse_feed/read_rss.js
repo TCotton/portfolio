@@ -83,6 +83,8 @@ var RSSClass = function () {
 
     //console.log('_sortOldBlogPosts');
 
+    var deferred = q.defer();
+
     var posts = data;
 
     Object.keys(posts).forEach(function (key) {
@@ -114,7 +116,9 @@ var RSSClass = function () {
 
     });
 
-    return q.resolve(posts);
+    deferred.resolve(posts);
+
+    return deferred.promise;
 
   }.bind(this);
 

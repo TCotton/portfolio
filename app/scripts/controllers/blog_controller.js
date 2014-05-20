@@ -25,9 +25,9 @@
     }
 
     /* the number of articles per page */
-    this.$scope.paginationPageSize = 7;
+    this.$scope.paginationPageSize = 10;
     /* used in */
-    this.$scope.paginationPageSizeLimit = -7;
+    this.$scope.paginationPageSizeLimit = -10;
     this.$scope.returnObject = null;
 
     BlogDataService.retrieveData().then(function (result) {
@@ -73,6 +73,11 @@
 
       this.$scope.paginationStartFrom = this.$scope.paginationPageSize;
 
+      console.log('this.$scope.paginationStartFrom');
+      console.log(this.$scope.paginationStartFrom);
+      console.log('this.$scope.paginationPageSize');
+      console.log(this.$scope.paginationPageSize);
+
       this.$scope.next = '/#!/blog/?page=2';
 
     }
@@ -81,6 +86,9 @@
       // pattern for blog index page: /blog/
 
       this.$scope.paginationStartFrom = this.currentPage().charAt(this.currentPage().length - 1) * this.$scope.paginationPageSize;
+
+      console.log('this.$scope.paginationStartFrom');
+      console.log(this.$scope.paginationStartFrom);
 
       this.$scope.prev = ((this.$scope.paginationStartFrom / this.$scope.paginationPageSize) - 1) !== 0 ? '/#!/blog/?page=' + ((this.paginationStartFrom / this.paginationPageSize) - 1) : '/#!/blog/';
       this.$scope.next = '/#!/blog/?page=' + ((this.$scope.paginationStartFrom / this.$scope.paginationPageSize) + 1);
