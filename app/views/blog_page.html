@@ -10,18 +10,18 @@
 
   <div id="left-large">
 
-    <article>
+    <article itemscope itemtype="http://schema.org/BlogPosting">
 
       <header><img data-ng-src="/{{displayImage}}" alt=""/></header>
       <section>
 
-        <h3 class="blog-title" data-ng-bind="title"></h3>
+        <h3 class="blog-title" data-ng-bind="title" itemprop="headline"></h3>
 
-        <p class="date">Andy Walpole / Category: <span rel="tag">General</span> / <span
-            data-ng-bind="publishedDate | date"></span></p>
+        <p class="date"><span itemprop="author">Andy Walpole</span> / Category: <span rel="tag">General</span> / <span
+            data-ng-bind="publishedDate | date" itemprop="datePublished"></span></p>
 
         <aside data-ng-bind-html="aside"></aside>
-        <div data-ng-bind-html="content"></div>
+        <div data-ng-bind-html="content" itemprop="articleBody"></div>
 
       </section>
 
