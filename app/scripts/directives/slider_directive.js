@@ -76,7 +76,7 @@ angular.module('portfolioApp.directives').directive('sliderDirective', ['SLIDER'
 
         sliderTotal: _.size(SLIDER),
         timeGap: 8000,
-        startGap: 2000,
+        startGap: 4000,
         animationGap: 7000,
         timerInterval: null,
 
