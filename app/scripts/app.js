@@ -49,7 +49,7 @@ angular.module('portfolioApp', ['portfolioApp.controllers', 'portfolioApp.direct
       .when('/blog/', {
         templateUrl: 'views/blog.html',
         controller: 'BlogCtrl',
-        title: 'Web development blog'
+        title: 'Blog of web developer Andy Walpole'
       })
       .when('/blog/:blogId/:blogPage', {
         templateUrl: 'views/blog_page.html',

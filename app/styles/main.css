@@ -3348,12 +3348,12 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
 
   /* line 22, _print.scss */
   a[href]:after {
-    content: " (" attr(href) ")";
+    content: " (" attr(href) ")" !important;
   }
 
   /* line 26, _print.scss */
   abbr[title]:after {
-    content: " (" attr(title) ")";
+    content: " (" attr(title) ")" !important;
   }
 
   /*
@@ -3363,7 +3363,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   /* line 35, _print.scss */
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
-    content: "";
+    content: "" !important;
   }
 
   /* line 40, _print.scss */
@@ -3405,7 +3405,10 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
 
   /* line 70, _print.scss */
   h2,
-  h3 {
+  h3,
+  h4,
+  h5,
+  h6 {
     page-break-after: avoid;
   }
 }
