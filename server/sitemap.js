@@ -62,7 +62,7 @@ var createBlogLinks = function () {
 
       var blogURl = '/#!/blog/' + posts[key].uniqueId + '/' + posts[key].url;
 
-      url.push({url: blogURl, changefreq: 'weekly', priority: 0.7});
+      url.push({url: blogURl, changefreq: 'monthly', priority: 0.7});
 
     });
 

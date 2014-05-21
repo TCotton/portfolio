@@ -19,6 +19,8 @@
       this.$scope.blogData = $angularCacheFactory.get('blogCache').get('allBlogPosts');
     }
 
+    var _this = this;
+
     /** Take blog object from service ready to be used in the side bar lists
      **/
     BlogDataService.retrieveData().then(function (result) {
@@ -27,17 +29,17 @@
 
       if(_.isObject(result.data.BlogPosts)) {
 
-        this.$scope.blogData = result.data.BlogPosts;
+        _this.$scope.blogData = result.data.BlogPosts;
 
       }
 
 
-    }.bind(this), function (response) {
+    }, function (response) {
 
-      this.$log.warn('Error SidebarCtrl');
-      this.$log.warn(response);
+      _this.$log.warn('Error SitemapCtrl');
+      _this.$log.warn(response);
 
-    }.bind(this));
+    });
 
   };
 
