@@ -184,6 +184,22 @@ describe('Routes test with log in', function () {
 
   });
 
+  describe('html sitemap page', function () {
+    beforeEach(inject(
+      function ($httpBackend) {
+        $httpBackend.expectGET('views/html_sitemap.html')
+          .respond(200, 'html sitemap HTML');
+      }
+    ));
+
+    it('should load the sitemap page on successful load of /sitemap', function () {
+      location.path('/sitemap');
+      rootScope.$digest(); // call the digest loop
+      expect(route.current.controller).toBe('SitemapCtrl');
+    });
+
+  });
+
 });
 
 
