@@ -1259,15 +1259,24 @@ p.footer-copyright {
   color: white;
   text-transform: capitalize;
 }
+/* line 275, modules/_typography.scss */
+p.footer-copyright a {
+  color: white;
+  text-decoration: none;
+}
+/* line 278, modules/_typography.scss */
+p.footer-copyright a:hover {
+  text-decoration: underline;
+}
 
-/* line 277, modules/_typography.scss */
+/* line 284, modules/_typography.scss */
 .admin-comments dt, .content-text aside dt {
   font-size: 1.4em;
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
 }
 
-/* line 282, modules/_typography.scss */
+/* line 289, modules/_typography.scss */
 .admin-comments dd, .content-text aside dd {
   font-size: 1.4em;
   font-family: 'Open Sans', sans-serif;
@@ -1275,30 +1284,30 @@ p.footer-copyright {
   font-weight: 400;
 }
 
-/* line 287, modules/_typography.scss */
+/* line 294, modules/_typography.scss */
 .content-text aside a {
   text-decoration: none;
   background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.3) 11%, rgba(0, 0, 0, 0.3) 16%, transparent 16%);
 }
-/* line 292, modules/_typography.scss */
+/* line 299, modules/_typography.scss */
 .content-text aside a:link {
   color: #666666;
 }
-/* line 295, modules/_typography.scss */
+/* line 302, modules/_typography.scss */
 .content-text aside a:visited {
   color: gray;
 }
-/* line 298, modules/_typography.scss */
+/* line 305, modules/_typography.scss */
 .content-text aside a:focus {
   color: #666666;
   background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
 }
-/* line 302, modules/_typography.scss */
+/* line 309, modules/_typography.scss */
 .content-text aside a:hover {
   color: #666666;
   background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
 }
-/* line 307, modules/_typography.scss */
+/* line 314, modules/_typography.scss */
 .content-text aside a:active {
   color: #666666;
   background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);

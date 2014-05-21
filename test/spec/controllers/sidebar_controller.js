@@ -27,10 +27,6 @@ describe('Controller: SidebarCtrl', function () {
 
     scope = $rootScope.$new();
 
-    scope.$parent.$broadcast('blog_posts', MOCK_DATA.returnedRSS.data.responseData.feed.entries);
-
-    spyOn(scope, '$on').andCallThrough();
-
     SidebarCtrl = $controller('SidebarCtrl', {
       $scope: scope
     });

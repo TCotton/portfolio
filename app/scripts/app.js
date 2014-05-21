@@ -84,6 +84,11 @@ angular.module('portfolioApp', ['portfolioApp.controllers', 'portfolioApp.direct
         controller: 'CommentAdminCtrl as AdminCommentAdminCtrl',
         title: 'Admin area - edit blog comments'
       })
+      .when('/sitemap', {
+        templateUrl: 'views/html_sitemap.html',
+        controller: 'SitemapCtrl',
+        title: 'Sitemap'
+      })
       .otherwise({
         redirectTo: '/404',
         templateUrl: 'views/404.html'

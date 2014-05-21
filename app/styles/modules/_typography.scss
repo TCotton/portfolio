@@ -272,6 +272,13 @@ p.footer-copyright {
   line-height: $bottomFooterHeight;
   color: white;
   text-transform: capitalize;
+  a {
+    color: white;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 .admin-comments dt, .content-text aside dt {
