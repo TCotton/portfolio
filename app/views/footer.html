@@ -28,60 +28,6 @@ angular.module('portfolioApp', ['portfolioApp.controllers', 'portfolioApp.direct
         templateUrl: 'views/work_page.html',
         controller: 'WorkPageCtrl'
       })
-      .when('/side-projects', {
-        templateUrl: 'views/side_projects.html',
-        title: 'Noteworthy personal side projects from the past 18 months'
-      })
-      .when('/side-projects/:projectsPage', {
-        templateUrl: 'views/projects_page.html',
-        controller: 'ProjectsPageCtrl'
-      })
-      .when('/about-me', {
-        templateUrl: 'views/about_me.html',
-        title: 'Skills and contract details'
-      })
-      .when('/contact-me', {
-        templateUrl: 'views/contact_me.html',
-        controller: 'FormCtrl as AdminFormCtrl',
-        title: 'Contact form'
-      })
-      .when('/blog/', {
-        templateUrl: 'views/blog.html',
-        controller: 'BlogCtrl',
-        title: 'Web development blog'
-      })
-      .when('/blog/:blogId/:blogPage', {
-        templateUrl: 'views/blog_page.html',
-        controller: 'BlogArticleCtrl'
-      })
-      .when('/login', {
-        templateUrl: 'views/admin/login.html',
-        controller: 'LoginCtrl as AdminLogin',
-        title: 'Admin login form'
-      })
-      .when('/admin/user-details', {
-        templateUrl: 'views/admin/user_details.html',
-        controller: 'UserDetailsCtrl as AdminUserDetailsCtrl',
-        title: 'Admin area - add, edit or delete users with admin privledges'
-      })
-      .when('/admin/blog-details', {
-        templateUrl: 'views/admin/blog_details.html',
-        controller: 'EditBlogCtrl as AdminEditBlogCtrl',
-        title: 'Admin area - edit or delete blog posts'
-      })
-      .when('/admin/add-blog', {
-        templateUrl: 'views/admin/add_blog.html',
-        controller: 'AddBlogCtrl as AdminAddBlogCtrl',
-        title: 'Admin area - add new blog articles'
-      })
-      .when('/admin/', {
-        templateUrl: 'views/admin/admin.html',
-        title: 'Admin area'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-
   });
        </pre>
     </a>
