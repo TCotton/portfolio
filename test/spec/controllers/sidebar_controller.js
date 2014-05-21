@@ -7,7 +7,7 @@
 describe('Controller: SidebarCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('portfolioApp.controllers', 'testConstants'));
+  beforeEach(module('portfolioApp.controllers', 'testConstants', 'portfolioApp.services'));
 
   var $controller;
   var $rootScope;
@@ -35,10 +35,19 @@ describe('Controller: SidebarCtrl', function () {
 
   }));
 
-/*  iit('something here', function () {
+/*  iit('Retrieve all blog posts and change scope', function () {
 
-    console.log(scope.blogData);
+    expect(scope.publishComments).toBe(null);
 
+    $httpBackend.expect('GET', '/api/comment/getPublished').respond(200, returnedCommentData);
+
+    scope.$apply(function () {
+      SidebarCtrl.retreiveComment();
+    });
+
+    $httpBackend.flush();
+
+    expect(scope.publishComments).toEqual(returnedCommentData);
 
 
   });*/

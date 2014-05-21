@@ -29,6 +29,7 @@ var createBlogLinks = function () {
   url.push({url: '/#!/about-me', changefreq: 'monthly', priority: 0.7});
   url.push({url: '/#!/contact-me', changefreq: 'monthly', priority: 0.7});
   url.push({url: '/#!/blog/', changefreq: 'weekly', priority: 0.7});
+  url.push({url: '/#!/sitemap', changefreq: 'weekly', priority: 0.7});
 
   Blog.find(function (err, blogs) {
 
