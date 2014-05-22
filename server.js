@@ -86,6 +86,7 @@ require('./server/routes/user_routes.js')(app);
 require('./server/routes/blog_routes.js')(app);
 require('./server/routes/comment_routes.js')(app);
 require('./server/routes/misc_routes.js')(app);
+require('./server/routes/newsblurAPI.js')(app);
 
 //RSS feed parsing
 require('./server/parse_feed/read_rss.js')(app);

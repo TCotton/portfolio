@@ -3354,7 +3354,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   }
 
   /* line 9, _print.scss */
-  #header, #footer, #banner, form, .video-container {
+  #header, #footer, #banner, form, .video-container, aside {
     display: none !important;
   }
 
@@ -3425,7 +3425,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     widows: 3;
   }
 
-  /* line 71, _print.scss */
+  /* line 74, _print.scss */
   h2,
   h3,
   h4,
