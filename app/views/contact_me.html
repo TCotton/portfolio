@@ -53,9 +53,9 @@
         </span>
 
             <span class="hide">
-            <label for="zipcode" class="visuallyhidden">Your zipcode</label>
+            <label for="zipcode" class="hide">Your zipcode</label>
             <input type="text" id="zipcode" name="zipcode" value="" data-ng-pattern="zipRegex"
-                   data-ng-model="contact.zipcode" maxlength="500" autocomplete="off"/>
+                   data-ng-model="contact.zipcode" class="hide"/>
             </span>
 
       <input type="submit" value="Send message" class="button-contact" data-ng-disabled="contact.successMessageDisable" />
