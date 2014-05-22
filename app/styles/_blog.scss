@@ -17,6 +17,9 @@
       width: 100%;
       text-align: center;
       margin: 0 0 15px 0;
+      &:hover {
+        border: 1px solid darken($boxBorder, 20%);
+      }
     }
 
     .image-container {
