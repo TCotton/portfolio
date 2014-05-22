@@ -144,6 +144,14 @@ h3.blog-title {
   color: $textTwo;
 }
 
+@include breakpoint(mobile) {
+
+  .content-text section > div h4, .content-text section > div h5, .content-text section > div h6 {
+    line-height: 120%;
+  }
+
+}
+
 .content-text section > div pre {
   @include font-calculator('monospace, serif', 16px);
   font-weight: 400;

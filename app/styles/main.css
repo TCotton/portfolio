@@ -1105,7 +1105,13 @@ h3.blog-title {
   color: #666666;
 }
 
-/* line 147, modules/_typography.scss */
+@media (max-width: 767px) {
+  /* line 149, modules/_typography.scss */
+  .content-text section > div h4, .content-text section > div h5, .content-text section > div h6 {
+    line-height: 120%;
+  }
+}
+/* line 155, modules/_typography.scss */
 .content-text section > div pre {
   font-size: 1.6em;
   font-family: monospace, serif;
@@ -1123,7 +1129,7 @@ h3.blog-title {
   font-weight: 700;
 }
 
-/* line 157, modules/_typography.scss */
+/* line 165, modules/_typography.scss */
 p.minor-title {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
@@ -1132,7 +1138,7 @@ p.minor-title {
   margin-bottom: 0;
 }
 
-/* line 164, modules/_typography.scss */
+/* line 172, modules/_typography.scss */
 .blog #blog-content a:hover:after {
   content: "(Link: " attr(href) ")";
   color: #1d7a94;
@@ -1141,14 +1147,14 @@ p.minor-title {
   text-decoration: underline;
 }
 
-/* line 174, modules/_typography.scss */
+/* line 182, modules/_typography.scss */
 .content-text a.underline {
   /* On the desktop this displays a URL of the external link above the link text */
   text-decoration: none;
   background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.3) 11%, rgba(0, 0, 0, 0.3) 16%, transparent 16%);
   position: relative;
 }
-/* line 181, modules/_typography.scss */
+/* line 189, modules/_typography.scss */
 .content-text a.underline[rel="external"]::after {
   content: " " attr(href) " ";
   position: absolute;
@@ -1164,42 +1170,42 @@ p.minor-title {
   white-space: nowrap;
   pointer-events: none;
 }
-/* line 194, modules/_typography.scss */
+/* line 202, modules/_typography.scss */
 .content-text a.underline[rel="external"]:hover::after {
   opacity: 1;
   pointer-events: auto;
 }
-/* line 198, modules/_typography.scss */
+/* line 206, modules/_typography.scss */
 .content-text a.underline:link {
   color: #666666;
 }
-/* line 201, modules/_typography.scss */
+/* line 209, modules/_typography.scss */
 .content-text a.underline:visited {
   color: gray;
 }
-/* line 204, modules/_typography.scss */
+/* line 212, modules/_typography.scss */
 .content-text a.underline:focus {
   color: #666666;
   background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
 }
-/* line 208, modules/_typography.scss */
+/* line 216, modules/_typography.scss */
 .content-text a.underline:hover {
   color: #666666;
   background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
 }
-/* line 213, modules/_typography.scss */
+/* line 221, modules/_typography.scss */
 .content-text a.underline:active {
   color: #666666;
   background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
 }
 
 @media (max-width: 979px) {
-  /* line 226, modules/_typography.scss */
+  /* line 234, modules/_typography.scss */
   .content-text a.underline[rel="external"]::after {
     display: none;
   }
 }
-/* line 233, modules/_typography.scss */
+/* line 241, modules/_typography.scss */
 h4.blog-sidebar-header {
   font-size: 3em;
   font-family: 'Open Sans', sans-serif;
@@ -1208,7 +1214,7 @@ h4.blog-sidebar-header {
   color: #666666;
 }
 
-/* line 239, modules/_typography.scss */
+/* line 247, modules/_typography.scss */
 .blog-sidebar-text p, ul.blog-sidebar-text {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
@@ -1217,7 +1223,7 @@ h4.blog-sidebar-header {
   color: #666666;
 }
 
-/* line 245, modules/_typography.scss */
+/* line 253, modules/_typography.scss */
 h3.contact-header {
   font-size: 3em;
   font-family: 'Open Sans', sans-serif;
@@ -1226,7 +1232,7 @@ h3.contact-header {
   color: #666666;
 }
 
-/* line 251, modules/_typography.scss */
+/* line 259, modules/_typography.scss */
 h3.project-header {
   font-size: 3em;
   font-family: 'Open Sans', sans-serif;
@@ -1234,7 +1240,7 @@ h3.project-header {
   color: white;
 }
 
-/* line 257, modules/_typography.scss */
+/* line 265, modules/_typography.scss */
 .footer-top-text p, ul.footer-top-text {
   font-size: 2em;
   font-family: 'Open Sans', sans-serif;
@@ -1244,14 +1250,14 @@ h3.project-header {
   color: #666666;
 }
 
-/* line 264, modules/_typography.scss */
+/* line 272, modules/_typography.scss */
 .code-preview {
   font-size: 12px;
   color: #666666;
   line-height: 16px;
 }
 
-/* line 270, modules/_typography.scss */
+/* line 278, modules/_typography.scss */
 p.footer-copyright {
   font-size: 1.3em;
   font-family: 'Open Sans', sans-serif;
@@ -1259,24 +1265,24 @@ p.footer-copyright {
   color: white;
   text-transform: capitalize;
 }
-/* line 275, modules/_typography.scss */
+/* line 283, modules/_typography.scss */
 p.footer-copyright a {
   color: white;
   text-decoration: none;
 }
-/* line 278, modules/_typography.scss */
+/* line 286, modules/_typography.scss */
 p.footer-copyright a:hover {
   text-decoration: underline;
 }
 
-/* line 284, modules/_typography.scss */
+/* line 292, modules/_typography.scss */
 .admin-comments dt, .content-text aside dt {
   font-size: 1.4em;
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
 }
 
-/* line 289, modules/_typography.scss */
+/* line 297, modules/_typography.scss */
 .admin-comments dd, .content-text aside dd {
   font-size: 1.4em;
   font-family: 'Open Sans', sans-serif;
@@ -1284,30 +1290,30 @@ p.footer-copyright a:hover {
   font-weight: 400;
 }
 
-/* line 294, modules/_typography.scss */
+/* line 302, modules/_typography.scss */
 .content-text aside a {
   text-decoration: none;
   background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.3) 11%, rgba(0, 0, 0, 0.3) 16%, transparent 16%);
 }
-/* line 299, modules/_typography.scss */
+/* line 307, modules/_typography.scss */
 .content-text aside a:link {
   color: #666666;
 }
-/* line 302, modules/_typography.scss */
+/* line 310, modules/_typography.scss */
 .content-text aside a:visited {
   color: gray;
 }
-/* line 305, modules/_typography.scss */
+/* line 313, modules/_typography.scss */
 .content-text aside a:focus {
   color: #666666;
   background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
 }
-/* line 309, modules/_typography.scss */
+/* line 317, modules/_typography.scss */
 .content-text aside a:hover {
   color: #666666;
   background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
 }
-/* line 314, modules/_typography.scss */
+/* line 322, modules/_typography.scss */
 .content-text aside a:active {
   color: #666666;
   background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
