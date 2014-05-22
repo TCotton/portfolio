@@ -38,7 +38,7 @@
         _this.$scope.totalArticles = result.data.totalArticles;
 
         // why is this used for ?
-        _this.paginationTotalPages = Math.ceil(this.totalArticles / this.paginationPageSize);
+        _this.paginationTotalPages = Math.ceil(_this.totalArticles / _this.paginationPageSize);
 
       }
 
@@ -73,11 +73,6 @@
 
       this.$scope.paginationStartFrom = this.$scope.paginationPageSize;
 
-      console.log('this.$scope.paginationStartFrom');
-      console.log(this.$scope.paginationStartFrom);
-      console.log('this.$scope.paginationPageSize');
-      console.log(this.$scope.paginationPageSize);
-
       this.$scope.next = '/#!/blog/?page=2';
 
     }
@@ -86,9 +81,6 @@
       // pattern for blog index page: /blog/
 
       this.$scope.paginationStartFrom = this.currentPage().charAt(this.currentPage().length - 1) * this.$scope.paginationPageSize;
-
-      console.log('this.$scope.paginationStartFrom');
-      console.log(this.$scope.paginationStartFrom);
 
       this.$scope.prev = ((this.$scope.paginationStartFrom / this.$scope.paginationPageSize) - 1) !== 0 ? '/#!/blog/?page=' + ((this.paginationStartFrom / this.paginationPageSize) - 1) : '/#!/blog/';
       this.$scope.next = '/#!/blog/?page=' + ((this.$scope.paginationStartFrom / this.$scope.paginationPageSize) + 1);

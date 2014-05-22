@@ -6,13 +6,12 @@
 
   var app = angular.module('portfolioApp.controllers');
 
-  /** Declare private method variable names
-   * **/
   var CommentCtrl = function ($scope, $rootScope, MongoCommentService, $log) {
 
     this.$scope = $scope;
     this.$rootScope = $rootScope;
     this.$log = $log;
+
     /** Using defineProperty prevents injected service being exposed to the template
      * **/
     Object.defineProperty(this, 'MongoCommentService', {

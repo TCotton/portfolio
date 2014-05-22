@@ -1105,7 +1105,13 @@ h3.blog-title {
   color: #666666;
 }
 
-/* line 147, modules/_typography.scss */
+@media (max-width: 767px) {
+  /* line 149, modules/_typography.scss */
+  .content-text section > div h4, .content-text section > div h5, .content-text section > div h6 {
+    line-height: 120%;
+  }
+}
+/* line 155, modules/_typography.scss */
 .content-text section > div pre {
   font-size: 1.6em;
   font-family: monospace, serif;
@@ -1123,7 +1129,7 @@ h3.blog-title {
   font-weight: 700;
 }
 
-/* line 157, modules/_typography.scss */
+/* line 165, modules/_typography.scss */
 p.minor-title {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
@@ -1132,7 +1138,7 @@ p.minor-title {
   margin-bottom: 0;
 }
 
-/* line 164, modules/_typography.scss */
+/* line 172, modules/_typography.scss */
 .blog #blog-content a:hover:after {
   content: "(Link: " attr(href) ")";
   color: #1d7a94;
@@ -1141,14 +1147,14 @@ p.minor-title {
   text-decoration: underline;
 }
 
-/* line 174, modules/_typography.scss */
+/* line 182, modules/_typography.scss */
 .content-text a.underline {
   /* On the desktop this displays a URL of the external link above the link text */
   text-decoration: none;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.3) 11%, rgba(0, 0, 0, 0.3) 16%, rgba(0, 0, 0, 0) 16%);
   position: relative;
 }
-/* line 181, modules/_typography.scss */
+/* line 189, modules/_typography.scss */
 .content-text a.underline[rel="external"]::after {
   content: " " attr(href) " ";
   position: absolute;
@@ -1164,42 +1170,42 @@ p.minor-title {
   white-space: nowrap;
   pointer-events: none;
 }
-/* line 194, modules/_typography.scss */
+/* line 202, modules/_typography.scss */
 .content-text a.underline[rel="external"]:hover::after {
   opacity: 1;
   pointer-events: auto;
 }
-/* line 198, modules/_typography.scss */
+/* line 206, modules/_typography.scss */
 .content-text a.underline:link {
   color: #666666;
 }
-/* line 201, modules/_typography.scss */
+/* line 209, modules/_typography.scss */
 .content-text a.underline:visited {
   color: gray;
 }
-/* line 204, modules/_typography.scss */
+/* line 212, modules/_typography.scss */
 .content-text a.underline:focus {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
-/* line 208, modules/_typography.scss */
+/* line 216, modules/_typography.scss */
 .content-text a.underline:hover {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
-/* line 213, modules/_typography.scss */
+/* line 221, modules/_typography.scss */
 .content-text a.underline:active {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
 
 @media (max-width: 979px) {
-  /* line 226, modules/_typography.scss */
+  /* line 234, modules/_typography.scss */
   .content-text a.underline[rel="external"]::after {
     display: none;
   }
 }
-/* line 233, modules/_typography.scss */
+/* line 241, modules/_typography.scss */
 h4.blog-sidebar-header {
   font-size: 3em;
   font-family: 'Open Sans', sans-serif;
@@ -1208,7 +1214,7 @@ h4.blog-sidebar-header {
   color: #666666;
 }
 
-/* line 239, modules/_typography.scss */
+/* line 247, modules/_typography.scss */
 .blog-sidebar-text p, ul.blog-sidebar-text {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
@@ -1217,7 +1223,7 @@ h4.blog-sidebar-header {
   color: #666666;
 }
 
-/* line 245, modules/_typography.scss */
+/* line 253, modules/_typography.scss */
 h3.contact-header {
   font-size: 3em;
   font-family: 'Open Sans', sans-serif;
@@ -1226,7 +1232,7 @@ h3.contact-header {
   color: #666666;
 }
 
-/* line 251, modules/_typography.scss */
+/* line 259, modules/_typography.scss */
 h3.project-header {
   font-size: 3em;
   font-family: 'Open Sans', sans-serif;
@@ -1234,7 +1240,7 @@ h3.project-header {
   color: white;
 }
 
-/* line 257, modules/_typography.scss */
+/* line 265, modules/_typography.scss */
 .footer-top-text p, ul.footer-top-text {
   font-size: 2em;
   font-family: 'Open Sans', sans-serif;
@@ -1244,14 +1250,14 @@ h3.project-header {
   color: #666666;
 }
 
-/* line 264, modules/_typography.scss */
+/* line 272, modules/_typography.scss */
 .code-preview {
   font-size: 12px;
   color: #666666;
   line-height: 16px;
 }
 
-/* line 270, modules/_typography.scss */
+/* line 278, modules/_typography.scss */
 p.footer-copyright {
   font-size: 1.3em;
   font-family: 'Open Sans', sans-serif;
@@ -1259,24 +1265,24 @@ p.footer-copyright {
   color: white;
   text-transform: capitalize;
 }
-/* line 275, modules/_typography.scss */
+/* line 283, modules/_typography.scss */
 p.footer-copyright a {
   color: white;
   text-decoration: none;
 }
-/* line 278, modules/_typography.scss */
+/* line 286, modules/_typography.scss */
 p.footer-copyright a:hover {
   text-decoration: underline;
 }
 
-/* line 284, modules/_typography.scss */
+/* line 292, modules/_typography.scss */
 .admin-comments dt, .content-text aside dt {
   font-size: 1.4em;
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
 }
 
-/* line 289, modules/_typography.scss */
+/* line 297, modules/_typography.scss */
 .admin-comments dd, .content-text aside dd {
   font-size: 1.4em;
   font-family: 'Open Sans', sans-serif;
@@ -1284,30 +1290,30 @@ p.footer-copyright a:hover {
   font-weight: 400;
 }
 
-/* line 294, modules/_typography.scss */
+/* line 302, modules/_typography.scss */
 .content-text aside a {
   text-decoration: none;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.3) 11%, rgba(0, 0, 0, 0.3) 16%, rgba(0, 0, 0, 0) 16%);
 }
-/* line 299, modules/_typography.scss */
+/* line 307, modules/_typography.scss */
 .content-text aside a:link {
   color: #666666;
 }
-/* line 302, modules/_typography.scss */
+/* line 310, modules/_typography.scss */
 .content-text aside a:visited {
   color: gray;
 }
-/* line 305, modules/_typography.scss */
+/* line 313, modules/_typography.scss */
 .content-text aside a:focus {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
-/* line 309, modules/_typography.scss */
+/* line 317, modules/_typography.scss */
 .content-text aside a:hover {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
-/* line 314, modules/_typography.scss */
+/* line 322, modules/_typography.scss */
 .content-text aside a:active {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
@@ -2759,6 +2765,11 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   height: 100%;
 }
 /* line 47, _blog.scss */
+.blog article pre {
+  white-space: pre;
+  overflow: auto;
+}
+/* line 52, _blog.scss */
 .blog article blockquote {
   background: white;
   border-left: 5px solid #ccc;
@@ -2766,7 +2777,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   padding: 0.5em 10px;
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
-/* line 54, _blog.scss */
+/* line 59, _blog.scss */
 .blog article blockquote:before {
   color: #ccc;
   content: "\201C";
@@ -2775,11 +2786,11 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   margin-right: 0.25em;
   vertical-align: -0.4em;
 }
-/* line 62, _blog.scss */
+/* line 67, _blog.scss */
 .blog article blockquote p {
   display: inline;
 }
-/* line 66, _blog.scss */
+/* line 71, _blog.scss */
 .blog article aside {
   width: 33%;
   margin: 0 0 0 2%;
@@ -2787,11 +2798,11 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   float: right;
   border-left: 1px solid #cccccc;
 }
-/* line 74, _blog.scss */
+/* line 79, _blog.scss */
 .blog article aside:empty {
   display: none;
 }
-/* line 79, _blog.scss */
+/* line 84, _blog.scss */
 .blog .user-comments {
   border-bottom: 1px solid #cccccc;
   margin: 0 0 25px 0;
@@ -2799,67 +2810,67 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   display: inline-block;
   white-space: pre-line;
 }
-/* line 85, _blog.scss */
+/* line 90, _blog.scss */
 .blog .user-comments p:first-of-type {
   font-weight: 600;
 }
-/* line 93, _blog.scss */
+/* line 98, _blog.scss */
 .blog #right-small h4.content-title:nth-of-type(2) + ul li:not(:last-of-type) {
   margin-bottom: 0;
 }
-/* line 97, _blog.scss */
+/* line 102, _blog.scss */
 .blog #right-small a {
   color: gray;
   text-decoration: none;
   display: block;
   margin-bottom: 10px;
 }
-/* line 104, _blog.scss */
+/* line 109, _blog.scss */
 .blog #right-small h4.content-title + ul {
   margin-bottom: 25px;
   display: inline-block;
 }
 
 @media (max-width: 767px) {
-  /* line 115, _blog.scss */
+  /* line 120, _blog.scss */
   .blog article {
     margin: 0 0 20px 0;
     padding: 0 0 20px 0;
   }
-  /* line 119, _blog.scss */
+  /* line 124, _blog.scss */
   .blog article header {
     margin: 0 0 10px 0;
   }
-  /* line 126, _blog.scss */
+  /* line 131, _blog.scss */
   .blog #right-small h4.content-title + ul {
     margin-bottom: 20px;
   }
 }
-/* line 134, _blog.scss */
+/* line 139, _blog.scss */
 #pagination {
   text-align: center;
 }
-/* line 138, _blog.scss */
+/* line 143, _blog.scss */
 #pagination .left-p {
   float: left;
   width: 55px;
   height: 54px;
   margin: 0 14px 14px 0;
 }
-/* line 145, _blog.scss */
+/* line 150, _blog.scss */
 #pagination .center-p {
   float: left;
   margin: 0 7px 0 0;
   width: -webkit-calc(100% - (55px * 2) - (14px * 2));
   width: calc(100% - (55px * 2) - (14px * 2));
 }
-/* line 151, _blog.scss */
+/* line 156, _blog.scss */
 #pagination .right-p {
   float: left;
   width: 55px;
   height: 54px;
 }
-/* line 157, _blog.scss */
+/* line 162, _blog.scss */
 #pagination [class*="pag"] {
   width: 55px;
   height: 54px;
@@ -2869,126 +2880,126 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   background-size: contain;
   margin: 0 14px 14px 0;
 }
-/* line 166, _blog.scss */
+/* line 171, _blog.scss */
 #pagination [class*="pag"]:last-of-type {
   margin: 0;
 }
-/* line 173, _blog.scss */
+/* line 178, _blog.scss */
 #pagination .left-p [class*="pag"] {
   background: url("/images/svg/left-arrow.svg") no-repeat center center;
 }
-/* line 175, _blog.scss */
+/* line 180, _blog.scss */
 #pagination .left-p [class*="pag"]:hover {
   background: url("/images/svg/left-arrow-hover.svg") no-repeat center center;
 }
-/* line 185, _blog.scss */
+/* line 190, _blog.scss */
 #pagination .pag1 {
   background: url("/images/svg/solid1.svg") no-repeat center center;
 }
-/* line 187, _blog.scss */
+/* line 192, _blog.scss */
 #pagination .pag1:hover {
   background: url("/images/svg/outline1.svg") no-repeat center center;
 }
-/* line 185, _blog.scss */
+/* line 190, _blog.scss */
 #pagination .pag2 {
   background: url("/images/svg/solid2.svg") no-repeat center center;
 }
-/* line 187, _blog.scss */
+/* line 192, _blog.scss */
 #pagination .pag2:hover {
   background: url("/images/svg/outline2.svg") no-repeat center center;
 }
-/* line 185, _blog.scss */
+/* line 190, _blog.scss */
 #pagination .pag3 {
   background: url("/images/svg/solid3.svg") no-repeat center center;
 }
-/* line 187, _blog.scss */
+/* line 192, _blog.scss */
 #pagination .pag3:hover {
   background: url("/images/svg/outline3.svg") no-repeat center center;
 }
-/* line 185, _blog.scss */
+/* line 190, _blog.scss */
 #pagination .pag4 {
   background: url("/images/svg/solid4.svg") no-repeat center center;
 }
-/* line 187, _blog.scss */
+/* line 192, _blog.scss */
 #pagination .pag4:hover {
   background: url("/images/svg/outline4.svg") no-repeat center center;
 }
-/* line 185, _blog.scss */
+/* line 190, _blog.scss */
 #pagination .pag5 {
   background: url("/images/svg/solid5.svg") no-repeat center center;
 }
-/* line 187, _blog.scss */
+/* line 192, _blog.scss */
 #pagination .pag5:hover {
   background: url("/images/svg/outline5.svg") no-repeat center center;
 }
-/* line 185, _blog.scss */
+/* line 190, _blog.scss */
 #pagination .pag6 {
   background: url("/images/svg/solid6.svg") no-repeat center center;
 }
-/* line 187, _blog.scss */
+/* line 192, _blog.scss */
 #pagination .pag6:hover {
   background: url("/images/svg/outline6.svg") no-repeat center center;
 }
-/* line 185, _blog.scss */
+/* line 190, _blog.scss */
 #pagination .pag7 {
   background: url("/images/svg/solid7.svg") no-repeat center center;
 }
-/* line 187, _blog.scss */
+/* line 192, _blog.scss */
 #pagination .pag7:hover {
   background: url("/images/svg/outline7.svg") no-repeat center center;
 }
-/* line 185, _blog.scss */
+/* line 190, _blog.scss */
 #pagination .pag8 {
   background: url("/images/svg/solid8.svg") no-repeat center center;
 }
-/* line 187, _blog.scss */
+/* line 192, _blog.scss */
 #pagination .pag8:hover {
   background: url("/images/svg/outline8.svg") no-repeat center center;
 }
-/* line 185, _blog.scss */
+/* line 190, _blog.scss */
 #pagination .pag9 {
   background: url("/images/svg/solid9.svg") no-repeat center center;
 }
-/* line 187, _blog.scss */
+/* line 192, _blog.scss */
 #pagination .pag9:hover {
   background: url("/images/svg/outline9.svg") no-repeat center center;
 }
-/* line 185, _blog.scss */
+/* line 190, _blog.scss */
 #pagination .pag10 {
   background: url("/images/svg/solid10.svg") no-repeat center center;
 }
-/* line 187, _blog.scss */
+/* line 192, _blog.scss */
 #pagination .pag10:hover {
   background: url("/images/svg/outline10.svg") no-repeat center center;
 }
-/* line 195, _blog.scss */
+/* line 200, _blog.scss */
 #pagination .right-p [class*="pag"] {
   background: url("/images/svg/right-arrow.svg") no-repeat center center;
 }
-/* line 197, _blog.scss */
+/* line 202, _blog.scss */
 #pagination .right-p [class*="pag"]:hover {
   background: url("/images/svg/right-arrow-hover.svg") no-repeat center center;
 }
 
 @media (max-width: 979px) {
-  /* line 207, _blog.scss */
+  /* line 212, _blog.scss */
   .blog #left-large {
     width: auto;
     float: none;
     display: block;
     margin: 0 0 0 0;
   }
-  /* line 214, _blog.scss */
+  /* line 219, _blog.scss */
   .blog #right-small {
     display: none;
   }
-  /* line 220, _blog.scss */
+  /* line 225, _blog.scss */
   .blog.blog-single #left-large {
     width: 100%;
     margin: 0 0 20px 0;
     display: inline-block;
   }
-  /* line 227, _blog.scss */
+  /* line 232, _blog.scss */
   .blog.blog-single #right-small {
     width: auto;
     float: none;
@@ -2998,27 +3009,27 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   }
 }
 @media (max-width: 767px) {
-  /* line 242, _blog.scss */
+  /* line 247, _blog.scss */
   .blog article aside {
     display: none;
   }
 
-  /* line 248, _blog.scss */
+  /* line 253, _blog.scss */
   #pagination {
     text-align: center;
   }
-  /* line 252, _blog.scss */
+  /* line 257, _blog.scss */
   #pagination .left-p {
     float: left;
     width: 55px;
     height: 54px;
     margin: 0 14px 14px 0;
   }
-  /* line 259, _blog.scss */
+  /* line 264, _blog.scss */
   #pagination .center-p {
     display: none;
   }
-  /* line 263, _blog.scss */
+  /* line 268, _blog.scss */
   #pagination .right-p {
     float: right;
     width: 55px;
@@ -3359,12 +3370,12 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
 
   /* line 22, _print.scss */
   a[href]:after {
-    content: " (" attr(href) ")";
+    content: " (" attr(href) ")" !important;
   }
 
   /* line 26, _print.scss */
   abbr[title]:after {
-    content: " (" attr(title) ")";
+    content: " (" attr(title) ")" !important;
   }
 
   /*
@@ -3374,7 +3385,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   /* line 36, _print.scss */
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
-    content: "";
+    content: "" !important;
   }
 
   /* line 42, _print.scss */
@@ -3416,7 +3427,10 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
 
   /* line 71, _print.scss */
   h2,
-  h3 {
+  h3,
+  h4,
+  h5,
+  h6 {
     page-break-after: avoid;
   }
 }

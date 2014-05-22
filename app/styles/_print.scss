@@ -7,7 +7,7 @@
   }
 
   #header, #footer, #banner, form, .video-container {
-    display: none!important
+    display: none !important
   }
 
   @page {
@@ -20,11 +20,11 @@
   }
 
   a[href]:after {
-    content: " (" attr(href) ")";
+    content: " (" attr(href) ")"!important;
   }
 
   abbr[title]:after {
-    content: " (" attr(title) ")";
+    content: " (" attr(title) ")"!important;
   }
 
   /*
@@ -34,12 +34,12 @@
 
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
-    content: "";
+    content: ""!important;
   }
 
   pre,
   blockquote,
-  p{
+  p {
     page-break-inside: avoid;
   }
 
@@ -68,7 +68,10 @@
   }
 
   h2,
-  h3 {
+  h3,
+  h4,
+  h5,
+  h6 {
     page-break-after: avoid;
   }
 }

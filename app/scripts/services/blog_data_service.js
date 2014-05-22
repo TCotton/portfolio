@@ -11,13 +11,14 @@
   var _cache;
   var _blogData;
 
-  var BlogDataService = function ($http, $q, $log, MongoBlogService, $angularCacheFactory, CONFIG) {
+  var BlogDataService = function ($http, $q, $log, MongoBlogService, $angularCacheFactory, CONFIG, $rootScope) {
 
     /** angularjs stuff
      * **/
     this.$http = $http;
     this.$q = $q;
     this.$log = $log;
+    this.$rootScope = $rootScope;
 
     var _this = this;
 
@@ -51,7 +52,7 @@
   };
 
 
-  BlogDataService.$inject = ['$http', '$q', '$log', 'MongoBlogService', '$angularCacheFactory', 'CONFIG'];
+  BlogDataService.$inject = ['$http', '$q', '$log', 'MongoBlogService', '$angularCacheFactory', 'CONFIG', '$rootScope'];
 
   BlogDataService.prototype.retrieveData = function () {
 
@@ -59,7 +60,11 @@
 
     // remove cache for debugging purposes
 
-    //this.$angularCacheFactory.get('blogCache').removeAll();
+    if (this.$angularCacheFactory.get('authCache').get('logginIn')) {
+
+      this.$angularCacheFactory.get('blogCache').removeAll();
+
+    }
 
     // use a a cache means that it is possible to bypass the above methods and just serve up the data
     if (!this.$angularCacheFactory.get('blogCache').get('allBlogPosts')) {

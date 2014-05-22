@@ -10,12 +10,15 @@ module.exports = function (app) {
 
   app.route('/api/sendmail').post(function (req, res) {
 
+    var ipAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress;
+    var message = req.body.message + '<br>' + 'IP Address: '  + ipAddress;
+
     mail({
       from: req.body.name + ' ' + req.body.email, // sender address
       to: 'me@andywalpole.me', // list of receivers
       subject: 'Contact from portfolio', // Subject line
-      text: req.body.message, // plaintext body
-      html: req.body.message // html body
+      text: message, // plaintext body
+      html: message // html body
     });
 
     res.json({'success': 'true', 'message': 'Thank you for taking the time to fill out the form. I will contact you as soon as I can!'});

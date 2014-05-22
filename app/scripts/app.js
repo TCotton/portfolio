@@ -49,7 +49,7 @@ angular.module('portfolioApp', ['portfolioApp.controllers', 'portfolioApp.direct
       .when('/blog/', {
         templateUrl: 'views/blog.html',
         controller: 'BlogCtrl',
-        title: 'Web development blog'
+        title: 'Blog of web developer Andy Walpole'
       })
       .when('/blog/:blogId/:blogPage', {
         templateUrl: 'views/blog_page.html',
@@ -142,5 +142,13 @@ angular.module('portfolioApp', ['portfolioApp.controllers', 'portfolioApp.direct
     $httpProvider.defaults.transformRequest = [function (data) {
       return angular.isObject(data) && String(data) !== '[object File]' ? param(data) : data;
     }];
+
+    // PhantomJS doesn't support bind yet
+    Function.prototype.bind = Function.prototype.bind || function (thisp) {
+      var fn = this;
+      return function () {
+        return fn.apply(thisp, arguments);
+      };
+    };
 
   });
