@@ -21,7 +21,8 @@ module.exports = function (app) {
       publishedDate: req.body.publishedDate,
       url: req.body.url,
       uniqueId: req.body.uniqueId,
-      displayImage: req.body.displayImage
+      displayImage: req.body.displayImage,
+      commentsOpen: req.body.allowComments
 
     }, function (err, blog) {
 
