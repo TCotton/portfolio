@@ -38,8 +38,6 @@ module.exports = function () {
     console.log('problem with request: ' + e.message);
   });
 
-  console.log('data\n');
   req.end();
 
-//https://www.newsblur.com/api/login
 };
