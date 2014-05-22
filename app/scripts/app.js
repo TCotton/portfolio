@@ -143,4 +143,12 @@ angular.module('portfolioApp', ['portfolioApp.controllers', 'portfolioApp.direct
       return angular.isObject(data) && String(data) !== '[object File]' ? param(data) : data;
     }];
 
+    // PhantomJS doesn't support bind yet
+    Function.prototype.bind = Function.prototype.bind || function (thisp) {
+      var fn = this;
+      return function () {
+        return fn.apply(thisp, arguments);
+      };
+    };
+
   });
