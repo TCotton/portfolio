@@ -74,6 +74,7 @@
       this.$scope.displayImage = blogPost[0].displayImage;
       this.$scope.publishedDate = blogPost[0].publishedDate;
       this.$scope.commentsOpen = blogPost[0].commentsOpen;
+      this.$scope.URLencoded = encodeURIComponent(this.$rootScope.currentPage);
 
     } else {
 
