@@ -53,6 +53,10 @@
       this.bindData(wordData);
       this.navigation();
 
+    } else {
+
+      this.$window.location.href = '/#!/404';
+
     }
 
   };
@@ -110,7 +114,7 @@
 
 
       // if first page then the prev link goes to the end of the pages
-      prevPage = !_.isEmpty(prevPage)? prevPage: _.filter(this.WORK, function (o,k) {
+      prevPage = !_.isEmpty(prevPage) ? prevPage : _.filter(this.WORK, function (o, k) {
 
         if (k === 'drnewmans') {
           return o;
@@ -118,7 +122,7 @@
       });
 
       // if last page then start loop all over again
-      nextPage = !_.isEmpty(nextPage)? nextPage: _.filter(this.WORK, function (o,k) {
+      nextPage = !_.isEmpty(nextPage) ? nextPage : _.filter(this.WORK, function (o, k) {
 
         if (k === 'blinkbox') {
           return o;

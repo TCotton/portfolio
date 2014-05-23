@@ -7,11 +7,12 @@
 
   var app = angular.module('portfolioApp.controllers');
 
-  var ProjectsPageCtrl = function ($rootScope, $scope, $log, PROJECTS) {
+  var ProjectsPageCtrl = function ($rootScope, $scope, $log, PROJECTS, $window) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
     this.$log = $log;
+    this.$window = $window;
 
     /** Using defineProperty prevents injected constants being exposed to the template
      * **/
@@ -55,6 +56,10 @@
 
       this.bindData(wordData);
       this.navigation();
+
+    } else {
+
+      this.$window.location.href= '/#!/404';
 
     }
   };
@@ -140,7 +145,7 @@
     }
   };
 
-  ProjectsPageCtrl.$inject = ['$rootScope', '$scope', '$log', 'PROJECTS'];
+  ProjectsPageCtrl.$inject = ['$rootScope', '$scope', '$log', 'PROJECTS', '$window'];
 
   app.controller('ProjectsPageCtrl', ProjectsPageCtrl);
 
