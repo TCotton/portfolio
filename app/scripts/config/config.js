@@ -28,7 +28,7 @@ angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$locatio
 
     if($rootScope.currentPage.indexOf('/#!/') === -1) {
 
-      $window.location.href= '/#!/404';
+      $rootScope.status = '404';
 
     }
 

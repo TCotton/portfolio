@@ -6,11 +6,12 @@
 
   var app = angular.module('portfolioApp.controllers');
 
-  var WorkPageCtrl = function ($rootScope, $scope, $log, WORK) {
+  var WorkPageCtrl = function ($rootScope, $scope, $log, WORK, $window) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
     this.$log = $log;
+    this.$window = $window;
 
     /** Using defineProperty prevents injected constants being exposed to the template
      * **/
@@ -139,7 +140,7 @@
     }
   };
 
-  WorkPageCtrl.$inject = ['$rootScope', '$scope', '$log', 'WORK'];
+  WorkPageCtrl.$inject = ['$rootScope', '$scope', '$log', 'WORK', '$window'];
 
   app.controller('WorkPageCtrl', WorkPageCtrl);
 
