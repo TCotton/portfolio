@@ -1,73 +1,3 @@
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 300;
-  src: local("Open Sans Light"), local("OpenSans-Light"), url(https://themes.googleusercontent.com/static/fonts/opensans/v8/DXI1ORHCpsQm3Vp6mXoaTaRDOzjiPcYnFooOUGCOsRk.woff) format("woff");
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local("Open Sans"), local("OpenSans"), url(https://themes.googleusercontent.com/static/fonts/opensans/v8/cJZKeOuBrn4kERxqtaUH3bO3LdcAZYWl9Si6vvxL-qU.woff) format("woff");
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 600;
-  src: local("Open Sans Semibold"), local("OpenSans-Semibold"), url(https://themes.googleusercontent.com/static/fonts/opensans/v8/MTP_ySUJH_bn48VBG8sNSqRDOzjiPcYnFooOUGCOsRk.woff) format("woff");
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 700;
-  src: local("Open Sans Bold"), local("OpenSans-Bold"), url(https://themes.googleusercontent.com/static/fonts/opensans/v8/k3k702ZOKiLJc3WVjuplzKRDOzjiPcYnFooOUGCOsRk.woff) format("woff");
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 800;
-  src: local("Open Sans Extrabold"), local("OpenSans-Extrabold"), url(https://themes.googleusercontent.com/static/fonts/opensans/v8/EInbV5DfGHOiMmvb1Xr-hqRDOzjiPcYnFooOUGCOsRk.woff) format("woff");
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: italic;
-  font-weight: 300;
-  src: local("Open Sans Light Italic"), local("OpenSansLight-Italic"), url(https://themes.googleusercontent.com/static/fonts/opensans/v8/PRmiXeptR36kaC0GEAetxvR_54zmj3SbGZQh3vCOwvY.woff) format("woff");
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: italic;
-  font-weight: 400;
-  src: local("Open Sans Italic"), local("OpenSans-Italic"), url(https://themes.googleusercontent.com/static/fonts/opensans/v8/xjAJXh38I15wypJXxuGMBrrIa-7acMAeDBVuclsi6Gc.woff) format("woff");
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: italic;
-  font-weight: 600;
-  src: local("Open Sans Semibold Italic"), local("OpenSans-SemiboldItalic"), url(https://themes.googleusercontent.com/static/fonts/opensans/v8/PRmiXeptR36kaC0GEAetxuw_rQOTGi-AJs5XCWaKIhU.woff) format("woff");
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: italic;
-  font-weight: 700;
-  src: local("Open Sans Bold Italic"), local("OpenSans-BoldItalic"), url(https://themes.googleusercontent.com/static/fonts/opensans/v8/PRmiXeptR36kaC0GEAetxhbnBKKEOwRKgsHDreGcocg.woff) format("woff");
-}
-
-@font-face {
-  font-family: 'Yellowtail';
-  font-style: normal;
-  font-weight: 400;
-  src: local("Yellowtail"), url(https://themes.googleusercontent.com/static/fonts/yellowtail/v4/GcIHC9QEwVkrA19LJU1qlL3hpw3pgy2gAi-Ip7WPMi0.woff) format("woff");
-}
-
 /* line 1, _reset.scss */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
   margin: 0;
@@ -382,7 +312,7 @@ button {
  * 3. Improve usability and consistency of cursor style between image-type
  *    `input` and others.
  */
-/* line 314, _reset.scss */
+/* line 313, _reset.scss */
 button, html input[type="button"],
 input[type="reset"], input[type="submit"] {
   -webkit-appearance: button;
@@ -678,7 +608,7 @@ a:active {
   user-select: none;
 }
 
-/* line 65, main.scss */
+/* line 5, main.scss */
 body {
   font-size: 62.5%;
   font-family: 'Open Sans', sans-serif;
@@ -686,7 +616,7 @@ body {
 }
 
 @media (max-width: 767px) {
-  /* line 74, main.scss */
+  /* line 14, main.scss */
   body {
     font-size: 56.3%;
     font-family: 'Open Sans', sans-serif;
@@ -1221,7 +1151,7 @@ p.minor-title {
 .content-text a.underline {
   /* On the desktop this displays a URL of the external link above the link text */
   text-decoration: none;
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.3) 11%, rgba(0, 0, 0, 0.3) 16%, rgba(0, 0, 0, 0) 16%);
+  background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.3) 11%, rgba(0, 0, 0, 0.3) 16%, transparent 16%);
   position: relative;
 }
 /* line 189, modules/_typography.scss */
@@ -1256,17 +1186,17 @@ p.minor-title {
 /* line 212, modules/_typography.scss */
 .content-text a.underline:focus {
   color: #666666;
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
+  background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
 }
 /* line 216, modules/_typography.scss */
 .content-text a.underline:hover {
   color: #666666;
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
+  background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
 }
 /* line 221, modules/_typography.scss */
 .content-text a.underline:active {
   color: #666666;
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
+  background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
 }
 
 @media (max-width: 979px) {
@@ -1363,7 +1293,7 @@ p.footer-copyright a:hover {
 /* line 302, modules/_typography.scss */
 .content-text aside a {
   text-decoration: none;
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.3) 11%, rgba(0, 0, 0, 0.3) 16%, rgba(0, 0, 0, 0) 16%);
+  background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.3) 11%, rgba(0, 0, 0, 0.3) 16%, transparent 16%);
 }
 /* line 307, modules/_typography.scss */
 .content-text aside a:link {
@@ -1376,17 +1306,17 @@ p.footer-copyright a:hover {
 /* line 313, modules/_typography.scss */
 .content-text aside a:focus {
   color: #666666;
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
+  background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
 }
 /* line 317, modules/_typography.scss */
 .content-text aside a:hover {
   color: #666666;
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
+  background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
 }
 /* line 322, modules/_typography.scss */
 .content-text aside a:active {
   color: #666666;
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
+  background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
 }
 
 /* line 1, modules/_buttons.scss */
@@ -1705,7 +1635,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     to {
       margin: 0;
     }
-}
+  }
 }
 @media (max-width: 1366px) {
   /* line 65, _header.scss */
@@ -1724,7 +1654,6 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     -webkit-transform: translateX(0%);
   }
 }
-
 @keyframes swipeIn {
   /* line 80, _header.scss */
   from {
@@ -1736,7 +1665,6 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     transform: translateX(0%);
   }
 }
-
 @media (max-width: 979px) {
   /* line 93, _header.scss */
   #header input[type=checkbox] ~ #navigation-wrapper li {
@@ -1896,7 +1824,6 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     -webkit-transform: scale(1);
   }
 }
-
 @keyframes bounceIn {
   /* line 25, _homepage.scss */
   0% {
@@ -1923,7 +1850,6 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     transform: scale(1);
   }
 }
-
 /* line 47, _homepage.scss */
 #slider {
   clear: both;
@@ -2582,7 +2508,6 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     -webkit-transform: scaleX(1);
   }
 }
-
 @keyframes fadeIn {
   /* line 107, _aboutme.scss */
   from {
@@ -2596,7 +2521,6 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     transform: scaleX(1);
   }
 }
-
 @-webkit-keyframes shake {
   /* line 118, _aboutme.scss */
   0% {
@@ -2653,7 +2577,6 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     -webkit-transform: translate(1px, -2px) rotate(-1deg);
   }
 }
-
 @keyframes shake {
   /* line 154, _aboutme.scss */
   0% {
@@ -2710,7 +2633,6 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     transform: translate(1px, -2px) rotate(-1deg);
   }
 }
-
 @media screen and (min--moz-device-pixel-ratio: 0) {
   /* another firefox bug :( */
   /* line 198, _aboutme.scss */
@@ -2828,7 +2750,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   height: 0;
   overflow: hidden;
 }
-/* line 42, _blog.scss */
+/* line 40, _blog.scss */
 .blog article .video-container iframe,
 .blog article .video-container object,
 .blog article .video-container embed {
@@ -3278,7 +3200,6 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     transform: scale(1) rotate(0);
   }
 }
-
 @keyframes tada {
   /* line 133, _admin.scss */
   0% {
@@ -3315,7 +3236,6 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     transform: scale(1) rotate(0);
   }
 }
-
 /* line 164, _admin.scss */
 .admin-comments .comment-block {
   border-bottom: 1px solid #cccccc;
@@ -3434,9 +3354,8 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
 
   @page {
     margin: 0.5cm;
-}
-
-  /* line 18, _print.scss */
+  }
+  /* line 17, _print.scss */
   a,
   a:visited {
     text-decoration: underline;
@@ -3456,13 +3375,13 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
    * Don't show links that are fragment identifiers,
    * or use the `javascript:` pseudo protocol
    */
-  /* line 36, _print.scss */
+  /* line 35, _print.scss */
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
     content: "" !important;
   }
 
-  /* line 42, _print.scss */
+  /* line 40, _print.scss */
   pre,
   blockquote,
   p {
@@ -3475,7 +3394,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     /* h5bp.com/t */
   }
 
-  /* line 51, _print.scss */
+  /* line 50, _print.scss */
   tr,
   img {
     page-break-inside: avoid;
@@ -3491,7 +3410,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     word-wrap: break-word;
   }
 
-  /* line 65, _print.scss */
+  /* line 63, _print.scss */
   p,
   h2,
   h3 {
@@ -3499,7 +3418,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     widows: 3;
   }
 
-  /* line 74, _print.scss */
+  /* line 70, _print.scss */
   h2,
   h3,
   h4,
