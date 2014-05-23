@@ -103,7 +103,7 @@ module.exports = function () {
 
   };
 
-  req_authentication().then(function (data) {
+/*  req_authentication().then(function (data) {
 
     if (data) {
 
@@ -111,6 +111,6 @@ module.exports = function () {
 
     }
 
-  }).done();
+  }).done();*/
 
 };
