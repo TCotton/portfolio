@@ -18,7 +18,6 @@ var feed = new RSS(feedOptions);
 
 /** loop through blogs in monogdb and create RSS friendly objects
  * **/
-
 var blogs_database = function () {
 
   var feedItems = {}, deferred, blogURl;
@@ -69,7 +68,7 @@ var blogs_feed = function () {
     data = fs.readFileSync('./server/blogposts.json', 'utf8', function (err) {
 
       if (err) {
-        console.log(err);
+        deferred.reject(new Error(err));
       }
 
     });

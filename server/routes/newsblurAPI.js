@@ -7,9 +7,12 @@ var http = require('http');
 var querystring = require('querystring');
 var q = require('q');
 var fs = require('fs');
+var _ = require('underscore');
 
 module.exports = function () {
 
+  /** Send authentication to newsblur API
+   * **/
   var req_authentication = function () {
 
     var data;
@@ -55,7 +58,9 @@ module.exports = function () {
 
   };
 
-  var write_json_file = function(data) {
+  /** Request the last starred items using the returned authenticated cookie is the header request
+   * **/
+  var write_json_file = function (data) {
 
     var options;
     var req;
@@ -79,7 +84,7 @@ module.exports = function () {
 
       res.setEncoding('utf8');
 
-      wstream = fs.createWriteStream('./server/' + fileName + '.json');
+      wstream = fs.createWriteStream('./server/newsblur_feed/' + fileName + '.json');
 
       res.pipe(wstream);
 
@@ -87,7 +92,7 @@ module.exports = function () {
         console.log('here');
       });
 
-      // This is here incase any errors occur
+      // This is here in case any errors occur
       wstream.on('error', function (err) {
         console.log(err);
       });
@@ -100,17 +105,59 @@ module.exports = function () {
 
     req.end();
 
+  };
+
+  /** Used if there is either no json file in the newsblur_feed directory
+   *  Or the old file needs deleting and replacing if it has existed for longer than a day
+   * **/
+  var write_file_promise = function () {
+
+    req_authentication().then(function (data) {
+
+      if (data) {
+
+        write_json_file(data);
+
+      }
+
+    }).done();
 
   };
 
-/*  req_authentication().then(function (data) {
+  fs.readdir('./server/newsblur_feed', function (err, file) {
 
-    if (data) {
+    if (err) {
+      console.log(err);
+    }
 
-      write_json_file();
+    if (_.isEmpty(file)) {
+
+      write_file_promise();
+
+    } else {
+
+      var hours24 = 1;
+      // take the number from the json file name - this is the date it was created
+      var fileAge = parseInt(file.toString().substring(file.toString().indexOf('_') + 1, file.toString().indexOf('.')), 10);
+      var dateNow = parseInt(Date.now(), 10);
+
+      if ((dateNow - fileAge) > hours24) {
+
+        // if older than a day then delete the file and write a new one
+        fs.unlink('./server/newsblur_feed/' + file.toString(), function (err) {
+
+          if (err) {
+            console.log(err)
+          }
+
+          write_file_promise();
+
+        });
+
+      }
 
     }
 
-  }).done();*/
+  });
 
 };

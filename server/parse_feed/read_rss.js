@@ -244,7 +244,7 @@ var RSSClass = function () {
 
       // if there is an error retrieving, send the error. nothing after res.send(err) will execute
       if (err) {
-        return new Error(err);
+        deferred.reject(new Error(err));
       }
 
       this.totalNewArticles = _.size(blogs);
@@ -333,7 +333,7 @@ var RSSClass = function () {
       /** After retrieving data using Google RSS API store it into the cache and count number of old blog posts
        * **/
       if (data.error || !data) {
-        return new Error('Error fetching feeds');
+        deferred.reject(new Error('Error fetching feeds'));
       }
 
       deferred.resolve(data.feed.entries);

@@ -312,7 +312,7 @@ button {
  * 3. Improve usability and consistency of cursor style between image-type
  *    `input` and others.
  */
-/* line 313, _reset.scss */
+/* line 314, _reset.scss */
 button, html input[type="button"],
 input[type="reset"], input[type="submit"] {
   -webkit-appearance: button;
@@ -1151,7 +1151,7 @@ p.minor-title {
 .content-text a.underline {
   /* On the desktop this displays a URL of the external link above the link text */
   text-decoration: none;
-  background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.3) 11%, rgba(0, 0, 0, 0.3) 16%, transparent 16%);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.3) 11%, rgba(0, 0, 0, 0.3) 16%, rgba(0, 0, 0, 0) 16%);
   position: relative;
 }
 /* line 189, modules/_typography.scss */
@@ -1186,17 +1186,17 @@ p.minor-title {
 /* line 212, modules/_typography.scss */
 .content-text a.underline:focus {
   color: #666666;
-  background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
 /* line 216, modules/_typography.scss */
 .content-text a.underline:hover {
   color: #666666;
-  background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
 /* line 221, modules/_typography.scss */
 .content-text a.underline:active {
   color: #666666;
-  background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
 
 @media (max-width: 979px) {
@@ -1293,7 +1293,7 @@ p.footer-copyright a:hover {
 /* line 302, modules/_typography.scss */
 .content-text aside a {
   text-decoration: none;
-  background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.3) 11%, rgba(0, 0, 0, 0.3) 16%, transparent 16%);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.3) 11%, rgba(0, 0, 0, 0.3) 16%, rgba(0, 0, 0, 0) 16%);
 }
 /* line 307, modules/_typography.scss */
 .content-text aside a:link {
@@ -1306,17 +1306,17 @@ p.footer-copyright a:hover {
 /* line 313, modules/_typography.scss */
 .content-text aside a:focus {
   color: #666666;
-  background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
 /* line 317, modules/_typography.scss */
 .content-text aside a:hover {
   color: #666666;
-  background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
 /* line 322, modules/_typography.scss */
 .content-text aside a:active {
   color: #666666;
-  background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
 
 /* line 1, modules/_buttons.scss */
@@ -1635,7 +1635,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     to {
       margin: 0;
     }
-  }
+}
 }
 @media (max-width: 1366px) {
   /* line 65, _header.scss */
@@ -1654,6 +1654,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     -webkit-transform: translateX(0%);
   }
 }
+
 @keyframes swipeIn {
   /* line 80, _header.scss */
   from {
@@ -1665,6 +1666,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     transform: translateX(0%);
   }
 }
+
 @media (max-width: 979px) {
   /* line 93, _header.scss */
   #header input[type=checkbox] ~ #navigation-wrapper li {
@@ -1824,6 +1826,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     -webkit-transform: scale(1);
   }
 }
+
 @keyframes bounceIn {
   /* line 25, _homepage.scss */
   0% {
@@ -1850,6 +1853,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     transform: scale(1);
   }
 }
+
 /* line 47, _homepage.scss */
 #slider {
   clear: both;
@@ -2508,6 +2512,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     -webkit-transform: scaleX(1);
   }
 }
+
 @keyframes fadeIn {
   /* line 107, _aboutme.scss */
   from {
@@ -2521,6 +2526,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     transform: scaleX(1);
   }
 }
+
 @-webkit-keyframes shake {
   /* line 118, _aboutme.scss */
   0% {
@@ -2577,6 +2583,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     -webkit-transform: translate(1px, -2px) rotate(-1deg);
   }
 }
+
 @keyframes shake {
   /* line 154, _aboutme.scss */
   0% {
@@ -2633,6 +2640,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     transform: translate(1px, -2px) rotate(-1deg);
   }
 }
+
 @media screen and (min--moz-device-pixel-ratio: 0) {
   /* another firefox bug :( */
   /* line 198, _aboutme.scss */
@@ -2750,7 +2758,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   height: 0;
   overflow: hidden;
 }
-/* line 40, _blog.scss */
+/* line 42, _blog.scss */
 .blog article .video-container iframe,
 .blog article .video-container object,
 .blog article .video-container embed {
@@ -3200,6 +3208,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     transform: scale(1) rotate(0);
   }
 }
+
 @keyframes tada {
   /* line 133, _admin.scss */
   0% {
@@ -3236,6 +3245,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     transform: scale(1) rotate(0);
   }
 }
+
 /* line 164, _admin.scss */
 .admin-comments .comment-block {
   border-bottom: 1px solid #cccccc;
@@ -3354,8 +3364,9 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
 
   @page {
     margin: 0.5cm;
-  }
-  /* line 17, _print.scss */
+}
+
+  /* line 18, _print.scss */
   a,
   a:visited {
     text-decoration: underline;
@@ -3375,13 +3386,13 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
    * Don't show links that are fragment identifiers,
    * or use the `javascript:` pseudo protocol
    */
-  /* line 35, _print.scss */
+  /* line 36, _print.scss */
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
     content: "" !important;
   }
 
-  /* line 40, _print.scss */
+  /* line 42, _print.scss */
   pre,
   blockquote,
   p {
@@ -3394,7 +3405,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     /* h5bp.com/t */
   }
 
-  /* line 50, _print.scss */
+  /* line 51, _print.scss */
   tr,
   img {
     page-break-inside: avoid;
@@ -3410,7 +3421,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     word-wrap: break-word;
   }
 
-  /* line 63, _print.scss */
+  /* line 65, _print.scss */
   p,
   h2,
   h3 {
@@ -3418,7 +3429,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     widows: 3;
   }
 
-  /* line 70, _print.scss */
+  /* line 74, _print.scss */
   h2,
   h3,
   h4,
