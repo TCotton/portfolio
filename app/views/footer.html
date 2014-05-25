@@ -35,7 +35,13 @@ angular.module('portfolioApp', ['portfolioApp.controllers', 'portfolioApp.direct
     </div>
 
     <div data-ng-if="hideFooter" id="recommended-article" data-ng-controller="FooterCtrl">
-      here it is
+
+      <a data-ng-href="{{recArticle.link}}">
+        <header>Latest recommended article: <span data-ng-bind="recArticle.title"></span>
+          by <span data-ng-bind="recArticle.author"></span>
+        </header>
+        <section data-ng-bind="recArticle.content"></section>
+      </a>
     </div>
 
   </div>
