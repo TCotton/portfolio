@@ -986,6 +986,25 @@ p.page-top-text-banner {
   }
 }
 /* line 71, modules/_typography.scss */
+#recommended-article header {
+  font-size: 2.6em;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 0.96154em;
+  font-weight: 400;
+  color: #666666;
+  line-height: 120%;
+}
+
+/* line 78, modules/_typography.scss */
+#recommended-article section {
+  font-size: 2.6em;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  color: #666666;
+  line-height: 120%;
+}
+
+/* line 85, modules/_typography.scss */
 h3.blog-title {
   font-size: 4em;
   font-family: 'Open Sans', sans-serif;
@@ -995,7 +1014,7 @@ h3.blog-title {
   color: #666666;
 }
 
-/* line 78, modules/_typography.scss */
+/* line 92, modules/_typography.scss */
 .blog article h4 {
   font-size: 2.6em;
   font-family: 'Open Sans', sans-serif;
@@ -1005,7 +1024,7 @@ h3.blog-title {
 }
 
 /* little mixin for standard blog css attributes and values */
-/* line 86, modules/_typography.scss */
+/* line 100, modules/_typography.scss */
 .content-text ul {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
@@ -1015,7 +1034,7 @@ h3.blog-title {
   list-style: none;
 }
 
-/* line 86, modules/_typography.scss */
+/* line 100, modules/_typography.scss */
 .content-text p {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
@@ -1024,7 +1043,7 @@ h3.blog-title {
   font-weight: 400;
 }
 
-/* line 86, modules/_typography.scss */
+/* line 100, modules/_typography.scss */
 .content-text .form-label {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
@@ -1034,7 +1053,7 @@ h3.blog-title {
   float: left;
 }
 
-/* line 86, modules/_typography.scss */
+/* line 100, modules/_typography.scss */
 .content-text p.bold {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
@@ -1044,7 +1063,7 @@ h3.blog-title {
 }
 
 @media (max-width: 767px) {
-  /* line 86, modules/_typography.scss */
+  /* line 100, modules/_typography.scss */
   .content-text p {
     font-size: 1.6em;
     font-family: 'Open Sans', sans-serif;
@@ -1058,7 +1077,7 @@ h3.blog-title {
     hyphens: auto;
   }
 }
-/* line 86, modules/_typography.scss */
+/* line 100, modules/_typography.scss */
 .content-text p.date {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
@@ -1068,19 +1087,19 @@ h3.blog-title {
   font-style: italic;
 }
 
-/* line 122, modules/_typography.scss */
+/* line 136, modules/_typography.scss */
 .content-text section > div a {
   color: #666666;
 }
 
-/* line 126, modules/_typography.scss */
+/* line 140, modules/_typography.scss */
 .content-text .user-comments section {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
   color: #666666;
 }
 
-/* line 131, modules/_typography.scss */
+/* line 145, modules/_typography.scss */
 .comment-form-entry {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
@@ -1089,14 +1108,14 @@ h3.blog-title {
   white-space: pre-line;
 }
 
-/* line 137, modules/_typography.scss */
+/* line 151, modules/_typography.scss */
 .content-text section > div table {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
   margin-bottom: 1.5625em;
 }
 
-/* line 141, modules/_typography.scss */
+/* line 155, modules/_typography.scss */
 .content-text section > div h3, .content-text section > div h4, .content-text section > div h5, .content-text section > div h6 {
   font-size: 2.6em;
   font-family: 'Open Sans', sans-serif;
@@ -1106,12 +1125,12 @@ h3.blog-title {
 }
 
 @media (max-width: 767px) {
-  /* line 149, modules/_typography.scss */
+  /* line 163, modules/_typography.scss */
   .content-text section > div h4, .content-text section > div h5, .content-text section > div h6 {
     line-height: 120%;
   }
 }
-/* line 155, modules/_typography.scss */
+/* line 169, modules/_typography.scss */
 .content-text section > div pre {
   font-size: 1.6em;
   font-family: monospace, serif;
@@ -1120,7 +1139,7 @@ h3.blog-title {
   color: #666666;
 }
 
-/* line 86, modules/_typography.scss */
+/* line 100, modules/_typography.scss */
 .content-text p.read-more {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
@@ -1129,7 +1148,7 @@ h3.blog-title {
   font-weight: 700;
 }
 
-/* line 165, modules/_typography.scss */
+/* line 179, modules/_typography.scss */
 p.minor-title {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
@@ -1138,7 +1157,7 @@ p.minor-title {
   margin-bottom: 0;
 }
 
-/* line 172, modules/_typography.scss */
+/* line 186, modules/_typography.scss */
 .blog #blog-content a:hover:after {
   content: "(Link: " attr(href) ")";
   color: #1d7a94;
@@ -1147,14 +1166,14 @@ p.minor-title {
   text-decoration: underline;
 }
 
-/* line 182, modules/_typography.scss */
+/* line 196, modules/_typography.scss */
 .content-text a.underline {
   /* On the desktop this displays a URL of the external link above the link text */
   text-decoration: none;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.3) 11%, rgba(0, 0, 0, 0.3) 16%, rgba(0, 0, 0, 0) 16%);
   position: relative;
 }
-/* line 189, modules/_typography.scss */
+/* line 203, modules/_typography.scss */
 .content-text a.underline[rel="external"]::after {
   content: " " attr(href) " ";
   position: absolute;
@@ -1170,42 +1189,42 @@ p.minor-title {
   white-space: nowrap;
   pointer-events: none;
 }
-/* line 202, modules/_typography.scss */
+/* line 216, modules/_typography.scss */
 .content-text a.underline[rel="external"]:hover::after {
   opacity: 1;
   pointer-events: auto;
 }
-/* line 206, modules/_typography.scss */
+/* line 220, modules/_typography.scss */
 .content-text a.underline:link {
   color: #666666;
 }
-/* line 209, modules/_typography.scss */
+/* line 223, modules/_typography.scss */
 .content-text a.underline:visited {
   color: gray;
 }
-/* line 212, modules/_typography.scss */
+/* line 226, modules/_typography.scss */
 .content-text a.underline:focus {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
-/* line 216, modules/_typography.scss */
+/* line 230, modules/_typography.scss */
 .content-text a.underline:hover {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
-/* line 221, modules/_typography.scss */
+/* line 235, modules/_typography.scss */
 .content-text a.underline:active {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
 
 @media (max-width: 979px) {
-  /* line 234, modules/_typography.scss */
+  /* line 248, modules/_typography.scss */
   .content-text a.underline[rel="external"]::after {
     display: none;
   }
 }
-/* line 241, modules/_typography.scss */
+/* line 255, modules/_typography.scss */
 h4.blog-sidebar-header {
   font-size: 3em;
   font-family: 'Open Sans', sans-serif;
@@ -1214,7 +1233,7 @@ h4.blog-sidebar-header {
   color: #666666;
 }
 
-/* line 247, modules/_typography.scss */
+/* line 261, modules/_typography.scss */
 .blog-sidebar-text p, ul.blog-sidebar-text {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
@@ -1223,7 +1242,7 @@ h4.blog-sidebar-header {
   color: #666666;
 }
 
-/* line 253, modules/_typography.scss */
+/* line 267, modules/_typography.scss */
 h3.contact-header {
   font-size: 3em;
   font-family: 'Open Sans', sans-serif;
@@ -1232,7 +1251,7 @@ h3.contact-header {
   color: #666666;
 }
 
-/* line 259, modules/_typography.scss */
+/* line 273, modules/_typography.scss */
 h3.project-header {
   font-size: 3em;
   font-family: 'Open Sans', sans-serif;
@@ -1240,7 +1259,7 @@ h3.project-header {
   color: white;
 }
 
-/* line 265, modules/_typography.scss */
+/* line 279, modules/_typography.scss */
 .footer-top-text p, ul.footer-top-text {
   font-size: 2em;
   font-family: 'Open Sans', sans-serif;
@@ -1250,14 +1269,14 @@ h3.project-header {
   color: #666666;
 }
 
-/* line 272, modules/_typography.scss */
+/* line 286, modules/_typography.scss */
 .code-preview {
   font-size: 12px;
   color: #666666;
   line-height: 16px;
 }
 
-/* line 278, modules/_typography.scss */
+/* line 292, modules/_typography.scss */
 p.footer-copyright {
   font-size: 1.3em;
   font-family: 'Open Sans', sans-serif;
@@ -1265,24 +1284,24 @@ p.footer-copyright {
   color: white;
   text-transform: capitalize;
 }
-/* line 283, modules/_typography.scss */
+/* line 297, modules/_typography.scss */
 p.footer-copyright a {
   color: white;
   text-decoration: none;
 }
-/* line 286, modules/_typography.scss */
+/* line 300, modules/_typography.scss */
 p.footer-copyright a:hover {
   text-decoration: underline;
 }
 
-/* line 292, modules/_typography.scss */
+/* line 306, modules/_typography.scss */
 .admin-comments dt, .content-text aside dt {
   font-size: 1.4em;
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
 }
 
-/* line 297, modules/_typography.scss */
+/* line 311, modules/_typography.scss */
 .admin-comments dd, .content-text aside dd {
   font-size: 1.4em;
   font-family: 'Open Sans', sans-serif;
@@ -1290,30 +1309,30 @@ p.footer-copyright a:hover {
   font-weight: 400;
 }
 
-/* line 302, modules/_typography.scss */
+/* line 316, modules/_typography.scss */
 .content-text aside a {
   text-decoration: none;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.3) 11%, rgba(0, 0, 0, 0.3) 16%, rgba(0, 0, 0, 0) 16%);
 }
-/* line 307, modules/_typography.scss */
+/* line 321, modules/_typography.scss */
 .content-text aside a:link {
   color: #666666;
 }
-/* line 310, modules/_typography.scss */
+/* line 324, modules/_typography.scss */
 .content-text aside a:visited {
   color: gray;
 }
-/* line 313, modules/_typography.scss */
+/* line 327, modules/_typography.scss */
 .content-text aside a:focus {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
-/* line 317, modules/_typography.scss */
+/* line 331, modules/_typography.scss */
 .content-text aside a:hover {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);
 }
-/* line 322, modules/_typography.scss */
+/* line 336, modules/_typography.scss */
 .content-text aside a:active {
   color: #666666;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, rgba(0, 0, 0, 0) 16%);

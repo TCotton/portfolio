@@ -85,16 +85,13 @@
 
     }.bind(this), function (value) {
 
-      this.$log.warn('Failure: UserDetailsCtrl.deleteUser');
+      this.$log.warn('Failure: FooterCtrl.getBlogPosts');
       this.$log.warn(value);
 
     }.bind(this));
-
-
 
   };
 
   app.controller('FooterCtrl', FooterCtrl);
 
 }());
-
