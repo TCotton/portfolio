@@ -26,12 +26,6 @@ angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$locatio
 
     $rootScope.currentPage = $location.absUrl();
 
-    if($rootScope.currentPage.indexOf('/#!/') === -1) {
-
-      $rootScope.status = '404';
-
-    }
-
     $rootScope.canonical = 'http://andywalpole/#!' + $location.path();
 
     $rootScope.hideFooter = false;
