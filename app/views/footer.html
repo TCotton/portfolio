@@ -38,7 +38,7 @@ angular.module('portfolioApp', ['portfolioApp.controllers', 'portfolioApp.direct
 
       <a data-ng-href="{{recArticle.link}}">
         <header>Latest recommended article: <em><span data-ng-bind="recArticle.title"></span></em>
-          by <em><span data-ng-bind="recArticle.author"></span></em>
+          by <em><span data-ng-bind="recArticle.author"></span> / <span data-ng-bind="recArticle.date | date"></span></em>
         </header>
         <section><em data-ng-bind="recArticle.content"></em></section>
       </a>

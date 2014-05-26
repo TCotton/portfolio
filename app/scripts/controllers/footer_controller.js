@@ -69,10 +69,12 @@
         for (var key in returnedData.stories) {
 
           this.$scope.recArticle.title = returnedData.stories[key].story_title;
-          this.$scope.recArticle.date = returnedData.stories[key].timestamp;
+          this.$scope.recArticle.date = returnedData.stories[key].story_timestamp;
           this.$scope.recArticle.author = returnedData.stories[key].story_authors;
           this.$scope.recArticle.content = _createContentSnippet(returnedData.stories[key].story_content);
           this.$scope.recArticle.link = returnedData.stories[key].story_permalink;
+
+          console.log(returnedData.stories[key]);
 
           if(key >= 0) {
             // only need first story in json file
