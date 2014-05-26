@@ -44,6 +44,12 @@ module.exports = function (app) {
     // use mongoose to get all blogs in the database
     Blog.find(function (err, blogs) {
 
+      if (app.get('env') === 'production') {
+
+        res.setHeader('Cache-Control', 'public, max-age=60');
+
+      }
+
       // if there is an error retrieving, send the error. nothing after res.send(err) will execute
       if (err) {
         res.send(err);
