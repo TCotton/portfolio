@@ -143,7 +143,7 @@ module.exports = function (app) {
 
       } else {
 
-        var hours24 = 86400000;
+        var hours24 = 3600000;
         // take the number from the json file name - this is the date it was created
         var fileAge = parseInt(file.toString().substring(file.toString().indexOf('_') + 1, file.toString().indexOf('.')), 10);
         var dateNow = parseInt(Date.now(), 10);

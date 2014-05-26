@@ -69,17 +69,16 @@ p.page-top-text-banner {
 }
 
 #recommended-article header {
-  @include font-calculator($baseFontFamily, 26px);
+  @include font-calculator($baseFontFamily, 22px);
   font-weight: 400;
   color: $textTwo;
   line-height: 120%;
 }
 
 #recommended-article section {
-  @include font-calculator($baseFontFamily, 26px, 0);
+  @include font-calculator($baseFontFamily, 22px, 0);
   font-weight: 400;
   color: $textTwo;
-  line-height: 120%;
 }
 
 h3.blog-title {
