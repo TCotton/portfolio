@@ -45,7 +45,7 @@
       trimmedString = snippet.substr(0, maxLength);
 
       //re-trim if we are in the middle of a word
-      return trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(' '))) + ' ...';
+      return '"' + trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(' '))) + ' ...' + ' "';
 
     }.bind(this);
 
@@ -55,6 +55,9 @@
 
   FooterCtrl.$inject = ['$rootScope', '$scope', '$log', 'NewsBlurService'];
 
+  /** Return JSON data for latest articles saved in my Newsblur account
+   *  Uses Newsblur API on NodeJS
+   * **/
   FooterCtrl.prototype.loadData = function () {
 
     var returnedPromise = this.NewsBlurService.getBlogPosts();
@@ -69,12 +72,10 @@
         for (var key in returnedData.stories) {
 
           this.$scope.recArticle.title = returnedData.stories[key].story_title;
-          this.$scope.recArticle.date = returnedData.stories[key].story_timestamp;
+          this.$scope.recArticle.date = returnedData.stories[key].short_parsed_date.split(',')[0];
           this.$scope.recArticle.author = returnedData.stories[key].story_authors;
           this.$scope.recArticle.content = _createContentSnippet(returnedData.stories[key].story_content);
           this.$scope.recArticle.link = returnedData.stories[key].story_permalink;
-
-          console.log(returnedData.stories[key]);
 
           if(key >= 0) {
             // only need first story in json file

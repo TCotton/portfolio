@@ -81,6 +81,16 @@ p.page-top-text-banner {
   color: $textTwo;
 }
 
+@include breakpoint(tablet) {
+  #recommended-article header {
+    line-height: 120%;
+  }
+
+  #recommended-article section {
+    line-height: 120%;
+  }
+}
+
 h3.blog-title {
   @include font-calculator($baseFontFamily, 40px, 1.5);
   font-weight: 300;
