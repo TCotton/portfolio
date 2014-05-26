@@ -8,6 +8,7 @@ var querystring = require('querystring');
 var q = require('q');
 var fs = require('fs');
 var _ = require('underscore');
+var zlib = require('zlib');
 
 
 /** Send authentication to newsblur API
@@ -143,7 +144,7 @@ module.exports = function (app) {
 
       } else {
 
-        var hours24 = 3600000;
+        var hours24 = 86400000;
         // take the number from the json file name - this is the date it was created
         var fileAge = parseInt(file.toString().substring(file.toString().indexOf('_') + 1, file.toString().indexOf('.')), 10);
         var dateNow = parseInt(Date.now(), 10);
@@ -154,7 +155,7 @@ module.exports = function (app) {
           fs.unlink('./server/newsblur_feed/' + file.toString(), function (err) {
 
             if (err) {
-              res.send(err)
+              res.send(err);
             }
 
             req_authentication().then(function (data) {
@@ -162,7 +163,7 @@ module.exports = function (app) {
 
                 if (fileName) {
 
-                  var file = fs.readFileSync('./server/newsblur_feed/' + fileName);
+                  var file = fs.readFileSync('./server/newsblur_feed/' + fileName + '.json');
 
                   res.send(file);
 

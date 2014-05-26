@@ -64,10 +64,10 @@
 
     returnedPromise.then(function (value) {
 
-      if(value.data !== 'null') {
+      if (value.data !== 'null') {
 
         // make JSON file into usable object
-        var returnedData = JSON.parse(JSON.stringify(value.data));
+        var returnedData = value.data;
 
         for (var key in returnedData.stories) {
 
@@ -77,7 +77,7 @@
           this.$scope.recArticle.content = _createContentSnippet(returnedData.stories[key].story_content);
           this.$scope.recArticle.link = returnedData.stories[key].story_permalink;
 
-          if(key >= 0) {
+          if (key >= 0) {
             // only need first story in json file
             break;
           }

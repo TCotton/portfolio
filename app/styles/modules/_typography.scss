@@ -83,11 +83,18 @@ p.page-top-text-banner {
 
 @include breakpoint(tablet) {
   #recommended-article header {
-    line-height: 120%;
+    line-height: 140%;
   }
 
   #recommended-article section {
-    line-height: 120%;
+    line-height: 140%;
+  }
+}
+
+@include breakpoint(mobile) {
+
+  #recommended-article section {
+    display: none;
   }
 }
 
