@@ -39,7 +39,7 @@
       snippet = title.replace(/(<([^>]+)>)/ig, '').trim();
 
       // maximum number of characters to extract
-      maxLength = 130;
+      maxLength = 260;
 
       //trim the string to the maximum length
       trimmedString = snippet.substr(0, maxLength);
