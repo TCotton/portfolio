@@ -124,7 +124,7 @@ module.exports = function (app) {
         res.send(err);
       }
 
-      res.setHeader('Cache-Control', 'max-age=86400000');
+      res.setHeader('Cache-Control', 'public, max-age=86400');
 
       if (_.isEmpty(file)) {
 
