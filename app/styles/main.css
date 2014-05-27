@@ -1296,31 +1296,28 @@ h3.project-header {
 p.footer-copyright {
   font-size: 1.3em;
   font-family: 'Open Sans', sans-serif;
-  margin-top: 20px;
+  line-height: 94px;
   color: white;
+  text-transform: capitalize;
 }
-/* line 312, modules/_typography.scss */
+/* line 313, modules/_typography.scss */
 p.footer-copyright a {
   color: white;
   text-decoration: none;
 }
-/* line 315, modules/_typography.scss */
+/* line 316, modules/_typography.scss */
 p.footer-copyright a:hover {
   text-decoration: underline;
 }
-/* line 319, modules/_typography.scss */
-p.footer-copyright > span a {
-  text-decoration: underline;
-}
 
-/* line 324, modules/_typography.scss */
+/* line 322, modules/_typography.scss */
 .admin-comments dt, .content-text aside dt {
   font-size: 1.4em;
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
 }
 
-/* line 329, modules/_typography.scss */
+/* line 327, modules/_typography.scss */
 .admin-comments dd, .content-text aside dd {
   font-size: 1.4em;
   font-family: 'Open Sans', sans-serif;
@@ -1328,30 +1325,30 @@ p.footer-copyright > span a {
   font-weight: 400;
 }
 
-/* line 334, modules/_typography.scss */
+/* line 332, modules/_typography.scss */
 .content-text aside a {
   text-decoration: none;
   background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.3) 11%, rgba(0, 0, 0, 0.3) 16%, transparent 16%);
 }
-/* line 339, modules/_typography.scss */
+/* line 337, modules/_typography.scss */
 .content-text aside a:link {
   color: #666666;
 }
-/* line 342, modules/_typography.scss */
+/* line 340, modules/_typography.scss */
 .content-text aside a:visited {
   color: gray;
 }
-/* line 345, modules/_typography.scss */
+/* line 343, modules/_typography.scss */
 .content-text aside a:focus {
   color: #666666;
   background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
 }
-/* line 349, modules/_typography.scss */
+/* line 347, modules/_typography.scss */
 .content-text aside a:hover {
   color: #666666;
   background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
 }
-/* line 354, modules/_typography.scss */
+/* line 352, modules/_typography.scss */
 .content-text aside a:active {
   color: #666666;
   background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
