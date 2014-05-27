@@ -12,14 +12,14 @@ h1.logo {
   @include font-calculator($secondaryFontFamily, 35px, 0);
   line-height: $headerHeight;
   color: white;
-  -webkit-font-smoothing:antialiased;
+  -webkit-font-smoothing: antialiased;
 }
 
 .navigation li {
   @include font-calculator($baseFontFamily, 15px, 0);
   text-transform: uppercase;
   font-weight: 700;
-  -webkit-font-smoothing:antialiased;
+  -webkit-font-smoothing: antialiased;
 }
 
 h2.page-top-title {
@@ -307,15 +307,17 @@ h3.project-header {
 
 p.footer-copyright {
   @include font-calculator($baseFontFamily, 13px, 0);
-  line-height: $bottomFooterHeight;
+  margin-top: 20px;
   color: white;
-  text-transform: capitalize;
   a {
     color: white;
     text-decoration: none;
     &:hover {
       text-decoration: underline;
     }
+  }
+  > span a {
+    text-decoration: underline
   }
 }
 
