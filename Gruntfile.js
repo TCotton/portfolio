@@ -392,18 +392,6 @@ module.exports = function (grunt) {
     'rev',
     'usemin',
     'htmlmin'
-
-    /* 'clean:dist',
-     'useminPrepare',
-     'concurrent:dist',
-     'concat',
-     'copy',
-     'cdnify',
-     'ngmin',
-     'cssmin',
-     'uglify',
-     'rev',
-     'usemin'*/
   ]);
 
   grunt.registerTask('default', [
