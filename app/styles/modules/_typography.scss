@@ -142,6 +142,7 @@ h3.blog-title {
   @include font-calculator($baseFontFamily, 28px, 0);
   font-weight: 300;
   color: $textTwo;
+  line-height: 54px;
 }
 
 @include breakpoint(mobile) {

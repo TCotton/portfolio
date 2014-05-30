@@ -143,27 +143,31 @@
 
 #more-posts {
 
-  header {
-    cursor: pointer;
-    text-align: center;
-  }
-
-  section {
-    text-align: center;
-  }
+  cursor: pointer;
 
   .down-arrow {
     width: 55px;
     height: 54px;
-    display: block;
+    display: inline-block;
     cursor: pointer;
     background-size: contain;
     background: url('/images/svg/down-arrow.svg') no-repeat center center;
-    margin: 30px auto 0 auto;
     &:hover {
       background: url('/images/svg/down-arrow-hover.svg') no-repeat center center;
     }
   }
+
+  > div:first-of-type {
+    float: right;
+    width: 160px;
+    text-align: right;
+  }
+
+  > div:last-of-type {
+    float: right;
+  }
+
+
 
 }
 
