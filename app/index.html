@@ -87,7 +87,11 @@
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
 <script>
-  (function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date;a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create","UA-1173435-13");ga("send","pageview");
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create','UA-1173435-13', {'cookieDomain': 'andywalpole.me', 'siteSpeedSampleRate': 100});
 </script>
 
 <!-- build:js scripts/vendor.js -->
@@ -102,6 +106,7 @@
 <script src="components/angular-animate/angular-animate.js"></script>
 <script src="components/angular-cache/dist/angular-cache.min.js"></script>
 <script src="components/moment/moment.js"></script>
+<script src="libs/ga.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
