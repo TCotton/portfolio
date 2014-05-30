@@ -1078,6 +1078,14 @@ h3.blog-title {
   font-weight: 700;
 }
 
+/* line 141, modules/_typography.scss */
+#more-posts h6 {
+  font-size: 2.8em;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  color: #666666;
+}
+
 @media (max-width: 767px) {
   /* line 116, modules/_typography.scss */
   .content-text p {
@@ -1103,19 +1111,19 @@ h3.blog-title {
   font-style: italic;
 }
 
-/* line 152, modules/_typography.scss */
+/* line 158, modules/_typography.scss */
 .content-text section > div a {
   color: #666666;
 }
 
-/* line 156, modules/_typography.scss */
+/* line 162, modules/_typography.scss */
 .content-text .user-comments section {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
   color: #666666;
 }
 
-/* line 161, modules/_typography.scss */
+/* line 167, modules/_typography.scss */
 .comment-form-entry {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
@@ -1124,14 +1132,14 @@ h3.blog-title {
   white-space: pre-line;
 }
 
-/* line 167, modules/_typography.scss */
+/* line 173, modules/_typography.scss */
 .content-text section > div table {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
   margin-bottom: 1.5625em;
 }
 
-/* line 171, modules/_typography.scss */
+/* line 177, modules/_typography.scss */
 .content-text section > div h3, .content-text section > div h4, .content-text section > div h5, .content-text section > div h6 {
   font-size: 2.6em;
   font-family: 'Open Sans', sans-serif;
@@ -1141,12 +1149,12 @@ h3.blog-title {
 }
 
 @media (max-width: 767px) {
-  /* line 179, modules/_typography.scss */
+  /* line 185, modules/_typography.scss */
   .content-text section > div h4, .content-text section > div h5, .content-text section > div h6 {
     line-height: 120%;
   }
 }
-/* line 185, modules/_typography.scss */
+/* line 191, modules/_typography.scss */
 .content-text section > div pre {
   font-size: 1.6em;
   font-family: monospace, serif;
@@ -1164,7 +1172,7 @@ h3.blog-title {
   font-weight: 700;
 }
 
-/* line 195, modules/_typography.scss */
+/* line 201, modules/_typography.scss */
 p.minor-title {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
@@ -1173,7 +1181,7 @@ p.minor-title {
   margin-bottom: 0;
 }
 
-/* line 202, modules/_typography.scss */
+/* line 208, modules/_typography.scss */
 .blog #blog-content a:hover:after {
   content: "(Link: " attr(href) ")";
   color: #1d7a94;
@@ -1182,14 +1190,14 @@ p.minor-title {
   text-decoration: underline;
 }
 
-/* line 212, modules/_typography.scss */
+/* line 218, modules/_typography.scss */
 .content-text a.underline {
   /* On the desktop this displays a URL of the external link above the link text */
   text-decoration: none;
   background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.3) 11%, rgba(0, 0, 0, 0.3) 16%, transparent 16%);
   position: relative;
 }
-/* line 219, modules/_typography.scss */
+/* line 225, modules/_typography.scss */
 .content-text a.underline[rel="external"]::after {
   content: " " attr(href) " ";
   position: absolute;
@@ -1205,42 +1213,42 @@ p.minor-title {
   white-space: nowrap;
   pointer-events: none;
 }
-/* line 232, modules/_typography.scss */
+/* line 238, modules/_typography.scss */
 .content-text a.underline[rel="external"]:hover::after {
   opacity: 1;
   pointer-events: auto;
 }
-/* line 236, modules/_typography.scss */
+/* line 242, modules/_typography.scss */
 .content-text a.underline:link {
   color: #666666;
 }
-/* line 239, modules/_typography.scss */
+/* line 245, modules/_typography.scss */
 .content-text a.underline:visited {
   color: gray;
 }
-/* line 242, modules/_typography.scss */
+/* line 248, modules/_typography.scss */
 .content-text a.underline:focus {
   color: #666666;
   background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
 }
-/* line 246, modules/_typography.scss */
+/* line 252, modules/_typography.scss */
 .content-text a.underline:hover {
   color: #666666;
   background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
 }
-/* line 251, modules/_typography.scss */
+/* line 257, modules/_typography.scss */
 .content-text a.underline:active {
   color: #666666;
   background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
 }
 
 @media (max-width: 979px) {
-  /* line 264, modules/_typography.scss */
+  /* line 270, modules/_typography.scss */
   .content-text a.underline[rel="external"]::after {
     display: none;
   }
 }
-/* line 271, modules/_typography.scss */
+/* line 277, modules/_typography.scss */
 h4.blog-sidebar-header {
   font-size: 3em;
   font-family: 'Open Sans', sans-serif;
@@ -1249,7 +1257,7 @@ h4.blog-sidebar-header {
   color: #666666;
 }
 
-/* line 277, modules/_typography.scss */
+/* line 283, modules/_typography.scss */
 .blog-sidebar-text p, ul.blog-sidebar-text {
   font-size: 1.6em;
   font-family: 'Open Sans', sans-serif;
@@ -1258,7 +1266,7 @@ h4.blog-sidebar-header {
   color: #666666;
 }
 
-/* line 283, modules/_typography.scss */
+/* line 289, modules/_typography.scss */
 h3.contact-header {
   font-size: 3em;
   font-family: 'Open Sans', sans-serif;
@@ -1267,7 +1275,7 @@ h3.contact-header {
   color: #666666;
 }
 
-/* line 289, modules/_typography.scss */
+/* line 295, modules/_typography.scss */
 h3.project-header {
   font-size: 3em;
   font-family: 'Open Sans', sans-serif;
@@ -1275,7 +1283,7 @@ h3.project-header {
   color: white;
 }
 
-/* line 295, modules/_typography.scss */
+/* line 301, modules/_typography.scss */
 .footer-top-text p, ul.footer-top-text {
   font-size: 2em;
   font-family: 'Open Sans', sans-serif;
@@ -1285,14 +1293,14 @@ h3.project-header {
   color: #666666;
 }
 
-/* line 302, modules/_typography.scss */
+/* line 308, modules/_typography.scss */
 .code-preview {
   font-size: 12px;
   color: #666666;
   line-height: 16px;
 }
 
-/* line 308, modules/_typography.scss */
+/* line 314, modules/_typography.scss */
 p.footer-copyright {
   font-size: 1.3em;
   font-family: 'Open Sans', sans-serif;
@@ -1300,24 +1308,24 @@ p.footer-copyright {
   color: white;
   text-transform: capitalize;
 }
-/* line 313, modules/_typography.scss */
+/* line 319, modules/_typography.scss */
 p.footer-copyright a {
   color: white;
   text-decoration: none;
 }
-/* line 316, modules/_typography.scss */
+/* line 322, modules/_typography.scss */
 p.footer-copyright a:hover {
   text-decoration: underline;
 }
 
-/* line 322, modules/_typography.scss */
+/* line 328, modules/_typography.scss */
 .admin-comments dt, .content-text aside dt {
   font-size: 1.4em;
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
 }
 
-/* line 327, modules/_typography.scss */
+/* line 333, modules/_typography.scss */
 .admin-comments dd, .content-text aside dd {
   font-size: 1.4em;
   font-family: 'Open Sans', sans-serif;
@@ -1325,30 +1333,30 @@ p.footer-copyright a:hover {
   font-weight: 400;
 }
 
-/* line 332, modules/_typography.scss */
+/* line 338, modules/_typography.scss */
 .content-text aside a {
   text-decoration: none;
   background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.3) 11%, rgba(0, 0, 0, 0.3) 16%, transparent 16%);
 }
-/* line 337, modules/_typography.scss */
+/* line 343, modules/_typography.scss */
 .content-text aside a:link {
   color: #666666;
 }
-/* line 340, modules/_typography.scss */
+/* line 346, modules/_typography.scss */
 .content-text aside a:visited {
   color: gray;
 }
-/* line 343, modules/_typography.scss */
+/* line 349, modules/_typography.scss */
 .content-text aside a:focus {
   color: #666666;
   background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
 }
-/* line 347, modules/_typography.scss */
+/* line 353, modules/_typography.scss */
 .content-text aside a:hover {
   color: #666666;
   background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
 }
-/* line 352, modules/_typography.scss */
+/* line 358, modules/_typography.scss */
 .content-text aside a:active {
   color: #666666;
   background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
@@ -2785,7 +2793,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   height: 0;
   overflow: hidden;
 }
-/* line 40, _blog.scss */
+/* line 42, _blog.scss */
 .blog article .video-container iframe,
 .blog article .video-container object,
 .blog article .video-container embed {
@@ -2795,12 +2803,12 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   width: 100%;
   height: 100%;
 }
-/* line 50, _blog.scss */
+/* line 52, _blog.scss */
 .blog article pre {
   white-space: pre;
   overflow: auto;
 }
-/* line 55, _blog.scss */
+/* line 57, _blog.scss */
 .blog article blockquote {
   background: white;
   border-left: 5px solid #ccc;
@@ -2808,7 +2816,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   padding: 0.5em 10px;
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
-/* line 62, _blog.scss */
+/* line 64, _blog.scss */
 .blog article blockquote:before {
   color: #ccc;
   content: "\201C";
@@ -2817,11 +2825,11 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   margin-right: 0.25em;
   vertical-align: -0.4em;
 }
-/* line 70, _blog.scss */
+/* line 72, _blog.scss */
 .blog article blockquote p {
   display: inline;
 }
-/* line 74, _blog.scss */
+/* line 76, _blog.scss */
 .blog article aside {
   width: 33%;
   margin: 0 0 0 2%;
@@ -2829,11 +2837,11 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   float: right;
   border-left: 1px solid #cccccc;
 }
-/* line 82, _blog.scss */
+/* line 84, _blog.scss */
 .blog article aside:empty {
   display: none;
 }
-/* line 87, _blog.scss */
+/* line 89, _blog.scss */
 .blog .user-comments {
   border-bottom: 1px solid #cccccc;
   margin: 0 0 25px 0;
@@ -2841,67 +2849,91 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   display: inline-block;
   white-space: pre-line;
 }
-/* line 93, _blog.scss */
+/* line 95, _blog.scss */
 .blog .user-comments p:first-of-type {
   font-weight: 600;
 }
-/* line 101, _blog.scss */
+/* line 103, _blog.scss */
 .blog #right-small h4.content-title:nth-of-type(2) + ul li:not(:last-of-type) {
   margin-bottom: 0;
 }
-/* line 105, _blog.scss */
+/* line 107, _blog.scss */
 .blog #right-small a {
   color: gray;
   text-decoration: none;
   display: block;
   margin-bottom: 10px;
 }
-/* line 112, _blog.scss */
+/* line 114, _blog.scss */
 .blog #right-small h4.content-title + ul {
   margin-bottom: 25px;
   display: inline-block;
 }
 
 @media (max-width: 767px) {
-  /* line 123, _blog.scss */
+  /* line 125, _blog.scss */
   .blog article {
     margin: 0 0 20px 0;
     padding: 0 0 20px 0;
   }
-  /* line 127, _blog.scss */
+  /* line 129, _blog.scss */
   .blog article header {
     margin: 0 0 10px 0;
   }
-  /* line 134, _blog.scss */
+  /* line 136, _blog.scss */
   .blog #right-small h4.content-title + ul {
     margin-bottom: 20px;
   }
 }
-/* line 142, _blog.scss */
+/* line 146, _blog.scss */
+#more-posts header {
+  cursor: pointer;
+  text-align: center;
+}
+/* line 151, _blog.scss */
+#more-posts section {
+  text-align: center;
+}
+/* line 155, _blog.scss */
+#more-posts .down-arrow {
+  width: 55px;
+  height: 54px;
+  display: block;
+  cursor: pointer;
+  background-size: contain;
+  background: url("/images/svg/down-arrow.svg") no-repeat center center;
+  margin: 30px auto 0 auto;
+}
+/* line 163, _blog.scss */
+#more-posts .down-arrow:hover {
+  background: url("/images/svg/down-arrow-hover.svg") no-repeat center center;
+}
+
+/* line 170, _blog.scss */
 #pagination {
   text-align: center;
 }
-/* line 146, _blog.scss */
+/* line 174, _blog.scss */
 #pagination .left-p {
   float: left;
   width: 55px;
   height: 54px;
   margin: 0 14px 14px 0;
 }
-/* line 153, _blog.scss */
+/* line 181, _blog.scss */
 #pagination .center-p {
   float: left;
   margin: 0 7px 0 0;
   width: -webkit-calc(100% - (55px * 2) - (14px * 2));
   width: calc(100% - (55px * 2) - (14px * 2));
 }
-/* line 159, _blog.scss */
+/* line 187, _blog.scss */
 #pagination .right-p {
   float: left;
   width: 55px;
   height: 54px;
 }
-/* line 165, _blog.scss */
+/* line 193, _blog.scss */
 #pagination [class*="pag"] {
   width: 55px;
   height: 54px;
@@ -2911,126 +2943,126 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   background-size: contain;
   margin: 0 14px 14px 0;
 }
-/* line 174, _blog.scss */
+/* line 202, _blog.scss */
 #pagination [class*="pag"]:last-of-type {
   margin: 0;
 }
-/* line 181, _blog.scss */
+/* line 209, _blog.scss */
 #pagination .left-p [class*="pag"] {
   background: url("/images/svg/left-arrow.svg") no-repeat center center;
 }
-/* line 183, _blog.scss */
+/* line 211, _blog.scss */
 #pagination .left-p [class*="pag"]:hover {
   background: url("/images/svg/left-arrow-hover.svg") no-repeat center center;
 }
-/* line 193, _blog.scss */
+/* line 221, _blog.scss */
 #pagination .pag1 {
   background: url("/images/svg/solid1.svg") no-repeat center center;
 }
-/* line 195, _blog.scss */
+/* line 223, _blog.scss */
 #pagination .pag1:hover {
   background: url("/images/svg/outline1.svg") no-repeat center center;
 }
-/* line 193, _blog.scss */
+/* line 221, _blog.scss */
 #pagination .pag2 {
   background: url("/images/svg/solid2.svg") no-repeat center center;
 }
-/* line 195, _blog.scss */
+/* line 223, _blog.scss */
 #pagination .pag2:hover {
   background: url("/images/svg/outline2.svg") no-repeat center center;
 }
-/* line 193, _blog.scss */
+/* line 221, _blog.scss */
 #pagination .pag3 {
   background: url("/images/svg/solid3.svg") no-repeat center center;
 }
-/* line 195, _blog.scss */
+/* line 223, _blog.scss */
 #pagination .pag3:hover {
   background: url("/images/svg/outline3.svg") no-repeat center center;
 }
-/* line 193, _blog.scss */
+/* line 221, _blog.scss */
 #pagination .pag4 {
   background: url("/images/svg/solid4.svg") no-repeat center center;
 }
-/* line 195, _blog.scss */
+/* line 223, _blog.scss */
 #pagination .pag4:hover {
   background: url("/images/svg/outline4.svg") no-repeat center center;
 }
-/* line 193, _blog.scss */
+/* line 221, _blog.scss */
 #pagination .pag5 {
   background: url("/images/svg/solid5.svg") no-repeat center center;
 }
-/* line 195, _blog.scss */
+/* line 223, _blog.scss */
 #pagination .pag5:hover {
   background: url("/images/svg/outline5.svg") no-repeat center center;
 }
-/* line 193, _blog.scss */
+/* line 221, _blog.scss */
 #pagination .pag6 {
   background: url("/images/svg/solid6.svg") no-repeat center center;
 }
-/* line 195, _blog.scss */
+/* line 223, _blog.scss */
 #pagination .pag6:hover {
   background: url("/images/svg/outline6.svg") no-repeat center center;
 }
-/* line 193, _blog.scss */
+/* line 221, _blog.scss */
 #pagination .pag7 {
   background: url("/images/svg/solid7.svg") no-repeat center center;
 }
-/* line 195, _blog.scss */
+/* line 223, _blog.scss */
 #pagination .pag7:hover {
   background: url("/images/svg/outline7.svg") no-repeat center center;
 }
-/* line 193, _blog.scss */
+/* line 221, _blog.scss */
 #pagination .pag8 {
   background: url("/images/svg/solid8.svg") no-repeat center center;
 }
-/* line 195, _blog.scss */
+/* line 223, _blog.scss */
 #pagination .pag8:hover {
   background: url("/images/svg/outline8.svg") no-repeat center center;
 }
-/* line 193, _blog.scss */
+/* line 221, _blog.scss */
 #pagination .pag9 {
   background: url("/images/svg/solid9.svg") no-repeat center center;
 }
-/* line 195, _blog.scss */
+/* line 223, _blog.scss */
 #pagination .pag9:hover {
   background: url("/images/svg/outline9.svg") no-repeat center center;
 }
-/* line 193, _blog.scss */
+/* line 221, _blog.scss */
 #pagination .pag10 {
   background: url("/images/svg/solid10.svg") no-repeat center center;
 }
-/* line 195, _blog.scss */
+/* line 223, _blog.scss */
 #pagination .pag10:hover {
   background: url("/images/svg/outline10.svg") no-repeat center center;
 }
-/* line 203, _blog.scss */
+/* line 231, _blog.scss */
 #pagination .right-p [class*="pag"] {
   background: url("/images/svg/right-arrow.svg") no-repeat center center;
 }
-/* line 205, _blog.scss */
+/* line 233, _blog.scss */
 #pagination .right-p [class*="pag"]:hover {
   background: url("/images/svg/right-arrow-hover.svg") no-repeat center center;
 }
 
 @media (max-width: 979px) {
-  /* line 215, _blog.scss */
+  /* line 243, _blog.scss */
   .blog #left-large {
     width: auto;
     float: none;
     display: block;
     margin: 0 0 0 0;
   }
-  /* line 222, _blog.scss */
+  /* line 250, _blog.scss */
   .blog #right-small {
     display: none;
   }
-  /* line 228, _blog.scss */
+  /* line 256, _blog.scss */
   .blog.blog-single #left-large {
     width: 100%;
     margin: 0 0 20px 0;
     display: inline-block;
   }
-  /* line 235, _blog.scss */
+  /* line 263, _blog.scss */
   .blog.blog-single #right-small {
     width: auto;
     float: none;
@@ -3040,27 +3072,27 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   }
 }
 @media (max-width: 767px) {
-  /* line 250, _blog.scss */
+  /* line 278, _blog.scss */
   .blog article aside {
     display: none;
   }
 
-  /* line 256, _blog.scss */
+  /* line 284, _blog.scss */
   #pagination {
     text-align: center;
   }
-  /* line 260, _blog.scss */
+  /* line 288, _blog.scss */
   #pagination .left-p {
     float: left;
     width: 55px;
     height: 54px;
     margin: 0 14px 14px 0;
   }
-  /* line 267, _blog.scss */
+  /* line 295, _blog.scss */
   #pagination .center-p {
     display: none;
   }
-  /* line 271, _blog.scss */
+  /* line 299, _blog.scss */
   #pagination .right-p {
     float: right;
     width: 55px;

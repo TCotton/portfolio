@@ -138,6 +138,12 @@ h3.blog-title {
   font-weight: 700;
 }
 
+#more-posts h6 {
+  @include font-calculator($baseFontFamily, 28px, 0);
+  font-weight: 300;
+  color: $textTwo;
+}
+
 @include breakpoint(mobile) {
   @include contentText('p') {
     @include word-wrap();

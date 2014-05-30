@@ -50,7 +50,7 @@ describe('Routes test with log in', function () {
     it('should load the blog page on successful load of /blog/', function () {
       location.path('/blog/');
       rootScope.$digest(); // call the digest loop
-      expect(route.current.controller).toBe('BlogCtrl');
+      expect(route.current.controller).toBe('BlogCtrl as BlogIndexCtrl');
     });
 
   });

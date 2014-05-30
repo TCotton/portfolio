@@ -11,11 +11,19 @@
   <div id="left-large" data-blog-directive>
 
     <!-- repeat old blog posts here -->
-    <div data-ng-repeat="blog in totalBlogPosts | limitTo: paginationStartFrom | limitTo: paginationPageSizeLimit | orderBy: '-publishedDate' track by $index">
+    <div data-ng-repeat="blog in totalBlogPosts | limitTo: displayPosts | orderBy: '-publishedDate' track by $index">
       <div data-blog-block-directive blog="blog"></div>
     </div>
 
-    <div id="pagination" class="clearfix">
+    <div id="more-posts" class="clearfix" data-ng-click="BlogIndexCtrl.morePosts();">
+
+      <header><h6>More</h6></header>
+
+      <section><span class="down-arrow"></span></section>
+
+    </div>
+
+    <!--<div id="pagination" class="clearfix">
 
       <div class="left-p" data-ng-click="prevPagination();">
         <a data-ng-href="{{prev}}" class="paglast" rel="prev"></a>
@@ -39,7 +47,7 @@
       </div>
 
     </div>
-
+-->
 
   </div>
   <!-- end left large -->
