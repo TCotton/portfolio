@@ -20,8 +20,6 @@
     this.$log = $log;
     this.$rootScope = $rootScope;
 
-    var _this = this;
-
     /** Using defineProperty with these values prevents service and constants from being injected with the BlogDataService into a controller
      * **/
     Object.defineProperty(this, 'CONFIG', {
@@ -44,10 +42,10 @@
      * **/
     _cache = function (blog) {
 
-      _this.$angularCacheFactory.get('blogCache').put('totalArticles', blog.data.totalArticles);
-      _this.$angularCacheFactory.get('blogCache').put('allBlogPosts', blog.data.BlogPosts);
+      this.$angularCacheFactory.get('blogCache').put('totalArticles', blog.data.totalArticles);
+      this.$angularCacheFactory.get('blogCache').put('allBlogPosts', blog.data.BlogPosts);
 
-    };
+    }.bind(this);
 
   };
 
