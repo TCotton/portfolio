@@ -2,6 +2,12 @@
 
 angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$location', '$angularCacheFactory', '$route', function ($rootScope, $window, $location, $angularCacheFactory, $route) {
 
+  var track = function () {
+    $window.ga('send', 'pageview', {'page': $location.path()});
+  };
+
+  $rootScope.$on('$viewContentLoaded', track);
+
   $rootScope.pageChange = false;
   $rootScope.currentPage = $location.absUrl();
 
