@@ -39,12 +39,6 @@
 
 }
 
-@mixin double-line-height($fontSize) {
-  @if strip-units($fontSize) > 20  {
-    line-height: #{($baseLineHeight * basefont-to-pixel($baseFontSize) * 1)}px;
-  }
-}
-
 @mixin font-calculator($fontFamily, $fontSize, $divider: null) {
 
   // the font calculator works out of a uniform vertical rhythm between font sizes and bottom margins
@@ -56,8 +50,6 @@
   // the first parameter is the font family
   // the second is the font size in pixels - without the pixel unit value
   // font size is converted
-
-  // explore this article more: http://gregrickaby.com/using-the-golden-ratio-and-rems/
 
   $fontSizeRem: strip-units($fontSize) / basefont-to-pixel($baseFontSize);
   font-size: #{$fontSizeRem}#{"em"};
@@ -86,24 +78,7 @@
   }
 
 }
-// uses same calculation method as the font-calculator
-@mixin margin-calculator($fontSize, $divider: null) {
 
-  $fontSizeRem: strip-units($fontSize)/basefont-to-pixel($baseFontSize);
-
-  @if $divider == 0 {
-    margin-bottom: 0;
-  } @else if $divider == 0.5 {
-    margin-bottom: unquote((strip-units($baseLineHeight) / $fontSizeRem / 2) + "rem");
-  } @else if $divider == 0.25 {
-    margin-bottom: unquote((strip-units($baseLineHeight) / $fontSizeRem / 4) + "rem");
-  } @else if $divider == null {
-    margin-bottom: unquote((strip-units($baseLineHeight) / $fontSizeRem)+"rem");
-  }
-
-}
-
-// media queries mixin
 // media queries mixin
 @mixin breakpoint($name) {
   @if $name == "wide" {
