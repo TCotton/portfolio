@@ -2053,84 +2053,80 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   /* OLD - iOS 6-, Safari 3.1-6 */
   display: -moz-box;
   /* OLD - Firefox 19- (buggy but mostly works) */
-  display: -ms-flexbox;
-  /* TWEENER - IE 10 */
   display: -webkit-flex;
   /* NEW - Chrome */
   display: flex;
   /* NEW, Spec - Opera 12.1, Firefox 20+ */
   -webkit-align-items: center;
   -moz-align-items: center;
-  -ms-align-items: center;
   align-items: center;
   -webkit-justify-content: center;
   -moz-justify-content: center;
-  -ms-justify-content: center;
   justify-content: center;
 }
-/* line 218, _homepage.scss */
+/* line 214, _homepage.scss */
 #homepage-stats > span {
   width: 20%;
   padding: 0 1%;
   float: left;
   text-align: center;
 }
-/* line 225, _homepage.scss */
+/* line 221, _homepage.scss */
 #homepage-stats > span:first-of-type {
   padding: 0 1% 0 0;
 }
-/* line 228, _homepage.scss */
+/* line 224, _homepage.scss */
 #homepage-stats > span:last-of-type {
   padding: 0 0 0 1%;
 }
-/* line 231, _homepage.scss */
+/* line 227, _homepage.scss */
 #homepage-stats > span sup {
   position: relative;
   top: -0.7em;
   font-size: 50%;
 }
 
-/* line 239, _homepage.scss */
-.ie9 #homepage-stats {
+/* line 235, _homepage.scss */
+.ie9 #homepage-stats, .ie10 #homepage-stats {
   padding: 45px 114px 0 114px;
 }
 
 @media (max-width: 1366px) {
-  /* line 245, _homepage.scss */
+  /* line 241, _homepage.scss */
   #homepage-stats {
     padding: 0 4.172767203513909%;
   }
 }
 @media (max-width: 979px) {
-  /* line 254, _homepage.scss */
+  /* line 250, _homepage.scss */
   #homepage-stats > span {
     width: 50%;
     padding: 0 2%;
   }
-  /* line 258, _homepage.scss */
+  /* line 254, _homepage.scss */
   #homepage-stats > span:nth-of-type(1) {
     padding: 0 2% 0 0;
   }
-  /* line 264, _homepage.scss */
+  /* line 260, _homepage.scss */
   #homepage-stats > span:nth-of-type(3) {
     padding: 0 0 0 2%;
   }
-  /* line 267, _homepage.scss */
+  /* line 263, _homepage.scss */
   #homepage-stats > span:nth-of-type(4) {
     display: none;
   }
-  /* line 270, _homepage.scss */
+  /* line 266, _homepage.scss */
   #homepage-stats > span:nth-of-type(5) {
     display: none;
   }
 }
 @media (max-width: 767px) {
-  /* line 279, _homepage.scss */
+  /* line 275, _homepage.scss */
   #homepage-stats {
     height: auto;
     display: block;
   }
-  /* line 282, _homepage.scss */
+  /* line 278, _homepage.scss */
   #homepage-stats > span {
     width: 100%;
     float: none;
@@ -2139,12 +2135,12 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     padding: 0;
     margin: 40px 0 20px 0;
   }
-  /* line 292, _homepage.scss */
+  /* line 288, _homepage.scss */
   #homepage-stats > span:nth-of-type(1) {
     padding: 0;
     margin: 60px 0 20px 0;
   }
-  /* line 296, _homepage.scss */
+  /* line 292, _homepage.scss */
   #homepage-stats > span:nth-of-type(3) {
     padding: 0;
     margin: 40px 0 40px 0;

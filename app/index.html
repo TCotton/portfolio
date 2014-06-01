@@ -143,5 +143,12 @@
 <script src="scripts/directives/homepage_stats_directive.js"></script>
 <script src="scripts/directives/comment_directive.js"></script>
 <!-- endbuild -->
+<!--[if !IE]><!--><script>
+  // terrible IE10 hack
+  if (/*@cc_on!@*/false) {
+    document.documentElement.className+=' ie10';
+  }
+</script><!--<![endif]-->
+
 </body>
 </html>
