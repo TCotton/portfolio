@@ -19,7 +19,7 @@ angular.module('portfolioApp', ['portfolioApp.controllers', 'portfolioApp.direct
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        title: 'Portfolio and blog of web developer Andy Walpole'
+        title: 'The portfolio and blog of web developer Andy Walpole'
       })
       .when('/work-projects', {
         templateUrl: 'views/my_work.html',
@@ -49,7 +49,7 @@ angular.module('portfolioApp', ['portfolioApp.controllers', 'portfolioApp.direct
       .when('/blog/', {
         templateUrl: 'views/blog.html',
         controller: 'BlogCtrl as BlogIndexCtrl',
-        title: 'Blog of web developer Andy Walpole'
+        title: 'The blog of web developer Andy Walpole'
       })
       .when('/blog/:blogId/:blogPage', {
         templateUrl: 'views/blog_page.html',
