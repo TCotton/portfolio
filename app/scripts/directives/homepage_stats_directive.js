@@ -42,6 +42,7 @@ angular.module('portfolioApp.directives').directive('homepageStatsDirective', ['
 
           scope.stats = STATS;
           scope.stats.block1.header = calculateDate;
+          mql.removeListener(handleMediaMatch);
 
         } else {
 
