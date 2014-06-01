@@ -816,14 +816,14 @@ body {
   opacity: 1;
 }
 
-@media screen and (min--moz-device-pixel-ratio: 0) {
-  /* temp Webkit hack*/
-  /* line 97, modules/_grid.scss */
+/*@media screen and (min--moz-device-pixel-ratio:0) {
+  */
+/* temp Webkit hack*/
+                         /*
   [class*="project-box"] {
-    width: -webkit-calc((100% / 3) - 33px);
-    width: calc((100% / 3) - 33px);
+    @include calc('width', '(100% / 3) - 33px');
   }
-}
+}*/
 @media (max-width: 1366px) {
   /* line 104, modules/_grid.scss */
   #container {
@@ -878,13 +878,11 @@ body {
     margin-right: 0;
   }
 }
-@media screen and (min--moz-device-pixel-ratio: 0) and (max-width: 979px) {
-  /* line 153, modules/_grid.scss */
+/*@media screen and (min--moz-device-pixel-ratio:0) and (max-width: $media_breakpoint_tablet)   {
   [class*="project-box"] {
-    width: -webkit-calc((100% / 2) - 33px);
-    width: calc((100% / 2) - 33px);
+    @include calc('width', '(100% / 2) - 33px');
   }
-}
+}*/
 @media (max-width: 767px) {
   /* line 160, modules/_grid.scss */
   [class*="project-box"] {
@@ -900,12 +898,12 @@ body {
     margin-right: 0;
   }
 }
-@media screen and (min--moz-device-pixel-ratio: 0) and (max-width: 767px) {
-  /* line 176, modules/_grid.scss */
+/*
+@media screen and (min--moz-device-pixel-ratio:0) and (max-width: $media_breakpoint_mobile)   {
   [class*="project-box"] {
     width: 100%;
   }
-}
+}*/
 /* line 11, modules/_typography.scss */
 h1.logo {
   font-size: 3.5em;
@@ -2070,64 +2068,69 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   -ms-justify-content: center;
   justify-content: center;
 }
-/* line 217, _homepage.scss */
+/* line 218, _homepage.scss */
 #homepage-stats > span {
   width: 20%;
   padding: 0 1%;
   float: left;
   text-align: center;
 }
-/* line 223, _homepage.scss */
+/* line 225, _homepage.scss */
 #homepage-stats > span:first-of-type {
   padding: 0 1% 0 0;
 }
-/* line 226, _homepage.scss */
+/* line 228, _homepage.scss */
 #homepage-stats > span:last-of-type {
   padding: 0 0 0 1%;
 }
-/* line 229, _homepage.scss */
+/* line 231, _homepage.scss */
 #homepage-stats > span sup {
   position: relative;
   top: -0.7em;
   font-size: 50%;
 }
 
+/* line 239, _homepage.scss */
+.ie9 #homepage-stats {
+  padding: 45px 114px 0 114px;
+}
+
 @media (max-width: 1366px) {
-  /* line 239, _homepage.scss */
+  /* line 245, _homepage.scss */
   #homepage-stats {
     padding: 0 4.172767203513909%;
   }
 }
 @media (max-width: 979px) {
-  /* line 248, _homepage.scss */
+  /* line 254, _homepage.scss */
   #homepage-stats > span {
     width: 50%;
     padding: 0 2%;
   }
-  /* line 252, _homepage.scss */
+  /* line 258, _homepage.scss */
   #homepage-stats > span:nth-of-type(1) {
     padding: 0 2% 0 0;
   }
-  /* line 258, _homepage.scss */
+  /* line 264, _homepage.scss */
   #homepage-stats > span:nth-of-type(3) {
     padding: 0 0 0 2%;
   }
-  /* line 261, _homepage.scss */
+  /* line 267, _homepage.scss */
   #homepage-stats > span:nth-of-type(4) {
     display: none;
   }
-  /* line 264, _homepage.scss */
+  /* line 270, _homepage.scss */
   #homepage-stats > span:nth-of-type(5) {
     display: none;
   }
 }
 @media (max-width: 767px) {
-  /* line 273, _homepage.scss */
+  /* line 279, _homepage.scss */
   #homepage-stats {
     height: auto;
     display: block;
   }
-  /* line 276, _homepage.scss */
+  /* line 282, _homepage.scss */
   #homepage-stats > span {
     width: 100%;
     float: none;
@@ -2136,12 +2139,12 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     padding: 0;
     margin: 40px 0 20px 0;
   }
-  /* line 286, _homepage.scss */
+  /* line 292, _homepage.scss */
   #homepage-stats > span:nth-of-type(1) {
     padding: 0;
     margin: 60px 0 20px 0;
   }
-  /* line 290, _homepage.scss */
+  /* line 296, _homepage.scss */
   #homepage-stats > span:nth-of-type(3) {
     padding: 0;
     margin: 40px 0 40px 0;
@@ -2677,63 +2680,19 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     transform: translate(1px, -2px) rotate(-1deg);
   }
 }
-@media screen and (min--moz-device-pixel-ratio: 0) {
-  /* another firefox bug :( */
-  /* line 198, _aboutme.scss */
-  .aboutme .per_10 span {
-    width: calc(10% - 20px);
-  }
-  /* line 198, _aboutme.scss */
-  .aboutme .per_20 span {
-    width: calc(20% - 20px);
-  }
-  /* line 198, _aboutme.scss */
-  .aboutme .per_30 span {
-    width: calc(30% - 20px);
-  }
-  /* line 198, _aboutme.scss */
-  .aboutme .per_40 span {
-    width: calc(40% - 20px);
-  }
-  /* line 198, _aboutme.scss */
-  .aboutme .per_50 span {
-    width: calc(50% - 20px);
-  }
-  /* line 198, _aboutme.scss */
-  .aboutme .per_60 span {
-    width: calc(60% - 20px);
-  }
-  /* line 198, _aboutme.scss */
-  .aboutme .per_70 span {
-    width: calc(70% - 20px);
-  }
-  /* line 198, _aboutme.scss */
-  .aboutme .per_80 span {
-    width: calc(80% - 20px);
-  }
-  /* line 198, _aboutme.scss */
-  .aboutme .per_90 span {
-    width: calc(90% - 20px);
-  }
-  /* line 198, _aboutme.scss */
-  .aboutme .per_100 span {
-    width: calc(100% - 20px);
-  }
-}
-/* end for firefox hack */
 @media (max-width: 979px) {
-  /* line 211, _aboutme.scss */
+  /* line 194, _aboutme.scss */
   .aboutme section {
     display: block;
   }
-  /* line 215, _aboutme.scss */
+  /* line 198, _aboutme.scss */
   .aboutme #left-large {
     width: auto;
     float: none;
     display: block;
     margin: 0 0 0 0;
   }
-  /* line 222, _aboutme.scss */
+  /* line 205, _aboutme.scss */
   .aboutme #right-small {
     width: auto;
     float: none;
@@ -2741,14 +2700,14 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   }
 }
 @media (max-width: 767px) {
-  /* line 234, _aboutme.scss */
+  /* line 217, _aboutme.scss */
   .aboutme .button-skills-aboutme.section {
     width: 100%;
     float: none;
     margin-bottom: 20px;
     line-height: 58px;
   }
-  /* line 241, _aboutme.scss */
+  /* line 224, _aboutme.scss */
   .aboutme .button-skills-aboutme.section:nth-of-type(even) {
     margin-left: 0;
   }

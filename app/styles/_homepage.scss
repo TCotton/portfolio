@@ -209,6 +209,7 @@
   -ms-align-items: center;
   align-items: center;
 
+
   -webkit-justify-content: center;
   -moz-justify-content: center;
   -ms-justify-content: center;
@@ -220,6 +221,7 @@
     padding: 0 1%;
     float: left;
     text-align: center;
+
     &:first-of-type {
       padding: 0 1% 0 0;
     }
@@ -232,6 +234,10 @@
       font-size: 50%;
     }
   }
+}
+
+.ie9 #homepage-stats {
+  padding: 45px 114px 0 114px;
 }
 
 @include breakpoint(wide) {

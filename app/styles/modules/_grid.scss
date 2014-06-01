@@ -92,12 +92,12 @@
 
 
 //@include breakpoint(-webkit-hack) {
-@media screen and (min--moz-device-pixel-ratio:0) {
-  /* temp Webkit hack*/
+/*@media screen and (min--moz-device-pixel-ratio:0) {
+  *//* temp Webkit hack*//*
   [class*="project-box"] {
     @include calc('width', '(100% / 3) - 33px');
   }
-}
+}*/
 
 @include breakpoint(wide) {
 
@@ -149,11 +149,11 @@
   }
 }
 
-@media screen and (min--moz-device-pixel-ratio:0) and (max-width: $media_breakpoint_tablet)   {
+/*@media screen and (min--moz-device-pixel-ratio:0) and (max-width: $media_breakpoint_tablet)   {
   [class*="project-box"] {
     @include calc('width', '(100% / 2) - 33px');
   }
-}
+}*/
 
 
 @include breakpoint(mobile) {
@@ -172,8 +172,9 @@
   }
 }
 
+/*
 @media screen and (min--moz-device-pixel-ratio:0) and (max-width: $media_breakpoint_mobile)   {
   [class*="project-box"] {
     width: 100%;
   }
-}
+}*/

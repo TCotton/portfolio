@@ -186,23 +186,6 @@
   }
 }
 
-@media screen and (min--moz-device-pixel-ratio: 0) {
-  /* another firefox bug :( */
-  // come back to this
-
-  .aboutme {
-
-    $percentage: 10;
-
-    @for $i from 1 through $percentage {
-      .per_#{$i * 10} span {
-        width: calc(#{((100 / $percentage) * $i) * 1%} - 20px);
-      }
-    }
-  }
-}
-
-/* end for firefox hack */
 
 @include breakpoint(tablet) {
 
