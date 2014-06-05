@@ -41,39 +41,29 @@
 
 @mixin font-calculator($fontFamily, $fontSize, $divider: null) {
 
-  // the font calculator works out of a uniform vertical rhythm between font sizes and bottom margins
-  // use the mixin like so:
-  // #hightlight-this h1 {
-  // @include font-calculator('Helvetica, sans-serif', 14, 2);
-  // }
-  // note that the third parameter is optional
-  // the first parameter is the font family
-  // the second is the font size in pixels - without the pixel unit value
-  // font size is converted
-
-  $fontSizeRem: strip-units($fontSize) / basefont-to-pixel($baseFontSize);
-  font-size: #{$fontSizeRem}#{"em"};
+  $fontSizeEm: strip-units($fontSize) / basefont-to-pixel($baseFontSize);
+  font-size: #{$fontSizeEm}#{"em"};
   font-family: #{$fontFamily};
 
   @if $divider == 0 {
     $margin: null;
   } @else if $divider == 2 {
-    $margin: (strip-units($baseLineHeight) / $fontSizeRem) * 2;
+    $margin: (strip-units($baseLineHeight) / $fontSizeEm) * 2;
     margin-bottom: #{double-size($fontSize, $margin)}#{"em"};
   } @else if $divider == 1 {
-    $margin: (strip-units($baseLineHeight) / $fontSizeRem);
+    $margin: (strip-units($baseLineHeight) / $fontSizeEm);
     margin-bottom: #{double-size($fontSize, $margin)}#{"em"};
   } @else if $divider == 1.5 {
-    $margin: (strip-units($baseLineHeight) / $fontSizeRem) * 1.5;
+    $margin: (strip-units($baseLineHeight) / $fontSizeEm) * 1.5;
     margin-bottom: #{double-size($fontSize, $margin)}#{"em"};
   } @else if $divider == 0.5 {
-    $margin: strip-units($baseLineHeight) / $fontSizeRem / 2;
+    $margin: strip-units($baseLineHeight) / $fontSizeEm / 2;
     margin-bottom: #{double-size($fontSize, $margin)}#{"em"};
   } @else if $divider == 0.25 {
-    $margin: strip-units($baseLineHeight) / $fontSizeRem / 4;
+    $margin: strip-units($baseLineHeight) / $fontSizeEm / 4;
     margin-bottom: #{double-size($fontSize, $margin)}#{"em"};
   } @else if $divider == null {
-    $margin: strip-units($baseLineHeight) / $fontSizeRem;
+    $margin: strip-units($baseLineHeight) / $fontSizeEm;
     margin-bottom: #{double-size($fontSize, $margin)}#{"em"};
   }
 
