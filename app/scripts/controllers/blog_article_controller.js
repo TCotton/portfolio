@@ -65,6 +65,8 @@
 
     if (!_.isEmpty(blogPost) && this.$rootScope.currentPage.indexOf(blogPost[0].url) !== -1) {
 
+      console.log(blogPost[0]);
+
       this.$scope.title = blogPost[0].title;
       this.$rootScope.pageTitle = blogPost[0].title;
       this.$scope.content = this.$sce.trustAsHtml(blogPost[0].content);
@@ -72,6 +74,7 @@
       this.$scope.displayImage = blogPost[0].displayImage;
       this.$scope.publishedDate = blogPost[0].publishedDate;
       this.$scope.commentsOpen = blogPost[0].commentsOpen;
+      this.$scope.category = blogPost[0].category || 'General';
       this.$scope.URLencoded = encodeURIComponent(this.$rootScope.currentPage);
 
     } else {
