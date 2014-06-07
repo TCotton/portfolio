@@ -595,7 +595,7 @@ a:active {
   clear: both;
 }
 
-/* line 210, _mixins.scss */
+/* line 175, _mixins.scss */
 .line-through {
   text-decoration: line-through;
   -webkit-user-select: none;

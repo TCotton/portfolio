@@ -73,14 +73,24 @@ var createBlogLinks = function () {
 };
 
 
+
 /* create sitemap below - needed for SEO purposes */
 
-var sitemap = sm.createSitemap({
-  hostname: 'http://andywalpole.me',
-  cacheTime: 600000,        // 600 sec - cache purge period
-  urls: createBlogLinks ? createBlogLinks() : null
-});
+var sitemap;
 
+var buildSitemap = function() {
+
+  sitemap = sm.createSitemap({
+    hostname: 'http://andywalpole.me',
+    cacheTime: 600000,        // 600 sec - cache purge period
+    urls: createBlogLinks ? createBlogLinks() : null
+  });
+
+};
+
+buildSitemap();
+
+setInterval(buildSitemap(), 86400000);
 
 module.exports = function (app) {
 

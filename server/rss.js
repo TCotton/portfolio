@@ -98,25 +98,37 @@ var blogs_feed = function () {
 
 };
 
-/** Use promise all to make sure that both functions return data
- * **/
+var buildData = function() {
 
-q.all([blogs_database(), blogs_feed()]).spread(function (a, b) {
-
-  var x, l, feedItems;
-
-  /** Join them with union function after using sortBy function to rearrange them in correct data order
+  /** Use promise all to make sure that both functions return data
    * **/
 
-  feedItems = _.union(_.sortBy(a, function (o) { return o.date * -1; }), _.sortBy(b, function (o) { return !o.date; }));
+  q.all([blogs_database(), blogs_feed()]).spread(function (a, b) {
 
-  for (x = 0, l = feedItems.length; x !== l; x += 1) {
+    var x, l, feedItems;
 
-    feed.item(feedItems[x]);
+    /** Join them with union function after using sortBy function to rearrange them in correct data order
+     * **/
 
-  }
+    feedItems = _.union(_.sortBy(a, function (o) {
+      return o.date * -1;
+    }), _.sortBy(b, function (o) {
+      return !o.date;
+    }));
 
-});
+    for (x = 0, l = feedItems.length; x !== l; x += 1) {
+
+      feed.item(feedItems[x]);
+
+    }
+
+  });
+
+};
+
+buildData();
+
+setInterval(buildData(), 86400000);
 
 module.exports = function (app) {
 
