@@ -17,8 +17,8 @@ angular.module('portfolioApp.directives').directive('sliderDirective', ['SLIDER'
       '<p class="page-top-text" >{{slider.text}}</p>' +
       '<a href="{{slider.URL}}" class="button-front-one">View Project</a>' +
       '</section>' +
-      '<div class="left-arrow"></div>' +
-      '<div class="right-arrow"></div>' +
+      '<div class="left-arrow" rel="prev"></div>' +
+      '<div class="right-arrow" rel="next"></div>' +
       '</div>',
 
     controller: function ($scope) {
