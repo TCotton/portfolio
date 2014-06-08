@@ -73,26 +73,40 @@ var createBlogLinks = function () {
 };
 
 
-
-/* create sitemap below - needed for SEO purposes */
-
-var sitemap;
-
-var buildSitemap = function() {
-
-  sitemap = sm.createSitemap({
-    hostname: 'http://andywalpole.me',
-    cacheTime: 600000,        // 600 sec - cache purge period
-    urls: createBlogLinks ? createBlogLinks() : null
-  });
-
-};
-
-buildSitemap();
-
-setInterval(buildSitemap(), 86400000);
-
 module.exports = function (app) {
+
+  var protocolDomain;
+
+  if (app.get('env') === 'development') {
+
+    protocolDomain = 'http://andywalpole.me';
+
+  }
+
+  if (app.get('env') === 'production') {
+
+    protocolDomain = 'https://andywalpole.me';
+
+  }
+
+
+  /* create sitemap below - needed for SEO purposes */
+
+  var sitemap;
+
+  var buildSitemap = function() {
+
+    sitemap = sm.createSitemap({
+      hostname: protocolDomain,
+      cacheTime: 600000,        // 600 sec - cache purge period
+      urls: createBlogLinks ? createBlogLinks() : null
+    });
+
+  };
+
+  buildSitemap();
+
+  setInterval(buildSitemap(), 86400000);
 
   app.get('/sitemap.xml', function (req, res) {
     sitemap.toXML(function (xml) {

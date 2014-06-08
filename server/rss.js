@@ -6,40 +6,102 @@ var Blog = require('./routes/models/blog_model');
 var _ = require('underscore');
 var q = require('q');
 
-var feedOptions = {
-  title: 'The blog of web developer Andy Walpole',
-  description: 'Covers JavaScript, CSS, HTML and some political and social commentary',
-  language: 'en',
-  site_url: 'http://andywalpole.me/#!/blog/',
-  feed_url: 'http://andywalpole.me/rss.xml'
-};
+module.exports = function (app) {
 
-var feed = new RSS(feedOptions);
+  var protocol;
 
-/** loop through blogs in monogdb and create RSS friendly objects
- * **/
-var blogs_database = function () {
+  if (app.get('env') === 'development') {
 
-  var feedItems = {}, deferred, blogURl;
+    protocol = 'http';
 
-  deferred = q.defer();
+  }
 
-  Blog.find(function (err, blogs) {
+  if (app.get('env') === 'production') {
 
-    // if there is an error retrieving, send the error. nothing after res.send(err) will execute
-    if (!err) {
+    protocol = 'https';
 
-      Object.keys(blogs).forEach(function (key) {
+  }
 
-        blogURl = 'http://andywalpole.me/#!/blog/' + blogs[key].uniqueId + '/' + blogs[key].url;
+  var feedOptions = {
+    title: 'The blog of web developer Andy Walpole',
+    description: 'Covers JavaScript, CSS, HTML and some political and social commentary',
+    language: 'en',
+    site_url: protocol + '://andywalpole.me/#!/blog/',
+    feed_url: protocol + '://andywalpole.me/rss.xml'
+  };
+
+  var feed = new RSS(feedOptions);
+
+  /** loop through blogs in monogdb and create RSS friendly objects
+   * **/
+  var blogs_database = function () {
+
+    var feedItems = {}, deferred, blogURl;
+
+    deferred = q.defer();
+
+    Blog.find(function (err, blogs) {
+
+      // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+      if (!err) {
+
+        Object.keys(blogs).forEach(function (key) {
+
+          blogURl = protocol + '://andywalpole.me/#!/blog/' + blogs[key].uniqueId + '/' + blogs[key].url;
+
+          feedItems[key] = {
+            title: blogs[key].title,
+            description: blogs[key].content,
+            url: blogURl,
+            guid: blogs[key].uniqueId,
+            author: blogs[key].author,
+            date: parseInt(blogs[key].publishedDate, 10)
+          };
+
+        });
+
+        deferred.resolve(feedItems);
+
+      }
+
+    });
+
+    return deferred.promise;
+
+  };
+
+  /** loop through blogs in json file and create RSS friendly objects
+   * **/
+
+  var blogs_feed = function () {
+
+    var feedItems = {}, deferred, posts, data, blogURl;
+
+    deferred = q.defer();
+
+    if (fs.existsSync('./server/blogposts.json')) {
+
+      data = fs.readFileSync('./server/blogposts.json', 'utf8', function (err) {
+
+        if (err) {
+          deferred.reject(new Error(err));
+        }
+
+      });
+
+      posts = JSON.parse(data);
+
+      Object.keys(posts).forEach(function (key) {
+
+        blogURl = protocol + '://andywalpole.me/#!/blog/' + posts[key].uniqueId + '/' + posts[key].url;
 
         feedItems[key] = {
-          title: blogs[key].title,
-          description: blogs[key].content,
+          title: posts[key].title,
+          description: posts[key].content,
           url: blogURl,
-          guid: blogs[key].uniqueId,
-          author: blogs[key].author,
-          date: parseInt(blogs[key].publishedDate, 10)
+          guid: posts[key].uniqueId,
+          author: posts[key].author,
+          date: parseInt(posts[key].publishedDate, 10)
         };
 
       });
@@ -48,89 +110,41 @@ var blogs_database = function () {
 
     }
 
-  });
+    return deferred.promise;
 
-  return deferred.promise;
+  };
 
-};
+  var buildData = function () {
 
-/** loop through blogs in json file and create RSS friendly objects
- * **/
+    /** Use promise all to make sure that both functions return data
+     * **/
 
-var blogs_feed = function () {
+    q.all([blogs_database(), blogs_feed()]).spread(function (a, b) {
 
-  var feedItems = {}, deferred, posts, data, blogURl;
+      var x, l, feedItems;
 
-  deferred = q.defer();
+      /** Join them with union function after using sortBy function to rearrange them in correct data order
+       * **/
 
-  if (fs.existsSync('./server/blogposts.json')) {
+      feedItems = _.union(_.sortBy(a, function (o) {
+        return o.date * -1;
+      }), _.sortBy(b, function (o) {
+        return !o.date;
+      }));
 
-    data = fs.readFileSync('./server/blogposts.json', 'utf8', function (err) {
+      for (x = 0, l = feedItems.length; x !== l; x += 1) {
 
-      if (err) {
-        deferred.reject(new Error(err));
+        feed.item(feedItems[x]);
+
       }
 
     });
 
-    posts = JSON.parse(data);
+  };
 
-    Object.keys(posts).forEach(function (key) {
+  buildData();
 
-      blogURl = 'http://andywalpole.me/#!/blog/' + posts[key].uniqueId + '/' + posts[key].url;
-
-      feedItems[key] = {
-        title: posts[key].title,
-        description: posts[key].content,
-        url: blogURl,
-        guid: posts[key].uniqueId,
-        author: posts[key].author,
-        date: parseInt(posts[key].publishedDate, 10)
-      };
-
-    });
-
-    deferred.resolve(feedItems);
-
-  }
-
-  return deferred.promise;
-
-};
-
-var buildData = function() {
-
-  /** Use promise all to make sure that both functions return data
-   * **/
-
-  q.all([blogs_database(), blogs_feed()]).spread(function (a, b) {
-
-    var x, l, feedItems;
-
-    /** Join them with union function after using sortBy function to rearrange them in correct data order
-     * **/
-
-    feedItems = _.union(_.sortBy(a, function (o) {
-      return o.date * -1;
-    }), _.sortBy(b, function (o) {
-      return !o.date;
-    }));
-
-    for (x = 0, l = feedItems.length; x !== l; x += 1) {
-
-      feed.item(feedItems[x]);
-
-    }
-
-  });
-
-};
-
-buildData();
-
-setInterval(buildData(), 86400000);
-
-module.exports = function (app) {
+  setInterval(buildData(), 86400000);
 
   app.get('/rss.xml', function (req, res) {
 

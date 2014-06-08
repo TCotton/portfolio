@@ -32,7 +32,7 @@ angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$locatio
 
     $rootScope.currentPage = $location.absUrl();
 
-    $rootScope.canonical = 'http://andywalpole/#!' + $location.path();
+    $rootScope.canonical = 'https://andywalpole.me/#!' + $location.path();
 
     $rootScope.hideFooter = $rootScope.currentPage.indexOf('blog') !== -1;
 
