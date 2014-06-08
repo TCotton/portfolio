@@ -65,8 +65,6 @@
 
     if (!_.isEmpty(blogPost) && this.$rootScope.currentPage.indexOf(blogPost[0].url) !== -1) {
 
-      console.log(blogPost[0]);
-
       this.$scope.title = blogPost[0].title;
       this.$rootScope.pageTitle = blogPost[0].title;
       this.$scope.content = this.$sce.trustAsHtml(blogPost[0].content);

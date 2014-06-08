@@ -23,6 +23,11 @@ app.use(helmet.iexss());
 app.use(helmet.contentTypeOptions());
 app.use(helmet.hidePoweredBy());
 
+if (app.get('env') === 'production') {
+  app.use(helmet.hsts(86400));
+}
+
+
 var database = require('./server/config/database'); 			// load the database config
 
 // configuration ===============================================================
