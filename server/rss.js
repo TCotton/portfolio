@@ -144,8 +144,6 @@ module.exports = function (app) {
 
   buildData();
 
-  setInterval(buildData(), 86400000);
-
   app.get('/rss.xml', function (req, res) {
 
     res.header('Content-Type', 'application/xml');

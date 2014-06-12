@@ -27,7 +27,6 @@ if (app.get('env') === 'production') {
   app.use(helmet.hsts(86400));
 }
 
-
 var database = require('./server/config/database'); 			// load the database config
 
 // configuration ===============================================================
@@ -44,7 +43,13 @@ app.use(bodyParser()); 							// pull information from html in POST
 app.use(methodOverride()); 						// simulate DELETE and PUT
 app.use(cookieParser());
 
-/**
+app.all('*', function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'X-Requested-With');
+  next();
+});
+
+/*
  * Development Settings
  */
 if (app.get('env') === 'development') {
