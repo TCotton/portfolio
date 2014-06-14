@@ -7,6 +7,10 @@
 
   var app = angular.module('portfolioApp.controllers');
 
+  /** Declare enclosed scope variable names
+   * **/
+  var _sortCategoriesByPopularity;
+
   var SidebarCtrl = function ($rootScope, $scope, $log, BlogDataService, $angularCacheFactory) {
 
     this.$rootScope = $rootScope;
@@ -38,6 +42,30 @@
       this.$log.warn(response);
 
     }.bind(this));
+
+    /** Plucks category names from object and then sorts them by popularity
+     * **/
+    _sortCategoriesByPopularity = function() {
+
+      var newArray = {};
+
+      _.chain(this.$scope.blogData)
+        .pluck('category')
+        .filter(function (r) {
+          return typeof r !== 'undefined';
+        })
+        .groupBy(function (list) {
+          return list;
+        })
+        .each(function (list, iterator) {
+          newArray[iterator] = _.size(list);
+        });
+
+      return Object.keys(newArray).sort(function (a, b) {
+        return -(newArray[a] - newArray[b]);
+      });
+
+    }.bind(this);
 
   };
 
