@@ -11,14 +11,14 @@ angular.module('portfolioApp.directives').directive('sliderDirective', ['SLIDER'
       slider: '@'
     },
     replace: true,
-    template: '<div id="slider" class="{{slider.sliderClass}}">' +
+    template: '<div id="slider" class="{{slider.sliderClass}}" tabindex="-1">' +
       '<section>' +
       '<h2 class="page-top-title" class="slider1">{{slider.title}}</h2>' +
       '<p class="page-top-text" >{{slider.text}}</p>' +
       '<a href="{{slider.URL}}" class="button-front-one">View Project</a>' +
       '</section>' +
-      '<div class="left-arrow" rel="prev"></div>' +
-      '<div class="right-arrow" rel="next"></div>' +
+      '<div class="left-arrow" rel="prev" role="button" tabindex="0" aria-label="Previous slide"></div>' +
+      '<div class="right-arrow" rel="next" role="button"  tabindex="0" aria-label="Next slide"></div>' +
       '</div>',
 
     controller: function ($scope) {
