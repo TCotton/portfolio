@@ -106,8 +106,6 @@ module.exports = function (app) {
 
   buildSitemap();
 
-  setInterval(buildSitemap(), 86400000);
-
   app.get('/sitemap.xml', function (req, res) {
     sitemap.toXML(function (xml) {
       res.header('Content-Type', 'application/xml');

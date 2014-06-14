@@ -5,6 +5,7 @@
 // set up ========================
 var express = require('express');
 var http = require('http');
+http.globalAgent.maxSockets = Infinity;
 var path = require('path');
 var morgan = require('morgan');
 var helmet = require('helmet');
@@ -24,7 +25,7 @@ app.use(helmet.contentTypeOptions());
 app.use(helmet.hidePoweredBy());
 
 if (app.get('env') === 'production') {
-  app.use(helmet.hsts(86400));
+  app.use(helmet.hsts(15552000));
 }
 
 var database = require('./server/config/database'); 			// load the database config
