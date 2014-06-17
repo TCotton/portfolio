@@ -74,6 +74,7 @@
       this.$scope.commentsOpen = blogPost[0].commentsOpen;
       this.$scope.category = blogPost[0].category || 'General';
       this.$scope.URLencoded = encodeURIComponent(this.$rootScope.currentPage);
+      this.$rootScope.faceBookDescription = blogPost[0].contentSnippet;
 
     } else {
 

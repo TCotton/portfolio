@@ -12,7 +12,12 @@
   <base href="/">
 
   <meta name="prerender-status-code" content="{{status}}"/>
-  <link rel="canonical" data-ng-href="{{canonical}}"/>
+
+  <meta data-ng-if="hideFooter" property="og:site_name" content="Website of web developer. Andy Walpole/">
+  <meta data-ng-if="hideFooter" property="og:title" content="{{pageTitle}}"/>
+  <meta data-ng-if="hideFooter" property="og:url" content="{{canonical}}"/>
+  <meta data-ng-if="hideFooter" property="og:description" content="{{faceBookDescription}}"/>
+
   <link rel="alternate" type="application/rss+xml" title="The Blog of Web Developer Andy Walpole" href="https://andywalpole.me/rss.xml" />
 
   <meta name="msvalidate.01" content="A3327273DCF9CE62812809732D9A73A1" />
