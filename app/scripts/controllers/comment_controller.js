@@ -58,6 +58,13 @@
 
     this.$scope.commentBlogFormSubmit = true;
 
+    if(!isValid) {
+
+      this.$scope.formFailure = 'The form has not been submitted because of errors. Please review the form error messages amd click submit again';
+      document.querySelector('.comment-form-failure').focus();
+
+    }
+
     if(isValid) {
 
       var returnedData = this.MongoCommentService.addComment(this.$scope.commentFormData);
