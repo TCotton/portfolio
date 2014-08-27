@@ -6,11 +6,12 @@
 
   var app = angular.module('portfolioApp.controllers');
 
-  var CommentCtrl = function ($scope, $rootScope, MongoCommentService, $log) {
+  var CommentCtrl = function ($scope, $rootScope, MongoCommentService, $log, $timeout) {
 
     this.$scope = $scope;
     this.$rootScope = $rootScope;
     this.$log = $log;
+    this.$timeout = $timeout;
 
     /** Using defineProperty prevents injected service being exposed to the template
      * **/
@@ -31,7 +32,7 @@
 
   };
 
-  CommentCtrl.prototype.retreiveComment = function() {
+  CommentCtrl.prototype.retreiveComment = function () {
 
     var data = {
       blogId: this.$scope.commentFormData.blogId
@@ -41,7 +42,7 @@
 
     returnedData.then(function (result) {
 
-      if(!_.isEmpty(result.data)) {
+      if (!_.isEmpty(result.data)) {
 
         this.$scope.publishComments = result.data;
 
@@ -54,24 +55,31 @@
 
   };
 
-  CommentCtrl.prototype.submitComment = function(isValid) {
+  CommentCtrl.prototype.submitComment = function (isValid) {
 
     this.$scope.commentBlogFormSubmit = true;
 
-    if(!isValid) {
+    if (!isValid) {
 
       this.$scope.formFailure = 'The form has not been submitted because of errors. Please review the form error messages and click submit again';
-      document.querySelector('.comment-form-failure').focus();
+
+      this.$timeout(function () {
+        document.querySelector('.comment-form-failure').focus();
+      }, 0);
 
     }
 
-    if(isValid) {
+    if (isValid) {
 
       var returnedData = this.MongoCommentService.addComment(this.$scope.commentFormData);
 
       returnedData.then(function () {
 
+        this.$scope.formFailure = null;
         this.$scope.formSuccess = 'You have successfully submitted a blog comment';
+        this.$timeout(function () {
+          document.querySelector('.comment-form-success').focus();
+        }, 0);
 
         // reset scope to remove values from input fields
         // loop over form field models
@@ -95,7 +103,7 @@
 
   };
 
-  CommentCtrl.$inject = ['$scope', '$rootScope', 'MongoCommentService', '$log'];
+  CommentCtrl.$inject = ['$scope', '$rootScope', 'MongoCommentService', '$log', '$timeout'];
 
   app.controller('CommentCtrl', CommentCtrl);
 

@@ -17,6 +17,7 @@ var path = require('path');
 // 'test/spec/**/*.js'
 
 module.exports = function (grunt) {
+  /*jshint camelcase: false */
   // load all grunt tasks
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
