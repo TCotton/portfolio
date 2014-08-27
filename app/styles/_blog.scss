@@ -31,6 +31,16 @@
       text-align: center;
     }
 
+    figure {
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    figcaption {
+      @include font-calculator($baseFontFamily, 14px, 0);
+      text-align: right;
+    }
+
     .video-container {
       position: relative;
       padding-bottom: 56.25%;

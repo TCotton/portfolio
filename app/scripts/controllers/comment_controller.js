@@ -60,7 +60,7 @@
 
     if(!isValid) {
 
-      this.$scope.formFailure = 'The form has not been submitted because of errors. Please review the form error messages amd click submit again';
+      this.$scope.formFailure = 'The form has not been submitted because of errors. Please review the form error messages and click submit again';
       document.querySelector('.comment-form-failure').focus();
 
     }

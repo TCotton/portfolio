@@ -40,7 +40,10 @@ app.set('view engine', 'jade');*/
 
 app.use(morgan('dev')); 						// log every request to the console
 app.use(compress());
-app.use(bodyParser()); 							// pull information from html in POST
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+app.use(bodyParser.json());
 app.use(methodOverride()); 						// simulate DELETE and PUT
 app.use(cookieParser());
 

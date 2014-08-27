@@ -175,10 +175,31 @@ h3.blog-title {
   @include font-calculator($baseFontFamily, 16px);
 }
 
-.content-text section > div h3, .content-text section > div h4, .content-text section > div h5, .content-text section > div h6 {
+.content-text section > div h3 {
   @include font-calculator($baseFontFamily, 26px);
   font-weight: 400;
   color: $textTwo;
+}
+
+.content-text section > div h4 {
+  @include font-calculator($baseFontFamily, 24px);
+  font-weight: 400;
+  color: $textTwo;
+  line-height: 120%;
+}
+
+.content-text section > div h5 {
+  @include font-calculator($baseFontFamily, 22px);
+  font-weight: 400;
+  color: $textTwo;
+  line-height: 120%;
+}
+
+.content-text section > div h6 {
+  @include font-calculator($baseFontFamily, 20px);
+  font-weight: 400;
+  color: $textTwo;
+  line-height: 120%;
 }
 
 @include breakpoint(mobile) {
