@@ -129,6 +129,10 @@ h3.blog-title {
   font-weight: 400;
 }
 
+@include contentText('p.comment-form-failure') {
+  padding-bottom: 1em;
+}
+
 @include contentText('.form-label') {
   font-weight: 600;
   float: left;
