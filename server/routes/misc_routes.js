@@ -4,7 +4,8 @@
 
 'use strict';
 
-var mail = require('nodemailer').mail;
+var mail = require('nodemailer');
+var transporter = mail.createTransport();
 
 module.exports = function (app) {
 
@@ -13,7 +14,7 @@ module.exports = function (app) {
     var ipAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress;
     var message = req.body.message + '<br>' + 'IP Address: '  + ipAddress;
 
-    mail({
+    transporter.sendMail({
       from: req.body.name + ' ' + req.body.email, // sender address
       to: 'me@andywalpole.me', // list of receivers
       subject: 'Contact from portfolio', // Subject line

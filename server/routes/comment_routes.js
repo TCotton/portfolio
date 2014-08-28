@@ -6,7 +6,8 @@
 
 var Comments = require('./models/comment_model');
 var moment = require('moment');
-var mail = require('nodemailer').mail;
+var mail = require('nodemailer');
+var transporter = mail.createTransport();
 
 module.exports = function (app) {
 
@@ -32,11 +33,10 @@ module.exports = function (app) {
       if (comment) {
 
         var message = 'Name: ' + req.body.name + '\n' +
-          'Email: ' + req.body.email + '\n' +
           'Url: ' + req.body.url + '\n' +
           'Message: ' + req.body.message + '\n';
 
-        mail({
+        transporter.sendMail({
           from: 'admin@andywalpole.me', // sender address
           to: 'me@andywalpole.me', // list of receivers
           subject: 'New comment on website', // Subject line

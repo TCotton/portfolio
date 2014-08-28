@@ -513,6 +513,13 @@ a:active {
 
 input[aria-required="true"], textarea[aria-required="true"] {
   background: #FFFDD0;
+  -ms-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+input[aria-required="true"]:valid, textarea[aria-required="true"]:valid {
+  background: white;
 }
 
 
