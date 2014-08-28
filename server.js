@@ -20,12 +20,12 @@ var mongoose = require('mongoose'); 					// mongoose for mongodb
 var conf = require('./server/config/prerender'); 			// load the prerender config
 app.use(require('prerender-node').set('prerenderToken', conf.prerender));
 app.use(helmet.xframe('deny'));
-app.use(helmet.iexss());
-app.use(helmet.contentTypeOptions());
+app.use(helmet.xssFilter());
+app.use(helmet.nosniff());
 app.use(helmet.hidePoweredBy());
 
 if (app.get('env') === 'production') {
-  app.use(helmet.hsts(15552000));
+  app.use(helmet.hsts({ maxAge: 15552000 }));
 }
 
 var database = require('./server/config/database'); 			// load the database config
