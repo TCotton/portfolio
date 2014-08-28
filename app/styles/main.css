@@ -532,8 +532,13 @@ a:active {
   color: blue;
 }
 
+/* line 514, _reset.scss */
+input[aria-required="true"], textarea[aria-required="true"] {
+  background: #FFFDD0;
+}
+
 /* selected link */
-/* line 516, _reset.scss */
+/* line 522, _reset.scss */
 .hide {
   display: none;
 }
@@ -541,7 +546,7 @@ a:active {
 /*
 * Hide only visually, but have it available for screenreaders: h5bp.com/v
 */
-/* line 524, _reset.scss */
+/* line 530, _reset.scss */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -554,7 +559,7 @@ a:active {
 }
 
 /* clearfix */
-/* line 536, _reset.scss */
+/* line 542, _reset.scss */
 .clearfix::before, .clearfix::after {
   content: "\0020";
   display: block;
@@ -562,7 +567,7 @@ a:active {
   overflow: hidden;
 }
 
-/* line 543, _reset.scss */
+/* line 549, _reset.scss */
 .clearfix::after {
   clear: both;
 }

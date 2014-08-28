@@ -511,6 +511,12 @@ a:active {
   color: blue;
 }
 
+input[aria-required="true"], textarea[aria-required="true"] {
+  background: #FFFDD0;
+}
+
+
+
 /* selected link */
 
 .hide {

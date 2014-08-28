@@ -23,7 +23,7 @@ module.exports = function (app) {
   }
 
   var feedOptions = {
-    title: 'The blog of web developer Andy Walpole',
+    title: 'blog unblock: The blog of web developer Andy Walpole',
     description: 'Covers JavaScript, CSS, HTML and some political and social commentary',
     language: 'en',
     site_url: protocol + '://andywalpole.me/#!/blog/',
