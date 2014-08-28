@@ -62,11 +62,8 @@
     if (!isValid) {
 
       this.$scope.formFailure = 'The form has not been submitted because of errors. Please review the form error messages and click submit again';
-
       this.$timeout(function () {
-        var el = document.querySelector('.comment-form-failure');
-        el.focus();
-        el.scrollIntoView(true);
+        document.querySelector('.comment-form-failure').focus();
       }, 0);
 
     }
@@ -80,9 +77,7 @@
         this.$scope.formFailure = null;
         this.$scope.formSuccess = 'You have successfully submitted a blog comment';
         this.$timeout(function () {
-          var el =document.querySelector('.comment-form-success');
-          el.focus();
-          el.scrollIntoView(true);
+          document.querySelector('.comment-form-success').focus();
         }, 0);
 
         // reset scope to remove values from input fields

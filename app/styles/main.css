@@ -497,36 +497,8 @@ input[type=text], input[type=email], input[type=url], textarea {
   border-radius: 0;
 }
 
-/* make placeholder text disappear on focus */
-/* line 484, _reset.scss */
-:focus::-webkit-input-placeholder {
-  opacity: 0;
-}
-
-/* line 488, _reset.scss */
-:focus:-moz-placeholder {
-  /* Firefox 18- */
-  opacity: 0;
-}
-
-/* line 493, _reset.scss */
-:focus::-moz-placeholder {
-  /* Firefox 19+ */
-  opacity: 0;
-}
-
-/* line 498, _reset.scss */
-:focus:-ms-input-placeholder {
-  opacity: 0;
-}
-
-/* line 502, _reset.scss */
-:focus::input-placeholder {
-  opacity: 0;
-}
-
 /* responsive images */
-/* line 508, _reset.scss */
+/* line 485, _reset.scss */
 img {
   max-width: 100%;
   height: auto;
@@ -535,33 +507,33 @@ img {
 }
 
 /* set colour links */
-/* line 517, _reset.scss */
+/* line 494, _reset.scss */
 a:link {
   color: blue;
 }
 
-/* line 521, _reset.scss */
+/* line 498, _reset.scss */
 a:visited {
   color: blue;
 }
 
-/* line 525, _reset.scss */
+/* line 502, _reset.scss */
 a:focus {
   color: blue;
 }
 
-/* line 529, _reset.scss */
+/* line 506, _reset.scss */
 a:hover {
   color: blue;
 }
 
-/* line 533, _reset.scss */
+/* line 510, _reset.scss */
 a:active {
   color: blue;
 }
 
 /* selected link */
-/* line 539, _reset.scss */
+/* line 516, _reset.scss */
 .hide {
   display: none;
 }
@@ -569,7 +541,7 @@ a:active {
 /*
 * Hide only visually, but have it available for screenreaders: h5bp.com/v
 */
-/* line 547, _reset.scss */
+/* line 524, _reset.scss */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -582,7 +554,7 @@ a:active {
 }
 
 /* clearfix */
-/* line 559, _reset.scss */
+/* line 536, _reset.scss */
 .clearfix::before, .clearfix::after {
   content: "\0020";
   display: block;
@@ -590,7 +562,7 @@ a:active {
   overflow: hidden;
 }
 
-/* line 566, _reset.scss */
+/* line 543, _reset.scss */
 .clearfix::after {
   clear: both;
 }

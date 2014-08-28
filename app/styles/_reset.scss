@@ -480,29 +480,6 @@ input[type=text], input[type=email], input[type=url], textarea {
   border-radius: 0;
 }
 
-/* make placeholder text disappear on focus */
-:focus::-webkit-input-placeholder {
-  opacity: 0;
-}
-
-:focus:-moz-placeholder {
-  /* Firefox 18- */
-  opacity: 0;
-}
-
-:focus::-moz-placeholder {
-  /* Firefox 19+ */
-  opacity: 0;
-}
-
-:focus:-ms-input-placeholder {
-  opacity: 0;
-}
-
-:focus::input-placeholder {
-  opacity: 0;
-}
-
 /* responsive images */
 
 img {
