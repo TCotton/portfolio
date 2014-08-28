@@ -9,9 +9,9 @@
     <div data-comment-directive data-comment="comment"></div>
   </div>
 
-  <p data-ng-if="formSuccess" class="comment-form-success" data-ng-bind="formSuccess" tabindex="-1"></p>
+  <p data-ng-if="formSuccess" class="comment-form-success" data-ng-bind="formSuccess"></p>
   <div class="comment-form-entry" data-ng-bind="commentFormData.message"></div>
-  <p data-ng-if="formFailure" class="comment-form-failure" data-ng-bind="formFailure" tabindex="-1"></p>
+  <p data-ng-if="formFailure" class="comment-form-failure" data-ng-bind="formFailure"></p>
 
   <form novalidate="novalidate" name="commentForm" data-ng-if="commentsOpen"
         data-ng-submit="BlogCommentCtrl.submitComment(commentForm.$valid)">
