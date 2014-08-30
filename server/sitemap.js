@@ -7,6 +7,7 @@
 var sm = require('sitemap');
 var fs = require('fs');
 var Blog = require('./routes/models/blog_model');
+var _ = require('underscore');
 
 var createBlogLinks = function () {
 
@@ -44,6 +45,40 @@ var createBlogLinks = function () {
 
       });
 
+      var cats;
+
+      var _sortCategoriesByPopularity = function (blogs) {
+
+        var newArray = {};
+
+        _.chain(blogs)
+          .pluck('category')
+          .filter(function (r) {
+            return typeof r !== 'undefined';
+          })
+          .groupBy(function (list) {
+            return list;
+          })
+          .each(function (list, iterator) {
+            newArray[iterator] = _.size(list);
+          });
+
+        return Object.keys(newArray).sort(function (a, b) {
+          return -(newArray[a] - newArray[b]);
+        });
+
+      };
+
+      cats = _sortCategoriesByPopularity(blogs);
+
+      Object.keys(cats).forEach(function (key) {
+
+        var blogURl = '/#!/blog/' + cats[key].toLowerCase();
+
+        url.push({url: blogURl, changefreq: 'weekly', priority: 0.5});
+
+      });
+
     }
 
   });
@@ -51,7 +86,7 @@ var createBlogLinks = function () {
   if (fs.existsSync('./server/blogposts.json')) {
 
     data = fs.readFileSync('./server/blogposts.json', 'utf8', function (err) {
-      if (err) {/**/
+      if (err) {
         console.log(err);
       }
     });
@@ -75,21 +110,6 @@ var createBlogLinks = function () {
 
 module.exports = function (app) {
 
-  var protocolDomain;
-
-  if (app.get('env') === 'development') {
-
-    protocolDomain = 'http://andywalpole.me';
-
-  }
-
-  if (app.get('env') === 'production') {
-
-    protocolDomain = 'https://andywalpole.me';
-
-  }
-
-
   /* create sitemap below - needed for SEO purposes */
 
   var sitemap;
@@ -97,7 +117,7 @@ module.exports = function (app) {
   var buildSitemap = function() {
 
     sitemap = sm.createSitemap({
-      hostname: protocolDomain,
+      hostname: 'https://andywalpole.me',
       cacheTime: 600000,        // 600 sec - cache purge period
       urls: createBlogLinks ? createBlogLinks() : null
     });
