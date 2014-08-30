@@ -10,39 +10,85 @@
   /** Declare enclosed scope variable names
    * **/
   var _sortCategoriesByPopularity;
+  var _populateBlogScope;
+  var _handleMediaMatch;
 
-  var SidebarCtrl = function ($rootScope, $scope, $log, BlogDataService, $angularCacheFactory, $window) {
+  var SidebarCtrl = function ($rootScope, $scope, $log, BlogDataService, $angularCacheFactory, $window, $timeout) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
     this.$log = $log;
     this.$window = $window;
+    this.$timeout = $timeout;
 
-    /** Either receive data from BlogDataService or from the cache
-     * **/
-    if ($angularCacheFactory.get('blogCache').get('allBlogPosts')) {
-      this.$scope.blogData = $angularCacheFactory.get('blogCache').get('allBlogPosts');
-      console.dir(this.$scope.blogData);
-    }
+    /**
+     * @function _populateBlogScope
+     * @description Populates blog scope if media query is matched
+     * @type {function(this:SidebarCtrl)|*|Function}
+     * @private
+     */
+    _populateBlogScope = function () {
 
-    /** Take blog object from service ready to be used in the side bar lists
-     **/
-    BlogDataService.retrieveData().then(function (result) {
+      /** Either receive data from BlogDataService or from the cache
+       * **/
+      if ($angularCacheFactory.get('blogCache').get('allBlogPosts')) {
+        this.$scope.blogData = $angularCacheFactory.get('blogCache').get('allBlogPosts');
+      }
 
-      // retrieve blog data to be used in the ng-repeat directive in the sidebar
+      /** Take blog object from service ready to be used in the side bar lists
+       **/
+      BlogDataService.retrieveData().then(function (result) {
 
-      if (_.isObject(result.data.BlogPosts)) {
+        // retrieve blog data to be used in the ng-repeat directive in the sidebar
+        if (_.isObject(result.data.BlogPosts)) {
 
-        this.$scope.blogData = result.data.BlogPosts;
+          this.$scope.blogData = result.data.BlogPosts;
+
+        }
+
+      }.bind(this), function (response) {
+
+        this.$log.warn('Error SidebarCtrl');
+        this.$log.warn(response);
+
+      }.bind(this));
+
+    }.bind(this);
+
+    /**
+     * @function _handleMediaMatch
+     * @description function used with matchMedia event
+     * @type {function(this:SidebarCtrl)|*|Function}
+     * @private
+     */
+
+    _handleMediaMatch = function (mql) {
+
+      if (!mql.matches) {
+
+        this.$timeout(function() {
+          _populateBlogScope();
+          this.$scope.blogTags = _sortCategoriesByPopularity();
+        }.bind(this),0);
+
+        mql.removeListener(_handleMediaMatch);
 
       }
 
-    }.bind(this), function (response) {
+    }.bind(this);
 
-      this.$log.warn('Error SidebarCtrl');
-      this.$log.warn(response);
 
-    }.bind(this));
+    if (this.$window.matchMedia) {
+
+      var mql = $window.matchMedia('screen and (max-width: 979px)');
+      mql.addListener(_handleMediaMatch);
+      _handleMediaMatch(mql);
+
+    } else {
+
+      _populateBlogScope();
+
+    }
 
 
     /** Plucks category names from object and then sorts them by popularity
@@ -71,7 +117,7 @@
 
   };
 
-  SidebarCtrl.$inject = ['$rootScope', '$scope', '$log', 'BlogDataService', '$angularCacheFactory', '$window'];
+  SidebarCtrl.$inject = ['$rootScope', '$scope', '$log', 'BlogDataService', '$angularCacheFactory', '$window', '$timeout'];
 
   app.controller('SidebarCtrl', SidebarCtrl);
 

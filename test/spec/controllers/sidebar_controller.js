@@ -17,6 +17,7 @@ describe('Controller: SidebarCtrl', function () {
   var MOCK_DATA;
   var $httpBackend;
 
+
   // Initialize the controller and a mock scope
   beforeEach(inject(function (_$controller_, _$rootScope_, _$q_, _MOCK_DATA_, _$httpBackend_) {
     $controller = _$controller_;
