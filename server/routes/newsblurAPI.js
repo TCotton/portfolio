@@ -8,8 +8,6 @@ var querystring = require('querystring');
 var q = require('q');
 var fs = require('fs');
 var _ = require('underscore');
-var zlib = require('zlib');
-
 
 /** Send authentication to newsblur API
  * **/

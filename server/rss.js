@@ -8,26 +8,12 @@ var q = require('q');
 
 module.exports = function (app) {
 
-  var protocol;
-
-  if (app.get('env') === 'development') {
-
-    protocol = 'http';
-
-  }
-
-  if (app.get('env') === 'production') {
-
-    protocol = 'https';
-
-  }
-
   var feedOptions = {
     title: 'blog unblock: The blog of web developer Andy Walpole',
     description: 'Covers JavaScript, CSS, HTML and some political and social commentary',
     language: 'en',
-    site_url: protocol + '://andywalpole.me/#!/blog/',
-    feed_url: protocol + '://andywalpole.me/rss.xml'
+    site_url: 'https://andywalpole.me/#!/blog/',
+    feed_url: 'https://andywalpole.me/rss.xml'
   };
 
   var feed = new RSS(feedOptions);
@@ -47,7 +33,7 @@ module.exports = function (app) {
 
         Object.keys(blogs).forEach(function (key) {
 
-          blogURl = protocol + '://andywalpole.me/#!/blog/' + blogs[key].uniqueId + '/' + blogs[key].url;
+          blogURl = 'https://andywalpole.me/#!/blog/' + blogs[key].uniqueId + '/' + blogs[key].url;
 
           feedItems[key] = {
             title: blogs[key].title,
@@ -93,7 +79,7 @@ module.exports = function (app) {
 
       Object.keys(posts).forEach(function (key) {
 
-        blogURl = protocol + '://andywalpole.me/#!/blog/' + posts[key].uniqueId + '/' + posts[key].url;
+        blogURl = 'https://andywalpole.me/#!/blog/' + posts[key].uniqueId + '/' + posts[key].url;
 
         feedItems[key] = {
           title: posts[key].title,
