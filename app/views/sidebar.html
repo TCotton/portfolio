@@ -11,7 +11,7 @@
   <h4 class="content-title">Popular categories</h4>
   <ul>
     <a data-ng-repeat="tags in blogTags | limitTo: 10 track by $index"
-       data-ng-href="/#!/blog/{{blog.uniqueId}}/{{blog.url}}">
+       data-ng-href="/#!/blog/{{tags.toLowerCase()}}">
       <li data-ng-bind="tags"></li>
     </a>
   </ul>

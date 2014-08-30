@@ -55,6 +55,10 @@ angular.module('portfolioApp', ['portfolioApp.controllers', 'portfolioApp.direct
         templateUrl: 'views/blog_page.html',
         controller: 'BlogArticleCtrl'
       })
+      .when('/blog/:category', {
+        templateUrl: 'views/blog_category.html',
+        controller: 'BlogCatController as BlogCatPageController'
+      })
       .when('/login', {
         templateUrl: 'views/admin/login.html',
         controller: 'LoginCtrl as AdminLogin',

@@ -19,7 +19,6 @@
      * **/
     if ($angularCacheFactory.get('blogCache').get('allBlogPosts')) {
       this.$scope.totalBlogPosts = $angularCacheFactory.get('blogCache').get('allBlogPosts');
-      this.$scope.totalArticles = $angularCacheFactory.get('blogCache').get('totalArticles');
     }
 
     this.$scope.returnObject = null;
@@ -31,7 +30,6 @@
       if (_.isObject(result.data.BlogPosts)) {
 
         this.$scope.totalBlogPosts = result.data.BlogPosts;
-        this.$scope.totalArticles = result.data.totalArticles;
 
       }
 
