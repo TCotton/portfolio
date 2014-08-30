@@ -149,6 +149,15 @@ describe('Unit: Templates - logged in', function () {
     $httpBackend.flush();
   });
 
+  it('loads category page at /blog/css', function () {
+    $httpBackend.expectGET('views/blog_category.html')
+      .respond(200);
+    location.path('/blog/css');
+    rootScope.$digest(); // call the digest loop
+    $httpBackend.flush();
+  });
+
+
 });
 
 describe('Unit: Templates - not logged in', function () {

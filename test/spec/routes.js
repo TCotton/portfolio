@@ -200,6 +200,22 @@ describe('Routes test with log in', function () {
 
   });
 
+  describe('Individual category page', function () {
+    beforeEach(inject(
+      function ($httpBackend) {
+        $httpBackend.expectGET('views/blog_category.html')
+          .respond(200, 'html page category HTML');
+      }
+    ));
+
+    it('should load the page category CSS on successful load of /blog/css', function () {
+      location.path('/blog/css');
+      rootScope.$digest(); // call the digest loop
+      expect(route.current.controller).toBe('BlogCatController as BlogCatPageController');
+    });
+
+  });
+
 });
 
 
