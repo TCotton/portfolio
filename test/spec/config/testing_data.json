@@ -4,6 +4,28 @@
     "email": "andy_walpole@btopenworld.com",
     "message": "This is a message here"
   },
+  "STATS": {
+    "block1": {
+      "header": "",
+      "section": "Days working as a full-time web developer"
+    },
+    "block2": {
+      "header": "3",
+      "section": "Cups of coffee before I start work in the morning"
+    },
+    "block3": {
+      "header": "90",
+      "section": "Industry RSS feeds I subscribe to using NewsBlur"
+    },
+    "block4": {
+      "header": "3",
+      "section": "Minutes before I check my Twitter feed after I wake up"
+    },
+    "block5": {
+      "header": "70<sup>%</sup>",
+      "section": "Unit test coverage of this site using Karma and Jasmine"
+    }
+  },
   "API": {
     "usersAdd": "/api/users/add",
     "blogAdd": "/api/blog/add",

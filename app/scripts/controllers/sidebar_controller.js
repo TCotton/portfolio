@@ -94,9 +94,7 @@
       if (!mql.matches) {
 
         this.$timeout(function () {
-
           _populateBlogScope();
-
         }.bind(this), 0);
 
         this.$scope.$watch('blogData', function(newData) {
