@@ -66,10 +66,10 @@
 
       if (!mql.matches) {
 
-        this.$timeout(function() {
+        this.$timeout(function () {
           _populateBlogScope();
           this.$scope.blogTags = _sortCategoriesByPopularity();
-        }.bind(this),0);
+        }.bind(this), 0);
 
         mql.removeListener(_handleMediaMatch);
 
@@ -80,7 +80,7 @@
 
     if (this.$window.matchMedia) {
 
-      var mql = $window.matchMedia('screen and (max-width: 979px)');
+      var mql = this.$window.matchMedia('screen and (max-width: 979px)');
       mql.addListener(_handleMediaMatch);
       _handleMediaMatch(mql);
 
