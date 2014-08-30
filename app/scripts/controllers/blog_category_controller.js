@@ -10,11 +10,12 @@
 
   var _filterBlogPosts;
 
-  var BlogCatController = function ($scope, $location, BlogDataService, $log, $angularCacheFactory) {
+  var BlogCatController = function ($scope, $location, BlogDataService, $log, $angularCacheFactory, $rootScope) {
 
     this.$scope = $scope;
     this.$location = $location;
     this.$log = $log;
+    this.$rootScope = $rootScope;
 
     this.$scope.cats = {};
 
@@ -23,7 +24,7 @@
 
     var urlPath = this.$location.path();
     var category = urlPath.substring(urlPath.lastIndexOf('/') + 1, urlPath.length);
-    this.$scope.cats.title = category;
+
     var totalBlogPosts;
 
     /** Either receive data from BlogDataService or from the cache
@@ -68,7 +69,12 @@
 
     this.$scope.totalBlogPosts = _filterBlogPosts();
 
-    if(_.isEmpty(this.$scope.totalBlogPosts)) {
+    this.$rootScope.pageTitle = category + ' / blog unblock';
+    this.$scope.URLencoded = encodeURIComponent(this.$rootScope.currentPage);
+    this.$rootScope.faceBookDescription = 'List page for ' + category + ' category on the blog of web developer, Andy walpole';
+
+
+    if (_.isEmpty(this.$scope.totalBlogPosts)) {
       // if empty send to 404 page
 
       // if not empty redirect to 404
@@ -86,7 +92,7 @@
 
   };
 
-  BlogCatController.$inject = ['$scope', '$location', 'BlogDataService', '$log', '$angularCacheFactory'];
+  BlogCatController.$inject = ['$scope', '$location', 'BlogDataService', '$log', '$angularCacheFactory', '$rootScope'];
 
   BlogCatController.prototype.morePosts = function () {
 

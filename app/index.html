@@ -13,13 +13,15 @@
 
   <meta name="prerender-status-code" content="{{status}}"/>
 
-  <meta data-ng-if="hideFooter" property="og:site_name" content="Website of web developer. Andy Walpole/">
+  <meta data-ng-if="hideFooter" property="og:site_name" content="blog unblock - blog of web developer. Andy Walpole/">
   <meta data-ng-if="hideFooter" property="og:title" content="{{pageTitle}}"/>
   <meta data-ng-if="hideFooter" property="og:url" content="{{canonical}}"/>
   <meta data-ng-if="hideFooter" property="og:description" content="{{faceBookDescription}}"/>
   <meta data-ng-if="hideFooter" name="description" content="{{faceBookDescription}}">
 
-  <link rel="alternate" type="application/rss+xml" title="The Blog of Web Developer Andy Walpole" href="https://andywalpole.me/rss.xml" />
+  <link rel="canonical" href="{{canonical}}" />
+
+  <link rel="alternate" type="application/rss+xml" title="blog unblock - the Blog of Web Developer Andy Walpole" href="https://andywalpole.me/rss.xml" />
 
   <meta name="msvalidate.01" content="A3327273DCF9CE62812809732D9A73A1" />
   <meta name="google-site-verification" content="EXyskgWvwTgxI78g2kK5NqdjMZyIA1p4e5dm-nuK20c" />

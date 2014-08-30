@@ -21,6 +21,8 @@
     this.$window = $window;
     this.$timeout = $timeout;
 
+    this.$scope.blogData = null;
+
     /**
      * @function _populateBlogScope
      * @description Populates blog scope if media query is matched
@@ -55,6 +57,31 @@
 
     }.bind(this);
 
+
+    /** Plucks category names from object and then sorts them by popularity
+     * **/
+    _sortCategoriesByPopularity = function (blogPosts) {
+
+      var newArray = {};
+
+      _.chain(blogPosts)
+        .pluck('category')
+        .filter(function (r) {
+          return typeof r !== 'undefined';
+        })
+        .groupBy(function (list) {
+          return list;
+        })
+        .each(function (list, iterator) {
+          newArray[iterator] = _.size(list);
+        });
+
+      return Object.keys(newArray).sort(function (a, b) {
+        return -(newArray[a] - newArray[b]);
+      });
+
+    }.bind(this);
+
     /**
      * @function _handleMediaMatch
      * @description function used with matchMedia event
@@ -67,11 +94,21 @@
       if (!mql.matches) {
 
         this.$timeout(function () {
+
           _populateBlogScope();
-          this.$scope.blogTags = _sortCategoriesByPopularity();
+
         }.bind(this), 0);
 
-        mql.removeListener(_handleMediaMatch);
+        this.$scope.$watch('blogData', function(newData) {
+
+          if(newData !== null) {
+
+            this.$scope.blogTags = _sortCategoriesByPopularity(newData);
+            mql.removeListener(_handleMediaMatch);
+
+          }
+
+        }.bind(this));
 
       }
 
@@ -89,31 +126,6 @@
       _populateBlogScope();
 
     }
-
-
-    /** Plucks category names from object and then sorts them by popularity
-     * **/
-    _sortCategoriesByPopularity = function () {
-
-      var newArray = {};
-
-      _.chain(this.$scope.blogData)
-        .pluck('category')
-        .filter(function (r) {
-          return typeof r !== 'undefined';
-        })
-        .groupBy(function (list) {
-          return list;
-        })
-        .each(function (list, iterator) {
-          newArray[iterator] = _.size(list);
-        });
-
-      return Object.keys(newArray).sort(function (a, b) {
-        return -(newArray[a] - newArray[b]);
-      });
-
-    }.bind(this);
 
   };
 
