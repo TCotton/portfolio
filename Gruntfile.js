@@ -108,13 +108,20 @@ module.exports = function (grunt) {
         url: 'http://localhost:<%= express.options.port %>'
       }
     },
-    // Automatically inject Bower components into the app
-    'bower-install': {
-      app: {
-        html: '<%= yeoman.app %>/index.html',
+
+
+    bowerInstall: {
+
+      target: {
+        // Point to the files that should be updated when
+        // you run `grunt bower-install`
+        src: [
+          '<%= yeoman.app %>/index.html'
+        ],
         ignorePath: '<%= yeoman.app %>/'
       }
     },
+
     /**
      * Sass
      */
@@ -395,7 +402,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'test',
     'clean:dist',
-    'bower-install',
+    'bowerInstall',
     'useminPrepare',
     'concurrent:dist',
     'imagemin',

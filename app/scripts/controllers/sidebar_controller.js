@@ -11,16 +11,18 @@
    * **/
   var _sortCategoriesByPopularity;
 
-  var SidebarCtrl = function ($rootScope, $scope, $log, BlogDataService, $angularCacheFactory) {
+  var SidebarCtrl = function ($rootScope, $scope, $log, BlogDataService, $angularCacheFactory, $window) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
     this.$log = $log;
+    this.$window = $window;
 
     /** Either receive data from BlogDataService or from the cache
-    * **/
+     * **/
     if ($angularCacheFactory.get('blogCache').get('allBlogPosts')) {
       this.$scope.blogData = $angularCacheFactory.get('blogCache').get('allBlogPosts');
+      console.dir(this.$scope.blogData);
     }
 
     /** Take blog object from service ready to be used in the side bar lists
@@ -29,12 +31,11 @@
 
       // retrieve blog data to be used in the ng-repeat directive in the sidebar
 
-      if(_.isObject(result.data.BlogPosts)) {
+      if (_.isObject(result.data.BlogPosts)) {
 
         this.$scope.blogData = result.data.BlogPosts;
 
       }
-
 
     }.bind(this), function (response) {
 
@@ -43,9 +44,10 @@
 
     }.bind(this));
 
+
     /** Plucks category names from object and then sorts them by popularity
      * **/
-    _sortCategoriesByPopularity = function() {
+    _sortCategoriesByPopularity = function () {
 
       var newArray = {};
 
@@ -69,7 +71,7 @@
 
   };
 
-  SidebarCtrl.$inject = ['$rootScope', '$scope', '$log', 'BlogDataService', '$angularCacheFactory'];
+  SidebarCtrl.$inject = ['$rootScope', '$scope', '$log', 'BlogDataService', '$angularCacheFactory', '$window'];
 
   app.controller('SidebarCtrl', SidebarCtrl);
 

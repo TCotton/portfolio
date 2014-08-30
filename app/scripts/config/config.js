@@ -3,7 +3,14 @@
 angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$location', '$angularCacheFactory', '$route', function ($rootScope, $window, $location, $angularCacheFactory, $route) {
 
   var track = function () {
-    $window.ga('send', 'pageview', {'page': $location.path()});
+    /* jshint ignore:start */
+    $window.ga('send', 'pageview', {
+      'page': $location.path(),
+      'dimension1': WURFL.complete_device_name,
+      'dimension2': WURFL.form_factor,
+      'dimension3': WURFL.is_mobile
+    });
+    /* jshint ignore:end */
   };
 
   $rootScope.$on('$viewContentLoaded', track);
