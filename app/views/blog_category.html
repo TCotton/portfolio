@@ -1,7 +1,7 @@
 <div id="banner">
 
   <section>
-    <h2 class="page-top-title">blog unblock</h2>
+    <h2 class="page-top-title">blog unblock / {{cats.title}}</h2>
   </section>
 
 </div><!-- end banner -->
@@ -15,7 +15,7 @@
       <div data-blog-block-directive blog="blog"></div>
     </div>
 
-    <div ng-if="displayMore" id="more-posts" class="clearfix" data-ng-click="BlogCatPageController.morePosts();">
+    <div ng-if="cats.displayMore" id="more-posts" class="clearfix" data-ng-click="BlogCatPageController.morePosts();">
 
       <div><h6>More posts</h6></div>
       <div><span class="down-arrow"></span></div>

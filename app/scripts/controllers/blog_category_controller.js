@@ -8,16 +8,22 @@
 
   var app = angular.module('portfolioApp.controllers');
 
+  var _filterBlogPosts;
+
   var BlogCatController = function ($scope, $location, BlogDataService, $log, $angularCacheFactory) {
 
     this.$scope = $scope;
     this.$location = $location;
     this.$log = $log;
 
-    this.$scope.displayMore = false;
+    this.$scope.cats = {};
+
+    this.$scope.cats.displayMore = false;
+    this.$scope.cats.title = null;
 
     var urlPath = this.$location.path();
     var category = urlPath.substring(urlPath.lastIndexOf('/') + 1, urlPath.length);
+    this.$scope.cats.title = category;
     var totalBlogPosts;
 
     /** Either receive data from BlogDataService or from the cache
@@ -46,7 +52,7 @@
      * @private
      */
 
-    var _filterBlogPosts = function () {
+    _filterBlogPosts = function () {
 
       return _.chain(totalBlogPosts)
         .filter(function (item) {
@@ -59,6 +65,7 @@
 
     }.bind(this);
 
+
     this.$scope.totalBlogPosts = _filterBlogPosts();
 
     if(_.isEmpty(this.$scope.totalBlogPosts)) {
@@ -70,9 +77,10 @@
 
     }
 
+
     if (this.$scope.totalBlogPosts.length >= this.$scope.displayPosts) {
 
-      this.$scope.displayMore = true;
+      this.$scope.cats.displayMore = true;
 
     }
 
