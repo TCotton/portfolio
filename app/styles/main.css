@@ -3080,23 +3080,27 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   .blog article aside {
     display: none;
   }
-
   /* line 306, _blog.scss */
+  .blog.blog-single #right-small {
+    display: none;
+  }
+
+  /* line 312, _blog.scss */
   #pagination {
     text-align: center;
   }
-  /* line 310, _blog.scss */
+  /* line 316, _blog.scss */
   #pagination .left-p {
     float: left;
     width: 55px;
     height: 54px;
     margin: 0 14px 14px 0;
   }
-  /* line 317, _blog.scss */
+  /* line 323, _blog.scss */
   #pagination .center-p {
     display: none;
   }
-  /* line 321, _blog.scss */
+  /* line 327, _blog.scss */
   #pagination .right-p {
     float: right;
     width: 55px;

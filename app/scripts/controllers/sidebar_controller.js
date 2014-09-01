@@ -121,7 +121,7 @@
 
     if (this.$window.matchMedia) {
 
-        var mql = this.$window.matchMedia('screen and (max-width: 979px)');
+        var mql = this.$window.matchMedia('screen and (max-width: 767px)');
         mql.addListener(_handleMediaMatch);
         _handleMediaMatch(mql);
 

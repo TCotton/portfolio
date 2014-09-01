@@ -301,6 +301,12 @@
         display: none;
       }
     }
+    &.blog-single {
+
+      #right-small {
+        display: none;
+      }
+    }
   }
 
   #pagination {

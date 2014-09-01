@@ -20,7 +20,8 @@
         <p class="date">
           <span itemprop="author">Andy Walpole</span> /
           Category: <a data-ng-href="/#!/blog/{{category.toLowerCase()}}" rel="tag" data-ng-bind="category" itemprop="keywords"></a> /
-          <span data-ng-bind="publishedDate | date" itemprop="datePublished"></span>
+          <span data-ng-bind="publishedDate | date" itemprop="datePublished"></span> /
+          <span data-ng-bind="wordCount" itemprop="wordCount"></span> words
         </p>
 
         <aside data-ng-bind-html="aside"></aside>

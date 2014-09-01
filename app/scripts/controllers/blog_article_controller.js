@@ -7,7 +7,7 @@
 
   var app = angular.module('portfolioApp.controllers');
 
-  var BlogArticleCtrl = function ($rootScope, $scope, $location, BlogDataService, $log, $timeout, $sce, $angularCacheFactory, $route) {
+  var BlogArticleCtrl = function ($rootScope, $scope, $location, BlogDataService, $log, $timeout, $sce, $angularCacheFactory, $route, $filter) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
@@ -17,6 +17,7 @@
     this.$sce = $sce;
     this.$angularCacheFactory = $angularCacheFactory;
     this.$route = $route;
+    this.$filter = $filter;
 
     this.$scope.title = null;
     this.$scope.content = null;
@@ -47,7 +48,7 @@
 
   };
 
-  BlogArticleCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataService', '$log', '$timeout', '$sce', '$angularCacheFactory', '$route'];
+  BlogArticleCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataService', '$log', '$timeout', '$sce', '$angularCacheFactory', '$route', '$filter'];
 
   BlogArticleCtrl.prototype.populatePage = function () {
 
@@ -75,7 +76,9 @@
       this.$scope.category = blogPost[0].category || 'General';
       this.$scope.URLencoded = encodeURIComponent(this.$rootScope.currentPage);
       this.$rootScope.faceBookDescription = blogPost[0].contentSnippet;
-
+      this.$timeout(function() {
+        this.$scope.wordCount = this.$filter('wordcount')();
+      }.bind(this),0);
     } else {
 
       // if not empty redirect to homepage

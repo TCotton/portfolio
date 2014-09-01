@@ -7,8 +7,9 @@
 angular.module('portfolioApp.controllers', []);
 angular.module('portfolioApp.directives', []);
 angular.module('portfolioApp.services', []);
+angular.module('portfolioApp.filters', []);
 
-angular.module('portfolioApp', ['portfolioApp.controllers', 'portfolioApp.directives', 'portfolioApp.services', 'AppConstants', 'ngCookies', 'ngResource', 'ngSanitize', 'ngRoute', 'HashBangURLs', 'portfolioAppConfig', 'jmdobry.angular-cache'])
+angular.module('portfolioApp', ['portfolioApp.controllers', 'portfolioApp.directives', 'portfolioApp.services', 'portfolioApp.filters', 'AppConstants', 'ngCookies', 'ngResource', 'ngSanitize', 'ngRoute', 'HashBangURLs', 'portfolioAppConfig', 'jmdobry.angular-cache'])
   .config(function ($routeProvider, $httpProvider) {
 
     // Needed for CORS
