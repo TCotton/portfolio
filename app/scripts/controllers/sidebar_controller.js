@@ -95,16 +95,22 @@
 
         this.$timeout(function () {
           _populateBlogScope();
-        }.bind(this), 0);
+        }, 0);
 
         this.$scope.$watch('blogData', function(newData) {
 
-          if(newData !== null) {
+          if(newData !== null && !$angularCacheFactory.get('blogCache').get('blogTags')) {
 
             this.$scope.blogTags = _sortCategoriesByPopularity(newData);
-            mql.removeListener(_handleMediaMatch);
+            $angularCacheFactory.get('blogCache').put('blogTags', this.$scope.blogTags);
+
+          } else if (newData !== null && $angularCacheFactory.get('blogCache').get('blogTags')) {
+
+            this.$scope.blogTags = $angularCacheFactory.get('blogCache').get('blogTags');
 
           }
+
+          mql.removeListener(_handleMediaMatch);
 
         }.bind(this));
 
@@ -115,9 +121,9 @@
 
     if (this.$window.matchMedia) {
 
-      var mql = this.$window.matchMedia('screen and (max-width: 979px)');
-      mql.addListener(_handleMediaMatch);
-      _handleMediaMatch(mql);
+        var mql = this.$window.matchMedia('screen and (max-width: 979px)');
+        mql.addListener(_handleMediaMatch);
+        _handleMediaMatch(mql);
 
     } else {
 
