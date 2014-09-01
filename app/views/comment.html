@@ -2,12 +2,17 @@
 
   <h5 class="content-title" data-ng-if="!commentsOpen">Blog comments are not open for this article</h5>
 
-  <h5 class="content-title" data-ng-if="commentsOpen" data-ng-init="BlogCommentCtrl.retreiveComment()">Comments
-    below</h5>
+  <span itemscope itemtype="http://www.schema.org/UserComments">
+
+  <h5 class="content-title" data-ng-if="commentsOpen" data-ng-init="BlogCommentCtrl.retreiveComment()">Comments below</h5>
+
+    <div class="visuallyhidden">for the article <span itemprop="discusses">{{pageTitle}}</span></div>
 
   <div data-ng-repeat="comment in publishComments | orderBy: 'publishedDate' track by $index">
     <div data-comment-directive data-comment="comment"></div>
   </div>
+
+  </span>
 
   <p data-ng-if="formSuccess" class="comment-form-success" data-ng-bind="formSuccess" tabindex="0"></p>
   <div class="comment-form-entry" data-ng-bind="commentFormData.message"></div>

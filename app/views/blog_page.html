@@ -17,8 +17,11 @@
 
         <h3 class="blog-title" data-ng-bind="title" itemprop="headline"></h3>
 
-        <p class="date"><span itemprop="author">Andy Walpole</span> / Category: <span rel="tag" data-ng-bind="category"></span> / <span
-            data-ng-bind="publishedDate | date" itemprop="datePublished"></span></p>
+        <p class="date">
+          <span itemprop="author">Andy Walpole</span> /
+          Category: <a data-ng-href="/#!/blog/{{category.toLowerCase()}}" rel="tag" data-ng-bind="category" itemprop="keywords"></a> /
+          <span data-ng-bind="publishedDate | date" itemprop="datePublished"></span>
+        </p>
 
         <aside data-ng-bind-html="aside"></aside>
         <div data-ng-bind-html="content" itemprop="articleBody"></div>

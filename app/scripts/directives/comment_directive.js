@@ -14,12 +14,13 @@ angular.module('portfolioApp.directives').directive('commentDirective', [functio
     replace: true,
     template: '<div class="user-comments">' +
       '<header data-ng-if="comment.url">' +
-      '<p><a data-ng-href="{{comment.url}}" rel="external" class="underline"><span data-ng-bind="comment.name"></span></a><br><span data-ng-bind="comment.publishedDate | date"></span></p>' +
-  '</header> ' +
+      '<p><a data-ng-href="{{comment.url}}" rel="external" class="underline"><span data-ng-bind="comment.name" itemprop="creator"></span></a>' +
+      '<br><span data-ng-bind="comment.publishedDate | date" itemprop="commentTime"></span></p>' +
+      '</header> ' +
       '<header data-ng-if="!comment.url">' +
-      '<p><span data-ng-bind="comment.name"></span><br><span data-ng-bind="comment.publishedDate | date"></span></p>' +
+      '<p><span data-ng-bind="comment.name" itemprop="creator"></span><br><span data-ng-bind="comment.publishedDate | date" itemprop="commentTime"></span></p>' +
       '</header>' +
-      '<section data-ng-bind="comment.message"></section>' +
+      '<section data-ng-bind="comment.message" itemprop="commentText"></section>' +
       '</div>',
     link: function () {
 

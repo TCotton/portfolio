@@ -2757,6 +2757,15 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   border: 1px solid #999999;
 }
 /* line 25, _blog.scss */
+.blog article p.date a {
+  color: gray;
+  text-decoration: none;
+}
+/* line 28, _blog.scss */
+.blog article p.date a:hover {
+  text-decoration: underline;
+}
+/* line 33, _blog.scss */
 .blog article .image-container {
   border: 1px solid #cccccc;
   background-clip: content-box;
@@ -2765,18 +2774,18 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   width: 100%;
   text-align: center;
 }
-/* line 34, _blog.scss */
+/* line 42, _blog.scss */
 .blog article figure {
   margin-bottom: 20px;
   display: inline-block;
 }
-/* line 39, _blog.scss */
+/* line 47, _blog.scss */
 .blog article figcaption {
   font-size: 1.4em;
   font-family: 'Open Sans', sans-serif;
   text-align: right;
 }
-/* line 44, _blog.scss */
+/* line 52, _blog.scss */
 .blog article .video-container {
   position: relative;
   padding-bottom: 56.25%;
@@ -2784,7 +2793,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   height: 0;
   overflow: hidden;
 }
-/* line 52, _blog.scss */
+/* line 60, _blog.scss */
 .blog article .video-container iframe,
 .blog article .video-container object,
 .blog article .video-container embed {
@@ -2794,12 +2803,12 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   width: 100%;
   height: 100%;
 }
-/* line 62, _blog.scss */
+/* line 70, _blog.scss */
 .blog article pre {
   white-space: pre;
   overflow: auto;
 }
-/* line 67, _blog.scss */
+/* line 75, _blog.scss */
 .blog article blockquote {
   background: white;
   border-left: 5px solid #ccc;
@@ -2807,7 +2816,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   padding: 0.5em 10px;
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
-/* line 74, _blog.scss */
+/* line 82, _blog.scss */
 .blog article blockquote:before {
   color: #ccc;
   content: "\201C";
@@ -2816,11 +2825,11 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   margin-right: 0.25em;
   vertical-align: -0.4em;
 }
-/* line 82, _blog.scss */
+/* line 90, _blog.scss */
 .blog article blockquote p {
   display: inline;
 }
-/* line 86, _blog.scss */
+/* line 94, _blog.scss */
 .blog article aside {
   width: 33%;
   margin: 0 0 0 2%;
@@ -2828,11 +2837,11 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   float: right;
   border-left: 1px solid #cccccc;
 }
-/* line 94, _blog.scss */
+/* line 102, _blog.scss */
 .blog article aside:empty {
   display: none;
 }
-/* line 99, _blog.scss */
+/* line 107, _blog.scss */
 .blog .user-comments {
   border-bottom: 1px solid #cccccc;
   margin: 0 0 25px 0;
@@ -2840,47 +2849,47 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   display: inline-block;
   white-space: pre-line;
 }
-/* line 105, _blog.scss */
+/* line 113, _blog.scss */
 .blog .user-comments p:first-of-type {
   font-weight: 600;
 }
-/* line 113, _blog.scss */
+/* line 121, _blog.scss */
 .blog #right-small h4.content-title:nth-of-type(2) + ul li:not(:last-of-type) {
   margin-bottom: 0;
 }
-/* line 117, _blog.scss */
+/* line 125, _blog.scss */
 .blog #right-small a {
   color: gray;
   text-decoration: none;
   display: block;
   margin-bottom: 10px;
 }
-/* line 124, _blog.scss */
+/* line 132, _blog.scss */
 .blog #right-small h4.content-title + ul {
   margin-bottom: 25px;
   display: inline-block;
 }
 
 @media (max-width: 767px) {
-  /* line 135, _blog.scss */
+  /* line 143, _blog.scss */
   .blog article {
     margin: 0 0 20px 0;
     padding: 0 0 20px 0;
   }
-  /* line 139, _blog.scss */
+  /* line 147, _blog.scss */
   .blog article header {
     margin: 0 0 10px 0;
   }
-  /* line 146, _blog.scss */
+  /* line 154, _blog.scss */
   .blog #right-small h4.content-title + ul {
     margin-bottom: 20px;
   }
 }
-/* line 154, _blog.scss */
+/* line 162, _blog.scss */
 #more-posts {
   cursor: pointer;
 }
-/* line 158, _blog.scss */
+/* line 166, _blog.scss */
 #more-posts .down-arrow {
   width: 55px;
   height: 54px;
@@ -2889,46 +2898,46 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   background-size: contain;
   background: url("/images/svg/down-arrow.svg") no-repeat center center;
 }
-/* line 165, _blog.scss */
+/* line 173, _blog.scss */
 #more-posts .down-arrow:hover {
   background: url("/images/svg/down-arrow-hover.svg") no-repeat center center;
 }
-/* line 170, _blog.scss */
+/* line 178, _blog.scss */
 #more-posts > div:first-of-type {
   float: right;
   width: 160px;
   text-align: right;
 }
-/* line 176, _blog.scss */
+/* line 184, _blog.scss */
 #more-posts > div:last-of-type {
   float: right;
 }
 
-/* line 184, _blog.scss */
+/* line 192, _blog.scss */
 #pagination {
   text-align: center;
 }
-/* line 188, _blog.scss */
+/* line 196, _blog.scss */
 #pagination .left-p {
   float: left;
   width: 55px;
   height: 54px;
   margin: 0 14px 14px 0;
 }
-/* line 195, _blog.scss */
+/* line 203, _blog.scss */
 #pagination .center-p {
   float: left;
   margin: 0 7px 0 0;
   width: -webkit-calc(100% - (55px * 2) - (14px * 2));
   width: calc(100% - (55px * 2) - (14px * 2));
 }
-/* line 201, _blog.scss */
+/* line 209, _blog.scss */
 #pagination .right-p {
   float: left;
   width: 55px;
   height: 54px;
 }
-/* line 207, _blog.scss */
+/* line 215, _blog.scss */
 #pagination [class*="pag"] {
   width: 55px;
   height: 54px;
@@ -2938,126 +2947,126 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   background-size: contain;
   margin: 0 14px 14px 0;
 }
-/* line 216, _blog.scss */
+/* line 224, _blog.scss */
 #pagination [class*="pag"]:last-of-type {
   margin: 0;
 }
-/* line 223, _blog.scss */
+/* line 231, _blog.scss */
 #pagination .left-p [class*="pag"] {
   background: url("/images/svg/left-arrow.svg") no-repeat center center;
 }
-/* line 225, _blog.scss */
+/* line 233, _blog.scss */
 #pagination .left-p [class*="pag"]:hover {
   background: url("/images/svg/left-arrow-hover.svg") no-repeat center center;
 }
-/* line 235, _blog.scss */
+/* line 243, _blog.scss */
 #pagination .pag1 {
   background: url("/images/svg/solid1.svg") no-repeat center center;
 }
-/* line 237, _blog.scss */
+/* line 245, _blog.scss */
 #pagination .pag1:hover {
   background: url("/images/svg/outline1.svg") no-repeat center center;
 }
-/* line 235, _blog.scss */
+/* line 243, _blog.scss */
 #pagination .pag2 {
   background: url("/images/svg/solid2.svg") no-repeat center center;
 }
-/* line 237, _blog.scss */
+/* line 245, _blog.scss */
 #pagination .pag2:hover {
   background: url("/images/svg/outline2.svg") no-repeat center center;
 }
-/* line 235, _blog.scss */
+/* line 243, _blog.scss */
 #pagination .pag3 {
   background: url("/images/svg/solid3.svg") no-repeat center center;
 }
-/* line 237, _blog.scss */
+/* line 245, _blog.scss */
 #pagination .pag3:hover {
   background: url("/images/svg/outline3.svg") no-repeat center center;
 }
-/* line 235, _blog.scss */
+/* line 243, _blog.scss */
 #pagination .pag4 {
   background: url("/images/svg/solid4.svg") no-repeat center center;
 }
-/* line 237, _blog.scss */
+/* line 245, _blog.scss */
 #pagination .pag4:hover {
   background: url("/images/svg/outline4.svg") no-repeat center center;
 }
-/* line 235, _blog.scss */
+/* line 243, _blog.scss */
 #pagination .pag5 {
   background: url("/images/svg/solid5.svg") no-repeat center center;
 }
-/* line 237, _blog.scss */
+/* line 245, _blog.scss */
 #pagination .pag5:hover {
   background: url("/images/svg/outline5.svg") no-repeat center center;
 }
-/* line 235, _blog.scss */
+/* line 243, _blog.scss */
 #pagination .pag6 {
   background: url("/images/svg/solid6.svg") no-repeat center center;
 }
-/* line 237, _blog.scss */
+/* line 245, _blog.scss */
 #pagination .pag6:hover {
   background: url("/images/svg/outline6.svg") no-repeat center center;
 }
-/* line 235, _blog.scss */
+/* line 243, _blog.scss */
 #pagination .pag7 {
   background: url("/images/svg/solid7.svg") no-repeat center center;
 }
-/* line 237, _blog.scss */
+/* line 245, _blog.scss */
 #pagination .pag7:hover {
   background: url("/images/svg/outline7.svg") no-repeat center center;
 }
-/* line 235, _blog.scss */
+/* line 243, _blog.scss */
 #pagination .pag8 {
   background: url("/images/svg/solid8.svg") no-repeat center center;
 }
-/* line 237, _blog.scss */
+/* line 245, _blog.scss */
 #pagination .pag8:hover {
   background: url("/images/svg/outline8.svg") no-repeat center center;
 }
-/* line 235, _blog.scss */
+/* line 243, _blog.scss */
 #pagination .pag9 {
   background: url("/images/svg/solid9.svg") no-repeat center center;
 }
-/* line 237, _blog.scss */
+/* line 245, _blog.scss */
 #pagination .pag9:hover {
   background: url("/images/svg/outline9.svg") no-repeat center center;
 }
-/* line 235, _blog.scss */
+/* line 243, _blog.scss */
 #pagination .pag10 {
   background: url("/images/svg/solid10.svg") no-repeat center center;
 }
-/* line 237, _blog.scss */
+/* line 245, _blog.scss */
 #pagination .pag10:hover {
   background: url("/images/svg/outline10.svg") no-repeat center center;
 }
-/* line 245, _blog.scss */
+/* line 253, _blog.scss */
 #pagination .right-p [class*="pag"] {
   background: url("/images/svg/right-arrow.svg") no-repeat center center;
 }
-/* line 247, _blog.scss */
+/* line 255, _blog.scss */
 #pagination .right-p [class*="pag"]:hover {
   background: url("/images/svg/right-arrow-hover.svg") no-repeat center center;
 }
 
 @media (max-width: 979px) {
-  /* line 257, _blog.scss */
+  /* line 265, _blog.scss */
   .blog #left-large {
     width: auto;
     float: none;
     display: block;
     margin: 0 0 0 0;
   }
-  /* line 264, _blog.scss */
+  /* line 272, _blog.scss */
   .blog #right-small {
     display: none;
   }
-  /* line 270, _blog.scss */
+  /* line 278, _blog.scss */
   .blog.blog-single #left-large {
     width: 100%;
     margin: 0 0 20px 0;
     display: inline-block;
   }
-  /* line 277, _blog.scss */
+  /* line 285, _blog.scss */
   .blog.blog-single #right-small {
     width: auto;
     float: none;
@@ -3067,27 +3076,27 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   }
 }
 @media (max-width: 767px) {
-  /* line 292, _blog.scss */
+  /* line 300, _blog.scss */
   .blog article aside {
     display: none;
   }
 
-  /* line 298, _blog.scss */
+  /* line 306, _blog.scss */
   #pagination {
     text-align: center;
   }
-  /* line 302, _blog.scss */
+  /* line 310, _blog.scss */
   #pagination .left-p {
     float: left;
     width: 55px;
     height: 54px;
     margin: 0 14px 14px 0;
   }
-  /* line 309, _blog.scss */
+  /* line 317, _blog.scss */
   #pagination .center-p {
     display: none;
   }
-  /* line 313, _blog.scss */
+  /* line 321, _blog.scss */
   #pagination .right-p {
     float: right;
     width: 55px;

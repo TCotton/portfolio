@@ -22,6 +22,14 @@
       }
     }
 
+    p.date a {
+      color: lighten($textTwo, 10%);
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
     .image-container {
       border: 1px solid $boxBorder;
       background-clip: content-box;
