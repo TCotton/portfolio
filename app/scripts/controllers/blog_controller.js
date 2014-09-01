@@ -23,7 +23,7 @@
 
     this.$scope.returnObject = null;
 
-    this.$scope.displayPosts = 10;
+    this.$scope.displayPosts = 5;
 
     BlogDataService.retrieveData().then(function (result) {
 

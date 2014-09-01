@@ -70,6 +70,7 @@
     this.$scope.totalBlogPosts = _filterBlogPosts();
 
     this.$rootScope.pageTitle = category + ' / blog unblock';
+    this.$scope.cats.title = category;
     this.$scope.URLencoded = encodeURIComponent(this.$rootScope.currentPage);
     this.$rootScope.faceBookDescription = 'List page for ' + category + ' category on the blog of web developer, Andy walpole';
 

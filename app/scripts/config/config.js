@@ -5,10 +5,7 @@ angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$locatio
   var track = function () {
     /* jshint ignore:start */
     $window.ga('send', 'pageview', {
-      'page': $location.path(),
-      'dimension1': WURFL.complete_device_name,
-      'dimension2': WURFL.form_factor,
-      'dimension3': WURFL.is_mobile
+      'page': $location.path()
     });
     /* jshint ignore:end */
   };
