@@ -73,7 +73,7 @@ var createBlogLinks = function () {
 
       Object.keys(cats).forEach(function (key) {
 
-        var blogURl = '/#!/blog/' + cats[key].toLowerCase();
+        var blogURl = '/#!/category/' + cats[key].toLowerCase();
 
         url.push({url: blogURl, changefreq: 'weekly', priority: 0.5});
 

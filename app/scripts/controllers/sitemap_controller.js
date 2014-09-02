@@ -27,7 +27,7 @@
 
       // retrieve blog data to be used in the ng-repeat directive in the sidebar
 
-      if(_.isObject(result.data.BlogPosts)) {
+      if (_.isObject(result.data.BlogPosts)) {
 
         this.$scope.blogData = result.data.BlogPosts;
 
@@ -66,7 +66,20 @@
 
     }.bind(this);
 
-    this.$scope.categories = _sortCategoriesByPopularity();
+    this.$scope.$watch('blogData', function (newData) {
+
+      if (newData !== null && !$angularCacheFactory.get('blogCache').get('blogTags')) {
+
+        this.$scope.blogTags = _sortCategoriesByPopularity(newData);
+        $angularCacheFactory.get('blogCache').put('blogTags', this.$scope.blogTags);
+
+      } else if (newData !== null && $angularCacheFactory.get('blogCache').get('blogTags')) {
+
+        this.$scope.blogTags = $angularCacheFactory.get('blogCache').get('blogTags');
+
+      }
+
+    }.bind(this));
 
   };
 
