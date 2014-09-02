@@ -68,14 +68,9 @@
 
     this.$scope.$watch('blogData', function (newData) {
 
-      if (newData !== null && !$angularCacheFactory.get('blogCache').get('blogTags')) {
+      if (newData !== null) {
 
-        this.$scope.blogTags = _sortCategoriesByPopularity(newData);
-        $angularCacheFactory.get('blogCache').put('blogTags', this.$scope.blogTags);
-
-      } else if (newData !== null && $angularCacheFactory.get('blogCache').get('blogTags')) {
-
-        this.$scope.blogTags = $angularCacheFactory.get('blogCache').get('blogTags');
+        this.$scope.blogTags = _sortCategoriesByPopularity();
 
       }
 
