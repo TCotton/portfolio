@@ -11,14 +11,12 @@
   var _cache;
   var _blogData;
 
-  var BlogDataService = function ($http, $q, $log, MongoBlogService, $angularCacheFactory, CONFIG, $rootScope) {
+  var BlogDataService = function ($http, $q, MongoBlogService, $angularCacheFactory, CONFIG) {
 
     /** angularjs stuff
      * **/
     this.$http = $http;
     this.$q = $q;
-    this.$log = $log;
-    this.$rootScope = $rootScope;
 
     /** Using defineProperty with these values prevents service and constants from being injected with the BlogDataService into a controller
      * **/
@@ -49,8 +47,7 @@
 
   };
 
-
-  BlogDataService.$inject = ['$http', '$q', '$log', 'MongoBlogService', '$angularCacheFactory', 'CONFIG', '$rootScope'];
+  BlogDataService.$inject = ['$http', '$q', 'MongoBlogService', '$angularCacheFactory', 'CONFIG'];
 
   BlogDataService.prototype.retrieveData = function () {
 
@@ -73,7 +70,8 @@
         _blogData = value;
         _cache(value);
 
-      }, function () {}).then(function () {
+      }, function () {
+      }).then(function () {
 
         deferred.resolve(_blogData);
 
