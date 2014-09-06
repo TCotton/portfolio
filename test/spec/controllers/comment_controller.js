@@ -76,4 +76,7 @@ describe('Controller: CommentCtrl as BlogCommentCtrl', function () {
     
   });
 
+  // check that spam trap works
+  // check validation of
+
 });

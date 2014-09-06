@@ -17,6 +17,7 @@
      * **/
     this.$http = $http;
     this.$q = $q;
+    this.$angularCacheFactory = $angularCacheFactory;
 
     /** Using defineProperty with these values prevents service and constants from being injected with the BlogDataService into a controller
      * **/
@@ -33,8 +34,6 @@
       writable: false,
       value: MongoBlogService
     });
-
-    this.$angularCacheFactory = $angularCacheFactory;
 
     /* cache the relevant data in either session or storage
      * **/

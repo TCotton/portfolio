@@ -54,4 +54,7 @@ describe('Controller: FormCtrl', function () {
 
   });
 
+  // check validation
+  // make sure anonymous filter function is removing right string elements
+
 });

@@ -52,4 +52,24 @@ describe('Controller: AddBlogCtrl as AdminAddBlogCtrl', function () {
 
   });
 
+  // check that each function is doing what it is supposed to do
+
+  // _addDate();
+  // this.$scope.addBlogFormData.publishedDate is current date in correct format
+
+  // _addUniqueID
+  // this.$scope.addBlogFormData.uniqueId is current date but with 6 digits
+
+  // _addSEOFriendlyURL
+  // check stop words are removed
+  // check no spaces
+  // check hyphens
+  // check no special characters
+
+  // _createContentSnippet
+  // check string is no more than 130 characters
+  // check string finishes with ... dots
+
+
+
 });

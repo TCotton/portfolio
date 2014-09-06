@@ -2,6 +2,12 @@
  * Created by awalpole on 10/04/2014.
  */
 
+// WHAT IS THIS DOING HERE???
+
+// CLEARLY LEFT OVER FROM EARLY WORK
+
+// ADD THIS TO THE RIGHT CONTROLLER
+
 'use strict';
 describe('Controller: EditBlogCtrl as AdminEditBlogCtrl', function () {
 

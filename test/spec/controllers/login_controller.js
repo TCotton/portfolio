@@ -52,4 +52,8 @@ describe('Controller: LoginCtrl as AdminLogin', function () {
 
   });
 
+  // check validation is working
+  // check spam trap is working
+  // if possible, create dummy data of users and see if response is correct if username or password is incorrect
+
 });

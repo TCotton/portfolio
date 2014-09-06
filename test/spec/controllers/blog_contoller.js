@@ -34,6 +34,9 @@ describe('Controller: BlogCtrl', function () {
 
   }));
 
+  // use MOCK_DATA for array of blog articles
+  // check scope is equal to array of blog articles in MOCK_DATA
+
 
 
 
