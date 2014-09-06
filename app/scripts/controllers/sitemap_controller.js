@@ -11,14 +11,10 @@
 
   var SitemapCtrl = function ($rootScope, $scope, $log, BlogDataService, $angularCacheFactory) {
 
-    this.$rootScope = $rootScope;
-    this.$scope = $scope;
-    this.$log = $log;
-
     /** Either receive data from BlogDataService or from the cache
      * **/
     if ($angularCacheFactory.get('blogCache').get('allBlogPosts')) {
-      this.$scope.blogData = $angularCacheFactory.get('blogCache').get('allBlogPosts');
+      $scope.blogData = $angularCacheFactory.get('blogCache').get('allBlogPosts');
     }
 
     /** Take blog object from service ready to be used in the side bar lists
@@ -29,17 +25,17 @@
 
       if (_.isObject(result.data.BlogPosts)) {
 
-        this.$scope.blogData = result.data.BlogPosts;
+        $scope.blogData = result.data.BlogPosts;
 
       }
 
 
-    }.bind(this), function (response) {
+    }, function (response) {
 
-      this.$log.warn('Error SitemapCtrl');
-      this.$log.warn(response);
+      $log.warn('Error SitemapCtrl');
+      $log.warn(response);
 
-    }.bind(this));
+    });
 
 
     /** Plucks category names from object and then sorts them by popularity
@@ -48,7 +44,7 @@
 
       var newArray = {};
 
-      _.chain(this.$scope.blogData)
+      _.chain($scope.blogData)
         .pluck('category')
         .filter(function (r) {
           return typeof r !== 'undefined';
@@ -64,22 +60,22 @@
         return -(newArray[a] - newArray[b]);
       });
 
-    }.bind(this);
+    };
 
-    this.$scope.$watch('blogData', function (newData) {
+    $scope.$watch('blogData', function (newData) {
 
       if (newData !== null && !$angularCacheFactory.get('blogCache').get('blogTags')) {
 
-        this.$scope.blogTags = _sortCategoriesByPopularity(newData);
-        $angularCacheFactory.get('blogCache').put('blogTags', this.$scope.blogTags);
+        $scope.blogTags = _sortCategoriesByPopularity(newData);
+        $angularCacheFactory.get('blogCache').put('blogTags', $scope.blogTags);
 
       } else if (newData !== null && $angularCacheFactory.get('blogCache').get('blogTags')) {
 
-        this.$scope.blogTags = $angularCacheFactory.get('blogCache').get('blogTags');
+        $scope.blogTags = $angularCacheFactory.get('blogCache').get('blogTags');
 
       }
 
-    }.bind(this));
+    });
 
   };
 

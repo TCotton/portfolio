@@ -9,10 +9,9 @@
 
   /** Declare private method variable names
    * **/
-  var CommentAdminCtrl = function ($scope, $rootScope, MongoCommentService, $log) {
+  var CommentAdminCtrl = function ($scope, MongoCommentService, $log) {
 
     this.$scope = $scope;
-    this.$rootScope = $rootScope;
     this.$log = $log;
     /** Using defineProperty prevents injected service being exposed to the template
      * **/
@@ -27,7 +26,7 @@
 
   };
 
-  CommentAdminCtrl.prototype.getComments = function() {
+  CommentAdminCtrl.prototype.getComments = function () {
 
     var returnedPromise = this.MongoCommentService.getComments();
 
@@ -48,7 +47,7 @@
 
   };
 
-  CommentAdminCtrl.prototype.deleteComment = function(data) {
+  CommentAdminCtrl.prototype.deleteComment = function (data) {
 
     var returnedPromise = this.MongoCommentService.deleteComment(data._id);
 
@@ -70,7 +69,7 @@
 
   };
 
-  CommentAdminCtrl.prototype.publishComment = function(data) {
+  CommentAdminCtrl.prototype.publishComment = function (data) {
 
     var formData = {
       id: data._id,
@@ -81,7 +80,7 @@
 
     returnedPromise.then(function (value) {
 
-      if(value.data) {
+      if (value.data) {
 
         // update page again
         this.getComments();
@@ -98,7 +97,7 @@
 
   };
 
-  CommentAdminCtrl.$inject = ['$scope', '$rootScope', 'MongoCommentService', '$log'];
+  CommentAdminCtrl.$inject = ['$scope', 'MongoCommentService', '$log'];
 
   app.controller('CommentAdminCtrl', CommentAdminCtrl);
 

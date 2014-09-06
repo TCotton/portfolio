@@ -9,9 +9,8 @@
 
   var _createContentSnippet;
 
-  var FooterCtrl = function ($rootScope, $scope, $log, NewsBlurService) {
+  var FooterCtrl = function ($scope, $log, NewsBlurService) {
 
-    this.$rootScope = $rootScope;
     this.$scope = $scope;
     this.$log = $log;
     this.$scope.recArticle = {};
@@ -53,7 +52,7 @@
 
   };
 
-  FooterCtrl.$inject = ['$rootScope', '$scope', '$log', 'NewsBlurService'];
+  FooterCtrl.$inject = ['$scope', '$log', 'NewsBlurService'];
 
   /** Return JSON data for latest articles saved in my Newsblur account
    *  Uses Newsblur API on NodeJS

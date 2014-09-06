@@ -40,8 +40,10 @@
    * Also delete form model values and disable the submit button
    * **/
 
-
   FormCtrl.prototype.submitContactForm = function (isValid) {
+
+    var formData;
+    var promise;
 
     this.$scope.submitted = true;
 
@@ -50,7 +52,7 @@
 
       // sanitise and remove naughty spam stuff from email
       // TODO: move to server
-      var formData = _.object(_.map(this.$scope.contact, function (value, key) {
+      formData = _.object(_.map(this.$scope.contact, function (value, key) {
         var x, l, badValues = ['to:', 'cc:', 'bcc:', 'content-type:', 'mime-version:', 'multipart-mixed:', 'content-transfer-encoding:'];
 
         if (value !== null) {
@@ -66,7 +68,7 @@
         return [key, value];
       }.bind(this)));
 
-      var promise = this.PostFormService.submitForm(formData);
+      promise = this.PostFormService.submitForm(formData);
 
       promise.then(function (value) {
 

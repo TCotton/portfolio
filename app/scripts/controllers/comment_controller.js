@@ -32,6 +32,8 @@
 
   };
 
+  CommentCtrl.$inject = ['$scope', '$rootScope', 'MongoCommentService', '$log', '$timeout'];
+
   CommentCtrl.prototype.retreiveComment = function () {
 
     var data = {
@@ -101,8 +103,6 @@
     }
 
   };
-
-  CommentCtrl.$inject = ['$scope', '$rootScope', 'MongoCommentService', '$log', '$timeout'];
 
   app.controller('CommentCtrl', CommentCtrl);
 

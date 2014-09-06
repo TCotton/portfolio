@@ -9,9 +9,8 @@
 
   var app = angular.module('portfolioApp.controllers');
 
-  var UserDetailsCtrl = function ($rootScope, $scope, $log, MongoUserService) {
+  var UserDetailsCtrl = function ($scope, $log, MongoUserService) {
 
-    this.$rootScope = $rootScope;
     this.$scope = $scope;
     this.$log = $log;
 
@@ -25,9 +24,7 @@
     });
 
     this.$scope.editUser = {};
-
     this.$scope.addUser = {};
-
     this.$scope.editUserSubmit = {};
     this.$scope.editUserSubmit.submitted = false;
     this.$scope.addUserSubmit = {};
@@ -40,7 +37,7 @@
 
   };
 
-  UserDetailsCtrl.$inject = ['$rootScope', '$scope', '$log', 'MongoUserService'];
+  UserDetailsCtrl.$inject = ['$scope', '$log', 'MongoUserService'];
 
   UserDetailsCtrl.prototype.editUserFun = function (data) {
 

@@ -15,13 +15,7 @@
 
   var SidebarCtrl = function ($rootScope, $scope, $log, BlogDataService, $angularCacheFactory, $window, $timeout) {
 
-    this.$rootScope = $rootScope;
-    this.$scope = $scope;
-    this.$log = $log;
-    this.$window = $window;
-    this.$timeout = $timeout;
-
-    this.$scope.blogData = null;
+    $scope.blogData = null;
 
     /**
      * @function _populateBlogScope
@@ -34,7 +28,7 @@
       /** Either receive data from BlogDataService or from the cache
        * **/
       if ($angularCacheFactory.get('blogCache').get('allBlogPosts')) {
-        this.$scope.blogData = $angularCacheFactory.get('blogCache').get('allBlogPosts');
+        $scope.blogData = $angularCacheFactory.get('blogCache').get('allBlogPosts');
       }
 
       /** Take blog object from service ready to be used in the side bar lists
@@ -44,18 +38,18 @@
         // retrieve blog data to be used in the ng-repeat directive in the sidebar
         if (_.isObject(result.data.BlogPosts)) {
 
-          this.$scope.blogData = result.data.BlogPosts;
+          $scope.blogData = result.data.BlogPosts;
 
         }
 
-      }.bind(this), function (response) {
+      }, function (response) {
 
-        this.$log.warn('Error SidebarCtrl');
-        this.$log.warn(response);
+        $log.warn('Error SidebarCtrl');
+        $log.warn(response);
 
-      }.bind(this));
+      });
 
-    }.bind(this);
+    };
 
 
     /** Plucks category names from object and then sorts them by popularity
@@ -80,7 +74,7 @@
         return -(newArray[a] - newArray[b]);
       });
 
-    }.bind(this);
+    };
 
     /**
      * @function _handleMediaMatch
@@ -93,35 +87,35 @@
 
       if (!mql.matches) {
 
-        this.$timeout(function () {
+        $timeout(function () {
           _populateBlogScope();
         }, 0);
 
-        this.$scope.$watch('blogData', function(newData) {
+       $scope.$watch('blogData', function(newData) {
 
           if(newData !== null && !$angularCacheFactory.get('blogCache').get('blogTags')) {
 
-            this.$scope.blogTags = _sortCategoriesByPopularity(newData);
-            $angularCacheFactory.get('blogCache').put('blogTags', this.$scope.blogTags);
+            $scope.blogTags = _sortCategoriesByPopularity(newData);
+            $angularCacheFactory.get('blogCache').put('blogTags', $scope.blogTags);
 
           } else if (newData !== null && $angularCacheFactory.get('blogCache').get('blogTags')) {
 
-            this.$scope.blogTags = $angularCacheFactory.get('blogCache').get('blogTags');
+            $scope.blogTags = $angularCacheFactory.get('blogCache').get('blogTags');
 
           }
 
           mql.removeListener(_handleMediaMatch);
 
-        }.bind(this));
+        });
 
       }
 
-    }.bind(this);
+    };
 
 
-    if (this.$window.matchMedia) {
+    if ($window.matchMedia) {
 
-        var mql = this.$window.matchMedia('screen and (max-width: 767px)');
+        var mql = $window.matchMedia('screen and (max-width: 767px)');
         mql.addListener(_handleMediaMatch);
         _handleMediaMatch(mql);
 

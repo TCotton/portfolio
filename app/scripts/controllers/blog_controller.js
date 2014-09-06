@@ -7,23 +7,18 @@
 
   var app = angular.module('portfolioApp.controllers');
 
-  var BlogCtrl = function ($rootScope, $scope, $location, BlogDataService, $log, $timeout, $angularCacheFactory) {
+  var BlogCtrl = function ($scope, BlogDataService, $angularCacheFactory) {
 
-    this.$rootScope = $rootScope;
     this.$scope = $scope;
-    this.$location = $location;
-    this.$log = $log;
-    this.$timeout = $timeout;
+
+    this.$scope.returnObject = null;
+    this.$scope.displayPosts = 5;
 
     /** Either receive data from BlogDataService or from the cache
      * **/
     if ($angularCacheFactory.get('blogCache').get('allBlogPosts')) {
       this.$scope.totalBlogPosts = $angularCacheFactory.get('blogCache').get('allBlogPosts');
     }
-
-    this.$scope.returnObject = null;
-
-    this.$scope.displayPosts = 5;
 
     BlogDataService.retrieveData().then(function (result) {
 
@@ -37,7 +32,7 @@
 
   };
 
-  BlogCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataService', '$log', '$timeout', '$angularCacheFactory'];
+  BlogCtrl.$inject = ['$scope', 'BlogDataService', '$angularCacheFactory'];
 
   BlogCtrl.prototype.morePosts = function () {
 

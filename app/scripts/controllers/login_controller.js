@@ -67,7 +67,7 @@
 
       }.bind(this), function (value) {
 
-        this.$log.warn('Failure: UserDetailsCtrl.deleteUser');
+        this.$log.warn('Failure: LoginCtrl.submitLoginForm');
         this.$log.warn(value);
 
       }.bind(this));

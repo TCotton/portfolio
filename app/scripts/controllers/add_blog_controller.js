@@ -19,9 +19,8 @@
   var _addUniqueID;
   var _addDate;
 
-  var AddBlogCtrl = function ($rootScope, $scope, $log, MongoBlogService) {
+  var AddBlogCtrl = function ($scope, $log, MongoBlogService) {
 
-    this.$rootScope = $rootScope;
     this.$scope = $scope;
     this.$log = $log;
 
@@ -131,7 +130,7 @@
 
   };
 
-  AddBlogCtrl.$inject = ['$rootScope', '$scope', '$log', 'MongoBlogService'];
+  AddBlogCtrl.$inject = ['$scope', '$log', 'MongoBlogService'];
 
   AddBlogCtrl.prototype.addBlog = function (isValid) {
 

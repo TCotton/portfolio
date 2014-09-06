@@ -1,4 +1,3 @@
-
 /**
  * Created by andywalpole on 08/04/2014.
  */
@@ -37,6 +36,8 @@
 
   };
 
+  ProjectsPageCtrl.$inject = ['$rootScope', '$scope', '$log', 'PROJECTS', '$window'];
+
   /** Take the right data for the project page from the constants based on the current page
    * **/
   ProjectsPageCtrl.prototype.findData = function () {
@@ -59,7 +60,7 @@
 
     } else {
 
-      this.$window.location.href= '/#!/404';
+      this.$window.location.href = '/#!/404';
 
     }
   };
@@ -85,10 +86,16 @@
      * TODO: refactor pagination
      * **/
 
-    var currentPage = this.$rootScope.currentPage.substring(this.$rootScope.currentPage.lastIndexOf('/') + 1, this.$rootScope.currentPage.length);
+    var currentPage;
+    var page;
+    var pageNumber;
+    var prevPage;
+    var nextPage;
+
+    currentPage = this.$rootScope.currentPage.substring(this.$rootScope.currentPage.lastIndexOf('/') + 1, this.$rootScope.currentPage.length);
 
     // return the object for the current page
-    var page = _.filter(this.PROJECTS, function (o) {
+    page = _.filter(this.PROJECTS, function (o) {
 
       if (o.internalUrl.substring(o.internalUrl.lastIndexOf('/') + 1, o.length) === currentPage) {
 
@@ -98,10 +105,10 @@
 
     if (!_.isEmpty(page)) {
 
-      var pageNumber = page[0].id;
+      pageNumber = page[0].id;
 
       // return the object for the previous page
-      var prevPage = _.filter(this.PROJECTS, function (o) {
+      prevPage = _.filter(this.PROJECTS, function (o) {
 
         if (parseInt(o.id, 10) === (parseInt(pageNumber, 10) - 1)) {
 
@@ -110,7 +117,7 @@
       });
 
       // return the object for the next page
-      var nextPage = _.filter(this.PROJECTS, function (o) {
+      nextPage = _.filter(this.PROJECTS, function (o) {
 
         if (parseInt(o.id, 10) === (parseInt(pageNumber, 10) + 1)) {
 
@@ -120,7 +127,7 @@
 
 
       // if first page then the prev link goes to the end of the pages
-      prevPage = !_.isEmpty(prevPage)? prevPage: _.filter(this.PROJECTS, function (o,k) {
+      prevPage = !_.isEmpty(prevPage) ? prevPage : _.filter(this.PROJECTS, function (o, k) {
 
         if (k === 'twttwt') {
           return o;
@@ -128,7 +135,7 @@
       });
 
       // if last page then start loop all over again
-      nextPage = !_.isEmpty(nextPage)? nextPage: _.filter(this.PROJECTS, function (o,k) {
+      nextPage = !_.isEmpty(nextPage) ? nextPage : _.filter(this.PROJECTS, function (o, k) {
 
         if (k === 'lightning') {
           return o;
@@ -144,8 +151,6 @@
       }
     }
   };
-
-  ProjectsPageCtrl.$inject = ['$rootScope', '$scope', '$log', 'PROJECTS', '$window'];
 
   app.controller('ProjectsPageCtrl', ProjectsPageCtrl);
 

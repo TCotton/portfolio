@@ -16,9 +16,8 @@
   var _createContentSnippet;
   var _addSEOFriendlyURL;
 
-  var EditBlogCtrl = function ($rootScope, $scope, $log, MongoBlogService) {
+  var EditBlogCtrl = function ($scope, $log, MongoBlogService) {
 
-    this.$rootScope = $rootScope;
     this.$scope = $scope;
     this.$log = $log;
 
@@ -116,6 +115,8 @@
     }.bind(this);
 
   };
+
+  EditBlogCtrl.$inject = ['$scope', '$log', 'MongoBlogService'];
 
   /** Public methods
    * **/
@@ -289,8 +290,6 @@
     }.bind(this));
 
   };
-
-  EditBlogCtrl.$inject = ['$rootScope', '$scope', '$log', 'MongoBlogService'];
 
   app.controller('EditBlogCtrl', EditBlogCtrl);
 

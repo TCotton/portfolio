@@ -15,7 +15,6 @@
     this.$log = $log;
     this.$timeout = $timeout;
     this.$sce = $sce;
-    this.$angularCacheFactory = $angularCacheFactory;
     this.$route = $route;
     this.$filter = $filter;
 
