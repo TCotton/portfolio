@@ -49,9 +49,9 @@
      * @private
      */
 
-    _filterBlogPosts = function () {
+    _filterBlogPosts = function (blogs) {
 
-      return _.chain(this.$scope.blogPosts)
+      return _.chain(blogs)
         .filter(function (item) {
 
           if (_.isString(item.category) && item.category.toLowerCase() === category) {
@@ -63,37 +63,34 @@
     }.bind(this);
 
 
-    this.$scope.$watch('blogPosts', function(newData) {
+    this.$scope.$watch('blogPosts', function (newData) {
 
-      console.dir(newData);
+      if (newData !== null) {
 
-      if(newData !== null) {
+        this.$scope.totalBlogPosts = _filterBlogPosts(newData);
 
-        this.$scope.totalBlogPosts = _filterBlogPosts();
+        if (this.$scope.totalBlogPosts.length >= this.$scope.displayPosts) {
 
-      }
+          this.$scope.cats.displayMore = true;
+
+        }
+
+        if (_.isEmpty(this.$scope.totalBlogPosts)) {
+          // if empty send to 404 page
+          // if not empty redirect to 404
+          // TODO: move this server side
+          this.$location.path('/#!/');
+
+        }
+
+        this.$rootScope.pageTitle = category + ' / blog unblock';
+        this.$scope.cats.title = category;
+        this.$scope.URLencoded = encodeURIComponent(this.$rootScope.currentPage);
+        this.$rootScope.faceBookDescription = 'List page for ' + category + ' category on the blog of web developer, Andy walpole';
+
+      }// end if(newData !== null) {
 
     }.bind(this));
-
-    this.$rootScope.pageTitle = category + ' / blog unblock';
-    this.$scope.cats.title = category;
-    this.$scope.URLencoded = encodeURIComponent(this.$rootScope.currentPage);
-    this.$rootScope.faceBookDescription = 'List page for ' + category + ' category on the blog of web developer, Andy walpole';
-
-    if (_.isEmpty(this.$scope.totalBlogPosts)) {
-      // if empty send to 404 page
-
-      // if not empty redirect to 404
-      // TODO: move this server side
-      //this.$location.path('/#!/');
-
-    }
-
-    if (this.$scope.totalBlogPosts.length >= this.$scope.displayPosts) {
-
-      this.$scope.cats.displayMore = true;
-
-    }
 
   };
 
