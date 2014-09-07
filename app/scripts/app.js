@@ -40,7 +40,7 @@ angular.module('portfolioApp', ['portfolioApp.controllers', 'portfolioApp.direct
       })
       .when('/about-me', {
         templateUrl: 'views/about_me.html',
-        title: 'Skills and contract details'
+        title: 'Skills and CV'
       })
       .when('/contact-me', {
         templateUrl: 'views/contact_me.html',

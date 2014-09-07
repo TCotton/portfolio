@@ -98,16 +98,4 @@ describe('Controller: AddBlogCtrl as AdminAddBlogCtrl', function () {
 
   });
 
-
-  // check that each function is doing what it is supposed to do
-
-
-  // _addUniqueID
-  // this.$scope.addBlogFormData.uniqueId is current date but with 6 digits
-
-  // _createContentSnippet
-  // check string is no more than 130 characters
-  // check string finishes with ... dots
-
-
 });
