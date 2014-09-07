@@ -1694,87 +1694,84 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   }
 }
 
-/* hack for advanced checkbox hack for android devices
- check for performance, looks well dodgy
- */
 @media (max-width: 979px) and (-webkit-min-device-pixel-ratio: 1.5) {
-  /* line 59, _header.scss */
+  /* line 56, _header.scss */
   body {
     -webkit-animation: bugfix infinite 1s;
   }
 }
 @media (max-width: 1366px) {
-  /* line 67, _header.scss */
+  /* line 64, _header.scss */
   #header {
     padding: 0 4.172767203513909%;
   }
 }
 @-webkit-keyframes swipeIn {
-  /* line 73, _header.scss */
+  /* line 70, _header.scss */
   from {
     -webkit-transform: translateX(-200%);
   }
 
-  /* line 76, _header.scss */
+  /* line 73, _header.scss */
   to {
     -webkit-transform: translateX(0%);
   }
 }
 
 @keyframes swipeIn {
-  /* line 82, _header.scss */
+  /* line 79, _header.scss */
   from {
     transform: translateX(-200%);
   }
 
-  /* line 85, _header.scss */
+  /* line 82, _header.scss */
   to {
     transform: translateX(0%);
   }
 }
 
 @media (max-width: 979px) {
-  /* line 95, _header.scss */
+  /* line 92, _header.scss */
   #header input[type=checkbox] ~ #navigation-wrapper li {
     -webkit-transform: translateX(-200%);
     transform: translateX(-200%);
   }
-  /* line 104, _header.scss */
+  /* line 101, _header.scss */
   #header input[type=checkbox]:checked ~ #navigation-wrapper li:nth-child(1) {
     -webkit-animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.2s;
     -webkit-animation-fill-mode: forwards;
     animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.2s;
     animation-fill-mode: forwards;
   }
-  /* line 104, _header.scss */
+  /* line 101, _header.scss */
   #header input[type=checkbox]:checked ~ #navigation-wrapper li:nth-child(2) {
     -webkit-animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.3s;
     -webkit-animation-fill-mode: forwards;
     animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.3s;
     animation-fill-mode: forwards;
   }
-  /* line 104, _header.scss */
+  /* line 101, _header.scss */
   #header input[type=checkbox]:checked ~ #navigation-wrapper li:nth-child(3) {
     -webkit-animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.4s;
     -webkit-animation-fill-mode: forwards;
     animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.4s;
     animation-fill-mode: forwards;
   }
-  /* line 104, _header.scss */
+  /* line 101, _header.scss */
   #header input[type=checkbox]:checked ~ #navigation-wrapper li:nth-child(4) {
     -webkit-animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.5s;
     -webkit-animation-fill-mode: forwards;
     animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.5s;
     animation-fill-mode: forwards;
   }
-  /* line 104, _header.scss */
+  /* line 101, _header.scss */
   #header input[type=checkbox]:checked ~ #navigation-wrapper li:nth-child(5) {
     -webkit-animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.6s;
     -webkit-animation-fill-mode: forwards;
     animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.6s;
     animation-fill-mode: forwards;
   }
-  /* line 112, _header.scss */
+  /* line 109, _header.scss */
   #header label.handheld-cross {
     color: transparent;
     margin: 18px 0 0 0;
@@ -1789,43 +1786,43 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     -ms-user-select: none;
     user-select: none;
   }
-  /* line 125, _header.scss */
+  /* line 122, _header.scss */
   #header label.handheld-cross.active {
     background: url("/images/svg/menu-hover.svg") no-repeat center center;
   }
 }
-/* line 132, _header.scss */
+/* line 129, _header.scss */
 #logo-wrapper {
   float: left;
 }
-/* line 135, _header.scss */
+/* line 132, _header.scss */
 #logo-wrapper a {
   text-decoration: none;
   white-space: nowrap;
 }
 
-/* line 141, _header.scss */
+/* line 138, _header.scss */
 #navigation-wrapper {
   float: right;
 }
-/* line 143, _header.scss */
+/* line 140, _header.scss */
 #navigation-wrapper li {
   display: inline;
   list-style: none;
   line-height: 84px;
 }
-/* line 147, _header.scss */
+/* line 144, _header.scss */
 #navigation-wrapper li + li {
   margin: 0 0 0 24px;
 }
-/* line 150, _header.scss */
+/* line 147, _header.scss */
 #navigation-wrapper li a {
   text-decoration: none;
   color: white;
 }
 
 @media (max-width: 979px) {
-  /* line 159, _header.scss */
+  /* line 156, _header.scss */
   #navigation-wrapper {
     pointer-events: none;
     float: none;
@@ -1836,7 +1833,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     background: transparent;
     width: 100%;
   }
-  /* line 169, _header.scss */
+  /* line 166, _header.scss */
   #navigation-wrapper li {
     pointer-events: auto;
     display: block;
@@ -1847,21 +1844,21 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     border-bottom: 1px solid #333333;
     border-right: 1px solid #333333;
   }
-  /* line 178, _header.scss */
+  /* line 175, _header.scss */
   #navigation-wrapper li:last-of-type {
     border-bottom: none;
   }
-  /* line 181, _header.scss */
+  /* line 178, _header.scss */
   #navigation-wrapper li + li {
     margin: 0 0 0 0;
   }
-  /* line 184, _header.scss */
+  /* line 181, _header.scss */
   #navigation-wrapper li a {
     display: inline-block;
     width: 100%;
     padding: 0 0 0 4.172767203513909%;
   }
-  /* line 188, _header.scss */
+  /* line 185, _header.scss */
   #navigation-wrapper li a:hover {
     background: #262626;
   }

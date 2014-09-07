@@ -51,9 +51,6 @@
   }
 }
 
-/* hack for advanced checkbox hack for android devices
- check for performance, looks well dodgy
- */
 @media (max-width: $media_breakpoint_tablet) and (-webkit-min-device-pixel-ratio: 1.5) {
 
   body {

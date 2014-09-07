@@ -49,9 +49,9 @@
      * @private
      */
 
-    _filterBlogPosts = function (blogs) {
+    _filterBlogPosts = function () {
 
-      return _.chain(blogs)
+      return _.chain(this.$scope.blogPosts)
         .filter(function (item) {
 
           if (_.isString(item.category) && item.category.toLowerCase() === category) {
@@ -65,9 +65,11 @@
 
     this.$scope.$watch('blogPosts', function(newData) {
 
+      console.dir(newData);
+
       if(newData !== null) {
 
-        this.$scope.totalBlogPosts = _filterBlogPosts(newData);
+        this.$scope.totalBlogPosts = _filterBlogPosts();
 
       }
 
@@ -83,7 +85,7 @@
 
       // if not empty redirect to 404
       // TODO: move this server side
-      this.$location.path('/#!/');
+      //this.$location.path('/#!/');
 
     }
 

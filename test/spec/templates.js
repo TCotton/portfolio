@@ -152,7 +152,7 @@ describe('Unit: Templates - logged in', function () {
   it('loads category page at /blog/css', function () {
     $httpBackend.expectGET('views/blog_category.html')
       .respond(200);
-    location.path('/blog/css');
+    location.path('/category/css');
     rootScope.$digest(); // call the digest loop
     $httpBackend.flush();
   });
