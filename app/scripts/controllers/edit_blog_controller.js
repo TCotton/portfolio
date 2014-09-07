@@ -179,14 +179,11 @@
 
         // reset scope to remove values from input fields
         // loop over form field models
-        for (var key in this.$scope.editBlogFormData) {
+        Object.keys(this.$scope.editBlogFormData).forEach(function (key) {
 
-          if (this.$scope.editBlogFormData.hasOwnProperty(key)) {
+          this.$scope.editBlogFormData[key] = null;
 
-            this.$scope.editBlogFormData[key] = null;
-
-          }
-        }
+        }.bind(this));
 
         // hide form with ng-if
         this.$scope.displayForm = false;

@@ -26,22 +26,20 @@ angular.module('portfolioApp.directives').directive('sliderDirective', ['SLIDER'
       $scope.slideController = {
         currentSlide: 0,
 
-
         sliderForMethod: function (sliderNumber) {
           // loops through SLIDER constant and finds the right child objects
 
-          for (var key in SLIDER) {
+          Object.keys(SLIDER).forEach(function (key) {
 
-            if (SLIDER.hasOwnProperty(key)) {
+            if (key.indexOf(sliderNumber) !== -1) {
 
-              if (key.indexOf(sliderNumber) !== -1) {
+              $scope.slider = SLIDER[key];
+              $scope.slider.sliderClass = 'slider' + sliderNumber;
 
-                $scope.slider = SLIDER[key];
-                $scope.slider.sliderClass = 'slider' + sliderNumber;
-
-              }
             }
-          }
+
+          });
+
         },
 
         sliderStartMethod: function () {
