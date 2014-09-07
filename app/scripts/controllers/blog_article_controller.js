@@ -26,7 +26,6 @@
      * **/
     if ($angularCacheFactory.get('blogCache').get('allBlogPosts')) {
       this.$scope.oldBlogPosts = $angularCacheFactory.get('blogCache').get('allBlogPosts');
-      this.populatePage();
     }
 
     BlogDataService.retrieveData().then(function (result) {
@@ -34,7 +33,6 @@
       if (_.isObject(result.data.BlogPosts)) {
 
         this.$scope.oldBlogPosts = result.data.BlogPosts;
-        this.populatePage();
 
       }
 

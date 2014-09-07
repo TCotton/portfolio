@@ -66,7 +66,7 @@ describe('Routes test with log in', function () {
     it('should load the blog page on successful load of /blog/136324/using-autoload-in-object-orientated-wordpress-plugin', function () {
       location.path('/blog/136324/using-autoload-in-object-orientated-wordpress-plugin');
       rootScope.$digest(); // call the digest loop
-      expect(route.current.controller).toBe('BlogArticleCtrl');
+      expect(route.current.controller).toBe('BlogArticleCtrl as BlogArticlePageCtrl');
     });
 
   });

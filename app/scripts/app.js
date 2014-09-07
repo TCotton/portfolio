@@ -54,7 +54,7 @@ angular.module('portfolioApp', ['portfolioApp.controllers', 'portfolioApp.direct
       })
       .when('/blog/:blogId/:blogPage', {
         templateUrl: 'views/blog_page.html',
-        controller: 'BlogArticleCtrl'
+        controller: 'BlogArticleCtrl as BlogArticlePageCtrl'
       })
       .when('/category/:category', {
         templateUrl: 'views/blog_category.html',
