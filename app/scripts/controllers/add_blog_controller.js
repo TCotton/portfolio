@@ -152,9 +152,9 @@
 
         // reset scope to remove values from input fields
         // loop over form field models
-        Object.keys(this.$scope.commentFormData).forEach(function (key) {
+        Object.keys(this.$scope.addBlogFormData).forEach(function (key) {
 
-          this.$scope.commentFormData[key] = null;
+          this.$scope.addBlogFormData[key] = null;
 
         }.bind(this));
 
