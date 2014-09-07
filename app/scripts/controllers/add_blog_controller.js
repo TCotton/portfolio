@@ -93,8 +93,9 @@
 
         var regEx = new RegExp('\\b\\s' + stopwords[x] + '\\s\\b', 'g');
         var regExTwo = new RegExp('^' + stopwords[x] + '\\s\\b');
+        var regExThree = new RegExp('\\s\\b' + stopwords[x] + '$');
 
-        newTitle = newTitle.replace(regEx, '-').trim().replace(regExTwo, '');
+        newTitle = newTitle.replace(regEx, '-').trim().replace(regExTwo, '').replace(regExThree, '');
 
         x += 1;
 
