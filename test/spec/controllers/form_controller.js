@@ -54,6 +54,16 @@ describe('Controller: FormCtrl', function () {
 
   });
 
+  it('Check for local scope changes if form submission has failed', function () {
+
+    scope.$apply(function () {
+      AdminFormCtrl.submitContactForm(false);
+    });
+
+    expect(scope.formFailure).toBeDefined();
+
+  });
+
   // check validation
   // make sure anonymous filter function is removing right string elements
 
