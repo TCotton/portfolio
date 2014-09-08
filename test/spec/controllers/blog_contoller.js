@@ -45,9 +45,6 @@ describe('Controller: BlogCtrl as BlogIndexCtrl', function () {
       storageMode: 'sessionStorage'
     });
 
- /*   $location.path('/category/angularjs');
-    $rootScope.$digest(); // call the digest loop*/
-
     scope = $rootScope.$new();
 
     BlogIndexCtrl = $controller('BlogCtrl as BlogIndexCtrl', {

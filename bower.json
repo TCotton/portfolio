@@ -5,7 +5,6 @@
     "underscore": "~1.6.0",
     "angular": "1.2.23",
     "angular-resource": "1.2.23",
-    "angular-cookies": "1.2.23",
     "angular-sanitize": "1.2.23",
     "angular-route": "1.2.23",
     "angular-cache": "~2.3.3",
