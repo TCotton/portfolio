@@ -11,7 +11,6 @@
 
     this.$scope = $scope;
 
-    this.$scope.returnObject = null;
     this.$scope.displayPosts = 5;
 
     /** Either receive data from BlogDataService or from the cache

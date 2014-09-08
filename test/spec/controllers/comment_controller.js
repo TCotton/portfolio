@@ -33,7 +33,10 @@ describe('Controller: CommentCtrl as BlogCommentCtrl', function () {
 
     scope.commentFormData = MOCK_DATA.commentDetails;
 
-    returnedCommentData = [{'name':'John Williams','email':'andy_walpole@btopenworld.com','url':'http://portfolio-12501.onmodulus.net/#!/','message':'This is a message here','blogId':'139938','published':true,'publishedDate':'2014-05-19T17:54:14.384Z','_id':'537a4546fd2831630749de1b','__v':0},{'name':'John Williams','email':'andy_walpole@btopenworld.com','url':'http://andywalpole.me/#!/blog/137153/books-helped-become-professional-web-developer','message':'This is another comment message here','blogId':'139938','published':true,'publishedDate':'2014-05-19T17:55:09.537Z','_id':'537a457dfd2831630749de1c','__v':0}];
+    returnedCommentData = [
+      {'name': 'John Williams', 'email': 'andy_walpole@btopenworld.com', 'url': 'http://portfolio-12501.onmodulus.net/#!/', 'message': 'This is a message here', 'blogId': '139938', 'published': true, 'publishedDate': '2014-05-19T17:54:14.384Z', '_id': '537a4546fd2831630749de1b', '__v': 0},
+      {'name': 'John Williams', 'email': 'andy_walpole@btopenworld.com', 'url': 'http://andywalpole.me/#!/blog/137153/books-helped-become-professional-web-developer', 'message': 'This is another comment message here', 'blogId': '139938', 'published': true, 'publishedDate': '2014-05-19T17:55:09.537Z', '_id': '537a457dfd2831630749de1c', '__v': 0}
+    ];
 
   }));
 
@@ -57,6 +60,8 @@ describe('Controller: CommentCtrl as BlogCommentCtrl', function () {
     expect(scope.commentFormData.url).toBe(null);
     expect(scope.commentFormData.message).toBe(null);
     expect(scope.commentBlogFormSubmit).toBe(false);
+    expect(scope.formFailure).toBe(null);
+    expect(scope.formSuccess).toBeDefined();
 
   });
 
@@ -73,10 +78,17 @@ describe('Controller: CommentCtrl as BlogCommentCtrl', function () {
     $httpBackend.flush();
 
     expect(scope.publishComments).toEqual(returnedCommentData);
-    
+
   });
 
-  // check that spam trap works
-  // check validation of
+  it('Check for local scope changes if form submission has failed', function () {
+
+    scope.$apply(function () {
+      BlogCommentCtrl.submitComment(false);
+    });
+
+    expect(scope.formFailure).toBeDefined();
+
+  });
 
 });
