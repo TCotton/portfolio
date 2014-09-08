@@ -53,20 +53,25 @@
       // sanitise and remove naughty spam stuff from email
       // TODO: move to server
       formData = _.object(_.map(this.$scope.contact, function (value, key) {
-        var x, l, badValues = ['to:', 'cc:', 'bcc:', 'content-type:', 'mime-version:', 'multipart-mixed:', 'content-transfer-encoding:'];
 
-        if (value !== null) {
-
-          for (x = 0, l = badValues.length; x < l; x += 1) {
-            var regEx = new RegExp(badValues[x], 'gi');
-            value = value.replace(regEx, '');
-          }
-
-          value = this.$sanitize(value).trim();
-        }
+        value = this.$sanitize(value).trim();
 
         return [key, value];
       }.bind(this)));
+
+      var _replaceSubstring = function (inSource, inToReplace, inReplaceWith) {
+
+        var outString = inSource;
+        while (true) {
+          var idx = outString.indexOf(inToReplace);
+          if (idx === -1) {
+            break;
+          }
+          outString = outString.substring(0, idx) + inReplaceWith + outString.substring(idx + inToReplace.length);
+        }
+        return outString;
+
+      };
 
       promise = this.PostFormService.submitForm(formData);
 

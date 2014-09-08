@@ -27,6 +27,7 @@ describe('Controller: FormCtrl', function () {
   }));
 
 
+
   it('Checks that scope changes to true after data is passed to the submitContactForm method', function () {
 
     scope.contact = {};
@@ -51,16 +52,6 @@ describe('Controller: FormCtrl', function () {
     expect(scope.contact.successMessageDisable).toContain(formDataSuccess.success);
 
     expect(scope.submitted).toBe(false);
-
-  });
-
-  it('Check for local scope changes if form submission has failed', function () {
-
-    scope.$apply(function () {
-      AdminFormCtrl.submitContactForm(false);
-    });
-
-    expect(scope.formFailure).toBeDefined();
 
   });
 

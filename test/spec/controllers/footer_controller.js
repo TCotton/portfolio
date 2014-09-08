@@ -48,8 +48,6 @@ describe('Controller: "FooterCtrl as FooterInherCtrl', function () {
       $scope: scope
     });
 
-    //scope.blogPosts = MOCK_DATA.allBlogData.data;
-
     $httpBackend.expect('GET', '/api/newsblur/get').respond(200, newsBlurResponse);
 
     scope.$apply(function () {
