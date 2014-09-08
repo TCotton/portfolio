@@ -21,7 +21,7 @@ describe('Controller: BlogArticleCtrl as BlogArticlePageCtrl', function () {
   var $angularCacheFactory;
   var $location;
 
-  beforeEach(module('testConstants', 'portfolioApp.controllers', 'portfolioApp.directives', 'portfolioApp.services', 'portfolioApp.filters', 'AppConstants', 'ngCookies', 'ngResource', 'ngSanitize', 'ngRoute', 'HashBangURLs', 'portfolioAppConfig', 'jmdobry.angular-cache'));
+  beforeEach(module('testConstants', 'portfolioApp.controllers', 'portfolioApp.services', 'AppConstants', 'ngSanitize', 'ngRoute', 'HashBangURLs', 'portfolioAppConfig', 'jmdobry.angular-cache'));
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function (_$controller_, _$rootScope_, _MOCK_DATA_, _$httpBackend_, _$q_, _$angularCacheFactory_, _$location_) {
@@ -86,8 +86,6 @@ describe('Controller: BlogArticleCtrl as BlogArticlePageCtrl', function () {
 
 
   });
-
-
 
 
 });
