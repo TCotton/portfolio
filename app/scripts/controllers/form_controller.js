@@ -59,19 +59,6 @@
         return [key, value];
       }.bind(this)));
 
-      var _replaceSubstring = function (inSource, inToReplace, inReplaceWith) {
-
-        var outString = inSource;
-        while (true) {
-          var idx = outString.indexOf(inToReplace);
-          if (idx === -1) {
-            break;
-          }
-          outString = outString.substring(0, idx) + inReplaceWith + outString.substring(idx + inToReplace.length);
-        }
-        return outString;
-
-      };
 
       promise = this.PostFormService.submitForm(formData);
 
