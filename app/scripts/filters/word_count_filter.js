@@ -3,9 +3,9 @@
  */
 'use strict';
 angular.module('portfolioApp.filters').filter('wordcount', function() {
-  return function() {
+  return function(input) {
 
-    var s = document.querySelector('section > div').innerText || document.querySelector('section > div').textContent;
+    var s = input;
     s = s.replace(/(^\s*)|(\s*$)/gi,'');
     s = s.replace(/[ ]{2,}/gi,' ');
     s = s.replace(/\n /,'\n');

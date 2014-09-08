@@ -74,7 +74,7 @@
       this.$scope.URLencoded = encodeURIComponent(this.$rootScope.currentPage);
       this.$rootScope.faceBookDescription = blogPost[0].contentSnippet;
       this.$timeout(function() {
-        this.$scope.wordCount = this.$filter('wordcount')();
+        this.$scope.wordCount = this.$filter('wordcount')(document.querySelector('section > div').innerText || document.querySelector('section > div').textContent);
       }.bind(this),0);
     } else {
 

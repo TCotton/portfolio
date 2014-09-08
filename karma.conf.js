@@ -17,8 +17,6 @@ module.exports = function(config) {
       'app/components/angular-cookies/angular-cookies.js',
       'app/components/angular-sanitize/angular-sanitize.js',
       'app/components/angular-route/angular-route.js',
-      'app/components/angular-touch/angular-touch.js',
-      'app/components/angular-animate/angular-animate.js',
       'app/components/underscore/underscore.js',
       'app/components/angular-cache/dist/angular-cache.js',
       'app/components/moment/moment.js',
