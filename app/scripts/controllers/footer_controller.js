@@ -48,8 +48,6 @@
 
     }.bind(this);
 
-    this.loadData();
-
   };
 
   FooterCtrl.$inject = ['$scope', '$log', 'NewsBlurService'];

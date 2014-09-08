@@ -35,7 +35,7 @@ angular.module('portfolioApp', ['portfolioApp.controllers', 'portfolioApp.direct
       </a>
     </div>
 
-    <div data-ng-if="hideFooter" id="recommended-article" data-ng-controller="FooterCtrl">
+    <div data-ng-if="hideFooter" id="recommended-article" data-ng-controller="FooterCtrl as FooterInherCtrl" data-ng-init="FooterInherCtrl.loadData()">
 
       <a data-ng-if="recArticle.link" data-ng-href="{{recArticle.link}}" target="_blank">
         <header>Latest recommended article: <em><span data-ng-bind="recArticle.title"></span></em>
