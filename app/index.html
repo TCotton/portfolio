@@ -11,24 +11,7 @@
   <meta name="fragment" content="!">
   <base href="/">
 
-  <meta name="prerender-status-code" content="{{status}}"/>
-
-  <meta data-ng-if="hideFooter" property="og:site_name" content="blog unblock - blog of web developer. Andy Walpole/">
-  <meta data-ng-if="hideFooter" property="og:title" content="{{pageTitle}}"/>
-  <meta data-ng-if="hideFooter" property="og:url" content="{{canonical}}"/>
-  <meta data-ng-if="hideFooter" property="og:description" content="{{faceBookDescription}}"/>
-  <meta data-ng-if="hideFooter" name="description" content="{{faceBookDescription}}">
-
-  <link rel="canonical" href="{{canonical}}" />
-
-  <link rel="alternate" type="application/rss+xml" title="blog unblock - the Blog of Web Developer Andy Walpole" href="https://andywalpole.me/rss.xml" />
-
-  <meta name="msvalidate.01" content="A3327273DCF9CE62812809732D9A73A1" />
-  <meta name="google-site-verification" content="EXyskgWvwTgxI78g2kK5NqdjMZyIA1p4e5dm-nuK20c" />
-
-  <!-- build:css({.tmp,app}) styles/main.css -->
-  <link rel="stylesheet" href="styles/main.css">
-  <!-- endbuild -->
+  <link rel="stylesheet" href="styles/top.css?__inline=true">
 
   <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
   <script>
@@ -39,13 +22,57 @@
     });
   </script>
 
+  <script>
+    function loadCSS(c, b, d) {
+      var a = window.document.createElement("link");
+      b = b || window.document.getElementsByTagName("script")[0];
+      a.rel = "stylesheet";
+      a.href = c;
+      a.media = "only x";
+      b.parentNode.insertBefore(a, b);
+      setTimeout(function () {
+        a.media = d || "all"
+      });
+      return a
+    }
+
+    loadCSS("path/to/mystylesheet.css");
+  </script>
+
+  <!-- build:css({.tmp,app}) styles/main.css -->
+  <link rel="stylesheet" id="main-stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+
+  <meta name="prerender-status-code" content="{{status}}"/>
+
+  <meta data-ng-if="hideFooter" property="og:site_name" content="blog unblock - blog of web developer. Andy Walpole/">
+  <meta data-ng-if="hideFooter" property="og:title" content="{{pageTitle}}"/>
+  <meta data-ng-if="hideFooter" property="og:url" content="{{canonical}}"/>
+  <meta data-ng-if="hideFooter" property="og:description" content="{{faceBookDescription}}"/>
+  <meta data-ng-if="hideFooter" name="description" content="{{faceBookDescription}}">
+
+  <link rel="canonical" href="{{canonical}}"/>
+
+  <link rel="alternate" type="application/rss+xml" title="blog unblock - the Blog of Web Developer Andy Walpole"
+        href="https://andywalpole.me/rss.xml"/>
+
+  <meta name="msvalidate.01" content="A3327273DCF9CE62812809732D9A73A1"/>
+  <meta name="google-site-verification" content="EXyskgWvwTgxI78g2kK5NqdjMZyIA1p4e5dm-nuK20c"/>
+
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
   <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create','UA-1173435-13', {'cookieDomain': 'andywalpole.me', 'siteSpeedSampleRate': 100});
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-1173435-13', {'cookieDomain': 'andywalpole.me', 'siteSpeedSampleRate': 100});
   </script>
 
 </head>
@@ -79,7 +106,7 @@
           <a href="/#!/about-me" data-link="about-me">About Me</a>
         </li>
         <li>
-          <a href="/#!/contact-me" data-link="contant-me" >Contact Me</a>
+          <a href="/#!/contact-me" data-link="contant-me">Contact Me</a>
         </li>
         <li>
           <a href="/#!/blog/" data-link="blog/">Blog</a>
@@ -94,7 +121,8 @@
 
   <!--[if lte IE 8]>
   <div style="text-align:center">
-    <img src="images/blog-stock-images/internet_explorer.png" alt="message for internet explorer users informing them that this website does not work in their browser"/>
+    <img src="images/blog-stock-images/internet_explorer.png"
+         alt="message for internet explorer users informing them that this website does not work in their browser"/>
   </div>
   <![endif]-->
 
@@ -154,12 +182,14 @@
 <script src="scripts/directives/homepage_stats_directive.js"></script>
 <script src="scripts/directives/comment_directive.js"></script>
 <!-- endbuild -->
-<!--[if !IE]><!--><script>
+<!--[if !IE]><!-->
+<script>
   // terrible IE10 hack
   if (/*@cc_on!@*/false) {
-    document.documentElement.className+=' ie10';
+    document.documentElement.className += ' ie10';
   }
-</script><!--<![endif]-->
+</script>
+<!--<![endif]-->
 
 </body>
 </html>

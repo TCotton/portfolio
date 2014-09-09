@@ -132,6 +132,7 @@ module.exports = function (grunt) {
           lineNumbers: true
         },
         files: {
+          '<%= yeoman.app %>/styles/top.css': '<%= yeoman.app %>/styles/top.scss',
           '<%= yeoman.app %>/styles/main.css': '<%= yeoman.app %>/styles/main.scss'
         }
       },
@@ -141,6 +142,7 @@ module.exports = function (grunt) {
           lineNumbers: false
         },
         files: {
+          '<%= yeoman.dist %>/styles/top.css': '<%= yeoman.app %>/styles/top.scss',
           '<%= yeoman.dist %>/styles/main.css': '<%= yeoman.app %>/styles/main.scss'
         }
       }
@@ -272,6 +274,17 @@ module.exports = function (grunt) {
         ]
       }
     },
+
+    inline: {
+      dist: {
+        options:{
+          cssmin: true
+        },
+        src: ['<%= yeoman.app %>/index.html'],
+        dest: [ '<%= yeoman.dist %>/']
+      }
+    },
+
     // Copies remaining files to places other tasks can use
     copy: {
       dist: {
@@ -284,7 +297,7 @@ module.exports = function (grunt) {
             src: [
               '*.{ico,png,txt}',
               '.htaccess',
-              '*.html',
+     /*         '*.html',*/
               'views/{,*/}*.html',
               'components/**/*',
               'images/{,*/}*.{webp}',
@@ -343,9 +356,9 @@ module.exports = function (grunt) {
         'sass:dev'
       ],
       dist: [
-        'sass:dist'
-        /*     'imagemin',
-         'svgmin'*/
+        'sass:dist',
+        'imagemin',
+        'svgmin'
       ]
     },
     karma: {
@@ -396,7 +409,9 @@ module.exports = function (grunt) {
     'ngconstant:test',
     'express:test',
     'karma'
-    /*'validate-package'*/
+/*
+    'validate-package'
+*/
   ]);
 
   grunt.registerTask('build', [
@@ -412,10 +427,11 @@ module.exports = function (grunt) {
     'ngmin',
     'copy:dist',
     'cssmin',
+    'inline',
     'uglify',
     'rev',
-    'usemin',
-    'htmlmin'
+    'usemin'
+/*    'htmlmin'*/
   ]);
 
   grunt.registerTask('default', [

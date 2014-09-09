@@ -1,0 +1,27 @@
+@import "reset";
+@import "variables";
+@import "mixins";
+
+body {
+  font-size: #{$baseFontSize};
+  font-family: $baseFontFamily;
+  line-height: #{$baseLineHeight}em;
+}
+
+
+@include breakpoint("mobile") {
+
+  body {
+    font-size: 56.3%;
+    font-family: $baseFontFamily;
+    line-height: 2em;
+  }
+
+}
+
+@import "modules/svg";
+@import "modules/grid";
+@import "modules/typography";
+@import "header";
+@import "homepage";
+@import "banner";
