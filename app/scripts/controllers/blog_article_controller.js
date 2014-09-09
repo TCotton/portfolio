@@ -7,6 +7,20 @@
 
   var app = angular.module('portfolioApp.controllers');
 
+  /**
+   * @description For displaying individual blog posts
+   * @param $rootScope
+   * @param $scope
+   * @param $location
+   * @param BlogDataService
+   * @param $log
+   * @param $timeout
+   * @param $sce
+   * @param $angularCacheFactory
+   * @param $route
+   * @param $filter
+   * @constructor
+   */
   var BlogArticleCtrl = function ($rootScope, $scope, $location, BlogDataService, $log, $timeout, $sce, $angularCacheFactory, $route, $filter) {
 
     this.$rootScope = $rootScope;
@@ -54,6 +68,10 @@
     // find blogId number form the URL string, ie /#!/blog/136324/using-autoload-in-object-orientated-wordpress-plugin
     var blogId = this.$rootScope.currentPage.substring(this.$rootScope.currentPage.indexOf('/#!/') + 9, this.$rootScope.currentPage.indexOf('/#!/') + 15);
 
+    /**
+     * @type {function(this:BlogArticleCtrl)|*|Function}
+     * @private
+     */
     var _renderArticle = function () {
 
       var blogPost = _.filter(this.$scope.oldBlogPosts, function (o) {

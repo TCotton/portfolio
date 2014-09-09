@@ -13,6 +13,17 @@
   var _populateBlogScope;
   var _handleMediaMatch;
 
+  /**
+   * @description Displays blog posts and categories in blog sidebar
+   * @param $rootScope
+   * @param $scope
+   * @param $log
+   * @param BlogDataService
+   * @param $angularCacheFactory
+   * @param $window
+   * @param $timeout
+   * @constructor
+   */
   var SidebarCtrl = function ($rootScope, $scope, $log, BlogDataService, $angularCacheFactory, $window, $timeout) {
 
     $scope.blogData = null;
@@ -54,6 +65,13 @@
 
     /** Plucks category names from object and then sorts them by popularity
      * **/
+
+    /**
+     *
+     * @param blogPosts
+     * @returns {Array}
+     * @private
+     */
     _sortCategoriesByPopularity = function (blogPosts) {
 
       var newArray = {};

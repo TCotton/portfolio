@@ -6,6 +6,15 @@
 
   var app = angular.module('portfolioApp.controllers');
 
+  /**
+   * @description For displaying and the submission of blog comments
+   * @param $scope
+   * @param $rootScope
+   * @param MongoCommentService
+   * @param $log
+   * @param $timeout
+   * @constructor
+   */
   var CommentCtrl = function ($scope, $rootScope, MongoCommentService, $log, $timeout) {
 
     this.$scope = $scope;

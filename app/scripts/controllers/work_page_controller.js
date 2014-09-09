@@ -6,6 +6,15 @@
 
   var app = angular.module('portfolioApp.controllers');
 
+  /**
+   * @description Displays work projects
+   * @param $rootScope
+   * @param $scope
+   * @param $log
+   * @param WORK
+   * @param $window
+   * @constructor
+   */
   var WorkPageCtrl = function ($rootScope, $scope, $log, WORK, $window) {
 
     this.$rootScope = $rootScope;

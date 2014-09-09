@@ -9,6 +9,14 @@
 
   /** Declare private method variable names
    * **/
+
+  /**
+   * @description Admin access to blog comments
+   * @param $scope
+   * @param MongoCommentService
+   * @param $log
+   * @constructor
+   */
   var CommentAdminCtrl = function ($scope, MongoCommentService, $log) {
 
     this.$scope = $scope;

@@ -16,6 +16,13 @@
   var _createContentSnippet;
   var _addSEOFriendlyURL;
 
+  /**
+   * @description for editing or deleting blog articles
+   * @param $scope
+   * @param $log
+   * @param MongoBlogService
+   * @constructor
+   */
   var EditBlogCtrl = function ($scope, $log, MongoBlogService) {
 
     this.$scope = $scope;

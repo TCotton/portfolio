@@ -9,6 +9,13 @@
 
   var _createContentSnippet;
 
+  /**
+   * @description For displaying recommended blog article using data from the NewsBlur API
+   * @param $scope
+   * @param $log
+   * @param NewsBlurService
+   * @constructor
+   */
   var FooterCtrl = function ($scope, $log, NewsBlurService) {
 
     this.$scope = $scope;
@@ -29,6 +36,11 @@
       value: NewsBlurService
     });
 
+    /**
+     * @description Creates text snippet from the beginning of the article
+     * @type {function(this:FooterCtrl)|*|Function}
+     * @private
+     */
     _createContentSnippet = function (title) {
 
       // to create a codeSnippet cut down the content to around 130 characters without cutting a whole word in half

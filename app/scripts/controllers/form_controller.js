@@ -8,6 +8,13 @@
 
   var app = angular.module('portfolioApp.controllers');
 
+  /**
+   * @description Contact me form submission
+   * @param $scope
+   * @param PostFormService
+   * @param $sanitize
+   * @constructor
+   */
   var FormCtrl = function ($scope, PostFormService, $sanitize) {
 
     this.$scope = $scope;

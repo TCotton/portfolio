@@ -9,6 +9,13 @@
 
   var app = angular.module('portfolioApp.controllers');
 
+  /**
+   * @description Admin access to users
+   * @param $scope
+   * @param $log
+   * @param MongoUserService
+   * @constructor
+   */
   var UserDetailsCtrl = function ($scope, $log, MongoUserService) {
 
     this.$scope = $scope;

@@ -6,6 +6,15 @@
 
   var app = angular.module('portfolioApp.controllers');
 
+  /**
+   * @description Personal projects page
+   * @param $rootScope
+   * @param $scope
+   * @param $log
+   * @param PROJECTS
+   * @param $window
+   * @constructor
+   */
   var ProjectsPageCtrl = function ($rootScope, $scope, $log, PROJECTS, $window) {
 
     this.$rootScope = $rootScope;

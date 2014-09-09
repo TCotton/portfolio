@@ -6,6 +6,16 @@
 
   var app = angular.module('portfolioApp.controllers');
 
+  /**
+   * @description Admin login form
+   * @param $rootScope
+   * @param $scope
+   * @param $log
+   * @param $location
+   * @param MongoUserService
+   * @param $angularCacheFactory
+   * @constructor
+   */
   var LoginCtrl = function ($rootScope, $scope, $log, $location, MongoUserService, $angularCacheFactory) {
 
     this.$rootScope = $rootScope;

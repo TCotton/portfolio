@@ -9,6 +9,15 @@
 
   var _sortCategoriesByPopularity;
 
+  /**
+   * @description For displaying a HTML sitemap
+   * @param $rootScope
+   * @param $scope
+   * @param $log
+   * @param BlogDataService
+   * @param $angularCacheFactory
+   * @constructor
+   */
   var SitemapCtrl = function ($rootScope, $scope, $log, BlogDataService, $angularCacheFactory) {
 
     /** Either receive data from BlogDataService or from the cache
@@ -28,7 +37,6 @@
         $scope.blogData = result.data.BlogPosts;
 
       }
-
 
     }, function (response) {
 

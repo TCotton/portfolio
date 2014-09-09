@@ -9,6 +9,16 @@
 
   var _filterBlogPosts;
 
+  /**
+   * @description For displaying posts in their respective categories
+   * @param $scope
+   * @param $location
+   * @param BlogDataService
+   * @param $log
+   * @param $angularCacheFactory
+   * @param $rootScope
+   * @constructor
+   */
   var BlogCatController = function ($scope, $location, BlogDataService, $log, $angularCacheFactory, $rootScope) {
 
     this.$scope = $scope;

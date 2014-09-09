@@ -7,6 +7,13 @@
 
   var app = angular.module('portfolioApp.controllers');
 
+  /**
+   * @description Blog home page
+   * @param $scope
+   * @param BlogDataService
+   * @param $angularCacheFactory
+   * @constructor
+   */
   var BlogCtrl = function ($scope, BlogDataService, $angularCacheFactory) {
 
     this.$scope = $scope;
