@@ -18,9 +18,11 @@
     this.$route = $route;
     this.$filter = $filter;
 
+    this.$scope.oldBlogPosts = null;
     this.$scope.title = null;
     this.$scope.content = null;
     this.$scope.aside = null;
+    this.$scope.article = null;
 
     /** Load blog data from either the service or cache and then populate the page with the values
      * **/
@@ -52,37 +54,52 @@
     // find blogId number form the URL string, ie /#!/blog/136324/using-autoload-in-object-orientated-wordpress-plugin
     var blogId = this.$rootScope.currentPage.substring(this.$rootScope.currentPage.indexOf('/#!/') + 9, this.$rootScope.currentPage.indexOf('/#!/') + 15);
 
-    var blogPost = _.filter(this.$scope.oldBlogPosts, function (o) {
+    var _renderArticle = function () {
 
-      // filter articles array to find the correct article for the page
-      if (o.publishedDate.substring(0, 6) === blogId) {
+      var blogPost = _.filter(this.$scope.oldBlogPosts, function (o) {
 
-        return o.publishedDate;
+        // filter articles array to find the correct article for the page
+        if (o.publishedDate.substring(0, 6) === blogId) {
+
+          return o.publishedDate;
+        }
+      });
+
+      if (!_.isEmpty(blogPost) && this.$rootScope.currentPage.indexOf(blogPost[0].url) !== -1) {
+
+        this.$scope.title = blogPost[0].title;
+        this.$rootScope.pageTitle = blogPost[0].title;
+        this.$scope.content = this.$sce.trustAsHtml(blogPost[0].content);
+        this.$scope.aside = this.$sce.trustAsHtml(blogPost[0].aside);
+        this.$scope.displayImage = blogPost[0].displayImage;
+        this.$scope.publishedDate = blogPost[0].publishedDate;
+        this.$scope.commentsOpen = blogPost[0].commentsOpen;
+        this.$scope.category = blogPost[0].category || 'General';
+        this.$scope.URLencoded = encodeURIComponent(this.$rootScope.currentPage);
+        this.$rootScope.faceBookDescription = blogPost[0].contentSnippet;
+        this.$timeout(function () {
+          this.$scope.wordCount = this.$filter('wordcount')(document.querySelector('section > div').innerText || document.querySelector('section > div').textContent);
+        }.bind(this), 0);
+
+      } else {
+
+        // if not empty redirect to homepage
+        // TODO: move this server side
+        this.$location.path('/#!/');
+
       }
+
+    }.bind(this);
+
+    this.$scope.$watch('oldBlogPosts', function (blogData) {
+
+      if (blogData !== null) {
+
+        _renderArticle();
+
+      }
+
     });
-
-    if (!_.isEmpty(blogPost) && this.$rootScope.currentPage.indexOf(blogPost[0].url) !== -1) {
-
-      this.$scope.title = blogPost[0].title;
-      this.$rootScope.pageTitle = blogPost[0].title;
-      this.$scope.content = this.$sce.trustAsHtml(blogPost[0].content);
-      this.$scope.aside = this.$sce.trustAsHtml(blogPost[0].aside);
-      this.$scope.displayImage = blogPost[0].displayImage;
-      this.$scope.publishedDate = blogPost[0].publishedDate;
-      this.$scope.commentsOpen = blogPost[0].commentsOpen;
-      this.$scope.category = blogPost[0].category || 'General';
-      this.$scope.URLencoded = encodeURIComponent(this.$rootScope.currentPage);
-      this.$rootScope.faceBookDescription = blogPost[0].contentSnippet;
-      this.$timeout(function() {
-        this.$scope.wordCount = this.$filter('wordcount')(document.querySelector('section > div').innerText || document.querySelector('section > div').textContent);
-      }.bind(this),0);
-    } else {
-
-      // if not empty redirect to homepage
-      // TODO: move this server side
-      this.$location.path('/#!/');
-
-    }
 
   };
 
