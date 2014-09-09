@@ -109,6 +109,33 @@ module.exports = function (grunt) {
       }
     },
 
+    taskHelper: {
+      editHtml: {
+        options: {
+          handlerByContent: function (contentSrc, options) {
+
+            // document.styleSheets[0]
+            // document.styleSheets[0].href
+            // document.getElementsByTagName('script')[2];
+            // element.insertAdjacentHTML('beforeend', text)
+            // resetSearch.parentNode.removeChild(resetSearch);
+            // loadCSS("path/to/mystylesheet.css");
+
+            var styleSheet = document.styleSheets[0];
+            var scriptTag = document.getElementsByTagName('script')[2];
+            var htmlStrip = 'loadCSS("' + styleSheet.href + '");';
+
+            styleSheet.parentNode.removeChild(styleSheet);
+
+            return contentSrc.replace(/loadCSS("path\/to\/mystylesheet.css");/, htmlStrip);
+          }
+        },
+        cwd: '<%= yeoman.dist %>',
+        src: 'index.html',
+        dest: '<%= yeoman.dist %>'
+      }
+    },
+
 
     bowerInstall: {
 
@@ -430,7 +457,7 @@ module.exports = function (grunt) {
     'inline',
     'uglify',
     'rev',
-    'usemin'
+    'usemin',
 /*    'htmlmin'*/
   ]);
 

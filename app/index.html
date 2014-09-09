@@ -22,27 +22,6 @@
     });
   </script>
 
-  <script>
-    function loadCSS(c, b, d) {
-      var a = window.document.createElement("link");
-      b = b || window.document.getElementsByTagName("script")[0];
-      a.rel = "stylesheet";
-      a.href = c;
-      a.media = "only x";
-      b.parentNode.insertBefore(a, b);
-      setTimeout(function () {
-        a.media = d || "all"
-      });
-      return a
-    }
-
-    loadCSS("path/to/mystylesheet.css");
-  </script>
-
-  <!-- build:css({.tmp,app}) styles/main.css -->
-  <link rel="stylesheet" id="main-stylesheet" href="styles/main.css">
-  <!-- endbuild -->
-
   <meta name="prerender-status-code" content="{{status}}"/>
 
   <meta data-ng-if="hideFooter" property="og:site_name" content="blog unblock - blog of web developer. Andy Walpole/">
@@ -133,6 +112,10 @@
 </div>
 
 <!-- end container -->
+
+<!-- build:css({.tmp,app}) styles/main.css -->
+<link rel="stylesheet" id="main-stylesheet" href="styles/main.css">
+<!-- endbuild -->
 
 <!-- build:js scripts/vendor.js -->
 <!-- bower:js -->
