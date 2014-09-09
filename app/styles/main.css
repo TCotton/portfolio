@@ -701,7 +701,6 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     -webkit-transform: scaleX(1);
   }
 }
-
 @keyframes fadeIn {
   /* line 107, _aboutme.scss */
   from {
@@ -715,7 +714,6 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     transform: scaleX(1);
   }
 }
-
 @-webkit-keyframes shake {
   /* line 118, _aboutme.scss */
   0% {
@@ -772,7 +770,6 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     -webkit-transform: translate(1px, -2px) rotate(-1deg);
   }
 }
-
 @keyframes shake {
   /* line 154, _aboutme.scss */
   0% {
@@ -829,7 +826,6 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     transform: translate(1px, -2px) rotate(-1deg);
   }
 }
-
 @media (max-width: 979px) {
   /* line 194, _aboutme.scss */
   .aboutme section {
@@ -923,7 +919,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   height: 0;
   overflow: hidden;
 }
-/* line 62, _blog.scss */
+/* line 60, _blog.scss */
 .blog article .video-container iframe,
 .blog article .video-container object,
 .blog article .video-container embed {
@@ -1405,7 +1401,6 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     transform: scale(1) rotate(0);
   }
 }
-
 @keyframes tada {
   /* line 133, _admin.scss */
   0% {
@@ -1442,7 +1437,6 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     transform: scale(1) rotate(0);
   }
 }
-
 /* line 164, _admin.scss */
 .admin-comments .comment-block {
   border-bottom: 1px solid #cccccc;
@@ -1582,9 +1576,8 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
 
   @page {
     margin: 0.5cm;
-}
-
-  /* line 18, _print.scss */
+  }
+  /* line 17, _print.scss */
   a,
   a:visited {
     text-decoration: underline;
@@ -1604,13 +1597,13 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
    * Don't show links that are fragment identifiers,
    * or use the `javascript:` pseudo protocol
    */
-  /* line 36, _print.scss */
+  /* line 35, _print.scss */
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
     content: "" !important;
   }
 
-  /* line 42, _print.scss */
+  /* line 40, _print.scss */
   pre,
   blockquote,
   p {
@@ -1623,7 +1616,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     /* h5bp.com/t */
   }
 
-  /* line 51, _print.scss */
+  /* line 50, _print.scss */
   tr,
   img {
     page-break-inside: avoid;
@@ -1639,7 +1632,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     word-wrap: break-word;
   }
 
-  /* line 65, _print.scss */
+  /* line 63, _print.scss */
   p,
   h2,
   h3 {
@@ -1647,7 +1640,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     widows: 3;
   }
 
-  /* line 74, _print.scss */
+  /* line 70, _print.scss */
   h2,
   h3,
   h4,

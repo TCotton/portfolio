@@ -11,8 +11,6 @@
   <meta name="fragment" content="!">
   <base href="/">
 
-  <link rel="stylesheet" href="styles/top.css?__inline=true">
-
   <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
   <script>
     WebFont.load({
@@ -21,6 +19,10 @@
       }
     });
   </script>
+
+  <!-- build:css({.tmp,app}) styles/main.css -->
+  <link rel="stylesheet" id="main-stylesheet" href="styles/main.css">
+  <!-- endbuild -->
 
   <meta name="prerender-status-code" content="{{status}}"/>
 
@@ -112,10 +114,6 @@
 </div>
 
 <!-- end container -->
-
-<!-- build:css({.tmp,app}) styles/main.css -->
-<link rel="stylesheet" id="main-stylesheet" href="styles/main.css">
-<!-- endbuild -->
 
 <!-- build:js scripts/vendor.js -->
 <!-- bower:js -->

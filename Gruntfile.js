@@ -109,34 +109,6 @@ module.exports = function (grunt) {
       }
     },
 
-    taskHelper: {
-      editHtml: {
-        options: {
-          handlerByContent: function (contentSrc, options) {
-
-            // document.styleSheets[0]
-            // document.styleSheets[0].href
-            // document.getElementsByTagName('script')[2];
-            // element.insertAdjacentHTML('beforeend', text)
-            // resetSearch.parentNode.removeChild(resetSearch);
-            // loadCSS("path/to/mystylesheet.css");
-
-            var styleSheet = document.styleSheets[0];
-            var scriptTag = document.getElementsByTagName('script')[2];
-            var htmlStrip = 'loadCSS("' + styleSheet.href + '");';
-
-            styleSheet.parentNode.removeChild(styleSheet);
-
-            return contentSrc.replace(/loadCSS("path\/to\/mystylesheet.css");/, htmlStrip);
-          }
-        },
-        cwd: '<%= yeoman.dist %>',
-        src: 'index.html',
-        dest: '<%= yeoman.dist %>'
-      }
-    },
-
-
     bowerInstall: {
 
       target: {
@@ -159,7 +131,6 @@ module.exports = function (grunt) {
           lineNumbers: true
         },
         files: {
-          '<%= yeoman.app %>/styles/top.css': '<%= yeoman.app %>/styles/top.scss',
           '<%= yeoman.app %>/styles/main.css': '<%= yeoman.app %>/styles/main.scss'
         }
       },
@@ -169,7 +140,6 @@ module.exports = function (grunt) {
           lineNumbers: false
         },
         files: {
-          '<%= yeoman.dist %>/styles/top.css': '<%= yeoman.app %>/styles/top.scss',
           '<%= yeoman.dist %>/styles/main.css': '<%= yeoman.app %>/styles/main.scss'
         }
       }
@@ -302,16 +272,6 @@ module.exports = function (grunt) {
       }
     },
 
-    inline: {
-      dist: {
-        options:{
-          cssmin: true
-        },
-        src: ['<%= yeoman.app %>/index.html'],
-        dest: [ '<%= yeoman.dist %>/']
-      }
-    },
-
     // Copies remaining files to places other tasks can use
     copy: {
       dist: {
@@ -324,7 +284,7 @@ module.exports = function (grunt) {
             src: [
               '*.{ico,png,txt}',
               '.htaccess',
-     /*         '*.html',*/
+              '*.html',
               'views/{,*/}*.html',
               'components/**/*',
               'images/{,*/}*.{webp}',
@@ -447,18 +407,15 @@ module.exports = function (grunt) {
     'bowerInstall',
     'useminPrepare',
     'concurrent:dist',
-    'imagemin',
-    'svgmin',
     'ngconstant',
     'concat',
     'ngmin',
     'copy:dist',
     'cssmin',
-    'inline',
     'uglify',
     'rev',
     'usemin',
-/*    'htmlmin'*/
+    'htmlmin'
   ]);
 
   grunt.registerTask('default', [
