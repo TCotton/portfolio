@@ -68,7 +68,7 @@
       if (!_.isEmpty(blogPost) && this.$rootScope.currentPage.indexOf(blogPost[0].url) !== -1) {
 
         this.$scope.title = blogPost[0].title;
-        this.$rootScope.pageTitle = blogPost[0].title;
+        this.$rootScope.pageTitle = blogPost[0].title + ' / blog unblock';
         this.$scope.content = this.$sce.trustAsHtml(blogPost[0].content);
         this.$scope.aside = this.$sce.trustAsHtml(blogPost[0].aside);
         this.$scope.displayImage = blogPost[0].displayImage;
@@ -76,6 +76,7 @@
         this.$scope.commentsOpen = blogPost[0].commentsOpen;
         this.$scope.category = blogPost[0].category || 'General';
         this.$scope.URLencoded = encodeURIComponent(this.$rootScope.currentPage);
+        this.$rootScope.faceBookTitle = blogPost[0].title;
         this.$rootScope.faceBookDescription = blogPost[0].contentSnippet;
         this.$timeout(function () {
           this.$scope.wordCount = this.$filter('wordcount')(document.querySelector('section > div').innerText || document.querySelector('section > div').textContent);
