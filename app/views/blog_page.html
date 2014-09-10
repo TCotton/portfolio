@@ -18,7 +18,7 @@
         <h3 class="blog-title" data-ng-bind="title" itemprop="headline"></h3>
 
         <p class="date">
-          <span itemprop="author">Andy Walpole</span> /
+          <span data-ng-bind="author" itemprop="author"></span> /
           Category: <a data-ng-href="/#!/category/{{category.toLowerCase()}}" rel="tag" data-ng-bind="category" itemprop="keywords"></a> /
           <span data-ng-bind="publishedDate | date" itemprop="datePublished"></span> /
           <span data-ng-bind="wordCount" itemprop="wordCount"></span> words

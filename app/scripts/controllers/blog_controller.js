@@ -23,18 +23,22 @@
     /** Either receive data from BlogDataService or from the cache
      * **/
     if ($angularCacheFactory.get('blogCache').get('allBlogPosts')) {
+
       this.$scope.totalBlogPosts = $angularCacheFactory.get('blogCache').get('allBlogPosts');
+
+    } else {
+
+      BlogDataService.retrieveData().then(function (result) {
+
+        if (_.isObject(result.data.BlogPosts)) {
+
+          this.$scope.totalBlogPosts = result.data.BlogPosts;
+
+        }
+
+      }.bind(this));
+
     }
-
-    BlogDataService.retrieveData().then(function (result) {
-
-      if (_.isObject(result.data.BlogPosts)) {
-
-        this.$scope.totalBlogPosts = result.data.BlogPosts;
-
-      }
-
-    }.bind(this));
 
   };
 

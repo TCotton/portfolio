@@ -39,26 +39,30 @@
       /** Either receive data from BlogDataService or from the cache
        * **/
       if ($angularCacheFactory.get('blogCache').get('allBlogPosts')) {
+
         $scope.blogData = $angularCacheFactory.get('blogCache').get('allBlogPosts');
+
+      } else {
+
+        /** Take blog object from service ready to be used in the side bar lists
+         **/
+        BlogDataService.retrieveData().then(function (result) {
+
+          // retrieve blog data to be used in the ng-repeat directive in the sidebar
+          if (_.isObject(result.data.BlogPosts)) {
+
+            $scope.blogData = result.data.BlogPosts;
+
+          }
+
+        }, function (response) {
+
+          $log.warn('Error SidebarCtrl');
+          $log.warn(response);
+
+        });
+
       }
-
-      /** Take blog object from service ready to be used in the side bar lists
-       **/
-      BlogDataService.retrieveData().then(function (result) {
-
-        // retrieve blog data to be used in the ng-repeat directive in the sidebar
-        if (_.isObject(result.data.BlogPosts)) {
-
-          $scope.blogData = result.data.BlogPosts;
-
-        }
-
-      }, function (response) {
-
-        $log.warn('Error SidebarCtrl');
-        $log.warn(response);
-
-      });
 
     };
 

@@ -41,23 +41,27 @@
     /** Load blog data from either the service or cache and then populate the page with the values
      * **/
     if ($angularCacheFactory.get('blogCache').get('allBlogPosts')) {
+
       this.$scope.oldBlogPosts = $angularCacheFactory.get('blogCache').get('allBlogPosts');
+
+    } else {
+
+      BlogDataService.retrieveData().then(function (result) {
+
+        if (_.isObject(result.data.BlogPosts)) {
+
+          this.$scope.oldBlogPosts = result.data.BlogPosts;
+
+        }
+
+      }.bind(this), function (response) {
+
+        this.$log.warn('Error BlogArticleCtrl');
+        this.$log.warn(response);
+
+      }.bind(this));
+
     }
-
-    BlogDataService.retrieveData().then(function (result) {
-
-      if (_.isObject(result.data.BlogPosts)) {
-
-        this.$scope.oldBlogPosts = result.data.BlogPosts;
-
-      }
-
-    }.bind(this), function (response) {
-
-      this.$log.warn('Error BlogArticleCtrl');
-      this.$log.warn(response);
-
-    }.bind(this));
 
   };
 
@@ -86,8 +90,11 @@
       if (!_.isEmpty(blogPost) && this.$rootScope.currentPage.indexOf(blogPost[0].url) !== -1) {
 
         this.$scope.title = blogPost[0].title;
+        this.$scope.author = blogPost[0].author;
         this.$rootScope.pageTitle = blogPost[0].title + ' / blog unblock';
-        this.$scope.content = this.$sce.trustAsHtml(blogPost[0].content);
+        this.$timeout(function () {
+          this.$scope.content = this.$filter('prism')(blogPost[0].content);
+        }.bind(this), 0);
         this.$scope.aside = this.$sce.trustAsHtml(blogPost[0].aside);
         this.$scope.displayImage = blogPost[0].displayImage;
         this.$scope.publishedDate = blogPost[0].publishedDate;
@@ -110,11 +117,12 @@
 
     }.bind(this);
 
-    this.$scope.$watch('oldBlogPosts', function (blogData) {
+    var unregister = this.$scope.$watch('oldBlogPosts', function (blogData) {
 
       if (blogData !== null) {
 
         _renderArticle();
+        unregister();
 
       }
 

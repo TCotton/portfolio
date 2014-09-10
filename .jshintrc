@@ -32,6 +32,7 @@
     "getSlug": false,
     "spyOn": false,
     "iit": false,
-    "moment": false
+    "moment": false,
+    "Prism": false
   }
 }
