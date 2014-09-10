@@ -2,7 +2,7 @@
  * Created by awalpole on 10/09/2014.
  */
 'use strict';
-angular.module('portfolioApp.directives').directive('code', ['$timeout', function ($timeout) {
+angular.module('portfolioApp.directives').directive('code', [function () {
 
   function escapeAngleBrackets(text) {
     return text.replace(/</gi, '&lt;').replace(/>/gi, '&gt;');
@@ -22,19 +22,13 @@ angular.module('portfolioApp.directives').directive('code', ['$timeout', functio
     terminal: true,
     link: function (scope, element) {
 
-      console.log(scope);
+      var content = element.html();
+      content = escapeAngleBrackets(content);
+      content = trimSurroundingEmptyLines(content);
+      content = fixIndention(content);
+      element.html(content);
+      Prism.highlightElement(element[0]);
 
-      $timeout(function(){
-
-        var content = element.html();
-        content = escapeAngleBrackets(content);
-        content = trimSurroundingEmptyLines(content);
-        content = fixIndention(content);
-        element.html(content);
-        console.dir(element);
-        Prism.highlightElement(element.get(0));
-
-      },0);
 
     }
   };

@@ -92,7 +92,7 @@
         this.$scope.title = blogPost[0].title;
         this.$scope.author = blogPost[0].author;
         this.$rootScope.pageTitle = blogPost[0].title + ' / blog unblock';
-        this.$scope.content = this.$sce.trustAsHtml(blogPost[0].content);
+        this.$scope.content = blogPost[0].content;
         this.$scope.aside = this.$sce.trustAsHtml(blogPost[0].aside);
         this.$scope.displayImage = blogPost[0].displayImage;
         this.$scope.publishedDate = blogPost[0].publishedDate;
