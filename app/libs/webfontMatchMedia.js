@@ -101,7 +101,11 @@ window.webfontMatchMedia = (function (document, window, undefined) {
 
       } else {
 
-        this.handleMediaMatch();
+        return WebFont.load({
+          google: {
+            families: ['Open Sans:400,300,300italic,400italic,600,600italic,700,700italic', 'Yellowtail']
+          }
+        });
 
       }
 
@@ -118,9 +122,6 @@ window.webfontMatchMedia = (function (document, window, undefined) {
         this.stopTimer = setInterval(function () {
 
           if (WebFont) {
-
-            console.log('webfont loaded one');
-            console.dir(WebFont);
 
             webfontMatchMedia.loadMatchMedia();
 
@@ -140,10 +141,10 @@ window.webfontMatchMedia = (function (document, window, undefined) {
 
 }(document, window));
 
-window.webfontMatchMedia.init();
-
 if (WebFont) {
   window.webfontMatchMedia.loadMatchMedia();
+} else {
+  window.webfontMatchMedia.init();
 }
 
 
