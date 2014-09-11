@@ -600,8 +600,13 @@ body {
   line-height: 2.5em;
 }
 
+/* line 11, main.scss */
+#outer-content {
+  min-height: 500px;
+}
+
 @media (max-width: 767px) {
-  /* line 14, main.scss */
+  /* line 17, main.scss */
   body {
     font-size: 56.3%;
     font-family: 'Open Sans', sans-serif;

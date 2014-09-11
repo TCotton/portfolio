@@ -38,7 +38,7 @@ angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$locatio
 
     $rootScope.canonical = 'https://andywalpole.me/#!' + $location.path();
 
-    $rootScope.hideFooter = $rootScope.currentPage.indexOf('blog') !== -1;
+    $rootScope.hideFooter = $rootScope.currentPage.indexOf('blog') !== -1 || $rootScope.currentPage.indexOf('category') !== -1;
 
     // basic login detection service
     var admin = new RegExp('\/admin\/');

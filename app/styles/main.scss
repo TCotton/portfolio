@@ -8,6 +8,9 @@ body {
   line-height: #{$baseLineHeight}em;
 }
 
+#outer-content {
+  min-height: 500px;
+}
 
 @include breakpoint("mobile") {
 
