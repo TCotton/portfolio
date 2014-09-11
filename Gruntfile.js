@@ -228,6 +228,16 @@ module.exports = function (grunt) {
       }
     },
 
+    inline: {
+      dist: {
+        options:{
+          uglify: true
+        },
+        src: ['<%= yeoman.app %>/index.html'],
+        dest: ['<%= yeoman.dist %>/']
+      }
+    },
+
     // The following *-min tasks produce minified files in the dist folder
     imagemin: {
       dist: {
@@ -284,7 +294,6 @@ module.exports = function (grunt) {
             src: [
               '*.{ico,png,txt}',
               '.htaccess',
-              '*.html',
               'views/{,*/}*.html',
               'components/**/*',
               'images/{,*/}*.{webp}',
@@ -410,6 +419,7 @@ module.exports = function (grunt) {
     'ngconstant',
     'concat',
     'ngmin',
+    'inline',
     'copy:dist',
     'cssmin',
     'uglify',
