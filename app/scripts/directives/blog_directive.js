@@ -10,10 +10,16 @@ angular.module('portfolioApp.directives').directive('blogBlockDirective', [funct
     restrict: 'A',
     replace: true,
     scope: {
-      blog: '='
+      blog: '=',
+      srcset: '='
     },
     template: '<article>' +
-      '<header><a data-ng-href="/#!/blog/{{blog.uniqueId}}/{{blog.url}}"><img data-ng-src="/{{blog.displayImage}}" alt="" /></a></header>' +
+      '<header><a data-ng-href="/#!/blog/{{blog.uniqueId}}/{{blog.url}}">' +
+      '<picture>' +
+      '<source media="(max-width: 480px)" data-ng-srcset="{{srcset}}">' +
+      '<img data-ng-src="/{{blog.displayImage}}" alt="" />' +
+      '</picture>' +
+      '</a></header>' +
       '<section>' +
       '<h3 class="blog-title" data-ng-bind-html="blog.title"></h3>' +
       '<p class="date" data-ng-bind="blog.publishedDate | date"></p>' +
@@ -26,4 +32,3 @@ angular.module('portfolioApp.directives').directive('blogBlockDirective', [funct
   };
 
 }]);
-

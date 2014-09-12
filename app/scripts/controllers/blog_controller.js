@@ -51,13 +51,14 @@
 
     this.$scope.$watch('totalBlogPosts', function (newData) {
 
-      if(newData !== null && document.location.href && this.$scope.totalBlogPosts) {
+      if (newData !== null && document.location.href && this.$scope.totalBlogPosts) {
 
         var prerender = $filter('orderBy')(this.$scope.totalBlogPosts, '-publishedDate');
 
         $rootScope.prerender = document.location.href + prerender[0].uniqueId + '/' + prerender[0].url;
 
       }
+
 
     }.bind(this));
 
@@ -69,6 +70,26 @@
   BlogCtrl.prototype.morePosts = function () {
 
     this.$scope.displayPosts = this.$scope.displayPosts + 10;
+
+  };
+
+  BlogCtrl.prototype.srcsetImage = function (image) {
+
+    var newImage;
+
+    if (image.indexOf('stock-photo') !== -1) {
+
+      var dot = image.lastIndexOf('.');
+
+      newImage = '/' + image.slice(0, dot) + '-small' + image.slice(dot);
+
+    } else {
+
+      newImage = '/' + image;
+
+    }
+
+    return newImage;
 
   };
 

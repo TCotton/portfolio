@@ -12,7 +12,13 @@
 
     <article itemscope itemtype="http://schema.org/BlogPosting">
 
-      <header><img data-ng-src="/{{displayImage}}" alt=""/></header>
+      <header>
+
+        <picture>
+          <source media="(max-width: 480px)" data-ng-srcset="/{{displaySrcsetImage}}" >
+          <img data-ng-src="/{{displayImage}}" alt=""/>
+        </picture>
+      </header>
       <section>
 
         <h3 class="blog-title" data-ng-bind="title" itemprop="headline"></h3>

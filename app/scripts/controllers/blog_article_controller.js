@@ -95,6 +95,17 @@
         this.$scope.content = blogPost[0].content;
         this.$scope.aside = this.$sce.trustAsHtml(blogPost[0].aside);
         this.$scope.displayImage = blogPost[0].displayImage;
+        if (blogPost[0].displayImage.indexOf('stock-photo') !== -1) {
+
+          var dot = blogPost[0].displayImage.lastIndexOf('.');
+
+          this.$scope.displaySrcsetImage = blogPost[0].displayImage.slice(0, dot) + '-small' + blogPost[0].displayImage.slice(dot);
+
+        } else {
+
+          this.$scope.displaySrcsetImage = blogPost[0].displayImage;
+
+        }
         this.$scope.publishedDate = blogPost[0].publishedDate;
         this.$scope.commentsOpen = blogPost[0].commentsOpen;
         this.$scope.category = blogPost[0].category || 'General';

@@ -12,7 +12,7 @@
 
     <!-- repeat old blog posts here -->
     <div data-ng-repeat="blog in totalBlogPosts | orderBy: '-publishedDate' | limitTo: displayPosts  track by $index">
-      <div data-blog-block-directive blog="blog" index="$index"></div>
+      <div data-blog-block-directive blog="blog" srcset="BlogIndexCtrl.srcsetImage(blog.displayImage);"></div>
     </div>
 
     <div id="more-posts" class="clearfix" data-ng-click="BlogIndexCtrl.morePosts();">

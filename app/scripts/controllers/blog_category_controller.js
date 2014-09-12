@@ -117,6 +117,26 @@
 
   };
 
+  BlogCatController.prototype.srcsetImage = function (image) {
+
+    var newImage;
+
+    if (image.indexOf('stock-photo') !== -1) {
+
+      var dot = image.lastIndexOf('.');
+
+      newImage = '/' + image.slice(0, dot) + '-small' + image.slice(dot);
+
+    } else {
+
+      newImage = '/' + image;
+
+    }
+
+    return newImage;
+
+  };
+
   app.controller('BlogCatController', BlogCatController);
 
 }());

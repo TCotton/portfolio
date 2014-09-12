@@ -89,6 +89,7 @@
         "publishedDate": "1398005768000",
         "title": "Use SASS strategically and conservatively",
         "uniqueId": "139800",
+        "displayImage": "images/blog-stock-images/stock-photo-four.jpg",
         "url": "use-sass-strategically-conservatively"
       },
       {
@@ -101,6 +102,7 @@
         "publishedDate": "1398245771000",
         "title": "A new blog for a new era",
         "uniqueId": "139824",
+        "displayImage": "images/blog-stock-images/stock-photo-four.jpg",
         "url": "a-new-blog-for-new-era"
       },
       {
@@ -113,6 +115,7 @@
         "publishedDate": "1398319692000",
         "title": "AngularJS and CORs support in Internet Explorer 9",
         "uniqueId": "139831",
+        "displayImage": "images/blog-stock-images/stock-photo-four.jpg",
         "url": "angularjs-cors-support-internet-explorer-9"
       }
     ],
