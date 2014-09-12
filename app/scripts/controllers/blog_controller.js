@@ -42,9 +42,16 @@
 
     }
 
+    /**
+     * Will find the last written post and it to the header as prerender link:
+     * <link data-ng-if="prerender" rel="prerender" data-ng-href="{{prerender}}">
+     * Looking at Google stats then the last article written (that at the top of the list) is the most popular
+     *
+     */
+
     this.$scope.$watch('totalBlogPosts', function (newData) {
 
-      if(newData !== null && document.location.href) {
+      if(newData !== null && document.location.href && this.$scope.totalBlogPosts) {
 
         var prerender = $filter('orderBy')(this.$scope.totalBlogPosts, '-publishedDate');
 
