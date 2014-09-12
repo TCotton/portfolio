@@ -142,7 +142,7 @@
       // if last page then start loop all over again
       nextPage = !_.isEmpty(nextPage) ? nextPage : _.filter(this.WORK, function (o, k) {
 
-        if (k === 'blinkbox') {
+        if (k === 'elevaate') {
           return o;
         }
       });

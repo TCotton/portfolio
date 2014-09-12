@@ -16,27 +16,27 @@
   }
 
   .project-box-one {
-    background-image: $workOne;
+    background-image: $workSix;
   }
 
   .project-box-two {
-    background-image: $workTwo;
+    background-image: $workOne;
   }
 
   .project-box-three {
-    background-image: $workThree;
+    background-image: $workTwo;
   }
 
   .project-box-four {
-    background-image: $workFour;
+    background-image: $workThree;
   }
 
   .project-box-five {
-    background-image: $workFive;
+    background-image: $workFour;
   }
 
   .project-box-six {
-    visibility: hidden;
+    background-image: $workFive;
   }
 
   .project-box-one, .project-box-two, .project-box-three {
@@ -156,10 +156,10 @@
       width: 100%;
     }
 
-    .project-box-one, .project-box-two, .project-box-three, .project-box-four {
+    .project-box-one, .project-box-two, .project-box-three, .project-box-four, .project-box-five {
       margin-bottom: 30px;
     }
-    .project-box-five, .project-box-six {
+    .project-box-six {
       margin-bottom: 0;
     }
   }
@@ -187,7 +187,7 @@
       padding: 40px 0 0 0;
     }
 
-    .project-box-one, .project-box-two, .project-box-three, .project-box-four {
+    .project-box-one, .project-box-two, .project-box-three, .project-box-four, .project-box-five {
       margin-bottom: 20px;
     }
   }

@@ -144,7 +144,7 @@
     } else {
 
       _populateBlogScope();
- 
+
     }
 
   };

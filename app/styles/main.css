@@ -2230,27 +2230,27 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
 }
 /* line 18, _mywork.scss */
 .my-work .project-box-one {
-  background-image: url("/images/blinkbox-work.png");
+  background-image: url("/images/elevaate-work.png");
 }
 /* line 22, _mywork.scss */
 .my-work .project-box-two {
-  background-image: url("/images/reuters-japan-work.png");
+  background-image: url("/images/blinkbox-work.png");
 }
 /* line 26, _mywork.scss */
 .my-work .project-box-three {
-  background-image: url("/images/law-student-work.png");
+  background-image: url("/images/reuters-japan-work.png");
 }
 /* line 30, _mywork.scss */
 .my-work .project-box-four {
-  background-image: url("/images/kaplan-work.png");
+  background-image: url("/images/law-student-work.png");
 }
 /* line 34, _mywork.scss */
 .my-work .project-box-five {
-  background-image: url("/images/newmans-clinic-work.png");
+  background-image: url("/images/kaplan-work.png");
 }
 /* line 38, _mywork.scss */
 .my-work .project-box-six {
-  visibility: hidden;
+  background-image: url("/images/newmans-clinic-work.png");
 }
 /* line 42, _mywork.scss */
 .my-work .project-box-one, .my-work .project-box-two, .my-work .project-box-three {
@@ -2363,11 +2363,11 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     width: 100%;
   }
   /* line 159, _mywork.scss */
-  .my-work .project-box-one, .my-work .project-box-two, .my-work .project-box-three, .my-work .project-box-four {
+  .my-work .project-box-one, .my-work .project-box-two, .my-work .project-box-three, .my-work .project-box-four, .my-work .project-box-five {
     margin-bottom: 30px;
   }
   /* line 162, _mywork.scss */
-  .my-work .project-box-five, .my-work .project-box-six {
+  .my-work .project-box-six {
     margin-bottom: 0;
   }
 }
@@ -2386,7 +2386,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     padding: 40px 0 0 0;
   }
   /* line 190, _mywork.scss */
-  .my-work .project-box-one, .my-work .project-box-two, .my-work .project-box-three, .my-work .project-box-four {
+  .my-work .project-box-one, .my-work .project-box-two, .my-work .project-box-three, .my-work .project-box-four, .my-work .project-box-five {
     margin-bottom: 20px;
   }
 }
