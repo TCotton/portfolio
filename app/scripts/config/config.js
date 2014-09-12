@@ -34,6 +34,8 @@ angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$locatio
       $rootScope.pageChange = true;
     }
 
+    $rootScope.prerender = null;
+
     $rootScope.currentPage = $location.absUrl();
 
     $rootScope.canonical = 'https://andywalpole.me/#!' + $location.path();

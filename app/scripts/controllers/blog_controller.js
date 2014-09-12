@@ -12,9 +12,11 @@
    * @param $scope
    * @param BlogDataService
    * @param $angularCacheFactory
+   * @parame $filter
+   * @param $rootScope
    * @constructor
    */
-  var BlogCtrl = function ($scope, BlogDataService, $angularCacheFactory) {
+  var BlogCtrl = function ($scope, BlogDataService, $angularCacheFactory, $filter, $rootScope) {
 
     this.$scope = $scope;
 
@@ -40,9 +42,22 @@
 
     }
 
+    this.$scope.$watch('totalBlogPosts', function (newData) {
+
+      if(newData !== null && document.location.href) {
+
+        var prerender = $filter('orderBy')(this.$scope.totalBlogPosts, '-publishedDate');
+
+        $rootScope.prerender = document.location.href + prerender[0].uniqueId + '/' + prerender[0].url;
+
+      }
+
+    }.bind(this));
+
+
   };
 
-  BlogCtrl.$inject = ['$scope', 'BlogDataService', '$angularCacheFactory'];
+  BlogCtrl.$inject = ['$scope', 'BlogDataService', '$angularCacheFactory', '$filter', '$rootScope'];
 
   BlogCtrl.prototype.morePosts = function () {
 

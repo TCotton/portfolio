@@ -113,9 +113,9 @@
           _populateBlogScope();
         }, 0);
 
-       $scope.$watch('blogData', function(newData) {
+        $scope.$watch('blogData', function (newData) {
 
-          if(newData !== null && !$angularCacheFactory.get('blogCache').get('blogTags')) {
+          if (newData !== null && !$angularCacheFactory.get('blogCache').get('blogTags')) {
 
             $scope.blogTags = _sortCategoriesByPopularity(newData);
             $angularCacheFactory.get('blogCache').put('blogTags', $scope.blogTags);
@@ -137,9 +137,9 @@
 
     if ($window.matchMedia) {
 
-        var mql = $window.matchMedia('screen and (max-width: 767px)');
-        mql.addListener(_handleMediaMatch);
-        _handleMediaMatch(mql);
+      var mql = $window.matchMedia('screen and (max-width: 767px)');
+      mql.addListener(_handleMediaMatch);
+      _handleMediaMatch(mql);
 
     } else {
 
