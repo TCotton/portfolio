@@ -12,11 +12,9 @@
    * @param $scope
    * @param BlogDataService
    * @param $angularCacheFactory
-   * @parame $filter
-   * @param $rootScope
    * @constructor
    */
-  var BlogCtrl = function ($scope, BlogDataService, $angularCacheFactory, $filter, $rootScope) {
+  var BlogCtrl = function ($scope, BlogDataService, $angularCacheFactory) {
 
     this.$scope = $scope;
 
@@ -42,30 +40,9 @@
 
     }
 
-    /**
-     * Will find the last written post and it to the header as prerender link:
-     * <link data-ng-if="prerender" rel="prerender" data-ng-href="{{prerender}}">
-     * Looking at Google stats then the last article written (that at the top of the list) is the most popular
-     *
-     */
-
-    this.$scope.$watch('totalBlogPosts', function (newData) {
-
-      if (newData !== null && document.location.href && this.$scope.totalBlogPosts) {
-
-        var prerender = $filter('orderBy')(this.$scope.totalBlogPosts, '-publishedDate');
-
-        $rootScope.prerender = document.location.href + prerender[0].uniqueId + '/' + prerender[0].url;
-
-      }
-
-
-    }.bind(this));
-
-
   };
 
-  BlogCtrl.$inject = ['$scope', 'BlogDataService', '$angularCacheFactory', '$filter', '$rootScope'];
+  BlogCtrl.$inject = ['$scope', 'BlogDataService', '$angularCacheFactory'];
 
   BlogCtrl.prototype.morePosts = function () {
 

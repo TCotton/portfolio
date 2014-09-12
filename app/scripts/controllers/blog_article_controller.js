@@ -98,7 +98,6 @@
         if (blogPost[0].displayImage.indexOf('stock-photo') !== -1) {
 
           var dot = blogPost[0].displayImage.lastIndexOf('.');
-
           this.$scope.displaySrcsetImage = blogPost[0].displayImage.slice(0, dot) + '-small' + blogPost[0].displayImage.slice(dot);
 
         } else {
