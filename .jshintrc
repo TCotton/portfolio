@@ -33,6 +33,7 @@
     "spyOn": false,
     "iit": false,
     "moment": false,
-    "Prism": false
+    "Prism": false,
+    "CodePenEmbed": false
   }
 }
