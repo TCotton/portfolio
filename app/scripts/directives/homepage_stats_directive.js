@@ -68,7 +68,7 @@ angular.module('portfolioApp.directives').directive('homepageStatsDirective', ['
 
       scope.$on('$destroy', function () {
 
-        scope.stats = null;
+        delete scope.stats;
         mql.removeListener(handleMediaMatch);
 
       });
