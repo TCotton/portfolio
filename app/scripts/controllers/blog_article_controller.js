@@ -125,12 +125,12 @@
 
     }.bind(this);
 
-    var unregister = this.$scope.$watch('oldBlogPosts', function (blogData) {
+    var unbindWatcher = this.$scope.$watch('oldBlogPosts', function (blogData) {
 
       if (blogData !== null) {
 
         _renderArticle();
-        unregister();
+        unbindWatcher();
 
       }
 
