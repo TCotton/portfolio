@@ -8,7 +8,7 @@ angular.module('portfolioApp.directives').directive('compile', ['$compile', func
   // directive factory creates a link function
 
   return function(scope, element, attrs) {
-    var unbindWatcher = scope.$watch(
+    scope.$watch(
       function(scope) {
         // watch the 'compile' expression for changes
         return scope.$eval(attrs.compile);
@@ -23,7 +23,6 @@ angular.module('portfolioApp.directives').directive('compile', ['$compile', func
         // NOTE: we only compile .childNodes so that
         // we don't get into infinite loop compiling ourselves
         $compile(element.contents())(scope);
-        unbindWatcher();
       }
     );
   };

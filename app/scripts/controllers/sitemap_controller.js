@@ -70,18 +70,18 @@
 
     };
 
-    var unbindWatcher = $scope.$watch('blogData', function (newData) {
+   $scope.$watch('blogData', function (newData) {
 
       if (newData !== null && !$angularCacheFactory.get('blogCache').get('blogTags')) {
 
         $scope.blogTags = _sortCategoriesByPopularity(newData);
         $angularCacheFactory.get('blogCache').put('blogTags', $scope.blogTags);
-        unbindWatcher();
+
 
       } else if (newData !== null && $angularCacheFactory.get('blogCache').get('blogTags')) {
 
         $scope.blogTags = $angularCacheFactory.get('blogCache').get('blogTags');
-        unbindWatcher();
+
 
       }
 

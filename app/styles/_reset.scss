@@ -174,8 +174,15 @@ pre {
  * Set consistent quote types.
  */
 
-q {
+/*q {
   quotes: "\201C" "\201D" "\2018" "\2019";
+}*/
+
+q:before {
+  content: "\201C";
+}
+q:after {
+  content: "\201D";
 }
 
 /**
@@ -425,7 +432,7 @@ h1, h2, h3, h4, h5, h6, th, td, caption {
 }
 
 /* slight character and word gap of retina devices to make the text more legible */
-@media (-webkit-min-device-pixel-ratio: 2), not all, (min-resolution: 2dppx), (min-resolution: 192dpi) {
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx), (min-resolution: 192dpi) {
   p, li {
     letter-spacing: 0.01rem;
     word-spacing: 0.01rem;
@@ -509,6 +516,12 @@ a:hover {
 
 a:active {
   color: blue;
+}
+
+em {
+  font-style: italic;  /* If @font-face is supported, the italic Web font is used.
+  If not, the italic Georgia style is lifted from the user's computer.
+   Either way, a faux style is not allowed to creep in. */
 }
 
 input[aria-required="true"], textarea[aria-required="true"] {
