@@ -59,6 +59,20 @@
 
 }
 
+@supports (-webkit-animation-name: bugfix) {
+  body {
+    -webkit-animation: none;
+  }
+}
+
+@media (max-width: $media_breakpoint_tablet) and (-webkit-min-device-pixel-ratio: 1.5) {
+
+  body {
+    -webkit-animation: bugfix infinite 1s;
+  }
+
+}
+
 @include breakpoint(wide) {
 
   #header {
@@ -154,7 +168,7 @@
 @include breakpoint(tablet) {
 
   #navigation-wrapper {
-    pointer-events:none;
+    pointer-events: none;
     float: none;
     position: absolute;
     top: $headerHeight;
