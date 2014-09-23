@@ -65,14 +65,6 @@
   }
 }
 
-@media (max-width: $media_breakpoint_tablet) and (-webkit-min-device-pixel-ratio: 1.5) {
-
-  body {
-    -webkit-animation: bugfix infinite 1s;
-  }
-
-}
-
 @include breakpoint(wide) {
 
   #header {
@@ -113,9 +105,9 @@
     // loops through the navigation list items to create delay staggered animation
     @for $i from 1 through $percentage {
       input[type=checkbox]:checked ~ #navigation-wrapper li:nth-child(#{$i * 1}) {
-        -webkit-animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) #{0.1 + ($i / 10)}s;
+        -webkit-animation: swipeIn #{0.5 - ($i / 50)}s cubic-bezier(0.09, #{0.68 - ($i / 10)}, #{0.1 + ($i / 10)} , #{0.99 - ($i / 10)}) #{0.1 + ($i / 10)}s;
         -webkit-animation-fill-mode: forwards;
-        animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) #{0.1 + ($i / 10)}s;
+        animation: swipeIn #{0.5 - ($i / 50)}s cubic-bezier(0.09, #{0.68 - ($i / 10)}, #{0.1 + ($i / 10)} , #{0.99 - ($i / 10)}) #{0.1 + ($i / 10)}s;
         animation-fill-mode: forwards;
       }
     }

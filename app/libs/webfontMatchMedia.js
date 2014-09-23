@@ -3,52 +3,7 @@
  */
 var WebFont;
 
-(function () {
-  var wf = document.createElement('script');
-  wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-    '://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js';
-  wf.type = 'text/javascript';
-  wf.async = 'true';
-  var s = document.getElementsByTagName('script')[0];
-  s.parentNode.insertBefore(wf, s);
-})();
-
-
 window.webfontMatchMedia = window.webfontMatchMedia || {};
-/*
-window.webfontMatchMedia = (function (document, window, undefined) {
-
-  return {
-
-    attachAynchronously: function () {
-
-      var wf = document.createElement('script');
-      wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js';
-      wf.type = 'text/javascript';
-      wf.async = 'true';
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(wf, s);
-
-    },
-
-    attachSynchronously: function () {
-
-      var req = new XMLHttpRequest();
-      req.open('GET', ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js', false); // 'false': synchronous.
-      req.send(null);
-
-      var headElement = document.getElementsByTagName('head')[0];
-      var newScriptElement = document.createElement('script');
-      newScriptElement.type = 'text/javascript';
-      newScriptElement.text = req.responseText;
-      headElement.appendChild(newScriptElement);
-
-    }
-
-
-  };
-
-}(document, window));*/
 
 window.webfontMatchMedia = (function (document, window, undefined) {
 
@@ -101,11 +56,7 @@ window.webfontMatchMedia = (function (document, window, undefined) {
 
       } else {
 
-        return WebFont.load({
-          google: {
-            families: ['Open Sans:400,300,300italic,400italic,600,600italic,700,700italic', 'Yellowtail']
-          }
-        });
+        webfontMatchMedia.loadFullFonts();
 
       }
 
