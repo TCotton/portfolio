@@ -46,7 +46,7 @@ module.exports = function (grunt) {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
         tasks: ['newer:jshint:all'],
         options: {
-          livereload: true
+          livereload: '<%= express.livereload.options %>'
         }
       },
       jsTest: {
@@ -109,15 +109,15 @@ module.exports = function (grunt) {
       }
     },
 
-    bowerInstall: {
-
-      target: {
-        // Point to the files that should be updated when
-        // you run `grunt bower-install`
-        src: [
-          '<%= yeoman.app %>/index.html'
-        ],
-        ignorePath: '<%= yeoman.app %>/'
+    // Automatically inject Bower components into the app
+    wiredep: {
+      app: {
+        src: ['<%= yeoman.app %>/index.html'],
+        ignorePath:  /\.\.\//
+      },
+      sass: {
+        src: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
+        ignorePath: /(\.\.\/){1,2}bower_components\//
       }
     },
 
@@ -230,7 +230,7 @@ module.exports = function (grunt) {
 
     inline: {
       dist: {
-        options:{
+        options: {
           uglify: true
         },
         src: ['<%= yeoman.app %>/index.html'],
@@ -368,20 +368,22 @@ module.exports = function (grunt) {
         html: ['<%= yeoman.dist %>/*.html']
       }
     },
-    // Allow the use of non-minsafe AngularJS files. Automatically makes it
-    // minsafe compatible so Uglify does not destroy the ng references
-    ngmin: {
+
+    // ng-annotate tries to make the code safe for minification automatically
+    // by using the Angular long form for dependency injection.
+    ngAnnotate: {
       dist: {
         files: [
           {
             expand: true,
             cwd: '.tmp/concat/scripts',
-            src: '*.js',
+            src: ['*.js', '!oldieshim.js'],
             dest: '.tmp/concat/scripts'
           }
         ]
       }
     }
+
   });
 
   grunt.registerTask('server', function (target) {
@@ -405,20 +407,20 @@ module.exports = function (grunt) {
     'ngconstant:test',
     'express:test',
     'karma'
-/*
-    'validate-package'
-*/
+    /*
+     'validate-package'
+     */
   ]);
 
   grunt.registerTask('build', [
     'test',
     'clean:dist',
-    'bowerInstall',
+    'wiredep',
     'useminPrepare',
     'concurrent:dist',
     'ngconstant',
     'concat',
-    'ngmin',
+    'ngAnnotate',
     'inline',
     'copy:dist',
     'cssmin',
