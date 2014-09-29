@@ -369,15 +369,15 @@ module.exports = function (grunt) {
       }
     },
 
-    // ng-annotate tries to make the code safe for minification automatically
-    // by using the Angular long form for dependency injection.
-    ngAnnotate: {
+    // Allow the use of non-minsafe AngularJS files. Automatically makes it
+    // minsafe compatible so Uglify does not destroy the ng references
+    ngmin: {
       dist: {
         files: [
           {
             expand: true,
             cwd: '.tmp/concat/scripts',
-            src: ['*.js', '!oldieshim.js'],
+            src: '*.js',
             dest: '.tmp/concat/scripts'
           }
         ]
@@ -407,9 +407,7 @@ module.exports = function (grunt) {
     'ngconstant:test',
     'express:test',
     'karma'
-    /*
-     'validate-package'
-     */
+     //'validate-package'
   ]);
 
   grunt.registerTask('build', [
@@ -420,7 +418,8 @@ module.exports = function (grunt) {
     'concurrent:dist',
     'ngconstant',
     'concat',
-    'ngAnnotate',
+    'ngmin',
+    //'ngAnnotate',
     'inline',
     'copy:dist',
     'cssmin',
