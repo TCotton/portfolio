@@ -3,15 +3,15 @@
   "version": "0.0.1",
   "dependencies": {
     "underscore": "~1.6.0",
-    "angular": "1.2.25",
-    "angular-resource": "1.2.25",
-    "angular-sanitize": "1.2.25",
-    "angular-route": "1.2.25",
+    "angular": "1.2.26",
+    "angular-resource": "1.2.26",
+    "angular-sanitize": "1.2.26",
+    "angular-route": "1.2.26",
     "angular-cache": "~2.3.3",
     "moment": "~2.6.0"
   },
   "devDependencies": {
-    "angular-mocks": "1.2.25",
-    "angular-scenario": "1.2.25"
+    "angular-mocks": "1.2.26",
+    "angular-scenario": "1.2.26"
   }
 }
