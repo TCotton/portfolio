@@ -53,6 +53,10 @@ module.exports = function (grunt) {
         files: ['test/spec/{,*/}*.js'],
         tasks: ['newer:jshint:test', 'karma']
       },
+      e2eTest: {
+        files: ['test/e2e/{,*/}*.js'],
+        tasks: ['newer:jshint:test', 'protractor-e2e']
+      },
       sass: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
         tasks: ['sass:dev']
@@ -113,7 +117,7 @@ module.exports = function (grunt) {
     wiredep: {
       app: {
         src: ['<%= yeoman.app %>/index.html'],
-        ignorePath:  /\.\.\//
+        ignorePath: /\.\.\//
       },
       sass: {
         src: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
@@ -355,8 +359,27 @@ module.exports = function (grunt) {
         'sass:dist',
         'imagemin',
         'svgmin'
-      ]
+      ],
+      protractor_test: ['protractor']
     },
+
+    protractor: {
+      options: {
+        configFile: 'e2e.conf.js', // Default config file
+        keepAlive: true, // If false, the grunt process stops when the test fails.
+        noColor: false, // If true, protractor will not use colors in its output.
+        args: {
+          // Arguments passed to the command
+        }
+      },
+      your_target: {   // Grunt requires at least one target to run so you can simply put 'all: {}' here too.
+        options: {
+          configFile: 'e2e.conf.js', // Target-specific config file
+          args: {} // Target-specific arguments
+        }
+      }
+    },
+
     karma: {
       unit: {
         configFile: 'karma.conf.js',
@@ -407,7 +430,8 @@ module.exports = function (grunt) {
     'ngconstant:test',
     'express:test',
     'karma'
-     //'validate-package'
+/*    'protractor'*/
+    //'validate-package'
   ]);
 
   grunt.registerTask('build', [
@@ -434,4 +458,7 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+
+  grunt.registerTask('protractor-e2e', ['concurrent:protractor_test']);
+
 };
