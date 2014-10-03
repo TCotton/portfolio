@@ -429,8 +429,8 @@ module.exports = function (grunt) {
     'concurrent:test',
     'ngconstant:test',
     'express:test',
-    'karma'
-/*    'protractor'*/
+    'karma',
+    'protractor'
     //'validate-package'
   ]);
 

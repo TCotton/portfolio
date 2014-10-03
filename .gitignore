@@ -8,6 +8,7 @@ app/components
 app/.buildignore
 test/.jshintrc
 app/scripts/config/constants.js
+app/styles/main.css.map
 test/spec/config/constants.js
 coverage
 app/phppages
