@@ -52,6 +52,7 @@ describe('e2e: blog comment form', function() {
 
     expect(element(by.css('.email-block .error-message')).isPresent()).toBe(true);
 
+
   });
 
 });

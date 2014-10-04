@@ -360,7 +360,7 @@ module.exports = function (grunt) {
         'imagemin',
         'svgmin'
       ],
-      protractor_test: ['protractor']
+      protractor_test: ['protractor-chrome', 'protractor-firefox', 'protractor-safari']
     },
 
     protractor: {
@@ -372,10 +372,28 @@ module.exports = function (grunt) {
           // Arguments passed to the command
         }
       },
-      your_target: {   // Grunt requires at least one target to run so you can simply put 'all: {}' here too.
+      run_chrome: {
         options: {
-          configFile: 'e2e.conf.js', // Target-specific config file
-          args: {} // Target-specific arguments
+          configFile: 'e2e.conf.js', // Default config file
+          args: {
+            browser: 'chrome'
+          }
+        }
+      },
+      run_firefox: {
+        configFile: 'e2e.conf.js', // Default config file
+        options: {
+          args: {
+            browser: 'firefox'
+          }
+        }
+      },
+      run_safari: {
+        configFile: 'e2e.conf.js', // Default config file
+        options: {
+          args: {
+            browser: 'safari'
+          }
         }
       }
     },
@@ -460,5 +478,8 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('protractor-e2e', ['concurrent:protractor_test']);
+  grunt.registerTask('protractor-chrome', ['protractor:run_chrome']);
+  grunt.registerTask('protractor-firefox', ['protractor:run_firefox']);
+  grunt.registerTask('protractor-safari', ['protractor:run_safari']);
 
 };

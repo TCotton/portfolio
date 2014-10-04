@@ -49,6 +49,8 @@ exports.config = {
   // and
   // https://code.google.com/p/selenium/source/browse/javascript/webdriver/capabilities.js
 
+  chromeOnly: false,
+
   capabilities: {
     'browserName': 'chrome'
   },
