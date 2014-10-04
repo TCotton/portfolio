@@ -12,7 +12,7 @@
   <base href="/">
 
   <style>
-    @media only screen and (max-width: 415px) {
+    @media only screen and (min-width: 415px) {
 
       .pace {
         width: 140px;
@@ -214,71 +214,7 @@
   </style>
 
   <script>
-    var animationBounce = (function() {
 
-      var _private = {
-
-        pfx:['webkit', 'moz', 'MS', 'o', ''],
-
-        elem: null,
-
-        prefixedEvent : function (element, type, callback) {
-
-          for (var p = 0; p < this.pfx.length; p++) {
-            if (!this.pfx[p]) type = type.toLowerCase();
-            element.addEventListener(this.pfx[p]+type, callback, false);
-          }
-
-        },
-
-        animationListener: function (e) {
-          var elem = e.target;
-          elem.parentNode.removeChild(elem);
-        },
-
-        run: function () {
-          this.prefixedEvent(this.get(), 'AnimationEnd', this.animationListener);
-        },
-
-        get : function() {
-          return this.elem;
-        },
-
-        set : function( val ) {
-          this.elem = val;
-        }
-      };
-
-      return {
-        init : function( args ) {
-
-          _private.set(args.val);
-          _private.run();
-
-        }
-      };
-    }());
-
-
-    var handleMediaMatch = function (mql) {
-
-      if (mql.matches) {
-
-        if(document.querySelector('.pace')) {
-          animationBounce.init({val:document.querySelector('.pace')});
-        }
-
-      }
-
-    };
-
-    if (window.matchMedia) {
-
-      var mql = window.matchMedia('screen and (max-width: 415px)');
-      mql.addListener(handleMediaMatch);
-      handleMediaMatch(mql);
-
-    }
   </script>
 
   <script src="libs/webfontMatchMedia.js?__inline=true"></script>
@@ -316,12 +252,7 @@
 </head>
 <body>
 
-<div class="pace" data-ng-if="hideFooter">
-  <div class="pace-progress">
-    <div class="pace-progress-inner"></div>
-  </div>
-  <div class="pace-activity"></div>
-</div>
+<data-page-loading-directive></data-page-loading-directive>
 
 <a href="#content" class="visuallyhidden">Skip to main content</a>
 
@@ -432,6 +363,7 @@
 <script src="scripts/directives/compile_directive.js"></script>
 <script src="scripts/directives/prism_directive.js"></script>
 <script src="scripts/directives/codepen_directive.js"></script>
+<script src="scripts/directives/page_loading_directive.js"></script>
 <!-- endbuild -->
 <!--[if !IE]><!-->
 <script>
