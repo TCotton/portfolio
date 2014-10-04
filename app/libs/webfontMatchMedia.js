@@ -132,5 +132,3 @@ if (WebFont) {
 } else {
   window.webfontMatchMedia.init();
 }
-
-
