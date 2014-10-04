@@ -4,18 +4,14 @@
 
 'use strict';
 
-angular.module('portfolioApp.directives').directive('pageLoadingDirective', ['$document', '$templateCache', '$rootScope', function ($document,$templateCache,$rootScope) {
+angular.module('portfolioApp.directives').directive('pageLoadingDirective', [ function () {
 
   return {
     restrict: 'E',
-    template: $templateCache.get('page_loading.html'),
-    scope: true,
+    template: '<div class="pace"><div class="pace-progress"><div class="pace-progress-inner"></div></div><div class="pace-activity"></div></div>',
     replace: true,
-    link: function (scope, element, attr) {
-
-      console.dir(scope);
-      console.dir(element);
-      console.dir(attr);
+    scope: true,
+    link: function (scope, element) {
 
       var animationBounce = (function () {
 
@@ -37,8 +33,8 @@ angular.module('portfolioApp.directives').directive('pageLoadingDirective', ['$d
           },
 
           animationListener: function () {
-            //element.html('');
-            element.remove();
+            element.addClass('hide');
+            element[0].style.webkitAnimationName = '';
           },
 
           run: function () {
@@ -60,6 +56,18 @@ angular.module('portfolioApp.directives').directive('pageLoadingDirective', ['$d
             _private.set(args.val);
             _private.run();
 
+          },
+          destroy: function () {
+
+            scope.$on('$destroy', function () {
+
+              console.log('destroy');
+
+              element.removeClass('hide');
+              element[0].style.webkitAnimationName = 'pace-bounce-scaledown';
+
+            });
+
           }
         };
       }());
@@ -68,58 +76,31 @@ angular.module('portfolioApp.directives').directive('pageLoadingDirective', ['$d
 
         if (mql.matches) {
 
-          if ($document[0].querySelector('.pace')) {
-
-            console.log('here');
-
-            animationBounce.init({val: element[0]});
-
-          } else {
-
-         /*  $document[0].body.insertAdjacentHTML('afterbegin', '<div class="pace"><div class="pace-progress"><div class="pace-progress-inner"></div>' +
-             '</div><div class="pace-activity"></div></div>');*/
-
-            animationBounce.init({val: $document[0].querySelector('.pace')});
-
-          }
+          animationBounce.init({val: element[0]});
 
         }
 
       };
 
+      if (window.matchMedia) {
 
+        var mql = window.matchMedia('screen and (min-width: 415px)');
+        mql.addListener(handleMediaMatch);
+        handleMediaMatch(mql);
 
-      $rootScope.$on('$locationChangeStart', function () {
+      }
 
-        if (window.matchMedia) {
+      animationBounce.destroy();
 
-          var mql = window.matchMedia('screen and (min-width: 415px)');
-          mql.addListener(handleMediaMatch);
-          handleMediaMatch(mql);
+      scope.$on(
+        '$destroy',
+        function( event ) {
 
-        }
-
-      });
-
-
-      scope.$on('$destroy', function () {
-
-        console.log(element);
-
-
-
-     /*   if (!$document[0].querySelector('.pace')) {
-
-          $document[0].body.insertAdjacentHTML('afterbegin', '<div class="pace"><div class="pace-progress"><div class="pace-progress-inner"></div>' +
-            '</div><div class="pace-activity"></div></div>');
-
-          animationBounce.init({val: $document[0].querySelector('.pace')});
+          console.log( event );
 
         }
-*/
+      );
 
-
-      });
 
     }
 
