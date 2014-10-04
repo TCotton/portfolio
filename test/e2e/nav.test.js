@@ -39,5 +39,4 @@ describe('e2e: navigation', function() {
     expect(ptor.getCurrentUrl()).toMatch(/\/blog/);
   });
 
-
 });
