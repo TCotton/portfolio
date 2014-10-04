@@ -11,7 +11,6 @@
     "moment": "~2.6.0"
   },
   "devDependencies": {
-    "angular-mocks": "1.2.26",
-    "angular-scenario": "1.2.26"
+    "angular-mocks": "1.2.26"
   }
 }

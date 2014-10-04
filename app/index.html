@@ -2,7 +2,7 @@
 <!--[if IE 9]>
 <html class="ie9" lang="en" data-ng-app="portfolioApp"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-ng-app="portfolioApp"> <!--<![endif]-->
+<html data-ng-app="portfolioApp"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <title data-ng-bind="pageTitle"></title>
@@ -10,6 +10,276 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="fragment" content="!">
   <base href="/">
+
+  <style>
+    @media only screen and (max-width: 415px) {
+
+      .pace {
+        width: 140px;
+        height: 300px;
+        position: fixed;
+        top: -90px;
+        right: -20px;
+        z-index: 2000;
+        -webkit-transform: scale(.4);
+        -webkit-transition: all 2s linear 0s;
+        -webkit-animation: pace-bounce-scaledown 5s;
+        -ms-transform: scale(.4);
+        -ms-transition: all 2s linear 0s;
+        transform: scale(.4);
+        transition: all 2s linear 0s;
+        animation: pace-bounce-scaledown 5s;
+      }
+
+      .pace .pace-activity {
+        width: 140px;
+        height: 140px;
+        border-radius: 70px;
+        background: #22df80;
+        position: absolute;
+        top: 0;
+        z-index: 1911;
+        -webkit-animation: pace-bounce 1s infinite;
+        animation: pace-bounce 1s infinite;
+      }
+
+      .pace .pace-progress {
+        position: absolute;
+        display: block;
+        left: 50%;
+        bottom: 0;
+        z-index: 1910;
+        margin-left: -30px;
+        width: 60px;
+        height: 75px;
+        background: rgba(20, 20, 20, .1);
+        box-shadow: 0 0 20px 35px rgba(20, 20, 20, .1);
+        border-radius: 30px / 40px;
+        -webkit-transform: scaleY(.3);
+        -ms-transform: scaleY(.3);
+        transform: scaleY(.3);
+        -webkit-animation: pace-compress .5s infinite alternate;
+        animation: pace-compress .5s infinite alternate;
+      }
+
+    }
+
+    @-webkit-keyframes pace-bounce {
+      0% {
+        top: 0;
+        -webkit-animation-timing-function: ease-in;
+      }
+
+      40% {
+      }
+
+      50% {
+        top: 140px;
+        height: 140px;
+        -webkit-animation-timing-function: ease-out;
+      }
+
+      55% {
+        top: 160px;
+        height: 120px;
+        border-radius: 70px / 60px;
+        -webkit-animation-timing-function: ease-in;
+      }
+
+      65% {
+        top: 120px;
+        height: 140px;
+        border-radius: 70px;
+        -webkit-animation-timing-function: ease-out;
+      }
+
+      95% {
+        top: 0;
+        -webkit-animation-timing-function: ease-in;
+      }
+
+      100% {
+        top: 0;
+        -webkit-animation-timing-function: ease-in;
+      }
+    }
+
+    @-webkit-keyframes pace-bounce-scaledown {
+      0% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @-webkit-keyframes pace-compress {
+      0% {
+        bottom: 0;
+        margin-left: -30px;
+        width: 60px;
+        height: 75px;
+        background: rgba(20, 20, 20, .1);
+        box-shadow: 0 0 20px 35px rgba(20, 20, 20, .1);
+        border-radius: 30px / 40px;
+        -webkit-animation-timing-function: ease-in;
+      }
+
+      100% {
+        bottom: 30px;
+        margin-left: -10px;
+        width: 20px;
+        height: 5px;
+        background: rgba(20, 20, 20, .3);
+        box-shadow: 0 0 20px 35px rgba(20, 20, 20, .3);
+        border-radius: 20px / 20px;
+        -webkit-animation-timing-function: ease-out;
+      }
+    }
+
+    @keyframes pace-bounce {
+      0% {
+        top: 0;
+        animation-timing-function: ease-in;
+      }
+
+      40% {
+      }
+
+      50% {
+        top: 140px;
+        height: 140px;
+        animation-timing-function: ease-out;
+      }
+
+      55% {
+        top: 160px;
+        height: 120px;
+        border-radius: 70px / 60px;
+        animation-timing-function: ease-in;
+      }
+
+      65% {
+        top: 120px;
+        height: 140px;
+        border-radius: 70px;
+        animation-timing-function: ease-out;
+      }
+
+      95% {
+        top: 0;
+        animation-timing-function: ease-in;
+      }
+
+      100% {
+        top: 0;
+        animation-timing-function: ease-in;
+      }
+    }
+
+    @keyframes pace-bounce-scaledown {
+      0% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes pace-compress {
+      0% {
+        bottom: 0;
+        margin-left: -30px;
+        width: 60px;
+        height: 75px;
+        background: rgba(20, 20, 20, .1);
+        box-shadow: 0 0 20px 35px rgba(20, 20, 20, .1);
+        border-radius: 30px / 40px;
+        animation-timing-function: ease-in;
+      }
+
+      100% {
+        bottom: 30px;
+        margin-left: -10px;
+        width: 20px;
+        height: 5px;
+        background: rgba(20, 20, 20, .3);
+        box-shadow: 0 0 20px 35px rgba(20, 20, 20, .3);
+        border-radius: 20px / 20px;
+        animation-timing-function: ease-out;
+      }
+    }
+  </style>
+
+  <script>
+    var animationBounce = (function() {
+
+      var _private = {
+
+        pfx:['webkit', 'moz', 'MS', 'o', ''],
+
+        elem: null,
+
+        prefixedEvent : function (element, type, callback) {
+
+          for (var p = 0; p < this.pfx.length; p++) {
+            if (!this.pfx[p]) type = type.toLowerCase();
+            element.addEventListener(this.pfx[p]+type, callback, false);
+          }
+
+        },
+
+        animationListener: function (e) {
+          var elem = e.target;
+          elem.parentNode.removeChild(elem);
+        },
+
+        run: function () {
+          this.prefixedEvent(this.get(), 'AnimationEnd', this.animationListener);
+        },
+
+        get : function() {
+          return this.elem;
+        },
+
+        set : function( val ) {
+          this.elem = val;
+        }
+      };
+
+      return {
+        init : function( args ) {
+
+          _private.set(args.val);
+          _private.run();
+
+        }
+      };
+    }());
+
+
+    var handleMediaMatch = function (mql) {
+
+      if (mql.matches) {
+
+        if(document.querySelector('.pace')) {
+          animationBounce.init({val:document.querySelector('.pace')});
+        }
+
+      }
+
+    };
+
+    if (window.matchMedia) {
+
+      var mql = window.matchMedia('screen and (max-width: 415px)');
+      mql.addListener(handleMediaMatch);
+      handleMediaMatch(mql);
+
+    }
+  </script>
 
   <script src="libs/webfontMatchMedia.js?__inline=true"></script>
 
@@ -45,6 +315,13 @@
 
 </head>
 <body>
+
+<div class="pace" data-ng-if="hideFooter">
+  <div class="pace-progress">
+    <div class="pace-progress-inner"></div>
+  </div>
+  <div class="pace-activity"></div>
+</div>
 
 <a href="#content" class="visuallyhidden">Skip to main content</a>
 
