@@ -360,7 +360,7 @@ module.exports = function (grunt) {
         'imagemin',
         'svgmin'
       ],
-      protractor_test: ['protractor-chrome', 'protractor-firefox', 'protractor-safari']
+      protractor_test: ['protractor-chrome']
     },
 
     protractor: {
@@ -385,14 +385,6 @@ module.exports = function (grunt) {
         options: {
           args: {
             browser: 'firefox'
-          }
-        }
-      },
-      run_safari: {
-        configFile: 'e2e.conf.js', // Default config file
-        options: {
-          args: {
-            browser: 'safari'
           }
         }
       }
@@ -480,6 +472,5 @@ module.exports = function (grunt) {
   grunt.registerTask('protractor-e2e', ['concurrent:protractor_test']);
   grunt.registerTask('protractor-chrome', ['protractor:run_chrome']);
   grunt.registerTask('protractor-firefox', ['protractor:run_firefox']);
-  grunt.registerTask('protractor-safari', ['protractor:run_safari']);
 
 };
