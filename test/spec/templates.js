@@ -54,7 +54,7 @@ describe('Unit: Templates - logged in', function () {
   });
 
   it('loads side projects page at /side-projects', function () {
-    $httpBackend.expectGET('views/side_projects.html')
+    $httpBackend.expectGET('../side-projects/side_projects.html')
       .respond(200);
     location.path('/side-projects');
     rootScope.$digest(); // call the digest loop
@@ -94,7 +94,7 @@ describe('Unit: Templates - logged in', function () {
   });
 
   it('loads individual side projects page at /side-projects/pennybooks', function () {
-    $httpBackend.expectGET('../views/projects_page.html')
+    $httpBackend.expectGET('../side-projects/projects_page.html')
       .respond(200);
     location.path('/side-projects/pennybooks');
     rootScope.$digest(); // call the digest loop

@@ -43,7 +43,13 @@ module.exports = function (grunt) {
     pkg: grunt.file.readJSON('package.json'),
     watch: {
       js: {
-        files: ['<%= yeoman.app %>/scripts/{,*/}*.js',  '<%= yeoman.app %>/footer/*.js', '<%= yeoman.app %>/homepage/*.js', '<%= yeoman.app %>/work-projects/*.js'],
+        files: [
+          '<%= yeoman.app %>/scripts/{,*/}*.js',
+          '<%= yeoman.app %>/footer/*.js',
+          '<%= yeoman.app %>/homepage/*.js',
+          '<%= yeoman.app %>/work-projects/*.js',
+          '<%= yeoman.app %>/side-projects/*.js'
+        ],
         tasks: ['newer:jshint:all'],
         options: {
           livereload: '<%= express.livereload.options %>'
@@ -73,6 +79,7 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/footer/*.html',
           '<%= yeoman.app %>/homepage/*.html',
           '<%= yeoman.app %>/work-projects/*.html',
+          '<%= yeoman.app %>/side-projects/*.html',
           '.tmp/styles/{,*/}*.css',
           '<%= yeoman.app %>/{,*/}*.css',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
@@ -180,6 +187,7 @@ module.exports = function (grunt) {
         '<%= yeoman.app %>/footer/{,*/}*.js',
         '<%= yeoman.app %>/homepage/{,*/}*.js',
         '<%= yeoman.app %>/work-projects/*.js',
+        '<%= yeoman.app %>/side-projects/*.js',
         //'<%= yeoman.server %>/**/*.js',
         '!<%= yeoman.app %>/**/scripts/config/constants.js', // ignore auto generated constants file'
       ],
@@ -235,7 +243,8 @@ module.exports = function (grunt) {
         '<%= yeoman.dist %>/{,*/}*.html',
         '<%= yeoman.dist %>/footer/*.html',
         '<%= yeoman.dist %>/homepage/*.html',
-        '<%= yeoman.dist %>/work-projects/*.html'
+        '<%= yeoman.dist %>/work-projects/*.html',
+        '<%= yeoman.dist %>/side-projects/*.html'
       ],
       css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
       options: {
@@ -295,7 +304,8 @@ module.exports = function (grunt) {
               'views/{,*/}*.html',
               'footer/*.html',
               'homepage/*.html',
-              'work-projects/*.html'
+              'work-projects/*.html',
+              'side-projects/*.html'
             ],
             dest: '<%= yeoman.dist %>'
           }
@@ -314,11 +324,11 @@ module.exports = function (grunt) {
             dest: '<%= yeoman.dist %>',
             src: [
               '*.{ico,png,txt}',
-              '.htaccess',
               'views/{,*/}*.html',
               'footer/*.html',
               'homepage/*.html',
               'work-projects/*.html',
+              'side-projects/*.html',
               'components/**/*',
               'images/{,*/}*.{webp}',
               'fonts/*'

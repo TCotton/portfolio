@@ -31,11 +31,11 @@ angular.module('portfolioApp', ['portfolioApp.controllers', 'portfolioApp.direct
         controller: 'WorkPageCtrl'
       })
       .when('/side-projects', {
-        templateUrl: 'views/side_projects.html',
+        templateUrl: '../side-projects/side_projects.html',
         title: 'Noteworthy personal side projects from the past 18 months'
       })
       .when('/side-projects/:projectsPage', {
-        templateUrl: '../views/projects_page.html',
+        templateUrl: '../side-projects/projects_page.html',
         controller: 'ProjectsPageCtrl'
       })
       .when('/about-me', {
