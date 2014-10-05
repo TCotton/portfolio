@@ -142,7 +142,7 @@ describe('Unit: Templates - logged in', function () {
   });
 
   it('loads sitemap page at /sitemap', function () {
-    $httpBackend.expectGET('views/html_sitemap.html')
+    $httpBackend.expectGET('../sitemap/html_sitemap.html')
       .respond(200);
     location.path('/sitemap');
     rootScope.$digest(); // call the digest loop

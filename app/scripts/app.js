@@ -90,7 +90,7 @@ angular.module('portfolioApp', ['portfolioApp.controllers', 'portfolioApp.direct
         title: 'Admin area - edit blog comments'
       })
       .when('/sitemap', {
-        templateUrl: 'views/html_sitemap.html',
+        templateUrl: '../sitemap/html_sitemap.html',
         controller: 'SitemapCtrl',
         title: 'Sitemap'
       })

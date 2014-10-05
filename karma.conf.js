@@ -28,6 +28,7 @@ module.exports = function(config) {
       'app/blog-comments/*.js',
       'app/blog-sidebar/*.js',
       'app/blog-pages/*.js',
+      'app/sitemap/*.js',
       'app/contact/*.js',
       'app/scripts/*.js',
       'test/spec/**/*.js',

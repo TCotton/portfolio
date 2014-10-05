@@ -187,7 +187,7 @@ describe('Routes test with log in', function () {
   describe('html sitemap page', function () {
     beforeEach(inject(
       function ($httpBackend) {
-        $httpBackend.expectGET('views/html_sitemap.html')
+        $httpBackend.expectGET('../sitemap/html_sitemap.html')
           .respond(200, 'html sitemap HTML');
       }
     ));
