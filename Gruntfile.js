@@ -49,7 +49,8 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/homepage/*.js',
           '<%= yeoman.app %>/work-projects/*.js',
           '<%= yeoman.app %>/side-projects/*.js',
-          '<%= yeoman.app %>/about-me/*.js'
+          '<%= yeoman.app %>/about-me/*.js',
+          '<%= yeoman.app %>/contact/*.js'
         ],
         tasks: ['newer:jshint:all'],
         options: {
@@ -82,6 +83,7 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/work-projects/*.html',
           '<%= yeoman.app %>/side-projects/*.html',
           '<%= yeoman.app %>/about-me/*.html',
+          '<%= yeoman.app %>/contact/*.html',
           '.tmp/styles/{,*/}*.css',
           '<%= yeoman.app %>/{,*/}*.css',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
@@ -191,6 +193,7 @@ module.exports = function (grunt) {
         '<%= yeoman.app %>/work-projects/*.js',
         '<%= yeoman.app %>/side-projects/*.js',
         '<%= yeoman.app %>/about-me/*.js',
+        '<%= yeoman.app %>/contact/*.js',
         //'<%= yeoman.server %>/**/*.js',
         '!<%= yeoman.app %>/**/scripts/config/constants.js', // ignore auto generated constants file'
       ],
@@ -248,7 +251,8 @@ module.exports = function (grunt) {
         '<%= yeoman.dist %>/homepage/*.html',
         '<%= yeoman.dist %>/work-projects/*.html',
         '<%= yeoman.dist %>/side-projects/*.html',
-        '<%= yeoman.dist %>/about-me/*.js'
+        '<%= yeoman.dist %>/about-me/*.html',
+        '<%= yeoman.dist %>/contact/*.html'
       ],
       css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
       options: {
@@ -310,7 +314,8 @@ module.exports = function (grunt) {
               'homepage/*.html',
               'work-projects/*.html',
               'side-projects/*.html',
-              'about-me/*.html'
+              'about-me/*.html',
+              'contact/*.html'
             ],
             dest: '<%= yeoman.dist %>'
           }
@@ -335,6 +340,7 @@ module.exports = function (grunt) {
               'work-projects/*.html',
               'side-projects/*.html',
               'about-me/*.html',
+              'contact/*.html',
               'components/**/*',
               'images/{,*/}*.{webp}',
               'fonts/*'
@@ -415,15 +421,15 @@ module.exports = function (grunt) {
             browser: 'chrome'
           }
         }
-      },
-      run_firefox: {
+      }
+ /*     run_firefox: {
         configFile: 'e2e.conf.js', // Default config file
         options: {
           args: {
             browser: 'firefox'
           }
         }
-      }
+      }*/
     },
 
     karma: {
@@ -507,6 +513,6 @@ module.exports = function (grunt) {
 
   grunt.registerTask('protractor-e2e', ['concurrent:protractor_test']);
   grunt.registerTask('protractor-chrome', ['protractor:run_chrome']);
-  grunt.registerTask('protractor-firefox', ['protractor:run_firefox']);
+  //grunt.registerTask('protractor-firefox', ['protractor:run_firefox']);
 
 };

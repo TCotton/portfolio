@@ -26,7 +26,7 @@ describe('Routes test with log in', function () {
   describe('contact page route', function () {
     beforeEach(inject(
       function ($httpBackend) {
-        $httpBackend.expectGET('views/contact_me.html')
+        $httpBackend.expectGET('../contact/contact_me.html')
           .respond(200, 'main HTML');
       }
     ));

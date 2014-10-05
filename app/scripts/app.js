@@ -43,7 +43,7 @@ angular.module('portfolioApp', ['portfolioApp.controllers', 'portfolioApp.direct
         title: 'Skills and CV'
       })
       .when('/contact-me', {
-        templateUrl: 'views/contact_me.html',
+        templateUrl: '../contact/contact_me.html',
         controller: 'FormCtrl as AdminFormCtrl',
         title: 'Contact form'
       })

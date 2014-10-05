@@ -62,7 +62,7 @@ describe('Unit: Templates - logged in', function () {
   });
 
   it('loads contact me page at /contact-me', function () {
-    $httpBackend.expectGET('views/contact_me.html')
+    $httpBackend.expectGET('../contact/contact_me.html')
       .respond(200);
     location.path('/contact-me');
     rootScope.$digest(); // call the digest loop
