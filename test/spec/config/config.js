@@ -19,7 +19,7 @@ describe('Config: Config', function () {
 
     beforeEach(inject(
       function ($httpBackend) {
-        $httpBackend.expectGET('views/main.html')
+        $httpBackend.expectGET('../homepage/main.html')
           .respond(200, 'main HTML');
       }
     ));

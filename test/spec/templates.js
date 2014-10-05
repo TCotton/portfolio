@@ -30,7 +30,7 @@ describe('Unit: Templates - logged in', function () {
 
 
   it('loads the home template at /', function () {
-    $httpBackend.expectGET('views/main.html')
+    $httpBackend.expectGET('../homepage/main.html')
       .respond(200);
     location.path('/');
     rootScope.$digest(); // call the digest loop

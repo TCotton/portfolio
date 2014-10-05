@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$location', '$angularCacheFactory', '$route','$templateCache', function ($rootScope, $window, $location, $angularCacheFactory, $route, $templateCache) {
+angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$location', '$angularCacheFactory', '$route', function ($rootScope, $window, $location, $angularCacheFactory, $route) {
 
   var track = function () {
     /* jshint ignore:start */
@@ -9,8 +9,6 @@ angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$locatio
     });
     /* jshint ignore:end */
   };
-
-  $templateCache.put('page_loading.html', '<div class="pace"><div class="pace-progress"><div class="pace-progress-inner"></div></div><div class="pace-activity"></div>/div>');
 
   $rootScope.$on('$viewContentLoaded', track);
 
@@ -73,15 +71,6 @@ angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$locatio
         $location.path('/login');
 
       }
-    }
-
-    if (!document.querySelector('.pace')) {
-
-      console.log('non');
-
-      document.body.insertAdjacentHTML('afterbegin', '<div class="pace"><div class="pace-progress"><div class="pace-progress-inner"></div>' +
-        '</div><div class="pace-activity"></div></div>');
-
     }
 
 

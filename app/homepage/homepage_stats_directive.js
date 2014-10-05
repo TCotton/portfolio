@@ -8,7 +8,7 @@ angular.module('portfolioApp.directives').directive('homepageStatsDirective', ['
 
   return {
     restrict: 'A',
-    templateUrl: 'homepage_stats.html',
+    templateUrl: '../homepage/homepage_stats.html',
     scope: {
       header: '@header',
       section: '@section'

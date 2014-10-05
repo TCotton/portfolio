@@ -20,8 +20,10 @@ module.exports = function(config) {
       'app/components/angular-cache/dist/angular-cache.js',
       'app/components/moment/moment.js',
       'app/libs/*.js',
-      'app/scripts/*.js',
       'app/scripts/**/*.js',
+      'app/footer/*.js',
+      'app/homepage/*.js',
+      'app/scripts/*.js',
       'test/mock/**/*.js',
       'test/spec/**/*.js',
       'app/scripts/config/*.js'
