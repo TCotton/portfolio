@@ -43,7 +43,7 @@ module.exports = function (grunt) {
     pkg: grunt.file.readJSON('package.json'),
     watch: {
       js: {
-        files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
+        files: ['<%= yeoman.app %>/scripts/{,*/}*.js',  '<%= yeoman.app %>/footer/*.js', '<%= yeoman.app %>/homepage/*.js'],
         tasks: ['newer:jshint:all'],
         options: {
           livereload: '<%= express.livereload.options %>'
@@ -70,6 +70,8 @@ module.exports = function (grunt) {
         },
         files: [
           '<%= yeoman.app %>/views/{,*/}*.html',
+          '<%= yeoman.app %>/footer/*.html',
+          '<%= yeoman.app %>/homepage/*.html',
           '.tmp/styles/{,*/}*.css',
           '<%= yeoman.app %>/{,*/}*.css',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
@@ -174,6 +176,8 @@ module.exports = function (grunt) {
       all: [
         'Gruntfile.js',
         '<%= yeoman.app %>/scripts/{,*/}*.js',
+        '<%= yeoman.app %>/footer/{,*/}*.js',
+        '<%= yeoman.app %>/homepage/{,*/}*.js',
         //'<%= yeoman.server %>/**/*.js',
         '!<%= yeoman.app %>/**/scripts/config/constants.js', // ignore auto generated constants file'
       ],
@@ -225,7 +229,7 @@ module.exports = function (grunt) {
 
     // Performs rewrites based on rev and the useminPrepare configuration
     usemin: {
-      html: ['<%= yeoman.dist %>/{,*/}*.html'],
+      html: ['<%= yeoman.dist %>/{,*/}*.html', '<%= yeoman.dist %>/footer/*.html', '<%= yeoman.dist %>/homepage/*.html'],
       css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
       options: {
         assetsDirs: ['<%= yeoman.dist %>']
@@ -279,7 +283,7 @@ module.exports = function (grunt) {
           {
             expand: true,
             cwd: '<%= yeoman.dist %>',
-            src: ['*.html', 'views/{,*/}*.html'],
+            src: ['*.html', 'views/{,*/}*.html', 'footer/*.html', 'homepage/*.html'],
             dest: '<%= yeoman.dist %>'
           }
         ]
@@ -299,6 +303,8 @@ module.exports = function (grunt) {
               '*.{ico,png,txt}',
               '.htaccess',
               'views/{,*/}*.html',
+              'footer/*.html',
+              'homepage/*.html',
               'components/**/*',
               'images/{,*/}*.{webp}',
               'fonts/*'
