@@ -50,7 +50,8 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/work-projects/*.js',
           '<%= yeoman.app %>/side-projects/*.js',
           '<%= yeoman.app %>/about-me/*.js',
-          '<%= yeoman.app %>/contact/*.js'
+          '<%= yeoman.app %>/contact/*.js',
+          '<%= yeoman.app %>/blog-comments/*.js'
         ],
         tasks: ['newer:jshint:all'],
         options: {
@@ -84,6 +85,7 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/side-projects/*.html',
           '<%= yeoman.app %>/about-me/*.html',
           '<%= yeoman.app %>/contact/*.html',
+          '<%= yeoman.app %>/blog-comments/*.html',
           '.tmp/styles/{,*/}*.css',
           '<%= yeoman.app %>/{,*/}*.css',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
@@ -194,8 +196,9 @@ module.exports = function (grunt) {
         '<%= yeoman.app %>/side-projects/*.js',
         '<%= yeoman.app %>/about-me/*.js',
         '<%= yeoman.app %>/contact/*.js',
+        '<%= yeoman.app %>/blog-comments/*.js',
         //'<%= yeoman.server %>/**/*.js',
-        '!<%= yeoman.app %>/**/scripts/config/constants.js', // ignore auto generated constants file'
+        '!<%= yeoman.app %>/**/scripts/config/constants.js' // ignore auto generated constants file'
       ],
       test: {
         options: {
@@ -252,7 +255,8 @@ module.exports = function (grunt) {
         '<%= yeoman.dist %>/work-projects/*.html',
         '<%= yeoman.dist %>/side-projects/*.html',
         '<%= yeoman.dist %>/about-me/*.html',
-        '<%= yeoman.dist %>/contact/*.html'
+        '<%= yeoman.dist %>/contact/*.html',
+        '<%= yeoman.dist %>/blog-comments/*.html'
       ],
       css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
       options: {
@@ -315,7 +319,8 @@ module.exports = function (grunt) {
               'work-projects/*.html',
               'side-projects/*.html',
               'about-me/*.html',
-              'contact/*.html'
+              'contact/*.html',
+              'blog-comments/*.html'
             ],
             dest: '<%= yeoman.dist %>'
           }
@@ -341,6 +346,7 @@ module.exports = function (grunt) {
               'side-projects/*.html',
               'about-me/*.html',
               'contact/*.html',
+              'blog-comments/*.html',
               'components/**/*',
               'images/{,*/}*.{webp}',
               'fonts/*'
