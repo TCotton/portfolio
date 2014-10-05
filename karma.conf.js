@@ -26,6 +26,7 @@ module.exports = function(config) {
       'app/work-projects/*.js',
       'app/side-projects/*.js',
       'app/blog-comments/*.js',
+      'app/blog-sidebar/*.js',
       'app/contact/*.js',
       'app/scripts/*.js',
       'test/mock/**/*.js',

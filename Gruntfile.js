@@ -51,7 +51,8 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/side-projects/*.js',
           '<%= yeoman.app %>/about-me/*.js',
           '<%= yeoman.app %>/contact/*.js',
-          '<%= yeoman.app %>/blog-comments/*.js'
+          '<%= yeoman.app %>/blog-comments/*.js',
+          '<%= yeoman.app %>/blog-sidebar/*.js'
         ],
         tasks: ['newer:jshint:all'],
         options: {
@@ -86,6 +87,7 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/about-me/*.html',
           '<%= yeoman.app %>/contact/*.html',
           '<%= yeoman.app %>/blog-comments/*.html',
+          '<%= yeoman.app %>/blog-sidebar/*.html',
           '.tmp/styles/{,*/}*.css',
           '<%= yeoman.app %>/{,*/}*.css',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
@@ -197,6 +199,7 @@ module.exports = function (grunt) {
         '<%= yeoman.app %>/about-me/*.js',
         '<%= yeoman.app %>/contact/*.js',
         '<%= yeoman.app %>/blog-comments/*.js',
+        '<%= yeoman.app %>/blog-sidebar/*.js',
         //'<%= yeoman.server %>/**/*.js',
         '!<%= yeoman.app %>/**/scripts/config/constants.js' // ignore auto generated constants file'
       ],
@@ -256,7 +259,8 @@ module.exports = function (grunt) {
         '<%= yeoman.dist %>/side-projects/*.html',
         '<%= yeoman.dist %>/about-me/*.html',
         '<%= yeoman.dist %>/contact/*.html',
-        '<%= yeoman.dist %>/blog-comments/*.html'
+        '<%= yeoman.dist %>/blog-comments/*.html',
+        '<%= yeoman.dist %>/blog-sidebar/*.html'
       ],
       css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
       options: {
@@ -320,7 +324,8 @@ module.exports = function (grunt) {
               'side-projects/*.html',
               'about-me/*.html',
               'contact/*.html',
-              'blog-comments/*.html'
+              'blog-comments/*.html',
+              'blog-sidebar/*.html'
             ],
             dest: '<%= yeoman.dist %>'
           }
@@ -347,6 +352,7 @@ module.exports = function (grunt) {
               'about-me/*.html',
               'contact/*.html',
               'blog-comments/*.html',
+              'blog-sidebar/*.html',
               'components/**/*',
               'images/{,*/}*.{webp}',
               'fonts/*'
