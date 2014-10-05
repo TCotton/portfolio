@@ -48,16 +48,16 @@ angular.module('portfolioApp', ['portfolioApp.controllers', 'portfolioApp.direct
         title: 'Contact form'
       })
       .when('/blog/', {
-        templateUrl: 'views/blog.html',
+        templateUrl: '../blog-pages/blog.html',
         controller: 'BlogCtrl as BlogIndexCtrl',
         title: 'blog unblock - the blog of web developer Andy Walpole'
       })
       .when('/blog/:blogId/:blogPage', {
-        templateUrl: 'views/blog_page.html',
+        templateUrl: '../blog-pages/blog_page.html',
         controller: 'BlogArticleCtrl as BlogArticlePageCtrl'
       })
       .when('/category/:category', {
-        templateUrl: 'views/blog_category.html',
+        templateUrl: '../blog-pages/blog_category.html',
         controller: 'BlogCatController as BlogCatPageController'
       })
       .when('/login', {

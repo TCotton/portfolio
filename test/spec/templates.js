@@ -70,7 +70,7 @@ describe('Unit: Templates - logged in', function () {
   });
 
   it('loads blog page at /blog/', function () {
-    $httpBackend.expectGET('views/blog.html')
+    $httpBackend.expectGET('../blog-pages/blog.html')
       .respond(200);
     location.path('/blog/');
     rootScope.$digest(); // call the digest loop
@@ -78,7 +78,7 @@ describe('Unit: Templates - logged in', function () {
   });
 
   it('loads individual blog page at /blog/-an-article', function () {
-    $httpBackend.expectGET('views/blog_page.html')
+    $httpBackend.expectGET('../blog-pages/blog_page.html')
       .respond(200);
     location.path('/blog/136324/using-autoload-in-object-orientated-wordpress-plugin');
     rootScope.$digest(); // call the digest loop
@@ -150,7 +150,7 @@ describe('Unit: Templates - logged in', function () {
   });
 
   it('loads category page at /blog/css', function () {
-    $httpBackend.expectGET('views/blog_category.html')
+    $httpBackend.expectGET('../blog-pages/blog_category.html')
       .respond(200);
     location.path('/category/css');
     rootScope.$digest(); // call the digest loop

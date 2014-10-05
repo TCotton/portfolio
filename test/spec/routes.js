@@ -42,7 +42,7 @@ describe('Routes test with log in', function () {
   describe('blog page index route', function () {
     beforeEach(inject(
       function ($httpBackend) {
-        $httpBackend.expectGET('views/blog.html')
+        $httpBackend.expectGET('../blog-pages/blog.html')
           .respond(200, 'blog HTML');
       }
     ));
@@ -58,7 +58,7 @@ describe('Routes test with log in', function () {
   describe('blog page route', function () {
     beforeEach(inject(
       function ($httpBackend) {
-        $httpBackend.expectGET('views/blog_page.html')
+        $httpBackend.expectGET('../blog-pages/blog_page.html')
           .respond(200, 'blog HTML');
       }
     ));
@@ -203,7 +203,7 @@ describe('Routes test with log in', function () {
   describe('Individual category page', function () {
     beforeEach(inject(
       function ($httpBackend) {
-        $httpBackend.expectGET('views/blog_category.html')
+        $httpBackend.expectGET('../blog-pages/blog_category.html')
           .respond(200, 'html page category HTML');
       }
     ));

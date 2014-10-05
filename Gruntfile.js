@@ -52,7 +52,8 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/about-me/*.js',
           '<%= yeoman.app %>/contact/*.js',
           '<%= yeoman.app %>/blog-comments/*.js',
-          '<%= yeoman.app %>/blog-sidebar/*.js'
+          '<%= yeoman.app %>/blog-sidebar/*.js',
+          '<%= yeoman.app %>/blog-pages/*.js'
         ],
         tasks: ['newer:jshint:all'],
         options: {
@@ -88,6 +89,7 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/contact/*.html',
           '<%= yeoman.app %>/blog-comments/*.html',
           '<%= yeoman.app %>/blog-sidebar/*.html',
+          '<%= yeoman.app %>/blog-pages/*.html',
           '.tmp/styles/{,*/}*.css',
           '<%= yeoman.app %>/{,*/}*.css',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
@@ -200,6 +202,7 @@ module.exports = function (grunt) {
         '<%= yeoman.app %>/contact/*.js',
         '<%= yeoman.app %>/blog-comments/*.js',
         '<%= yeoman.app %>/blog-sidebar/*.js',
+        '<%= yeoman.app %>/blog-pages/*.js',
         //'<%= yeoman.server %>/**/*.js',
         '!<%= yeoman.app %>/**/scripts/config/constants.js' // ignore auto generated constants file'
       ],
@@ -260,7 +263,8 @@ module.exports = function (grunt) {
         '<%= yeoman.dist %>/about-me/*.html',
         '<%= yeoman.dist %>/contact/*.html',
         '<%= yeoman.dist %>/blog-comments/*.html',
-        '<%= yeoman.dist %>/blog-sidebar/*.html'
+        '<%= yeoman.dist %>/blog-sidebar/*.html',
+        '<%= yeoman.dist %>/blog-pages/*.html'
       ],
       css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
       options: {
@@ -325,7 +329,8 @@ module.exports = function (grunt) {
               'about-me/*.html',
               'contact/*.html',
               'blog-comments/*.html',
-              'blog-sidebar/*.html'
+              'blog-sidebar/*.html',
+              'blog-pages/*.html'
             ],
             dest: '<%= yeoman.dist %>'
           }
@@ -353,6 +358,7 @@ module.exports = function (grunt) {
               'contact/*.html',
               'blog-comments/*.html',
               'blog-sidebar/*.html',
+              'blog-pages/*.html',
               'components/**/*',
               'images/{,*/}*.{webp}',
               'fonts/*'
