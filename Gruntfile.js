@@ -43,7 +43,7 @@ module.exports = function (grunt) {
     pkg: grunt.file.readJSON('package.json'),
     watch: {
       js: {
-        files: ['<%= yeoman.app %>/scripts/{,*/}*.js',  '<%= yeoman.app %>/footer/*.js', '<%= yeoman.app %>/homepage/*.js'],
+        files: ['<%= yeoman.app %>/scripts/{,*/}*.js',  '<%= yeoman.app %>/footer/*.js', '<%= yeoman.app %>/homepage/*.js', '<%= yeoman.app %>/work-projects/*.js'],
         tasks: ['newer:jshint:all'],
         options: {
           livereload: '<%= express.livereload.options %>'
@@ -72,6 +72,7 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/views/{,*/}*.html',
           '<%= yeoman.app %>/footer/*.html',
           '<%= yeoman.app %>/homepage/*.html',
+          '<%= yeoman.app %>/work-projects/*.html',
           '.tmp/styles/{,*/}*.css',
           '<%= yeoman.app %>/{,*/}*.css',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
@@ -178,6 +179,7 @@ module.exports = function (grunt) {
         '<%= yeoman.app %>/scripts/{,*/}*.js',
         '<%= yeoman.app %>/footer/{,*/}*.js',
         '<%= yeoman.app %>/homepage/{,*/}*.js',
+        '<%= yeoman.app %>/work-projects/*.js',
         //'<%= yeoman.server %>/**/*.js',
         '!<%= yeoman.app %>/**/scripts/config/constants.js', // ignore auto generated constants file'
       ],
@@ -229,7 +231,12 @@ module.exports = function (grunt) {
 
     // Performs rewrites based on rev and the useminPrepare configuration
     usemin: {
-      html: ['<%= yeoman.dist %>/{,*/}*.html', '<%= yeoman.dist %>/footer/*.html', '<%= yeoman.dist %>/homepage/*.html'],
+      html: [
+        '<%= yeoman.dist %>/{,*/}*.html',
+        '<%= yeoman.dist %>/footer/*.html',
+        '<%= yeoman.dist %>/homepage/*.html',
+        '<%= yeoman.dist %>/work-projects/*.html'
+      ],
       css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
       options: {
         assetsDirs: ['<%= yeoman.dist %>']
@@ -283,7 +290,13 @@ module.exports = function (grunt) {
           {
             expand: true,
             cwd: '<%= yeoman.dist %>',
-            src: ['*.html', 'views/{,*/}*.html', 'footer/*.html', 'homepage/*.html'],
+            src: [
+              '*.html',
+              'views/{,*/}*.html',
+              'footer/*.html',
+              'homepage/*.html',
+              'work-projects/*.html'
+            ],
             dest: '<%= yeoman.dist %>'
           }
         ]
@@ -305,6 +318,7 @@ module.exports = function (grunt) {
               'views/{,*/}*.html',
               'footer/*.html',
               'homepage/*.html',
+              'work-projects/*.html',
               'components/**/*',
               'images/{,*/}*.{webp}',
               'fonts/*'

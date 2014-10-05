@@ -38,7 +38,7 @@ describe('Unit: Templates - logged in', function () {
   });
 
   it('loads work projects page at /work-projects', function () {
-    $httpBackend.expectGET('views/my_work.html')
+    $httpBackend.expectGET('../work-projects/my_work.html')
       .respond(200);
     location.path('/work-projects');
     rootScope.$digest(); // call the digest loop
@@ -86,7 +86,7 @@ describe('Unit: Templates - logged in', function () {
   });
 
   it('loads individual work page at /work-projects/thomson-reuters-japan', function () {
-    $httpBackend.expectGET('views/work_page.html')
+    $httpBackend.expectGET('../work-projects/work_page.html')
       .respond(200);
     location.path('/work-projects/thomson-reuters-japan');
     rootScope.$digest(); // call the digest loop
@@ -94,7 +94,7 @@ describe('Unit: Templates - logged in', function () {
   });
 
   it('loads individual side projects page at /side-projects/pennybooks', function () {
-    $httpBackend.expectGET('views/projects_page.html')
+    $httpBackend.expectGET('../views/projects_page.html')
       .respond(200);
     location.path('/side-projects/pennybooks');
     rootScope.$digest(); // call the digest loop

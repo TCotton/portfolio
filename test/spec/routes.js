@@ -75,7 +75,7 @@ describe('Routes test with log in', function () {
   describe('individual work page', function () {
     beforeEach(inject(
       function ($httpBackend) {
-        $httpBackend.expectGET('views/work_page.html')
+        $httpBackend.expectGET('../work-projects/work_page.html')
           .respond(200, 'work page HTML');
       }
     ));
@@ -91,7 +91,7 @@ describe('Routes test with log in', function () {
   describe('individual side project page', function () {
     beforeEach(inject(
       function ($httpBackend) {
-        $httpBackend.expectGET('views/projects_page.html')
+        $httpBackend.expectGET('../views/projects_page.html')
           .respond(200, 'project page HTML');
       }
     ));

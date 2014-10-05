@@ -23,11 +23,11 @@ angular.module('portfolioApp', ['portfolioApp.controllers', 'portfolioApp.direct
         title: 'The portfolio and blog of web developer Andy Walpole'
       })
       .when('/work-projects', {
-        templateUrl: 'views/my_work.html',
+        templateUrl: '../work-projects/my_work.html',
         title: 'Noteworthy work projects from the past 18 months'
       })
       .when('/work-projects/:workPage', {
-        templateUrl: 'views/work_page.html',
+        templateUrl: '../work-projects/work_page.html',
         controller: 'WorkPageCtrl'
       })
       .when('/side-projects', {
@@ -35,7 +35,7 @@ angular.module('portfolioApp', ['portfolioApp.controllers', 'portfolioApp.direct
         title: 'Noteworthy personal side projects from the past 18 months'
       })
       .when('/side-projects/:projectsPage', {
-        templateUrl: 'views/projects_page.html',
+        templateUrl: '../views/projects_page.html',
         controller: 'ProjectsPageCtrl'
       })
       .when('/about-me', {

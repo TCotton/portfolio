@@ -34,7 +34,7 @@ describe('Controller: WorkPageCtrl', function () {
     expect($route.current).toBeUndefined();
 
     $location.path('/work-projects/thomson-reuters-japan');
-    $httpBackend.expectGET('views/work_page.html').respond(200);
+    $httpBackend.expectGET('work-projects/work_page.html').respond(200);
 
     scope = $rootScope.$new();
 
@@ -60,7 +60,7 @@ describe('Controller: WorkPageCtrl', function () {
     expect($route.current).toBeUndefined();
 
     $location.path('/work-projects/thomson-reuters-japan');
-    $httpBackend.expectGET('views/work_page.html').respond(200);
+    $httpBackend.expectGET('work-projects/work_page.html').respond(200);
 
     scope = $rootScope.$new();
 
