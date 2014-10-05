@@ -46,7 +46,7 @@ describe('Unit: Templates - logged in', function () {
   });
 
   it('loads about me page at /about-me', function () {
-    $httpBackend.expectGET('views/about_me.html')
+    $httpBackend.expectGET('../about-me/about_me.html')
       .respond(200);
     location.path('/about-me');
     rootScope.$digest(); // call the digest loop

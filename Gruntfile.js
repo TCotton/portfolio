@@ -48,7 +48,8 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/footer/*.js',
           '<%= yeoman.app %>/homepage/*.js',
           '<%= yeoman.app %>/work-projects/*.js',
-          '<%= yeoman.app %>/side-projects/*.js'
+          '<%= yeoman.app %>/side-projects/*.js',
+          '<%= yeoman.app %>/about-me/*.js'
         ],
         tasks: ['newer:jshint:all'],
         options: {
@@ -80,6 +81,7 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/homepage/*.html',
           '<%= yeoman.app %>/work-projects/*.html',
           '<%= yeoman.app %>/side-projects/*.html',
+          '<%= yeoman.app %>/about-me/*.html',
           '.tmp/styles/{,*/}*.css',
           '<%= yeoman.app %>/{,*/}*.css',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
@@ -188,6 +190,7 @@ module.exports = function (grunt) {
         '<%= yeoman.app %>/homepage/{,*/}*.js',
         '<%= yeoman.app %>/work-projects/*.js',
         '<%= yeoman.app %>/side-projects/*.js',
+        '<%= yeoman.app %>/about-me/*.js',
         //'<%= yeoman.server %>/**/*.js',
         '!<%= yeoman.app %>/**/scripts/config/constants.js', // ignore auto generated constants file'
       ],
@@ -244,7 +247,8 @@ module.exports = function (grunt) {
         '<%= yeoman.dist %>/footer/*.html',
         '<%= yeoman.dist %>/homepage/*.html',
         '<%= yeoman.dist %>/work-projects/*.html',
-        '<%= yeoman.dist %>/side-projects/*.html'
+        '<%= yeoman.dist %>/side-projects/*.html',
+        '<%= yeoman.dist %>/about-me/*.js'
       ],
       css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
       options: {
@@ -305,7 +309,8 @@ module.exports = function (grunt) {
               'footer/*.html',
               'homepage/*.html',
               'work-projects/*.html',
-              'side-projects/*.html'
+              'side-projects/*.html',
+              'about-me/*.html'
             ],
             dest: '<%= yeoman.dist %>'
           }
@@ -329,6 +334,7 @@ module.exports = function (grunt) {
               'homepage/*.html',
               'work-projects/*.html',
               'side-projects/*.html',
+              'about-me/*.html',
               'components/**/*',
               'images/{,*/}*.{webp}',
               'fonts/*'
