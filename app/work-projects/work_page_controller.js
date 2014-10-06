@@ -4,7 +4,7 @@
 'use strict';
 (function () {
 
-  var app = angular.module('portfolioApp.controllers');
+  var app = angular.module('portfolioApp.wordProjectsController');
 
   /**
    * @description Displays work projects

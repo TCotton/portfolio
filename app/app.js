@@ -9,8 +9,52 @@ angular.module('portfolioApp.directives', []);
 angular.module('portfolioApp.services', []);
 angular.module('portfolioApp.filters', []);
 
-angular.module('portfolioApp', ['portfolioApp.controllers', 'portfolioApp.directives', 'portfolioApp.services', 'portfolioApp.filters', 'AppConstants', 'ngResource', 'ngSanitize', 'ngRoute', 'HashBangURLs', 'portfolioAppConfig', 'jmdobry.angular-cache'])
-  .config(function ($routeProvider, $httpProvider) {
+angular.module('portfolioApp.blogAdminController', []);
+angular.module('portfolioApp.blogAdminService', []);
+angular.module('portfolioApp.blogAdminController', []);
+
+angular.module('portfolioApp.blogCommentsController', []);
+angular.module('portfolioApp.blogCommentsDirective', []);
+angular.module('portfolioApp.blogCommentsService', []);
+
+angular.module('portfolioApp.blogPagesController', []);
+angular.module('portfolioApp.blogPagesDirective', []);
+angular.module('portfolioApp.blogPagesService', []);
+angular.module('portfolioApp.blogPagesFilter', []);
+
+angular.module('portfolioApp.blogSidebarController', []);
+
+angular.module('portfolioApp.contractController', []);
+angular.module('portfolioApp.contractService', []);
+
+angular.module('portfolioApp.footerController', []);
+angular.module('portfolioApp.footerService', []);
+
+angular.module('portfolioApp.homepageDirective', []);
+
+angular.module('portfolioApp.miscDirective', []);
+
+angular.module('portfolioApp.sideProjectsController', []);
+
+angular.module('portfolioApp.sitemapController', []);
+
+angular.module('portfolioApp.wordProjectsController', []);
+
+angular.module('portfolioApp', [
+  'portfolioApp.controllers',
+  'portfolioApp.directives',
+  'portfolioApp.services',
+  'portfolioApp.filters',
+  'portfolioApp.sideProjectsController',
+  'portfolioApp.wordProjectsController',
+  'AppConstants',
+  'ngResource',
+  'ngSanitize',
+  'ngRoute',
+  'HashBangURLs',
+  'portfolioAppConfig',
+  'jmdobry.angular-cache'
+]).config(function ($routeProvider, $httpProvider) {
 
     // Needed for CORS
     // http://better-inter.net/enabling-cors-in-angular-js/

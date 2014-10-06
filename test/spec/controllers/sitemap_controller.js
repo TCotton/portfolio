@@ -6,7 +6,7 @@
 describe('Controller: SitemapCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('testConstants', 'portfolioApp.controllers', 'portfolioApp.services', 'AppConstants', 'ngSanitize', 'ngRoute', 'HashBangURLs', 'portfolioAppConfig', 'jmdobry.angular-cache'));
+  beforeEach(module('testConstants', 'portfolioApp.sideProjectsController', 'portfolioApp.services', 'AppConstants', 'ngSanitize', 'ngRoute', 'HashBangURLs', 'portfolioAppConfig', 'jmdobry.angular-cache'));
 
   var $controller;
   var $rootScope;
@@ -54,7 +54,7 @@ describe('Controller: SitemapCtrl', function () {
   }));
 
 
-  it('Test to make sure that tags are created from blog content', function () {
+  iit('Test to make sure that tags are created from blog content', function () {
 
     var categories = _.pluck(MOCK_DATA.allBlogData.data, 'category');
 
