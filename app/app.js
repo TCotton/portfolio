@@ -46,6 +46,7 @@ angular.module('portfolioApp', [
   'portfolioApp.services',
   'portfolioApp.filters',
   'portfolioApp.sideProjectsController',
+  'portfolioApp.sitemapController',
   'portfolioApp.wordProjectsController',
   'AppConstants',
   'ngResource',

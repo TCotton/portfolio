@@ -54,7 +54,7 @@ describe('Controller: SitemapCtrl', function () {
   }));
 
 
-  iit('Test to make sure that tags are created from blog content', function () {
+  it('Test to make sure that tags are created from blog content', function () {
 
     var categories = _.pluck(MOCK_DATA.allBlogData.data, 'category');
 

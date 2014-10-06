@@ -6,7 +6,7 @@
 describe('Controller: ProjectsPageCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('portfolioApp.controllers', 'AppConstants',  'ngRoute'));
+  beforeEach(module('portfolioApp.sideProjectsController', 'AppConstants',  'ngRoute'));
 
   var ProjectsPageCtrl;
   var scope;
