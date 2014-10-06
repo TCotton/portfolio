@@ -44,7 +44,6 @@ module.exports = function (grunt) {
     watch: {
       js: {
         files: [
-          '<%= yeoman.app %>/scripts/{,*/}*.js',
           '<%= yeoman.app %>/footer/*.js',
           '<%= yeoman.app %>/homepage/*.js',
           '<%= yeoman.app %>/work-projects/*.js',
@@ -201,7 +200,6 @@ module.exports = function (grunt) {
       },
       all: [
         'Gruntfile.js',
-        '<%= yeoman.app %>/scripts/{,*/}*.js',
         '<%= yeoman.app %>/footer/{,*/}*.js',
         '<%= yeoman.app %>/homepage/{,*/}*.js',
         '<%= yeoman.app %>/work-projects/*.js',

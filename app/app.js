@@ -4,47 +4,27 @@
  * This entire site is coded in AngularJS. Inspect the code on GitHub: https://github.com/TCotton/portfolio
  */
 
-angular.module('portfolioApp.controllers', []);
-angular.module('portfolioApp.directives', []);
-angular.module('portfolioApp.services', []);
-angular.module('portfolioApp.filters', []);
-
 angular.module('portfolioApp.blogAdminService', []);
 angular.module('portfolioApp.blogAdminController', []);
-
 angular.module('portfolioApp.blogCommentsController', []);
 angular.module('portfolioApp.blogCommentsDirective', []);
 angular.module('portfolioApp.blogCommentsService', []);
-
 angular.module('portfolioApp.blogPagesController', []);
 angular.module('portfolioApp.blogPagesDirective', []);
 angular.module('portfolioApp.blogPagesService', []);
 angular.module('portfolioApp.blogPagesFilter', []);
-
 angular.module('portfolioApp.blogSidebarController', []);
-
 angular.module('portfolioApp.contractController', []);
 angular.module('portfolioApp.contractService', []);
-
 angular.module('portfolioApp.footerController', []);
 angular.module('portfolioApp.footerService', []);
-
 angular.module('portfolioApp.homepageDirective', []);
-
 angular.module('portfolioApp.miscDirective', []);
-
 angular.module('portfolioApp.sideProjectsController', []);
-
 angular.module('portfolioApp.sitemapController', []);
-
 angular.module('portfolioApp.wordProjectsController', []);
 
 angular.module('portfolioApp', [
-  'portfolioApp.controllers',
-  'portfolioApp.directives',
-  'portfolioApp.services',
-  'portfolioApp.filters',
-
   'portfolioApp.blogAdminService',
   'portfolioApp.blogAdminController',
   'portfolioApp.blogCommentsDirective',
