@@ -15,12 +15,14 @@
    * @param $scope
    * @param MongoCommentService
    * @param $log
+   * @param _
    * @constructor
    */
-  var CommentAdminCtrl = function ($scope, MongoCommentService, $log) {
+  var CommentAdminCtrl = function ($scope, MongoCommentService, $log, _) {
 
     this.$scope = $scope;
     this.$log = $log;
+    this._ = _;
     /** Using defineProperty prevents injected service being exposed to the template
      * **/
     Object.defineProperty(this, 'MongoCommentService', {
@@ -40,7 +42,7 @@
 
     returnedPromise.then(function (result) {
 
-      if (_.isObject(result.data)) {
+      if (this._.isObject(result.data)) {
 
         this.$scope.comments = result.data;
 
@@ -105,7 +107,7 @@
 
   };
 
-  CommentAdminCtrl.$inject = ['$scope', 'MongoCommentService', '$log'];
+  CommentAdminCtrl.$inject = ['$scope', 'MongoCommentService', '$log', '_'];
 
   app.controller('CommentAdminCtrl', CommentAdminCtrl);
 

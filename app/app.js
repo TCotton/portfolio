@@ -50,7 +50,8 @@ angular.module('portfolioApp', [
   'HashBangURLs',
   'portfolioAppConfig',
   'jmdobry.angular-cache',
-  'underscore'
+  'underscore',
+  'momentLibrary'
 ]).config(function ($routeProvider, $httpProvider) {
 
   // Needed for CORS

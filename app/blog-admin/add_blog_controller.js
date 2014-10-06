@@ -24,9 +24,10 @@
    * @param $scope
    * @param $log
    * @param MongoBlogService
+   * @param moment
    * @constructor
    */
-  var AddBlogCtrl = function ($scope, $log, MongoBlogService) {
+  var AddBlogCtrl = function ($scope, $log, MongoBlogService, moment) {
 
     this.$scope = $scope;
     this.$log = $log;
@@ -161,7 +162,7 @@
 
   };
 
-  AddBlogCtrl.$inject = ['$scope', '$log', 'MongoBlogService'];
+  AddBlogCtrl.$inject = ['$scope', '$log', 'MongoBlogService', 'moment'];
 
   AddBlogCtrl.prototype.addBlog = function (isValid) {
 
