@@ -6,7 +6,7 @@
 
 (function () {
 
-  var app = angular.module('portfolioApp.services');
+  var app = angular.module('portfolioApp.footerService');
 
   var NewsBlurService = function ($http, $q) {
 
