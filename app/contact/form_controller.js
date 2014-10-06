@@ -6,7 +6,7 @@
 
 (function () {
 
-  var app = angular.module('portfolioApp.controllers');
+  var app = angular.module('portfolioApp.contractController');
 
   /**
    * @description Contact me form submission
