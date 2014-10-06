@@ -7,7 +7,7 @@
 describe('Controller: SidebarCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('testConstants', 'portfolioApp.blogSidebarController', 'portfolioApp.services', 'AppConstants', 'ngSanitize', 'ngRoute', 'HashBangURLs', 'portfolioAppConfig', 'jmdobry.angular-cache'));
+  beforeEach(module('testConstants', 'portfolioApp.blogSidebarController', 'portfolioApp.blogAdminService', 'portfolioApp.blogPagesService', 'AppConstants', 'ngSanitize', 'ngRoute', 'HashBangURLs', 'portfolioAppConfig', 'jmdobry.angular-cache'));
 
   var $controller;
   var $rootScope;

@@ -6,7 +6,7 @@
 describe('Controller: UserDetailsCtrl as AdminUserDetailsCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('portfolioApp.controllers', 'testConstants', 'portfolioApp.services'));
+  beforeEach(module('portfolioApp.blogAdminController', 'testConstants', 'portfolioApp.blogAdminService'));
 
   var AdminUserDetailsCtrl;
   var scope;

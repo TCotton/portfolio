@@ -7,7 +7,7 @@
   /** Add, edit or delete user details
    * */
 
-  var app = angular.module('portfolioApp.controllers');
+  var app = angular.module('portfolioApp.blogAdminController');
 
   /**
    * @description Admin access to users

@@ -9,7 +9,6 @@ angular.module('portfolioApp.directives', []);
 angular.module('portfolioApp.services', []);
 angular.module('portfolioApp.filters', []);
 
-angular.module('portfolioApp.blogAdminController', []);
 angular.module('portfolioApp.blogAdminService', []);
 angular.module('portfolioApp.blogAdminController', []);
 
@@ -46,6 +45,7 @@ angular.module('portfolioApp', [
   'portfolioApp.services',
   'portfolioApp.filters',
 
+  'portfolioApp.blogAdminService',
   'portfolioApp.blogAdminController',
   'portfolioApp.blogCommentsDirective',
   'portfolioApp.blogCommentsService',

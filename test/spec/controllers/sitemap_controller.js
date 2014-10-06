@@ -6,7 +6,7 @@
 describe('Controller: SitemapCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('testConstants', 'portfolioApp.sideProjectsController', 'portfolioApp.services', 'AppConstants', 'ngSanitize', 'ngRoute', 'HashBangURLs', 'portfolioAppConfig', 'jmdobry.angular-cache'));
+  beforeEach(module('testConstants', 'portfolioApp.sideProjectsController', 'portfolioApp.blogAdminService', 'portfolioApp.blogPagesService', 'AppConstants', 'ngSanitize', 'ngRoute', 'HashBangURLs', 'portfolioAppConfig', 'jmdobry.angular-cache'));
 
   var $controller;
   var $rootScope;

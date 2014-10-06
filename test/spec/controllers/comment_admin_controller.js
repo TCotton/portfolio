@@ -15,7 +15,7 @@ describe('Controller: CommentAdminCtrl as AdminCommentAdminCtrl', function () {
   var returnedBlogComments;
   var publishedBlogComment;
 
-  beforeEach(module('portfolioApp.controllers', 'testConstants', 'portfolioApp.services'));
+  beforeEach(module('portfolioApp.blogAdminController', 'testConstants', 'portfolioApp.blogAdminService', 'portfolioApp.blogCommentsService'));
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function (_$controller_, _$rootScope_, _MOCK_DATA_, _$httpBackend_, _$q_) {

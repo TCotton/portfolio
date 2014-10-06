@@ -13,7 +13,7 @@ describe('Controller: CommentCtrl as BlogCommentCtrl', function () {
   var BlogCommentCtrl;
   var returnedCommentData;
 
-  beforeEach(module('portfolioApp.controllers', 'testConstants', 'portfolioApp.services'));
+  beforeEach(module('portfolioApp.blogAdminController', 'testConstants', 'portfolioApp.blogCommentsService'));
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function (_$controller_, _$rootScope_, _MOCK_DATA_, _$httpBackend_, _$q_) {

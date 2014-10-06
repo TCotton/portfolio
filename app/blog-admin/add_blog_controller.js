@@ -10,7 +10,7 @@
 
   /** Add, edit or delete blog posts
    * */
-  var app = angular.module('portfolioApp.controllers');
+  var app = angular.module('portfolioApp.blogAdminController');
 
   /** Declare enclosed scope variable names
    * **/

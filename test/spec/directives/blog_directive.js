@@ -30,7 +30,7 @@ describe('Directive: blogBlockDirective', function () {
   }));
 
 
-  iit('Test HTML elements in blogBlockDirective after scope change', function () {
+  it('Test HTML elements in blogBlockDirective after scope change', function () {
 
     expect(element.text()).toContain(MOCK_DATA.returnedRSS.data.responseData.feed.entries[0].contentSnippet);
     expect(element.text()).toContain(MOCK_DATA.returnedRSS.data.responseData.feed.entries[0].title);
