@@ -13,21 +13,18 @@
    * @description Admin access to users
    * @param $scope
    * @param $log
-   * @param MongoUserService
+   * @param MongoUserFactory
    * @constructor
    */
-  var UserDetailsCtrl = function ($scope, $log, MongoUserService) {
+  var UserDetailsCtrl = function ($scope, $log, MongoUserFactory) {
 
     this.$scope = $scope;
     this.$log = $log;
 
     /** Using defineProperty prevents injected service being exposed to the template
      * **/
-    Object.defineProperty(this, 'MongoUserService', {
-      enumerable: false,
-      configurable: false,
-      writable: false,
-      value: MongoUserService
+    Object.defineProperty(this, 'MongoUserFactory', {
+      value: MongoUserFactory
     });
 
     this.$scope.editUser = {};
@@ -44,7 +41,7 @@
 
   };
 
-  UserDetailsCtrl.$inject = ['$scope', '$log', 'MongoUserService'];
+  UserDetailsCtrl.$inject = ['$scope', '$log', 'MongoUserFactory'];
 
   UserDetailsCtrl.prototype.editUserFun = function (data) {
 
@@ -57,7 +54,7 @@
 
   UserDetailsCtrl.prototype.deleteUser = function (data) {
 
-    var returnedPromise = this.MongoUserService.deleteUsers(data._id);
+    var returnedPromise = this.MongoUserFactory.deleteUsers(data._id);
 
     returnedPromise.then(function () {
 
@@ -90,7 +87,7 @@
         password: this.$scope.editUser.password
       };
 
-      var returnedPromise = this.MongoUserService.editUsers(userData);
+      var returnedPromise = this.MongoUserFactory.editUsers(userData);
 
       returnedPromise.then(function () {
 
@@ -115,7 +112,7 @@
 
   UserDetailsCtrl.prototype.listAllUsers = function () {
 
-    var returnedPromise = this.MongoUserService.getUsers();
+    var returnedPromise = this.MongoUserFactory.getUsers();
 
     returnedPromise.then(function (value) {
 
@@ -139,7 +136,7 @@
 
     if (isValid) {
 
-      var returnedData = this.MongoUserService.addUser(this.$scope.addUser);
+      var returnedData = this.MongoUserFactory.addUser(this.$scope.addUser);
 
       returnedData.then(function () {
 

@@ -23,19 +23,19 @@
    * @description Used in admin area to add blog articles
    * @param $scope
    * @param $log
-   * @param MongoBlogService
+   * @param MongoBlogFactory
    * @param moment
    * @constructor
    */
-  var AddBlogCtrl = function ($scope, $log, MongoBlogService, moment) {
+  var AddBlogCtrl = function ($scope, $log, MongoBlogFactory, moment) {
 
     this.$scope = $scope;
     this.$log = $log;
 
     /** Using defineProperty prevents injected service being exposed to the template
      * **/
-    Object.defineProperty(this, 'MongoBlogService', {
-      value: MongoBlogService
+    Object.defineProperty(this, 'MongoBlogFactory', {
+      value: MongoBlogFactory
     });
 
     /** List scope here
@@ -159,7 +159,7 @@
 
   };
 
-  AddBlogCtrl.$inject = ['$scope', '$log', 'MongoBlogService', 'moment'];
+  AddBlogCtrl.$inject = ['$scope', '$log', 'MongoBlogFactory', 'moment'];
 
   AddBlogCtrl.prototype.addBlog = function (isValid) {
 
@@ -173,7 +173,7 @@
       _addSEOFriendlyURL();
       _createContentSnippet();
 
-      var returnedData = this.MongoBlogService.addBlogPost(this.$scope.addBlogFormData);
+      var returnedData = this.MongoBlogFactory.addBlogPost(this.$scope.addBlogFormData);
 
       returnedData.then(function () {
 

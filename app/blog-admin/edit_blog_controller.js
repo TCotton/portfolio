@@ -20,11 +20,11 @@
    * @description for editing or deleting blog articles
    * @param $scope
    * @param $log
-   * @param MongoBlogService
+   * @param MongoBlogFactory
    * @param _
    * @constructor
    */
-  var EditBlogCtrl = function ($scope, $log, MongoBlogService, _) {
+  var EditBlogCtrl = function ($scope, $log, MongoBlogFactory, _) {
 
     this.$scope = $scope;
     this.$log = $log;
@@ -33,8 +33,8 @@
     /** By using EMCAScript 5 defineProperty we can prevent the service or config file
      * from appearing in the template as a model
      * **/
-    Object.defineProperty(this, 'MongoBlogService', {
-      value: MongoBlogService
+    Object.defineProperty(this, 'MongoBlogFactory', {
+      value: MongoBlogFactory
     });
 
     /** List scope objects
@@ -122,7 +122,7 @@
 
   };
 
-  EditBlogCtrl.$inject = ['$scope', '$log', 'MongoBlogService', '_'];
+  EditBlogCtrl.$inject = ['$scope', '$log', 'MongoBlogFactory', '_'];
 
   /** Public methods
    * **/
@@ -175,7 +175,7 @@
         allowComments: this.$scope.editBlogFormData.commentsOpen
       };
 
-      var returnedPromise = this.MongoBlogService.editBlogPosts(formData);
+      var returnedPromise = this.MongoBlogFactory.editBlogPosts(formData);
 
       returnedPromise.then(function () {
 
@@ -212,7 +212,7 @@
    * **/
   EditBlogCtrl.prototype.getBlogs = function () {
 
-    var returnedPromise = this.MongoBlogService.getBlogPosts();
+    var returnedPromise = this.MongoBlogFactory.getBlogPosts();
 
     returnedPromise.then(function (value) {
 
@@ -263,7 +263,7 @@
 
   EditBlogCtrl.prototype.removeArticle = function () {
 
-    var returnedPromise = this.MongoBlogService.deleteBlogPost(this.$scope.dataToDelete._id);
+    var returnedPromise = this.MongoBlogFactory.deleteBlogPost(this.$scope.dataToDelete._id);
 
     returnedPromise.then(function (value) {
 

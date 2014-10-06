@@ -2,7 +2,7 @@
  * Created by awalpole on 06/10/2014.
  */
 'use strict';
-angular.module('portfolioApp.blogPagesService').factory('BlogDataFactory', ['$http', '$q', 'MongoBlogService', '$angularCacheFactory', 'CONFIG', function ($http, $q, MongoBlogService, $angularCacheFactory, CONFIG) {
+angular.module('portfolioApp.blogPagesService').factory('BlogDataFactory', ['$http', '$q', 'MongoBlogFactory', '$angularCacheFactory', 'CONFIG', function ($http, $q, MongoBlogFactory, $angularCacheFactory, CONFIG) {
 
   /* cache the relevant data in either session or storage
    * **/
@@ -31,7 +31,7 @@ angular.module('portfolioApp.blogPagesService').factory('BlogDataFactory', ['$ht
       if (!$angularCacheFactory.get('blogCache').get('allBlogPosts')) {
 
         // through a POST service supply the RSS url and the images in the CONFIG.BLOG object to be added the individual blog post objects
-        MongoBlogService.getOldBlogPosts({RSSFeed: CONFIG.RSS_FEED_LINK, BLOG: CONFIG.BLOG}).then(function (value) {
+        MongoBlogFactory.getOldBlogPosts({RSSFeed: CONFIG.RSS_FEED_LINK, BLOG: CONFIG.BLOG}).then(function (value) {
 
           _blogData = value;
           _cache(value);

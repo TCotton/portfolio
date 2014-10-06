@@ -12,11 +12,11 @@
    * @param $scope
    * @param $log
    * @param $location
-   * @param MongoUserService
+   * @param MongoUserFactory
    * @param $angularCacheFactory
    * @constructor
    */
-  var LoginCtrl = function ($rootScope, $scope, $log, $location, MongoUserService, $angularCacheFactory) {
+  var LoginCtrl = function ($rootScope, $scope, $log, $location, MongoUserFactory, $angularCacheFactory) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
@@ -26,8 +26,8 @@
 
     /** Using defineProperty prevents injected service being exposed to the template
      * **/
-    Object.defineProperty(this, 'MongoUserService', {
-      value: MongoUserService
+    Object.defineProperty(this, 'MongoUserFactory', {
+      value: MongoUserFactory
     });
 
     /** Local scope
@@ -38,7 +38,7 @@
 
   };
 
-  LoginCtrl.$inject = ['$rootScope', '$scope', '$log', '$location', 'MongoUserService', '$angularCacheFactory'];
+  LoginCtrl.$inject = ['$rootScope', '$scope', '$log', '$location', 'MongoUserFactory', '$angularCacheFactory'];
 
   /** Admin log-in page
    * **/
@@ -56,7 +56,7 @@
         'password': this.$scope.login.password
       };
 
-      var returnedPromise = this.MongoUserService.findUsers(user);
+      var returnedPromise = this.MongoUserFactory.findUsers(user);
 
       returnedPromise.then(function (value) {
 
