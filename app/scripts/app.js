@@ -61,31 +61,31 @@ angular.module('portfolioApp', ['portfolioApp.controllers', 'portfolioApp.direct
         controller: 'BlogCatController as BlogCatPageController'
       })
       .when('/login', {
-        templateUrl: 'views/admin/login.html',
+        templateUrl: '../blog-admin/login.html',
         controller: 'LoginCtrl as AdminLogin',
         title: 'Admin login form'
       })
       .when('/admin/', {
-        templateUrl: 'views/admin/admin.html',
+        templateUrl: '../blog-admin/admin.html',
         title: 'Admin area'
       })
       .when('/admin/user-details', {
-        templateUrl: 'views/admin/user_details.html',
+        templateUrl: '../blog-admin/user_details.html',
         controller: 'UserDetailsCtrl as AdminUserDetailsCtrl',
         title: 'Admin area - add, edit or delete users with admin privileges'
       })
       .when('/admin/blog-details', {
-        templateUrl: 'views/admin/blog_details.html',
+        templateUrl: '../blog-admin/blog_details.html',
         controller: 'EditBlogCtrl as AdminEditBlogCtrl',
         title: 'Admin area - edit or delete blog posts'
       })
       .when('/admin/add-blog', {
-        templateUrl: 'views/admin/add_blog.html',
+        templateUrl: '../blog-admin/add_blog.html',
         controller: 'AddBlogCtrl as AdminAddBlogCtrl',
         title: 'Admin area - add new blog articles'
       })
       .when('/admin/blog-comments', {
-        templateUrl: 'views/admin/comment_details.html',
+        templateUrl: '../blog-admin/comment_details.html',
         controller: 'CommentAdminCtrl as AdminCommentAdminCtrl',
         title: 'Admin area - edit blog comments'
       })

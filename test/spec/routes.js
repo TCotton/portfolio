@@ -107,7 +107,7 @@ describe('Routes test with log in', function () {
   describe('admin login page', function () {
     beforeEach(inject(
       function ($httpBackend) {
-        $httpBackend.expectGET('views/admin/login.html')
+        $httpBackend.expectGET('../blog-admin/login.html')
           .respond(200, 'login page HTML');
       }
     ));
@@ -123,7 +123,7 @@ describe('Routes test with log in', function () {
   describe('admin user details page', function () {
     beforeEach(inject(
       function ($httpBackend) {
-        $httpBackend.expectGET('views/admin/user_details.html')
+        $httpBackend.expectGET('../blog-admin/user_details.html')
           .respond(200, 'user details page HTML');
       }
     ));
@@ -139,7 +139,7 @@ describe('Routes test with log in', function () {
   describe('admin blog details page', function () {
     beforeEach(inject(
       function ($httpBackend) {
-        $httpBackend.expectGET('views/admin/blog_details.html')
+        $httpBackend.expectGET('../blog-admin/blog_details.html')
           .respond(200, 'blog details page HTML');
       }
     ));
@@ -155,7 +155,7 @@ describe('Routes test with log in', function () {
   describe('admin add blog page', function () {
     beforeEach(inject(
       function ($httpBackend) {
-        $httpBackend.expectGET('views/admin/add_blog.html')
+        $httpBackend.expectGET('../blog-admin/add_blog.html')
           .respond(200, 'add blog page HTML');
       }
     ));
@@ -171,7 +171,7 @@ describe('Routes test with log in', function () {
   describe('admin comments page', function () {
     beforeEach(inject(
       function ($httpBackend) {
-        $httpBackend.expectGET('views/admin/comment_details.html')
+        $httpBackend.expectGET('../blog-admin/comment_details.html')
           .respond(200, 'admin comments HTML');
       }
     ));
@@ -237,7 +237,7 @@ describe('Routes test without log in', function () {
   describe('admin add blog page without loggin in', function () {
     beforeEach(inject(
       function ($httpBackend) {
-        $httpBackend.expectGET('views/admin/login.html')
+        $httpBackend.expectGET('../blog-admin/login.html')
           .respond(200, 'login page HTML');
       }
     ));
@@ -253,7 +253,7 @@ describe('Routes test without log in', function () {
   describe('admin blog details page without logging in', function () {
     beforeEach(inject(
       function ($httpBackend) {
-        $httpBackend.expectGET('views/admin/login.html')
+        $httpBackend.expectGET('../blog-admin/login.html')
           .respond(200, 'login page HTML');
       }
     ));
@@ -269,7 +269,7 @@ describe('Routes test without log in', function () {
   describe('admin user details page without logging in', function () {
     beforeEach(inject(
       function ($httpBackend) {
-        $httpBackend.expectGET('views/admin/login.html')
+        $httpBackend.expectGET('../blog-admin/login.html')
           .respond(200, 'login page HTML');
       }
     ));
@@ -285,7 +285,7 @@ describe('Routes test without log in', function () {
   describe('admin comments page without logging in', function () {
     beforeEach(inject(
       function ($httpBackend) {
-        $httpBackend.expectGET('views/admin/login.html')
+        $httpBackend.expectGET('../blog-admin/login.html')
           .respond(200, 'login page HTML');
       }
     ));

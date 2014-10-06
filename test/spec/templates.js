@@ -102,7 +102,7 @@ describe('Unit: Templates - logged in', function () {
   });
 
   it('loads login page at /login', function () {
-    $httpBackend.expectGET('views/admin/login.html')
+    $httpBackend.expectGET('../blog-admin/login.html')
       .respond(200);
     location.path('/login');
     rootScope.$digest(); // call the digest loop
@@ -110,7 +110,7 @@ describe('Unit: Templates - logged in', function () {
   });
 
   it('loads admin user details page at /admin/user-details', function () {
-    $httpBackend.expectGET('views/admin/user_details.html')
+    $httpBackend.expectGET('../blog-admin/user_details.html')
       .respond(200);
     location.path('/admin/user-details');
     rootScope.$digest(); // call the digest loop
@@ -118,7 +118,7 @@ describe('Unit: Templates - logged in', function () {
   });
 
   it('loads admin add blog page at /admin/blog-details', function () {
-    $httpBackend.expectGET('views/admin/blog_details.html')
+    $httpBackend.expectGET('../blog-admin/blog_details.html')
       .respond(200);
     location.path('/admin/blog-details');
     rootScope.$digest(); // call the digest loop
@@ -126,7 +126,7 @@ describe('Unit: Templates - logged in', function () {
   });
 
   it('loads admin edit blog page at /admin/add-blog', function () {
-    $httpBackend.expectGET('views/admin/add_blog.html')
+    $httpBackend.expectGET('../blog-admin/add_blog.html')
       .respond(200);
     location.path('/admin/add-blog');
     rootScope.$digest(); // call the digest loop
@@ -134,7 +134,7 @@ describe('Unit: Templates - logged in', function () {
   });
 
   it('loads admin edit comments page at /admin/blog-comments', function () {
-    $httpBackend.expectGET('views/admin/comment_details.html')
+    $httpBackend.expectGET('../blog-admin/comment_details.html')
       .respond(200);
     location.path('/admin/blog-comments');
     rootScope.$digest(); // call the digest loop
@@ -180,7 +180,7 @@ describe('Unit: Templates - not logged in', function () {
   });
 
   it('loads login page when navigating to /admin/blog-comments because user is not logged in', function () {
-    $httpBackend.expectGET('views/admin/login.html')
+    $httpBackend.expectGET('../blog-admin/login.html')
       .respond(200);
     location.path('/admin/blog-comments');
     rootScope.$digest(); // call the digest loop
@@ -188,7 +188,7 @@ describe('Unit: Templates - not logged in', function () {
   });
 
   it('loads login page when navigating to /admin/user-details because user is not logged in', function () {
-    $httpBackend.expectGET('views/admin/login.html')
+    $httpBackend.expectGET('../blog-admin/login.html')
       .respond(200);
     location.path('/admin/user-details');
     rootScope.$digest(); // call the digest loop
@@ -196,7 +196,7 @@ describe('Unit: Templates - not logged in', function () {
   });
 
   it('loads login page when navigating to /admin/add-blog because user is not logged in', function () {
-    $httpBackend.expectGET('views/admin/login.html')
+    $httpBackend.expectGET('../blog-admin/login.html')
       .respond(200);
     location.path('/admin/add-blog');
     rootScope.$digest(); // call the digest loop
@@ -204,7 +204,7 @@ describe('Unit: Templates - not logged in', function () {
   });
 
   it('loads login page when navigating to /admin/blog-details because user is not logged in', function () {
-    $httpBackend.expectGET('views/admin/login.html')
+    $httpBackend.expectGET('../blog-admin/login.html')
       .respond(200);
     location.path('/admin/blog-details');
     rootScope.$digest(); // call the digest loop
