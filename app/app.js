@@ -28,7 +28,7 @@ angular.module('portfolioApp', [ 'portfolioApp.blogAdminService', 'portfolioApp.
   'portfolioApp.blogPagesDirective', 'portfolioApp.blogPagesService', 'portfolioApp.blogPagesFilter', 'portfolioApp.blogSidebarController',
   'portfolioApp.contractController', 'portfolioApp.contractService', 'portfolioApp.footerController', 'portfolioApp.footerService', 'portfolioApp.homepageDirective',
   'portfolioApp.miscDirective', 'portfolioApp.sideProjectsController', 'portfolioApp.sitemapController', 'portfolioApp.wordProjectsController',
-  'AppConstants', 'ngResource', 'ngSanitize', 'ngRoute', 'HashBangURLs', 'portfolioAppConfig', 'jmdobry.angular-cache'])
+  'AppConstants', 'ngResource', 'ngSanitize', 'ngRoute', 'HashBangURLs', 'portfolioAppConfig', 'jmdobry.angular-cache', 'underscore'])
   .config(function ($routeProvider, $httpProvider) {
 
     // Needed for CORS

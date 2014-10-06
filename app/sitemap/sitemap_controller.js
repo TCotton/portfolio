@@ -18,7 +18,7 @@
    * @param $angularCacheFactory
    * @constructor
    */
-  var SitemapCtrl = function ($rootScope, $scope, $log, BlogDataService, $angularCacheFactory) {
+  var SitemapCtrl = function ($rootScope, $scope, $log, BlogDataService, $angularCacheFactory, _) {
 
     /** Either receive data from BlogDataService or from the cache
      * **/
@@ -89,7 +89,7 @@
 
   };
 
-  SitemapCtrl.$inject = ['$rootScope', '$scope', '$log', 'BlogDataService', '$angularCacheFactory'];
+  SitemapCtrl.$inject = ['$rootScope', '$scope', '$log', 'BlogDataService', '$angularCacheFactory', '_'];
 
   app.controller('SitemapCtrl', SitemapCtrl);
 

@@ -6,7 +6,7 @@
 describe('Controller: WorkPageCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('portfolioApp.wordProjectsController', 'AppConstants', 'ngRoute'));
+  beforeEach(module('portfolioApp.wordProjectsController', 'AppConstants', 'ngRoute', 'underscore'));
 
   var WorkPageCtrl;
   var scope;

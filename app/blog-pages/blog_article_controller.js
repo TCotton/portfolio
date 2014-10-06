@@ -21,7 +21,7 @@
    * @param $filter
    * @constructor
    */
-  var BlogArticleCtrl = function ($rootScope, $scope, $location, BlogDataService, $log, $timeout, $sce, $angularCacheFactory, $route, $filter) {
+  var BlogArticleCtrl = function ($rootScope, $scope, $location, BlogDataService, $log, $timeout, $sce, $angularCacheFactory, $route, $filter, _) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
@@ -31,6 +31,7 @@
     this.$sce = $sce;
     this.$route = $route;
     this.$filter = $filter;
+    this._ = _;
 
     this.$scope.oldBlogPosts = null;
     this.$scope.title = null;
@@ -65,7 +66,7 @@
 
   };
 
-  BlogArticleCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataService', '$log', '$timeout', '$sce', '$angularCacheFactory', '$route', '$filter'];
+  BlogArticleCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataService', '$log', '$timeout', '$sce', '$angularCacheFactory', '$route', '$filter', '_'];
 
   BlogArticleCtrl.prototype.populatePage = function () {
 
@@ -78,7 +79,7 @@
      */
     var _renderArticle = function () {
 
-      var blogPost = _.filter(this.$scope.oldBlogPosts, function (o) {
+      var blogPost =  this._.filter(this.$scope.oldBlogPosts, function (o) {
 
         // filter articles array to find the correct article for the page
         if (o.publishedDate.substring(0, 6) === blogId) {
@@ -87,7 +88,7 @@
         }
       });
 
-      if (!_.isEmpty(blogPost) && this.$rootScope.currentPage.indexOf(blogPost[0].url) !== -1) {
+      if (!this._.isEmpty(blogPost) && this.$rootScope.currentPage.indexOf(blogPost[0].url) !== -1) {
 
         this.$scope.title = blogPost[0].title;
         this.$scope.author = blogPost[0].author;

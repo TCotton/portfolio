@@ -57,6 +57,7 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/blog-admin/*.js',
           '<%= yeoman.app %>/misc/*.js',
           '<%= yeoman.app %>/config/*.js',
+          '<%= yeoman.app %>/shared/*.js',
           '<%= yeoman.app %>/app.js'
         ],
         tasks: ['newer:jshint:all'],
@@ -97,6 +98,7 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/blog-admin/*.html',
           '<%= yeoman.app %>/sitemap/*.html',
           '<%= yeoman.app %>/misc/*.html',
+          '<%= yeoman.app %>/shared/*.html',
           '.tmp/styles/{,*/}*.css',
           '<%= yeoman.app %>/{,*/}*.css',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
@@ -212,6 +214,7 @@ module.exports = function (grunt) {
         '<%= yeoman.app %>/blog-admin/*.js',
         '<%= yeoman.app %>/sitemap/*.js',
         '<%= yeoman.app %>/misc/*.js',
+        '<%= yeoman.app %>/shared/*.js',
         '<%= yeoman.app %>/app.js',
         //'<%= yeoman.server %>/**/*.js',
         '!<%= yeoman.app %>/**/config/constants.js' // ignore auto generated constants file'
@@ -277,6 +280,7 @@ module.exports = function (grunt) {
         '<%= yeoman.dist %>/blog-pages/*.html',
         '<%= yeoman.dist %>/blog-admin/*.html',
         '<%= yeoman.dist %>/sitemap/*.html',
+        '<%= yeoman.dist %>/shared/*.html',
         '<%= yeoman.dist %>/misc/*.html'
       ],
       css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
@@ -346,7 +350,8 @@ module.exports = function (grunt) {
               'blog-pages/*.html',
               'blog-admin/*.html',
               'sitemap/*.html',
-              'misc/*.html'
+              'misc/*.html',
+              'shared/*.html'
             ],
             dest: '<%= yeoman.dist %>'
           }
@@ -378,6 +383,7 @@ module.exports = function (grunt) {
               'blog-admin/*.html',
               'sitemap/*.html',
               'misc/*.html',
+              'shared/*.html',
               'components/**/*',
               'images/{,*/}*.{webp}',
               'fonts/*'
