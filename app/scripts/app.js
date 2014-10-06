@@ -96,7 +96,7 @@ angular.module('portfolioApp', ['portfolioApp.controllers', 'portfolioApp.direct
       })
       .otherwise({
         redirectTo: '/404',
-        templateUrl: 'views/404.html'
+        templateUrl: '../misc/404.html'
       });
 
 

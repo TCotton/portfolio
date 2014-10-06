@@ -55,7 +55,8 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/blog-sidebar/*.js',
           '<%= yeoman.app %>/blog-pages/*.js',
           '<%= yeoman.app %>/sitemap/*.js',
-          '<%= yeoman.app %>/blog-admin/*.js'
+          '<%= yeoman.app %>/blog-admin/*.js',
+          '<%= yeoman.app %>/misc/*.js'
         ],
         tasks: ['newer:jshint:all'],
         options: {
@@ -94,6 +95,7 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/blog-pages/*.html',
           '<%= yeoman.app %>/blog-admin/*.html',
           '<%= yeoman.app %>/sitemap/*.html',
+          '<%= yeoman.app %>/misc/*.html',
           '.tmp/styles/{,*/}*.css',
           '<%= yeoman.app %>/{,*/}*.css',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
@@ -209,6 +211,7 @@ module.exports = function (grunt) {
         '<%= yeoman.app %>/blog-pages/*.js',
         '<%= yeoman.app %>/blog-admin/*.js',
         '<%= yeoman.app %>/sitemap/*.js',
+        '<%= yeoman.app %>/misc/*.js',
         //'<%= yeoman.server %>/**/*.js',
         '!<%= yeoman.app %>/**/scripts/config/constants.js' // ignore auto generated constants file'
       ],
@@ -272,7 +275,8 @@ module.exports = function (grunt) {
         '<%= yeoman.dist %>/blog-sidebar/*.html',
         '<%= yeoman.dist %>/blog-pages/*.html',
         '<%= yeoman.dist %>/blog-admin/*.html',
-        '<%= yeoman.dist %>/sitemap/*.html'
+        '<%= yeoman.dist %>/sitemap/*.html',
+        '<%= yeoman.dist %>/misc/*.html'
       ],
       css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
       options: {
@@ -340,7 +344,8 @@ module.exports = function (grunt) {
               'blog-sidebar/*.html',
               'blog-pages/*.html',
               'blog-admin/*.html',
-              'sitemap/*.html'
+              'sitemap/*.html',
+              'misc/*.html'
             ],
             dest: '<%= yeoman.dist %>'
           }
@@ -371,6 +376,7 @@ module.exports = function (grunt) {
               'blog-pages/*.html',
               'blog-admin/*.html',
               'sitemap/*.html',
+              'misc/*.html',
               'components/**/*',
               'images/{,*/}*.{webp}',
               'fonts/*'
