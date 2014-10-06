@@ -10,12 +10,12 @@
    * @description For displaying and the submission of blog comments
    * @param $scope
    * @param $rootScope
-   * @param MongoCommentService
+   * @param MongoCommentFactory
    * @param $log
    * @param $timeout
    * @constructor
    */
-  var CommentCtrl = function ($scope, $rootScope, MongoCommentService, $log, $timeout) {
+  var CommentCtrl = function ($scope, $rootScope, MongoCommentFactory, $log, $timeout) {
 
     this.$scope = $scope;
     this.$rootScope = $rootScope;
@@ -24,11 +24,8 @@
 
     /** Using defineProperty prevents injected service being exposed to the template
      * **/
-    Object.defineProperty(this, 'MongoCommentService', {
-      enumerable: false,
-      configurable: false,
-      writable: false,
-      value: MongoCommentService
+    Object.defineProperty(this, 'MongoCommentFactory', {
+      value: MongoCommentFactory
     });
 
     this.$scope.commentBlogFormSubmit = false;
@@ -41,7 +38,7 @@
 
   };
 
-  CommentCtrl.$inject = ['$scope', '$rootScope', 'MongoCommentService', '$log', '$timeout'];
+  CommentCtrl.$inject = ['$scope', '$rootScope', 'MongoCommentFactory', '$log', '$timeout'];
 
   CommentCtrl.prototype.retreiveComment = function () {
 
@@ -49,7 +46,7 @@
       blogId: this.$scope.commentFormData.blogId
     };
 
-    var returnedData = this.MongoCommentService.getPubilshedComments(data);
+    var returnedData = this.MongoCommentFactory.getPubilshedComments(data);
 
     returnedData.then(function (result) {
 
@@ -81,7 +78,7 @@
 
     if (isValid) {
 
-      var returnedData = this.MongoCommentService.addComment(this.$scope.commentFormData);
+      var returnedData = this.MongoCommentFactory.addComment(this.$scope.commentFormData);
 
       returnedData.then(function () {
 
