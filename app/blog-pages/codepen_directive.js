@@ -4,7 +4,7 @@
 
 'use strict';
 
-angular.module('portfolioApp.directives').directive('codepenDirective', ['$timeout', '$document', function ($timeout, $document) {
+angular.module('portfolioApp.blogPagesDirective').directive('codepenDirective', ['$timeout', '$document', function ($timeout, $document) {
 
   return {
     restrict: 'A',

@@ -4,7 +4,7 @@
 
 'use strict';
 
-angular.module('portfolioApp.directives').directive('compile', ['$compile', function ($compile) {
+angular.module('portfolioApp.blogPagesDirective').directive('compile', ['$compile', function ($compile) {
   // directive factory creates a link function
 
   return function(scope, element, attrs) {

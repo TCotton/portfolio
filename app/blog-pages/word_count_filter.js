@@ -2,7 +2,7 @@
  * Created by awalpole on 01/09/2014.
  */
 'use strict';
-angular.module('portfolioApp.filters').filter('wordcount', function() {
+angular.module('portfolioApp.blogPagesFilter').filter('wordcount', function() {
   return function(input) {
 
     var s = input;

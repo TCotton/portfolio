@@ -8,7 +8,7 @@ describe('Directive: blogBlockDirective', function () {
 
   var element, scope, $compile, SLIDER, $rootScope, $timeout, $interval, MOCK_DATA;
 
-  beforeEach(module('portfolioApp.directives', 'testConstants', 'AppConstants', 'ngSanitize'));
+  beforeEach(module('portfolioApp.blogPagesDirective', 'testConstants', 'AppConstants', 'ngSanitize'));
 
   beforeEach(inject(function (_$compile_, _$rootScope_, _SLIDER_, _$timeout_, _$interval_, _MOCK_DATA_) {
     $rootScope = _$rootScope_;
@@ -29,7 +29,8 @@ describe('Directive: blogBlockDirective', function () {
 
   }));
 
-  it('Test HTML elements in blogBlockDirective after scope change', function () {
+
+  iit('Test HTML elements in blogBlockDirective after scope change', function () {
 
     expect(element.text()).toContain(MOCK_DATA.returnedRSS.data.responseData.feed.entries[0].contentSnippet);
     expect(element.text()).toContain(MOCK_DATA.returnedRSS.data.responseData.feed.entries[0].title);

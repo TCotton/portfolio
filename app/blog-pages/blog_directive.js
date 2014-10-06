@@ -4,7 +4,7 @@
 /*jshint multistr: true */
 'use strict';
 
-angular.module('portfolioApp.directives').directive('blogBlockDirective', [function () {
+angular.module('portfolioApp.blogPagesDirective').directive('blogBlockDirective', [function () {
 
   return {
     restrict: 'A',

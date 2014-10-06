@@ -58,7 +58,7 @@ describe('Controller: SidebarCtrl', function () {
   }));
 
 
-  iit('Test to make sure that tags are created from blog content', function () {
+  it('Test to make sure that tags are created from blog content', function () {
 
     scope.blogData = MOCK_DATA.allBlogData.data;
 

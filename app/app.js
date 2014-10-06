@@ -46,6 +46,10 @@ angular.module('portfolioApp', [
   'portfolioApp.services',
   'portfolioApp.filters',
 
+  'portfolioApp.blogPagesController',
+  'portfolioApp.blogPagesDirective',
+  'portfolioApp.blogPagesService',
+  'portfolioApp.blogPagesFilter',
   'portfolioApp.blogSidebarController',
   'portfolioApp.contractController',
   'portfolioApp.contractService',

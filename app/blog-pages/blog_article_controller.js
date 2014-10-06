@@ -5,7 +5,7 @@
 'use strict';
 (function () {
 
-  var app = angular.module('portfolioApp.controllers');
+  var app = angular.module('portfolioApp.blogPagesController');
 
   /**
    * @description For displaying individual blog posts

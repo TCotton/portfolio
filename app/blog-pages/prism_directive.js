@@ -2,7 +2,7 @@
  * Created by awalpole on 10/09/2014.
  */
 'use strict';
-angular.module('portfolioApp.directives').directive('code', [function () {
+angular.module('portfolioApp.blogPagesDirective').directive('code', [function () {
 
   function escapeAngleBrackets(text) {
     return text.replace(/</gi, '&lt;').replace(/>/gi, '&gt;');
