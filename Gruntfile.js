@@ -56,7 +56,8 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/blog-pages/*.js',
           '<%= yeoman.app %>/sitemap/*.js',
           '<%= yeoman.app %>/blog-admin/*.js',
-          '<%= yeoman.app %>/misc/*.js'
+          '<%= yeoman.app %>/misc/*.js',
+          '<%= yeoman.app %>/config/*.js'
         ],
         tasks: ['newer:jshint:all'],
         options: {
@@ -213,7 +214,7 @@ module.exports = function (grunt) {
         '<%= yeoman.app %>/sitemap/*.js',
         '<%= yeoman.app %>/misc/*.js',
         //'<%= yeoman.server %>/**/*.js',
-        '!<%= yeoman.app %>/**/scripts/config/constants.js' // ignore auto generated constants file'
+        '!<%= yeoman.app %>/**/config/constants.js' // ignore auto generated constants file'
       ],
       test: {
         options: {
@@ -402,13 +403,13 @@ module.exports = function (grunt) {
       build: {
         options: {
           name: 'AppConstants',
-          dest: '<%= yeoman.app %>/scripts/config/constants.js',
+          dest: '<%= yeoman.app %>/config/constants.js',
           constants: {
-            SLIDER: grunt.file.readJSON('app/scripts/config/slider.json'),
-            CONFIG: grunt.file.readJSON('app/scripts/config/config.json'),
-            WORK: grunt.file.readJSON('app/scripts/config/work_pages.json'),
-            PROJECTS: grunt.file.readJSON('app/scripts/config/projects_pages.json'),
-            STATS: grunt.file.readJSON('app/scripts/config/front_page_stats.json')
+            SLIDER: grunt.file.readJSON('app/config/slider.json'),
+            CONFIG: grunt.file.readJSON('app/config/config.json'),
+            WORK: grunt.file.readJSON('app/config/work_pages.json'),
+            PROJECTS: grunt.file.readJSON('app/config/projects_pages.json'),
+            STATS: grunt.file.readJSON('app/config/front_page_stats.json')
           },
           values: {
             debug: false
