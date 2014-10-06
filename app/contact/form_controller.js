@@ -11,11 +11,12 @@
   /**
    * @description Contact me form submission
    * @param $scope
-   * @param PostFormService
+   * @param PostFormFactory
    * @param $sanitize
+   * @param _
    * @constructor
    */
-  var FormCtrl = function ($scope, PostFormService, $sanitize, _) {
+  var FormCtrl = function ($scope, PostFormFactory, $sanitize, _) {
 
     this.$scope = $scope;
     this.$sanitize = $sanitize;
@@ -23,11 +24,8 @@
 
     /** Using defineProperty prevents injected service being exposed to the template
      * **/
-    Object.defineProperty(this, 'PostFormService', {
-      enumerable: false,
-      configurable: false,
-      writable: false,
-      value: PostFormService
+    Object.defineProperty(this, 'PostFormFactory', {
+      value: PostFormFactory
     });
 
     // declare scope
@@ -42,7 +40,7 @@
 
   };
 
-  FormCtrl.$inject = ['$scope', 'PostFormService', '$sanitize', '_'];
+  FormCtrl.$inject = ['$scope', 'PostFormFactory', '$sanitize', '_'];
 
   /** Submit form and display message to user
    * Also delete form model values and disable the submit button
@@ -68,7 +66,7 @@
       }.bind(this)));
 
 
-      promise = this.PostFormService.submitForm(formData);
+      promise = this.PostFormFactory.submitForm(formData);
 
       promise.then(function (value) {
 
