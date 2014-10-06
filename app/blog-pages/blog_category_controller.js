@@ -110,7 +110,7 @@
 
   };
 
-  BlogCatController.$inject = ['$scope', '$location', 'BlogDataService', '$log', '$angularCacheFactory', '$rootScope', '_'];
+  BlogCatController.$inject = ['$scope', '$location', 'BlogDataFactory', '$log', '$angularCacheFactory', '$rootScope', '_'];
 
   BlogCatController.prototype.morePosts = function () {
 

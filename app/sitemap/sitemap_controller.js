@@ -14,11 +14,12 @@
    * @param $rootScope
    * @param $scope
    * @param $log
-   * @param BlogDataService
+   * @param BlogDataFactory
    * @param $angularCacheFactory
+   * @param _
    * @constructor
    */
-  var SitemapCtrl = function ($rootScope, $scope, $log, BlogDataService, $angularCacheFactory, _) {
+  var SitemapCtrl = function ($rootScope, $scope, $log, BlogDataFactory, $angularCacheFactory, _) {
 
     /** Either receive data from BlogDataService or from the cache
      * **/
@@ -28,7 +29,7 @@
 
     /** Take blog object from service ready to be used in the side bar lists
      **/
-    BlogDataService.retrieveData().then(function (result) {
+    BlogDataFactory.retrieveData().then(function (result) {
 
       // retrieve blog data to be used in the ng-repeat directive in the sidebar
 
@@ -89,7 +90,7 @@
 
   };
 
-  SitemapCtrl.$inject = ['$rootScope', '$scope', '$log', 'BlogDataService', '$angularCacheFactory', '_'];
+  SitemapCtrl.$inject = ['$rootScope', '$scope', '$log', 'BlogDataFactory', '$angularCacheFactory', '_'];
 
   app.controller('SitemapCtrl', SitemapCtrl);
 

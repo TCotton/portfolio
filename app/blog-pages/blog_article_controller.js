@@ -66,7 +66,7 @@
 
   };
 
-  BlogArticleCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataService', '$log', '$timeout', '$sce', '$angularCacheFactory', '$route', '$filter', '_'];
+  BlogArticleCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataFactory', '$log', '$timeout', '$sce', '$angularCacheFactory', '$route', '$filter', '_'];
 
   BlogArticleCtrl.prototype.populatePage = function () {
 

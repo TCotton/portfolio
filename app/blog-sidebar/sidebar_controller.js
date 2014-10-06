@@ -18,13 +18,13 @@
    * @param $rootScope
    * @param $scope
    * @param $log
-   * @param BlogDataService
+   * @param BlogDataFactory
    * @param $angularCacheFactory
    * @param $window
    * @param $timeout
    * @constructor
    */
-  var SidebarCtrl = function ($rootScope, $scope, $log, BlogDataService, $angularCacheFactory, $window, $timeout, _) {
+  var SidebarCtrl = function ($rootScope, $scope, $log, BlogDataFactory, $angularCacheFactory, $window, $timeout, _) {
 
     $scope.blogData = null;
 
@@ -46,7 +46,7 @@
 
         /** Take blog object from service ready to be used in the side bar lists
          **/
-        BlogDataService.retrieveData().then(function (result) {
+        BlogDataFactory.retrieveData().then(function (result) {
 
           // retrieve blog data to be used in the ng-repeat directive in the sidebar
           if (_.isObject(result.data.BlogPosts)) {
@@ -151,7 +151,7 @@
 
   };
 
-  SidebarCtrl.$inject = ['$rootScope', '$scope', '$log', 'BlogDataService', '$angularCacheFactory', '$window', '$timeout', '_'];
+  SidebarCtrl.$inject = ['$rootScope', '$scope', '$log', 'BlogDataFactory', '$angularCacheFactory', '$window', '$timeout', '_'];
 
   app.controller('SidebarCtrl', SidebarCtrl);
 

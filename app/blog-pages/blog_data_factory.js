@@ -18,7 +18,7 @@ angular.module('portfolioApp.blogPagesService').factory('BlogDataFactory', ['$ht
     retrieveData: function () {
 
       var _blogData;
-      var deferred = this.$q.defer();
+      var deferred = $q.defer();
 
       // remove cache for debugging purposes
       if ($angularCacheFactory.get('authCache').get('logginIn')) {
