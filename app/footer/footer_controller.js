@@ -13,10 +13,10 @@
    * @description For displaying recommended blog article using data from the NewsBlur API
    * @param $scope
    * @param $log
-   * @param NewsBlurService
+   * @param NewsBlurFactory
    * @constructor
    */
-  var FooterCtrl = function ($scope, $log, NewsBlurService) {
+  var FooterCtrl = function ($scope, $log, NewsBlurFactory) {
 
     this.$scope = $scope;
     this.$log = $log;
@@ -29,11 +29,8 @@
 
     /** Using defineProperty prevents injected service being exposed to the template
      * **/
-    Object.defineProperty(this, 'NewsBlurService', {
-      enumerable: false,
-      configurable: false,
-      writable: false,
-      value: NewsBlurService
+    Object.defineProperty(this, 'NewsBlurFactory', {
+      value: NewsBlurFactory
     });
 
     /**
@@ -62,14 +59,14 @@
 
   };
 
-  FooterCtrl.$inject = ['$scope', '$log', 'NewsBlurService'];
+  FooterCtrl.$inject = ['$scope', '$log', 'NewsBlurFactory'];
 
   /** Return JSON data for latest articles saved in my Newsblur account
    *  Uses Newsblur API on NodeJS
    * **/
   FooterCtrl.prototype.loadData = function () {
 
-    var returnedPromise = this.NewsBlurService.getBlogPosts();
+    var returnedPromise = this.NewsBlurFactory.getBlogPosts();
 
     returnedPromise.then(function (value) {
 
