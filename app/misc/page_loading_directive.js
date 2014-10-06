@@ -4,7 +4,7 @@
 
 'use strict';
 
-angular.module('portfolioApp.directives').directive('pageLoadingDirective', [ function () {
+angular.module('portfolioApp.miscDirective').directive('pageLoadingDirective', [ function () {
 
   return {
     restrict: 'E',

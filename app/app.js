@@ -45,6 +45,7 @@ angular.module('portfolioApp', [
   'portfolioApp.directives',
   'portfolioApp.services',
   'portfolioApp.filters',
+  'portfolioApp.miscDirective',
   'portfolioApp.sideProjectsController',
   'portfolioApp.sitemapController',
   'portfolioApp.wordProjectsController',
