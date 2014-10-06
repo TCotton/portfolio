@@ -46,6 +46,9 @@ angular.module('portfolioApp', [
   'portfolioApp.services',
   'portfolioApp.filters',
 
+  'portfolioApp.blogAdminController',
+  'portfolioApp.blogCommentsDirective',
+  'portfolioApp.blogCommentsService',
   'portfolioApp.blogPagesController',
   'portfolioApp.blogPagesDirective',
   'portfolioApp.blogPagesService',

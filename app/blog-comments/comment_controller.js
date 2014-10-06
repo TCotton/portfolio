@@ -4,7 +4,7 @@
 'use strict';
 (function () {
 
-  var app = angular.module('portfolioApp.controllers');
+  var app = angular.module('portfolioApp.blogAdminController');
 
   /**
    * @description For displaying and the submission of blog comments

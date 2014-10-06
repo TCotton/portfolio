@@ -4,7 +4,7 @@
 
 'use strict';
 
-angular.module('portfolioApp.directives').directive('commentDirective', [function () {
+angular.module('portfolioApp.blogCommentsDirective').directive('commentDirective', [function () {
 
   return {
     restrict: 'A',
