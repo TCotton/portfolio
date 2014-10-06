@@ -9,28 +9,31 @@
  * This entire site is coded in AngularJS. Inspect the code on GitHub: https://github.com/TCotton/portfolio
  */
 
-angular.module('portfolioApp.controllers', []);
-angular.module('portfolioApp.directives', []);
-angular.module('portfolioApp.services', []);
-angular.module('portfolioApp.filters', []);
-
-angular.module('portfolioApp', ['portfolioApp.controllers', 'portfolioApp.directives', 'portfolioApp.services', 'portfolioApp.filters', 'AppConstants', 'ngCookies', 'ngResource', 'ngSanitize', 'ngRoute', 'HashBangURLs', 'portfolioAppConfig', 'jmdobry.angular-cache'])
+angular.module('portfolioApp', [ 'portfolioApp.blogAdminService', 'portfolioApp.blogAdminController', 'portfolioApp.blogCommentsDirective', 'portfolioApp.blogCommentsService', 'portfolioApp.blogPagesController',
+  'portfolioApp.blogPagesDirective', 'portfolioApp.blogPagesService', 'portfolioApp.blogPagesFilter', 'portfolioApp.blogSidebarController',
+  'portfolioApp.contractController', 'portfolioApp.contractService', 'portfolioApp.footerController', 'portfolioApp.footerService', 'portfolioApp.homepageDirective',
+  'portfolioApp.miscDirective', 'portfolioApp.sideProjectsController', 'portfolioApp.sitemapController', 'portfolioApp.wordProjectsController',
+  'AppConstants', 'ngResource', 'ngSanitize', 'ngRoute', 'HashBangURLs', 'portfolioAppConfig', 'jmdobry.angular-cache'])
   .config(function ($routeProvider, $httpProvider) {
+
+    // Needed for CORS
+    // http://better-inter.net/enabling-cors-in-angular-js/
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        title: 'Portfolio and blog of web developer Andy Walpole'
+        templateUrl: 'homepage/main.html',
+        title: 'The portfolio and blog of web developer Andy Walpole'
       })
       .when('/work-projects', {
-        templateUrl: 'views/my_work.html',
+        templateUrl: 'work-projects/my_work.html',
         title: 'Noteworthy work projects from the past 18 months'
       })
       .when('/work-projects/:workPage', {
-        templateUrl: 'views/work_page.html',
+        templateUrl: 'work-projects/work_page.html',
         controller: 'WorkPageCtrl'
       })
-  });
        </pre>
       </a>
     </div>

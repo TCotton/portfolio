@@ -24,33 +24,12 @@ angular.module('portfolioApp.sideProjectsController', []);
 angular.module('portfolioApp.sitemapController', []);
 angular.module('portfolioApp.wordProjectsController', []);
 
-angular.module('portfolioApp', [
-  'portfolioApp.blogAdminService',
-  'portfolioApp.blogAdminController',
-  'portfolioApp.blogCommentsDirective',
-  'portfolioApp.blogCommentsService',
-  'portfolioApp.blogPagesController',
-  'portfolioApp.blogPagesDirective',
-  'portfolioApp.blogPagesService',
-  'portfolioApp.blogPagesFilter',
-  'portfolioApp.blogSidebarController',
-  'portfolioApp.contractController',
-  'portfolioApp.contractService',
-  'portfolioApp.footerController',
-  'portfolioApp.footerService',
-  'portfolioApp.homepageDirective',
-  'portfolioApp.miscDirective',
-  'portfolioApp.sideProjectsController',
-  'portfolioApp.sitemapController',
-  'portfolioApp.wordProjectsController',
-  'AppConstants',
-  'ngResource',
-  'ngSanitize',
-  'ngRoute',
-  'HashBangURLs',
-  'portfolioAppConfig',
-  'jmdobry.angular-cache'
-]).config(function ($routeProvider, $httpProvider) {
+angular.module('portfolioApp', [ 'portfolioApp.blogAdminService', 'portfolioApp.blogAdminController', 'portfolioApp.blogCommentsDirective', 'portfolioApp.blogCommentsService', 'portfolioApp.blogPagesController',
+  'portfolioApp.blogPagesDirective', 'portfolioApp.blogPagesService', 'portfolioApp.blogPagesFilter', 'portfolioApp.blogSidebarController',
+  'portfolioApp.contractController', 'portfolioApp.contractService', 'portfolioApp.footerController', 'portfolioApp.footerService', 'portfolioApp.homepageDirective',
+  'portfolioApp.miscDirective', 'portfolioApp.sideProjectsController', 'portfolioApp.sitemapController', 'portfolioApp.wordProjectsController',
+  'AppConstants', 'ngResource', 'ngSanitize', 'ngRoute', 'HashBangURLs', 'portfolioAppConfig', 'jmdobry.angular-cache'])
+  .config(function ($routeProvider, $httpProvider) {
 
     // Needed for CORS
     // http://better-inter.net/enabling-cors-in-angular-js/
