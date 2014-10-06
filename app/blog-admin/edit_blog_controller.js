@@ -21,6 +21,7 @@
    * @param $scope
    * @param $log
    * @param MongoBlogService
+   * @param _
    * @constructor
    */
   var EditBlogCtrl = function ($scope, $log, MongoBlogService, _) {
@@ -33,9 +34,6 @@
      * from appearing in the template as a model
      * **/
     Object.defineProperty(this, 'MongoBlogService', {
-      enumerable: false,
-      configurable: false,
-      writable: false,
       value: MongoBlogService
     });
 

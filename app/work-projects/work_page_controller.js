@@ -26,9 +26,6 @@
     /** Using defineProperty prevents injected constants being exposed to the template
      * **/
     Object.defineProperty(this, 'WORK', {
-      enumerable: false,
-      configurable: false,
-      writable: false,
       value: WORK
     });
 

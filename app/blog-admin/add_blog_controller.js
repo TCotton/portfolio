@@ -35,9 +35,6 @@
     /** Using defineProperty prevents injected service being exposed to the template
      * **/
     Object.defineProperty(this, 'MongoBlogService', {
-      enumerable: false,
-      configurable: false,
-      writable: false,
       value: MongoBlogService
     });
 
