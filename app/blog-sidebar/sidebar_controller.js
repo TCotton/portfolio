@@ -24,7 +24,7 @@
    * @param $timeout
    * @constructor
    */
-  var SidebarCtrl = function ($rootScope, $scope, $log, BlogDataService, $angularCacheFactory, $window, $timeout) {
+  var SidebarCtrl = function ($rootScope, $scope, $log, BlogDataService, $angularCacheFactory, $window, $timeout, _) {
 
     $scope.blogData = null;
 
@@ -151,7 +151,7 @@
 
   };
 
-  SidebarCtrl.$inject = ['$rootScope', '$scope', '$log', 'BlogDataService', '$angularCacheFactory', '$window', '$timeout'];
+  SidebarCtrl.$inject = ['$rootScope', '$scope', '$log', 'BlogDataService', '$angularCacheFactory', '$window', '$timeout', '_'];
 
   app.controller('SidebarCtrl', SidebarCtrl);
 

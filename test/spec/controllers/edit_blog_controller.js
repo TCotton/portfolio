@@ -1,7 +1,7 @@
 'use strict';
 describe('Controller: EditBlogCtrl as AdminEditBlogCtrl', function () {
 
-  beforeEach(module('portfolioApp.blogAdminController', 'testConstants', 'portfolioApp.blogAdminService'));
+  beforeEach(module('portfolioApp.blogAdminController', 'testConstants', 'portfolioApp.blogAdminService', 'underscore'));
 
   var $controller;
   var $rootScope;

@@ -14,7 +14,7 @@
    * @param $angularCacheFactory
    * @constructor
    */
-  var BlogCtrl = function ($scope, BlogDataService, $angularCacheFactory) {
+  var BlogCtrl = function ($scope, BlogDataService, $angularCacheFactory, _) {
 
     this.$scope = $scope;
 
@@ -42,7 +42,7 @@
 
   };
 
-  BlogCtrl.$inject = ['$scope', 'BlogDataService', '$angularCacheFactory'];
+  BlogCtrl.$inject = ['$scope', 'BlogDataService', '$angularCacheFactory', '_'];
 
   BlogCtrl.prototype.morePosts = function () {
 

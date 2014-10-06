@@ -15,10 +15,11 @@
    * @param $sanitize
    * @constructor
    */
-  var FormCtrl = function ($scope, PostFormService, $sanitize) {
+  var FormCtrl = function ($scope, PostFormService, $sanitize, _) {
 
     this.$scope = $scope;
     this.$sanitize = $sanitize;
+    this._ = _;
 
     /** Using defineProperty prevents injected service being exposed to the template
      * **/
@@ -41,7 +42,7 @@
 
   };
 
-  FormCtrl.$inject = ['$scope', 'PostFormService', '$sanitize'];
+  FormCtrl.$inject = ['$scope', 'PostFormService', '$sanitize', '_'];
 
   /** Submit form and display message to user
    * Also delete form model values and disable the submit button
@@ -59,7 +60,7 @@
 
       // sanitise and remove naughty spam stuff from email
       // TODO: move to server
-      formData = _.object(_.map(this.$scope.contact, function (value, key) {
+      formData = this._.object(this._.map(this.$scope.contact, function (value, key) {
 
         value = this.$sanitize(value).trim();
 

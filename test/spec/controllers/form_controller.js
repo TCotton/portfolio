@@ -2,7 +2,7 @@
 describe('Controller: FormCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('portfolioApp.contractController', 'testConstants', 'portfolioApp.contractService', 'ngSanitize'));
+  beforeEach(module('portfolioApp.contractController', 'testConstants', 'portfolioApp.contractService', 'ngSanitize', 'underscore'));
 
   var AdminFormCtrl;
   var scope;

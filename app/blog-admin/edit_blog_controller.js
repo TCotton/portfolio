@@ -23,10 +23,11 @@
    * @param MongoBlogService
    * @constructor
    */
-  var EditBlogCtrl = function ($scope, $log, MongoBlogService) {
+  var EditBlogCtrl = function ($scope, $log, MongoBlogService, _) {
 
     this.$scope = $scope;
     this.$log = $log;
+    this._ = _;
 
     /** By using EMCAScript 5 defineProperty we can prevent the service or config file
      * from appearing in the template as a model
@@ -123,7 +124,7 @@
 
   };
 
-  EditBlogCtrl.$inject = ['$scope', '$log', 'MongoBlogService'];
+  EditBlogCtrl.$inject = ['$scope', '$log', 'MongoBlogService', '_'];
 
   /** Public methods
    * **/
@@ -217,7 +218,7 @@
 
     returnedPromise.then(function (value) {
 
-      if (_.isObject(value.data)) {
+      if (this._.isObject(value.data)) {
 
         this.$scope.blogContent = value.data;
 

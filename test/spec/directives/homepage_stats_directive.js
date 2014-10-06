@@ -8,7 +8,7 @@ describe('Directive: Slider', function () {
 
   var element, scope, $compile, $rootScope, $timeout, $interval, $httpBackend, MOCK_DATA;
 
-  beforeEach(module('portfolioApp.homepageDirective', 'ngSanitize', 'AppConstants', 'testConstants'));
+  beforeEach(module('portfolioApp.homepageDirective', 'ngSanitize', 'AppConstants', 'testConstants', 'underscore'));
 
   beforeEach(inject(function (_$compile_, _$rootScope_, _$timeout_, _$interval_, _$httpBackend_, _MOCK_DATA_) {
     $rootScope = _$rootScope_;

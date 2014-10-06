@@ -3,7 +3,7 @@
  */
 'use strict';
 
-angular.module('portfolioApp.homepageDirective').directive('sliderDirective', ['SLIDER', '$interval', '$timeout', '$animate', '$window', function (SLIDER, $interval, $timeout, $animate, $window) {
+angular.module('portfolioApp.homepageDirective').directive('sliderDirective', ['SLIDER', '$interval', '$timeout', '$animate', '$window', '_', function (SLIDER, $interval, $timeout, $animate, $window, _) {
 
   return {
     restrict: 'A',

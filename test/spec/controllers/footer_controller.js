@@ -32,7 +32,7 @@ describe('Controller: "FooterCtrl as FooterInherCtrl', function () {
     {"username": "cyberblox", "feed_address": "http://www.newsblur.com/social/rss/136359/cyberblox", "user_id": 136359, "feed_link": "http://cyberblox.newsblur.com", "num_subscribers": 0, "feed_title": "cyberblox's blurblog", "private": null, "protected": null, "location": "Marietta, Georgia", "large_photo_url": "https://graph.facebook.com/1357857878/picture?type=large", "id": "social:136359", "photo_url": "https://graph.facebook.com/1357857878/picture"}
   ]};
 
-  beforeEach(module('testConstants', 'portfolioApp.footerController', 'portfolioApp.footerService', 'AppConstants', 'ngRoute', 'portfolioAppConfig', 'jmdobry.angular-cache'));
+  beforeEach(module('testConstants', 'portfolioApp.footerController', 'portfolioApp.footerService', 'AppConstants', 'ngRoute', 'portfolioAppConfig', 'jmdobry.angular-cache', 'underscore'));
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function (_$controller_, _$rootScope_, _MOCK_DATA_, _$httpBackend_, _$q_) {

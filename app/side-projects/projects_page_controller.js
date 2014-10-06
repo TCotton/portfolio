@@ -15,12 +15,13 @@
    * @param $window
    * @constructor
    */
-  var ProjectsPageCtrl = function ($rootScope, $scope, $log, PROJECTS, $window) {
+  var ProjectsPageCtrl = function ($rootScope, $scope, $log, PROJECTS, $window, _) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
     this.$log = $log;
     this.$window = $window;
+    this._ = _;
 
     /** Using defineProperty prevents injected constants being exposed to the template
      * **/
@@ -45,7 +46,7 @@
 
   };
 
-  ProjectsPageCtrl.$inject = ['$rootScope', '$scope', '$log', 'PROJECTS', '$window'];
+  ProjectsPageCtrl.$inject = ['$rootScope', '$scope', '$log', 'PROJECTS', '$window', '_'];
 
   /** Take the right data for the project page from the constants based on the current page
    * **/
@@ -53,7 +54,7 @@
 
     var currentPage = this.$rootScope.currentPage.substring(this.$rootScope.currentPage.lastIndexOf('/') + 1, this.$rootScope.currentPage.length);
 
-    var wordData = _.filter(this.PROJECTS, function (o) {
+    var wordData = this._.filter(this.PROJECTS, function (o) {
 
       if (o.internalUrl.substring(o.internalUrl.lastIndexOf('/') + 1, o.internalUrl.length) === currentPage) {
 
@@ -62,7 +63,7 @@
       }
     });
 
-    if (!_.isEmpty(wordData)) {
+    if (!this._.isEmpty(wordData)) {
 
       this.bindData(wordData);
       this.navigation();
@@ -104,7 +105,7 @@
     currentPage = this.$rootScope.currentPage.substring(this.$rootScope.currentPage.lastIndexOf('/') + 1, this.$rootScope.currentPage.length);
 
     // return the object for the current page
-    page = _.filter(this.PROJECTS, function (o) {
+    page = this._.filter(this.PROJECTS, function (o) {
 
       if (o.internalUrl.substring(o.internalUrl.lastIndexOf('/') + 1, o.length) === currentPage) {
 
@@ -112,12 +113,12 @@
       }
     });
 
-    if (!_.isEmpty(page)) {
+    if (!this._.isEmpty(page)) {
 
       pageNumber = page[0].id;
 
       // return the object for the previous page
-      prevPage = _.filter(this.PROJECTS, function (o) {
+      prevPage = this._.filter(this.PROJECTS, function (o) {
 
         if (parseInt(o.id, 10) === (parseInt(pageNumber, 10) - 1)) {
 
@@ -126,7 +127,7 @@
       });
 
       // return the object for the next page
-      nextPage = _.filter(this.PROJECTS, function (o) {
+      nextPage = this._.filter(this.PROJECTS, function (o) {
 
         if (parseInt(o.id, 10) === (parseInt(pageNumber, 10) + 1)) {
 
@@ -136,7 +137,7 @@
 
 
       // if first page then the prev link goes to the end of the pages
-      prevPage = !_.isEmpty(prevPage) ? prevPage : _.filter(this.PROJECTS, function (o, k) {
+      prevPage = !this._.isEmpty(prevPage) ? prevPage : this._.filter(this.PROJECTS, function (o, k) {
 
         if (k === 'twttwt') {
           return o;
@@ -144,14 +145,14 @@
       });
 
       // if last page then start loop all over again
-      nextPage = !_.isEmpty(nextPage) ? nextPage : _.filter(this.PROJECTS, function (o, k) {
+      nextPage = !this._.isEmpty(nextPage) ? nextPage : this._.filter(this.PROJECTS, function (o, k) {
 
         if (k === 'lightning') {
           return o;
         }
       });
 
-      if (!_.isEmpty(prevPage) && !_.isEmpty(nextPage)) {
+      if (!this._.isEmpty(prevPage) && !this._.isEmpty(nextPage)) {
 
         // create href attribute values
         this.$scope.prevPage = prevPage[0].internalUrl;

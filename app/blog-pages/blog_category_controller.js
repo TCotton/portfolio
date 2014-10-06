@@ -19,7 +19,7 @@
    * @param $rootScope
    * @constructor
    */
-  var BlogCatController = function ($scope, $location, BlogDataService, $log, $angularCacheFactory, $rootScope) {
+  var BlogCatController = function ($scope, $location, BlogDataService, $log, $angularCacheFactory, $rootScope, _) {
 
     this.$scope = $scope;
     this.$location = $location;
@@ -109,7 +109,7 @@
 
   };
 
-  BlogCatController.$inject = ['$scope', '$location', 'BlogDataService', '$log', '$angularCacheFactory', '$rootScope'];
+  BlogCatController.$inject = ['$scope', '$location', 'BlogDataService', '$log', '$angularCacheFactory', '$rootScope', '_'];
 
   BlogCatController.prototype.morePosts = function () {
 
