@@ -19,84 +19,84 @@ angular.module('portfolioApp', ['portfolioApp.controllers', 'portfolioApp.direct
 
     $routeProvider
       .when('/', {
-        templateUrl: '../homepage/main.html',
+        templateUrl: 'homepage/main.html',
         title: 'The portfolio and blog of web developer Andy Walpole'
       })
       .when('/work-projects', {
-        templateUrl: '../work-projects/my_work.html',
+        templateUrl: 'work-projects/my_work.html',
         title: 'Noteworthy work projects from the past 18 months'
       })
       .when('/work-projects/:workPage', {
-        templateUrl: '../work-projects/work_page.html',
+        templateUrl: 'work-projects/work_page.html',
         controller: 'WorkPageCtrl'
       })
       .when('/side-projects', {
-        templateUrl: '../side-projects/side_projects.html',
+        templateUrl: 'side-projects/side_projects.html',
         title: 'Noteworthy personal side projects from the past 18 months'
       })
       .when('/side-projects/:projectsPage', {
-        templateUrl: '../side-projects/projects_page.html',
+        templateUrl: 'side-projects/projects_page.html',
         controller: 'ProjectsPageCtrl'
       })
       .when('/about-me', {
-        templateUrl: '../about-me/about_me.html',
+        templateUrl: 'about-me/about_me.html',
         title: 'Skills and CV'
       })
       .when('/contact-me', {
-        templateUrl: '../contact/contact_me.html',
+        templateUrl: 'contact/contact_me.html',
         controller: 'FormCtrl as AdminFormCtrl',
         title: 'Contact form'
       })
       .when('/blog/', {
-        templateUrl: '../blog-pages/blog.html',
+        templateUrl: 'blog-pages/blog.html',
         controller: 'BlogCtrl as BlogIndexCtrl',
         title: 'blog unblock - the blog of web developer Andy Walpole'
       })
       .when('/blog/:blogId/:blogPage', {
-        templateUrl: '../blog-pages/blog_page.html',
+        templateUrl: 'blog-pages/blog_page.html',
         controller: 'BlogArticleCtrl as BlogArticlePageCtrl'
       })
       .when('/category/:category', {
-        templateUrl: '../blog-pages/blog_category.html',
+        templateUrl: 'blog-pages/blog_category.html',
         controller: 'BlogCatController as BlogCatPageController'
       })
       .when('/login', {
-        templateUrl: '../blog-admin/login.html',
+        templateUrl: 'blog-admin/login.html',
         controller: 'LoginCtrl as AdminLogin',
         title: 'Admin login form'
       })
       .when('/admin/', {
-        templateUrl: '../blog-admin/admin.html',
+        templateUrl: 'blog-admin/admin.html',
         title: 'Admin area'
       })
       .when('/admin/user-details', {
-        templateUrl: '../blog-admin/user_details.html',
+        templateUrl: 'blog-admin/user_details.html',
         controller: 'UserDetailsCtrl as AdminUserDetailsCtrl',
         title: 'Admin area - add, edit or delete users with admin privileges'
       })
       .when('/admin/blog-details', {
-        templateUrl: '../blog-admin/blog_details.html',
+        templateUrl: 'blog-admin/blog_details.html',
         controller: 'EditBlogCtrl as AdminEditBlogCtrl',
         title: 'Admin area - edit or delete blog posts'
       })
       .when('/admin/add-blog', {
-        templateUrl: '../blog-admin/add_blog.html',
+        templateUrl: 'blog-admin/add_blog.html',
         controller: 'AddBlogCtrl as AdminAddBlogCtrl',
         title: 'Admin area - add new blog articles'
       })
       .when('/admin/blog-comments', {
-        templateUrl: '../blog-admin/comment_details.html',
+        templateUrl: 'blog-admin/comment_details.html',
         controller: 'CommentAdminCtrl as AdminCommentAdminCtrl',
         title: 'Admin area - edit blog comments'
       })
       .when('/sitemap', {
-        templateUrl: '../sitemap/html_sitemap.html',
+        templateUrl: 'sitemap/html_sitemap.html',
         controller: 'SitemapCtrl',
         title: 'Sitemap'
       })
       .otherwise({
         redirectTo: '/404',
-        templateUrl: '../misc/404.html'
+        templateUrl: 'misc/404.html'
       });
 
 

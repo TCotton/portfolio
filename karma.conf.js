@@ -21,6 +21,7 @@ module.exports = function(config) {
       'app/components/moment/moment.js',
       'app/libs/*.js',
       'app/scripts/**/*.js',
+      'app/app.js',
       'app/footer/*.js',
       'app/homepage/*.js',
       'app/work-projects/*.js',

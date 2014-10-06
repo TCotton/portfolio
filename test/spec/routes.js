@@ -26,7 +26,7 @@ describe('Routes test with log in', function () {
   describe('contact page route', function () {
     beforeEach(inject(
       function ($httpBackend) {
-        $httpBackend.expectGET('../contact/contact_me.html')
+        $httpBackend.expectGET('contact/contact_me.html')
           .respond(200, 'main HTML');
       }
     ));
@@ -42,7 +42,7 @@ describe('Routes test with log in', function () {
   describe('blog page index route', function () {
     beforeEach(inject(
       function ($httpBackend) {
-        $httpBackend.expectGET('../blog-pages/blog.html')
+        $httpBackend.expectGET('blog-pages/blog.html')
           .respond(200, 'blog HTML');
       }
     ));
@@ -58,7 +58,7 @@ describe('Routes test with log in', function () {
   describe('blog page route', function () {
     beforeEach(inject(
       function ($httpBackend) {
-        $httpBackend.expectGET('../blog-pages/blog_page.html')
+        $httpBackend.expectGET('blog-pages/blog_page.html')
           .respond(200, 'blog HTML');
       }
     ));
@@ -75,7 +75,7 @@ describe('Routes test with log in', function () {
   describe('individual work page', function () {
     beforeEach(inject(
       function ($httpBackend) {
-        $httpBackend.expectGET('../work-projects/work_page.html')
+        $httpBackend.expectGET('work-projects/work_page.html')
           .respond(200, 'work page HTML');
       }
     ));
@@ -91,7 +91,7 @@ describe('Routes test with log in', function () {
   describe('individual side project page', function () {
     beforeEach(inject(
       function ($httpBackend) {
-        $httpBackend.expectGET('../side-projects/projects_page.html')
+        $httpBackend.expectGET('side-projects/projects_page.html')
           .respond(200, 'project page HTML');
       }
     ));
@@ -107,7 +107,7 @@ describe('Routes test with log in', function () {
   describe('admin login page', function () {
     beforeEach(inject(
       function ($httpBackend) {
-        $httpBackend.expectGET('../blog-admin/login.html')
+        $httpBackend.expectGET('blog-admin/login.html')
           .respond(200, 'login page HTML');
       }
     ));
@@ -123,7 +123,7 @@ describe('Routes test with log in', function () {
   describe('admin user details page', function () {
     beforeEach(inject(
       function ($httpBackend) {
-        $httpBackend.expectGET('../blog-admin/user_details.html')
+        $httpBackend.expectGET('blog-admin/user_details.html')
           .respond(200, 'user details page HTML');
       }
     ));
@@ -139,7 +139,7 @@ describe('Routes test with log in', function () {
   describe('admin blog details page', function () {
     beforeEach(inject(
       function ($httpBackend) {
-        $httpBackend.expectGET('../blog-admin/blog_details.html')
+        $httpBackend.expectGET('blog-admin/blog_details.html')
           .respond(200, 'blog details page HTML');
       }
     ));
@@ -155,7 +155,7 @@ describe('Routes test with log in', function () {
   describe('admin add blog page', function () {
     beforeEach(inject(
       function ($httpBackend) {
-        $httpBackend.expectGET('../blog-admin/add_blog.html')
+        $httpBackend.expectGET('blog-admin/add_blog.html')
           .respond(200, 'add blog page HTML');
       }
     ));
@@ -171,7 +171,7 @@ describe('Routes test with log in', function () {
   describe('admin comments page', function () {
     beforeEach(inject(
       function ($httpBackend) {
-        $httpBackend.expectGET('../blog-admin/comment_details.html')
+        $httpBackend.expectGET('blog-admin/comment_details.html')
           .respond(200, 'admin comments HTML');
       }
     ));
@@ -187,7 +187,7 @@ describe('Routes test with log in', function () {
   describe('html sitemap page', function () {
     beforeEach(inject(
       function ($httpBackend) {
-        $httpBackend.expectGET('../sitemap/html_sitemap.html')
+        $httpBackend.expectGET('sitemap/html_sitemap.html')
           .respond(200, 'html sitemap HTML');
       }
     ));
@@ -203,7 +203,7 @@ describe('Routes test with log in', function () {
   describe('Individual category page', function () {
     beforeEach(inject(
       function ($httpBackend) {
-        $httpBackend.expectGET('../blog-pages/blog_category.html')
+        $httpBackend.expectGET('blog-pages/blog_category.html')
           .respond(200, 'html page category HTML');
       }
     ));
@@ -237,7 +237,7 @@ describe('Routes test without log in', function () {
   describe('admin add blog page without loggin in', function () {
     beforeEach(inject(
       function ($httpBackend) {
-        $httpBackend.expectGET('../blog-admin/login.html')
+        $httpBackend.expectGET('blog-admin/login.html')
           .respond(200, 'login page HTML');
       }
     ));
@@ -253,7 +253,7 @@ describe('Routes test without log in', function () {
   describe('admin blog details page without logging in', function () {
     beforeEach(inject(
       function ($httpBackend) {
-        $httpBackend.expectGET('../blog-admin/login.html')
+        $httpBackend.expectGET('blog-admin/login.html')
           .respond(200, 'login page HTML');
       }
     ));
@@ -269,7 +269,7 @@ describe('Routes test without log in', function () {
   describe('admin user details page without logging in', function () {
     beforeEach(inject(
       function ($httpBackend) {
-        $httpBackend.expectGET('../blog-admin/login.html')
+        $httpBackend.expectGET('blog-admin/login.html')
           .respond(200, 'login page HTML');
       }
     ));
@@ -285,7 +285,7 @@ describe('Routes test without log in', function () {
   describe('admin comments page without logging in', function () {
     beforeEach(inject(
       function ($httpBackend) {
-        $httpBackend.expectGET('../blog-admin/login.html')
+        $httpBackend.expectGET('blog-admin/login.html')
           .respond(200, 'login page HTML');
       }
     ));

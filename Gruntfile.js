@@ -57,7 +57,8 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/sitemap/*.js',
           '<%= yeoman.app %>/blog-admin/*.js',
           '<%= yeoman.app %>/misc/*.js',
-          '<%= yeoman.app %>/config/*.js'
+          '<%= yeoman.app %>/config/*.js',
+          '<%= yeoman.app %>/app.js'
         ],
         tasks: ['newer:jshint:all'],
         options: {
@@ -213,6 +214,7 @@ module.exports = function (grunt) {
         '<%= yeoman.app %>/blog-admin/*.js',
         '<%= yeoman.app %>/sitemap/*.js',
         '<%= yeoman.app %>/misc/*.js',
+        '<%= yeoman.app %>/app.js',
         //'<%= yeoman.server %>/**/*.js',
         '!<%= yeoman.app %>/**/config/constants.js' // ignore auto generated constants file'
       ],
