@@ -21,7 +21,7 @@
    * @param $filter
    * @constructor
    */
-  var BlogArticleCtrl = function ($rootScope, $scope, $location, BlogDataService, $log, $timeout, $sce, $angularCacheFactory, $route, $filter, _) {
+  var BlogArticleCtrl = function ($rootScope, $scope, $location, BlogDataFactory, $log, $timeout, $sce, $angularCacheFactory, $route, $filter, _) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
@@ -47,7 +47,7 @@
 
     } else {
 
-      BlogDataService.retrieveData().then(function (result) {
+      BlogDataFactory.retrieveData().then(function (result) {
 
         if (_.isObject(result.data.BlogPosts)) {
 

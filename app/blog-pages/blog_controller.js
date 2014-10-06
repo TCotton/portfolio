@@ -10,11 +10,12 @@
   /**
    * @description Blog home page
    * @param $scope
-   * @param BlogDataService
+   * @param BlogDataFactory
    * @param $angularCacheFactory
+   * @param _
    * @constructor
    */
-  var BlogCtrl = function ($scope, BlogDataService, $angularCacheFactory, _) {
+  var BlogCtrl = function ($scope, BlogDataFactory, $angularCacheFactory, _) {
 
     this.$scope = $scope;
 
@@ -28,7 +29,7 @@
 
     } else {
 
-      BlogDataService.retrieveData().then(function (result) {
+      BlogDataFactory.retrieveData().then(function (result) {
 
         if (_.isObject(result.data.BlogPosts)) {
 

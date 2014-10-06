@@ -13,13 +13,14 @@
    * @description For displaying posts in their respective categories
    * @param $scope
    * @param $location
-   * @param BlogDataService
+   * @param BlogDataFactory
    * @param $log
    * @param $angularCacheFactory
    * @param $rootScope
+   * @param _
    * @constructor
    */
-  var BlogCatController = function ($scope, $location, BlogDataService, $log, $angularCacheFactory, $rootScope, _) {
+  var BlogCatController = function ($scope, $location, BlogDataFactory, $log, $angularCacheFactory, $rootScope, _) {
 
     this.$scope = $scope;
     this.$location = $location;
@@ -43,7 +44,7 @@
 
     } else {
 
-      BlogDataService.retrieveData().then(function (result) {
+      BlogDataFactory.retrieveData().then(function (result) {
 
         if (_.isObject(result.data.BlogPosts)) {
 
