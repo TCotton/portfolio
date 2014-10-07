@@ -12,10 +12,10 @@
 
   /**
    * @description Admin access to blog comments
-   * @param $scope
-   * @param MongoCommentFactory
-   * @param $log
-   * @param _
+   * @param {model} $scope
+   * @param {service} MongoCommentFactory
+   * @param {service} $log
+   * @param {library} _
    * @constructor
    */
   var CommentAdminCtrl = function ($scope, MongoCommentFactory, $log, _) {
@@ -32,6 +32,10 @@
     this.$scope.comments = null;
 
   };
+
+  /** @method
+   *  @public
+   */
 
   CommentAdminCtrl.prototype.getComments = function () {
 

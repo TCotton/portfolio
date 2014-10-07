@@ -2,8 +2,12 @@
  * Created by awalpole on 04/10/2014.
  */
 
+var IndexPage = require('./IndexPage');
+
 // test the main carousel
 describe('e2e: carousel', function() {
+
+  var page = new IndexPage();
 
   var SLIDER = {
     slider1: {
@@ -61,7 +65,7 @@ describe('e2e: carousel', function() {
    */
 
   beforeEach(function() {
-    browser.get(url);
+    page.get();
   });
 
 
@@ -78,8 +82,7 @@ describe('e2e: carousel', function() {
     expect(pageTopText.getText()).toBe(SLIDER.slider2.text);
     expect(buttonFrontOne.getAttribute('href')).toBe(url + SLIDER.slider2.URL);
 
-    link = element(by.css('.right-arrow'));
-    link.click();
+    page.clickRight();
 
     pageTopTitle = element(by.css('.slider3 .page-top-title'));
     pageTopText = element(by.css('.slider3 .page-top-text'));
@@ -89,8 +92,7 @@ describe('e2e: carousel', function() {
     expect(pageTopText.getText()).toBe(SLIDER.slider3.text);
     expect(buttonFrontOne.getAttribute('href')).toBe(url + SLIDER.slider3.URL);
 
-    link = element(by.css('.right-arrow'));
-    link.click();
+    page.clickRight();
 
     pageTopTitle = element(by.css('.slider4 .page-top-title'));
     pageTopText = element(by.css('.slider4 .page-top-text'));
@@ -100,8 +102,7 @@ describe('e2e: carousel', function() {
     expect(pageTopText.getText()).toBe(SLIDER.slider4.text);
     expect(buttonFrontOne.getAttribute('href')).toBe(url + SLIDER.slider4.URL);
 
-    link = element(by.css('.right-arrow'));
-    link.click();
+    page.clickRight();
 
     pageTopTitle = element(by.css('.slider5 .page-top-title'));
     pageTopText = element(by.css('.slider5 .page-top-text'));
@@ -111,8 +112,7 @@ describe('e2e: carousel', function() {
     expect(pageTopText.getText()).toBe(SLIDER.slider5.text);
     expect(buttonFrontOne.getAttribute('href')).toBe(url + SLIDER.slider5.URL);
 
-    link = element(by.css('.right-arrow'));
-    link.click();
+    page.clickRight();
 
     pageTopTitle = element(by.css('.slider6 .page-top-title'));
     pageTopText = element(by.css('.slider6 .page-top-text'));
@@ -122,8 +122,7 @@ describe('e2e: carousel', function() {
     expect(pageTopText.getText()).toBe(SLIDER.slider6.text);
     expect(buttonFrontOne.getAttribute('href')).toBe(url + SLIDER.slider6.URL);
 
-    link = element(by.css('.right-arrow'));
-    link.click();
+    page.clickRight();
 
     pageTopTitle = element(by.css('.slider7 .page-top-title'));
     pageTopText = element(by.css('.slider7 .page-top-text'));
@@ -133,8 +132,7 @@ describe('e2e: carousel', function() {
     expect(pageTopText.getText()).toBe(SLIDER.slider7.text);
     expect(buttonFrontOne.getAttribute('href')).toBe(url + SLIDER.slider7.URL);
 
-    link = element(by.css('.right-arrow'));
-    link.click();
+    page.clickRight();
 
     pageTopTitle = element(by.css('.slider8 .page-top-title'));
     pageTopText = element(by.css('.slider8 .page-top-text'));
@@ -144,8 +142,7 @@ describe('e2e: carousel', function() {
     expect(pageTopText.getText()).toBe(SLIDER.slider8.text);
     expect(buttonFrontOne.getAttribute('href')).toBe(url + SLIDER.slider8.URL);
 
-    link = element(by.css('.right-arrow'));
-    link.click();
+    page.clickRight();
 
     pageTopTitle = element(by.css('.slider1 .page-top-title'));
     pageTopText = element(by.css('.slider1 .page-top-text'));
@@ -155,8 +152,7 @@ describe('e2e: carousel', function() {
     expect(pageTopText.getText()).toBe(SLIDER.slider1.text);
     expect(buttonFrontOne.getAttribute('href')).toBe(url + SLIDER.slider1.URL);
 
-    link = element(by.css('.left-arrow'));
-    link.click();
+    page.clickLeft();
 
     pageTopTitle = element(by.css('.slider8 .page-top-title'));
     pageTopText = element(by.css('.slider8 .page-top-text'));
@@ -166,8 +162,7 @@ describe('e2e: carousel', function() {
     expect(pageTopText.getText()).toBe(SLIDER.slider8.text);
     expect(buttonFrontOne.getAttribute('href')).toBe(url + SLIDER.slider8.URL);
 
-    link = element(by.css('.left-arrow'));
-    link.click();
+    page.clickLeft();
 
     pageTopTitle = element(by.css('.slider7 .page-top-title'));
     pageTopText = element(by.css('.slider7 .page-top-text'));
@@ -177,8 +172,7 @@ describe('e2e: carousel', function() {
     expect(pageTopText.getText()).toBe(SLIDER.slider7.text);
     expect(buttonFrontOne.getAttribute('href')).toBe(url + SLIDER.slider7.URL);
 
-    link = element(by.css('.left-arrow'));
-    link.click();
+    page.clickLeft();
 
     pageTopTitle = element(by.css('.slider6 .page-top-title'));
     pageTopText = element(by.css('.slider6 .page-top-text'));
@@ -188,8 +182,7 @@ describe('e2e: carousel', function() {
     expect(pageTopText.getText()).toBe(SLIDER.slider6.text);
     expect(buttonFrontOne.getAttribute('href')).toBe(url + SLIDER.slider6.URL);
 
-    link = element(by.css('.left-arrow'));
-    link.click();
+    page.clickLeft();
 
     pageTopTitle = element(by.css('.slider5 .page-top-title'));
     pageTopText = element(by.css('.slider5 .page-top-text'));
@@ -199,8 +192,7 @@ describe('e2e: carousel', function() {
     expect(pageTopText.getText()).toBe(SLIDER.slider5.text);
     expect(buttonFrontOne.getAttribute('href')).toBe(url + SLIDER.slider5.URL);
 
-    link = element(by.css('.left-arrow'));
-    link.click();
+    page.clickLeft();
 
     pageTopTitle = element(by.css('.slider4 .page-top-title'));
     pageTopText = element(by.css('.slider4 .page-top-text'));
@@ -210,8 +202,7 @@ describe('e2e: carousel', function() {
     expect(pageTopText.getText()).toBe(SLIDER.slider4.text);
     expect(buttonFrontOne.getAttribute('href')).toBe(url + SLIDER.slider4.URL);
 
-    link = element(by.css('.left-arrow'));
-    link.click();
+    page.clickLeft();
 
     pageTopTitle = element(by.css('.slider3 .page-top-title'));
     pageTopText = element(by.css('.slider3 .page-top-text'));
@@ -221,8 +212,7 @@ describe('e2e: carousel', function() {
     expect(pageTopText.getText()).toBe(SLIDER.slider3.text);
     expect(buttonFrontOne.getAttribute('href')).toBe(url + SLIDER.slider3.URL);
 
-    link = element(by.css('.left-arrow'));
-    link.click();
+    page.clickLeft();
 
     pageTopTitle = element(by.css('.slider2 .page-top-title'));
     pageTopText = element(by.css('.slider2 .page-top-text'));
@@ -232,8 +222,7 @@ describe('e2e: carousel', function() {
     expect(pageTopText.getText()).toBe(SLIDER.slider2.text);
     expect(buttonFrontOne.getAttribute('href')).toBe(url + SLIDER.slider2.URL);
 
-    link = element(by.css('.left-arrow'));
-    link.click();
+    page.clickLeft();
 
     pageTopTitle = element(by.css('.slider1 .page-top-title'));
     pageTopText = element(by.css('.slider1 .page-top-text'));

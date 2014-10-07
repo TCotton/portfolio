@@ -2,11 +2,13 @@
  * Created by awalpole on 04/10/2014.
  */
 
+var IndexPage = require('./IndexPage');
 
 // test the homepage stats
 describe('e2e: home page stats', function() {
 
-  var url = 'http://localhost:9000';
+  var page = new IndexPage();
+
   var spanOne;
   var spanTwo;
   var spanThree;
@@ -15,8 +17,9 @@ describe('e2e: home page stats', function() {
   var calculateDate;
 
   beforeEach(function() {
-    browser.get(url);
+    page.get();
   });
+
 
   it('All digits on the front page stats should be correct', function() {
 

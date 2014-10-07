@@ -42,7 +42,6 @@ angular.module('portfolioApp.blogAdminService').factory('MongoBlogFactory', ['$h
 
       return deferred.promise;
 
-
     },
 
     editBlogPosts: function (formData) {
@@ -63,7 +62,6 @@ angular.module('portfolioApp.blogAdminService').factory('MongoBlogFactory', ['$h
       deferred.resolve(returnedMessage);
 
       return deferred.promise;
-
 
     },
 
@@ -86,7 +84,6 @@ angular.module('portfolioApp.blogAdminService').factory('MongoBlogFactory', ['$h
 
     getOldBlogPosts: function (data) {
 
-
       // return promise
 
       var deferred = $q.defer();
@@ -100,7 +97,6 @@ angular.module('portfolioApp.blogAdminService').factory('MongoBlogFactory', ['$h
       deferred.resolve(returnedMessage);
 
       return deferred.promise;
-
 
     }
 
