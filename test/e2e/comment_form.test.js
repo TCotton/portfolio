@@ -2,15 +2,17 @@
  * Created by awalpole on 04/10/2014.
  */
 
+var BlogPage = require('./BlogPage');
 
 // test the main contact form
 describe('e2e: blog comment form', function() {
 
+  var page = new BlogPage();
+
   var formMessage;
-  var link;
 
   beforeEach(function() {
-    browser.get('http://localhost:9000/#!/blog/141129/css-only-animated-mobile-menu');
+    page.get();
   });
 
   it('Form should present success message after all form input fields are successfully filled in', function() {
@@ -19,8 +21,7 @@ describe('e2e: blog comment form', function() {
     element(by.model('commentFormData.email')).sendKeys('me@andywalpole.me');
     element(by.model('commentFormData.message')).sendKeys('This is a comment message');
 
-    link = element(by.css('input[type=submit]'));
-    link.click();
+    page.clickSubmit();
 
     formMessage = element(by.binding('formSuccess'));
     expect(formMessage.getText()).toBe('You have successfully submitted a blog comment');
@@ -29,8 +30,7 @@ describe('e2e: blog comment form', function() {
 
   it('Error messages should appear if the submit button is clicked but not form fields are filled in', function() {
 
-    link = element(by.css('input[type=submit]'));
-    link.click();
+    page.clickSubmit();
 
     expect(element(by.css('.title-block .error-message')).isPresent()).toBe(true);
     expect(element(by.css('.email-block .error-message')).isPresent()).toBe(true);
@@ -47,8 +47,7 @@ describe('e2e: blog comment form', function() {
     element(by.model('commentFormData.email')).sendKeys('me AT andywalpole.me');
     element(by.model('commentFormData.message')).sendKeys('This is a comment message');
 
-    link = element(by.css('input[type=submit]'));
-    link.click();
+    page.clickSubmit();
 
     expect(element(by.css('.email-block .error-message')).isPresent()).toBe(true);
 
