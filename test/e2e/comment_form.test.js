@@ -3,11 +3,13 @@
  */
 
 var BlogPage = require('./BlogPage');
+var TestingData = require('./TestingData');
 
 // test the main contact form
 describe('e2e: blog comment form', function() {
 
   var page = new BlogPage();
+  var data = new TestingData();
 
   var formMessage;
 
@@ -17,14 +19,14 @@ describe('e2e: blog comment form', function() {
 
   it('Form should present success message after all form input fields are successfully filled in', function() {
 
-    element(by.model('commentFormData.name')).sendKeys('Andy Walpole');
-    element(by.model('commentFormData.email')).sendKeys('me@andywalpole.me');
-    element(by.model('commentFormData.message')).sendKeys('This is a comment message');
+    element(by.model('commentFormData.name')).sendKeys(data.testData.blogPage.name);
+    element(by.model('commentFormData.email')).sendKeys(data.testData.blogPage.email);
+    element(by.model('commentFormData.message')).sendKeys(data.testData.blogPage.message);
 
     page.clickSubmit();
 
     formMessage = element(by.binding('formSuccess'));
-    expect(formMessage.getText()).toBe('You have successfully submitted a blog comment');
+    expect(formMessage.getText()).toBe(data.testData.blogPage.success);
 
   });
 
@@ -37,15 +39,15 @@ describe('e2e: blog comment form', function() {
     expect(element(by.css('.message-block .error-message')).isPresent()).toBe(true);
 
     formMessage = element(by.binding('formFailure'));
-    expect(formMessage.getText()).toBe('The form has not been submitted because of errors. Please review the form error messages and click submit again');
+    expect(formMessage.getText()).toBe(data.testData.blogPage.failure);
 
   });
 
   it('Error messages should appear if a non-email address is entered in the email field', function() {
 
-    element(by.model('commentFormData.name')).sendKeys('Andy Walpole');
-    element(by.model('commentFormData.email')).sendKeys('me AT andywalpole.me');
-    element(by.model('commentFormData.message')).sendKeys('This is a comment message');
+    element(by.model('commentFormData.name')).sendKeys(data.testData.blogPage.name);
+    element(by.model('commentFormData.email')).sendKeys(data.testData.blogPage.errorEmail);
+    element(by.model('commentFormData.message')).sendKeys(data.testData.blogPage.message);
 
     page.clickSubmit();
 

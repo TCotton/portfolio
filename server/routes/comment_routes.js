@@ -30,7 +30,7 @@ module.exports = function (app) {
       }
 
       // send email on successful blog comment
-      if (comment && req.body.name !== 'AndyTesting') {
+      if (comment) {
 
         var message = 'Name: ' + req.body.name + '\n' +
           'Url: ' + req.body.url + '\n' +
@@ -67,11 +67,6 @@ module.exports = function (app) {
       } else {
 
         // update here
-        /* cm.name = req.body.name;
-         cm.email = req.body.email;
-         cm.url = req.body.url;
-         cm.message = req.body.message;
-         cm.blogId = req.body.blogId;*/
         cm.published = req.body.published;
 
         cm.save(function (err) {
