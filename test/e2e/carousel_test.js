@@ -71,8 +71,7 @@ describe('e2e: carousel', function() {
 
   it('check headline, text and link of each carousel slide after right click', function() {
 
-    link = element(by.css('.right-arrow'));
-    link.click();
+    page.clickRight();
 
     pageTopTitle = element(by.css('.slider2 .page-top-title'));
     pageTopText = element(by.css('.slider2 .page-top-text'));
