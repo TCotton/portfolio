@@ -30,7 +30,7 @@ module.exports = function (app) {
       }
 
       // send email on successful blog comment
-      if (comment) {
+      if (comment && req.body.name !== 'AndyTesting') {
 
         var message = 'Name: ' + req.body.name + '\n' +
           'Url: ' + req.body.url + '\n' +
