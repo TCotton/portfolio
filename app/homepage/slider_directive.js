@@ -15,7 +15,7 @@ angular.module('portfolioApp.homepageDirective').directive('sliderDirective', ['
       '<section>' +
       '<h2 class="page-top-title" class="slider1" data-ng-bind="slider.title"></h2>' +
       '<p class="page-top-text" data-ng-bind="slider.text"></p>' +
-      '<a data-ng-href="slider.URL" class="button-front-one">View Project</a>' +
+      '<a data-ng-href="{{slider.URL}}" class="button-front-one">View Project</a>' +
       '</section>' +
       '<div class="left-arrow" rel="prev" role="button" tabindex="0" aria-label="Previous slide"></div>' +
       '<div class="right-arrow" rel="next" role="button"  tabindex="0" aria-label="Next slide"></div>' +
