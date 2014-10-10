@@ -15,34 +15,9 @@ angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$locatio
   $rootScope.pageChange = false;
   $rootScope.currentPage = $location.absUrl();
 
-  $rootScope.$on('$routeChangeSuccess', function () {
-    if ($route.current.$$route) {
-      $rootScope.pageTitle = $route.current.$$route.title;
-      $rootScope.status = null;
-    } else {
-      $rootScope.pageTitle = 'Not Found';
-      $rootScope.status = '404';
-    }
-  });
-
   $rootScope.$on('$locationChangeStart', function () {
 
-    /** Value used in the tablet / mobile dropdown menu code
-     * Dropdown menu disappears on page change if it is down
-     * **/
-    if (!$rootScope.pageChange) {
-      $rootScope.pageChange = true;
-    }
-
     $rootScope.currentPage = $location.absUrl();
-
-    $rootScope.canonical = 'https://andywalpole.me/#!' + $location.path();
-
-    $rootScope.hideFooter = $rootScope.currentPage.indexOf('blog') !== -1 || $rootScope.currentPage.indexOf('category') !== -1;
-
-    // basic login detection service
-    var admin = new RegExp('\/admin\/');
-    var currentPage = $rootScope.currentPage.toString();
 
     if (!$angularCacheFactory.get('authCache')) {
 
@@ -63,6 +38,35 @@ angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$locatio
       });
 
     }
+
+  });
+
+  $rootScope.$on('$routeChangeSuccess', function () {
+
+    if ($route.current.$$route) {
+      $rootScope.pageTitle = $route.current.$$route.title;
+      $rootScope.status = null;
+    } else {
+      $rootScope.pageTitle = 'Not Found';
+      $rootScope.status = '404';
+    }
+
+    /** Value used in the tablet / mobile dropdown menu code
+     * Dropdown menu disappears on page change if it is down
+     * **/
+    if (!$rootScope.pageChange) {
+      $rootScope.pageChange = true;
+    }
+
+
+    $rootScope.canonical = 'https://andywalpole.me/#!' + $location.path();
+
+    $rootScope.hideFooter = $rootScope.currentPage.indexOf('blog') !== -1 || $rootScope.currentPage.indexOf('category') !== -1;
+
+    // basic login detection service
+    var admin = new RegExp('\/admin\/');
+    var currentPage = $rootScope.currentPage.toString();
+
 
     if (admin.test(currentPage)) {
 

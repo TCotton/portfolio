@@ -237,6 +237,8 @@ describe('Routes test without log in', function () {
   describe('admin add blog page without loggin in', function () {
     beforeEach(inject(
       function ($httpBackend) {
+        $httpBackend.expectGET('blog-admin/add_blog.html')
+          .respond(200, 'add blog page HTML');
         $httpBackend.expectGET('blog-admin/login.html')
           .respond(200, 'login page HTML');
       }
@@ -244,6 +246,8 @@ describe('Routes test without log in', function () {
 
     it('should load views/admin/login.html if the user navigates to /admin/add-blog without logging in first', function () {
       location.path('/admin/add-blog');
+      rootScope.$digest(); // call the digest loop
+      rootScope.$broadcast('$routeChangeSuccess', {});
       rootScope.$digest(); // call the digest loop
       expect(route.current.controller).toBe('LoginCtrl as AdminLogin');
     });
@@ -253,6 +257,8 @@ describe('Routes test without log in', function () {
   describe('admin blog details page without logging in', function () {
     beforeEach(inject(
       function ($httpBackend) {
+        $httpBackend.expectGET('blog-admin/blog_details.html')
+          .respond(200, 'blog details page HTML');
         $httpBackend.expectGET('blog-admin/login.html')
           .respond(200, 'login page HTML');
       }
@@ -260,6 +266,8 @@ describe('Routes test without log in', function () {
 
     it('should load views/admin/login.html if the user navigates to /admin/blog-details without logging in first', function () {
       location.path('/admin/blog-details');
+      rootScope.$digest(); // call the digest loop
+      rootScope.$broadcast('$routeChangeSuccess', {});
       rootScope.$digest(); // call the digest loop
       expect(route.current.controller).toBe('LoginCtrl as AdminLogin');
     });
@@ -269,6 +277,8 @@ describe('Routes test without log in', function () {
   describe('admin user details page without logging in', function () {
     beforeEach(inject(
       function ($httpBackend) {
+        $httpBackend.expectGET('blog-admin/user_details.html')
+          .respond(200, 'user details page HTML');
         $httpBackend.expectGET('blog-admin/login.html')
           .respond(200, 'login page HTML');
       }
@@ -276,6 +286,8 @@ describe('Routes test without log in', function () {
 
     it('should load views/admin/login.html if the user navigates to /admin/user-details without logging in first', function () {
       location.path('/admin/user-details');
+      rootScope.$digest(); // call the digest loop
+      rootScope.$broadcast('$routeChangeSuccess', {});
       rootScope.$digest(); // call the digest loop
       expect(route.current.controller).toBe('LoginCtrl as AdminLogin');
     });
@@ -285,6 +297,8 @@ describe('Routes test without log in', function () {
   describe('admin comments page without logging in', function () {
     beforeEach(inject(
       function ($httpBackend) {
+        $httpBackend.expectGET('blog-admin/comment_details.html')
+          .respond(200, 'comment details page HTML');
         $httpBackend.expectGET('blog-admin/login.html')
           .respond(200, 'login page HTML');
       }
@@ -292,6 +306,8 @@ describe('Routes test without log in', function () {
 
     it('should load the admin comments page on successful load of /admin/blog-comments', function () {
       location.path('/admin/blog-comments');
+      rootScope.$digest(); // call the digest loop
+      rootScope.$broadcast('$routeChangeSuccess', {});
       rootScope.$digest(); // call the digest loop
       expect(route.current.controller).toBe('LoginCtrl as AdminLogin');
     });

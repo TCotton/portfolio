@@ -52,10 +52,7 @@ describe('Controller: BlogArticleCtrl as BlogArticlePageCtrl', function () {
 
     scope.oldBlogPosts = MOCK_DATA.allBlogData.data;
 
-    scope.$apply(function () {
-      BlogArticlePageCtrl.populatePage();
-    });
-
+    scope.$apply();
 
   }));
 

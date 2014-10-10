@@ -12,13 +12,14 @@
    * @param $rootScope
    * @param $scope
    * @param $location
-   * @param BlogDataService
+   * @param BlogDataFactory
    * @param $log
    * @param $timeout
    * @param $sce
    * @param $angularCacheFactory
    * @param $route
    * @param $filter
+   * @param _
    * @constructor
    */
   var BlogArticleCtrl = function ($rootScope, $scope, $location, BlogDataFactory, $log, $timeout, $sce, $angularCacheFactory, $route, $filter, _) {
@@ -31,7 +32,6 @@
     this.$sce = $sce;
     this.$route = $route;
     this.$filter = $filter;
-    this._ = _;
 
     this.$scope.oldBlogPosts = null;
     this.$scope.title = null;
@@ -64,12 +64,6 @@
 
     }
 
-  };
-
-  BlogArticleCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataFactory', '$log', '$timeout', '$sce', '$angularCacheFactory', '$route', '$filter', '_'];
-
-  BlogArticleCtrl.prototype.populatePage = function () {
-
     // find blogId number form the URL string, ie /#!/blog/136324/using-autoload-in-object-orientated-wordpress-plugin
     var blogId = this.$rootScope.currentPage.substring(this.$rootScope.currentPage.indexOf('/#!/') + 9, this.$rootScope.currentPage.indexOf('/#!/') + 15);
 
@@ -79,7 +73,7 @@
      */
     var _renderArticle = function () {
 
-      var blogPost =  this._.filter(this.$scope.oldBlogPosts, function (o) {
+      var blogPost = _.filter(this.$scope.oldBlogPosts, function (o) {
 
         // filter articles array to find the correct article for the page
         if (o.publishedDate.substring(0, 6) === blogId) {
@@ -88,7 +82,7 @@
         }
       });
 
-      if (!this._.isEmpty(blogPost) && this.$rootScope.currentPage.indexOf(blogPost[0].url) !== -1) {
+      if (!_.isEmpty(blogPost) && this.$rootScope.currentPage.indexOf(blogPost[0].url) !== -1) {
 
         this.$scope.title = blogPost[0].title;
         this.$scope.author = blogPost[0].author;
@@ -137,6 +131,8 @@
     });
 
   };
+
+  BlogArticleCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataFactory', '$log', '$timeout', '$sce', '$angularCacheFactory', '$route', '$filter', '_'];
 
   app.controller('BlogArticleCtrl', BlogArticleCtrl);
 

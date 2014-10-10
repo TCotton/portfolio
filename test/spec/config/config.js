@@ -27,6 +27,7 @@ describe('Config: Config', function () {
     it('Checks that $rootScope.pageChange is true after page change', function () {
       $location.path('/');
       $rootScope.$digest();
+      $rootScope.$broadcast('$routeChangeSuccess', {});
       expect($rootScope.pageChange).toEqual(true);
     });
 

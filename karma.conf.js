@@ -21,6 +21,7 @@ module.exports = function(config) {
       'app/components/moment/moment.js',
       'app/libs/*.js',
       'app/app.js',
+      'app/config/*.js',
       'app/shared/*.js',
       'app/footer/*.js',
       'app/homepage/*.js',
@@ -33,8 +34,8 @@ module.exports = function(config) {
       'app/misc/*.js',
       'app/sitemap/*.js',
       'app/contact/*.js',
-      'test/spec/**/*.js',
-      'app/config/*.js'
+      'test/spec/**/*.js'
+
     ],
 
     // list of files / patterns to exclude
