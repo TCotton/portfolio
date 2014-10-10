@@ -20,7 +20,6 @@ angular.module('portfolioApp.homepageDirective').directive('sliderDirective', ['
       '<div class="left-arrow" rel="prev" role="button" tabindex="0" aria-label="Previous slide"></div>' +
       '<div class="right-arrow" rel="next" role="button"  tabindex="0" aria-label="Next slide"></div>' +
       '</div>',
-
     controller: function ($scope) {
 
       $scope.slideController = {
