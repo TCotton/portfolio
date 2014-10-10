@@ -23,18 +23,13 @@ describe('Unit: Templates - logged in', function () {
     rootScope.userid = userID;
   }));
 
-  afterEach(function () {
-    $httpBackend.verifyNoOutstandingExpectation();
-    $httpBackend.verifyNoOutstandingRequest();
-  });
-
-
   it('loads the home template at /', function () {
     $httpBackend.expectGET('homepage/main.html')
       .respond(200);
     location.path('/');
     rootScope.$digest(); // call the digest loop
-    $httpBackend.flush();
+    rootScope.$broadcast('$routeChangeSuccess', {});
+    rootScope.$digest(); // call the digest loop
   });
 
   it('loads work projects page at /work-projects', function () {
@@ -42,7 +37,8 @@ describe('Unit: Templates - logged in', function () {
       .respond(200);
     location.path('/work-projects');
     rootScope.$digest(); // call the digest loop
-    $httpBackend.flush();
+    rootScope.$broadcast('$routeChangeSuccess', {});
+    rootScope.$digest(); // call the digest loop
   });
 
   it('loads about me page at /about-me', function () {
@@ -50,7 +46,8 @@ describe('Unit: Templates - logged in', function () {
       .respond(200);
     location.path('/about-me');
     rootScope.$digest(); // call the digest loop
-    $httpBackend.flush();
+    rootScope.$broadcast('$routeChangeSuccess', {});
+    rootScope.$digest(); // call the digest loop
   });
 
   it('loads side projects page at /side-projects', function () {
@@ -58,7 +55,8 @@ describe('Unit: Templates - logged in', function () {
       .respond(200);
     location.path('/side-projects');
     rootScope.$digest(); // call the digest loop
-    $httpBackend.flush();
+    rootScope.$broadcast('$routeChangeSuccess', {});
+    rootScope.$digest(); // call the digest loop
   });
 
   it('loads contact me page at /contact-me', function () {
@@ -66,7 +64,8 @@ describe('Unit: Templates - logged in', function () {
       .respond(200);
     location.path('/contact-me');
     rootScope.$digest(); // call the digest loop
-    $httpBackend.flush();
+    rootScope.$broadcast('$routeChangeSuccess', {});
+    rootScope.$digest(); // call the digest loop
   });
 
   it('loads blog page at /blog/', function () {
@@ -74,7 +73,8 @@ describe('Unit: Templates - logged in', function () {
       .respond(200);
     location.path('/blog/');
     rootScope.$digest(); // call the digest loop
-    $httpBackend.flush();
+    rootScope.$broadcast('$routeChangeSuccess', {});
+    rootScope.$digest(); // call the digest loop
   });
 
   it('loads individual blog page at /blog/-an-article', function () {
@@ -82,7 +82,8 @@ describe('Unit: Templates - logged in', function () {
       .respond(200);
     location.path('/blog/136324/using-autoload-in-object-orientated-wordpress-plugin');
     rootScope.$digest(); // call the digest loop
-    $httpBackend.flush();
+    rootScope.$broadcast('$routeChangeSuccess', {});
+    rootScope.$digest(); // call the digest loop
   });
 
   it('loads individual work page at /work-projects/thomson-reuters-japan', function () {
@@ -90,7 +91,8 @@ describe('Unit: Templates - logged in', function () {
       .respond(200);
     location.path('/work-projects/thomson-reuters-japan');
     rootScope.$digest(); // call the digest loop
-    $httpBackend.flush();
+    rootScope.$broadcast('$routeChangeSuccess', {});
+    rootScope.$digest(); // call the digest loop
   });
 
   it('loads individual side projects page at /side-projects/pennybooks', function () {
@@ -98,7 +100,8 @@ describe('Unit: Templates - logged in', function () {
       .respond(200);
     location.path('/side-projects/pennybooks');
     rootScope.$digest(); // call the digest loop
-    $httpBackend.flush();
+    rootScope.$broadcast('$routeChangeSuccess', {});
+    rootScope.$digest(); // call the digest loop
   });
 
   it('loads login page at /login', function () {
@@ -106,7 +109,8 @@ describe('Unit: Templates - logged in', function () {
       .respond(200);
     location.path('/login');
     rootScope.$digest(); // call the digest loop
-    $httpBackend.flush();
+    rootScope.$broadcast('$routeChangeSuccess', {});
+    rootScope.$digest(); // call the digest loop
   });
 
   it('loads admin user details page at /admin/user-details', function () {
@@ -114,7 +118,8 @@ describe('Unit: Templates - logged in', function () {
       .respond(200);
     location.path('/admin/user-details');
     rootScope.$digest(); // call the digest loop
-    $httpBackend.flush();
+    rootScope.$broadcast('$routeChangeSuccess', {});
+    rootScope.$digest(); // call the digest loop
   });
 
   it('loads admin add blog page at /admin/blog-details', function () {
@@ -122,7 +127,8 @@ describe('Unit: Templates - logged in', function () {
       .respond(200);
     location.path('/admin/blog-details');
     rootScope.$digest(); // call the digest loop
-    $httpBackend.flush();
+    rootScope.$broadcast('$routeChangeSuccess', {});
+    rootScope.$digest(); // call the digest loop
   });
 
   it('loads admin edit blog page at /admin/add-blog', function () {
@@ -130,7 +136,8 @@ describe('Unit: Templates - logged in', function () {
       .respond(200);
     location.path('/admin/add-blog');
     rootScope.$digest(); // call the digest loop
-    $httpBackend.flush();
+    rootScope.$broadcast('$routeChangeSuccess', {});
+    rootScope.$digest(); // call the digest loop
   });
 
   it('loads admin edit comments page at /admin/blog-comments', function () {
@@ -138,7 +145,8 @@ describe('Unit: Templates - logged in', function () {
       .respond(200);
     location.path('/admin/blog-comments');
     rootScope.$digest(); // call the digest loop
-    $httpBackend.flush();
+    rootScope.$broadcast('$routeChangeSuccess', {});
+    rootScope.$digest(); // call the digest loop
   });
 
   it('loads sitemap page at /sitemap', function () {
@@ -146,7 +154,8 @@ describe('Unit: Templates - logged in', function () {
       .respond(200);
     location.path('/sitemap');
     rootScope.$digest(); // call the digest loop
-    $httpBackend.flush();
+    rootScope.$broadcast('$routeChangeSuccess', {});
+    rootScope.$digest(); // call the digest loop
   });
 
   it('loads category page at /blog/css', function () {
@@ -154,7 +163,8 @@ describe('Unit: Templates - logged in', function () {
       .respond(200);
     location.path('/category/css');
     rootScope.$digest(); // call the digest loop
-    $httpBackend.flush();
+    rootScope.$broadcast('$routeChangeSuccess', {});
+    rootScope.$digest(); // call the digest loop
   });
 
 });
@@ -173,11 +183,6 @@ describe('Unit: Templates - not logged in', function () {
     $httpBackend = _$httpBackend_;
   }));
 
-  afterEach(function () {
-    $httpBackend.verifyNoOutstandingExpectation();
-    $httpBackend.verifyNoOutstandingRequest();
-  });
-
   it('loads login page when navigating to /admin/blog-comments because user is not logged in', function () {
     $httpBackend.expectGET('blog-admin/comment_details.html')
       .respond(200);
@@ -187,7 +192,6 @@ describe('Unit: Templates - not logged in', function () {
     rootScope.$digest(); // call the digest loop
     rootScope.$broadcast('$routeChangeSuccess', {});
     rootScope.$digest(); // call the digest loop
-    $httpBackend.flush();
   });
 
   it('loads login page when navigating to /admin/user-details because user is not logged in', function () {
@@ -199,7 +203,6 @@ describe('Unit: Templates - not logged in', function () {
     rootScope.$digest(); // call the digest loop
     rootScope.$broadcast('$routeChangeSuccess', {});
     rootScope.$digest(); // call the digest loop
-    $httpBackend.flush();
   });
 
   it('loads login page when navigating to /admin/add-blog because user is not logged in', function () {
@@ -211,7 +214,6 @@ describe('Unit: Templates - not logged in', function () {
     rootScope.$digest(); // call the digest loop
     rootScope.$broadcast('$routeChangeSuccess', {});
     rootScope.$digest(); // call the digest loop
-    $httpBackend.flush();
   });
 
   it('loads login page when navigating to /admin/blog-details because user is not logged in', function () {
@@ -223,7 +225,6 @@ describe('Unit: Templates - not logged in', function () {
     rootScope.$digest(); // call the digest loop
     rootScope.$broadcast('$routeChangeSuccess', {});
     rootScope.$digest(); // call the digest loop
-    $httpBackend.flush();
   });
 
 
