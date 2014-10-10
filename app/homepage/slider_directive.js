@@ -11,11 +11,11 @@ angular.module('portfolioApp.homepageDirective').directive('sliderDirective', ['
       slider: '@'
     },
     replace: true,
-    template: '<div id="slider" class="{{slider.sliderClass}}" tabindex="-1">' +
+    template: '<div id="slider" data-ng-class="slider.sliderClass" tabindex="-1">' +
       '<section>' +
-      '<h2 class="page-top-title" class="slider1">{{slider.title}}</h2>' +
-      '<p class="page-top-text" >{{slider.text}}</p>' +
-      '<a href="{{slider.URL}}" class="button-front-one">View Project</a>' +
+      '<h2 class="page-top-title" class="slider1" data-ng-bind="slider.title"></h2>' +
+      '<p class="page-top-text" data-ng-bind="slider.text"></p>' +
+      '<a data-ng-href="slider.URL" class="button-front-one">View Project</a>' +
       '</section>' +
       '<div class="left-arrow" rel="prev" role="button" tabindex="0" aria-label="Previous slide"></div>' +
       '<div class="right-arrow" rel="next" role="button"  tabindex="0" aria-label="Next slide"></div>' +
@@ -123,7 +123,7 @@ angular.module('portfolioApp.homepageDirective').directive('sliderDirective', ['
               scope.slideController.currentSlide = 1;
 
             }
-          }, this.timeGap, 0, false);
+          }, this.timeGap);
         },
 
         navigation: function () {
