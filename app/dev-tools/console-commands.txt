@@ -1,0 +1,21 @@
+Access scope:
+angular.element(targetNode).scope()
+
+Access isolated scope:
+angular.element(targetNode).isolateScope()
+
+Grab a service:
+angular.element(document.querySelector('html')).injector().get('MyService')
+OR
+angular.element(document.querySelector('body')).injector().get('MyService')
+OR
+angular.element(document).injector().get('MyService');
+OR
+angular.element(document.querySelector('.ng-scope')).injector().get('MyService')
+
+Access controller for directive:
+angular.element('my-pages').controller()
+
+
+
+

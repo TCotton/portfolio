@@ -116,6 +116,10 @@
 <!-- endbower -->
 <!-- endbuild -->
 
+<!-- @if DEBUG -->
+<script src="dev-tools/stop-angular-overrides.js"></script>
+<!-- @endif -->
+
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
 <script src="config/constants.js"></script>
 <script src="shared/underscore_factory.js"></script>
@@ -158,6 +162,16 @@
 <script src="blog-pages/prism_directive.js"></script>
 <script src="blog-pages/codepen_directive.js"></script>
 <!-- endbuild -->
+<!-- @if DEBUG -->
+<script src="dev-tools/find-missing-directives.js"></script>
+<script>
+  var empty = findMissingDirectives();
+  if (empty.length) {
+    throw new Error('Found missing directives ' + empty.join(','));
+  }
+  // throws error 'Found missing directives my-tag'
+</script>
+<!-- @endif -->
 <!--[if !IE]><!-->
 <script>
   // terrible IE10 hack

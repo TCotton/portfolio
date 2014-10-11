@@ -146,11 +146,31 @@ module.exports = function (grunt) {
     wiredep: {
       app: {
         src: ['<%= yeoman.app %>/index.html'],
-        ignorePath: /\.\.\//
+        ignorePath: /\.\.\//,
+        options: {
+          exclude: ['<%= yeoman.app %>/dev-tools/*.js']
+        }
       },
       sass: {
         src: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
         ignorePath: /(\.\.\/){1,2}bower_components\//
+      }
+    },
+
+    preprocess : {
+      options: {
+        inline: true,
+        context : {
+          DEBUG: false
+        }
+      },
+      html : {
+        src : [
+          '<%= yeoman.dist %>/index.html'
+        ]
+      },
+      js : {
+        src: '.tmp/concat/scripts/*.js'
       }
     },
 
@@ -223,7 +243,7 @@ module.exports = function (grunt) {
         options: {
           jshintrc: '.jshintrc'
         },
-        src: ['test/spec/{,*/}*.js', '!test/spec/config/constants.js']
+        src: ['test/spec/{,*/}*.js', 'test/e2e/{,*/}*.js', '!test/spec/config/constants.js']
       }
     },
     // Renames files for browser caching purposes
@@ -537,6 +557,7 @@ module.exports = function (grunt) {
     'concurrent:dist',
     'ngconstant',
     'concat',
+    'preprocess:html',  // Remove DEBUG code from production builds
     'ngmin',
     //'ngAnnotate',
     'inline',

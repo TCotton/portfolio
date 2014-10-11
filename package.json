@@ -75,7 +75,8 @@
     "grunt-open": "^0.2.3",
     "grunt-nsp-package": "^0.0.5",
     "grunt-inline": "^0.3.2",
-    "grunt-protractor-runner": "^1.1.4"
+    "grunt-protractor-runner": "^1.1.4",
+    "grunt-preprocess": "^4.0.0"
   },
   "engines": {
     "node": ">=0.10.26"
