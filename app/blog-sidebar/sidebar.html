@@ -3,15 +3,15 @@
   <h4 class="content-title">Recent posts</h4>
   <ul itemscope itemtype="http://schema.org/SiteNavigationElement">
     <a data-ng-repeat="blog in blogData | orderBy: '-publishedDate' | limitTo: 10  track by $index"
-       data-ng-href="/#!/blog/{{blog.uniqueId}}/{{blog.url}}">
-      <li data-ng-bind="blog.title"></li>
+       data-ng-href="/#!/blog/{{::blog.uniqueId}}/{{::blog.url}}">
+      <li>{{::blog.title}}</li>
     </a>
   </ul>
 
   <h4 class="content-title">Popular categories</h4>
   <ul>
-    <a data-ng-repeat="tags in blogTags | limitTo: 10 track by $index" data-ng-href="/#!/category/{{tags.toLowerCase()}}">
-      <li data-ng-bind="tags"></li>
+    <a data-ng-repeat="tags in ::blogTags | limitTo: 10 track by $index" data-ng-href="/#!/category/{{::tags.toLowerCase()}}">
+      <li>{{::tags}}</li>
     </a>
   </ul>
 
