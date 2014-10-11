@@ -14,19 +14,19 @@ angular.module('portfolioApp.blogPagesDirective').directive('blogBlockDirective'
       srcset: '='
     },
     template: '<article>' +
-      '<header><a data-ng-href="/#!/blog/{{blog.uniqueId}}/{{blog.url}}">' +
+      '<header><a data-ng-href="/#!/blog/{{::blog.uniqueId}}/{{::blog.url}}">' +
       '<picture>' +
-      '<source media="(max-width: 480px)" data-ng-srcset="{{srcset}}">' +
-      '<img data-ng-src="/{{blog.displayImage}}" alt="" />' +
+      '<source media="(max-width: 480px)" data-ng-srcset="{{::srcset}}">' +
+      '<img data-ng-src="/{{::blog.displayImage}}" alt="" />' +
       '</picture>' +
       '</a></header>' +
       '<section>' +
-      '<h3 class="blog-title" data-ng-bind-html="blog.title"></h3>' +
+      '<h3 class="blog-title">{{::blog.title}}</h3>' +
       '<p class="date" data-ng-bind="blog.publishedDate | date"></p>' +
-      '<p data-ng-bind-html="blog.contentSnippet"></p> ' +
+      '<p>{{::blog.contentSnippet}}</p> ' +
       '</section>' +
       '<footer>' +
-      '<p class="read-more"><a data-ng-href="/#!/blog/{{blog.uniqueId}}/{{blog.url}}" class="underline">Read more...</a></p>' +
+      '<p class="read-more"><a data-ng-href="/#!/blog/{{::blog.uniqueId}}/{{::blog.url}}" class="underline">Read more...</a></p>' +
       '</footer>' +
       '</article>'
   };
