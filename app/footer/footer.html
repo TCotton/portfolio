@@ -34,13 +34,13 @@ angular.module('portfolioApp', [ 'portfolioApp.blogAdminService', 'portfolioApp.
       </a>
     </div>
 
-    <div data-ng-if="hideFooter" id="recommended-article" data-ng-controller="FooterCtrl as FooterInherCtrl" data-ng-init="FooterInherCtrl.loadData()">
+    <div data-ng-if="hideFooter" id="recommended-article" data-ng-controller="FooterCtrl as FooterInherCtrl" data-ng-init="FooterInherCtrl.loadData()" data-ng-cloak class="ng-cloak">
 
-      <a data-ng-if="recArticle.link" data-ng-href="{{recArticle.link}}" target="_blank">
-        <header>Latest recommended article: <em><span data-ng-bind="recArticle.title"></span></em>
-          by <em><span data-ng-bind="recArticle.author"></span> / <span data-ng-bind="recArticle.date"></span></em>
+      <a data-ng-if="recArticle.link" data-ng-href="{{::recArticle.link}}" target="_blank">
+        <header>Latest recommended article: <em><span>{{::recArticle.title}}</span></em>
+          by <em><span>{{::recArticle.author}}</span> / <span>{{::recArticle.date}}</span></em>
         </header>
-        <section><em data-ng-bind-html="recArticle.content"></em></section>
+        <section><em>{{::recArticle.content}}</em></section>
       </a>
     </div>
 
