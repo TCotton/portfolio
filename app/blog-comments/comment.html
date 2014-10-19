@@ -36,7 +36,7 @@
         <label for="email" class="visuallyhidden">Your email address</label>
            <span data-ng-if="commentForm.email.$invalid && commentBlogFormSubmit"
                  class="error-message" aria-labelledby="email"
-                 role="alert">Error: Please provide an email address.</span>
+                 role="alert" tabindex="0">Error: Please provide an email address.</span>
         <input type="email" name="email" id="email" value="" placeholder="Email (will be kept private)"
                required="required" data-ng-model="commentFormData.email" data-ng-required="true" aria-required="true"
                class="input" maxlength="200" autocorrect="off" autocapitalize="off"/>
@@ -51,7 +51,7 @@
          <span class="message-block">
         <label for="message" class="visuallyhidden">Your comments</label>
              <span data-ng-if="commentForm.message.$invalid && commentBlogFormSubmit"
-                   class="error-message" aria-labelledby="message" role="alert">Error: Please provide a comment.</span>
+                   class="error-message" aria-labelledby="message" role="alert" tabindex="0">Error: Please provide a comment.</span>
         <textarea id="message" cols="10" rows="10" placeholder="Your message"
                   data-ng-required="true" aria-required="true" data-ng-model="commentFormData.message" name="message"
                   required="required"
