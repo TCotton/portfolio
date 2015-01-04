@@ -23,7 +23,7 @@ angular.module('portfolioApp.blogPagesDirective').directive('codepenDirective', 
 
         if($document[0].getElementById('code-pen-script')) {
 
-          var script = $document[0].getElementsByTagName('script')[0];
+          var script = $document[0].getElementById('code-pen-script');
           script.parentNode.removeChild(script);
 
         }

@@ -10,7 +10,7 @@ angular.module('portfolioApp.blogPagesDirective').directive('twitterDirective', 
     restrict: 'A',
     link: function (scope) {
 
-      var addCodePen = $timeout(function () {
+      var addTwitterScript = $timeout(function () {
         var e = $document[0].createElement('script');
         e.type = 'text/javascript';
         e.id = 'twitter-script';
@@ -23,13 +23,13 @@ angular.module('portfolioApp.blogPagesDirective').directive('twitterDirective', 
 
         if($document[0].getElementById('twitter-script')) {
 
-          var script = $document[0].getElementsByTagName('script')[0];
+          var script = $document[0].getElementById('twitter-script');
           script.parentNode.removeChild(script);
 
         }
 
-        if(addCodePen) {
-          $timeout.cancel(addCodePen);
+        if(addTwitterScript) {
+          $timeout.cancel(addTwitterScript);
         }
 
       });

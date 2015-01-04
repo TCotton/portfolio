@@ -51,7 +51,7 @@
 
   };
 
-  BlogCtrl.$inject = ['$scope', 'BlogDataFactory', '$angularCacheFactory', '_'];
+  BlogCtrl.$inject = ['$scope', 'BlogDataFactory', '$angularCacheFactory', '_', '$rootScope'];
 
   BlogCtrl.prototype.morePosts = function () {
 
