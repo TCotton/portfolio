@@ -1,0 +1,15 @@
+.loader {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  @include transform('translate(-50%,-50%)');
+  margin: auto;
+  width: 50vmin;
+  height: 50vmin;
+  display: inline-block;
+  background-size: contain;
+  border-radius: 100%;
+  border: 3px solid $homepageStatsBackground;
+  background: $loadingSpinner;
+  box-shadow: 0 0 0 3px white;
+}

@@ -1651,6 +1651,25 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     margin-bottom: 10px;
   }
 }
+/* line 1, modules/_loader.scss */
+.loader {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin: auto;
+  width: 50vmin;
+  height: 50vmin;
+  display: inline-block;
+  background-size: contain;
+  border-radius: 100%;
+  border: 3px solid #00bd9c;
+  background: url("/images/svg/loading-spin.svg") no-repeat center center;
+  box-shadow: 0 0 0 3px white;
+}
+
 /* line 1, _header.scss */
 #header {
   height: 84px;

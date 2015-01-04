@@ -15,9 +15,10 @@
    * @param _
    * @constructor
    */
-  var BlogCtrl = function ($scope, BlogDataFactory, $angularCacheFactory, _) {
+  var BlogCtrl = function ($scope, BlogDataFactory, $angularCacheFactory, _, $rootScope) {
 
     this.$scope = $scope;
+    this.$rootScope = $rootScope;
 
     this.$scope.displayPosts = 5;
 
@@ -29,10 +30,17 @@
 
     } else {
 
+      // start loader spinner in loaderDirective
+
+      this.$rootScope.loader = true;
+
       BlogDataFactory.retrieveData().then(function (result) {
 
         if (_.isObject(result.data.BlogPosts)) {
 
+          // stop loader spinner in loaderDirective
+
+          this.$rootScope.loader = false;
           this.$scope.totalBlogPosts = result.data.BlogPosts;
 
         }

@@ -35,7 +35,8 @@ angular.module('portfolioApp.blogAdminService').factory('MongoBlogFactory', ['$h
 
       var returnedMessage = $http({
         url: '/api/blog/get',
-        method: 'GET'
+        method: 'GET',
+        cache: true
       });
 
       deferred.resolve(returnedMessage);
@@ -91,7 +92,8 @@ angular.module('portfolioApp.blogAdminService').factory('MongoBlogFactory', ['$h
       var returnedMessage = $http({
         url: '/api/oldBlog/get',
         method: 'GET',
-        params: data
+        params: data,
+        cache: true
       });
 
       deferred.resolve(returnedMessage);
