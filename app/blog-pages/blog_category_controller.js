@@ -44,10 +44,17 @@
 
     } else {
 
+      // start loader spinner in loaderDirective
+
+      this.$rootScope.loader = true;
+
       BlogDataFactory.retrieveData().then(function (result) {
 
         if (_.isObject(result.data.BlogPosts)) {
 
+          // stop loader spinner in loaderDirective
+
+          this.$rootScope.loader = false;
           this.$scope.blogPosts = result.data.BlogPosts;
 
         }
