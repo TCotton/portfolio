@@ -31,7 +31,11 @@
     "iit": false,
     "moment": false,
     "Prism": false,
-    "CodePenEmbed": false
+    "CodePenEmbed": false,
+    "onmessage": false,
+    "postMessage": false,
+    "self": false
+
   },
 
   "debug": false,

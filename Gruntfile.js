@@ -425,6 +425,8 @@ module.exports = function (grunt) {
       }
     },
 
+
+
     ngconstant: {
       build: {
         options: {
@@ -571,8 +573,8 @@ module.exports = function (grunt) {
     'ngconstant:test',
     'express:test',
     'karma',
-    'protractor'
-    //'validate-package'
+    'protractor',
+    'validate-package'
   ]);
 
   grunt.registerTask('build', [
