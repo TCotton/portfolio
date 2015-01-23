@@ -20,7 +20,7 @@ angular.module('portfolioApp.blogCommentsDirective').directive('commentDirective
       '<header data-ng-if="!comment.url">' +
       '<p><span data-ng-bind="comment.name" itemprop="creator"></span><br><span data-ng-bind="comment.publishedDate | date" itemprop="commentTime"></span></p>' +
       '</header>' +
-      '<section data-ng-bind="comment.message" itemprop="commentText"></section>' +
+      '<section ng-bind-html="comment.message | linky" itemprop="commentText"></section>' +
       '</div>',
     link: function () {
 

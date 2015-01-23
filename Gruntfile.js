@@ -522,8 +522,34 @@ module.exports = function (grunt) {
           }
         ]
       }
-    }
+    },
 
+    template_to_files: {
+      options: {
+        // Task-specific options go here.
+        Container: '<%= yeoman.app %>' + '/js/containers/',
+        Ctrl: '<%= yeoman.app %>' + '/js/controllers/',
+        Loader: '<%= yeoman.app %>' + '/js/loaders/',
+        'page.html': '<%= yeoman.app %>' + '/js/templatesPage/',
+        'view.html': '<%= yeoman.app %>' + '/js/templatesView/',
+        Module: '<%= yeoman.app %>' + '/js/modules/',
+        RestService: '<%= yeoman.app %>' + '/js/services/',
+        fileGroupNames: ['Module', 'Container', 'Ctrl', 'Loader', 'RestService', 'page.html', 'view.html'],
+        sectionName: 'newBlock' // !important
+      },
+      build: {
+        files: [
+          {
+            expand: true,
+            dot: true,
+            cwd: '<%= yeoman.app %>',
+            src: [
+              '/templates/*.{html,js}'
+            ]
+          }
+        ]
+      }
+    }
   });
 
   grunt.registerTask('server', function (target) {
@@ -547,8 +573,8 @@ module.exports = function (grunt) {
     'ngconstant:test',
     'express:test',
     'karma',
-    'protractor',
-    'validate-package'
+    'protractor'
+/*    'validate-package'*/
   ]);
 
   grunt.registerTask('build', [
@@ -576,6 +602,10 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+
+  grunt.loadNpmTasks('template-to-files');
+
+  grunt.registerTask('fileBuild', ['template_to_files:build']);
 
   grunt.registerTask('protractor-e2e', ['concurrent:protractor_test']);
   grunt.registerTask('protractor-chrome', ['protractor:run_chrome']);
