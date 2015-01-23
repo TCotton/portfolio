@@ -40,7 +40,7 @@ angular.module('portfolioApp', [ 'portfolioApp.blogAdminService', 'portfolioApp.
         <header>Latest recommended article: <em><span>{{::recArticle.title}}</span></em>
           by <em><span>{{::recArticle.author}}</span> / <span>{{::recArticle.date}}</span></em>
         </header>
-        <section><em>{{::recArticle.content}}</em></section>
+        <section><em>{{recArticle.content}}</em></section>
       </a>
     </div>
 

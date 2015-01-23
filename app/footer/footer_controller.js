@@ -16,7 +16,7 @@
    * @param NewsBlurFactory
    * @constructor
    */
-  var FooterCtrl = function ($scope, $log, NewsBlurFactory) {
+  var FooterCtrl = function ($scope, $log, NewsBlurFactory, webWorkerFS) {
 
     this.$scope = $scope;
     this.$log = $log;
@@ -26,6 +26,8 @@
     this.$scope.recArticle.author = null;
     this.$scope.recArticle.content = null;
     this.$scope.recArticle.link = null;
+
+    this.webWorkerFS = webWorkerFS;
 
     /** Using defineProperty prevents injected service being exposed to the template
      * **/
@@ -59,7 +61,7 @@
 
   };
 
-  FooterCtrl.$inject = ['$scope', '$log', 'NewsBlurFactory'];
+  FooterCtrl.$inject = ['$scope', '$log', 'NewsBlurFactory', 'webWorkerFS'];
 
   /** Return JSON data for latest articles saved in my Newsblur account
    *  Uses Newsblur API on NodeJS
@@ -80,7 +82,12 @@
           this.$scope.recArticle.title = returnedData.stories[key].story_title;
           this.$scope.recArticle.date = returnedData.stories[key].short_parsed_date.split(',')[0];
           this.$scope.recArticle.author = returnedData.stories[key].story_authors;
-          this.$scope.recArticle.content = _createContentSnippet(returnedData.stories[key].story_content);
+
+          this.webWorkerFS.f('createContentSnippetFooter', [returnedData.stories[key].story_content]).then(function(contentSnip) {
+            this.$scope.recArticle.content = contentSnip;
+            console.dir(this.$scope.recArticle);
+          }.bind(this));
+
           this.$scope.recArticle.link = returnedData.stories[key].story_permalink;
 
           if (key >= 0) {

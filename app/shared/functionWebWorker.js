@@ -1,37 +1,51 @@
 'use strict';
+// Code here will be linted with JSHint.
+/* jshint ignore:start */
 
 var functionsObject = {
 
-  isEquivalent: function isEquivalent(data) {
+  createContentSnippet: function createContentSnippet(data) {
 
-    var objectParams = Array.prototype.slice.call(arguments);
-    var a = objectParams[0];
-    var b = objectParams[1];
+    // to create a codeSnippet cut down the content to around 130 characters without cutting a whole word in half
+    var snippet, maxLength, trimmedString, finalSnippet;
 
+    snippet = data.toString();
 
-    // Create arrays of property names
-    var propName;
-    var i;
-    var l;
-    var aProps = Object.getOwnPropertyNames(a);
-    var bProps = Object.getOwnPropertyNames(b);
+    // maximum number of characters to extract
+    maxLength = 130;
 
-    // If number of properties is different, objects are not equivalent
-    if (aProps.length !== bProps.length) {
-      return false;
-    }
+    //trim the string to the maximum length
+    // make sure not include opening paragraph tag if any
+    // hence, cut string at the third characters
+    trimmedString = snippet.substr(3, maxLength);
 
-    for (i = 0, l = aProps.length; i !== l; i += 1) {
-      propName = aProps[i];
+    //re-trim if we are in the middle of a word
+    trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(' '))) + ' ...';
 
-      // If values of same property are not equal, objects are not equivalent
-      if (a[propName] !== b[propName]) {
-        postMessage(false);
-      }
-    }
+    //strip and HTML tags
+    finalSnippet = trimmedString.replace(/(<([^>]+)>)/ig, '').trim();
 
-    // If we made it this far, objects are considered equivalent
-    postMessage(true);
+    postMessage(finalSnippet);
+
+  },
+
+  createContentSnippetFooter: function createContentSnippetFooter(title) {
+
+    // to create a codeSnippet cut down the content to around 130 characters without cutting a whole word in half
+    var snippet, maxLength, trimmedString;
+
+    //strip any HTML tags
+    snippet = title.replace(/(<([^>]+)>)/ig, '').trim();
+
+    // maximum number of characters to extract
+    maxLength = 260;
+
+    //trim the string to the maximum length
+    trimmedString = snippet.substr(0, maxLength);
+
+    //re-trim if we are in the middle of a word
+    postMessage('"' + trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(' '))) + ' ...' + ' "');
+
   }
 
 };
@@ -47,3 +61,4 @@ onmessage = function onmessage(oEvent) {
   }
 
 };
+
