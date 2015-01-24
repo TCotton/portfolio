@@ -13,8 +13,6 @@
   var app = angular.module('portfolioApp.blogAdminController');
   /** Declare private method variable names
    * **/
-  var _createContentSnippet;
-  var _addSEOFriendlyURL;
 
   /**
    * @description for editing or deleting blog articles
