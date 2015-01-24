@@ -19,8 +19,6 @@ describe('Controller: "FooterCtrl as FooterInherCtrl', function () {
   var webWorkerFS;
   var contentSnippet;
 
-  contentSnippet = '"Presented at at the Google WebPerf Special (London WebPerf Group), August 26th 2014. Efficient JavaScript webapps need to be fluid and fast. Any app with significant user interaction needs to consider how to effectively keep memory usage down because if ... "';
-
   beforeEach(module('testConstants', 'portfolioApp.footerController', 'portfolioApp.footerService', 'AppConstants', 'ngRoute', 'portfolioAppConfig', 'jmdobry.angular-cache', 'underscore', 'webWorkerFunctionService'));
 
   // Initialize the controller and a mock scope
@@ -32,6 +30,7 @@ describe('Controller: "FooterCtrl as FooterInherCtrl', function () {
     $q = _$q_;
     webWorkerFS = _webWorkerFS_;
     newsBlurResponse = MOCK_DATA.newsBlurReturn;
+    contentSnippet = MOCK_DATA.newsBlurReturn_contentSnippet;
 
     deferred = $q.defer();
     deferred.resolve(contentSnippet); //  always resolved, you can do it from your spec

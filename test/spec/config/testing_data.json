@@ -1195,5 +1195,6 @@
         "photo_url": "https://graph.facebook.com/1357857878/picture"
       }
     ]
-  }
+  },
+  "newsBlurReturn_contentSnippet": "\"Presented at at the Google WebPerf Special (London WebPerf Group), August 26th 2014. Efficient JavaScript webapps need to be fluid and fast. Any app with significant user interaction needs to consider how to effectively keep memory usage down because if ... \""
 }
