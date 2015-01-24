@@ -2,12 +2,11 @@
  * Created by awalpole on 23/05/2014.
  */
 /*jshint camelcase: false */
+/*jshint loopfunc: true */
 'use strict';
 (function () {
 
   var app = angular.module('portfolioApp.footerController');
-
-  var _createContentSnippet;
 
   /**
    * @description For displaying recommended blog article using data from the NewsBlur API
@@ -35,30 +34,6 @@
       value: NewsBlurFactory
     });
 
-    /**
-     * @description Creates text snippet from the beginning of the article
-     * @type {function(this:FooterCtrl)|*|Function}
-     * @private
-     */
-    _createContentSnippet = function (title) {
-
-      // to create a codeSnippet cut down the content to around 130 characters without cutting a whole word in half
-      var snippet, maxLength, trimmedString;
-
-      //strip any HTML tags
-      snippet = title.replace(/(<([^>]+)>)/ig, '').trim();
-
-      // maximum number of characters to extract
-      maxLength = 260;
-
-      //trim the string to the maximum length
-      trimmedString = snippet.substr(0, maxLength);
-
-      //re-trim if we are in the middle of a word
-      return '"' + trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(' '))) + ' ...' + ' "';
-
-    }.bind(this);
-
   };
 
   FooterCtrl.$inject = ['$scope', '$log', 'NewsBlurFactory', 'webWorkerFS'];
@@ -85,7 +60,6 @@
 
           this.webWorkerFS.f('createContentSnippetFooter', [returnedData.stories[key].story_content]).then(function(contentSnip) {
             this.$scope.recArticle.content = contentSnip;
-            console.dir(this.$scope.recArticle);
           }.bind(this));
 
           this.$scope.recArticle.link = returnedData.stories[key].story_permalink;

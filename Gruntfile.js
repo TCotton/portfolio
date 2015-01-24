@@ -406,7 +406,8 @@ module.exports = function (grunt) {
               'shared/*.html',
               'components/**/*',
               'images/{,*/}*.{webp}',
-              'fonts/*'
+              'fonts/*',
+              'shared/functionWebWorker.js'
             ]
           },
           {
@@ -602,10 +603,6 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
-
-  grunt.loadNpmTasks('template-to-files');
-
-  grunt.registerTask('fileBuild', ['template_to_files:build']);
 
   grunt.registerTask('protractor-e2e', ['concurrent:protractor_test']);
   grunt.registerTask('protractor-chrome', ['protractor:run_chrome']);

@@ -15,6 +15,9 @@ describe('Controller: "FooterCtrl as FooterInherCtrl', function () {
   var scope;
   var FooterInherCtrl;
   var newsBlurResponse;
+  var deferred;
+  var webWorkerFS;
+  var contentSnippet;
 
   newsBlurResponse = {"authenticated": true, "stories": [
     {"story_authors": "Addy", "intelligence": {"feed": 1, "tags": 0, "author": 0, "title": 0}, "shared_by_friends": [], "story_permalink": "http://addyosmani.com/blog/slides-javascript-memory-management-masterclass/", "reply_count": 0, "comment_user_ids": [], "story_timestamp": "1409615057", "share_user_ids": [], "user_id": 103195, "user_tags": [], "story_hash": "16770:70f46f", "id": "http://addyosmani.com/blog/?p=6790", "comment_count": 0, "story_title": "Slides: JavaScript Memory Management Masterclass", "story_tags": ["web development", "javascript", "management", "memory"], "share_count": 0, "friend_comments": [], "story_date": "2014-09-01 23:44:17", "share_count_public": 0, "friend_user_ids": [], "public_user_ids": [], "short_parsed_date": "01 Sep 2014, 7:44pm", "guid_hash": "70f46f", "share_count_friends": 0, "image_urls": [], "story_feed_id": 16770, "long_parsed_date": "Monday, September 1st 7:44pm", "comment_count_friends": 0, "public_comments": [], "commented_by_friends": [], "starred_date": "Wednesday, September 3rd 6:20am", "read_status": 1, "shared_by_public": [], "comment_count_public": 0, "commented_by_public": [], "story_content": "Presented at at the Google WebPerf Special (London WebPerf Group), August 26th 2014. Efficient JavaScript webapps need to be fluid and fast. Any app with significant user interaction needs to consider how to effectively keep memory usage down because if &#8230; <a href=\"http://addyosmani.com/blog/slides-javascript-memory-management-masterclass/\">Continue reading <span class=\"meta-nav\">&#8594;</span></a>", "starred": true},
@@ -32,15 +35,23 @@ describe('Controller: "FooterCtrl as FooterInherCtrl', function () {
     {"username": "cyberblox", "feed_address": "http://www.newsblur.com/social/rss/136359/cyberblox", "user_id": 136359, "feed_link": "http://cyberblox.newsblur.com", "num_subscribers": 0, "feed_title": "cyberblox's blurblog", "private": null, "protected": null, "location": "Marietta, Georgia", "large_photo_url": "https://graph.facebook.com/1357857878/picture?type=large", "id": "social:136359", "photo_url": "https://graph.facebook.com/1357857878/picture"}
   ]};
 
-  beforeEach(module('testConstants', 'portfolioApp.footerController', 'portfolioApp.footerService', 'AppConstants', 'ngRoute', 'portfolioAppConfig', 'jmdobry.angular-cache', 'underscore'));
+  contentSnippet = '"Presented at at the Google WebPerf Special (London WebPerf Group), August 26th 2014. Efficient JavaScript webapps need to be fluid and fast. Any app with significant user interaction needs to consider how to effectively keep memory usage down because if ... "';
+
+  beforeEach(module('testConstants', 'portfolioApp.footerController', 'portfolioApp.footerService', 'AppConstants', 'ngRoute', 'portfolioAppConfig', 'jmdobry.angular-cache', 'underscore', 'webWorkerFunctionService'));
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function (_$controller_, _$rootScope_, _MOCK_DATA_, _$httpBackend_, _$q_) {
+  beforeEach(inject(function (_$controller_, _$rootScope_, _MOCK_DATA_, _$httpBackend_, _$q_, _webWorkerFS_) {
     $controller = _$controller_;
     $rootScope = _$rootScope_;
     MOCK_DATA = _MOCK_DATA_;
     $httpBackend = _$httpBackend_;
     $q = _$q_;
+    webWorkerFS = _webWorkerFS_;
+
+    deferred = _$q_.defer();
+
+    deferred.resolve(contentSnippet);
+    spyOn(webWorkerFS.f, 'createContentSnippetFooter').andReturn(deferred.promise);
 
     scope = $rootScope.$new();
 
@@ -70,9 +81,10 @@ describe('Controller: "FooterCtrl as FooterInherCtrl', function () {
 
   it('Tests the _createContentSnippet() function. Must be 270 or fewer characters, to contain an ellipse and finish with double quotes', function () {
 
-    expect(scope.recArticle.content.length).toBeLessThan(270);
-    expect(scope.recArticle.content).toContain('...');
-    expect(scope.recArticle.content).toMatch(/["]$/);
+    alert(scope.recArticle);
+    expect(scope.recArticle.content).toBe(contentSnippet);
+  /*  expect(scope.recArticle.content).toContain('...');
+    expect(scope.recArticle.content).toMatch(/["]$/);*/
 
   });
 

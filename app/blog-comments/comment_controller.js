@@ -94,7 +94,7 @@
 
           this.$scope.commentFormData[key] = null;
 
-        }.bind(this));
+        }, this);
 
         this.$scope.commentBlogFormSubmit = false;
 
