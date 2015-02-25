@@ -15,10 +15,10 @@
 
   </span>
 
-  <p data-ng-if="formSuccess" class="comment-form-success" data-ng-bind="formSuccess" tabindex="0"></p>
+  <p data-ng-if="formSuccess" class="comment-form-success" data-ng-bind="formSuccess" tabindex="-1"></p>
 
   <div class="comment-form-entry" data-ng-bind="commentFormData.message"></div>
-  <p data-ng-if="formFailure" class="comment-form-failure" data-ng-bind="formFailure" tabindex="0"></p>
+  <p data-ng-if="formFailure" class="comment-form-failure" data-ng-bind="formFailure" tabindex="-1"></p>
 
   <form novalidate="novalidate" name="commentForm" data-ng-if="commentsOpen"
         data-ng-submit="BlogCommentCtrl.submitComment(commentForm.$valid)">
@@ -27,7 +27,7 @@
         <label for="name" class="visuallyhidden">Your name</label>
           <span data-ng-if="commentForm.name.$invalid && commentBlogFormSubmit"
                 class="error-message" aria-labelledby="name" role="alert"
-                tabindex="0">Error: Please provide a name.</span>
+                tabindex="-1">Error: Please provide a name.</span>
         <input type="text" name="name" id="name" value="" placeholder="Name" required="required" aria-required="true"
                data-ng-model="commentFormData.name" data-ng-required="true" class="input" maxlength="120"/>
         </span>
@@ -36,7 +36,7 @@
         <label for="email" class="visuallyhidden">Your email address</label>
            <span data-ng-if="commentForm.email.$invalid && commentBlogFormSubmit"
                  class="error-message" aria-labelledby="email"
-                 role="alert" tabindex="0">Error: Please provide an email address.</span>
+                 role="alert" tabindex="-1">Error: Please provide an email address.</span>
         <input type="email" name="email" id="email" value="" placeholder="Email (will be kept private)"
                required="required" data-ng-model="commentFormData.email" data-ng-required="true" aria-required="true"
                class="input" maxlength="200" autocorrect="off" autocapitalize="off"/>
@@ -51,7 +51,7 @@
          <span class="message-block">
         <label for="message" class="visuallyhidden">Your comments</label>
              <span data-ng-if="commentForm.message.$invalid && commentBlogFormSubmit"
-                   class="error-message" aria-labelledby="message" role="alert" tabindex="0">Error: Please provide a comment.</span>
+                   class="error-message" aria-labelledby="message" role="alert" tabindex="-1">Error: Please provide a comment.</span>
         <textarea id="message" cols="10" rows="10" placeholder="Your message"
                   data-ng-required="true" aria-required="true" data-ng-model="commentFormData.message" name="message"
                   required="required"
