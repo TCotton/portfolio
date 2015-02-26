@@ -52,7 +52,8 @@ angular.module('portfolioApp', [
   'jmdobry.angular-cache',
   'underscore',
   'momentLibrary',
-  'webWorkerFunctionService'
+  'webWorkerFunctionService',
+  'helperFunctions'
 ]).config(function ($routeProvider, $httpProvider) {
 
   // Needed for CORS
