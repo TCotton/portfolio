@@ -12,6 +12,7 @@
    * @param $scope
    * @param BlogDataFactory
    * @param $angularCacheFactory
+   * @param $rootScope
    * @param _
    * @constructor
    */

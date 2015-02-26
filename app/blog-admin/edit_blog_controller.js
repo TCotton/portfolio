@@ -20,9 +20,10 @@
    * @param $log
    * @param MongoBlogFactory
    * @param _
+   * @param hfs
    * @constructor
    */
-  var EditBlogCtrl = function ($scope, $log, MongoBlogFactory, _) {
+  var EditBlogCtrl = function ($scope, $log, MongoBlogFactory, _, hfs) {
 
     this.$scope = $scope;
     this.$log = $log;
@@ -35,6 +36,9 @@
     Object.defineProperties(this, {
       'MongoBlogFactory': {
         value: MongoBlogFactory
+      },
+      'hfs': {
+        value: hfs
       },
       'createContentSnippet': {
         value: null,
@@ -131,7 +135,7 @@
 
   };
 
-  EditBlogCtrl.$inject = ['$scope', '$log', 'MongoBlogFactory', '_'];
+  EditBlogCtrl.$inject = ['$scope', '$log', 'MongoBlogFactory', '_', 'helperFunctionsService'];
 
   /** Public methods
    * **/
@@ -166,8 +170,8 @@
     // check to make sure the form is completely valid
     if (isValid) {
 
-      this.addSEOFriendlyURL();
-      this.createContentSnippet();
+      this.$scope.editBlogFormData.url = this.hfs.addSEOFriendlyURL(this.$scope.editBlogFormData.title);
+      this.$scope.editBlogFormData.contentSnippet = this.hfs.createContentSnippet(this.$scope.editBlogFormData.content);
 
       var formData = {
         title: this.$scope.editBlogFormData.title,

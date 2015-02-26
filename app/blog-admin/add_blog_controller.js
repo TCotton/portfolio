@@ -20,7 +20,7 @@
    * @param moment
    * @constructor
    */
-  var AddBlogCtrl = function ($scope, $log, MongoBlogFactory, moment) {
+  var AddBlogCtrl = function ($scope, $log, MongoBlogFactory, moment, hfs) {
 
     this.$scope = $scope;
     this.$log = $log;
@@ -38,6 +38,9 @@
       'addSEOFriendlyURL': {
         value: null,
         writable: true
+      },
+      'hfs': {
+        value: hfs
       },
       'addUniqueID': {
         value: null,
@@ -170,7 +173,7 @@
 
   };
 
-  AddBlogCtrl.$inject = ['$scope', '$log', 'MongoBlogFactory', 'moment'];
+  AddBlogCtrl.$inject = ['$scope', '$log', 'MongoBlogFactory', 'moment', 'helperFunctionsService'];
 
   AddBlogCtrl.prototype.addBlog = function (isValid) {
 
@@ -181,8 +184,8 @@
 
       this.addDate();
       this.addUniqueID();
-      this.addSEOFriendlyURL();
-      this.createContentSnippet();
+      this.$scope.addBlogFormData.url = this.hfs.addSEOFriendlyURL(this.$scope.addBlogFormData.title);
+      this.$scope.addBlogFormData.contentSnippet = this.hfs.createContentSnippet(this.$scope.addBlogFormData.content);
 
       var returnedData = this.MongoBlogFactory.addBlogPost(this.$scope.addBlogFormData);
 
