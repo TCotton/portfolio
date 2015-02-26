@@ -42,27 +42,27 @@ angular.module('helperFunctions', []).factory('helperFunctionsService', [functio
       var l;
       var newTitle;
 
-      // initially remove hypthens and the white space to their right
-      newTitle = contentTitle.replace(/\–\s/g, '').toLowerCase();
+      // initially remove hyphens and the white space to their right
+      newTitle = contentTitle.replace(/–\s/g, '').toLowerCase();
 
       x = 0;
       l = stopwords.length;
 
-      // loop through the SEO watch words and replace with white space hythen
+      // loop through the SEO watch words and replace with white space hyphen
       do {
 
         var regEx = new RegExp('\\b\\s' + stopwords[x] + '\\s\\b', 'g');
         var regExTwo = new RegExp('^' + stopwords[x] + '\\s\\b');
+        var regExThree = new RegExp('\\s\\b' + stopwords[x] + '$');
 
-        newTitle = newTitle.replace(regEx, '-').trim().replace(regExTwo, '');
+        newTitle = newTitle.replace(regEx, '-').trim().replace(regExTwo, '').replace(regExThree, '');
 
         x += 1;
 
       } while (x < l);
 
-      // remove white space and replace with hythen
+      // remove white space and replace with hyphens
       newTitle = newTitle.replace(regexWhiteSpace, '-');
-
       // remove all non-alpha numeric characters
       newTitle = newTitle.replace(regexNonAlphaNum, '');
 
