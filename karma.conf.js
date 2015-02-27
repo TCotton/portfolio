@@ -35,8 +35,7 @@ module.exports = function(config) {
       'app/sitemap/*.js',
       'app/contact/*.js',
       'test/spec/**/*.js',
-      'app/shared/webWorkerFunctionService.js',
-      'app/shared/functionWebWorker.js'
+      'app/shared/helperFunctionService.js'
     ],
 
     // list of files / patterns to exclude

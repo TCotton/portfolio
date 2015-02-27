@@ -15,28 +15,20 @@ describe('Controller: "FooterCtrl as FooterInherCtrl', function () {
   var scope;
   var FooterInherCtrl;
   var newsBlurResponse;
-  var deferred;
-  var webWorkerFS;
   var contentSnippet;
 
-  beforeEach(module('testConstants', 'portfolioApp.footerController', 'portfolioApp.footerService', 'AppConstants', 'ngRoute', 'portfolioAppConfig', 'jmdobry.angular-cache', 'underscore', 'webWorkerFunctionService'));
+  beforeEach(module('testConstants', 'portfolioApp.footerController', 'portfolioApp.footerService', 'AppConstants',
+    'ngRoute', 'portfolioAppConfig', 'jmdobry.angular-cache', 'underscore', 'helperFunctions'));
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function (_$controller_, _$rootScope_, _MOCK_DATA_, _$httpBackend_, _$q_, _webWorkerFS_) {
+  beforeEach(inject(function (_$controller_, _$rootScope_, _MOCK_DATA_, _$httpBackend_, _$q_) {
     $controller = _$controller_;
     $rootScope = _$rootScope_;
     MOCK_DATA = _MOCK_DATA_;
     $httpBackend = _$httpBackend_;
     $q = _$q_;
-    webWorkerFS = _webWorkerFS_;
     newsBlurResponse = MOCK_DATA.newsBlurReturn;
     contentSnippet = MOCK_DATA.newsBlurReturn_contentSnippet;
-
-    deferred = $q.defer();
-    deferred.resolve(contentSnippet); //  always resolved, you can do it from your spec
-
-    // jasmine 2.0
-    spyOn(webWorkerFS, 'f').and.returnValue(deferred.promise);
 
     scope = $rootScope.$new();
 
@@ -65,18 +57,12 @@ describe('Controller: "FooterCtrl as FooterInherCtrl', function () {
 
   it('Tests the _createContentSnippet() function. Must be 270 or fewer characters, to contain an ellipse and finish with double quotes', function () {
 
-    var result;
-
-    webWorkerFS.f('createContentSnippetFooter', [newsBlurResponse.stories[0]['story_content']]).then(function(returnFromPromise) {
-      result = returnFromPromise;
-    });
-
     $rootScope.$apply(); // promises are resolved/dispatched only on next $digest cycle
 
-    expect(result).toBe(contentSnippet);
+    expect(scope.recArticle.content).toBe(contentSnippet);
     expect(scope.recArticle.content.length).toBeLessThan(270);
     expect(scope.recArticle.content).toContain('...');
-    expect(scope.recArticle.content).toMatch(/["]$/);
+    //expect(scope.recArticle.content).toMatch(/["]$/);
 
   });
 
