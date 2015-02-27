@@ -52,7 +52,6 @@ angular.module('portfolioApp', [
   'jmdobry.angular-cache',
   'underscore',
   'momentLibrary',
-  'webWorkerFunctionService',
   'helperFunctions'
 ]).config(function ($routeProvider, $httpProvider) {
 

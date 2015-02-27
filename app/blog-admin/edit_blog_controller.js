@@ -171,7 +171,7 @@
     if (isValid) {
 
       this.$scope.editBlogFormData.url = this.hfs.addSEOFriendlyURL(this.$scope.editBlogFormData.title);
-      this.$scope.editBlogFormData.contentSnippet = this.hfs.createContentSnippet(this.$scope.editBlogFormData.content);
+      this.$scope.editBlogFormData.contentSnippet = this.hfs.createContentSnippet(this.$scope.editBlogFormData.content, 130);
 
       var formData = {
         title: this.$scope.editBlogFormData.title,

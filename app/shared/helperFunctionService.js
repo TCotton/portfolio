@@ -8,26 +8,36 @@ angular.module('helperFunctions', []).factory('helperFunctionsService', [functio
 
   return {
 
-    createContentSnippet: function createContentSnippet(content) {
+    createContentSnippet: function createContentSnippet(content, maxChars) {
 
       // to create a codeSnippet cut down the content to around 130 characters without cutting a whole word in half
-      var snippet, maxLength, trimmedString;
+      var snippet, maxLength, trimmedString, temp, sanitized;
 
       snippet = content.toString();
 
+      temp = document.createElement('div');
+      temp.innerHTML = snippet;
+      sanitized = temp.textContent || temp.innerText;
+
       // maximum number of characters to extract
-      maxLength = 130;
+      maxLength = maxChars;
 
       //trim the string to the maximum length
       // make sure not include opening paragraph tag if any
       // hence, cut string at the third characters
-      trimmedString = snippet.substr(3, maxLength);
+      if(maxLength === 260) {
+        trimmedString = sanitized.substr(0, maxLength);
+      }
+
+      if(maxLength === 130) {
+        trimmedString = sanitized.substr(3, maxLength);
+      }
 
       //re-trim if we are in the middle of a word
       trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(' '))) + ' ...';
 
       //strip and HTML tags
-      return trimmedString.replace(/(<([^>]+)>)/ig, '').trim();
+      return trimmedString.trim();
 
     },
 

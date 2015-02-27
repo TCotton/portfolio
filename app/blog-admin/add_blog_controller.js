@@ -185,7 +185,7 @@
       this.addDate();
       this.addUniqueID();
       this.$scope.addBlogFormData.url = this.hfs.addSEOFriendlyURL(this.$scope.addBlogFormData.title);
-      this.$scope.addBlogFormData.contentSnippet = this.hfs.createContentSnippet(this.$scope.addBlogFormData.content);
+      this.$scope.addBlogFormData.contentSnippet = this.hfs.createContentSnippet(this.$scope.addBlogFormData.content, 130);
 
       var returnedData = this.MongoBlogFactory.addBlogPost(this.$scope.addBlogFormData);
 
