@@ -11,13 +11,9 @@ angular.module('helperFunctions', []).factory('helperFunctionsService', [functio
     createContentSnippet: function createContentSnippet(content, maxChars) {
 
       // to create a codeSnippet cut down the content to around 130 characters without cutting a whole word in half
-      var snippet, maxLength, trimmedString, temp, sanitized;
+      var maxLength, trimmedString, sanitized;
 
-      snippet = content.toString();
-
-      temp = document.createElement('div');
-      temp.innerHTML = snippet;
-      sanitized = temp.textContent || temp.innerText;
+      sanitized = content.toString().replace(/(<([^>]+)>)/ig, '');
 
       // maximum number of characters to extract
       maxLength = maxChars;

@@ -46,6 +46,16 @@ module.exports = function (grunt) {
   grunt.initConfig({
     yeoman: yeomanConfig,
     pkg: grunt.file.readJSON('package.json'),
+    swPrecache: {
+      dev: {
+        handleFetch: false,
+        rootDir: '<%= yeoman.app %>'
+      },
+      dist: {
+        handleFetch: true,
+        rootDir: '<%= yeoman.dist %>'
+      }
+    },
     watch: {
       js: {
         files: [
@@ -109,12 +119,6 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
           '<%= yeoman.app %>/index.html'
         ]
-      },
-      swPrecache: {
-        dev: {
-          handleFetch: false,
-          rootDir: '<%= yeoman.app %>'
-        }
       }
     },
 
@@ -254,7 +258,7 @@ module.exports = function (grunt) {
         options: {
           jshintrc: '.jshintrc'
         },
-        src: ['test/spec/{,*/}*.js', 'test/e2e/{,*/}*.js', '!test/spec/config/constants.js']
+        src: ['test/spec/{,*/}*.js', '!test/e2e/{,*/}*.js', '!test/spec/config/constants.js']
       }
     },
     // Renames files for browser caching purposes
@@ -326,7 +330,7 @@ module.exports = function (grunt) {
           uglify: true
         },
         src: ['<%= yeoman.app %>/index.html'],
-        dest: ['<%= yeoman.dist %>/']
+        dest: '<%= yeoman.dist %>/index.html'
       }
     },
 
@@ -418,7 +422,8 @@ module.exports = function (grunt) {
               'components/**/*',
               'images/{,*/}*.{webp}',
               'fonts/*',
-              'shared/functionWebWorker.js'
+              'shared/functionWebWorker.js',
+              'misc/service-worker-registration.js'
             ]
           },
           {
@@ -568,8 +573,8 @@ module.exports = function (grunt) {
     var config = {
       cacheId: packageJson.name,
       dynamicUrlToDependencies: {
-        './': [path.join(rootDir, 'index.html')],
-        'dynamic/page1': [
+        './': [path.join(rootDir, 'index.html')]
+     /*   'dynamic/page1': [
           path.join(rootDir, 'footer', 'footer.html'),
           path.join(rootDir, 'blog-pages', 'blog.html'),
           path.join(rootDir, 'blog-sidebar', 'sidebar.html')
@@ -579,7 +584,7 @@ module.exports = function (grunt) {
           path.join(rootDir, 'blog-pages', 'blog_page.html'),
           path.join(rootDir, 'blog-sidebar', 'sidebar.html'),
           path.join(rootDir, 'footer', 'footer.html')
-        ]
+        ]*/
       },
       // If handleFetch is false (i.e. because this is called from swPrecache:dev), then
       // the service worker will precache resources but won't actually serve them.
@@ -626,6 +631,7 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('server', function (target) {
+
     if (target === 'dist') {
       return grunt.task.run(['build', 'open', 'express:dist:keepalive']);
     }
@@ -637,6 +643,8 @@ module.exports = function (grunt) {
       'express:livereload',
       'open',
       'watch'
+
+    /*  'watch'*/
      /* 'watch',*/
    /*   'swPrecache'*/
     ]);

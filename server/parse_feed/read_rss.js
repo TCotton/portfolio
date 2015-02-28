@@ -1,5 +1,3 @@
-/*jslint node: true */
-
 /**
  * Created by awalpole on 19/04/2014.
  * TODO: sort this promise hell out

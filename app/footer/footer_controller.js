@@ -63,6 +63,8 @@
           this.$scope.recArticle.content = this.hfs.createContentSnippet(returnedData.stories[key].story_content, 260);
           this.$scope.recArticle.link = returnedData.stories[key].story_permalink;
 
+          console.dir(this.$scope.recArticle.content.toString());
+
           if (key >= 0) {
             // only need first story in json file
             break;
