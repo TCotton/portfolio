@@ -52,7 +52,7 @@ module.exports = function (grunt) {
         rootDir: '<%= yeoman.app %>'
       },
       dist: {
-        handleFetch: true,
+        handleFetch: false,
         rootDir: '<%= yeoman.dist %>'
       }
     },
@@ -661,7 +661,9 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build', [
+/*
     'test',
+*/
     'clean:dist',
     'wiredep',
     'useminPrepare',
@@ -677,7 +679,8 @@ module.exports = function (grunt) {
     'uglify',
     'rev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'swPrecache:dist'
   ]);
 
   grunt.registerTask('default', [
