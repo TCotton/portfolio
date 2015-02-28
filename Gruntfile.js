@@ -9,6 +9,11 @@
 //};
 
 var path = require('path');
+var fs = require('fs');
+
+var packageJson = require('./node_modules/sw-precache/package.json');
+var swPrecache = require('./node_modules/sw-precache/lib/sw-precache.js');
+
 
 // # Globbing
 // for performance reasons we're only matching one level down:
@@ -104,6 +109,12 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
           '<%= yeoman.app %>/index.html'
         ]
+      },
+      swPrecache: {
+        dev: {
+          handleFetch: false,
+          rootDir: '<%= yeoman.app %>'
+        }
       }
     },
 
@@ -553,6 +564,67 @@ module.exports = function (grunt) {
     }
   });
 
+  function generateServiceWorkerFileContents(rootDir, handleFetch, callback) {
+    var config = {
+      cacheId: packageJson.name,
+      dynamicUrlToDependencies: {
+        './': [path.join(rootDir, 'index.html')],
+        'dynamic/page1': [
+          path.join(rootDir, 'footer', 'footer.html'),
+          path.join(rootDir, 'blog-pages', 'blog.html'),
+          path.join(rootDir, 'blog-sidebar', 'sidebar.html')
+        ],
+        'dynamic/page2': [
+          path.join(rootDir, 'footer', 'footer.html'),
+          path.join(rootDir, 'blog-pages', 'blog_page.html'),
+          path.join(rootDir, 'blog-sidebar', 'sidebar.html'),
+          path.join(rootDir, 'footer', 'footer.html')
+        ]
+      },
+      // If handleFetch is false (i.e. because this is called from swPrecache:dev), then
+      // the service worker will precache resources but won't actually serve them.
+      // This allows you to test precaching behavior without worry about the cache preventing your
+      // local changes from being picked up during the development cycle.
+      // /Applications/MAMP/htdocs/portfolio/dist/footer/footer.html
+      // /Applications/MAMP/htdocs/portfolio/dist/blog-pages/blog.html
+      // /Applications/MAMP/htdocs/portfolio/dist/blog-sidebar/sidebar.html
+      // /Applications/MAMP/htdocs/portfolio/dist/blog-pages/blog_page.html
+      // /Applications/MAMP/htdocs/portfolio/dist/footer/footer.html
+      handleFetch: handleFetch,
+      logger: grunt.log.writeln,
+      staticFileGlobs: [
+        rootDir + '/styles/**.css',
+        rootDir + '/blog-pages/**.html',
+        rootDir + '/blog-comments/**.html',
+        rootDir + '/blog-sidebar/**.html',
+        rootDir + '/blog-comments/**.html',
+        rootDir + '/footer/**.html',
+        rootDir + '/scripts/**.js'
+      ],
+      stripPrefix: path.join(rootDir, path.sep)
+    };
+
+    swPrecache(config, callback);
+  }
+
+  grunt.registerMultiTask('swPrecache', function() {
+    var done = this.async();
+    var rootDir = this.data.rootDir;
+    var handleFetch = this.data.handleFetch;
+
+    generateServiceWorkerFileContents(rootDir, handleFetch, function(error, serviceWorkerFileContents) {
+      if (error) {
+        grunt.fail.warn(error);
+      }
+      fs.writeFile(path.join(rootDir, 'service-worker.js'), serviceWorkerFileContents, function(error) {
+        if (error) {
+          grunt.fail.warn(error);
+        }
+        done();
+      });
+    });
+  });
+
   grunt.registerTask('server', function (target) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'open', 'express:dist:keepalive']);
@@ -565,6 +637,8 @@ module.exports = function (grunt) {
       'express:livereload',
       'open',
       'watch'
+     /* 'watch',*/
+   /*   'swPrecache'*/
     ]);
   });
 
