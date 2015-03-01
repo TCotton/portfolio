@@ -59,7 +59,7 @@
 
     <label for="toggle-1" class="handheld-cross hidden-desktop" data-ng-class="{active: !pageChange}">Main Menu</label>
     <!-- toogle checked box on page load or click of menu item -->
-    <input type="checkbox" id="toggle-1" data-ng-checked="!pageChange" data-ng-click="pageChange = false">
+    <input type="checkbox" id="toggle-1" class="hidden-desktop" data-ng-checked="!pageChange" data-ng-click="pageChange = false">
 
     <div id="navigation-wrapper">
 
@@ -111,6 +111,7 @@
 <script src="components/angular-sanitize/angular-sanitize.js"></script>
 <script src="components/angular-route/angular-route.js"></script>
 <script src="components/angular-cache/dist/angular-cache.min.js"></script>
+<script src="components/angular-aria/angular-aria.js"></script>
 <script src="components/underscore/underscore.js"></script>
 <script src="components/moment/moment.js"></script>
 <!-- endbower -->

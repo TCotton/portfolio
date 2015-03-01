@@ -47,6 +47,7 @@ angular.module('portfolioApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
+  'ngAria',
   'HashBangURLs',
   'portfolioAppConfig',
   'jmdobry.angular-cache',
