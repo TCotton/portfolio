@@ -47,5 +47,12 @@ function getWatchers(root) {
 getWatchers().length
 
 
+clean node modules folder and reinstall:
+
+rm -rf node_modules
+npm cache clean
+npm install
+
+
 
 

@@ -95,66 +95,6 @@ if (app.get('env') === 'production') {
     });
   });
 }
-/*
-
-if (app.get('env') === 'production') {
-
-  var LintStream = require('jslint').LintStream;
-
-  var options = {
-    'edition': latest,
-    'length': 100
-  };
-
-  var l = new LintStream(options);
-  var fileName = '';
-
-  fs.readFile('/etc/passwd', function (err, data) {
-    if (err) throw err;
-    console.log(data);
-  });
-
-
-  async.each(['./server/parse_feed/read_rss.js'], function (file, callback) {
-
-    fs.readFile(file, function (err, data) {
-      if (err) throw err;
-
-      l.write({file: fileName, body: data});
-
-      l.on('data', function (chunk, encoding, callback) {
-        // chunk is an object
-
-        // chunk.file is whatever you supplied to write (see above)
-        assert.deepEqual(chunk.file, fileName);
-
-        // chunk.linted is an object holding the result from running JSLint
-        // chunk.linted.ok is the boolean return code from JSLINT()
-        // chunk.linted.errors is the array of errors, etc.
-        // see JSLINT for the complete contents of the object
-
-        callback();
-
-      });
-
-    });
-
-    callback();
-
-  }, function (err) {
-    // if any of the file processing produced an error, err would equal that error
-    if (err) {
-      // One of the iterations produced an error.
-      // All processing will now stop.
-      console.log('A file failed to process');
-    } else {
-      console.log('All files have been processed successfully');
-    }
-  });
-
-
-}
-*/
 
 // routes ======================================================================
 require('./server/routes/user_routes.js')(app);
@@ -164,7 +104,7 @@ require('./server/routes/misc_routes.js')(app);
 require('./server/routes/newsblurAPI.js')(app);
 
 //RSS feed parsing
-require('./server/parse_feed/read_rss.js')(app);
+require('./server/parse_feed/parse_rss.js')(app);
 
 // XML sitemap =================================================================
 require('./server/sitemap.js')(app);

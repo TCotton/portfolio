@@ -275,8 +275,6 @@ var RSSClass = function () {
    * **/
   _closeBlogComments = function (data) {
 
-    //console.log('_closeBlogComments');
-
     Object.defineProperty(this, 'totalOldArticles', {
       value: _.size(data),
       writable: true

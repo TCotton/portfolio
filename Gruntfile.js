@@ -643,10 +643,6 @@ module.exports = function (grunt) {
       'express:livereload',
       'open',
       'watch'
-
-    /*  'watch'*/
-     /* 'watch',*/
-   /*   'swPrecache'*/
     ]);
   });
 
@@ -661,9 +657,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build', [
-/*
     'test',
-*/
     'clean:dist',
     'wiredep',
     'useminPrepare',
