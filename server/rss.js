@@ -61,40 +61,48 @@ module.exports = function (app) {
 
   var blogs_feed = function () {
 
-    var feedItems = {}, deferred, posts, data, blogURl;
+    var feedItems = {}, deferred, posts, blogURl;
 
     deferred = q.defer();
 
-    if (fs.existsSync('./server/blogposts.json')) {
+    fs.exists('./server/blogposts.json', function(exists) {
 
-      data = fs.readFileSync('./server/blogposts.json', 'utf8', function (err) {
+      if (exists) {
 
-        if (err) {
-          deferred.reject(new Error(err));
-        }
+        fs.readFile('./server/blogposts.json', function (err, data) {
 
-      });
+          if (err) {
+            deferred.reject(new Error(err));
+          }
 
-      posts = JSON.parse(data);
+          posts = JSON.parse(data);
 
-      Object.keys(posts).forEach(function (key) {
+          Object.keys(posts).forEach(function (key) {
 
-        blogURl = 'https://andywalpole.me/#!/blog/' + posts[key].uniqueId + '/' + posts[key].url;
+            blogURl = 'https://andywalpole.me/#!/blog/' + posts[key].uniqueId + '/' + posts[key].url;
 
-        feedItems[key] = {
-          title: posts[key].title,
-          description: posts[key].content,
-          url: blogURl,
-          guid: posts[key].uniqueId,
-          author: posts[key].author,
-          date: parseInt(posts[key].publishedDate, 10)
-        };
+            feedItems[key] = {
+              title: posts[key].title,
+              description: posts[key].content,
+              url: blogURl,
+              guid: posts[key].uniqueId,
+              author: posts[key].author,
+              date: parseInt(posts[key].publishedDate, 10)
+            };
 
-      });
+          });
 
-      deferred.resolve(feedItems);
+          deferred.resolve(feedItems);
 
-    }
+        });
+
+      } else {
+
+        deferred.reject(new Error('blogposts.json cannot be found'));
+
+      }
+
+    });
 
     return deferred.promise;
 

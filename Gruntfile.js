@@ -297,11 +297,6 @@ module.exports = function (grunt) {
           join_vars: true,
           drop_console: true
         }
-      },
-      my_target: {
-        files: {
-          '<%= yeoman.dist %>/misc/service-worker-registration.js': ['<%= yeoman.app %>/misc/service-worker-registration.js']
-        }
       }
     },
 
@@ -677,8 +672,7 @@ module.exports = function (grunt) {
     'uglify',
     'rev',
     'usemin',
-    'htmlmin',
-    'swPrecache:dist'
+    'htmlmin'
   ]);
 
   grunt.registerTask('default', [

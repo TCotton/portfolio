@@ -83,25 +83,32 @@ var createBlogLinks = function () {
 
   });
 
-  if (fs.existsSync('./server/blogposts.json')) {
 
-    data = fs.readFileSync('./server/blogposts.json', 'utf8', function (err) {
-      if (err) {
-        console.log(err);
-      }
-    });
+  fs.exists('./server/blogposts.json', function(exists) {
 
-    posts = JSON.parse(data);
+    if (exists) {
 
-    Object.keys(posts).forEach(function (key) {
+      fs.readFile('./server/blogposts.json', function (err, data) {
 
-      var blogURl = '/#!/blog/' + posts[key].uniqueId + '/' + posts[key].url;
+        if (err) {
+          throw err;
+        }
 
-      url.push({url: blogURl, changefreq: 'monthly', priority: 0.7});
+        posts = JSON.parse(data);
 
-    });
+        Object.keys(posts).forEach(function (key) {
 
-  }
+          var blogURl = '/#!/blog/' + posts[key].uniqueId + '/' + posts[key].url;
+
+          url.push({url: blogURl, changefreq: 'monthly', priority: 0.7});
+
+        });
+
+      });
+
+    }
+
+  });
 
   return url;
 
