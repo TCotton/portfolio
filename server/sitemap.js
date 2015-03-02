@@ -11,7 +11,6 @@ var _ = require('underscore');
 
 var createBlogLinks = function () {
 
-  var data;
   var posts;
   var url;
 

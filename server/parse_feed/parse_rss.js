@@ -24,7 +24,6 @@ var _grab_old_blog_posts;
 
 /**
  * Simple getter setter cache class
- * @param val
  * @constructor
  */
 var BlogCacheClass = function () {
@@ -49,7 +48,7 @@ var createJSONFile = function () {
 
     fs.writeFile('./server/blogposts.json', OldBlogPosts.cache, function (err) {
       if (err) {
-        return console.log(err);
+        new Error(err);
       }
     });
 
