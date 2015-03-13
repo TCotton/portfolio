@@ -26,28 +26,30 @@
 
     <h3 class="content-title">Send a message</h3>
 
-    <p data-ng-bind="contact.successMessage"></p>
+    <p data-ng-if="contact.successMessage" data-ng-bind="contact.successMessage"></p>
+
+    <p data-ng-if="formFailure" class="comment-form-failure" data-ng-bind="formFailure" tabindex="0"></p>
 
     <form novalidate="novalidate" name="contactForm"
           data-ng-submit="AdminFormCtrl.submitContactForm(contactForm.$valid)">
 
       <span class="name-block">
       <label for="name" class="visuallyhidden">Your full name</label>
-      <span data-ng-if="contactForm.name.$invalid && submitted" class="error-message">Please supply your name.</span>
+      <span data-ng-if="contactForm.name.$invalid && submitted" class="error-message" tabindex="0" aria-labelledby="name" role="alert">Please supply your name.</span>
       <input type="text" id="name" name="name" value="" placeholder="Your full name" required="required" class="input"
              data-ng-required="true" data-ng-model="contact.name" maxlength="64" />
       </span>
 
       <span class="email-block">
       <label for="email" class="visuallyhidden">Your email address</label>
-      <span data-ng-if="contactForm.email.$invalid && submitted" class="error-message">Please supply a valid email address.</span>
+      <span data-ng-if="contactForm.email.$invalid && submitted" class="error-message" tabindex="0" aria-labelledby="email" role="alert">Please supply a valid email address.</span>
       <input type="email" id="email" name="email" value="" placeholder="Your email address" required="required"
              class="input" data-ng-required="true" data-ng-model="contact.email" maxlength="64"  autocorrect="off" autocapitalize="off"/>
         </span>
 
       <span class="message-block">
       <label for="message" class="visuallyhidden">Please write a message</label>
-      <span data-ng-if="contactForm.message.$invalid && submitted" class="error-message">Don't forget to write a message!</span>
+      <span data-ng-if="contactForm.message.$invalid && submitted" class="error-message" tabindex="0" aria-labelledby="message" role="alert">Don't forget to write a message!</span>
       <textarea id="message" cols="10" rows="10" name="message" placeholder="Your message" required="required"
                 class="textarea" data-ng-required="true" data-ng-model="contact.message" maxlength="1000"></textarea>
         </span>

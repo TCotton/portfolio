@@ -16,11 +16,12 @@
    * @param _
    * @constructor
    */
-  var FormCtrl = function ($scope, PostFormFactory, $sanitize, _) {
+  var FormCtrl = function ($scope, PostFormFactory, $sanitize, _, $timeout) {
 
     this.$scope = $scope;
     this.$sanitize = $sanitize;
     this._ = _;
+    this.$timeout = $timeout;
 
     /** Using defineProperty prevents injected service being exposed to the template
      * **/
@@ -40,7 +41,7 @@
 
   };
 
-  FormCtrl.$inject = ['$scope', 'PostFormFactory', '$sanitize', '_'];
+  FormCtrl.$inject = ['$scope', 'PostFormFactory', '$sanitize', '_', '$timeout'];
 
   /** Submit form and display message to user
    * Also delete form model values and disable the submit button
@@ -88,6 +89,13 @@
         this.$log('Error: FormCtrl.submitContactForm');
 
       }.bind(this));
+    } else {
+
+      this.$scope.formFailure = 'The form has not been submitted because of errors. Please review the form error messages and click submit again';
+      this.$timeout(function () {
+        document.querySelector('.comment-form-failure').focus();
+      }, 0);
+
     }
   };
 
