@@ -81,9 +81,13 @@ if (app.get('env') === 'development') {
 if (app.get('env') === 'production') {
 
   var oneDay = 86400000;
+  var oneWeek = 604800000;
 
   app.use(favicon(path.join(__dirname, 'dist/favicon.ico')));
-  app.use(express.static(path.join(__dirname, 'dist'), {maxAge: oneDay})); 		// set the static files location /public/img will be /img for users
+  app.use(express.static(path.join(__dirname, 'dist'), {maxAge: oneDay}));
+  app.use(express.static(path.join(__dirname, 'dist/scripts'), {maxAge: oneWeek}));
+  app.use(express.static(path.join(__dirname, 'dist/images'), {maxAge: oneWeek}));
+  // set the static files location /public/img will be /img for users
 
   // production error handler
   // no stacktraces leaked to user
