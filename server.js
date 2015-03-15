@@ -16,7 +16,9 @@ var methodOverride = require('method-override');
 var compress = require('compression');
 var app = express(); 								// create our app w/ express
 var mongoose = require('mongoose'); 					// mongoose for mongodb
-/*var async = require('async');*/
+var oneDay = 86400;
+var oneWeek = 604800;
+var oneMonth = 2419200;
 
 var conf = require('./server/config/prerender'); 			// load the prerender config
 app.use(require('prerender-node').set('prerenderToken', conf.prerender));
@@ -35,9 +37,6 @@ var database = require('./server/config/database'); 			// load the database conf
 mongoose.connect(database.url); 	// connect to mongoDB database on modulus.io
 
 app.set('port', process.env.PORT || 3000);
-/*app.set('views', path.join(__dirname, 'views'));
- app.set('view engine', 'jade');*/
-
 
 app.use(morgan('dev')); 						// log every request to the console
 app.use(compress());
@@ -58,9 +57,14 @@ app.all('*', function (req, res, next) {
  * Development Settings
  */
 if (app.get('env') === 'development') {
+
+  app.all('*', function (req, res, next) {
+    res.header('Cache-Control', 'no-cache');
+    next();
+  });
+
   // This will change in production since we'll be using the dist folder
   // This covers serving up the index page
-
   app.use(favicon(path.join(__dirname, 'app/favicon.ico')));
   app.use(express.static(path.join(__dirname, 'app'))); 		// set the static files location /public/img will be /img for users
 
@@ -80,13 +84,34 @@ if (app.get('env') === 'development') {
  */
 if (app.get('env') === 'production') {
 
-  var oneDay = 86400000;
-  var oneWeek = 604800000;
+  app.all('*', function (req, res, next) {
+    res.header('Cache-Control', 'no-cache');
+    next();
+  });
+
+  app.all('/blog-admin/*', function (req, res, next) {
+    res.header('Cache-Control', 'no-store');
+    next();
+  });
+
+  app.all('/scripts/*', function (req, res, next) {
+    res.header('Cache-Control', 'public, max-age=' + oneMonth);
+    next();
+  });
+
+  app.all('/images/*', function (req, res, next) {
+    res.header('Cache-Control', 'public, max-age=' + oneMonth);
+    next();
+  });
+
+  app.all('/styles/*', function (req, res, next) {
+    res.header('Cache-Control', 'public, max-age=' + oneMonth);
+    next();
+  });
 
   app.use(favicon(path.join(__dirname, 'dist/favicon.ico')));
-  app.use(express.static(path.join(__dirname, 'dist'), {maxAge: oneDay}));
-  app.use(express.static(path.join(__dirname, 'dist/scripts'), {maxAge: oneWeek}));
-  app.use(express.static(path.join(__dirname, 'dist/images'), {maxAge: oneWeek}));
+  app.use(express.static(path.join(__dirname, 'dist')));
+
   // set the static files location /public/img will be /img for users
 
   // production error handler
