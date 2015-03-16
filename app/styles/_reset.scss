@@ -431,6 +431,13 @@ h1, h2, h3, h4, h5, h6, th, td, caption {
 //  font-feature-settings: "liga", "kern";
 }
 
+// Hack that prevents the jump between scrollbar and no-scrollbar pages.
+// http://aykevl.nl/2014/09/fix-jumping-scrollbar
+html {
+  margin-left: calc(100vw - 100%);
+  margin-right: 0;
+}
+
 /* slight character and word gap of retina devices to make the text more legible */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx), (min-resolution: 192dpi) {
   p, li {
