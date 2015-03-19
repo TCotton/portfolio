@@ -26,7 +26,7 @@ angular.module('helperFunctions', []).factory('helperFunctionsService', [functio
       }
 
       if(maxLength === 130) {
-        trimmedString = sanitized.substr(3, maxLength);
+        trimmedString = sanitized.substr(0, maxLength);
       }
 
       //re-trim if we are in the middle of a word

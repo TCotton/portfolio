@@ -82,13 +82,14 @@
       padding: 0.5em 10px 0.5em 0;
       position: relative;
     }
+
     blockquote:before {
       color: #ccc;
       content: "\201C";
       font-size: 7em;
       line-height: 0.1em;
       margin-right: 0.2em;
-      vertical-align: -0.5em;
+      vertical-align: -0.45em;
     }
 
     blockquote:after {
