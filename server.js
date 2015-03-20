@@ -84,6 +84,9 @@ if (app.get('env') === 'development') {
  */
 if (app.get('env') === 'production') {
 
+  app.use(favicon(path.join(__dirname, 'dist/favicon.ico')));
+  app.use(express.static(path.join(__dirname, 'dist')));
+
   app.all('*', function (req, res, next) {
     res.header('Cache-Control', 'no-cache');
     next();
@@ -109,8 +112,6 @@ if (app.get('env') === 'production') {
     next();
   });
 
-  app.use(favicon(path.join(__dirname, 'dist/favicon.ico')));
-  app.use(express.static(path.join(__dirname, 'dist')));
 
   // set the static files location /public/img will be /img for users
 

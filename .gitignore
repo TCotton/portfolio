@@ -18,6 +18,5 @@ server/config/user_id.js
 server/config/
 server/blogposts.json
 .DS_Store
-app/images/blog-images/
 server/newsblur_feed/
 npm-debug.log
