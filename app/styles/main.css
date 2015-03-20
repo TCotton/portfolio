@@ -3080,7 +3080,7 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
 .blog article blockquote:before {
   color: #ccc;
   content: "\201C";
-  font-size: 7em;
+  font-size: 5em;
   line-height: 0.1em;
   margin-right: 0.2em;
   vertical-align: -0.45em;
