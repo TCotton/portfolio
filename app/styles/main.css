@@ -1197,6 +1197,13 @@ h3.blog-title {
 }
 
 /* line 215, modules/_typography.scss */
+.content-text section > div table caption {
+  font-size: 110%;
+  font-weight: 400;
+  color: #666666;
+}
+
+/* line 229, modules/_typography.scss */
 .content-text section > div h3 {
   font-size: 2.6em;
   font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
@@ -1205,7 +1212,7 @@ h3.blog-title {
   color: #666666;
 }
 
-/* line 221, modules/_typography.scss */
+/* line 235, modules/_typography.scss */
 .content-text section > div h4 {
   font-size: 2.4em;
   font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
@@ -1215,7 +1222,7 @@ h3.blog-title {
   line-height: 120%;
 }
 
-/* line 228, modules/_typography.scss */
+/* line 242, modules/_typography.scss */
 .content-text section > div h5 {
   font-size: 2em;
   font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
@@ -1225,7 +1232,7 @@ h3.blog-title {
   line-height: 120%;
 }
 
-/* line 235, modules/_typography.scss */
+/* line 249, modules/_typography.scss */
 .content-text section > div h6 {
   font-size: 1.8em;
   font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
@@ -1236,12 +1243,12 @@ h3.blog-title {
 }
 
 @media (max-width: 767px) {
-  /* line 244, modules/_typography.scss */
+  /* line 258, modules/_typography.scss */
   .content-text section > div h4, .content-text section > div h5, .content-text section > div h6 {
     line-height: 120%;
   }
 }
-/* line 251, modules/_typography.scss */
+/* line 265, modules/_typography.scss */
 .content-text section > div pre {
   font-size: 1.6em;
   font-family: monospace, serif;
@@ -1257,7 +1264,7 @@ h3.blog-title {
   font-weight: 700;
 }
 
-/* line 260, modules/_typography.scss */
+/* line 274, modules/_typography.scss */
 p.minor-title {
   font-size: 1.6em;
   font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
@@ -1266,7 +1273,7 @@ p.minor-title {
   margin-bottom: 0;
 }
 
-/* line 267, modules/_typography.scss */
+/* line 281, modules/_typography.scss */
 .blog #blog-content a:hover:after {
   content: "(Link: " attr(href) ")";
   color: #1d7a94;
@@ -1275,14 +1282,14 @@ p.minor-title {
   text-decoration: underline;
 }
 
-/* line 277, modules/_typography.scss */
+/* line 291, modules/_typography.scss */
 .content-text a.underline {
   /* On the desktop this displays a URL of the external link above the link text */
   text-decoration: none;
   background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.3) 11%, rgba(0, 0, 0, 0.3) 16%, transparent 16%);
   position: relative;
 }
-/* line 284, modules/_typography.scss */
+/* line 298, modules/_typography.scss */
 .content-text a.underline[rel="external"]::after {
   content: " " attr(href) " ";
   position: absolute;
@@ -1299,43 +1306,43 @@ p.minor-title {
   pointer-events: none;
   display: none;
 }
-/* line 298, modules/_typography.scss */
+/* line 312, modules/_typography.scss */
 .content-text a.underline[rel="external"]:hover::after {
   display: block;
   opacity: 1;
   pointer-events: auto;
 }
-/* line 303, modules/_typography.scss */
+/* line 317, modules/_typography.scss */
 .content-text a.underline:link {
   color: #666666;
 }
-/* line 306, modules/_typography.scss */
+/* line 320, modules/_typography.scss */
 .content-text a.underline:visited {
   color: gray;
 }
-/* line 309, modules/_typography.scss */
+/* line 323, modules/_typography.scss */
 .content-text a.underline:focus {
   color: #666666;
   background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
 }
-/* line 313, modules/_typography.scss */
+/* line 327, modules/_typography.scss */
 .content-text a.underline:hover {
   color: #666666;
   background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
 }
-/* line 318, modules/_typography.scss */
+/* line 332, modules/_typography.scss */
 .content-text a.underline:active {
   color: #666666;
   background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
 }
 
 @media (max-width: 979px) {
-  /* line 331, modules/_typography.scss */
+  /* line 345, modules/_typography.scss */
   .content-text a.underline[rel="external"]::after {
     display: none;
   }
 }
-/* line 338, modules/_typography.scss */
+/* line 352, modules/_typography.scss */
 h4.blog-sidebar-header {
   font-size: 3em;
   font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
@@ -1344,7 +1351,7 @@ h4.blog-sidebar-header {
   color: #666666;
 }
 
-/* line 344, modules/_typography.scss */
+/* line 358, modules/_typography.scss */
 .blog-sidebar-text p, ul.blog-sidebar-text {
   font-size: 1.6em;
   font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
@@ -1353,7 +1360,7 @@ h4.blog-sidebar-header {
   color: #666666;
 }
 
-/* line 350, modules/_typography.scss */
+/* line 364, modules/_typography.scss */
 h3.contact-header {
   font-size: 3em;
   font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
@@ -1362,7 +1369,7 @@ h3.contact-header {
   color: #666666;
 }
 
-/* line 356, modules/_typography.scss */
+/* line 370, modules/_typography.scss */
 h3.project-header {
   font-size: 3em;
   font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
@@ -1370,7 +1377,7 @@ h3.project-header {
   color: white;
 }
 
-/* line 362, modules/_typography.scss */
+/* line 376, modules/_typography.scss */
 .footer-top-text p, ul.footer-top-text {
   font-size: 2em;
   font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
@@ -1380,14 +1387,14 @@ h3.project-header {
   color: #666666;
 }
 
-/* line 369, modules/_typography.scss */
+/* line 383, modules/_typography.scss */
 .code-preview {
   font-size: 12px;
   color: #666666;
   line-height: 16px;
 }
 
-/* line 375, modules/_typography.scss */
+/* line 389, modules/_typography.scss */
 p.footer-copyright {
   font-size: 1.3em;
   font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
@@ -1395,24 +1402,24 @@ p.footer-copyright {
   color: white;
   text-transform: capitalize;
 }
-/* line 380, modules/_typography.scss */
+/* line 394, modules/_typography.scss */
 p.footer-copyright a {
   color: white;
   text-decoration: none;
 }
-/* line 383, modules/_typography.scss */
+/* line 397, modules/_typography.scss */
 p.footer-copyright a:hover {
   text-decoration: underline;
 }
 
-/* line 389, modules/_typography.scss */
+/* line 403, modules/_typography.scss */
 .admin-comments dt, .content-text aside dt {
   font-size: 1.4em;
   font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
   font-weight: 600;
 }
 
-/* line 394, modules/_typography.scss */
+/* line 408, modules/_typography.scss */
 .admin-comments dd, .content-text aside dd {
   font-size: 1.4em;
   font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
@@ -1420,30 +1427,30 @@ p.footer-copyright a:hover {
   font-weight: 400;
 }
 
-/* line 399, modules/_typography.scss */
+/* line 413, modules/_typography.scss */
 .content-text aside a {
   text-decoration: none;
   background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.3) 11%, rgba(0, 0, 0, 0.3) 16%, transparent 16%);
 }
-/* line 404, modules/_typography.scss */
+/* line 418, modules/_typography.scss */
 .content-text aside a:link {
   color: #666666;
 }
-/* line 407, modules/_typography.scss */
+/* line 421, modules/_typography.scss */
 .content-text aside a:visited {
   color: gray;
 }
-/* line 410, modules/_typography.scss */
+/* line 424, modules/_typography.scss */
 .content-text aside a:focus {
   color: #666666;
   background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
 }
-/* line 414, modules/_typography.scss */
+/* line 428, modules/_typography.scss */
 .content-text aside a:hover {
   color: #666666;
   background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
 }
-/* line 419, modules/_typography.scss */
+/* line 433, modules/_typography.scss */
 .content-text aside a:active {
   color: #666666;
   background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
@@ -1768,9 +1775,12 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
 }
 
 @-webkit-keyframes bugfix {
+  /* line 46, _header.scss */
   from {
     margin: 0;
   }
+
+  /* line 49, _header.scss */
   to {
     margin: 0;
   }
@@ -1794,17 +1804,23 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   }
 }
 @-webkit-keyframes swipeIn {
+  /* line 76, _header.scss */
   from {
     -webkit-transform: translateX(-200%);
   }
+
+  /* line 79, _header.scss */
   to {
     -webkit-transform: translateX(0%);
   }
 }
 @keyframes swipeIn {
+  /* line 85, _header.scss */
   from {
     transform: translateX(-200%);
   }
+
+  /* line 88, _header.scss */
   to {
     transform: translateX(0%);
   }
@@ -1943,38 +1959,52 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   }
 }
 @-webkit-keyframes bounceIn {
+  /* line 2, _homepage.scss */
   0% {
     opacity: 0;
     -webkit-transform: scale(0.3);
     color: #04b4dc;
   }
+
+  /* line 8, _homepage.scss */
   50% {
     opacity: 1;
     -webkit-transform: scale(1.05);
     color: white;
   }
+
+  /* line 14, _homepage.scss */
   70% {
     -webkit-transform: scale(0.9);
   }
+
+  /* line 18, _homepage.scss */
   100% {
     opacity: 1;
     -webkit-transform: scale(1);
   }
 }
 @keyframes bounceIn {
+  /* line 25, _homepage.scss */
   0% {
     opacity: 0;
     transform: scale(0.3);
     color: #04b4dc;
   }
+
+  /* line 31, _homepage.scss */
   50% {
     opacity: 1;
     transform: scale(1.05);
     color: white;
   }
+
+  /* line 37, _homepage.scss */
   70% {
     transform: scale(0.9);
   }
+
+  /* line 41, _homepage.scss */
   100% {
     opacity: 1;
     transform: scale(1);
@@ -2288,45 +2318,60 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   }
 }
 @-webkit-keyframes pace-bounce {
+  /* line 354, _homepage.scss */
   0% {
     top: 0;
     -webkit-animation-timing-function: ease-in;
   }
+
+  /* line 362, _homepage.scss */
   50% {
     top: 140px;
     height: 140px;
     -webkit-animation-timing-function: ease-out;
   }
+
+  /* line 368, _homepage.scss */
   55% {
     top: 160px;
     height: 120px;
     border-radius: 70px / 60px;
     -webkit-animation-timing-function: ease-in;
   }
+
+  /* line 375, _homepage.scss */
   65% {
     top: 120px;
     height: 140px;
     border-radius: 70px;
     -webkit-animation-timing-function: ease-out;
   }
+
+  /* line 382, _homepage.scss */
   95% {
     top: 0;
     -webkit-animation-timing-function: ease-in;
   }
+
+  /* line 387, _homepage.scss */
   100% {
     top: 0;
     -webkit-animation-timing-function: ease-in;
   }
 }
 @-webkit-keyframes pace-bounce-scaledown {
+  /* line 394, _homepage.scss */
   0% {
     opacity: 1;
   }
+
+  /* line 398, _homepage.scss */
   100% {
     opacity: 0;
   }
 }
 @-webkit-keyframes pace-compress {
+  /* line 404, _homepage.scss */
   0% {
     bottom: 0;
     margin-left: -30px;
@@ -2337,6 +2382,8 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     border-radius: 30px / 40px;
     -webkit-animation-timing-function: ease-in;
   }
+
+  /* line 415, _homepage.scss */
   100% {
     bottom: 30px;
     margin-left: -10px;
@@ -2349,45 +2396,60 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   }
 }
 @keyframes pace-bounce {
+  /* line 428, _homepage.scss */
   0% {
     top: 0;
     animation-timing-function: ease-in;
   }
+
+  /* line 436, _homepage.scss */
   50% {
     top: 140px;
     height: 140px;
     animation-timing-function: ease-out;
   }
+
+  /* line 442, _homepage.scss */
   55% {
     top: 160px;
     height: 120px;
     border-radius: 70px / 60px;
     animation-timing-function: ease-in;
   }
+
+  /* line 449, _homepage.scss */
   65% {
     top: 120px;
     height: 140px;
     border-radius: 70px;
     animation-timing-function: ease-out;
   }
+
+  /* line 456, _homepage.scss */
   95% {
     top: 0;
     animation-timing-function: ease-in;
   }
+
+  /* line 461, _homepage.scss */
   100% {
     top: 0;
     animation-timing-function: ease-in;
   }
 }
 @keyframes pace-bounce-scaledown {
+  /* line 468, _homepage.scss */
   0% {
     opacity: 1;
   }
+
+  /* line 472, _homepage.scss */
   100% {
     opacity: 0;
   }
 }
 @keyframes pace-compress {
+  /* line 478, _homepage.scss */
   0% {
     bottom: 0;
     margin-left: -30px;
@@ -2398,6 +2460,8 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     border-radius: 30px / 40px;
     animation-timing-function: ease-in;
   }
+
+  /* line 489, _homepage.scss */
   100% {
     bottom: 30px;
     margin-left: -10px;
@@ -2802,91 +2866,139 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
 }
 
 @-webkit-keyframes fadeIn {
+  /* line 96, _aboutme.scss */
   from {
     opacity: 0;
     -webkit-transform: scaleX(0);
   }
+
+  /* line 100, _aboutme.scss */
   to {
     opacity: 1;
     -webkit-transform: scaleX(1);
   }
 }
 @keyframes fadeIn {
+  /* line 107, _aboutme.scss */
   from {
     opacity: 0;
     transform: scaleX(0);
   }
+
+  /* line 111, _aboutme.scss */
   to {
     opacity: 1;
     transform: scaleX(1);
   }
 }
 @-webkit-keyframes shake {
+  /* line 118, _aboutme.scss */
   0% {
     -webkit-transform: translate(2px, 1px) rotate(0deg);
   }
+
+  /* line 121, _aboutme.scss */
   10% {
     -webkit-transform: translate(-1px, -2px) rotate(-1deg);
   }
+
+  /* line 124, _aboutme.scss */
   20% {
     -webkit-transform: translate(-3px, 0px) rotate(1deg);
   }
+
+  /* line 127, _aboutme.scss */
   30% {
     -webkit-transform: translate(0px, 2px) rotate(0deg);
   }
+
+  /* line 130, _aboutme.scss */
   40% {
     -webkit-transform: translate(1px, -1px) rotate(1deg);
   }
+
+  /* line 133, _aboutme.scss */
   50% {
     -webkit-transform: translate(-1px, 2px) rotate(-1deg);
   }
+
+  /* line 136, _aboutme.scss */
   60% {
     -webkit-transform: translate(-3px, 1px) rotate(0deg);
   }
+
+  /* line 139, _aboutme.scss */
   70% {
     -webkit-transform: translate(2px, 1px) rotate(-1deg);
   }
+
+  /* line 142, _aboutme.scss */
   80% {
     -webkit-transform: translate(-1px, -1px) rotate(1deg);
   }
+
+  /* line 145, _aboutme.scss */
   90% {
     -webkit-transform: translate(2px, 2px) rotate(0deg);
   }
+
+  /* line 148, _aboutme.scss */
   100% {
     -webkit-transform: translate(1px, -2px) rotate(-1deg);
   }
 }
 @keyframes shake {
+  /* line 154, _aboutme.scss */
   0% {
     transform: translate(2px, 1px) rotate(0deg);
   }
+
+  /* line 157, _aboutme.scss */
   10% {
     transform: translate(-1px, -2px) rotate(-1deg);
   }
+
+  /* line 160, _aboutme.scss */
   20% {
     transform: translate(-3px, 0px) rotate(1deg);
   }
+
+  /* line 163, _aboutme.scss */
   30% {
     transform: translate(0px, 2px) rotate(0deg);
   }
+
+  /* line 166, _aboutme.scss */
   40% {
     transform: translate(1px, -1px) rotate(1deg);
   }
+
+  /* line 169, _aboutme.scss */
   50% {
     transform: translate(-1px, 2px) rotate(-1deg);
   }
+
+  /* line 172, _aboutme.scss */
   60% {
     transform: translate(-3px, 1px) rotate(0deg);
   }
+
+  /* line 175, _aboutme.scss */
   70% {
     transform: translate(2px, 1px) rotate(-1deg);
   }
+
+  /* line 178, _aboutme.scss */
   80% {
     transform: translate(-1px, -1px) rotate(1deg);
   }
+
+  /* line 181, _aboutme.scss */
   90% {
     transform: translate(2px, 2px) rotate(0deg);
   }
+
+  /* line 184, _aboutme.scss */
   100% {
     transform: translate(1px, -2px) rotate(-1deg);
   }
@@ -3444,48 +3556,66 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
 }
 
 @-webkit-keyframes tada {
+  /* line 106, _admin.scss */
   0% {
     -webkit-transform: scale(1);
     transform: scale(1);
   }
+
+  /* line 111, _admin.scss */
   10%, 20% {
     -webkit-transform: scale(0.9) rotate(-1deg);
     transform: scale(0.9) rotate(-1deg);
   }
+
+  /* line 116, _admin.scss */
   30%, 50%, 70%, 90% {
     -webkit-transform: scale(1.05) rotate(1deg);
     transform: scale(1.05) rotate(1deg);
   }
+
+  /* line 121, _admin.scss */
   40%, 60%, 80% {
     -webkit-transform: scale(1.05) rotate(-1deg);
     transform: scale(1.05) rotate(-1deg);
   }
+
+  /* line 126, _admin.scss */
   100% {
     -webkit-transform: scale(1) rotate(0);
     transform: scale(1) rotate(0);
   }
 }
 @keyframes tada {
+  /* line 133, _admin.scss */
   0% {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
     transform: scale(1);
   }
+
+  /* line 139, _admin.scss */
   10%, 20% {
     -webkit-transform: scale(0.9) rotate(-1deg);
     -ms-transform: scale(0.9) rotate(-1deg);
     transform: scale(0.9) rotate(-1deg);
   }
+
+  /* line 145, _admin.scss */
   30%, 50%, 70%, 90% {
     -webkit-transform: scale(1.05) rotate(1deg);
     -ms-transform: scale(1.05) rotate(1deg);
     transform: sscale(1.05) rotate(1deg);
   }
+
+  /* line 151, _admin.scss */
   40%, 60%, 80% {
     -webkit-transform: scale(1.05) rotate(-1deg);
     -ms-transform: scale(1.05) rotate(-1deg);
     transform: scale(1.05) rotate(-1deg);
   }
+
+  /* line 157, _admin.scss */
   100% {
     -webkit-transform: scale(1) rotate(0);
     -ms-transform: scale(1) rotate(0);
@@ -3895,5 +4025,3 @@ pre.line-numbers > code {
   padding-right: 0.8em;
   text-align: right;
 }
-
-/*# sourceMappingURL=main.css.map */

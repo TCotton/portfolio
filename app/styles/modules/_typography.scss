@@ -212,6 +212,19 @@ h3.blog-title {
   @include font-calculator($baseFontFamily, 16px);
 }
 
+.content-text section > div table caption {
+  font-weight: 400;
+  color: $textTwo;
+}
+
+.content-text section > div table th {
+
+}
+
+.content-text section > div table td {
+
+}
+
 .content-text section > div h3 {
   @include font-calculator($baseFontFamily, 26px);
   font-weight: 400;
