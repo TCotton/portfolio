@@ -125,6 +125,39 @@ h3.blog-title {
   list-style: none;
 }
 
+.blog-single.content-text section li {
+  padding-left: 15px;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    height: 8px;
+    width: 8px;
+    background: lighten($textTwo, 10%);
+    display: block;
+    border-radius: 100%;
+  }
+}
+
+@include breakpoint(tablet) {
+
+  .blog-single.content-text section ul {
+    font-size: inherit;
+  }
+
+  .blog-single.content-text section li {
+    @include font-calculator($baseFontFamily, 16px);
+    padding-left: 0;
+    position: relative;
+    &::before {
+      content: none;
+    }
+  }
+}
+
+
 @include contentText('p') {
   font-weight: 400;
 }
@@ -193,14 +226,14 @@ h3.blog-title {
 }
 
 .content-text section > div h5 {
-  @include font-calculator($baseFontFamily, 22px);
+  @include font-calculator($baseFontFamily, 20px);
   font-weight: 400;
   color: $textTwo;
   line-height: 120%;
 }
 
 .content-text section > div h6 {
-  @include font-calculator($baseFontFamily, 20px);
+  @include font-calculator($baseFontFamily, 18px);
   font-weight: 400;
   color: $textTwo;
   line-height: 120%;
@@ -260,8 +293,10 @@ p.minor-title {
       @include transitions(opacity 0.5s);
       white-space: nowrap;
       pointer-events: none;
+      display: none;
     }
     &[rel="external"]:hover::after {
+      display: block;
       opacity: 1;
       pointer-events: auto;
     }

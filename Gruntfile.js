@@ -422,6 +422,7 @@ module.exports = function (grunt) {
               'components/**/*',
               'images/{,*/}*.{webp}',
               'fonts/*',
+              'audio/*.mp3',
               'misc/service-worker-registration.js'
             ]
           },
