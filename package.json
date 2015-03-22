@@ -78,7 +78,6 @@
     "load-grunt-tasks": "^3.0.0",
     "matchdep": "^0.3.0",
     "requirejs": "^2.1.15",
-    "sw-precache": "^1.2.5",
     "time-grunt": "^1.0.0"
   },
   "engines": {

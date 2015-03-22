@@ -111,6 +111,28 @@
     aside:empty {
       display: none;
     }
+
+    .blog-data {
+      width: 100%;
+      border: 1px solid $border;
+      caption {
+        padding: 0 0 10px 0;
+        font-style:italic;
+      }
+      tr:first-of-type th {
+        padding: 5px;
+        color: darken($textFour, 10%);
+      }
+      th, td {
+        text-align: left;
+        padding: 5px;
+      }
+      tr:not(:first-of-type) th {
+        color: darken($textFour, 5%);
+      }
+    }
+
+
   }
 
   .user-comments {
