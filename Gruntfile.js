@@ -9,10 +9,6 @@
 //};
 
 var path = require('path');
-var fs = require('fs');
-
-var packageJson = require('./node_modules/sw-precache/package.json');
-var swPrecache = require('./node_modules/sw-precache/lib/sw-precache.js');
 
 
 // # Globbing
@@ -401,7 +397,10 @@ module.exports = function (grunt) {
           concurrency: 20
         },
         files: [
-          { src: [ '<%= yeoman.app %>/images{,*/}*.{png,jpg,jpeg}', '<%= yeoman.app %>/images/blog-images{,*/}*.{png,jpg,jpeg}', '<%= yeoman.app %>/images/slider{,*/}*.{png,jpg,jpeg}'] }
+          { src: [ '<%= yeoman.app %>/images{,*/}*.{png,jpg,jpeg}',
+            '<%= yeoman.app %>/images/blog-images{,*/}*.{png,jpg,jpeg}',
+            '<%= yeoman.app %>/images/blog-stock-images{,*/}*.{png,jpg,jpeg}',
+            '<%= yeoman.app %>/images/slider{,*/}*.{png,jpg,jpeg}'] }
         ]
       }
     },
@@ -432,10 +431,16 @@ module.exports = function (grunt) {
               'misc/*.html',
               'shared/*.html',
               'components/**/*',
-              'images/{,*/}*.{webp}',
+              'images/*.{webp,png,jpg,jpeg}',
+              'images/blog-images/*.{webp,png,jpg,jpeg}',
+              'images/slider/*.{webp,png,jpg,jpeg}',
               'fonts/*',
               'audio/*.mp3'
             ]
+//{ src: [ '<%= yeoman.app %>/images{,*/}*.{png,jpg,jpeg}',
+// '<%= yeoman.app %>/images/blog-images{,*/}*.{png,jpg,jpeg}',
+// '<%= yeoman.app %>/images/slider{,*/}*.{png,jpg,jpeg}'] }
+
           },
           {
             expand: true,
