@@ -11,12 +11,16 @@ angular.module('portfolioApp.blogPagesDirective').directive('blogBlockDirective'
     replace: true,
     scope: {
       blog: '=',
-      srcset: '='
+      srcset: '=',
+      srcsetWebp: '=',
+      srcsetLargeWebp: '='
     },
-    template: '<article>' +
+  template: '<article>' +
       '<header><a data-ng-href="/#!/blog/{{::blog.uniqueId}}/{{::blog.url}}">' +
       '<picture>' +
-      '<source media="(max-width: 480px)" data-ng-srcset="{{::srcset}}">' +
+      '<source type="image/webp" media="(max-width: 481px)" data-ng-srcset="{{::srcsetWebp}}">' +
+      '<source type="image/jpeg" media="(max-width: 480px)" data-ng-srcset="{{::srcset}}">' +
+      '<source type="image/webp" media="(min-width: 481px)" data-ng-srcset="{{::srcsetLargeWebp}}">' +
       '<img data-ng-src="/{{::blog.displayImage}}" alt="" />' +
       '</picture>' +
       '</a></header>' +

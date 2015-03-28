@@ -433,14 +433,11 @@ module.exports = function (grunt) {
               'components/**/*',
               'images/*.{webp,png,jpg,jpeg}',
               'images/blog-images/*.{webp,png,jpg,jpeg}',
+              'images/blog-stock-images/*.{webp,png,jpg,jpeg}',
               'images/slider/*.{webp,png,jpg,jpeg}',
               'fonts/*',
               'audio/*.mp3'
             ]
-//{ src: [ '<%= yeoman.app %>/images{,*/}*.{png,jpg,jpeg}',
-// '<%= yeoman.app %>/images/blog-images{,*/}*.{png,jpg,jpeg}',
-// '<%= yeoman.app %>/images/slider{,*/}*.{png,jpg,jpeg}'] }
-
           },
           {
             expand: true,
@@ -457,8 +454,6 @@ module.exports = function (grunt) {
         src: '{,*/}*.css'
       }
     },
-
-
 
     ngconstant: {
       build: {
