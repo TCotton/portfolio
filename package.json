@@ -60,6 +60,7 @@
     "grunt-rev": "^0.1.0",
     "grunt-svgmin": "^2.0.0",
     "grunt-usemin": "^3.0.0",
+    "grunt-webp-compress": "0.0.3",
     "grunt-wiredep": "^2.0.0",
     "jshint-stylish": "^1.0.0",
     "karma": "^0.12.23",
