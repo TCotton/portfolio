@@ -3767,80 +3767,83 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
   transform: rotate(45deg);
 }
 
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
 @media print {
-  /* line 2, _print.scss */
-  * {
+  /* line 9, _print.scss */
+  *,
+  *:before,
+  *:after {
     background: transparent !important;
     color: #000 !important;
-    /* Black prints faster: h5bp.com/s */
+    /* Black prints faster:
+           http://www.sanbeiji.com/archives/953 */
     box-shadow: none !important;
     text-shadow: none !important;
   }
 
-  /* line 9, _print.scss */
-  #header, #footer, #banner, form, .video-container, aside {
-    display: none !important;
+  /* line 19, _print.scss */
+  #right-small, #banner, #header, #footer {
+    display: none;
   }
 
-  @page {
-    margin: 0.5cm;
-  }
-  /* line 17, _print.scss */
+  /* line 23, _print.scss */
   a,
   a:visited {
     text-decoration: underline;
   }
 
-  /* line 22, _print.scss */
+  /* line 28, _print.scss */
   a[href]:after {
-    content: " (" attr(href) ")" !important;
+    content: " (" attr(href) ")";
   }
 
-  /* line 26, _print.scss */
+  /* line 32, _print.scss */
   abbr[title]:after {
-    content: " (" attr(title) ")" !important;
+    content: " (" attr(title) ")";
   }
 
   /*
    * Don't show links that are fragment identifiers,
    * or use the `javascript:` pseudo protocol
    */
-  /* line 35, _print.scss */
+  /* line 41, _print.scss */
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
-    content: "" !important;
-  }
-
-  /* line 40, _print.scss */
-  pre,
-  blockquote,
-  p {
-    page-break-inside: avoid;
+    content: "";
   }
 
   /* line 46, _print.scss */
-  thead {
-    display: table-header-group;
-    /* h5bp.com/t */
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
   }
 
-  /* line 50, _print.scss */
+  /*
+   * Printing Tables:
+   * http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+  /* line 57, _print.scss */
+  thead {
+    display: table-header-group;
+  }
+
+  /* line 61, _print.scss */
   tr,
   img {
     page-break-inside: avoid;
   }
 
-  /* line 55, _print.scss */
+  /* line 66, _print.scss */
   img {
     max-width: 100% !important;
   }
 
-  /* line 59, _print.scss */
-  p a {
-    word-wrap: break-word;
-  }
-
-  /* line 63, _print.scss */
+  /* line 70, _print.scss */
   p,
   h2,
   h3 {
@@ -3848,12 +3851,9 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     widows: 3;
   }
 
-  /* line 70, _print.scss */
+  /* line 77, _print.scss */
   h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h3 {
     page-break-after: avoid;
   }
 }
