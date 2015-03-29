@@ -17,26 +17,45 @@
 
   .project-box-one {
     background-image: $workSix;
+    @supports (background-image: -webkit-image-set($workSixWebP 1x)) {
+      background-image: -webkit-image-set($workSixWebP 1x)
+    }
   }
 
   .project-box-two {
     background-image: $workOne;
+    @supports (background-image: -webkit-image-set($workOneWebP 1x)) {
+      background-image: -webkit-image-set($workOneWebP 1x);
+    }
   }
 
   .project-box-three {
     background-image: $workTwo;
+    @supports (background-image: -webkit-image-set($workTwoWebP 1x)) {
+      background-image: -webkit-image-set($workTwoWebP 1x);
+    }
+
   }
 
   .project-box-four {
     background-image: $workThree;
+    @supports (background-image: -webkit-image-set($workThreeWebP 1x)) {
+      background-image: -webkit-image-set($workThreeWebP 1x);
+    }
   }
 
   .project-box-five {
     background-image: $workFour;
+    @supports (background-image: -webkit-image-set($workFourWebP 1x)) {
+      background-image: -webkit-image-set($workFourWebP 1x);
+    }
   }
 
   .project-box-six {
     background-image: $workFive;
+    @supports (background-image: -webkit-image-set($workFiveWebP 1x)) {
+      background-image: -webkit-image-set($workFiveWebP 1x);
+    }
   }
 
   .project-box-one, .project-box-two, .project-box-three {

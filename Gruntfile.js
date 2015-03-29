@@ -525,6 +525,26 @@ module.exports = function (grunt) {
       }*/
     },
 
+    autoprefixer: {
+
+      options: {
+        // Task-specific options go here.
+        diff:  '<%= yeoman.app %>/styles/file.css.patch',
+        map: true
+      },
+
+      // prefix the specified file
+      single_file: {
+        options: {
+          // Target-specific options go here.
+          browsers: ['last 2 versions', 'ie 9']
+        },
+        src:  '<%= yeoman.app %>/styles/main.css',
+        dest: '<%= yeoman.app %>/styles/main.css'
+      }
+    },
+
+
     karma: {
       unit: {
         configFile: 'karma.conf.js',
@@ -613,6 +633,7 @@ module.exports = function (grunt) {
     'wiredep',
     'useminPrepare',
     'concurrent:dist',
+    'autoprefixer:single_file',
     'ngconstant',
     'concat',
     'preprocess:html',  // Remove DEBUG code from production builds

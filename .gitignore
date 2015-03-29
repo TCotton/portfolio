@@ -20,3 +20,4 @@ server/blogposts.json
 .DS_Store
 server/newsblur_feed/
 npm-debug.log
+app/styles/file.css.patch
