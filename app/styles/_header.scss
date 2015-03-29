@@ -1,4 +1,4 @@
-#header {
+div[id=header] {
   height: $headerHeight;
   padding: 0 57px;
   background: $topHeaderBackground;
@@ -67,7 +67,7 @@
 
 @include breakpoint(wide) {
 
-  #header {
+  div[id=header] {
     padding: 0 4.172767203513909%;
   }
 }
@@ -92,7 +92,7 @@
 
 @include breakpoint(tablet) {
 
-  #header {
+  div[id=header] {
     // checkbox hack
     // makes the menu appear and disappear on click
     input[type=checkbox] ~ #navigation-wrapper li {
@@ -132,7 +132,7 @@
   }
 }
 
-#logo-wrapper {
+div[id=logo-wrapper] {
   float: left;
 
   a {
@@ -141,7 +141,7 @@
   }
 }
 
-#navigation-wrapper {
+div[id=navigation-wrapper] {
   float: right;
   li {
     display: inline;
@@ -159,7 +159,7 @@
 
 @include breakpoint(tablet) {
 
-  #navigation-wrapper {
+  div[id=navigation-wrapper] {
     pointer-events: none;
     float: none;
     position: absolute;

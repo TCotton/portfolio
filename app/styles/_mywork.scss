@@ -80,8 +80,8 @@
 
   header {
     position: absolute;
-    left:  2.5559105431309903%;
-    right:  2.5559105431309903%;
+    left: 2.5559105431309903%;
+    right: 2.5559105431309903%;
     width: 94.8881789137%;
     text-align: center;
     z-index: 1;
@@ -93,7 +93,7 @@
     }
   }
 
-  #left-small {
+  div[id=left-small] {
 
     article {
       border-bottom: 1px solid $boxBorder;
@@ -102,7 +102,7 @@
     }
   }
 
-  #right-large {
+  div[id=right-large] {
 
     img {
       border: 1px solid $boxBorder;
@@ -156,7 +156,7 @@
 
   .my-work {
 
-    #left-small {
+    div[id=left-small] {
 
       article {
         border-bottom: none;
@@ -165,7 +165,7 @@
       }
     }
 
-    #left-small {
+    div[id=left-small] {
       width: auto;
       float: none;
       display: inline-block;
@@ -173,7 +173,7 @@
       border: none;
     }
 
-    #right-large {
+    div[id=right-large] {
       // set width 100% instead of auto or images are not responsive on Firefox
       width: 100%;
       float: none;
@@ -204,7 +204,7 @@
 
   .my-work {
 
-    #left-small {
+    div[id=left-small] {
 
       article {
         margin: 0 0 10px 0;
@@ -212,7 +212,7 @@
       }
     }
 
-    #right-large {
+    div[id=right-large] {
       img {
         margin: 0 0 40px 0;
       }

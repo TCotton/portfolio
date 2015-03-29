@@ -1,35 +1,35 @@
-#container {
+div[id=container] {
   width: 1366px;
   margin: 10px auto;
 }
 
-#left-large {
+div[id=left-large] {
   width: 822px;
   float: left;
   display: inline;
   margin: 0 32px 0 0;
 }
 
-#left-small {
+div[id=left-small] {
   width: 398px;
   float: left;
   display: inline;
   margin: 0 32px 0 0;
 }
 
-#right-large {
+div[id=right-large] {
   width: 822px;
   float: left;
   display: inline;
 }
 
-#right-small {
+div[id=right-small] {
   width: 398px;
   float: left;
   display: inline;
 }
 
-#main-content {
+div[id=main-content] {
   padding: 40px 57px;
 }
 
@@ -47,7 +47,7 @@
   padding: 4px;
   position: relative;
   cursor: pointer;
-  @include transform(translate3d(0,0,0));
+  @include transform(translate3d(0, 0, 0));
   @include transitions(all 0.5s);
 
   &:nth-of-type(3n) {
@@ -72,7 +72,10 @@
     content: '';
     margin: auto;
     position: absolute;
-    top: 0; left: 0; bottom: 0; right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     background: $moreWork;
     width: 55px;
     height: 56px;
@@ -90,40 +93,31 @@
   }
 }
 
-
-//@include breakpoint(-webkit-hack) {
-/*@media screen and (min--moz-device-pixel-ratio:0) {
-  *//* temp Webkit hack*//*
-  [class*="project-box"] {
-    @include calc('width', '(100% / 3) - 33px');
-  }
-}*/
-
 @include breakpoint(wide) {
 
-  #container {
+  div[id=container] {
     width: 99%;
   }
 
-  #left-large {
+  div[id=left-large] {
     width: 65.65495207667732%;
     margin: 0 2.5559105431309903% 0 0;
   }
 
-  #left-small {
+  div[id=left-small] {
     width: 31.789137380191697%;
     margin: 0 2.5559105431309903% 0 0;
   }
 
-  #right-large {
+  div[id=right-large] {
     width: 65.65495207667732%;
   }
 
-  #right-small {
+  div[id=right-small] {
     width: 31.789137380191697%;
   }
 
-  #main-content {
+  div[id=main-content] {
     padding: 40px 2.5559105431309903%;
   }
 
@@ -149,13 +143,6 @@
   }
 }
 
-/*@media screen and (min--moz-device-pixel-ratio:0) and (max-width: $media_breakpoint_tablet)   {
-  [class*="project-box"] {
-    @include calc('width', '(100% / 2) - 33px');
-  }
-}*/
-
-
 @include breakpoint(mobile) {
   [class*="project-box"] {
     height: 285px;
@@ -171,10 +158,3 @@
     }
   }
 }
-
-/*
-@media screen and (min--moz-device-pixel-ratio:0) and (max-width: $media_breakpoint_mobile)   {
-  [class*="project-box"] {
-    width: 100%;
-  }
-}*/

@@ -1,4 +1,4 @@
-#banner {
+div[id=banner] {
   height: 194px;
   background: $bannerBackround;
   position: relative;
@@ -19,7 +19,7 @@
 
 @include breakpoint("mobile") {
 
-  #banner {
+  div[id=banner] {
     height: 194px;
 
     background: $bannerBackround;

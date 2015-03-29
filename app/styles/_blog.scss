@@ -81,9 +81,12 @@
       margin: 1.5em 10px 1.5em 0;
       padding: 0.5em 10px 0.5em 0;
       position: relative;
+      &:hover {
+        content: " (" attr(cite) ")";
+      }
     }
 
-    blockquote:before {
+    blockquote::before {
       color: #ccc;
       content: "\201C";
       font-size: 5em;
@@ -92,12 +95,21 @@
       vertical-align: -0.45em;
     }
 
-    blockquote:after {
+    blockquote::after {
       content: no-close-quote;
     }
     blockquote p {
       display: inline;
       line-height: 1em;
+    }
+
+    .last-quote::after {
+      color: #ccc;
+      content: close-quote;
+      font-size: 5em;
+      line-height: 0.1em;
+      margin-left: 0.2em;
+      vertical-align: 0.45em;
     }
 
     aside {
