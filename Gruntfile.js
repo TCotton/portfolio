@@ -9,10 +9,6 @@
 //};
 
 var path = require('path');
-var fs = require('fs');
-
-var packageJson = require('./node_modules/sw-precache/package.json');
-var swPrecache = require('./node_modules/sw-precache/lib/sw-precache.js');
 
 
 // # Globbing
@@ -401,7 +397,10 @@ module.exports = function (grunt) {
           concurrency: 20
         },
         files: [
-          { src: [ '<%= yeoman.app %>/images{,*/}*.{png,jpg,jpeg}', '<%= yeoman.app %>/images/blog-images{,*/}*.{png,jpg,jpeg}', '<%= yeoman.app %>/images/slider{,*/}*.{png,jpg,jpeg}'] }
+          { src: [ '<%= yeoman.app %>/images{,*/}*.{png,jpg,jpeg}',
+            '<%= yeoman.app %>/images/blog-images{,*/}*.{png,jpg,jpeg}',
+            '<%= yeoman.app %>/images/blog-stock-images{,*/}*.{png,jpg,jpeg}',
+            '<%= yeoman.app %>/images/slider{,*/}*.{png,jpg,jpeg}'] }
         ]
       }
     },
@@ -432,7 +431,10 @@ module.exports = function (grunt) {
               'misc/*.html',
               'shared/*.html',
               'components/**/*',
-              'images/{,*/}*.{webp}',
+              'images/*.{webp,png,jpg,jpeg}',
+              'images/blog-images/*.{webp,png,jpg,jpeg}',
+              'images/blog-stock-images/*.{webp,png,jpg,jpeg}',
+              'images/slider/*.{webp,png,jpg,jpeg}',
               'fonts/*',
               'audio/*.mp3'
             ]
@@ -452,8 +454,6 @@ module.exports = function (grunt) {
         src: '{,*/}*.css'
       }
     },
-
-
 
     ngconstant: {
       build: {
@@ -524,6 +524,26 @@ module.exports = function (grunt) {
         }
       }*/
     },
+
+    autoprefixer: {
+
+      options: {
+        // Task-specific options go here.
+        diff:  '<%= yeoman.app %>/styles/file.css.patch',
+        map: true
+      },
+
+      // prefix the specified file
+      single_file: {
+        options: {
+          // Target-specific options go here.
+          browsers: ['last 2 versions', 'ie 9']
+        },
+        src:  '<%= yeoman.app %>/styles/main.css',
+        dest: '<%= yeoman.app %>/styles/main.css'
+      }
+    },
+
 
     karma: {
       unit: {
@@ -613,6 +633,7 @@ module.exports = function (grunt) {
     'wiredep',
     'useminPrepare',
     'concurrent:dist',
+    'autoprefixer:single_file',
     'ngconstant',
     'concat',
     'preprocess:html',  // Remove DEBUG code from production builds

@@ -14,6 +14,37 @@
       }
     }
   }
+}
+
+.webp .my-work {
+
+  .project-box-one {
+    background-image: $workSixWebP;
+  }
+
+  .project-box-two {
+    background-image: $workOneWebP;
+  }
+
+  .project-box-three {
+    background-image: $workTwoWebP;
+  }
+
+  .project-box-four {
+    background-image: $workThreeWebP;
+  }
+
+  .project-box-five {
+    background-image: $workFourWebP;
+  }
+
+  .project-box-six {
+    background-image: $workFiveWebP;
+  }
+
+}
+
+.no-webp .my-work {
 
   .project-box-one {
     background-image: $workSix;
@@ -38,6 +69,10 @@
   .project-box-six {
     background-image: $workFive;
   }
+
+}
+
+.my-work {
 
   .project-box-one, .project-box-two, .project-box-three {
     margin-bottom: 30px;

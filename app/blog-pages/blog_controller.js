@@ -54,26 +54,55 @@
 
   BlogCtrl.$inject = ['$scope', 'BlogDataFactory', '$angularCacheFactory', '_', '$rootScope'];
 
-  BlogCtrl.prototype.morePosts = function () {
+  BlogCtrl.prototype.morePosts = function morePosts() {
 
     this.$scope.displayPosts = this.$scope.displayPosts + 10;
 
   };
 
-  BlogCtrl.prototype.srcsetImage = function (image) {
+  BlogCtrl.prototype.srcsetImageJpeg = function srcsetImageJpeg(image) {
 
     var newImage;
+    var dot;
 
     if (image.indexOf('stock-photo') !== -1) {
-
-      var dot = image.lastIndexOf('.');
-
-      newImage = '/' + image.slice(0, dot) + '-small' + image.slice(dot);
-
+      dot = image.lastIndexOf('.');
+      newImage = '/' + image.slice(0, dot) + image.slice(dot);
     } else {
-
       newImage = '/' + image;
+    }
 
+    return newImage;
+
+  };
+
+
+  BlogCtrl.prototype.srcsetImageWebp = function srcsetImageWebp(image) {
+
+    var newImage;
+    var dot;
+
+    if (image.indexOf('stock-photo') !== -1) {
+      dot = image.lastIndexOf('.');
+      newImage = '/' + image.slice(0, dot) + image.slice(dot) + '.webp';
+    } else {
+      newImage = '/' + image;
+    }
+
+    return newImage;
+
+  };
+
+  BlogCtrl.prototype.srcsetImage = function srcsetImage(image) {
+
+    var newImage;
+    var dot;
+
+    if (image.indexOf('stock-photo') !== -1) {
+      dot = image.lastIndexOf('.');
+      newImage = '/' + image.slice(0, dot) + '-small' + image.slice(dot);
+    } else {
+      newImage = '/' + image;
     }
 
     return newImage;
