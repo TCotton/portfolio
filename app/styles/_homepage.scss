@@ -55,38 +55,6 @@
   position: relative;
   @include transform(translate3d(0, 0, 0));
 
-  &.slider2 {
-    background-image: $sliderOne;
-    background-image: -webkit-image-set($sliderOneWepB 1x);
-  }
-  &.slider2 {
-    background-image: $sliderTwo;
-    background-image: -webkit-image-set($sliderTwoWebB 1x);
-  }
-  &.slider3 {
-    background-image: $sliderThree;
-    background-image: -webkit-image-set($sliderThreeWebB 1x);
-  }
-  &.slider4 {
-    background-image: $sliderFour;
-    background-image: -webkit-image-set($sliderFourWebB 1x);
-  }
-  &.slider5 {
-    background-image: $sliderFive;
-    background-image: -webkit-image-set($sliderFiveWebP 1x);
-  }
-  &.slider6 {
-    background-image: $sliderSix;
-    background-image: -webkit-image-set($sliderSixWebP 1x);
-  }
-  &.slider7 {
-    background-image: $sliderSeven;
-    background-image: -webkit-image-set($sliderSevenWebP 1x);
-  }
-  &.slider8 {
-    background-image: $sliderEight;
-    background-image: -webkit-image-set($sliderEightWebP 1x);
-  }
   &.sliderPlaceholder {
     background-image: $sliderPlaceholderDataURI;
   }
@@ -124,6 +92,68 @@
     background: $rightArrow;
     &:hover {
       background: $rightArrowHover;
+    }
+  }
+}
+
+.webp {
+
+  #slider {
+
+    &.slider2 {
+      background-image: $sliderOneWepB;
+    }
+    &.slider2 {
+      background-image: $sliderTwoWebB;
+    }
+    &.slider3 {
+      background-image: $sliderThreeWebB;
+    }
+    &.slider4 {
+      background-image: $sliderFourWebB;
+    }
+    &.slider5 {
+      background-image: $sliderFiveWebP;
+    }
+    &.slider6 {
+      background-image: $sliderSixWebP;
+    }
+    &.slider7 {
+      background-image: $sliderSevenWebP;
+    }
+    &.slider8 {
+      background-image: $sliderEightWebP;
+    }
+  }
+}
+
+.no-webp {
+
+  #slider {
+
+    &.slider2 {
+      background-image: $sliderOne;
+    }
+    &.slider2 {
+      background-image: $sliderTwo;
+    }
+    &.slider3 {
+      background-image: $sliderThree;
+    }
+    &.slider4 {
+      background-image: $sliderFour;
+    }
+    &.slider5 {
+      background-image: $sliderFive;
+    }
+    &.slider6 {
+      background-image: $sliderSix;
+    }
+    &.slider7 {
+      background-image: $sliderSeven;
+    }
+    &.slider8 {
+      background-image: $sliderEight;
     }
   }
 }

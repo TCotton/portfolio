@@ -14,49 +14,65 @@
       }
     }
   }
+}
+
+.webp .my-work {
+
+  .project-box-one {
+    background-image: $workSixWebP;
+  }
+
+  .project-box-two {
+    background-image: $workOneWebP;
+  }
+
+  .project-box-three {
+    background-image: $workTwoWebP;
+  }
+
+  .project-box-four {
+    background-image: $workThreeWebP;
+  }
+
+  .project-box-five {
+    background-image: $workFourWebP;
+  }
+
+  .project-box-six {
+    background-image: $workFiveWebP;
+  }
+
+}
+
+.no-webp .my-work {
 
   .project-box-one {
     background-image: $workSix;
-    @supports (background-image: -webkit-image-set($workSixWebP 1x)) {
-      background-image: -webkit-image-set($workSixWebP 1x)
-    }
   }
 
   .project-box-two {
     background-image: $workOne;
-    @supports (background-image: -webkit-image-set($workOneWebP 1x)) {
-      background-image: -webkit-image-set($workOneWebP 1x);
-    }
   }
 
   .project-box-three {
     background-image: $workTwo;
-    @supports (background-image: -webkit-image-set($workTwoWebP 1x)) {
-      background-image: -webkit-image-set($workTwoWebP 1x);
-    }
-
   }
 
   .project-box-four {
     background-image: $workThree;
-    @supports (background-image: -webkit-image-set($workThreeWebP 1x)) {
-      background-image: -webkit-image-set($workThreeWebP 1x);
-    }
   }
 
   .project-box-five {
     background-image: $workFour;
-    @supports (background-image: -webkit-image-set($workFourWebP 1x)) {
-      background-image: -webkit-image-set($workFourWebP 1x);
-    }
   }
 
   .project-box-six {
     background-image: $workFive;
-    @supports (background-image: -webkit-image-set($workFiveWebP 1x)) {
-      background-image: -webkit-image-set($workFiveWebP 1x);
-    }
   }
+
+}
+
+.my-work {
 
   .project-box-one, .project-box-two, .project-box-three {
     margin-bottom: 30px;
