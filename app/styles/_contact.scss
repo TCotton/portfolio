@@ -2,7 +2,7 @@
 
   .contact {
 
-    #left-large {
+    div[id=left-large] {
       width: 100%;
       float: none;
       display: inline-block;
@@ -12,7 +12,7 @@
       }
     }
 
-    #right-small {
+    div[id=right-small] {
       display: none;
     }
   }

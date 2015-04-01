@@ -44,7 +44,7 @@
   }
 }
 
-#slider {
+div[id=slider] {
   clear: both;
   background-color: $imageBackground;
   background-image: $sliderOne;
@@ -98,7 +98,7 @@
 
 .webp {
 
-  #slider {
+  div[id=slider] {
 
     &.slider2 {
       background-image: $sliderOneWepB;
@@ -129,7 +129,7 @@
 
 .no-webp {
 
-  #slider {
+  div[id=slider] {
 
     &.slider2 {
       background-image: $sliderOne;
@@ -160,7 +160,7 @@
 
 @include breakpoint(mintablet) {
 
-  #slider {
+  div[id=slider] {
     [class*=animate-bounceIn] {
       -webkit-animation-name: bounceIn;
       -webkit-animation-duration: 1s;
@@ -181,7 +181,7 @@
 
 @include breakpoint(wide) {
 
-  #slider {
+  div[id=slider] {
     section {
       top: 25px;
       left: 25%;
@@ -198,7 +198,7 @@
 
 @include breakpoint(tablet) {
 
-  #slider {
+  div[id=slider] {
 
     section {
       top: 10px;
@@ -210,7 +210,7 @@
 
 @include breakpoint(mobile) {
 
-  #slider {
+  div[id=slider] {
     background-position: left bottom;
     padding: 0 0 79.9414348463% 0;
 
@@ -228,7 +228,7 @@
   }
 }
 
-#homepage-stats {
+div[id=homepage-stats] {
   padding: 0 114px;
   height: 224px;
   clear: both;
@@ -276,14 +276,14 @@
 
 @include breakpoint(wide) {
 
-  #homepage-stats {
+  div[id=homepage-stats] {
     padding: 0 4.172767203513909%;
   }
 }
 
 @include breakpoint(tablet) {
 
-  #homepage-stats {
+  div[id=homepage-stats] {
 
     > span {
       // header and content for span blocks
@@ -310,7 +310,7 @@
 
 @include breakpoint(mobile) {
 
-  #homepage-stats {
+  div[id=homepage-stats] {
     height: auto;
     display: block;
     > span {

@@ -1,8 +1,8 @@
-#footer {
+div[id=footer] {
   clear: both;
 }
 
-#footer-top {
+div[id=footer-top] {
   height: 281px;
   padding: 25px 57px 0 57px;
   overflow: hidden;
@@ -43,7 +43,7 @@
   }
 }
 
-#footer-top.blogFooter, #footer-top.blogFooter {
+div[id=footer-top].blogFooter, div[id=footer-top].blogFooter {
 
   &:after {
     content: none;
@@ -54,8 +54,7 @@
 
 }
 
-#recommended-article a {
-
+div[id=recommended-article] a {
   margin: auto;
   position: absolute;
   top: 50%; left: 50%;
@@ -66,7 +65,7 @@
 
 @include breakpoint(wide) {
 
-  #footer-top {
+  div[id=footer-top] {
     padding: 30px 4.172767203513909% 0 4.172767203513909%;
   }
 
@@ -74,12 +73,12 @@
 
 @include breakpoint(mobile) {
 
-  #footer-top {
+  div[id=footer-top] {
     padding: 20px 4.172767203513909% 0 4.172767203513909%;
   }
 }
 
-#footer-bottom {
+div[id=footer-bottom] {
   height: $bottomFooterHeight;
   background: $bottomFooterBackground;
   text-align: center;

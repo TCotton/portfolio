@@ -1,17 +1,52 @@
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
 @media print {
-  * {
+  *,
+  *:before,
+  *:after {
     background: transparent !important;
-    color: #000 !important; /* Black prints faster: h5bp.com/s */
+    color: #000 !important;
+    /* Black prints faster:
+                                      http://www.sanbeiji.com/archives/953 */
     box-shadow: none !important;
     text-shadow: none !important;
   }
 
-  #header, #footer, #banner, form, .video-container, aside {
-    display: none !important
+  body {
+    font-size: 62.5%;
+    font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
+    line-height: 2.5em;
   }
 
-  @page {
-    margin: 0.5cm;
+  div[id=right-small], div[id=banner], div[id=header], div[id=footer] {
+    display: none;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  h3, h4, h5, h6 {
+    font-size: 18px;
+  }
+
+  p, li {
+    font-size: 16px;
+  }
+
+  div[id=main-content] {
+    padding: 5px;
+    width: auto;
+    float: none;
+    display: block;
   }
 
   a,
@@ -20,11 +55,11 @@
   }
 
   a[href]:after {
-    content: " (" attr(href) ")"!important;
+    content: " (" attr(href) ")";
   }
 
   abbr[title]:after {
-    content: " (" attr(title) ")"!important;
+    content: " (" attr(title) ")";
   }
 
   /*
@@ -34,17 +69,30 @@
 
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
-    content: ""!important;
+    content: "";
   }
 
-  pre,
-  blockquote,
-  p {
+ /* pre,
+  blockquote {
+    border: 1px solid #999;
     page-break-inside: avoid;
   }
+*/
+  blockquote::before {
+    content: open-quote;
+  }
+
+  blockquote::after {
+    content: close-quote;
+  }
+
+  /*
+   * Printing Tables:
+   * http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
 
   thead {
-    display: table-header-group; /* h5bp.com/t */
+    display: table-header-group;
   }
 
   tr,
@@ -56,10 +104,6 @@
     max-width: 100% !important;
   }
 
-  p a {
-    word-wrap: break-word;
-  }
-
   p,
   h2,
   h3 {
@@ -68,10 +112,7 @@
   }
 
   h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h3 {
     page-break-after: avoid;
   }
 }

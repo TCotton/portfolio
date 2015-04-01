@@ -195,14 +195,15 @@
       display: block;
     }
 
-    #left-large {
+
+    div[id=left-large] {
       width: auto;
       float: none;
       display: block;
       margin: 0 0 0 0;
     }
 
-    #right-small {
+    div[id=right-small] {
       width: auto;
       float: none;
       display: block;
