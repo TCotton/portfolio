@@ -14,9 +14,7 @@
         <article>
 
             <div data-ng-bind-html="details"></div>
-
             <p class="minor-title">Code used:</p>
-
             <p data-ng-bind="code"></p>
 
         </article>
@@ -36,7 +34,7 @@
 
         <picture class="ng-cloak">
             <source type="image/webp" ng-srcset="{{::workImageWebP}}" >
-            <img ng-src="{{workImage}}"  alt="{{title}}"/>
+            <img ng-src="{{::workImage}}"  alt="{{::title}}"/>
         </picture>
 
         <div class="pagination clearfix hidden-desktop">

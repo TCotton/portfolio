@@ -647,7 +647,6 @@ module.exports = function (grunt) {
     'wiredep',
     'useminPrepare',
     'concurrent:dist',
-    'lodash',
     'autoprefixer:single_file',
     'ngconstant',
     'concat',
