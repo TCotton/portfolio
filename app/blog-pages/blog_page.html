@@ -14,10 +14,11 @@
 
       <header>
 
-        <picture>
-          <source media="(max-width: 480px)" data-ng-srcset="/{{displaySrcsetImage}}" >
-          <img data-ng-src="/{{displayImage}}" alt=""/>
+        <picture class="ng-cloak">
+          <source type="image/jpeg" media="(max-width: 480px)" srcset="/{{::displaySrcsetImage}}" >
+          <img src="/{{::displayImage}}" alt="Background image for {{title}}"/>
         </picture>
+
       </header>
       <section data-codepen-directive data-twitter-directive>
 

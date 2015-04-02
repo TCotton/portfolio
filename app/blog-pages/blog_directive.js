@@ -21,7 +21,7 @@ angular.module('portfolioApp.blogPagesDirective').directive('blogBlockDirective'
       '<source type="image/webp" media="(max-width: 481px)" data-ng-srcset="{{::srcsetWebp}}">' +
       '<source type="image/jpeg" media="(max-width: 480px)" data-ng-srcset="{{::srcset}}">' +
       '<source type="image/webp" media="(min-width: 481px)" data-ng-srcset="{{::srcsetLargeWebp}}">' +
-      '<img data-ng-src="/{{::blog.displayImage}}" alt="" class="lazyload" />' +
+      '<img data-ng-src="/{{::blog.displayImage}}" alt=""  />' +
       '</picture>' +
       '</a></header>' +
       '<section>' +

@@ -51,6 +51,7 @@
     "grunt-express": "^1.4.1",
     "grunt-inline": "^0.3.2",
     "grunt-karma": "^0.10.1",
+    "grunt-lodash": "^0.4.0",
     "grunt-newer": "^1.1.0",
     "grunt-ng-annotate": "^0.10.0",
     "grunt-ng-constant": "^1.0.0",
@@ -65,7 +66,6 @@
     "grunt-usemin": "^3.0.0",
     "grunt-webp-compress": "0.0.3",
     "grunt-wiredep": "^2.0.0",
-    "grunt-lodash": "^0.4.0",
     "jshint-stylish": "^1.0.0",
     "karma": "^0.12.23",
     "karma-chrome-launcher": "^0.1.2",
@@ -81,6 +81,7 @@
     "karma-safari-launcher": "~0.1.1",
     "karma-script-launcher": "^0.1.0",
     "load-grunt-tasks": "^3.0.0",
+    "lodash-cli": "^3.6.0",
     "matchdep": "^0.3.0",
     "requirejs": "^2.1.15",
     "time-grunt": "^1.0.0"

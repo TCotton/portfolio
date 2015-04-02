@@ -1770,12 +1770,9 @@ If not, the italic Georgia style is lifted from the user's computer.
   }
 
   @-webkit-keyframes bugfix {
-    /* line 46, _header.scss */
     from {
       margin: 0;
     }
-
-    /* line 49, _header.scss */
     to {
       margin: 0;
     }
@@ -1803,23 +1800,17 @@ If not, the italic Georgia style is lifted from the user's computer.
 }
 @media screen {
   @-webkit-keyframes swipeIn {
-    /* line 76, _header.scss */
     from {
       -webkit-transform: translateX(-200%);
     }
-
-    /* line 79, _header.scss */
     to {
       -webkit-transform: translateX(0%);
     }
   }
   @keyframes swipeIn {
-    /* line 85, _header.scss */
     from {
       transform: translateX(-200%);
     }
-
-    /* line 88, _header.scss */
     to {
       transform: translateX(0%);
     }
@@ -1961,52 +1952,38 @@ If not, the italic Georgia style is lifted from the user's computer.
 }
 @media screen {
   @-webkit-keyframes bounceIn {
-    /* line 2, _homepage.scss */
     0% {
       opacity: 0;
       -webkit-transform: scale(0.3);
       color: #04b4dc;
     }
-
-    /* line 8, _homepage.scss */
     50% {
       opacity: 1;
       -webkit-transform: scale(1.05);
       color: white;
     }
-
-    /* line 14, _homepage.scss */
     70% {
       -webkit-transform: scale(0.9);
     }
-
-    /* line 18, _homepage.scss */
     100% {
       opacity: 1;
       -webkit-transform: scale(1);
     }
   }
   @keyframes bounceIn {
-    /* line 25, _homepage.scss */
     0% {
       opacity: 0;
       transform: scale(0.3);
       color: #04b4dc;
     }
-
-    /* line 31, _homepage.scss */
     50% {
       opacity: 1;
       transform: scale(1.05);
       color: white;
     }
-
-    /* line 37, _homepage.scss */
     70% {
       transform: scale(0.9);
     }
-
-    /* line 41, _homepage.scss */
     100% {
       opacity: 1;
       transform: scale(1);
@@ -2356,60 +2333,45 @@ If not, the italic Georgia style is lifted from the user's computer.
 }
 @media screen {
   @-webkit-keyframes pace-bounce {
-    /* line 392, _homepage.scss */
     0% {
       top: 0;
       -webkit-animation-timing-function: ease-in;
     }
-
-    /* line 400, _homepage.scss */
     50% {
       top: 140px;
       height: 140px;
       -webkit-animation-timing-function: ease-out;
     }
-
-    /* line 406, _homepage.scss */
     55% {
       top: 160px;
       height: 120px;
       border-radius: 70px / 60px;
       -webkit-animation-timing-function: ease-in;
     }
-
-    /* line 413, _homepage.scss */
     65% {
       top: 120px;
       height: 140px;
       border-radius: 70px;
       -webkit-animation-timing-function: ease-out;
     }
-
-    /* line 420, _homepage.scss */
     95% {
       top: 0;
       -webkit-animation-timing-function: ease-in;
     }
-
-    /* line 425, _homepage.scss */
     100% {
       top: 0;
       -webkit-animation-timing-function: ease-in;
     }
   }
   @-webkit-keyframes pace-bounce-scaledown {
-    /* line 432, _homepage.scss */
     0% {
       opacity: 1;
     }
-
-    /* line 436, _homepage.scss */
     100% {
       opacity: 0;
     }
   }
   @-webkit-keyframes pace-compress {
-    /* line 442, _homepage.scss */
     0% {
       bottom: 0;
       margin-left: -30px;
@@ -2420,8 +2382,6 @@ If not, the italic Georgia style is lifted from the user's computer.
       border-radius: 30px / 40px;
       -webkit-animation-timing-function: ease-in;
     }
-
-    /* line 453, _homepage.scss */
     100% {
       bottom: 30px;
       margin-left: -10px;
@@ -2434,60 +2394,45 @@ If not, the italic Georgia style is lifted from the user's computer.
     }
   }
   @keyframes pace-bounce {
-    /* line 466, _homepage.scss */
     0% {
       top: 0;
       animation-timing-function: ease-in;
     }
-
-    /* line 474, _homepage.scss */
     50% {
       top: 140px;
       height: 140px;
       animation-timing-function: ease-out;
     }
-
-    /* line 480, _homepage.scss */
     55% {
       top: 160px;
       height: 120px;
       border-radius: 70px / 60px;
       animation-timing-function: ease-in;
     }
-
-    /* line 487, _homepage.scss */
     65% {
       top: 120px;
       height: 140px;
       border-radius: 70px;
       animation-timing-function: ease-out;
     }
-
-    /* line 494, _homepage.scss */
     95% {
       top: 0;
       animation-timing-function: ease-in;
     }
-
-    /* line 499, _homepage.scss */
     100% {
       top: 0;
       animation-timing-function: ease-in;
     }
   }
   @keyframes pace-bounce-scaledown {
-    /* line 506, _homepage.scss */
     0% {
       opacity: 1;
     }
-
-    /* line 510, _homepage.scss */
     100% {
       opacity: 0;
     }
   }
   @keyframes pace-compress {
-    /* line 516, _homepage.scss */
     0% {
       bottom: 0;
       margin-left: -30px;
@@ -2498,8 +2443,6 @@ If not, the italic Georgia style is lifted from the user's computer.
       border-radius: 30px / 40px;
       animation-timing-function: ease-in;
     }
-
-    /* line 527, _homepage.scss */
     100% {
       bottom: 30px;
       margin-left: -10px;
@@ -2935,139 +2878,91 @@ If not, the italic Georgia style is lifted from the user's computer.
   }
 
   @-webkit-keyframes fadeIn {
-    /* line 96, _aboutme.scss */
     from {
       opacity: 0;
       -webkit-transform: scaleX(0);
     }
-
-    /* line 100, _aboutme.scss */
     to {
       opacity: 1;
       -webkit-transform: scaleX(1);
     }
   }
   @keyframes fadeIn {
-    /* line 107, _aboutme.scss */
     from {
       opacity: 0;
       transform: scaleX(0);
     }
-
-    /* line 111, _aboutme.scss */
     to {
       opacity: 1;
       transform: scaleX(1);
     }
   }
   @-webkit-keyframes shake {
-    /* line 118, _aboutme.scss */
     0% {
       -webkit-transform: translate(2px, 1px) rotate(0deg);
     }
-
-    /* line 121, _aboutme.scss */
     10% {
       -webkit-transform: translate(-1px, -2px) rotate(-1deg);
     }
-
-    /* line 124, _aboutme.scss */
     20% {
       -webkit-transform: translate(-3px, 0px) rotate(1deg);
     }
-
-    /* line 127, _aboutme.scss */
     30% {
       -webkit-transform: translate(0px, 2px) rotate(0deg);
     }
-
-    /* line 130, _aboutme.scss */
     40% {
       -webkit-transform: translate(1px, -1px) rotate(1deg);
     }
-
-    /* line 133, _aboutme.scss */
     50% {
       -webkit-transform: translate(-1px, 2px) rotate(-1deg);
     }
-
-    /* line 136, _aboutme.scss */
     60% {
       -webkit-transform: translate(-3px, 1px) rotate(0deg);
     }
-
-    /* line 139, _aboutme.scss */
     70% {
       -webkit-transform: translate(2px, 1px) rotate(-1deg);
     }
-
-    /* line 142, _aboutme.scss */
     80% {
       -webkit-transform: translate(-1px, -1px) rotate(1deg);
     }
-
-    /* line 145, _aboutme.scss */
     90% {
       -webkit-transform: translate(2px, 2px) rotate(0deg);
     }
-
-    /* line 148, _aboutme.scss */
     100% {
       -webkit-transform: translate(1px, -2px) rotate(-1deg);
     }
   }
   @keyframes shake {
-    /* line 154, _aboutme.scss */
     0% {
       transform: translate(2px, 1px) rotate(0deg);
     }
-
-    /* line 157, _aboutme.scss */
     10% {
       transform: translate(-1px, -2px) rotate(-1deg);
     }
-
-    /* line 160, _aboutme.scss */
     20% {
       transform: translate(-3px, 0px) rotate(1deg);
     }
-
-    /* line 163, _aboutme.scss */
     30% {
       transform: translate(0px, 2px) rotate(0deg);
     }
-
-    /* line 166, _aboutme.scss */
     40% {
       transform: translate(1px, -1px) rotate(1deg);
     }
-
-    /* line 169, _aboutme.scss */
     50% {
       transform: translate(-1px, 2px) rotate(-1deg);
     }
-
-    /* line 172, _aboutme.scss */
     60% {
       transform: translate(-3px, 1px) rotate(0deg);
     }
-
-    /* line 175, _aboutme.scss */
     70% {
       transform: translate(2px, 1px) rotate(-1deg);
     }
-
-    /* line 178, _aboutme.scss */
     80% {
       transform: translate(-1px, -1px) rotate(1deg);
     }
-
-    /* line 181, _aboutme.scss */
     90% {
       transform: translate(2px, 2px) rotate(0deg);
     }
-
-    /* line 184, _aboutme.scss */
     100% {
       transform: translate(1px, -2px) rotate(-1deg);
     }
@@ -3666,66 +3561,48 @@ If not, the italic Georgia style is lifted from the user's computer.
   }
 
   @-webkit-keyframes tada {
-    /* line 106, _admin.scss */
     0% {
       -webkit-transform: scale(1);
       transform: scale(1);
     }
-
-    /* line 111, _admin.scss */
     10%, 20% {
       -webkit-transform: scale(0.9) rotate(-1deg);
       transform: scale(0.9) rotate(-1deg);
     }
-
-    /* line 116, _admin.scss */
     30%, 50%, 70%, 90% {
       -webkit-transform: scale(1.05) rotate(1deg);
       transform: scale(1.05) rotate(1deg);
     }
-
-    /* line 121, _admin.scss */
     40%, 60%, 80% {
       -webkit-transform: scale(1.05) rotate(-1deg);
       transform: scale(1.05) rotate(-1deg);
     }
-
-    /* line 126, _admin.scss */
     100% {
       -webkit-transform: scale(1) rotate(0);
       transform: scale(1) rotate(0);
     }
   }
   @keyframes tada {
-    /* line 133, _admin.scss */
     0% {
       -webkit-transform: scale(1);
       -ms-transform: scale(1);
       transform: scale(1);
     }
-
-    /* line 139, _admin.scss */
     10%, 20% {
       -webkit-transform: scale(0.9) rotate(-1deg);
       -ms-transform: scale(0.9) rotate(-1deg);
       transform: scale(0.9) rotate(-1deg);
     }
-
-    /* line 145, _admin.scss */
     30%, 50%, 70%, 90% {
       -webkit-transform: scale(1.05) rotate(1deg);
       -ms-transform: scale(1.05) rotate(1deg);
       transform: sscale(1.05) rotate(1deg);
     }
-
-    /* line 151, _admin.scss */
     40%, 60%, 80% {
       -webkit-transform: scale(1.05) rotate(-1deg);
       -ms-transform: scale(1.05) rotate(-1deg);
       transform: scale(1.05) rotate(-1deg);
     }
-
-    /* line 157, _admin.scss */
     100% {
       -webkit-transform: scale(1) rotate(0);
       -ms-transform: scale(1) rotate(0);
@@ -3895,8 +3772,7 @@ If not, the italic Georgia style is lifted from the user's computer.
     text-shadow: none;
     background: #b3d4fc;
   }
-}
-@media screen {
+
   /* Code blocks */
   /* line 50, modules/_prism.scss */
   pre[class*="language-"] {
@@ -4175,3 +4051,5 @@ If not, the italic Georgia style is lifted from the user's computer.
     page-break-after: avoid;
   }
 }
+
+/*# sourceMappingURL=main.css.map */
