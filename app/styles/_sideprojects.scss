@@ -15,18 +15,6 @@
     }
   }
 
-  .project-box-one {
-    background-image: $sideOne;
-  }
-
-  .project-box-two {
-    background-image: $sideTwo;
-  }
-
-  .project-box-three {
-    background-image: $sideThree;
-  }
-
   header {
     position: absolute;
     width: 100%;
@@ -39,6 +27,42 @@
       opacity: 0;
     }
   }
+}
+
+.no-webp .side-projects {
+
+  .project-box-one {
+    background-image: $sideOne;
+  }
+
+  .project-box-two {
+    background-image: $sideTwo;
+  }
+
+  .project-box-three {
+    background-image: $sideThree;
+  }
+
+}
+
+.webp .side-projects {
+
+  .project-box-one {
+    background-image: $sideOneWebP;
+  }
+
+  .project-box-two {
+    background-image: $sideTwoWebP;
+  }
+
+  .project-box-three {
+    background-image: $sideThreeWebP;
+  }
+
+  [class*="project-box"] {
+
+  }
+
 }
 
 @include breakpoint("tablet") {

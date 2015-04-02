@@ -47,7 +47,6 @@
 div[id=slider] {
   clear: both;
   background-color: $imageBackground;
-  background-image: $sliderOne;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -99,7 +98,7 @@ div[id=slider] {
 .webp {
 
   div[id=slider] {
-
+    background-image: $sliderOneWepB;
     &.slider2 {
       background-image: $sliderOneWepB;
     }
@@ -130,7 +129,7 @@ div[id=slider] {
 .no-webp {
 
   div[id=slider] {
-
+    background-image: $sliderOne;
     &.slider2 {
       background-image: $sliderOne;
     }
