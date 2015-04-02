@@ -498,6 +498,19 @@ module.exports = function (grunt) {
       protractor_test: ['protractor-chrome']
     },
 
+    'lodash': {
+      'build': {
+        // output location
+        'dest': '<%= yeoman.app %>/components/lodash.build.js',
+        'options': {
+          // modifiers for prepared builds
+          // modern, strict, compat
+          'modifier': 'modern',
+          'moduleId': 'underscore'
+        }
+      }
+    },
+
     protractor: {
       options: {
         configFile: 'e2e.conf.js', // Default config file
@@ -611,6 +624,7 @@ module.exports = function (grunt) {
       'clean:server',
       'concurrent:server',
       'ngconstant',
+      'lodash',
       'express:livereload',
       'open',
       'watch'
@@ -633,6 +647,7 @@ module.exports = function (grunt) {
     'wiredep',
     'useminPrepare',
     'concurrent:dist',
+    'lodash',
     'autoprefixer:single_file',
     'ngconstant',
     'concat',
