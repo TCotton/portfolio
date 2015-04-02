@@ -2,7 +2,6 @@
 
     <section>
         <h2 class="page-top-title" data-ng-bind="title"></h2>
-
         <p class="page-top-text-banner" data-ng-bind="summary"></p>
     </section>
 
@@ -35,7 +34,10 @@
 
     <div id="right-large">
 
-        <img data-ng-src="{{workImage}}"  alt="{{title}}"/>
+        <picture class="ng-cloak">
+            <source type="image/webp" ng-srcset="{{::workImageWebP}}" >
+            <img ng-src="{{workImage}}"  alt="{{title}}"/>
+        </picture>
 
         <div class="pagination clearfix hidden-desktop">
 
@@ -47,6 +49,5 @@
 
     </div>
     <!-- end right large -->
-
 
 </div><!-- end main-content -->

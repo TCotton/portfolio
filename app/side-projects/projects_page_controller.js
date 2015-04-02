@@ -84,6 +84,7 @@
     this.$scope.details = data[0].details;
     this.$scope.code = data[0].code;
     this.$scope.workImage = data[0].workImage;
+    this.$scope.workImageWebP = data[0].workImage + '.webp';
     this.$rootScope.pageTitle = data[0].title + ' - ' + data[0].summary;
 
   };
