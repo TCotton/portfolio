@@ -39,7 +39,10 @@
 
     <div id="right-large">
 
-        <img data-ng-src="{{workImage}}"  alt="{{title}}"/>
+        <picture class="ng-cloak">
+            <source type="image/webp" ng-srcset="{{::workImageWebP}}" >
+            <img ng-src="{{::workImage}}" alt="{{title}}"/>
+        </picture>
 
         <div class="pagination clearfix hidden-desktop">
 
