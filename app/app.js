@@ -51,7 +51,7 @@ angular.module('portfolioApp', [
   'HashBangURLs',
   'portfolioAppConfig',
   'jmdobry.angular-cache',
-  'lodash',
+  'underscore',
   'momentLibrary',
   'helperFunctions'
 ]).config(function ($routeProvider, $httpProvider) {

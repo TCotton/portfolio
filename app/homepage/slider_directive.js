@@ -11,7 +11,7 @@ angular.module('portfolioApp.homepageDirective').directive('sliderDirective', ['
       slider: '@'
     },
     replace: true,
-    template: '<div id="slider" data-ng-class="slider.sliderClass" tabindex="0">' +
+    template: '<div id="slider" data-ng-class="slider.sliderClass" tabindex="-1">' +
       '<section>' +
       '<h2 class="page-top-title" class="slider1" data-ng-bind="slider.title"></h2>' +
       '<p class="page-top-text" data-ng-bind="slider.text"></p>' +

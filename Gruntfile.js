@@ -498,7 +498,7 @@ module.exports = function (grunt) {
       protractor_test: ['protractor-chrome']
     },
 
-    'lodash': {
+  /*  'lodash': {
       'build': {
         // output location
         'dest': '<%= yeoman.app %>/components/lodash.build.js',
@@ -509,7 +509,7 @@ module.exports = function (grunt) {
           'moduleId': 'underscore'
         }
       }
-    },
+    },*/
 
     protractor: {
       options: {
@@ -624,7 +624,7 @@ module.exports = function (grunt) {
       'clean:server',
       'concurrent:server',
       'ngconstant',
-      'lodash',
+/*      'lodash',*/
       'express:livereload',
       'open',
       'watch'
@@ -642,7 +642,9 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build', [
+/*
     'test',
+*/
     'clean:dist',
     'wiredep',
     'useminPrepare',
@@ -654,7 +656,9 @@ module.exports = function (grunt) {
     'ngmin',
     //'ngAnnotate',
     'inline',
+/*
     'cwebp',
+*/
     'copy:dist',
     'cssmin',
     'uglify',
