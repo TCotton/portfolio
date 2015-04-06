@@ -53,7 +53,10 @@ angular.module('portfolioApp', [
   'jmdobry.angular-cache',
   'underscore',
   'momentLibrary',
-  'helperFunctions'
+  'helperFunctions',
+  'fastdom',
+  'requestTimeout',
+  'clearRequestTimeout'
 ]).config(function ($routeProvider, $httpProvider) {
 
   // Needed for CORS

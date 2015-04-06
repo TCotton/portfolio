@@ -3,7 +3,7 @@
  */
 'use strict';
 
-angular.module('portfolioApp.homepageDirective').directive('sliderDirective', ['SLIDER', '$interval', '$timeout', '$animate', '$window', '_', function (SLIDER, $interval, $timeout, $animate, $window, _) {
+angular.module('portfolioApp.homepageDirective').directive('sliderDirective', ['SLIDER', '$interval', '$timeout', '$animate', '$window', '_', 'fastdom', 'requestTimeout', function (SLIDER, $interval, $timeout, $animate, $window, _, fastdom, requestTimeout) {
 
   return {
     restrict: 'A',
@@ -11,15 +11,15 @@ angular.module('portfolioApp.homepageDirective').directive('sliderDirective', ['
       slider: '@'
     },
     replace: true,
-    template: '<div id="slider" data-ng-class="slider.sliderClass" tabindex="-1">' +
-      '<section>' +
-      '<h2 class="page-top-title" class="slider1" data-ng-bind="slider.title"></h2>' +
-      '<p class="page-top-text" data-ng-bind="slider.text"></p>' +
-      '<a data-ng-href="{{slider.URL}}" class="button-front-one">View Project</a>' +
-      '</section>' +
-      '<div class="left-arrow" rel="prev" role="button" tabindex="0" aria-label="Previous slide"></div>' +
-      '<div class="right-arrow" rel="next" role="button"  tabindex="0" aria-label="Next slide"></div>' +
-      '</div>',
+    template: '<div id="slider" data-ng-class="slider.sliderClass" tabindex="0">' +
+    '<section>' +
+    '<h2 class="page-top-title" class="slider1" data-ng-bind="slider.title"></h2>' +
+    '<p class="page-top-text" data-ng-bind="slider.text"></p>' +
+    '<a data-ng-href="{{slider.URL}}" class="button-front-one">View Project</a>' +
+    '</section>' +
+    '<div class="left-arrow" rel="prev" role="button" tabindex="0" aria-label="Previous slide"></div>' +
+    '<div class="right-arrow" rel="next" role="button"  tabindex="0" aria-label="Next slide"></div>' +
+    '</div>',
     controller: function ($scope) {
 
       $scope.slideController = {
@@ -74,39 +74,71 @@ angular.module('portfolioApp.homepageDirective').directive('sliderDirective', ['
         sliderTotal: _.size(SLIDER),
         timeGap: 8000,
         startGap: 4000,
-        animationGap: 7000,
+        animationGap: 2000,
         timerInterval: null,
 
         timer: function () {
 
+          var pTag;
+          var pTagFunction;
+          var h2Tag;
+          var h2TagFunction;
+          var aTag;
+          var aTagFunction;
+
           // add and remove animate classes
           // this is not used on mobile devices because of performance issues
           // using matchMedia below it is possible to prevent the classes from changing
-          var pTag = angular.element(element[0].querySelector('p'));
-          var h2Tag = angular.element(element[0].querySelector('h2'));
-          var aTag = angular.element(element[0].querySelector('a'));
+
+          fastdom.read(function () {
+
+            pTag = angular.element(element[0].querySelector('p'));
+            h2Tag = angular.element(element[0].querySelector('h2'));
+            aTag = angular.element(element[0].querySelector('a'));
+
+          });
+
 
           sliderDirectiveLink.timerInterval = $interval(function () {
 
             if ($window.matchMedia && $window.matchMedia('(min-device-width: 768px) and (orientation: landscape)')) {
 
-              $animate.addClass(pTag, 'animate-bounceIn', function () {
-                $timeout(function () {
+              pTagFunction = function pTagFunction() {
+
+                $animate.addClass(pTag, 'animate-bounceIn');
+
+                requestTimeout(function () {
                   $animate.removeClass(pTag, 'animate-bounceIn');
+                  scope.$digest();
                 }, sliderDirectiveLink.animationGap);
-              });
 
-              $animate.addClass(h2Tag, 'animate-bounceIn', function () {
-                $timeout(function () {
+              };
+
+              h2TagFunction = function h2TagFunction() {
+
+                $animate.addClass(h2Tag, 'animate-bounceIn');
+
+                requestTimeout(function () {
                   $animate.removeClass(h2Tag, 'animate-bounceIn');
+                  scope.$digest();
                 }, sliderDirectiveLink.animationGap);
-              });
 
-              $animate.addClass(aTag, 'animate-bounceIn-later', function () {
-                $timeout(function () {
+              };
+
+              aTagFunction = function aTagFunction() {
+
+                $animate.addClass(aTag, 'animate-bounceIn-later');
+
+                requestTimeout(function () {
                   $animate.removeClass(aTag, 'animate-bounceIn-later');
+                  scope.$digest();
                 }, sliderDirectiveLink.animationGap);
-              });
+
+              };
+
+              pTagFunction();
+              h2TagFunction();
+              aTagFunction();
 
             }// end matchMedia
 
