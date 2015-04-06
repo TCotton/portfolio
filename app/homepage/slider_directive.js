@@ -156,6 +156,7 @@ angular.module('portfolioApp.homepageDirective').directive('sliderDirective', ['
 
             }
           }, this.timeGap);
+
         },
 
         navigation: function () {

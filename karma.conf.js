@@ -20,6 +20,7 @@ module.exports = function(config) {
       'app/components/underscore/underscore.js',
       'app/components/angular-cache/dist/angular-cache.js',
       'app/components/moment/moment.js',
+      'app/components/fastdom/index.js',
       'app/libs/*.js',
       'app/app.js',
       'app/config/*.js',
@@ -36,7 +37,9 @@ module.exports = function(config) {
       'app/sitemap/*.js',
       'app/contact/*.js',
       'test/spec/**/*.js',
-      'app/shared/helperFunctionService.js'
+      'app/shared/helperFunctionService.js',
+      'app/shared/fastdom_factory.js',
+      'app/shared/requestTimeout_factory.js'
     ],
 
     // list of files / patterns to exclude
