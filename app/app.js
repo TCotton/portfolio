@@ -56,7 +56,9 @@ angular.module('portfolioApp', [
   'helperFunctions',
   'fastdom',
   'requestTimeout',
-  'clearRequestTimeout'
+  'clearRequestTimeout',
+  'requestInterval',
+  'clearRequestInterval'
 ]).config(function ($routeProvider, $httpProvider) {
 
   // Needed for CORS

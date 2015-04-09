@@ -5,14 +5,15 @@
 angular.module('requestTimeout', []).factory('requestTimeout', ['$window', function ($window) {
 
 
-  // requestAnimationFrame() shim by Paul Irish
-// http://paulirish.com/2011/requestanimationframe-for-smart-animating/
-  var requestAnimFrame = (function () {
-    return $window.requestAnimationFrame ||
-      $window.webkitRequestAnimationFrame ||
-      $window.msRequestAnimationFrame ||
+  // handle multiple browsers for requestAnimationFrame()
+  var requestAFrame = (function () {
+    return window.requestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      window.oRequestAnimationFrame ||
+        // if all else fails, use setTimeout
       function (callback) {
-        $window.setTimeout(callback, 1000 / 60);
+        return window.setTimeout(callback, 1000 / 60); // shoot for 60 fps
       };
   })();
 
@@ -39,10 +40,10 @@ angular.module('requestTimeout', []).factory('requestTimeout', ['$window', funct
       var current = new Date().getTime(),
         delta = current - start;
 
-      delta >= delay ? fn.call() : handle.value = requestAnimFrame(loop);
+      delta >= delay ? fn.call() : handle.value = requestAFrame(loop);
     }
 
-    handle.value = requestAnimFrame(loop);
+    handle.value = requestAFrame(loop);
     return handle;
   };
 

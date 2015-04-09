@@ -85,7 +85,6 @@ angular.module('portfolioApp.homepageDirective').directive('sliderDirective', ['
           var h2TagFunction;
           var aTag;
           var aTagFunction;
-
           // add and remove animate classes
           // this is not used on mobile devices because of performance issues
           // using matchMedia below it is possible to prevent the classes from changing
@@ -97,7 +96,6 @@ angular.module('portfolioApp.homepageDirective').directive('sliderDirective', ['
             aTag = angular.element(element[0].querySelector('a'));
 
           });
-
 
           sliderDirectiveLink.timerInterval = $interval(function () {
 

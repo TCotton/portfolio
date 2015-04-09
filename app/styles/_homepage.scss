@@ -1,5 +1,6 @@
 @-webkit-keyframes bounceIn {
   0% {
+    will-change: opacity, -webkit-transform;
     opacity: 0;
     -webkit-transform: scale(.3);
     color: $imageBackground;
@@ -16,6 +17,7 @@
   }
 
   100% {
+    will-change: auto;
     opacity: 1;
     -webkit-transform: scale(1);
   }
@@ -23,6 +25,7 @@
 
 @keyframes bounceIn {
   0% {
+    will-change: opacity, transform;
     opacity: 0;
     transform: scale(.3);
     color: $imageBackground;
@@ -39,6 +42,7 @@
   }
 
   100% {
+    will-change: auto;
     opacity: 1;
     transform: scale(1);
   }
@@ -53,7 +57,7 @@
   background-size: contain;
   padding: 0 0 39.97071742313324% 0;
   position: relative;
-  @include transform(translate3d(0, 0, 0));
+  will-change: contents;
 
   &.slider2 {
     background-image: $sliderOne;
