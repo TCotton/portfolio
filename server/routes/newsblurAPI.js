@@ -133,9 +133,14 @@ module.exports = function (app) {
 
             if (fileName) {
 
-              var file = fs.readFileSync('./server/newsblur_feed/' + fileName + '.json');
+              fs.readFile('./server/newsblur_feed/' + fileName + '.json', function(err, data) {
 
-              res.send(file);
+                if (err) {
+                  throw err;
+                }
+                res.send(data);
+
+              });
 
             }
 
@@ -163,9 +168,14 @@ module.exports = function (app) {
 
                 if (fileName) {
 
-                  var file = fs.readFileSync('./server/newsblur_feed/' + fileName + '.json');
+                  fs.readFile('./server/newsblur_feed/' + fileName + '.json', function(err, data) {
 
-                  res.send(file);
+                    if (err) {
+                      throw err;
+                    }
+                    res.send(data);
+
+                  });
 
                 }
 
@@ -177,9 +187,15 @@ module.exports = function (app) {
         } else {
 
           // if fresher than one day take the contents of the file and send it to the frontend
-          file = fs.readFileSync('./server/newsblur_feed/' + file);
 
-          res.send(file);
+          fs.readFile('./server/newsblur_feed/' + file, function(err, data) {
+
+            if (err) {
+              throw err;
+            }
+            res.send(data);
+
+          });
 
         } // end if if ((dateNow - fileAge) > hours24) {
 
