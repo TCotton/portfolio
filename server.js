@@ -16,9 +16,7 @@ var methodOverride = require('method-override');
 var compress = require('compression');
 var app = express(); 								// create our app w/ express
 var mongoose = require('mongoose'); 					// mongoose for mongodb
-var oneDay = 86400;
-var oneWeek = 604800;
-var oneMonth = 2419200;
+var sixMonths = 14515200;
 
 var conf = require('./server/config/prerender'); 			// load the prerender config
 app.use(require('prerender-node').set('prerenderToken', conf.prerender));
@@ -97,17 +95,17 @@ if (app.get('env') === 'production') {
   });
 
   app.all('/scripts/*', function (req, res, next) {
-    res.header('Cache-Control', 'public, max-age=' + oneMonth);
+    res.header('Cache-Control', 'public, max-age=' + sixMonths);
     next();
   });
 
   app.all('/images/*', function (req, res, next) {
-    res.header('Cache-Control', 'public, max-age=' + oneMonth);
+    res.header('Cache-Control', 'public, max-age=' + sixMonths);
     next();
   });
 
   app.all('/styles/*', function (req, res, next) {
-    res.header('Cache-Control', 'public, max-age=' + oneMonth);
+    res.header('Cache-Control', 'public, max-age=' + sixMonths);
     next();
   });
 
