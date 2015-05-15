@@ -26,6 +26,8 @@ module.exports = function (grunt) {
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
+  var saveLicense = require('uglify-save-license');
+
   // configurable paths
   var yeomanConfig = {
     // configurable paths
@@ -283,6 +285,7 @@ module.exports = function (grunt) {
     uglify: {
       options: {
         mangle: true,
+        preserveComments: saveLicense,
         compress: {
           sequences: true,
           dead_code: true,

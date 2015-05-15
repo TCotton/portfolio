@@ -77,10 +77,11 @@
     }
 
     blockquote {
-      background: white;
+      background: #FDFDFD;
       margin: 1.5em 10px 1.5em 0;
-      padding: 0.5em 10px 0.5em 0;
+      padding: 0.5em 10px 0.5em 0.5em;
       position: relative;
+      clip-path: polygon(0% 0%, 100% 0%, 96% 100%, 0% 100%);
       &:hover {
         content: " (" attr(cite) ")";
       }
