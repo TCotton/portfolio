@@ -88,7 +88,7 @@
     "uglify-save-license": "^0.4.1"
   },
   "engines": {
-    "node": "0.10.36"
+    "node": "0.12.4"
   },
   "scripts": {
     "test": "grunt test"
@@ -106,7 +106,7 @@
     "portfoli0"
   ],
   "author": "Andy Walpole",
-  "license": "copyright",
+  "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/TCotton/portfolio/issues"
   },

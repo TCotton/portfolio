@@ -3,7 +3,7 @@
  */
 'use strict';
 
-angular.module('portfolioApp.homepageDirective').directive('sliderDirective', ['SLIDER', '$interval', '$timeout', '$animate', '$window', '_', 'fastdom', 'requestTimeout', function (SLIDER, $interval, $timeout, $animate, $window, _, fastdom, requestTimeout) {
+angular.module('portfolioApp.homepageDirective').directive('sliderDirective', ['SLIDER', '$interval', '$timeout', '$animate', '$window', '_', 'requestTimeout', function (SLIDER, $interval, $timeout, $animate, $window, _, requestTimeout) {
 
   return {
     restrict: 'A',
@@ -89,13 +89,10 @@ angular.module('portfolioApp.homepageDirective').directive('sliderDirective', ['
           // this is not used on mobile devices because of performance issues
           // using matchMedia below it is possible to prevent the classes from changing
 
-          fastdom.read(function () {
-
             pTag = angular.element(element[0].querySelector('p'));
             h2Tag = angular.element(element[0].querySelector('h2'));
             aTag = angular.element(element[0].querySelector('a'));
 
-          });
 
           sliderDirectiveLink.timerInterval = $interval(function () {
 

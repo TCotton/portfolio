@@ -54,7 +54,6 @@ angular.module('portfolioApp', [
   'underscore',
   'momentLibrary',
   'helperFunctions',
-  'fastdom',
   'requestTimeout',
   'clearRequestTimeout',
   'requestInterval',
