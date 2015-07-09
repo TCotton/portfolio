@@ -2,17 +2,17 @@
   "name": "portfolio",
   "version": "0.0.1",
   "dependencies": {
-    "angular": "1.4.1",
-    "angular-resource": "1.4.1",
-    "angular-sanitize": "1.4.1",
-    "angular-route": "1.4.1",
+    "angular": "^1.4.1",
+    "angular-resource": "^1.4.1",
+    "angular-sanitize": "^1.4.1",
+    "angular-route": "^1.4.1",
     "angular-cache": "~2.3.3",
-    "angular-aria": "1.4.1",
+    "angular-aria": "^1.4.1",
     "underscore": "~1.6.0",
     "moment": "~2.6.0"
   },
   "devDependencies": {
-    "angular-mocks": "1.4.1"
+    "angular-mocks": "^1.4.1"
   },
   "resolutions": {
     "angular": "1.4.*"

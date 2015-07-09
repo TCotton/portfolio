@@ -1,6 +1,6 @@
 {
   "disallowSpacesInNamedFunctionExpression": {
-    "beforeOpeningRoundBrace": true
+    "beforeOpeningRoundBrace":true
   },
   "disallowSpacesInFunctionExpression": {
     "beforeOpeningRoundBrace": true
