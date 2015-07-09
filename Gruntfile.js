@@ -541,6 +541,38 @@ module.exports = function (grunt) {
       }*/
     },
 
+    jscs: {
+      main: {
+        options: {
+          preset: 'airbnb',
+          config: '.jscsrc',
+          esnext: true,
+          maxErrors: 10,
+          verbose: true
+        },
+        dist: {
+          src: '<%= yeoman.app %>/scripts/{,*/}*.js'
+        }
+      }
+    },
+
+    postcss: {
+      options: {
+        map: true,
+        processors: [
+          require('autoprefixer-core')({browsers: 'last 3 versions'}),
+          require('postcss-fakeid'),
+          require('postcss-single-charset'),
+          require('postcss-focus')
+        ]
+      },
+      dist: {
+        src: '<%= yeoman.app %>/styles/main.css',
+        dest: '<%= yeoman.app %>/styles/main-postcss.css'
+      }
+    },
+
+/*
     autoprefixer: {
 
       options: {
@@ -559,6 +591,7 @@ module.exports = function (grunt) {
         dest: '<%= yeoman.app %>/styles/main.css'
       }
     },
+*/
 
 
     karma: {
@@ -588,7 +621,7 @@ module.exports = function (grunt) {
       }
     },
 
-    template_to_files: {
+   /* template_to_files: {
       options: {
         // Task-specific options go here.
         Container: '<%= yeoman.app %>' + '/js/containers/',
@@ -608,12 +641,12 @@ module.exports = function (grunt) {
             dot: true,
             cwd: '<%= yeoman.app %>',
             src: [
-              '/templates/*.{html,js}'
+              '/templates/!*.{html,js}'
             ]
           }
         ]
       }
-    }
+    }*/
   });
 
 
@@ -650,7 +683,7 @@ module.exports = function (grunt) {
     'wiredep',
     'useminPrepare',
     'concurrent:dist',
-    'autoprefixer:single_file',
+    'postcss:dist',
     'ngconstant',
     'concat',
     'preprocess:html',  // Remove DEBUG code from production builds

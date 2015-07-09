@@ -3,7 +3,7 @@
  */
 
 'use strict';
-(function () {
+(function() {
 
   var app = angular.module('portfolioApp.blogPagesController');
 
@@ -22,7 +22,7 @@
    * @param _
    * @constructor
    */
-  var BlogArticleCtrl = function ($rootScope, $scope, $location, BlogDataFactory, $log, $timeout, $sce, $angularCacheFactory, $route, $filter, _) {
+  var BlogArticleCtrl = function($rootScope, $scope, $location, BlogDataFactory, $log, $timeout, $sce, $angularCacheFactory, $route, $filter, _) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
@@ -45,13 +45,14 @@
 
       this.$scope.oldBlogPosts = $angularCacheFactory.get('blogCache').get('allBlogPosts');
 
-    } else {
+    }
+    else {
 
       // start loader spinner in loaderDirective
 
       this.$rootScope.loader = true;
 
-      BlogDataFactory.retrieveData().then(function (result) {
+      BlogDataFactory.retrieveData().then(function(result) {
 
         if (_.isObject(result.data.BlogPosts)) {
 
@@ -62,7 +63,7 @@
 
         }
 
-      }.bind(this), function (response) {
+      }.bind(this), function(response) {
 
         this.$log.warn('Error BlogArticleCtrl');
         this.$log.warn(response);
@@ -78,9 +79,9 @@
      * @type {function(this:BlogArticleCtrl)|*|Function}
      * @private
      */
-    var _renderArticle = function () {
+    var _renderArticle = function() {
 
-      var blogPost = _.filter(this.$scope.oldBlogPosts, function (o) {
+      var blogPost = _.filter(this.$scope.oldBlogPosts, function(o) {
 
         // filter articles array to find the correct article for the page
         if (o.publishedDate.substring(0, 6) === blogId) {
@@ -102,7 +103,8 @@
           var dot = blogPost[0].displayImage.lastIndexOf('.');
           this.$scope.displaySrcsetImage = blogPost[0].displayImage.slice(0, dot) + '-small' + blogPost[0].displayImage.slice(dot);
 
-        } else {
+        }
+        else {
 
           this.$scope.displaySrcsetImage = blogPost[0].displayImage;
 
@@ -113,11 +115,12 @@
         this.$scope.URLencoded = encodeURIComponent(this.$rootScope.currentPage);
         this.$rootScope.faceBookTitle = blogPost[0].title;
         this.$rootScope.faceBookDescription = blogPost[0].contentSnippet;
-        this.$timeout(function () {
+        this.$timeout(function() {
           this.$scope.wordCount = this.$filter('wordcount')(document.querySelector('section > div').innerText || document.querySelector('section > div').textContent);
         }.bind(this), 0);
 
-      } else {
+      }
+      else {
 
         // if not empty redirect to homepage
         // TODO: move this server side
@@ -127,7 +130,7 @@
 
     }.bind(this);
 
-    this.$scope.$watch('oldBlogPosts', function (blogData) {
+    this.$scope.$watch('oldBlogPosts', function(blogData) {
 
       if (blogData !== null) {
 

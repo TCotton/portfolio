@@ -2,7 +2,7 @@
  * Created by andywalpole on 08/04/2014.
  */
 'use strict';
-(function () {
+(function() {
 
   var app = angular.module('portfolioApp.sideProjectsController');
 
@@ -13,9 +13,10 @@
    * @param $log
    * @param PROJECTS
    * @param $window
+   * @param _
    * @constructor
    */
-  var ProjectsPageCtrl = function ($rootScope, $scope, $log, PROJECTS, $window, _) {
+  var ProjectsPageCtrl = function($rootScope, $scope, $log, PROJECTS, $window, _) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
@@ -50,11 +51,11 @@
 
   /** Take the right data for the project page from the constants based on the current page
    * **/
-  ProjectsPageCtrl.prototype.findData = function () {
+  ProjectsPageCtrl.prototype.findData = function() {
 
     var currentPage = this.$rootScope.currentPage.substring(this.$rootScope.currentPage.lastIndexOf('/') + 1, this.$rootScope.currentPage.length);
 
-    var wordData = this._.filter(this.PROJECTS, function (o) {
+    var wordData = this._.filter(this.PROJECTS, function(o) {
 
       if (o.internalUrl.substring(o.internalUrl.lastIndexOf('/') + 1, o.internalUrl.length) === currentPage) {
 
@@ -68,7 +69,8 @@
       this.bindData(wordData);
       this.navigation();
 
-    } else {
+    }
+    else {
 
       this.$window.location.href = '/#!/404';
 
@@ -77,7 +79,7 @@
 
   /** Bind the data from the constans to the local scope
    * **/
-  ProjectsPageCtrl.prototype.bindData = function (data) {
+  ProjectsPageCtrl.prototype.bindData = function(data) {
 
     this.$scope.title = data[0].title;
     this.$scope.summary = data[0].summary;
@@ -91,7 +93,7 @@
 
   /** Navigation that allows the user to go either forwards or backwards in the side projects section
    * **/
-  ProjectsPageCtrl.prototype.navigation = function () {
+  ProjectsPageCtrl.prototype.navigation = function() {
 
     /**
      * TODO: refactor pagination
@@ -106,7 +108,7 @@
     currentPage = this.$rootScope.currentPage.substring(this.$rootScope.currentPage.lastIndexOf('/') + 1, this.$rootScope.currentPage.length);
 
     // return the object for the current page
-    page = this._.filter(this.PROJECTS, function (o) {
+    page = this._.filter(this.PROJECTS, function(o) {
 
       if (o.internalUrl.substring(o.internalUrl.lastIndexOf('/') + 1, o.length) === currentPage) {
 
@@ -119,7 +121,7 @@
       pageNumber = page[0].id;
 
       // return the object for the previous page
-      prevPage = this._.filter(this.PROJECTS, function (o) {
+      prevPage = this._.filter(this.PROJECTS, function(o) {
 
         if (parseInt(o.id, 10) === (parseInt(pageNumber, 10) - 1)) {
 
@@ -128,7 +130,7 @@
       });
 
       // return the object for the next page
-      nextPage = this._.filter(this.PROJECTS, function (o) {
+      nextPage = this._.filter(this.PROJECTS, function(o) {
 
         if (parseInt(o.id, 10) === (parseInt(pageNumber, 10) + 1)) {
 
@@ -138,7 +140,7 @@
 
 
       // if first page then the prev link goes to the end of the pages
-      prevPage = !this._.isEmpty(prevPage) ? prevPage : this._.filter(this.PROJECTS, function (o, k) {
+      prevPage = !this._.isEmpty(prevPage) ? prevPage : this._.filter(this.PROJECTS, function(o, k) {
 
         if (k === 'twttwt') {
           return o;
@@ -146,7 +148,7 @@
       });
 
       // if last page then start loop all over again
-      nextPage = !this._.isEmpty(nextPage) ? nextPage : this._.filter(this.PROJECTS, function (o, k) {
+      nextPage = !this._.isEmpty(nextPage) ? nextPage : this._.filter(this.PROJECTS, function(o, k) {
 
         if (k === 'lightning') {
           return o;
