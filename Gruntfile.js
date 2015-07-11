@@ -120,7 +120,6 @@ module.exports = function(grunt) {
       }
     },
 
-
     express: {
       options: {
         port: 9000,
@@ -490,7 +489,8 @@ module.exports = function(grunt) {
 
     concurrent: {
       server: [
-        'sass:dev'
+        'sass:dev',
+        'jscs'
       ],
       test: [
         'sass:dev'
@@ -681,6 +681,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build', [
     'test',
+    'jscs',
     'clean:dist',
     'wiredep',
     'useminPrepare',
