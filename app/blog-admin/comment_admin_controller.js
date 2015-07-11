@@ -3,7 +3,7 @@
  */
 
 'use strict';
-(function () {
+(function() {
 
   var app = angular.module('portfolioApp.blogAdminController');
 
@@ -18,7 +18,7 @@
    * @param {library} _
    * @constructor
    */
-  var CommentAdminCtrl = function ($scope, MongoCommentFactory, $log, _) {
+  var CommentAdminCtrl = function($scope, MongoCommentFactory, $log, _) {
 
     this.$scope = $scope;
     this.$log = $log;
@@ -37,19 +37,19 @@
    *  @public
    */
 
-  CommentAdminCtrl.prototype.getComments = function () {
+  CommentAdminCtrl.prototype.getComments = function() {
 
     var returnedPromise = this.MongoCommentFactory.getComments();
 
-    returnedPromise.then(function (result) {
+    returnedPromise.then(function(result) {
 
-      if (this._.isObject(result.data)) {
+      if(this._.isObject(result.data)) {
 
         this.$scope.comments = result.data;
 
       }
 
-    }.bind(this), function (result) {
+    }.bind(this), function(result) {
 
       this.$log.warn('Failure: CommentAdminCtrl.getComments');
       this.$log.warn(result);
@@ -58,20 +58,20 @@
 
   };
 
-  CommentAdminCtrl.prototype.deleteComment = function (data) {
+  CommentAdminCtrl.prototype.deleteComment = function(data) {
 
     var returnedPromise = this.MongoCommentFactory.deleteComment(data._id);
 
-    returnedPromise.then(function (value) {
+    returnedPromise.then(function(value) {
 
-      if (value.data) {
+      if(value.data) {
 
         // update page again
         this.getComments();
 
       }
 
-    }.bind(this), function (value) {
+    }.bind(this), function(value) {
 
       this.$log.warn('Failure: CommentAdminCtrl.deleteComment()');
       this.$log.warn(value);
@@ -80,7 +80,7 @@
 
   };
 
-  CommentAdminCtrl.prototype.publishComment = function (data) {
+  CommentAdminCtrl.prototype.publishComment = function(data) {
 
     var formData = {
       id: data._id,
@@ -89,16 +89,16 @@
 
     var returnedPromise = this.MongoCommentFactory.editComment(formData);
 
-    returnedPromise.then(function (value) {
+    returnedPromise.then(function(value) {
 
-      if (value.data) {
+      if(value.data) {
 
         // update page again
         this.getComments();
 
       }
 
-    }.bind(this), function (value) {
+    }.bind(this), function(value) {
 
       this.$log.warn('Failure: CommentAdminCtrl.publishComment');
       this.$log.warn(value);

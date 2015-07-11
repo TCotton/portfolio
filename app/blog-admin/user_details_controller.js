@@ -2,7 +2,7 @@
  * Created by awalpole on 09/04/2014.
  */
 'use strict';
-(function () {
+(function() {
 
   /** Add, edit or delete user details
    * */
@@ -16,7 +16,7 @@
    * @param MongoUserFactory
    * @constructor
    */
-  var UserDetailsCtrl = function ($scope, $log, MongoUserFactory) {
+  var UserDetailsCtrl = function($scope, $log, MongoUserFactory) {
 
     this.$scope = $scope;
     this.$log = $log;
@@ -43,7 +43,7 @@
 
   UserDetailsCtrl.$inject = ['$scope', '$log', 'MongoUserFactory'];
 
-  UserDetailsCtrl.prototype.editUserFun = function (data) {
+  UserDetailsCtrl.prototype.editUserFun = function(data) {
 
     // populate form field models with the data of the user about to be edited
     this.$scope.editThisUser = true;
@@ -52,17 +52,17 @@
 
   };
 
-  UserDetailsCtrl.prototype.deleteUser = function (data) {
+  UserDetailsCtrl.prototype.deleteUser = function(data) {
 
     var returnedPromise = this.MongoUserFactory.deleteUsers(data._id);
 
-    returnedPromise.then(function () {
+    returnedPromise.then(function() {
 
       this.$scope.formSuccess = 'You have successfully deleted the user';
       // repopulate list of users
       this.listAllUsers();
 
-    }.bind(this), function (value) {
+    }.bind(this), function(value) {
 
       this.$log.warn('Failure: UserDetailsCtrl.deleteUser');
       this.$log.warn(value);
@@ -73,7 +73,7 @@
 
   // update a un individuals user details
 
-  UserDetailsCtrl.prototype.submitEditUserForm = function (isValid) {
+  UserDetailsCtrl.prototype.submitEditUserForm = function(isValid) {
 
     this.$scope.editUserSubmit.submitted = true;
     // reset formSuccess scope
@@ -89,7 +89,7 @@
 
       var returnedPromise = this.MongoUserFactory.editUsers(userData);
 
-      returnedPromise.then(function () {
+      returnedPromise.then(function() {
 
         this.$scope.formSuccess = 'You have successfully updated the user details';
 
@@ -99,7 +99,7 @@
         // repopulate list of users after successfully changing user details
         this.listAllUsers();
 
-      }.bind(this), function (value) {
+      }.bind(this), function(value) {
 
         this.$log.warn('Failure: UserDetailsCtrl.submitEditUserForm');
         this.$log.warn(value);
@@ -110,15 +110,15 @@
 
   // list all users
 
-  UserDetailsCtrl.prototype.listAllUsers = function () {
+  UserDetailsCtrl.prototype.listAllUsers = function() {
 
     var returnedPromise = this.MongoUserFactory.getUsers();
 
-    returnedPromise.then(function (value) {
+    returnedPromise.then(function(value) {
 
       this.$scope.allUsers = value.data;
 
-    }.bind(this), function (value) {
+    }.bind(this), function(value) {
 
       this.$log.warn('Failure: UserDetailsCtrl.listAllUsers()');
       this.$log.warn(value);
@@ -129,7 +129,7 @@
 
   // add a user
 
-  UserDetailsCtrl.prototype.submitAddUserForm = function (isValid) {
+  UserDetailsCtrl.prototype.submitAddUserForm = function(isValid) {
 
     // reset formSuccess scope
     this.$scope.formSuccess = null;
@@ -138,7 +138,7 @@
 
       var returnedData = this.MongoUserFactory.addUser(this.$scope.addUser);
 
-      returnedData.then(function () {
+      returnedData.then(function() {
 
         this.$scope.formSuccess = 'You have successfully added a new user';
         // reset scope to remove values from input fields
@@ -150,7 +150,7 @@
         // repopulate list of users
         this.listAllUsers();
 
-      }.bind(this), function (value) {
+      }.bind(this), function(value) {
 
         this.$log.warn('Failure: UserDetailsCtrl.submitAddUserForm');
         this.$log.warn(value);

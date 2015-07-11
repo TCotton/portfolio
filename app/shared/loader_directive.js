@@ -4,7 +4,7 @@
 
 'use strict';
 
-angular.module('portfolioApp.blogPagesDirective').directive('loaderDirective', [function () {
+angular.module('portfolioApp.blogPagesDirective').directive('loaderDirective', [function() {
 
   return {
     restrict: 'AE',

@@ -17,7 +17,7 @@ var path = require('path');
 // use this if you want to recursively match all subfolders:
 // 'test/spec/**/*.js'
 
-module.exports = function (grunt) {
+module.exports = function(grunt) {
   /*jshint camelcase: false */
   // load all grunt tasks
   // Load grunt tasks automatically
@@ -170,19 +170,19 @@ module.exports = function (grunt) {
       }
     },
 
-    preprocess : {
+    preprocess: {
       options: {
         inline: true,
-        context : {
+        context: {
           DEBUG: false
         }
       },
-      html : {
-        src : [
+      html: {
+        src: [
           '<%= yeoman.dist %>/index.html'
         ]
       },
-      js : {
+      js: {
         src: '.tmp/concat/scripts/*.js'
       }
     },
@@ -396,14 +396,16 @@ module.exports = function (grunt) {
     cwebp: {
       images: {
         options: {
-          arguments: [ '-q', 50 ],
+          arguments: ['-q', 50],
           concurrency: 20
         },
         files: [
-          { src: [ '<%= yeoman.app %>/images{,*/}*.{png,jpg,jpeg}',
-            '<%= yeoman.app %>/images/blog-images{,*/}*.{png,jpg,jpeg}',
-            '<%= yeoman.app %>/images/blog-stock-images{,*/}*.{png,jpg,jpeg}',
-            '<%= yeoman.app %>/images/slider{,*/}*.{png,jpg,jpeg}'] }
+          {
+            src: ['<%= yeoman.app %>/images{,*/}*.{png,jpg,jpeg}',
+              '<%= yeoman.app %>/images/blog-images{,*/}*.{png,jpg,jpeg}',
+              '<%= yeoman.app %>/images/blog-stock-images{,*/}*.{png,jpg,jpeg}',
+              '<%= yeoman.app %>/images/slider{,*/}*.{png,jpg,jpeg}']
+          }
         ]
       }
     },
@@ -501,18 +503,18 @@ module.exports = function (grunt) {
       protractor_test: ['protractor-chrome']
     },
 
-  /*  'lodash': {
-      'build': {
-        // output location
-        'dest': '<%= yeoman.app %>/components/lodash.build.js',
-        'options': {
-          // modifiers for prepared builds
-          // modern, strict, compat
-          'modifier': 'modern',
-          'moduleId': 'underscore'
-        }
-      }
-    },*/
+    /*  'lodash': {
+     'build': {
+     // output location
+     'dest': '<%= yeoman.app %>/components/lodash.build.js',
+     'options': {
+     // modifiers for prepared builds
+     // modern, strict, compat
+     'modifier': 'modern',
+     'moduleId': 'underscore'
+     }
+     }
+     },*/
 
     protractor: {
       options: {
@@ -531,28 +533,28 @@ module.exports = function (grunt) {
           }
         }
       }
- /*     run_firefox: {
-        configFile: 'e2e.conf.js', // Default config file
-        options: {
-          args: {
-            browser: 'firefox'
-          }
-        }
-      }*/
+      /*     run_firefox: {
+       configFile: 'e2e.conf.js', // Default config file
+       options: {
+       args: {
+       browser: 'firefox'
+       }
+       }/Applications/MAMP/htdocs/portfolio/app/config/constants.js
+       }*/
     },
 
     jscs: {
-      main: {
-        options: {
-          preset: 'airbnb',
-          config: '.jscsrc',
-          esnext: true,
-          maxErrors: 10,
-          verbose: true
-        },
-        dist: {
-          src: '<%= yeoman.app %>/scripts/{,*/}*.js'
-        }
+      src: ['<%= yeoman.app %>/**/*.js',
+        '!<%= yeoman.app %>/components/**/*.js',
+        '!<%= yeoman.app %>/config/constants.js',
+        '!<%= yeoman.app %>/libs/*.js'
+      ],
+      options: {
+        preset: 'airbnb',
+        config: '.jscsrc',
+        esnext: true,
+        maxErrors: 10,
+        verbose: true
       }
     },
 
@@ -572,26 +574,26 @@ module.exports = function (grunt) {
       }
     },
 
-/*
-    autoprefixer: {
+    /*
+     autoprefixer: {
 
-      options: {
-        // Task-specific options go here.
-        diff:  '<%= yeoman.app %>/styles/file.css.patch',
-        map: true
-      },
+     options: {
+     // Task-specific options go here.
+     diff:  '<%= yeoman.app %>/styles/file.css.patch',
+     map: true
+     },
 
-      // prefix the specified file
-      single_file: {
-        options: {
-          // Target-specific options go here.
-          browsers: ['last 2 versions', 'ie 9']
-        },
-        src:  '<%= yeoman.app %>/styles/main.css',
-        dest: '<%= yeoman.app %>/styles/main.css'
-      }
-    },
-*/
+     // prefix the specified file
+     single_file: {
+     options: {
+     // Target-specific options go here.
+     browsers: ['last 2 versions', 'ie 9']
+     },
+     src:  '<%= yeoman.app %>/styles/main.css',
+     dest: '<%= yeoman.app %>/styles/main.css'
+     }
+     },
+     */
 
 
     karma: {
@@ -621,36 +623,36 @@ module.exports = function (grunt) {
       }
     },
 
-   /* template_to_files: {
-      options: {
-        // Task-specific options go here.
-        Container: '<%= yeoman.app %>' + '/js/containers/',
-        Ctrl: '<%= yeoman.app %>' + '/js/controllers/',
-        Loader: '<%= yeoman.app %>' + '/js/loaders/',
-        'page.html': '<%= yeoman.app %>' + '/js/templatesPage/',
-        'view.html': '<%= yeoman.app %>' + '/js/templatesView/',
-        Module: '<%= yeoman.app %>' + '/js/modules/',
-        RestService: '<%= yeoman.app %>' + '/js/services/',
-        fileGroupNames: ['Module', 'Container', 'Ctrl', 'Loader', 'RestService', 'page.html', 'view.html'],
-        sectionName: 'newBlock' // !important
-      },
-      build: {
-        files: [
-          {
-            expand: true,
-            dot: true,
-            cwd: '<%= yeoman.app %>',
-            src: [
-              '/templates/!*.{html,js}'
-            ]
-          }
-        ]
-      }
-    }*/
+    /* template_to_files: {
+     options: {
+     // Task-specific options go here.
+     Container: '<%= yeoman.app %>' + '/js/containers/',
+     Ctrl: '<%= yeoman.app %>' + '/js/controllers/',
+     Loader: '<%= yeoman.app %>' + '/js/loaders/',
+     'page.html': '<%= yeoman.app %>' + '/js/templatesPage/',
+     'view.html': '<%= yeoman.app %>' + '/js/templatesView/',
+     Module: '<%= yeoman.app %>' + '/js/modules/',
+     RestService: '<%= yeoman.app %>' + '/js/services/',
+     fileGroupNames: ['Module', 'Container', 'Ctrl', 'Loader', 'RestService', 'page.html', 'view.html'],
+     sectionName: 'newBlock' // !important
+     },
+     build: {
+     files: [
+     {
+     expand: true,
+     dot: true,
+     cwd: '<%= yeoman.app %>',
+     src: [
+     '/templates/!*.{html,js}'
+     ]
+     }
+     ]
+     }
+     }*/
   });
 
 
-  grunt.registerTask('server', function (target) {
+  grunt.registerTask('server', function(target) {
 
     if (target === 'dist') {
       return grunt.task.run(['build', 'open', 'express:dist:keepalive']);
@@ -660,7 +662,7 @@ module.exports = function (grunt) {
       'clean:server',
       'concurrent:server',
       'ngconstant',
-/*      'lodash',*/
+      /*      'lodash',*/
       'express:livereload',
       'open',
       'watch'
@@ -674,7 +676,7 @@ module.exports = function (grunt) {
     'express:test',
     'karma',
     'protractor'
-/*    'validate-package'*/
+    /*    'validate-package'*/
   ]);
 
   grunt.registerTask('build', [
@@ -690,9 +692,9 @@ module.exports = function (grunt) {
     'ngmin',
     //'ngAnnotate',
     'inline',
-/*
-    'cwebp',
-*/
+    /*
+     'cwebp',
+     */
     'copy:dist',
     'cssmin',
     'uglify',

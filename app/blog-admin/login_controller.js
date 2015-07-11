@@ -2,7 +2,7 @@
  * Created by awalpole on 09/04/2014.
  */
 'use strict';
-(function () {
+(function() {
 
   var app = angular.module('portfolioApp.blogAdminController');
 
@@ -16,7 +16,7 @@
    * @param $angularCacheFactory
    * @constructor
    */
-  var LoginCtrl = function ($rootScope, $scope, $log, $location, MongoUserFactory, $angularCacheFactory) {
+  var LoginCtrl = function($rootScope, $scope, $log, $location, MongoUserFactory, $angularCacheFactory) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
@@ -42,7 +42,7 @@
 
   /** Admin log-in page
    * **/
-  LoginCtrl.prototype.submitLoginForm = function (isValid) {
+  LoginCtrl.prototype.submitLoginForm = function(isValid) {
 
     this.$scope.submitted = true;
     this.$scope.messages = {};
@@ -58,21 +58,22 @@
 
       var returnedPromise = this.MongoUserFactory.findUsers(user);
 
-      returnedPromise.then(function (value) {
+      returnedPromise.then(function(value) {
 
-        if(value.data !== 'null') {
+        if (value.data !== 'null') {
 
           this.$angularCacheFactory.get('authCache').put('logginIn', value.data);
           this.$rootScope.userid = value.data;
           this.$location.path('/admin/');
 
-        } else {
+        }
+        else {
 
           this.$scope.messages.error = 'There seems to be an issue with your username or password';
 
         }
 
-      }.bind(this), function (value) {
+      }.bind(this), function(value) {
 
         this.$log.warn('Failure: LoginCtrl.submitLoginForm');
         this.$log.warn(value);

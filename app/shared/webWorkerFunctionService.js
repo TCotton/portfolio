@@ -1,7 +1,6 @@
-//called/used as a factory
+//called used as a factory
 
-
-angular.module('webWorkerFunctionService', []).factory('webWorkerFS', ['$q', function ($q) {
+angular.module('webWorkerFunctionService', []).factory('webWorkerFS', ['$q', function($q) {
 
   'use strict';
 
@@ -33,18 +32,18 @@ angular.module('webWorkerFunctionService', []).factory('webWorkerFS', ['$q', fun
 
       if (arguments.length < 2) {
         throw new TypeError('Not enough arguments. ' +
-        'The first param is a function name as string. ' +
-        'The second is an array of data types');
+          'The first param is a function name as string. ' +
+          'The second is an array of data types');
       }
 
       if (typeof arguments[0] !== 'string') {
         throw new TypeError('First parameter must be a string. ' +
-        'This is the name of the function');
+          'This is the name of the function');
       }
 
       if (!Array.isArray(arguments[1])) {
         throw new TypeError('Second parameter must be an array. ' +
-        'This is an array of data to be processed');
+          'This is an array of data to be processed');
       }
 
       return _getWorker(functionName, functionParams);
@@ -54,4 +53,3 @@ angular.module('webWorkerFunctionService', []).factory('webWorkerFS', ['$q', fun
   };
 
 }]);
-

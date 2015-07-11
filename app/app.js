@@ -58,7 +58,7 @@ angular.module('portfolioApp', [
   'clearRequestTimeout',
   'requestInterval',
   'clearRequestInterval'
-]).config(function ($routeProvider, $httpProvider) {
+]).config(function($routeProvider, $httpProvider) {
 
   // Needed for CORS
   // http://better-inter.net/enabling-cors-in-angular-js/
@@ -146,12 +146,9 @@ angular.module('portfolioApp', [
       redirectTo: '/404',
       templateUrl: 'misc/404.html'
     });
-
-
   /** Solution to make server side code accept data submitted with angularjs via POST
+   * Use x-www-form-urlencoded Content-Type
    * **/
-
-    // Use x-www-form-urlencoded Content-Type
   $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
 
   /*jshint maxcomplexity:8 */
@@ -161,8 +158,15 @@ angular.module('portfolioApp', [
    * @param {Object} obj
    * @return {String}
    */
-  var param = function (obj) {
-    var query = '', name, value, fullSubName, subName, subValue, innerObj, i;
+  var param = function(obj) {
+    var query = '';
+    var name;
+    var value;
+    var fullSubName;
+    var subName;
+    var subValue;
+    var innerObj;
+    var i;
 
     for (name in obj) {
       value = obj[name];
@@ -194,16 +198,8 @@ angular.module('portfolioApp', [
   };
 
   // Override $http service's default transformRequest
-  $httpProvider.defaults.transformRequest = [function (data) {
+  $httpProvider.defaults.transformRequest = [function(data) {
     return angular.isObject(data) && String(data) !== '[object File]' ? param(data) : data;
   }];
-
-  // PhantomJS doesn't support bind yet
-  Function.prototype.bind = Function.prototype.bind || function (thisp) {
-    var fn = this;
-    return function () {
-      return fn.apply(thisp, arguments);
-    };
-  };
 
 });

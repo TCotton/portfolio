@@ -2,7 +2,7 @@
  * Created by awalpole on 06/10/2014.
  */
 'use strict';
-angular.module('portfolioApp.contractService').factory('PostFormFactory', ['$http', '$q',  function ($http, $q) {
+angular.module('portfolioApp.contractService').factory('PostFormFactory', ['$http', '$q', function($http, $q) {
 
   return {
 
@@ -14,7 +14,7 @@ angular.module('portfolioApp.contractService').factory('PostFormFactory', ['$htt
         url: '/api/sendmail',
         method: 'POST',
         data: formData,
-        headers : {
+        headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
         }
       });

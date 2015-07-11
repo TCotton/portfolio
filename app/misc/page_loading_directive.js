@@ -4,16 +4,16 @@
 
 'use strict';
 
-angular.module('portfolioApp.miscDirective').directive('pageLoadingDirective', [ function () {
+angular.module('portfolioApp.miscDirective').directive('pageLoadingDirective', [function() {
 
   return {
     restrict: 'E',
     template: '<div class="pace"><div class="pace-progress"><div class="pace-progress-inner"></div></div><div class="pace-activity"></div></div>',
     replace: true,
     scope: true,
-    link: function (scope, element) {
+    link: function(scope, element) {
 
-      var animationBounce = (function () {
+      var animationBounce = (function() {
 
         var _private = {
 
@@ -21,7 +21,7 @@ angular.module('portfolioApp.miscDirective').directive('pageLoadingDirective', [
 
           elem: null,
 
-          prefixedEvent: function (element, type, callback) {
+          prefixedEvent: function(element, type, callback) {
 
             for (var p = 0; p < this.pfx.length; p++) {
               if (!this.pfx[p]) {
@@ -32,34 +32,34 @@ angular.module('portfolioApp.miscDirective').directive('pageLoadingDirective', [
 
           },
 
-          animationListener: function () {
+          animationListener: function() {
             element.addClass('hide');
             element[0].style.webkitAnimationName = '';
           },
 
-          run: function () {
+          run: function() {
             this.prefixedEvent(this.get(), 'AnimationEnd', this.animationListener);
           },
 
-          get: function () {
+          get: function() {
             return this.elem;
           },
 
-          set: function (val) {
+          set: function(val) {
             this.elem = val;
           }
         };
 
         return {
-          init: function (args) {
+          init: function(args) {
 
             _private.set(args.val);
             _private.run();
 
           },
-          destroy: function () {
+          destroy: function() {
 
-            scope.$on('$destroy', function () {
+            scope.$on('$destroy', function() {
 
               console.log('destroy');
 
@@ -72,7 +72,7 @@ angular.module('portfolioApp.miscDirective').directive('pageLoadingDirective', [
         };
       }());
 
-      var handleMediaMatch = function (mql) {
+      var handleMediaMatch = function(mql) {
 
         if (mql.matches) {
 
@@ -94,13 +94,12 @@ angular.module('portfolioApp.miscDirective').directive('pageLoadingDirective', [
 
       scope.$on(
         '$destroy',
-        function( event ) {
+        function(event) {
 
-          console.log( event );
+          console.log(event);
 
         }
       );
-
 
     }
 

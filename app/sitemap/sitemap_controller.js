@@ -3,7 +3,7 @@
  */
 
 'use strict';
-(function () {
+(function() {
 
   var app = angular.module('portfolioApp.sideProjectsController');
 
@@ -19,7 +19,7 @@
    * @param _
    * @constructor
    */
-  var SitemapCtrl = function ($rootScope, $scope, $log, BlogDataFactory, $angularCacheFactory, _) {
+  var SitemapCtrl = function($rootScope, $scope, $log, BlogDataFactory, $angularCacheFactory, _) {
 
     /** Either receive data from BlogDataService or from the cache
      * **/
@@ -29,7 +29,7 @@
 
     /** Take blog object from service ready to be used in the side bar lists
      **/
-    BlogDataFactory.retrieveData().then(function (result) {
+    BlogDataFactory.retrieveData().then(function(result) {
 
       // retrieve blog data to be used in the ng-repeat directive in the sidebar
 
@@ -39,50 +39,48 @@
 
       }
 
-    }, function (response) {
+    }, function(response) {
 
       $log.warn('Error SitemapCtrl');
       $log.warn(response);
 
     });
 
-
     /** Plucks category names from object and then sorts them by popularity
      * **/
-    _sortCategoriesByPopularity = function () {
+    _sortCategoriesByPopularity = function() {
 
       var newArray = {};
 
       _.chain($scope.blogData)
         .pluck('category')
-        .filter(function (r) {
+        .filter(function(r) {
           return typeof r !== 'undefined';
         })
-        .groupBy(function (list) {
+        .groupBy(function(list) {
           return list;
         })
-        .each(function (list, iterator) {
+        .each(function(list, iterator) {
           newArray[iterator] = _.size(list);
         });
 
-      return Object.keys(newArray).sort(function (a, b) {
+      return Object.keys(newArray).sort(function(a, b) {
         return -(newArray[a] - newArray[b]);
       });
 
     };
 
-   $scope.$watch('blogData', function (newData) {
+    $scope.$watch('blogData', function(newData) {
 
       if (newData !== null && !$angularCacheFactory.get('blogCache').get('blogTags')) {
 
         $scope.blogTags = _sortCategoriesByPopularity(newData);
         $angularCacheFactory.get('blogCache').put('blogTags', $scope.blogTags);
 
-
-      } else if (newData !== null && $angularCacheFactory.get('blogCache').get('blogTags')) {
+      }
+      else if (newData !== null && $angularCacheFactory.get('blogCache').get('blogTags')) {
 
         $scope.blogTags = $angularCacheFactory.get('blogCache').get('blogTags');
-
 
       }
 

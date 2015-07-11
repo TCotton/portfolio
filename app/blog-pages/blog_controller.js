@@ -3,7 +3,7 @@
  */
 
 'use strict';
-(function () {
+(function() {
 
   var app = angular.module('portfolioApp.blogPagesController');
 
@@ -16,7 +16,7 @@
    * @param _
    * @constructor
    */
-  var BlogCtrl = function ($scope, BlogDataFactory, $angularCacheFactory, _, $rootScope) {
+  var BlogCtrl = function($scope, BlogDataFactory, $angularCacheFactory, _, $rootScope) {
 
     this.$scope = $scope;
     this.$rootScope = $rootScope;
@@ -29,13 +29,14 @@
 
       this.$scope.totalBlogPosts = $angularCacheFactory.get('blogCache').get('allBlogPosts');
 
-    } else {
+    }
+    else {
 
       // start loader spinner in loaderDirective
 
       this.$rootScope.loader = true;
 
-      BlogDataFactory.retrieveData().then(function (result) {
+      BlogDataFactory.retrieveData().then(function(result) {
 
         if (_.isObject(result.data.BlogPosts)) {
 
@@ -68,14 +69,13 @@
     if (image.indexOf('stock-photo') !== -1) {
       dot = image.lastIndexOf('.');
       newImage = '/' + image.slice(0, dot) + image.slice(dot);
-    } else {
+    }
+    else {
       newImage = '/' + image;
     }
 
     return newImage;
-
   };
-
 
   BlogCtrl.prototype.srcsetImageWebp = function srcsetImageWebp(image) {
 
@@ -85,7 +85,8 @@
     if (image.indexOf('stock-photo') !== -1) {
       dot = image.lastIndexOf('.');
       newImage = '/' + image.slice(0, dot) + image.slice(dot) + '.webp';
-    } else {
+    }
+    else {
       newImage = '/' + image;
     }
 
@@ -101,7 +102,8 @@
     if (image.indexOf('stock-photo') !== -1) {
       dot = image.lastIndexOf('.');
       newImage = '/' + image.slice(0, dot) + '-small' + image.slice(dot);
-    } else {
+    }
+    else {
       newImage = '/' + image;
     }
 

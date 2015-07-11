@@ -6,7 +6,7 @@
 
 'use strict';
 
-(function () {
+(function() {
 
   /** Add, edit or delete blog posts
    * */
@@ -20,7 +20,7 @@
    * @param moment
    * @constructor
    */
-  var AddBlogCtrl = function ($scope, $log, MongoBlogFactory, moment, hfs) {
+  var AddBlogCtrl = function($scope, $log, MongoBlogFactory, moment, hfs) {
 
     this.$scope = $scope;
     this.$log = $log;
@@ -175,7 +175,7 @@
 
   AddBlogCtrl.$inject = ['$scope', '$log', 'MongoBlogFactory', 'moment', 'helperFunctionsService'];
 
-  AddBlogCtrl.prototype.addBlog = function (isValid) {
+  AddBlogCtrl.prototype.addBlog = function(isValid) {
 
     this.$scope.addBlogFormSubmit = true;
 
@@ -189,22 +189,20 @@
 
       var returnedData = this.MongoBlogFactory.addBlogPost(this.$scope.addBlogFormData);
 
-      returnedData.then(function () {
+      returnedData.then(function() {
 
         this.$scope.formSuccess = 'You have successfully added a blog article';
 
         // reset scope to remove values from input fields
         // loop over form field models
-        Object.keys(this.$scope.addBlogFormData).forEach(function (key) {
+        Object.keys(this.$scope.addBlogFormData).forEach(function(key) {
 
           this.$scope.addBlogFormData[key] = null;
 
         }, this);
-
-
         this.$scope.addBlogFormSubmit = false;
 
-      }.bind(this), function (value) {
+      }.bind(this), function(value) {
         this.$log.warn('Failure: AddBlogCtrl.addBlog');
         this.$log.warn(value);
       }.bind(this));

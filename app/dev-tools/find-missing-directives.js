@@ -1,7 +1,9 @@
 (function registerFindMissingDirectives(root) {
   'use strict';
 
-  function isEmpty(node) { return !node.innerHTML.trim(); }
+  function isEmpty(node) {
+    return !node.innerHTML.trim();
+  }
 
   var htmlNodes = [
     'h1', 'script', 'p', 'br', 'a', 'b', 'div', 'i', 'li', 'abbr', 'textarea', 'td',
@@ -27,6 +29,7 @@
   var forEach = Array.prototype.forEach;
 
   var allTags = [];
+
   function walkNode(node) {
     allTags.push(node);
     forEach.call(node.children, walkNode);

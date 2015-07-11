@@ -3,12 +3,11 @@
  */
 
 'use strict';
-(function () {
+(function() {
 
   var app = angular.module('portfolioApp.blogPagesController');
 
   var _filterBlogPosts;
-
   /**
    * @description For displaying posts in their respective categories
    * @param $scope
@@ -20,7 +19,7 @@
    * @param _
    * @constructor
    */
-  var BlogCatController = function ($scope, $location, BlogDataFactory, $log, $angularCacheFactory, $rootScope, _) {
+  var BlogCatController = function($scope, $location, BlogDataFactory, $log, $angularCacheFactory, $rootScope, _) {
 
     this.$scope = $scope;
     this.$location = $location;
@@ -42,13 +41,14 @@
 
       this.$scope.blogPosts = $angularCacheFactory.get('blogCache').get('allBlogPosts');
 
-    } else {
+    }
+    else {
 
       // start loader spinner in loaderDirective
 
       this.$rootScope.loader = true;
 
-      BlogDataFactory.retrieveData().then(function (result) {
+      BlogDataFactory.retrieveData().then(function(result) {
 
         if (_.isObject(result.data.BlogPosts)) {
 
@@ -62,8 +62,6 @@
       }.bind(this));
 
     }
-
-
     /**
      * @function _filterBlogPosts
      * @description filter blog articles based on category
@@ -71,11 +69,10 @@
      * @type {function(this:BlogCatController)|*|Function}
      * @private
      */
-
-    _filterBlogPosts = function (blogs) {
+    _filterBlogPosts = function(blogs) {
 
       return _.chain(blogs)
-        .filter(function (item) {
+        .filter(function(item) {
 
           if (_.isString(item.category) && item.category.toLowerCase() === category) {
             return item;
@@ -85,8 +82,7 @@
 
     }.bind(this);
 
-
-    this.$scope.$watch('blogPosts', function (newData) {
+    this.$scope.$watch('blogPosts', function(newData) {
 
       if (newData !== null) {
 
@@ -119,13 +115,13 @@
 
   BlogCatController.$inject = ['$scope', '$location', 'BlogDataFactory', '$log', '$angularCacheFactory', '$rootScope', '_'];
 
-  BlogCatController.prototype.morePosts = function () {
+  BlogCatController.prototype.morePosts = function() {
 
     this.$scope.displayPosts = this.$scope.displayPosts + 10;
 
   };
 
-  BlogCatController.prototype.srcsetImage = function (image) {
+  BlogCatController.prototype.srcsetImage = function(image) {
 
     var newImage;
 
@@ -135,7 +131,8 @@
 
       newImage = '/' + image.slice(0, dot) + '-small' + image.slice(dot);
 
-    } else {
+    }
+    else {
 
       newImage = '/' + image;
 

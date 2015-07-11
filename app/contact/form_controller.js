@@ -4,7 +4,7 @@
 
 'use strict';
 
-(function () {
+(function() {
 
   var app = angular.module('portfolioApp.contractController');
 
@@ -16,7 +16,7 @@
    * @param _
    * @constructor
    */
-  var FormCtrl = function ($scope, PostFormFactory, $sanitize, _, $timeout) {
+  var FormCtrl = function($scope, PostFormFactory, $sanitize, _, $timeout) {
 
     this.$scope = $scope;
     this.$sanitize = $sanitize;
@@ -47,7 +47,7 @@
    * Also delete form model values and disable the submit button
    * **/
 
-  FormCtrl.prototype.submitContactForm = function (isValid) {
+  FormCtrl.prototype.submitContactForm = function(isValid) {
 
     var formData;
     var promise;
@@ -59,17 +59,16 @@
 
       // sanitise and remove naughty spam stuff from email
       // TODO: move to server
-      formData = this._.object(this._.map(this.$scope.contact, function (value, key) {
+      formData = this._.object(this._.map(this.$scope.contact, function(value, key) {
 
         value = this.$sanitize(value).trim();
 
         return [key, value];
       }.bind(this)));
 
-
       promise = this.PostFormFactory.submitForm(formData);
 
-      promise.then(function (value) {
+      promise.then(function(value) {
 
         if (value.data.success) {
 
@@ -84,15 +83,16 @@
 
         }
 
-      }.bind(this), function () {
+      }.bind(this), function() {
 
         this.$log('Error: FormCtrl.submitContactForm');
 
       }.bind(this));
-    } else {
+    }
+    else {
 
       this.$scope.formFailure = 'The form has not been submitted because of errors. Please review the form error messages and click submit again';
-      this.$timeout(function () {
+      this.$timeout(function() {
         document.querySelector('.comment-form-failure').focus();
       }, 0);
 

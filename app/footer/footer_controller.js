@@ -4,7 +4,7 @@
 /*jshint camelcase: false */
 /*jshint loopfunc: true */
 'use strict';
-(function () {
+(function() {
 
   var app = angular.module('portfolioApp.footerController');
 
@@ -15,7 +15,7 @@
    * @param NewsBlurFactory
    * @constructor
    */
-  var FooterCtrl = function ($scope, $log, NewsBlurFactory, hfs) {
+  var FooterCtrl = function($scope, $log, NewsBlurFactory, hfs) {
 
     this.$scope = $scope;
     this.$log = $log;
@@ -25,7 +25,6 @@
     this.$scope.recArticle.author = null;
     this.$scope.recArticle.content = null;
     this.$scope.recArticle.link = null;
-
 
     /** Using defineProperty prevents injected service being exposed to the template
      * **/
@@ -44,11 +43,11 @@
   /** Return JSON data for latest articles saved in my Newsblur account
    *  Uses Newsblur API on NodeJS
    * **/
-  FooterCtrl.prototype.loadData = function () {
+  FooterCtrl.prototype.loadData = function() {
 
     var returnedPromise = this.NewsBlurFactory.getBlogPosts();
 
-    returnedPromise.then(function (value) {
+    returnedPromise.then(function(value) {
 
       if (value.data !== 'null') {
 
@@ -57,11 +56,11 @@
 
         for (var key in returnedData.stories) {
 
-          this.$scope.recArticle.title = returnedData.stories[key].story_title;
-          this.$scope.recArticle.date = returnedData.stories[key].short_parsed_date.split(',')[0];
-          this.$scope.recArticle.author = returnedData.stories[key].story_authors;
-          this.$scope.recArticle.content = this.hfs.createContentSnippet(returnedData.stories[key].story_content, 260);
-          this.$scope.recArticle.link = returnedData.stories[key].story_permalink;
+          this.$scope.recArticle.title = returnedData.stories[key]['story_title'];
+          this.$scope.recArticle.date = returnedData.stories[key]['short_parsed_date'].split(',')[0];
+          this.$scope.recArticle.author = returnedData.stories[key]['story_authors'];
+          this.$scope.recArticle.content = this.hfs.createContentSnippet(returnedData.stories[key]['story_content'], 260);
+          this.$scope.recArticle.link = returnedData.stories[key]['story_permalink'];
 
           if (key >= 0) {
             // only need first story in json file
@@ -72,7 +71,7 @@
 
       }
 
-    }.bind(this), function (value) {
+    }.bind(this), function(value) {
 
       this.$log.warn('Failure: FooterCtrl.getBlogPosts');
       this.$log.warn(value);

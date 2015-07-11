@@ -2,7 +2,7 @@
  * Created by awalpole on 10/09/2014.
  */
 'use strict';
-angular.module('portfolioApp.blogPagesDirective').directive('code', [function () {
+angular.module('portfolioApp.blogPagesDirective').directive('code', [function() {
 
   function escapeAngleBrackets(text) {
     return text.replace(/</gi, '&lt;').replace(/>/gi, '&gt;');
@@ -20,7 +20,7 @@ angular.module('portfolioApp.blogPagesDirective').directive('code', [function ()
   return {
     restrict: 'E',
     terminal: true,
-    link: function (scope, element) {
+    link: function(scope, element) {
 
       var content = element.html();
       content = escapeAngleBrackets(content);
@@ -28,8 +28,6 @@ angular.module('portfolioApp.blogPagesDirective').directive('code', [function ()
       content = fixIndention(content);
       element.html(content);
       Prism.highlightElement(element[0]);
-
-
     }
   };
 

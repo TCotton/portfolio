@@ -2,11 +2,11 @@
  * Created by awalpole on 06/10/2014.
  */
 'use strict';
-angular.module('portfolioApp.blogAdminService').factory('MongoUserFactory', ['$http', '$q', function ($http, $q) {
+angular.module('portfolioApp.blogAdminService').factory('MongoUserFactory', ['$http', '$q', function($http, $q) {
 
   return {
 
-    addUser: function (formData) {
+    addUser: function(formData) {
 
       // return promise
 
@@ -27,7 +27,7 @@ angular.module('portfolioApp.blogAdminService').factory('MongoUserFactory', ['$h
 
     },
 
-    getUsers: function () {
+    getUsers: function() {
       // return promise
 
       var deferred = $q.defer();
@@ -43,7 +43,7 @@ angular.module('portfolioApp.blogAdminService').factory('MongoUserFactory', ['$h
 
     },
 
-    deleteUsers: function (formData) {
+    deleteUsers: function(formData) {
 
       // return promise
 
@@ -60,7 +60,7 @@ angular.module('portfolioApp.blogAdminService').factory('MongoUserFactory', ['$h
 
     },
 
-    editUsers: function (userData) {
+    editUsers: function(userData) {
       // return promise
 
       var deferred = $q.defer();
@@ -80,7 +80,7 @@ angular.module('portfolioApp.blogAdminService').factory('MongoUserFactory', ['$h
 
     },
 
-    findUsers: function (data) {
+    findUsers: function(data) {
 
       // return promise
 

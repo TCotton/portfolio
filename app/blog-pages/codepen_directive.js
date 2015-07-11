@@ -4,13 +4,13 @@
 
 'use strict';
 
-angular.module('portfolioApp.blogPagesDirective').directive('codepenDirective', ['$timeout', '$document', function ($timeout, $document) {
+angular.module('portfolioApp.blogPagesDirective').directive('codepenDirective', ['$timeout', '$document', function($timeout, $document) {
 
   return {
     restrict: 'A',
-    link: function (scope) {
+    link: function(scope) {
 
-      var addCodePen = $timeout(function () {
+      var addCodePen = $timeout(function() {
         var e = $document[0].createElement('script');
         e.type = 'text/javascript';
         e.id = 'code-pen-script';
@@ -19,16 +19,16 @@ angular.module('portfolioApp.blogPagesDirective').directive('codepenDirective', 
         script.parentNode.insertBefore(e, script);
       }, 10000);
 
-      scope.$on('$destroy', function () {
+      scope.$on('$destroy', function() {
 
-        if($document[0].getElementById('code-pen-script')) {
+        if ($document[0].getElementById('code-pen-script')) {
 
           var script = $document[0].getElementById('code-pen-script');
           script.parentNode.removeChild(script);
 
         }
 
-        if(addCodePen) {
+        if (addCodePen) {
           $timeout.cancel(addCodePen);
         }
 

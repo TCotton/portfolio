@@ -3,7 +3,6 @@
  */
 'use strict';
 
-angular.module('momentLibrary', []).factory('moment',['$window', function ($window) {
+angular.module('momentLibrary', []).factory('moment', ['$window', function($window) {
   return $window.moment;
 }]);
-

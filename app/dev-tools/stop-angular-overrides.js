@@ -12,7 +12,7 @@
   var existingFilters = Object.create(null);
   var existingControllers = Object.create(null);
 
-  angular.module = function (name, deps) {
+  angular.module = function(name, deps) {
     if (!deps) {
       return _module(name);
     }
@@ -24,7 +24,7 @@
 
     // proxy .filter calls to the new module
     var _filter = angular.bind(m, m.filter);
-    m.filter = function (name, fn) {
+    m.filter = function(name, fn) {
       if (!fn) {
         return _filter(name);
       }
@@ -37,7 +37,7 @@
 
     // proxy .controller calls to the new module
     var _controller = angular.bind(m, m.controller);
-    m.controller = function (name, deps) {
+    m.controller = function(name, deps) {
       if (!deps) {
         return _controller(name);
       }

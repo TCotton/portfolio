@@ -4,7 +4,7 @@
 
 'use strict';
 
-angular.module('portfolioApp.homepageDirective').directive('homepageStatsDirective', ['STATS', '$window', '_', 'moment', function (STATS, $window, _, moment) {
+angular.module('portfolioApp.homepageDirective').directive('homepageStatsDirective', ['STATS', '$window', '_', 'moment', function(STATS, $window, _, moment) {
 
   return {
     restrict: 'A',
@@ -14,7 +14,7 @@ angular.module('portfolioApp.homepageDirective').directive('homepageStatsDirecti
       section: '@section'
     },
 
-    link: function (scope) {
+    link: function(scope) {
 
       var mql;
       var handleMediaMatch;
@@ -29,14 +29,13 @@ angular.module('portfolioApp.homepageDirective').directive('homepageStatsDirecti
       // now add the days to the scope
       var calculateDate = Math.round(totalDays).toString();
 
-
       /** Only display the data that fits the screen width
        * Less than 979px = display three blocks of data
        * More that 979px = display all the data
        * If matchMedia isn't supported (IE9) then fallback to display all the data
        * **/
 
-      handleMediaMatch = function (mql) {
+      handleMediaMatch = function(mql) {
 
         if (!mql.matches) {
 
@@ -44,7 +43,8 @@ angular.module('portfolioApp.homepageDirective').directive('homepageStatsDirecti
           scope.stats.block1.header = calculateDate;
           mql.removeListener(handleMediaMatch);
 
-        } else {
+        }
+        else {
 
           scope.stats = _.toArray(STATS).slice(0, 3);
           scope.stats[0].header = calculateDate;
@@ -59,14 +59,15 @@ angular.module('portfolioApp.homepageDirective').directive('homepageStatsDirecti
         mql.addListener(handleMediaMatch);
         handleMediaMatch(mql);
 
-      } else {
+      }
+      else {
 
         scope.stats = STATS;
         scope.stats.block1.header = calculateDate;
 
       }
 
-      scope.$on('$destroy', function () {
+      scope.$on('$destroy', function() {
 
         delete scope.stats;
         mql.removeListener(handleMediaMatch);

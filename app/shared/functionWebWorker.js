@@ -2,7 +2,6 @@
 
 'use strict';
 
-
 var functionsObject = {
 
   addSEOFriendlyURL: function addSEOFriendlyURL(data) {
@@ -49,7 +48,9 @@ var functionsObject = {
   createContentSnippetBlog: function createContentSnippetBlog(data) {
 
     // to create a codeSnippet cut down the content to around 130 characters without cutting a whole word in half
-    var snippet, maxLength, trimmedString;
+    var snippet;
+    var maxLength;
+    var trimmedString;
 
     snippet = data.toString();
 
@@ -72,7 +73,9 @@ var functionsObject = {
   createContentSnippetFooter: function createContentSnippetFooter(title) {
 
     // to create a codeSnippet cut down the content to around 130 characters without cutting a whole word in half
-    var snippet, maxLength, trimmedString;
+    var snippet;
+    var maxLength;
+    var trimmedString;
 
     //strip any HTML tags
     snippet = title.replace(/(<([^>]+)>)/ig, '').trim();
@@ -90,8 +93,6 @@ var functionsObject = {
 
 };
 
-
-
 onmessage = function onmessage(oEvent) {
 
   if (oEvent.data instanceof Object &&
@@ -103,4 +104,3 @@ onmessage = function onmessage(oEvent) {
   }
 
 };
-

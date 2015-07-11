@@ -2,11 +2,11 @@
  * Created by awalpole on 06/10/2014.
  */
 'use strict';
-angular.module('portfolioApp.blogAdminService').factory('MongoBlogFactory', ['$http', '$q', function ($http, $q) {
+angular.module('portfolioApp.blogAdminService').factory('MongoBlogFactory', ['$http', '$q', function($http, $q) {
 
   return {
 
-    addBlogPost: function (formData) {
+    addBlogPost: function(formData) {
 
       // return promise
 
@@ -27,7 +27,7 @@ angular.module('portfolioApp.blogAdminService').factory('MongoBlogFactory', ['$h
 
     },
 
-    getBlogPosts: function () {
+    getBlogPosts: function() {
 
       // return promise
 
@@ -45,7 +45,7 @@ angular.module('portfolioApp.blogAdminService').factory('MongoBlogFactory', ['$h
 
     },
 
-    editBlogPosts: function (formData) {
+    editBlogPosts: function(formData) {
 
       // return promise
 
@@ -66,7 +66,7 @@ angular.module('portfolioApp.blogAdminService').factory('MongoBlogFactory', ['$h
 
     },
 
-    deleteBlogPost: function (formData) {
+    deleteBlogPost: function(formData) {
 
       // return promise
 
@@ -83,7 +83,7 @@ angular.module('portfolioApp.blogAdminService').factory('MongoBlogFactory', ['$h
 
     },
 
-    getOldBlogPosts: function (data) {
+    getOldBlogPosts: function(data) {
 
       // return promise
 

@@ -1,13 +1,11 @@
 /**
  * Created by awalpole on 06/10/2014.
  */
-
 'use strict';
-angular.module('portfolioApp.blogCommentsService').factory('MongoCommentFactory', ['$http', '$q', function ($http, $q) {
+angular.module('portfolioApp.blogCommentsService').factory('MongoCommentFactory', ['$http', '$q', function($http, $q) {
 
   return {
-
-    addComment: function (formData) {
+    addComment: function(formData) {
 
       // return promise
 
@@ -28,7 +26,7 @@ angular.module('portfolioApp.blogCommentsService').factory('MongoCommentFactory'
 
     },
 
-    getComments: function () {
+    getComments: function() {
 
       // return promise
 
@@ -45,7 +43,7 @@ angular.module('portfolioApp.blogCommentsService').factory('MongoCommentFactory'
 
     },
 
-    editComment: function (formData) {
+    editComment: function(formData) {
 
       // return promise
 
@@ -66,7 +64,7 @@ angular.module('portfolioApp.blogCommentsService').factory('MongoCommentFactory'
 
     },
 
-    getPubilshedComments: function (data) {
+    getPubilshedComments: function(data) {
 
       // return promise
 
@@ -84,7 +82,7 @@ angular.module('portfolioApp.blogCommentsService').factory('MongoCommentFactory'
 
     },
 
-    deleteComment: function (formData) {
+    deleteComment: function(formData) {
 
       // return promise
 

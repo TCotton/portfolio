@@ -5,7 +5,7 @@
  */
 
 'use strict';
-(function () {
+(function() {
 
   /** Add, edit or delete blog posts
    * */
@@ -23,7 +23,7 @@
    * @param hfs
    * @constructor
    */
-  var EditBlogCtrl = function ($scope, $log, MongoBlogFactory, _, hfs) {
+  var EditBlogCtrl = function($scope, $log, MongoBlogFactory, _, hfs) {
 
     this.$scope = $scope;
     this.$log = $log;
@@ -68,7 +68,9 @@
     this.createContentSnippet = function createContentSnippet() {
 
       // to create a codeSnippet cut down the content to around 130 characters without cutting a whole word in half
-      var snippet, maxLength, trimmedString;
+      var snippet;
+      var maxLength;
+      var trimmedString;
 
       snippet = this.$scope.editBlogFormData.content.toString();
 
@@ -119,7 +121,6 @@
 
       } while (x < l);
 
-
       // remove white space and replace with hythen
       newTitle = newTitle.replace(regexWhiteSpace, '-');
 
@@ -127,7 +128,6 @@
       newTitle = newTitle.replace(regexNonAlphaNum, '');
 
       newTitle = newTitle.replace(twoDashes, '-');
-
 
       this.$scope.editBlogFormData.url = newTitle;
 
@@ -137,13 +137,9 @@
 
   EditBlogCtrl.$inject = ['$scope', '$log', 'MongoBlogFactory', '_', 'helperFunctionsService'];
 
-  /** Public methods
-   * **/
-
-
   /** When the user clicks to edit a blog post the input fields are populated by the relevant data
    * **/
-  EditBlogCtrl.prototype.editArticle = function (data) {
+  EditBlogCtrl.prototype.editArticle = function(data) {
 
     // display form
     this.$scope.displayForm = true;
@@ -163,7 +159,7 @@
 
   /** Called when the user submits the form
    * **/
-  EditBlogCtrl.prototype.editBlog = function (isValid) {
+  EditBlogCtrl.prototype.editBlog = function(isValid) {
 
     this.$scope.editBlogFormSubmit = true;
 
@@ -190,7 +186,7 @@
 
       var returnedPromise = this.MongoBlogFactory.editBlogPosts(formData);
 
-      returnedPromise.then(function () {
+      returnedPromise.then(function() {
 
         // display success message
 
@@ -198,7 +194,7 @@
 
         // reset scope to remove values from input fields
         // loop over form field models
-        Object.keys(this.$scope.editBlogFormData).forEach(function (key) {
+        Object.keys(this.$scope.editBlogFormData).forEach(function(key) {
 
           this.$scope.editBlogFormData[key] = null;
 
@@ -210,7 +206,7 @@
         // update page again
         this.getBlogs();
 
-      }.bind(this), function (value) {
+      }.bind(this), function(value) {
 
         this.$log.warn('Failure: EditBlogCtrl.editBlog');
         this.$log.warn(value);
@@ -223,11 +219,11 @@
   /** request all blogs from the blog document
    * which is then listed using ng-repeat
    * **/
-  EditBlogCtrl.prototype.getBlogs = function () {
+  EditBlogCtrl.prototype.getBlogs = function() {
 
     var returnedPromise = this.MongoBlogFactory.getBlogPosts();
 
-    returnedPromise.then(function (value) {
+    returnedPromise.then(function(value) {
 
       if (this._.isObject(value.data)) {
 
@@ -235,7 +231,7 @@
 
       }
 
-    }.bind(this), function (value) {
+    }.bind(this), function(value) {
 
       this.$log.warn('Failure: EditBlogCtrl.getBlogs');
       this.$log.warn(value);
@@ -248,7 +244,7 @@
    * asking again for confirmation and the local scope is populated with the
    * blog data ready for submission to the remote service
    * **/
-  EditBlogCtrl.prototype.deleteArticle = function (data) {
+  EditBlogCtrl.prototype.deleteArticle = function(data) {
 
     this.$scope.displayPopup = true;
 
@@ -264,7 +260,7 @@
 
   /** On the confirmation popup is a chance for the user to cancel the delete action
    * **/
-  EditBlogCtrl.prototype.hidePopup = function () {
+  EditBlogCtrl.prototype.hidePopup = function() {
 
     this.$scope.displayPopup = false;
 
@@ -274,11 +270,11 @@
    *  local scope is reset to null and the list of blog articles is updated
    * **/
 
-  EditBlogCtrl.prototype.removeArticle = function () {
+  EditBlogCtrl.prototype.removeArticle = function() {
 
     var returnedPromise = this.MongoBlogFactory.deleteBlogPost(this.$scope.dataToDelete._id);
 
-    returnedPromise.then(function (value) {
+    returnedPromise.then(function(value) {
 
       if (value) {
 
@@ -298,7 +294,7 @@
 
       }
 
-    }.bind(this), function (value) {
+    }.bind(this), function(value) {
 
       this.$log.warn('Failure: EditBlogCtrl.removeArticle()');
       this.$log.warn(value);

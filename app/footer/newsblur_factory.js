@@ -3,7 +3,7 @@
  */
 
 'use strict';
-angular.module('portfolioApp.footerService').factory('NewsBlurFactory', ['$http', '$q',  function ($http, $q) {
+angular.module('portfolioApp.footerService').factory('NewsBlurFactory', ['$http', '$q', function($http, $q) {
 
   return {
 

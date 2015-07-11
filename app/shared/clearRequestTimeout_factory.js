@@ -3,7 +3,7 @@
  */
 
 'use strict';
-angular.module('clearRequestTimeout', []).factory('clearRequestTimeout',['$window', function ($window) {
+angular.module('clearRequestTimeout', []).factory('clearRequestTimeout', ['$window', function($window) {
 
   /**
    * Behaves the same as clearTimeout except uses cancelRequestAnimationFrame() where possible for better performance
@@ -12,12 +12,11 @@ angular.module('clearRequestTimeout', []).factory('clearRequestTimeout',['$windo
   $window.clearRequestTimeout = function(handle) {
     $window.cancelAnimationFrame ? $window.cancelAnimationFrame(handle.value) :
       $window.webkitCancelAnimationFrame ? $window.webkitCancelAnimationFrame(handle.value) :
-          $window.mozCancelRequestAnimationFrame ? $window.mozCancelRequestAnimationFrame(handle.value) :
-              $window.msCancelRequestAnimationFrame ? $window.msCancelRequestAnimationFrame(handle.value) :
-                clearTimeout(handle);
+        $window.mozCancelRequestAnimationFrame ? $window.mozCancelRequestAnimationFrame(handle.value) :
+          $window.msCancelRequestAnimationFrame ? $window.msCancelRequestAnimationFrame(handle.value) :
+            clearTimeout(handle);
   };
 
   return $window.clearRequestTimeout;
-
 
 }]);

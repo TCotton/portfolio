@@ -4,13 +4,13 @@
 
 'use strict';
 
-angular.module('portfolioApp.blogPagesDirective').directive('twitterDirective', ['$timeout', '$document', function ($timeout, $document) {
+angular.module('portfolioApp.blogPagesDirective').directive('twitterDirective', ['$timeout', '$document', function($timeout, $document) {
 
   return {
     restrict: 'A',
-    link: function (scope) {
+    link: function(scope) {
 
-      var addTwitterScript = $timeout(function () {
+      var addTwitterScript = $timeout(function() {
         var e = $document[0].createElement('script');
         e.type = 'text/javascript';
         e.id = 'twitter-script';
@@ -19,16 +19,16 @@ angular.module('portfolioApp.blogPagesDirective').directive('twitterDirective', 
         script.parentNode.insertBefore(e, script);
       }, 7000);
 
-      scope.$on('$destroy', function () {
+      scope.$on('$destroy', function() {
 
-        if($document[0].getElementById('twitter-script')) {
+        if ($document[0].getElementById('twitter-script')) {
 
           var script = $document[0].getElementById('twitter-script');
           script.parentNode.removeChild(script);
 
         }
 
-        if(addTwitterScript) {
+        if (addTwitterScript) {
           $timeout.cancel(addTwitterScript);
         }
 

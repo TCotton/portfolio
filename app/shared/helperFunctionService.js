@@ -2,8 +2,7 @@
  * Created by awalpole on 26/02/15.
  */
 
-
-angular.module('helperFunctions', []).factory('helperFunctionsService', [function () {
+angular.module('helperFunctions', []).factory('helperFunctionsService', [function() {
   'use strict';
 
   return {
@@ -11,7 +10,9 @@ angular.module('helperFunctions', []).factory('helperFunctionsService', [functio
     createContentSnippet: function createContentSnippet(content, maxChars) {
 
       // to create a codeSnippet cut down the content to around 130 characters without cutting a whole word in half
-      var maxLength, trimmedString, sanitized;
+      var maxLength;
+      var trimmedString;
+      var sanitized;
 
       sanitized = content.toString().replace(/(<([^>]+)>)/ig, '');
 
@@ -21,11 +22,11 @@ angular.module('helperFunctions', []).factory('helperFunctionsService', [functio
       //trim the string to the maximum length
       // make sure not include opening paragraph tag if any
       // hence, cut string at the third characters
-      if(maxLength === 260) {
+      if (maxLength === 260) {
         trimmedString = sanitized.substr(0, maxLength);
       }
 
-      if(maxLength === 130) {
+      if (maxLength === 130) {
         trimmedString = sanitized.substr(0, maxLength);
       }
 
@@ -79,6 +80,5 @@ angular.module('helperFunctions', []).factory('helperFunctionsService', [functio
     }
 
   };
-
 
 }]);
