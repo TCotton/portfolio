@@ -74,7 +74,9 @@
     this.createContentSnippet = function createContentSnippet() {
 
       // to create a codeSnippet cut down the content to around 130 characters without cutting a whole word in half
-      var snippet, maxLength, trimmedString;
+      var snippet;
+      var maxLength;
+      var trimmedString;
 
       snippet = this.$scope.addBlogFormData.content.toString();
 
@@ -111,7 +113,6 @@
       var x;
       var l;
       var newTitle;
-
 
       // initially remove hyphens and the white space to their right
       newTitle = this.$scope.addBlogFormData.title.replace(/\–\s/g, '').toLowerCase();

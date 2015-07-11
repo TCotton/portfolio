@@ -43,7 +43,7 @@
 
     returnedPromise.then(function(result) {
 
-      if(this._.isObject(result.data)) {
+      if (this._.isObject(result.data)) {
 
         this.$scope.comments = result.data;
 
@@ -64,7 +64,7 @@
 
     returnedPromise.then(function(value) {
 
-      if(value.data) {
+      if (value.data) {
 
         // update page again
         this.getComments();
@@ -91,7 +91,7 @@
 
     returnedPromise.then(function(value) {
 
-      if(value.data) {
+      if (value.data) {
 
         // update page again
         this.getComments();
@@ -105,7 +105,6 @@
 
     }.bind(this));
 
-
   };
 
   CommentAdminCtrl.$inject = ['$scope', 'MongoCommentFactory', '$log', '_'];
@@ -113,4 +112,3 @@
   app.controller('CommentAdminCtrl', CommentAdminCtrl);
 
 }());
-

@@ -136,7 +136,6 @@
 
     };
 
-
     if ($window.matchMedia) {
 
       var mql = $window.matchMedia('screen and (max-width: 767px)');

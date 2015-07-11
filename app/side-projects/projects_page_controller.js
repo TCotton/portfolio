@@ -138,7 +138,6 @@
         }
       });
 
-
       // if first page then the prev link goes to the end of the pages
       prevPage = !this._.isEmpty(prevPage) ? prevPage : this._.filter(this.PROJECTS, function(o, k) {
 
