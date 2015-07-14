@@ -16,7 +16,7 @@ exports.config = {
 
   // The location of the selenium standalone server .jar file.
   // http://docs.seleniumhq.org/download/
-  seleniumServerJar: './support-scripts/selenium-server-standalone-2.43.1.jar',
+  seleniumServerJar: './support-scripts/selenium-server-standalone-2.46.0.jar',
   // The port to start the selenium server on, or null if the server should
   // find its own unused port.
   seleniumPort: 4444,

@@ -490,7 +490,7 @@ module.exports = function(grunt) {
     concurrent: {
       server: [
         'sass:dev',
-        'jscs'
+        'jscs:prod'
       ],
       test: [
         'sass:dev'
@@ -562,39 +562,22 @@ module.exports = function(grunt) {
       options: {
         map: true,
         processors: [
+          require('postcss-will-change'),
           require('autoprefixer-core')({browsers: 'last 3 versions'}),
           require('postcss-fakeid'),
           require('postcss-single-charset'),
           require('postcss-focus')
         ]
       },
+      prod: {
+        src: '<%= yeoman.app %>/styles/main.css',
+        dest: '<%= yeoman.app %>/styles/main.css'
+      },
       dist: {
         src: '<%= yeoman.app %>/styles/main.css',
-        dest: '<%= yeoman.app %>/styles/main-postcss.css'
+        dest: '<%= yeoman.dist %>/styles/main-postcss.css'
       }
     },
-
-    /*
-     autoprefixer: {
-
-     options: {
-     // Task-specific options go here.
-     diff:  '<%= yeoman.app %>/styles/file.css.patch',
-     map: true
-     },
-
-     // prefix the specified file
-     single_file: {
-     options: {
-     // Target-specific options go here.
-     browsers: ['last 2 versions', 'ie 9']
-     },
-     src:  '<%= yeoman.app %>/styles/main.css',
-     dest: '<%= yeoman.app %>/styles/main.css'
-     }
-     },
-     */
-
 
     karma: {
       unit: {
@@ -621,36 +604,9 @@ module.exports = function(grunt) {
           }
         ]
       }
-    },
+    }
 
-    /* template_to_files: {
-     options: {
-     // Task-specific options go here.
-     Container: '<%= yeoman.app %>' + '/js/containers/',
-     Ctrl: '<%= yeoman.app %>' + '/js/controllers/',
-     Loader: '<%= yeoman.app %>' + '/js/loaders/',
-     'page.html': '<%= yeoman.app %>' + '/js/templatesPage/',
-     'view.html': '<%= yeoman.app %>' + '/js/templatesView/',
-     Module: '<%= yeoman.app %>' + '/js/modules/',
-     RestService: '<%= yeoman.app %>' + '/js/services/',
-     fileGroupNames: ['Module', 'Container', 'Ctrl', 'Loader', 'RestService', 'page.html', 'view.html'],
-     sectionName: 'newBlock' // !important
-     },
-     build: {
-     files: [
-     {
-     expand: true,
-     dot: true,
-     cwd: '<%= yeoman.app %>',
-     src: [
-     '/templates/!*.{html,js}'
-     ]
-     }
-     ]
-     }
-     }*/
   });
-
 
   grunt.registerTask('server', function(target) {
 
@@ -674,8 +630,7 @@ module.exports = function(grunt) {
     'concurrent:test',
     'ngconstant:test',
     'express:test',
-    'karma',
-    'protractor'
+    'karma'
     /*    'validate-package'*/
   ]);
 
