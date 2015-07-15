@@ -1692,23 +1692,23 @@ If not, the italic Georgia style is lifted from the user's computer.
     cursor: pointer;
     text-decoration: none;
   }
-  /* line 15, modules/_buttons.scss */
+  /* line 16, modules/_buttons.scss */
   a.button-front-one:hover, a.button-front-one:active {
     color: #026176;
   }
-  /* line 18, modules/_buttons.scss */
+  /* line 21, modules/_buttons.scss */
   a.button-front-one:disabled:hover, a.button-front-one:disabled:hover {
     color: white;
   }
 }
 @media screen and (max-width: 767px) {
-  /* line 25, modules/_buttons.scss */
+  /* line 30, modules/_buttons.scss */
   a.button-front-one {
     width: 90%;
   }
 }
 @media screen {
-  /* line 30, modules/_buttons.scss */
+  /* line 35, modules/_buttons.scss */
   .button-side-projects {
     width: 100%;
     height: 56px;
@@ -1720,16 +1720,16 @@ If not, the italic Georgia style is lifted from the user's computer.
     border-radius: 5px;
     border: 1px solid #666666;
   }
-  /* line 39, modules/_buttons.scss */
+  /* line 45, modules/_buttons.scss */
   .button-side-projects:hover, .button-side-projects:active {
     color: #333333;
   }
-  /* line 42, modules/_buttons.scss */
+  /* line 50, modules/_buttons.scss */
   .button-side-projects:disabled:hover, .button-side-projects:disabled:hover {
     color: white;
   }
 
-  /* line 47, modules/_buttons.scss */
+  /* line 57, modules/_buttons.scss */
   .button-mywork {
     width: 100%;
     height: 56px;
@@ -1741,16 +1741,16 @@ If not, the italic Georgia style is lifted from the user's computer.
     border-radius: 5px;
     background: #666666;
   }
-  /* line 56, modules/_buttons.scss */
+  /* line 67, modules/_buttons.scss */
   .button-mywork:hover, .button-mywork:active {
     color: #e6e6e6;
   }
-  /* line 59, modules/_buttons.scss */
+  /* line 72, modules/_buttons.scss */
   .button-mywork:disabled:hover, .button-mywork:disabled:hover {
     color: white;
   }
 
-  /* line 64, modules/_buttons.scss */
+  /* line 79, modules/_buttons.scss */
   .button-contact {
     width: 310px;
     height: 56px;
@@ -1765,16 +1765,16 @@ If not, the italic Georgia style is lifted from the user's computer.
     float: left;
     border: none;
   }
-  /* line 76, modules/_buttons.scss */
+  /* line 92, modules/_buttons.scss */
   .button-contact:hover, .button-contact:active {
     color: #e6e6e6;
   }
-  /* line 79, modules/_buttons.scss */
+  /* line 97, modules/_buttons.scss */
   .button-contact:disabled:hover, .button-contact:disabled:hover {
     color: white;
   }
 
-  /* line 84, modules/_buttons.scss */
+  /* line 104, modules/_buttons.scss */
   .button-skills-aboutme {
     height: 58px;
     border-radius: 10px;
@@ -1786,7 +1786,7 @@ If not, the italic Georgia style is lifted from the user's computer.
   }
 }
 @media screen and (max-width: 767px) {
-  /* line 95, modules/_buttons.scss */
+  /* line 115, modules/_buttons.scss */
   .button-contact {
     width: 100%;
   }

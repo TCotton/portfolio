@@ -12,15 +12,20 @@ a.button-front-one {
   text-transform: uppercase;
   cursor: pointer;
   text-decoration: none;
-  &:hover, &:active {
+
+  &:hover,
+  &:active {
     color: darken($textFour, 20);
   }
-  &:disabled:hover, &:disabled:hover {
+
+  &:disabled:hover,
+  &:disabled:hover {
     color: white;
   }
+
 }
 
-@include breakpoint(mobile) {
+@include breakpoint('mobile') {
 
   a.button-front-one {
     width: 90%;
@@ -36,12 +41,17 @@ a.button-front-one {
   font-weight: 400;
   border-radius: 5px;
   border: 1px solid $textTwo;
-  &:hover, &:active {
+
+  &:hover,
+  &:active {
     color: darken($textTwo, 20);
   }
-  &:disabled:hover, &:disabled:hover {
+
+  &:disabled:hover,
+  &:disabled:hover {
     color: white;
   }
+
 }
 
 .button-mywork {
@@ -53,12 +63,17 @@ a.button-front-one {
   font-weight: 400;
   border-radius: 5px;
   background: $textTwo;
-  &:hover, &:active {
+
+  &:hover,
+  &:active {
     color: darken(white, 10);
   }
-  &:disabled:hover, &:disabled:hover {
+
+  &:disabled:hover,
+  &:disabled:hover {
     color: white;
   }
+
 }
 
 .button-contact {
@@ -73,12 +88,17 @@ a.button-front-one {
   clear: both;
   float: left;
   border: none;
-  &:hover, &:active {
+
+  &:hover,
+  &:active {
     color: darken(white, 10);
   }
-  &:disabled:hover, &:disabled:hover {
+
+  &:disabled:hover,
+  &:disabled:hover {
     color: white;
   }
+
 }
 
 .button-skills-aboutme {
@@ -90,9 +110,9 @@ a.button-front-one {
   font-weight: 300;
 }
 
-@include breakpoint("mobile") {
+@include breakpoint('mobile') {
 
   .button-contact {
-    width: 100%
+    width: 100%;
   }
 }
