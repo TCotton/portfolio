@@ -60,18 +60,18 @@
 
   /* line 76, _reset.scss */
   a:focus {
-    outline: thin dotted #cccccc;
+    outline: thin dotted #ccc;
   }
 
   /* line 80, _reset.scss */
   textarea:focus,
   input:focus {
-    outline: thin dotted #cccccc;
+    outline: thin dotted #ccc;
   }
 
   /* line 85, _reset.scss */
   :focus {
-    outline: thin dotted #cccccc;
+    outline: thin dotted #ccc;
   }
 
   /* line 90, _reset.scss */
@@ -3652,57 +3652,57 @@
     text-align: right;
   }
 }
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   http://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
 @media print {
-  /* line 8, _print.scss */
+  /* line 4, _print.scss */
   *,
   *:before,
   *:after {
     background: transparent !important;
     color: #000 !important;
-    /* Black prints faster:
-                                      http://www.sanbeiji.com/archives/953 */
     box-shadow: none !important;
     text-shadow: none !important;
   }
 
-  /* line 19, _print.scss */
+  /* line 23, _print.scss */
   body {
     font-size: 62.5%;
     font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
     line-height: 2.5em;
   }
 
-  /* line 25, _print.scss */
-  div[id=right-small], div[id=banner], div[id=header], div[id=footer] {
+  /* line 29, _print.scss */
+  div[id=right-small],
+  div[id=banner],
+  div[id=header],
+  div[id=footer] {
     display: none;
   }
 
-  /* line 29, _print.scss */
+  /* line 36, _print.scss */
   h1 {
     font-size: 24px;
   }
 
-  /* line 33, _print.scss */
+  /* line 40, _print.scss */
   h2 {
     font-size: 22px;
   }
 
-  /* line 37, _print.scss */
-  h3, h4, h5, h6 {
+  /* line 44, _print.scss */
+  h3,
+  h4,
+  h5,
+  h6 {
     font-size: 18px;
   }
 
-  /* line 41, _print.scss */
-  p, li {
+  /* line 51, _print.scss */
+  p,
+  li {
     font-size: 16px;
   }
 
-  /* line 45, _print.scss */
+  /* line 56, _print.scss */
   div[id=main-content] {
     padding: 5px;
     width: auto;
@@ -3710,69 +3710,55 @@
     display: block;
   }
 
-  /* line 52, _print.scss */
+  /* line 63, _print.scss */
   a,
   a:visited {
     text-decoration: underline;
   }
 
-  /* line 57, _print.scss */
+  /* line 68, _print.scss */
   a[href]:after {
     content: " (" attr(href) ")";
   }
 
-  /* line 61, _print.scss */
+  /* line 72, _print.scss */
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
 
-  /*
-   * Don't show links that are fragment identifiers,
-   * or use the `javascript:` pseudo protocol
-   */
-  /* line 70, _print.scss */
+  /* line 78, _print.scss */
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
-    content: "";
+    content: '';
   }
 
- /* pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-*/
-  /* line 81, _print.scss */
+  /* line 83, _print.scss */
   blockquote::before {
     content: open-quote;
   }
 
-  /* line 85, _print.scss */
+  /* line 87, _print.scss */
   blockquote::after {
     content: close-quote;
   }
 
-  /*
-   * Printing Tables:
-   * http://css-discuss.incutio.com/wiki/Printing_Tables
-   */
-  /* line 94, _print.scss */
+  /* line 93, _print.scss */
   thead {
     display: table-header-group;
   }
 
-  /* line 98, _print.scss */
+  /* line 97, _print.scss */
   tr,
   img {
     page-break-inside: avoid;
   }
 
-  /* line 103, _print.scss */
+  /* line 102, _print.scss */
   img {
     max-width: 100% !important;
   }
 
-  /* line 107, _print.scss */
+  /* line 108, _print.scss */
   p,
   h2,
   h3 {
@@ -3780,7 +3766,7 @@
     widows: 3;
   }
 
-  /* line 114, _print.scss */
+  /* line 115, _print.scss */
   h2,
   h3 {
     page-break-after: avoid;
