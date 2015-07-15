@@ -1,8 +1,8 @@
 @media screen {
 
-  @import "reset";
-  @import "variables";
-  @import "mixins";
+  @import 'reset';
+  @import 'variables';
+  @import 'mixins';
 
   body {
     font-size: #{$baseFontSize};
@@ -16,11 +16,11 @@
 
 }
 
-@import "modules/animation";
+@import 'modules/animation';
 
 @media screen {
 
-  @include breakpoint("mobile") {
+  @include breakpoint('mobile') {
 
     body {
       font-size: 56.3%;
@@ -30,28 +30,28 @@
 
   }
 
-  @import "modules/media_queries";
-  @import "modules/scrollbars";
-  @import "modules/svg";
-  @import "modules/grid";
-  @import "modules/typography";
-  @import "modules/navigation";
-  @import "modules/buttons";
-  @import "modules/forms";
-  @import "modules/icons";
-  @import "modules/loader";
-  @import "header";
-  @import "homepage";
-  @import "banner";
-  @import "mywork";
-  @import "sideprojects";
-  @import "aboutme";
-  @import "blog";
-  @import "contact";
-  @import "admin";
-  @import "footer";
-  @import "modules/prism";
+  @import 'modules/media_queries';
+  @import 'modules/scrollbars';
+  @import 'modules/svg';
+  @import 'modules/grid';
+  @import 'modules/typography';
+  @import 'modules/navigation';
+  @import 'modules/buttons';
+  @import 'modules/forms';
+  @import 'modules/icons';
+  @import 'modules/loader';
+  @import 'header';
+  @import 'homepage';
+  @import 'banner';
+  @import 'mywork';
+  @import 'sideprojects';
+  @import 'aboutme';
+  @import 'blog';
+  @import 'contact';
+  @import 'admin';
+  @import 'footer';
+  @import 'modules/prism';
 
 }
 
-@import "print";
+@import 'print';
