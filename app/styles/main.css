@@ -970,7 +970,7 @@ If not, the italic Georgia style is lifted from the user's computer.
     margin: 0 32px 0 0;
   }
 
-  /* line 14, modules/_grid.scss */
+  /* line 13, modules/_grid.scss */
   div[id=left-small] {
     width: 398px;
     float: left;
@@ -978,27 +978,26 @@ If not, the italic Georgia style is lifted from the user's computer.
     margin: 0 32px 0 0;
   }
 
-  /* line 21, modules/_grid.scss */
+  /* line 20, modules/_grid.scss */
   div[id=right-large] {
     width: 822px;
     float: left;
     display: inline;
   }
 
-  /* line 27, modules/_grid.scss */
+  /* line 26, modules/_grid.scss */
   div[id=right-small] {
     width: 398px;
     float: left;
     display: inline;
   }
 
-  /* line 33, modules/_grid.scss */
+  /* line 32, modules/_grid.scss */
   div[id=main-content] {
     padding: 40px 57px;
   }
 
-  /* My work */
-  /* line 39, modules/_grid.scss */
+  /* line 38, modules/_grid.scss */
   [class*="project-box"] {
     width: 31%;
     width: -webkit-calc((100% / 3) - 24px);
@@ -1018,12 +1017,12 @@ If not, the italic Georgia style is lifted from the user's computer.
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
   }
-  /* line 54, modules/_grid.scss */
+  /* line 53, modules/_grid.scss */
   [class*="project-box"]:nth-of-type(3n) {
     margin-right: 0;
     background-clip: content-box;
   }
-  /* line 59, modules/_grid.scss */
+  /* line 58, modules/_grid.scss */
   [class*="project-box"]::before {
     content: '';
     position: absolute;
@@ -1040,7 +1039,7 @@ If not, the italic Georgia style is lifted from the user's computer.
     -webkit-transition: opacity 0.5s;
     transition: opacity 0.5s;
   }
-  /* line 72, modules/_grid.scss */
+  /* line 71, modules/_grid.scss */
   [class*="project-box"]::after {
     content: '';
     margin: auto;
@@ -1058,80 +1057,80 @@ If not, the italic Georgia style is lifted from the user's computer.
     -webkit-transition: opacity 0.5s;
     transition: opacity 0.5s;
   }
-  /* line 88, modules/_grid.scss */
+  /* line 87, modules/_grid.scss */
   [class*="project-box"]:hover::before {
     opacity: 0.7;
   }
-  /* line 92, modules/_grid.scss */
+  /* line 91, modules/_grid.scss */
   [class*="project-box"]:hover::after {
     opacity: 1;
   }
 }
 @media screen and (max-width: 1366px) {
-  /* line 99, modules/_grid.scss */
+  /* line 98, modules/_grid.scss */
   div[id=container] {
     width: 99%;
   }
 
-  /* line 103, modules/_grid.scss */
+  /* line 102, modules/_grid.scss */
   div[id=left-large] {
     width: 65.65495207667732%;
     margin: 0 2.5559105431309903% 0 0;
   }
 
-  /* line 108, modules/_grid.scss */
+  /* line 107, modules/_grid.scss */
   div[id=left-small] {
     width: 31.789137380191697%;
     margin: 0 2.5559105431309903% 0 0;
   }
 
-  /* line 113, modules/_grid.scss */
+  /* line 112, modules/_grid.scss */
   div[id=right-large] {
     width: 65.65495207667732%;
   }
 
-  /* line 117, modules/_grid.scss */
+  /* line 116, modules/_grid.scss */
   div[id=right-small] {
     width: 31.789137380191697%;
   }
 
-  /* line 121, modules/_grid.scss */
+  /* line 120, modules/_grid.scss */
   div[id=main-content] {
     padding: 40px 2.5559105431309903%;
   }
 
-  /* line 125, modules/_grid.scss */
+  /* line 124, modules/_grid.scss */
   [class*="project-box"] {
     height: 230px;
   }
 }
 @media screen and (max-width: 979px) {
-  /* line 132, modules/_grid.scss */
+  /* line 131, modules/_grid.scss */
   [class*="project-box"] {
     height: 285px;
     width: -webkit-calc((100% / 2) - 17px);
     width: calc((100% / 2) - 17px);
   }
-  /* line 137, modules/_grid.scss */
+  /* line 136, modules/_grid.scss */
   [class*="project-box"]:nth-of-type(3n) {
     margin-right: 33px;
   }
-  /* line 141, modules/_grid.scss */
+  /* line 140, modules/_grid.scss */
   [class*="project-box"]:nth-of-type(2n) {
     margin-right: 0;
   }
 }
 @media screen and (max-width: 767px) {
-  /* line 148, modules/_grid.scss */
+  /* line 147, modules/_grid.scss */
   [class*="project-box"] {
     height: 285px;
     width: 100%;
   }
-  /* line 153, modules/_grid.scss */
+  /* line 152, modules/_grid.scss */
   [class*="project-box"]:nth-of-type(3n) {
     margin-right: 0;
   }
-  /* line 157, modules/_grid.scss */
+  /* line 156, modules/_grid.scss */
   [class*="project-box"]:nth-of-type(2n) {
     margin-right: 0;
   }

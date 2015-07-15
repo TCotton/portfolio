@@ -10,7 +10,6 @@ div[id=left-large] {
   margin: 0 32px 0 0;
 }
 
-
 div[id=left-small] {
   width: 398px;
   float: left;
@@ -34,7 +33,7 @@ div[id=main-content] {
   padding: 40px 57px;
 }
 
-/* My work */
+// My work
 
 [class*="project-box"] {
   // three boxes per row on the desktop
@@ -94,7 +93,7 @@ div[id=main-content] {
   }
 }
 
-@include breakpoint(wide) {
+@include breakpoint('wide') {
 
   div[id=container] {
     width: 99%;
@@ -127,7 +126,7 @@ div[id=main-content] {
   }
 }
 
-@include breakpoint("tablet") {
+@include breakpoint('tablet') {
 
   [class*="project-box"] {
     height: 285px;
@@ -144,7 +143,7 @@ div[id=main-content] {
   }
 }
 
-@include breakpoint(mobile) {
+@include breakpoint('mobile') {
   [class*="project-box"] {
     height: 285px;
     // only two boxes per row
