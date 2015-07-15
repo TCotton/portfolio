@@ -878,38 +878,38 @@ If not, the italic Georgia style is lifted from the user's computer.
     display: none !important;
   }
 
-  /* line 5, modules/_media_queries.scss */
+  /* line 7, modules/_media_queries.scss */
   .visible-tablet {
     display: none !important;
   }
 
-  /* line 9, modules/_media_queries.scss */
+  /* line 13, modules/_media_queries.scss */
   .hidden-desktop {
     display: none !important;
   }
 
-  /* line 13, modules/_media_queries.scss */
+  /* line 19, modules/_media_queries.scss */
   .visible-desktop {
     display: inherit !important;
   }
 }
 @media screen and (max-width: 979px) {
-  /* line 19, modules/_media_queries.scss */
+  /* line 27, modules/_media_queries.scss */
   .hidden-desktop {
     display: inherit !important;
   }
 
-  /* line 23, modules/_media_queries.scss */
+  /* line 33, modules/_media_queries.scss */
   .visible-desktop {
     display: none !important;
   }
 
-  /* line 27, modules/_media_queries.scss */
+  /* line 39, modules/_media_queries.scss */
   .visible-tablet {
     display: inherit !important;
   }
 
-  /* line 31, modules/_media_queries.scss */
+  /* line 45, modules/_media_queries.scss */
   .hidden-tablet {
     display: none !important;
   }

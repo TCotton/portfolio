@@ -1,54 +1,78 @@
 .visible-phone {
+  // old bootstrap idea
+  // scss-lint:disable ImportantRule
   display: none !important;
 }
 
 .visible-tablet {
+  // old bootstrap idea
+  // scss-lint:disable ImportantRule
   display: none !important;
 }
 
 .hidden-desktop {
+  // old bootstrap idea
+  // scss-lint:disable ImportantRule
   display: none !important;
 }
 
 .visible-desktop {
+  // old bootstrap idea
+  // scss-lint:disable ImportantRule
   display: inherit !important;
 }
 
-@include breakpoint("tablet") {
+@include breakpoint('tablet') {
 
   .hidden-desktop {
+    // old bootstrap idea
+    // scss-lint:disable ImportantRule
     display: inherit !important;
   }
 
   .visible-desktop {
+    // old bootstrap idea
+    // scss-lint:disable ImportantRule
     display: none !important;
   }
 
   .visible-tablet {
+    // old bootstrap idea
+    // scss-lint:disable ImportantRule
     display: inherit !important;
   }
 
   .hidden-tablet {
+    // old bootstrap idea
+    // scss-lint:disable ImportantRule
     display: none !important;
   }
 
 }
 
-@include breakpoint("phone") {
+@include breakpoint('phone') {
 
   .hidden-desktop {
+    // old bootstrap idea
+    // scss-lint:disable ImportantRule
     display: inherit !important;
   }
 
   .visible-desktop {
+    // old bootstrap idea
+    // scss-lint:disable ImportantRule
     display: none !important;
   }
 
   .visible-phone {
+    // old bootstrap idea
+    // scss-lint:disable ImportantRule
     display: inherit !important;
   }
 
   .hidden-phone {
+    // old bootstrap idea
+    // scss-lint:disable ImportantRule
     display: none !important;
   }
 
