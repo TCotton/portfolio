@@ -1799,13 +1799,11 @@ If not, the italic Georgia style is lifted from the user's computer.
 
   /* line 6, modules/_forms.scss */
   :-moz-placeholder {
-    /* Firefox 18- */
     color: #999999;
   }
 
   /* line 11, modules/_forms.scss */
   ::-moz-placeholder {
-    /* Firefox 19+ */
     color: #999999;
   }
 
@@ -1814,17 +1812,20 @@ If not, the italic Georgia style is lifted from the user's computer.
     color: #999999;
   }
 
-  /* line 23, modules/_forms.scss */
+  /* line 24, modules/_forms.scss */
   .user-details form input[type="submit"] {
     margin: 0 0 40px 0;
   }
-  /* line 26, modules/_forms.scss */
+  /* line 28, modules/_forms.scss */
   .user-details form ~ p {
     clear: both;
   }
 
-  /* line 34, modules/_forms.scss */
-  .contact .input, .comments .input, .login .input, .user-details .input {
+  /* line 39, modules/_forms.scss */
+  .contact .input,
+  .comments .input,
+  .login .input,
+  .user-details .input {
     width: 70%;
     height: 66px;
     padding: 10px;
@@ -1837,12 +1838,18 @@ If not, the italic Georgia style is lifted from the user's computer.
     float: left;
     margin: 0 0 15px 0;
   }
-  /* line 45, modules/_forms.scss */
-  .contact .input:focus, .comments .input:focus, .login .input:focus, .user-details .input:focus {
+  /* line 51, modules/_forms.scss */
+  .contact .input:focus,
+  .comments .input:focus,
+  .login .input:focus,
+  .user-details .input:focus {
     border: 1px solid #666666;
   }
-  /* line 50, modules/_forms.scss */
-  .contact .textarea, .comments .textarea, .login .textarea, .user-details .textarea {
+  /* line 57, modules/_forms.scss */
+  .contact .textarea,
+  .comments .textarea,
+  .login .textarea,
+  .user-details .textarea {
     width: 100%;
     height: 271px;
     padding: 10px;
@@ -1855,26 +1862,38 @@ If not, the italic Georgia style is lifted from the user's computer.
     float: left;
     margin: 0 0 15px 0;
   }
-  /* line 61, modules/_forms.scss */
-  .contact .textarea:focus, .comments .textarea:focus, .login .textarea:focus, .user-details .textarea:focus {
+  /* line 69, modules/_forms.scss */
+  .contact .textarea:focus,
+  .comments .textarea:focus,
+  .login .textarea:focus,
+  .user-details .textarea:focus {
     border: 1px solid #666666;
   }
-  /* line 66, modules/_forms.scss */
-  .contact .checkbox, .comments .checkbox, .login .checkbox, .user-details .checkbox {
+  /* line 75, modules/_forms.scss */
+  .contact .checkbox,
+  .comments .checkbox,
+  .login .checkbox,
+  .user-details .checkbox {
     width: 20px;
     height: 20px;
     border: 1px solid #cccccc;
     margin: 0 10px 15px 0;
     float: left;
   }
-  /* line 74, modules/_forms.scss */
-  .contact [class$="-block"], .comments [class$="-block"], .login [class$="-block"], .user-details [class$="-block"] {
+  /* line 83, modules/_forms.scss */
+  .contact [class$="-block"],
+  .comments [class$="-block"],
+  .login [class$="-block"],
+  .user-details [class$="-block"] {
     position: relative;
     display: block;
     clear: both;
   }
-  /* line 79, modules/_forms.scss */
-  .contact [class$="-block"] .error-message, .comments [class$="-block"] .error-message, .login [class$="-block"] .error-message, .user-details [class$="-block"] .error-message {
+  /* line 88, modules/_forms.scss */
+  .contact [class$="-block"] .error-message,
+  .comments [class$="-block"] .error-message,
+  .login [class$="-block"] .error-message,
+  .user-details [class$="-block"] .error-message {
     font-size: 1.6em;
     font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
     height: 30px;
@@ -1889,38 +1908,55 @@ If not, the italic Georgia style is lifted from the user's computer.
   }
 }
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
-  /* line 109, modules/_forms.scss */
-  input[type='text']:focus, input[type='url']:focus, input[type='email']:focus, textarea:focus {
+  /* line 106, modules/_forms.scss */
+  input[type='text']:focus,
+  input[type='url']:focus,
+  input[type='email']:focus,
+  textarea:focus {
     font-size: 16px;
   }
 }
 @media screen and (-webkit-min-device-pixel-ratio: 0) and (max-width: 979px) {
-  /* line 115, modules/_forms.scss */
-  input[type='text']:focus, input[type='url']:focus, input[type='email']:focus, textarea:focus {
+  /* line 117, modules/_forms.scss */
+  input[type='text']:focus,
+  input[type='url']:focus,
+  input[type='email']:focus,
+  textarea:focus {
     font-size: 15px;
   }
 }
 @media screen and (min--moz-device-pixel-ratio: 0) {
-  /* another firefox bug :( */
-  /* line 126, modules/_forms.scss */
-  .contact .input, .comments .input, .login .input, .user-details .input {
+  /* line 136, modules/_forms.scss */
+  .contact .input,
+  .comments .input,
+  .login .input,
+  .user-details .input {
     width: calc(70% - 20px);
     height: 56px;
   }
-  /* line 131, modules/_forms.scss */
-  .contact .textarea, .comments .textarea, .login .textarea, .user-details .textarea {
+  /* line 141, modules/_forms.scss */
+  .contact .textarea,
+  .comments .textarea,
+  .login .textarea,
+  .user-details .textarea {
     width: calc(100% - 20px);
     height: 261px;
   }
 }
 @media screen and (max-width: 767px) {
-  /* line 142, modules/_forms.scss */
-  .contact .input, .comments .input, .login .input, .user-details .input {
+  /* line 157, modules/_forms.scss */
+  .contact .input,
+  .comments .input,
+  .login .input,
+  .user-details .input {
     width: 100%;
     margin-bottom: 10px;
   }
-  /* line 147, modules/_forms.scss */
-  .contact .textarea, .comments .textarea, .login .textarea, .user-details .textarea {
+  /* line 162, modules/_forms.scss */
+  .contact .textarea,
+  .comments .textarea,
+  .login .textarea,
+  .user-details .textarea {
     margin-bottom: 10px;
   }
 }

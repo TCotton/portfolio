@@ -4,12 +4,12 @@
 }
 
 :-moz-placeholder {
-  /* Firefox 18- */
+  // Firefox 18-
   color: $textThree;
 }
 
 ::-moz-placeholder {
-  /* Firefox 19+ */
+  // Firefox 19+
   color: $textThree;
 }
 
@@ -20,16 +20,21 @@
 .user-details {
 
   form {
+
     input[type="submit"] {
       margin: 0 0 40px 0;
     }
+
     ~ p {
       clear: both;
     }
   }
 }
 
-.contact, .comments, .login, .user-details {
+.contact,
+.comments,
+.login,
+.user-details {
 
   .input {
     width: 70%;
@@ -42,9 +47,11 @@
     clear: both;
     float: left;
     margin: 0 0 15px 0;
+
     &:focus {
       border: 1px solid $textTwo;
     }
+
   }
 
   .textarea {
@@ -58,9 +65,11 @@
     clear: both;
     float: left;
     margin: 0 0 15px 0;
+
     &:focus {
       border: 1px solid $textTwo;
     }
+
   }
 
   .checkbox {
@@ -90,38 +99,39 @@
     }
   }
 
-  .ng-valid {
-  }
-  .ng-invalid {
-  }
-  .ng-pristine {
-  }
-  .ng-dirty {
-  }
-  .ng-invalid-required {
-  }
-  .ng-invalid-email {
-
-  }
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
-  input[type='text']:focus, input[type='url']:focus, input[type='email']:focus, textarea:focus {
+
+  input[type='text']:focus,
+  input[type='url']:focus,
+  input[type='email']:focus,
+  textarea:focus {
     font-size: 16px;
   }
+
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) and (max-width: $media_breakpoint_tablet) {
-  input[type='text']:focus, input[type='url']:focus, input[type='email']:focus, textarea:focus {
+
+  input[type='text']:focus,
+  input[type='url']:focus,
+  input[type='email']:focus,
+  textarea:focus {
     font-size: 15px;
   }
+
 }
 
 @media screen and (min--moz-device-pixel-ratio: 0) {
-  /* another firefox bug :( */
+
+  // another firefox bug :(
   // come back to this
 
-  .contact, .comments, .login, .user-details {
+  .contact,
+  .comments,
+  .login,
+  .user-details {
 
     .input {
       width: calc(70% - 20px);
@@ -132,12 +142,17 @@
       width: calc(100% - 20px);
       height: 261px;
     }
+
   }
+
 }
 
-@include breakpoint("mobile") {
+@include breakpoint('mobile') {
 
-  .contact, .comments, .login, .user-details {
+  .contact,
+  .comments,
+  .login,
+  .user-details {
 
     .input {
       width: 100%;
@@ -147,5 +162,7 @@
     .textarea {
       margin-bottom: 10px;
     }
+
   }
+
 }
