@@ -1,9 +1,7 @@
-/* http://prismjs.com/download.html?themes=prism&languages=markup+css+css-extras+clike+javascript+scss&plugins=line-numbers */
-/**
- * prism.js default theme for JavaScript, CSS and HTML
- * Based on dabblet (http://dabblet.com)
- * @author Lea Verou
- */
+// http://prismjs.com/download.html?themes=prism&languages=markup+css+css-extras+clike+javascript+scss&plugins=line-numbers
+// prism.js default theme for JavaScript, CSS and HTML
+// Based on dabblet (http://dabblet.com)
+// @author Lea Verou
 
 code[class*="language-"],
 pre[class*="language-"] {
@@ -16,25 +14,22 @@ pre[class*="language-"] {
   word-spacing: normal;
   word-break: normal;
   line-height: 1.5;
-
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
   tab-size: 4;
-
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
   hyphens: none;
 }
 
-pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+pre[class*="language-"]::-moz-selection,
+pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection,
+code[class*="language-"] ::-moz-selection {
   text-shadow: none;
   background: #b3d4fc;
 }
 
-pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
-code[class*="language-"]::selection, code[class*="language-"] ::selection {
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection,
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection {
   text-shadow: none;
   background: #b3d4fc;
 }
@@ -46,7 +41,7 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
   }
 }
 
-/* Code blocks */
+// Code blocks
 pre[class*="language-"] {
   padding: 1em;
   margin: .5em 0;
@@ -58,7 +53,7 @@ pre[class*="language-"] {
   background: #f5f2f0;
 }
 
-/* Inline code */
+// Inline code
 :not(pre) > code[class*="language-"] {
   padding: .1em;
   border-radius: .3em;
@@ -115,7 +110,7 @@ pre[class*="language-"] {
 }
 
 .token.function {
-  color: #DD4A68;
+  color: #dd4a68;
 }
 
 .token.regex,
@@ -135,10 +130,11 @@ pre.line-numbers {
   position: relative;
   padding-left: 3.8em;
   counter-reset: linenumber;
-}
 
-pre.line-numbers > code {
-  position: relative;
+  > code {
+    position: relative;
+  }
+
 }
 
 .line-numbers .line-numbers-rows {
@@ -147,15 +143,10 @@ pre.line-numbers > code {
   top: 0;
   font-size: 100%;
   left: -3.8em;
-  width: 3em; /* works for line-numbers below 1000 lines */
+  width: 3em; // works for line-numbers below 1000 lines
   letter-spacing: -1px;
   border-right: 1px solid #999;
-
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-
 }
 
 .line-numbers-rows > span {

@@ -3612,13 +3612,7 @@ If not, the italic Georgia style is lifted from the user's computer.
     transform: rotate(45deg);
   }
 
-  /* http://prismjs.com/download.html?themes=prism&languages=markup+css+css-extras+clike+javascript+scss&plugins=line-numbers */
-  /**
-   * prism.js default theme for JavaScript, CSS and HTML
-   * Based on dabblet (http://dabblet.com)
-   * @author Lea Verou
-   */
-  /* line 8, modules/_prism.scss */
+  /* line 6, modules/_prism.scss */
   code[class*="language-"],
   pre[class*="language-"] {
     color: black;
@@ -3630,51 +3624,48 @@ If not, the italic Georgia style is lifted from the user's computer.
     word-spacing: normal;
     word-break: normal;
     line-height: 1.5;
-    -moz-tab-size: 4;
-    -o-tab-size: 4;
     tab-size: 4;
-    -webkit-hyphens: none;
-    -moz-hyphens: none;
-    -ms-hyphens: none;
     hyphens: none;
   }
 
-  /* line 30, modules/_prism.scss */
-  pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-  code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+  /* line 21, modules/_prism.scss */
+  pre[class*="language-"]::-moz-selection,
+  pre[class*="language-"] ::-moz-selection,
+  code[class*="language-"]::-moz-selection,
+  code[class*="language-"] ::-moz-selection {
     text-shadow: none;
     background: #b3d4fc;
   }
 
-  /* line 36, modules/_prism.scss */
-  pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
-  code[class*="language-"]::selection, code[class*="language-"] ::selection {
+  /* line 29, modules/_prism.scss */
+  pre[class*="language-"]::selection,
+  pre[class*="language-"] ::selection,
+  code[class*="language-"]::selection,
+  code[class*="language-"] ::selection {
     text-shadow: none;
     background: #b3d4fc;
   }
 
-  /* Code blocks */
-  /* line 50, modules/_prism.scss */
+  /* line 45, modules/_prism.scss */
   pre[class*="language-"] {
     padding: 1em;
     margin: .5em 0;
     overflow: auto;
   }
 
-  /* line 56, modules/_prism.scss */
+  /* line 51, modules/_prism.scss */
   :not(pre) > code[class*="language-"],
   pre[class*="language-"] {
     background: #f5f2f0;
   }
 
-  /* Inline code */
-  /* line 62, modules/_prism.scss */
+  /* line 57, modules/_prism.scss */
   :not(pre) > code[class*="language-"] {
     padding: .1em;
     border-radius: .3em;
   }
 
-  /* line 67, modules/_prism.scss */
+  /* line 62, modules/_prism.scss */
   .token.comment,
   .token.prolog,
   .token.doctype,
@@ -3682,17 +3673,17 @@ If not, the italic Georgia style is lifted from the user's computer.
     color: slategray;
   }
 
-  /* line 74, modules/_prism.scss */
+  /* line 69, modules/_prism.scss */
   .token.punctuation {
     color: #999;
   }
 
-  /* line 78, modules/_prism.scss */
+  /* line 73, modules/_prism.scss */
   .namespace {
     opacity: .7;
   }
 
-  /* line 82, modules/_prism.scss */
+  /* line 77, modules/_prism.scss */
   .token.property,
   .token.tag,
   .token.boolean,
@@ -3703,7 +3694,7 @@ If not, the italic Georgia style is lifted from the user's computer.
     color: #905;
   }
 
-  /* line 92, modules/_prism.scss */
+  /* line 87, modules/_prism.scss */
   .token.selector,
   .token.attr-name,
   .token.string,
@@ -3713,7 +3704,7 @@ If not, the italic Georgia style is lifted from the user's computer.
     color: #690;
   }
 
-  /* line 101, modules/_prism.scss */
+  /* line 96, modules/_prism.scss */
   .token.operator,
   .token.entity,
   .token.url,
@@ -3724,47 +3715,46 @@ If not, the italic Georgia style is lifted from the user's computer.
     background: rgba(255, 255, 255, 0.5);
   }
 
-  /* line 111, modules/_prism.scss */
+  /* line 106, modules/_prism.scss */
   .token.atrule,
   .token.attr-value,
   .token.keyword {
     color: #07a;
   }
 
-  /* line 117, modules/_prism.scss */
+  /* line 112, modules/_prism.scss */
   .token.function {
-    color: #DD4A68;
+    color: #dd4a68;
   }
 
-  /* line 121, modules/_prism.scss */
+  /* line 116, modules/_prism.scss */
   .token.regex,
   .token.important {
     color: #e90;
   }
 
-  /* line 126, modules/_prism.scss */
+  /* line 121, modules/_prism.scss */
   .token.important {
     font-weight: bold;
   }
 
-  /* line 130, modules/_prism.scss */
+  /* line 125, modules/_prism.scss */
   .token.entity {
     cursor: help;
   }
 
-  /* line 134, modules/_prism.scss */
+  /* line 129, modules/_prism.scss */
   pre.line-numbers {
     position: relative;
     padding-left: 3.8em;
     counter-reset: linenumber;
   }
-
-  /* line 140, modules/_prism.scss */
+  /* line 134, modules/_prism.scss */
   pre.line-numbers > code {
     position: relative;
   }
 
-  /* line 144, modules/_prism.scss */
+  /* line 140, modules/_prism.scss */
   .line-numbers .line-numbers-rows {
     position: absolute;
     pointer-events: none;
@@ -3772,23 +3762,19 @@ If not, the italic Georgia style is lifted from the user's computer.
     font-size: 100%;
     left: -3.8em;
     width: 3em;
-    /* works for line-numbers below 1000 lines */
     letter-spacing: -1px;
     border-right: 1px solid #999;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
   }
 
-  /* line 161, modules/_prism.scss */
+  /* line 152, modules/_prism.scss */
   .line-numbers-rows > span {
     pointer-events: none;
     display: block;
     counter-increment: linenumber;
   }
 
-  /* line 167, modules/_prism.scss */
+  /* line 158, modules/_prism.scss */
   .line-numbers-rows > span:before {
     content: counter(linenumber);
     color: #999;
