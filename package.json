@@ -68,6 +68,7 @@
     "grunt-preprocess": "^4.2.0",
     "grunt-protractor-runner": "^2.0.0",
     "grunt-rev": "^0.1.0",
+    "grunt-scss-lint": "^0.3.6",
     "grunt-svgmin": "^2.0.1",
     "grunt-usemin": "^3.0.0",
     "grunt-webp-compress": "^0.0.4",

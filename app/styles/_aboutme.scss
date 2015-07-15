@@ -92,7 +92,6 @@
   }
 }
 
-
 @include breakpoint(tablet) {
 
   .aboutme {
@@ -100,7 +99,6 @@
     section {
       display: block;
     }
-
 
     div[id=left-large] {
       width: auto;

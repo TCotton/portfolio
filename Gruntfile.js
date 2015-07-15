@@ -503,6 +503,19 @@ module.exports = function(grunt) {
       protractor_test: ['protractor-chrome']
     },
 
+    scsslint: {
+      allFiles: [
+        '<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'
+      ],
+      options: {
+        bundleExec: false,
+        config: '.scss-lint.yml',
+        reporterOutput: 'scss-lint-report.xml',
+        colorizeOutput: true,
+        maxBuffer: NaN
+      }
+    },
+
     /*  'lodash': {
      'build': {
      // output location
