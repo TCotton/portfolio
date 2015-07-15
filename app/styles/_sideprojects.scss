@@ -7,12 +7,14 @@
     background-position: left bottom;
     background-size: contain;
     // lets the H3 title use animation to appear
+
     &:hover {
       header h3 {
         opacity: 1;
-        @include transform("translateY(0)");
+        @include transform('translateY(0)');
       }
     }
+
   }
 
   header {
@@ -20,12 +22,14 @@
     width: 100%;
     text-align: center;
     z-index: 1;
+
     h3 {
-      @include transitions("all 0.5s");
-      @include transform("translateY(30px)");
+      @include transitions('all 0.5s');
+      @include transform('translateY(30px)');
       margin-top: 10%;
       opacity: 0;
     }
+
   }
 }
 
@@ -59,20 +63,21 @@
     background-image: $sideThreeWebP;
   }
 
-  [class*="project-box"] {
-
-  }
-
 }
 
-@include breakpoint("tablet") {
+@include breakpoint('tablet') {
 
   .side-projects {
 
-    .project-box-one, .project-box-two, .project-box-three, .project-box-four {
+    .project-box-one,
+    .project-box-two,
+    .project-box-three,
+    .project-box-four {
       margin-bottom: 33px;
     }
-    .project-box-five, .project-box-six {
+
+    .project-box-five,
+    .project-box-six {
       margin-bottom: 0;
     }
   }
