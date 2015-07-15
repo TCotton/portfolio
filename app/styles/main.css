@@ -1272,7 +1272,6 @@ If not, the italic Georgia style is lifted from the user's computer.
     color: #666666;
   }
 
-  /* little mixin for standard blog css attributes and values */
   /* line 116, modules/_typography.scss */
   .content-text ul {
     font-size: 1.6em;
@@ -1288,7 +1287,7 @@ If not, the italic Georgia style is lifted from the user's computer.
     padding-left: 15px;
     position: relative;
   }
-  /* line 131, modules/_typography.scss */
+  /* line 132, modules/_typography.scss */
   .blog-single.content-text section li::before {
     content: '';
     position: absolute;
@@ -1302,12 +1301,12 @@ If not, the italic Georgia style is lifted from the user's computer.
   }
 }
 @media screen and (max-width: 979px) {
-  /* line 146, modules/_typography.scss */
+  /* line 147, modules/_typography.scss */
   .blog-single.content-text section ul {
     font-size: inherit;
   }
 
-  /* line 150, modules/_typography.scss */
+  /* line 151, modules/_typography.scss */
   .blog-single.content-text section li {
     font-size: 1.6em;
     font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
@@ -1315,7 +1314,7 @@ If not, the italic Georgia style is lifted from the user's computer.
     padding-left: 0;
     position: relative;
   }
-  /* line 154, modules/_typography.scss */
+  /* line 156, modules/_typography.scss */
   .blog-single.content-text section li::before {
     content: none;
   }
@@ -1358,7 +1357,7 @@ If not, the italic Georgia style is lifted from the user's computer.
     font-weight: 700;
   }
 
-  /* line 177, modules/_typography.scss */
+  /* line 179, modules/_typography.scss */
   #more-posts h6 {
     font-size: 2.8em;
     font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
@@ -1393,19 +1392,7 @@ If not, the italic Georgia style is lifted from the user's computer.
     font-style: italic;
   }
 
-  /* line 195, modules/_typography.scss */
-  .content-text section > div a {
-    color: #666666;
-  }
-
-  /* line 199, modules/_typography.scss */
-  .content-text .user-comments section {
-    font-size: 1.6em;
-    font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
-    color: #666666;
-  }
-
-  /* line 204, modules/_typography.scss */
+  /* line 197, modules/_typography.scss */
   .comment-form-entry {
     font-size: 1.6em;
     font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
@@ -1414,20 +1401,23 @@ If not, the italic Georgia style is lifted from the user's computer.
     white-space: pre-line;
   }
 
-  /* line 210, modules/_typography.scss */
+  /* line 203, modules/_typography.scss */
+  .content-text {
+    text-decoration: none;
+    background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.3) 11%, rgba(0, 0, 0, 0.3) 16%, transparent 16%);
+  }
+  /* line 205, modules/_typography.scss */
   .content-text section > div table {
     font-size: 1.6em;
     font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
     margin-bottom: 1.5625em;
   }
-
-  /* line 214, modules/_typography.scss */
+  /* line 210, modules/_typography.scss */
   .content-text section > div table caption {
     font-weight: 400;
     color: #666666;
   }
-
-  /* line 227, modules/_typography.scss */
+  /* line 217, modules/_typography.scss */
   .content-text section > div h3 {
     font-size: 2.6em;
     font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
@@ -1435,8 +1425,7 @@ If not, the italic Georgia style is lifted from the user's computer.
     font-weight: 400;
     color: #666666;
   }
-
-  /* line 233, modules/_typography.scss */
+  /* line 223, modules/_typography.scss */
   .content-text section > div h4 {
     font-size: 2.4em;
     font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
@@ -1445,8 +1434,7 @@ If not, the italic Georgia style is lifted from the user's computer.
     color: #666666;
     line-height: 120%;
   }
-
-  /* line 240, modules/_typography.scss */
+  /* line 230, modules/_typography.scss */
   .content-text section > div h5 {
     font-size: 2em;
     font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
@@ -1455,8 +1443,7 @@ If not, the italic Georgia style is lifted from the user's computer.
     color: #666666;
     line-height: 120%;
   }
-
-  /* line 247, modules/_typography.scss */
+  /* line 237, modules/_typography.scss */
   .content-text section > div h6 {
     font-size: 1.8em;
     font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
@@ -1465,56 +1452,29 @@ If not, the italic Georgia style is lifted from the user's computer.
     color: #666666;
     line-height: 120%;
   }
-}
-@media screen and (max-width: 767px) {
-  /* line 256, modules/_typography.scss */
-  .content-text section > div h4, .content-text section > div h5, .content-text section > div h6 {
-    line-height: 120%;
-  }
-}
-@media screen {
-  /* line 261, modules/_typography.scss */
+  /* line 244, modules/_typography.scss */
   .content-text section > div pre {
     font-size: 1.6em;
     font-family: monospace, serif;
     margin-bottom: 1.5625em;
   }
-
-  /* line 116, modules/_typography.scss */
-  .content-text p.read-more {
-    font-size: 1.6em;
-    font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
-    margin-bottom: 1.5625em;
+  /* line 248, modules/_typography.scss */
+  .content-text section > div a {
     color: #666666;
-    font-weight: 700;
   }
-
-  /* line 269, modules/_typography.scss */
-  p.minor-title {
+  /* line 252, modules/_typography.scss */
+  .content-text .user-comments section {
     font-size: 1.6em;
     font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
     color: #666666;
-    font-weight: 700;
-    margin-bottom: 0;
   }
-
-  /* line 276, modules/_typography.scss */
-  .blog #blog-content a:hover:after {
-    content: "(Link: " attr(href) ")";
-    color: #1d7a94;
-    background: #fff;
-    margin: 0 5px;
-    text-decoration: underline;
-  }
-
-  /* line 286, modules/_typography.scss */
+  /* line 257, modules/_typography.scss */
   .content-text a.underline {
-    /* On the desktop this displays a URL of the external link above the link text */
     text-decoration: none;
     background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.3) 11%, rgba(0, 0, 0, 0.3) 16%, transparent 16%);
     position: relative;
   }
-  /* line 293, modules/_typography.scss */
+  /* line 264, modules/_typography.scss */
   .content-text a.underline[rel="external"]::after {
     content: " " attr(href) " ";
     position: absolute;
@@ -1531,44 +1491,103 @@ If not, the italic Georgia style is lifted from the user's computer.
     pointer-events: none;
     display: none;
   }
-  /* line 307, modules/_typography.scss */
+  /* line 279, modules/_typography.scss */
   .content-text a.underline[rel="external"]:hover::after {
     display: block;
     opacity: 1;
     pointer-events: auto;
   }
-  /* line 312, modules/_typography.scss */
+  /* line 285, modules/_typography.scss */
   .content-text a.underline:link {
     color: #666666;
   }
-  /* line 315, modules/_typography.scss */
+  /* line 289, modules/_typography.scss */
   .content-text a.underline:visited {
     color: gray;
   }
-  /* line 318, modules/_typography.scss */
+  /* line 293, modules/_typography.scss */
   .content-text a.underline:focus {
     color: #666666;
     background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
   }
-  /* line 322, modules/_typography.scss */
+  /* line 298, modules/_typography.scss */
   .content-text a.underline:hover {
     color: #666666;
     background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
   }
-  /* line 327, modules/_typography.scss */
+  /* line 304, modules/_typography.scss */
   .content-text a.underline:active {
     color: #666666;
     background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
   }
+  /* line 314, modules/_typography.scss */
+  .content-text:link {
+    color: #666666;
+  }
+  /* line 318, modules/_typography.scss */
+  .content-text:visited {
+    color: gray;
+  }
+  /* line 322, modules/_typography.scss */
+  .content-text:focus {
+    color: #666666;
+    background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
+  }
+  /* line 327, modules/_typography.scss */
+  .content-text:hover {
+    color: #666666;
+    background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
+  }
+  /* line 332, modules/_typography.scss */
+  .content-text:active {
+    color: #666666;
+    background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
+  }
+}
+@media screen and (max-width: 767px) {
+  /* line 341, modules/_typography.scss */
+  .content-text section > div h4,
+  .content-text section > div h5,
+  .content-text section > div h6 {
+    line-height: 120%;
+  }
+}
+@media screen {
+  /* line 116, modules/_typography.scss */
+  .content-text p.read-more {
+    font-size: 1.6em;
+    font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
+    margin-bottom: 1.5625em;
+    color: #666666;
+    font-weight: 700;
+  }
+
+  /* line 352, modules/_typography.scss */
+  p.minor-title {
+    font-size: 1.6em;
+    font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
+    color: #666666;
+    font-weight: 700;
+    margin-bottom: 0;
+  }
+
+  /* line 359, modules/_typography.scss */
+  .blog #blog-content a:hover:after {
+    content: "(Link: " attr(href) ")";
+    color: #1d7a94;
+    background: #fff;
+    margin: 0 5px;
+    text-decoration: underline;
+  }
 }
 @media screen and (max-width: 979px) {
-  /* line 340, modules/_typography.scss */
+  /* line 373, modules/_typography.scss */
   .content-text a.underline[rel="external"]::after {
     display: none;
   }
 }
 @media screen {
-  /* line 347, modules/_typography.scss */
+  /* line 380, modules/_typography.scss */
   h4.blog-sidebar-header {
     font-size: 3em;
     font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
@@ -1577,8 +1596,9 @@ If not, the italic Georgia style is lifted from the user's computer.
     color: #666666;
   }
 
-  /* line 353, modules/_typography.scss */
-  .blog-sidebar-text p, ul.blog-sidebar-text {
+  /* line 386, modules/_typography.scss */
+  .blog-sidebar-text p,
+  ul.blog-sidebar-text {
     font-size: 1.6em;
     font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
     margin-bottom: 1.5625em;
@@ -1586,7 +1606,7 @@ If not, the italic Georgia style is lifted from the user's computer.
     color: #666666;
   }
 
-  /* line 359, modules/_typography.scss */
+  /* line 393, modules/_typography.scss */
   h3.contact-header {
     font-size: 3em;
     font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
@@ -1595,7 +1615,7 @@ If not, the italic Georgia style is lifted from the user's computer.
     color: #666666;
   }
 
-  /* line 365, modules/_typography.scss */
+  /* line 399, modules/_typography.scss */
   h3.project-header {
     font-size: 3em;
     font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
@@ -1603,8 +1623,9 @@ If not, the italic Georgia style is lifted from the user's computer.
     color: white;
   }
 
-  /* line 371, modules/_typography.scss */
-  .footer-top-text p, ul.footer-top-text {
+  /* line 405, modules/_typography.scss */
+  .footer-top-text p,
+  ul.footer-top-text {
     font-size: 2em;
     font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
     margin-bottom: 1.25em;
@@ -1613,14 +1634,14 @@ If not, the italic Georgia style is lifted from the user's computer.
     color: #666666;
   }
 
-  /* line 378, modules/_typography.scss */
+  /* line 413, modules/_typography.scss */
   .code-preview {
     font-size: 12px;
     color: #666666;
     line-height: 16px;
   }
 
-  /* line 384, modules/_typography.scss */
+  /* line 419, modules/_typography.scss */
   p.footer-copyright {
     font-size: 1.3em;
     font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
@@ -1628,58 +1649,31 @@ If not, the italic Georgia style is lifted from the user's computer.
     color: white;
     text-transform: capitalize;
   }
-  /* line 389, modules/_typography.scss */
+  /* line 425, modules/_typography.scss */
   p.footer-copyright a {
     color: white;
     text-decoration: none;
   }
-  /* line 392, modules/_typography.scss */
+  /* line 429, modules/_typography.scss */
   p.footer-copyright a:hover {
     text-decoration: underline;
   }
 
-  /* line 398, modules/_typography.scss */
-  .admin-comments dt, .content-text aside dt {
+  /* line 435, modules/_typography.scss */
+  .admin-comments dt,
+  .content-text aside dt {
     font-size: 1.4em;
     font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
     font-weight: 600;
   }
 
-  /* line 403, modules/_typography.scss */
-  .admin-comments dd, .content-text aside dd {
+  /* line 441, modules/_typography.scss */
+  .admin-comments dd,
+  .content-text aside dd {
     font-size: 1.4em;
     font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
     margin-bottom: 0.89286em;
     font-weight: 400;
-  }
-
-  /* line 408, modules/_typography.scss */
-  .content-text aside a {
-    text-decoration: none;
-    background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.3) 11%, rgba(0, 0, 0, 0.3) 16%, transparent 16%);
-  }
-  /* line 413, modules/_typography.scss */
-  .content-text aside a:link {
-    color: #666666;
-  }
-  /* line 416, modules/_typography.scss */
-  .content-text aside a:visited {
-    color: gray;
-  }
-  /* line 419, modules/_typography.scss */
-  .content-text aside a:focus {
-    color: #666666;
-    background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
-  }
-  /* line 423, modules/_typography.scss */
-  .content-text aside a:hover {
-    color: #666666;
-    background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
-  }
-  /* line 428, modules/_typography.scss */
-  .content-text aside a:active {
-    color: #666666;
-    background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
   }
 
   /* line 1, modules/_buttons.scss */
@@ -2903,18 +2897,18 @@ If not, the italic Georgia style is lifted from the user's computer.
   }
 }
 @media screen and (max-width: 979px) {
-  /* line 100, _aboutme.scss */
+  /* line 99, _aboutme.scss */
   .aboutme section {
     display: block;
   }
-  /* line 105, _aboutme.scss */
+  /* line 103, _aboutme.scss */
   .aboutme div[id=left-large] {
     width: auto;
     float: none;
     display: block;
     margin: 0 0 0 0;
   }
-  /* line 112, _aboutme.scss */
+  /* line 110, _aboutme.scss */
   .aboutme div[id=right-small] {
     width: auto;
     float: none;
@@ -2922,14 +2916,14 @@ If not, the italic Georgia style is lifted from the user's computer.
   }
 }
 @media screen and (max-width: 767px) {
-  /* line 124, _aboutme.scss */
+  /* line 122, _aboutme.scss */
   .aboutme .button-skills-aboutme.section {
     width: 100%;
     float: none;
     margin-bottom: 20px;
     line-height: 58px;
   }
-  /* line 131, _aboutme.scss */
+  /* line 129, _aboutme.scss */
   .aboutme .button-skills-aboutme.section:nth-of-type(even) {
     margin-left: 0;
   }

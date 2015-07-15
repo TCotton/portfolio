@@ -490,7 +490,7 @@ module.exports = function(grunt) {
     concurrent: {
       server: [
         'sass:dev',
-        'jscs:prod'
+        'jscs'
       ],
       test: [
         'sass:dev'

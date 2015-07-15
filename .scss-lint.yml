@@ -97,13 +97,13 @@ linters:
     force_nesting: true
 
   NameFormat:
-    enabled: true
+    enabled: false
     allow_leading_underscore: true
     convention: camel_case # or 'camel_case', or 'snake_case', or a regex pattern
 
   NestingDepth:
     enabled: true
-    max_depth: 3
+    max_depth: 4
     ignore_parent_selectors: false
 
   PlaceholderInExtend:
@@ -144,8 +144,8 @@ linters:
     allow_element_with_id: false
 
   SelectorDepth:
-    enabled: true//
-    max_depth: 3
+    enabled: true
+    max_depth: 4
 
   SelectorFormat:
     enabled: true
