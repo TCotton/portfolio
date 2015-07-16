@@ -644,7 +644,7 @@ module.exports = function(grunt) {
     'ngconstant:test',
     'express:test',
     'karma'
-    /*    'validate-package'*/
+    //'validate-package'
   ]);
 
   grunt.registerTask('build', [

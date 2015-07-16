@@ -82,7 +82,7 @@
   "nomen": false,
   "onevar": false,
   "plusplus": false,
-  "sub": false,
+  "sub": true,
   "trailing": true,
   "white": false
 
