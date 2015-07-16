@@ -2377,7 +2377,7 @@
     background-position: left bottom;
     background-size: contain;
   }
-  /* line 11, _mywork.scss */
+  /* line 13, _mywork.scss */
   .my-work [class*="project-box"]:hover header h3 {
     opacity: 1;
     -ms-transform: translateY(0);
@@ -2385,61 +2385,63 @@
     transform: translateY(0);
   }
 
-  /* line 21, _mywork.scss */
+  /* line 28, _mywork.scss */
   .webp .my-work .project-box-one {
     background-image: url("/images/elevaate-work.png.webp");
   }
-  /* line 25, _mywork.scss */
+  /* line 32, _mywork.scss */
   .webp .my-work .project-box-two {
     background-image: url("/images/blinkbox-work.png.webp");
   }
-  /* line 29, _mywork.scss */
+  /* line 36, _mywork.scss */
   .webp .my-work .project-box-three {
     background-image: url("/images/reuters-japan-work.png.webp");
   }
-  /* line 33, _mywork.scss */
+  /* line 40, _mywork.scss */
   .webp .my-work .project-box-four {
     background-image: url("/images/law-student-work.png.webp");
   }
-  /* line 37, _mywork.scss */
+  /* line 44, _mywork.scss */
   .webp .my-work .project-box-five {
     background-image: url("/images/kaplan-work.png.webp");
   }
-  /* line 41, _mywork.scss */
+  /* line 48, _mywork.scss */
   .webp .my-work .project-box-six {
     background-image: url("/images/newmans-clinic-work.png.webp");
   }
 
-  /* line 49, _mywork.scss */
+  /* line 56, _mywork.scss */
   .no-webp .my-work .project-box-one {
     background-image: url("/images/elevaate-work.png");
   }
-  /* line 53, _mywork.scss */
+  /* line 60, _mywork.scss */
   .no-webp .my-work .project-box-two {
     background-image: url("/images/blinkbox-work.png");
   }
-  /* line 57, _mywork.scss */
+  /* line 64, _mywork.scss */
   .no-webp .my-work .project-box-three {
     background-image: url("/images/reuters-japan-work.png");
   }
-  /* line 61, _mywork.scss */
+  /* line 68, _mywork.scss */
   .no-webp .my-work .project-box-four {
     background-image: url("/images/law-student-work.png");
   }
-  /* line 65, _mywork.scss */
+  /* line 72, _mywork.scss */
   .no-webp .my-work .project-box-five {
     background-image: url("/images/kaplan-work.png");
   }
-  /* line 69, _mywork.scss */
+  /* line 76, _mywork.scss */
   .no-webp .my-work .project-box-six {
     background-image: url("/images/newmans-clinic-work.png");
   }
 
-  /* line 77, _mywork.scss */
-  .my-work .project-box-one, .my-work .project-box-two, .my-work .project-box-three {
+  /* line 84, _mywork.scss */
+  .my-work .project-box-one,
+  .my-work .project-box-two,
+  .my-work .project-box-three {
     margin-bottom: 30px;
   }
-  /* line 81, _mywork.scss */
+  /* line 90, _mywork.scss */
   .my-work header {
     position: absolute;
     left: 2.5559105431309903%;
@@ -2448,7 +2450,7 @@
     text-align: center;
     z-index: 1;
   }
-  /* line 88, _mywork.scss */
+  /* line 97, _mywork.scss */
   .my-work header h3 {
     -ms-transition: all 0.5s;
     -webkit-transition: all 0.5s;
@@ -2459,20 +2461,20 @@
     margin-top: 10%;
     opacity: 0;
   }
-  /* line 98, _mywork.scss */
+  /* line 107, _mywork.scss */
   .my-work div[id=left-small] article {
     border-bottom: 1px solid #ccc;
     margin: 0 0 25px 0;
     padding: 0 0 25px 0;
   }
-  /* line 107, _mywork.scss */
+  /* line 116, _mywork.scss */
   .my-work div[id=right-large] img {
     border: 1px solid #ccc;
     background-clip: content-box;
     padding: 4px;
     overflow: hidden;
   }
-  /* line 117, _mywork.scss */
+  /* line 126, _mywork.scss */
   .my-work .pagination [class*="pag"] {
     width: 55px;
     height: 54px;
@@ -2483,43 +2485,43 @@
     margin: 0 14px 0 0;
     background-color: black;
   }
-  /* line 127, _mywork.scss */
+  /* line 136, _mywork.scss */
   .my-work .pagination [class*="pag"]:last-of-type {
     margin: 0;
   }
-  /* line 132, _mywork.scss */
+  /* line 141, _mywork.scss */
   .my-work .pagination .paglast {
     background: url("/images/svg/left-arrow.svg") no-repeat center center;
   }
-  /* line 134, _mywork.scss */
+  /* line 143, _mywork.scss */
   .my-work .pagination .paglast:hover {
     background: url("/images/svg/left-arrow-hover.svg") no-repeat center center;
   }
-  /* line 139, _mywork.scss */
+  /* line 148, _mywork.scss */
   .my-work .pagination .pagHome {
     background: url("/images/svg/index.svg") no-repeat center center;
   }
-  /* line 141, _mywork.scss */
+  /* line 150, _mywork.scss */
   .my-work .pagination .pagHome:hover {
     background: url("/images/svg/index-hover.svg") no-repeat center center;
   }
-  /* line 146, _mywork.scss */
+  /* line 155, _mywork.scss */
   .my-work .pagination .pagnext {
     background: url("/images/svg/right-arrow.svg") no-repeat center center;
   }
-  /* line 148, _mywork.scss */
+  /* line 157, _mywork.scss */
   .my-work .pagination .pagnext:hover {
     background: url("/images/svg/right-arrow-hover.svg") no-repeat center center;
   }
 }
 @media screen and (max-width: 979px) {
-  /* line 161, _mywork.scss */
+  /* line 170, _mywork.scss */
   .my-work div[id=left-small] article {
     border-bottom: none;
     margin: 0 0 15px 0;
     padding: 0 0 15px 0;
   }
-  /* line 168, _mywork.scss */
+  /* line 177, _mywork.scss */
   .my-work div[id=left-small] {
     width: auto;
     float: none;
@@ -2527,48 +2529,48 @@
     margin: 0;
     border: none;
   }
-  /* line 176, _mywork.scss */
+  /* line 185, _mywork.scss */
   .my-work div[id=right-large] {
     width: 100%;
     float: none;
     display: inline-block;
     padding: 0 0 0 0;
   }
-  /* line 182, _mywork.scss */
+  /* line 191, _mywork.scss */
   .my-work div[id=right-large] img {
     margin: 0 0 50px 0;
   }
-  /* line 187, _mywork.scss */
+  /* line 196, _mywork.scss */
   .my-work .pagination {
     border-top: 1px solid #ccc;
     padding: 50px 0 0 0;
     text-align: center;
     width: 100%;
   }
-  /* line 194, _mywork.scss */
+  /* line 203, _mywork.scss */
   .my-work .project-box-one, .my-work .project-box-two, .my-work .project-box-three, .my-work .project-box-four, .my-work .project-box-five {
     margin-bottom: 30px;
   }
-  /* line 197, _mywork.scss */
+  /* line 206, _mywork.scss */
   .my-work .project-box-six {
     margin-bottom: 0;
   }
 }
 @media screen and (max-width: 767px) {
-  /* line 209, _mywork.scss */
+  /* line 218, _mywork.scss */
   .my-work div[id=left-small] article {
     margin: 0 0 10px 0;
     padding: 0 0 15px 0;
   }
-  /* line 216, _mywork.scss */
+  /* line 225, _mywork.scss */
   .my-work div[id=right-large] img {
     margin: 0 0 40px 0;
   }
-  /* line 221, _mywork.scss */
+  /* line 230, _mywork.scss */
   .my-work .pagination {
     padding: 40px 0 0 0;
   }
-  /* line 225, _mywork.scss */
+  /* line 234, _mywork.scss */
   .my-work .project-box-one, .my-work .project-box-two, .my-work .project-box-three, .my-work .project-box-four, .my-work .project-box-five {
     margin-bottom: 20px;
   }

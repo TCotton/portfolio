@@ -6,14 +6,21 @@
     background-repeat: no-repeat;
     background-position: left bottom;
     background-size: contain;
+
     // lets the H3 title use animation to appear
     &:hover {
+
       header h3 {
         opacity: 1;
-        @include transform("translateY(0)");
+        @include transform('translateY(0)');
       }
+
     }
+
   }
+
+
+
 }
 
 .webp .my-work {
@@ -74,7 +81,9 @@
 
 .my-work {
 
-  .project-box-one, .project-box-two, .project-box-three {
+  .project-box-one,
+  .project-box-two,
+  .project-box-three {
     margin-bottom: 30px;
   }
 
@@ -86,8 +95,8 @@
     text-align: center;
     z-index: 1;
     h3 {
-      @include transitions("all 0.5s");
-      @include transform("translateY(30px)");
+      @include transitions('all 0.5s');
+      @include transform('translateY(30px)');
       margin-top: 10%;
       opacity: 0;
     }
@@ -200,7 +209,7 @@
   }
 }
 
-@include breakpoint("mobile") {
+@include breakpoint('mobile') {
 
   .my-work {
 
