@@ -42,6 +42,14 @@ div[id=header] {
   }
 }
 
+@-webkit-keyframes bugfix {
+  from {
+    margin: 0;
+  }
+  to {
+    margin: 0;
+  }
+}
 
 @media (max-width: $media_breakpoint_tablet) and (-webkit-min-device-pixel-ratio: 1.5) {
 
@@ -64,6 +72,23 @@ div[id=header] {
   }
 }
 
+@-webkit-keyframes swipeIn {
+  from {
+    -webkit-transform: translateX(-200%);
+  }
+  to {
+    -webkit-transform: translateX(0%);
+  }
+}
+
+@keyframes swipeIn {
+  from {
+    transform: translateX(-200%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
 
 @include breakpoint(tablet) {
 

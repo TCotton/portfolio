@@ -10,7 +10,6 @@
 
 var path = require('path');
 
-
 // # Globbing
 // for performance reasons we're only matching one level down:
 // 'test/spec/{,*/}*.js'
