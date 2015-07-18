@@ -338,7 +338,12 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: '<%= yeoman.app %>/images',
-            src: '{,*/}*.{png,jpg,jpeg,gif}',
+            src: [
+              '/*.{png,jpg,jpeg,gif}',
+              '/blog-images/*.{png,jpg,jpeg,gif}',
+              '/blog-stock-images/*.{png,jpg,jpeg,gif}',
+              '/slider/*.{png,jpg,jpeg,gif}'
+            ],
             dest: '<%= yeoman.dist %>/images'
           }
         ]
@@ -522,7 +527,7 @@ module.exports = function(grunt) {
      'options': {
      // modifiers for prepared builds
      // modern, strict, compat
-     'modifier': 'modern',
+     'modifier': 'modern',Ima
      'moduleId': 'underscore'
      }
      }
@@ -674,9 +679,7 @@ module.exports = function(grunt) {
     'ngmin',
     //'ngAnnotate',
     'inline',
-    /*
      'cwebp',
-     */
     'copy:dist',
     'cssmin',
     'uglify',
