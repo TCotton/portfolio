@@ -489,13 +489,13 @@ module.exports = function(grunt) {
     concurrent: {
       server: [
         'sass:dev',
-        'jscs'
+        'jscs',
+        'postcss:prod'
       ],
       test: [
         'sass:dev'
       ],
       dist: [
-        'sass:dist',
         'imagemin',
         'svgmin'
       ],
@@ -583,11 +583,23 @@ module.exports = function(grunt) {
       },
       prod: {
         src: '<%= yeoman.app %>/styles/main.css',
-        dest: '<%= yeoman.app %>/styles/main.css'
+        dest: '<%= yeoman.app %>/styles/main-postcss.css'
       },
       dist: {
         src: '<%= yeoman.app %>/styles/main.css',
         dest: '<%= yeoman.dist %>/styles/main-postcss.css'
+      }
+    },
+
+    cssmin: {
+      target: {
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.dist %>/styles',
+          src: ['*main-post.css', '!*.min.css'],
+          dest: '<%= yeoman.dist %>/styles',
+          ext: '.css'
+        }]
       }
     },
 
@@ -629,6 +641,7 @@ module.exports = function(grunt) {
     grunt.task.run([
       'clean:server',
       'concurrent:server',
+      'postcss:prod',
       'ngconstant',
       /*      'lodash',*/
       'express:livereload',
@@ -652,6 +665,7 @@ module.exports = function(grunt) {
     'clean:dist',
     'wiredep',
     'useminPrepare',
+    'sass:dist',
     'concurrent:dist',
     'postcss:dist',
     'ngconstant',
