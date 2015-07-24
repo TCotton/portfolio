@@ -587,7 +587,8 @@ module.exports = function(grunt) {
           require('autoprefixer-core')({browsers: 'last 3 versions'}),
           require('postcss-fakeid'),
           require('postcss-single-charset'),
-          require('postcss-focus')
+          require('postcss-focus'),
+          require('postcss-mq-keyframes')
         ]
       },
       prod: {
@@ -683,7 +684,7 @@ module.exports = function(grunt) {
     'ngmin',
     //'ngAnnotate',
     'inline',
-     'cwebp',
+    'cwebp',
     'copy:dist',
     'cssmin',
     'uglify',

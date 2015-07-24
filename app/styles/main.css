@@ -2932,7 +2932,7 @@
   }
 }
 @media screen and (min-device-width: 768px) and (orientation: landscape) {
-  /* line 52, _aboutme.scss */
+  /* line 56, _aboutme.scss */
   .aboutme [class*="per"] span {
     -ms-transform: scaleX(0);
     -webkit-transform: scaleX(0);
@@ -2947,7 +2947,7 @@
     -webkit-animation-delay: 1s;
     animation-delay: 1s;
   }
-  /* line 67, _aboutme.scss */
+  /* line 71, _aboutme.scss */
   .aboutme [class*="per"]:last-of-type {
     -webkit-animation-name: shake;
     -webkit-animation-delay: 6s;
@@ -2964,7 +2964,7 @@
   }
 }
 @media screen {
-  /* line 88, _aboutme.scss */
+  /* line 92, _aboutme.scss */
   .ie9 .aboutme [class*="per"] span {
     -ms-transform: scaleX(1);
     -webkit-transform: scaleX(1);
@@ -3064,18 +3064,18 @@
   }
 }
 @media screen and (max-width: 979px) {
-  /* line 194, _aboutme.scss */
+  /* line 198, _aboutme.scss */
   .aboutme section {
     display: block;
   }
-  /* line 199, _aboutme.scss */
+  /* line 203, _aboutme.scss */
   .aboutme div[id=left-large] {
     width: auto;
     float: none;
     display: block;
     margin: 0 0 0 0;
   }
-  /* line 206, _aboutme.scss */
+  /* line 210, _aboutme.scss */
   .aboutme div[id=right-small] {
     width: auto;
     float: none;
@@ -3083,14 +3083,14 @@
   }
 }
 @media screen and (max-width: 767px) {
-  /* line 218, _aboutme.scss */
+  /* line 222, _aboutme.scss */
   .aboutme .button-skills-aboutme.section {
     width: 100%;
     float: none;
     margin-bottom: 20px;
     line-height: 58px;
   }
-  /* line 225, _aboutme.scss */
+  /* line 229, _aboutme.scss */
   .aboutme .button-skills-aboutme.section:nth-of-type(even) {
     margin-left: 0;
   }
