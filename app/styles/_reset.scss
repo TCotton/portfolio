@@ -19,7 +19,6 @@ figcaption,
 figure,
 footer,
 header,
-hgroup,
 main,
 nav,
 section,
@@ -297,8 +296,6 @@ body {
   // only optimize text for headers due to performance issues
   text-rendering: optimizeSpeed;
   -webkit-font-smoothing: subpixel-antialiased;
-  -webkit-font-kerning: auto;
-  -moz-font-kerning: auto;
   font-kerning: auto;
 }
 
@@ -314,12 +311,8 @@ caption {
   font-weight: normal;
   // just left it in the headers. Was making font less legible elsewhere
   text-rendering: optimizeLegibility;
-  -webkit-font-kerning: normal;
-  -moz-font-kerning: normal;
   font-kerning: normal;
-  -webkit-font-feature-settings: 'liga', 'kern';
-  -moz-font-feature-settings: 'liga', 'kern';
-  //  font-feature-settings: 'liga', 'kern';
+  font-feature-settings: 'liga', 'kern';
 }
 
 // Hack that prevents the jump between scrollbar and no-scrollbar pages.
@@ -329,8 +322,9 @@ html {
   margin-right: 0;
 }
 
+
 // slight character and word gap of retina devices to make the text more legible
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx), (min-resolution: 192dpi) {
+@media (min-device-pixel-ratio: 2), (min-resolution: 2dppx), (min-resolution: 192dpi) {
 
   p,
   li {
@@ -381,7 +375,7 @@ input[type=text],
 input[type=email],
 input[type=url],
 textarea {
-  -webkit-appearance: none;
+  appearance: none;
   border-radius: 0;
 }
 

@@ -584,7 +584,7 @@ module.exports = function(grunt) {
         map: true,
         processors: [
           require('postcss-will-change'),
-          require('autoprefixer-core')({browsers: 'last 3 versions'}),
+          require('autoprefixer-core')({browsers: ['last 3 versions', 'Android >= 2.3', 'ie_mob 11'], cascade: false }),
           require('postcss-fakeid'),
           require('postcss-single-charset'),
           require('postcss-focus'),

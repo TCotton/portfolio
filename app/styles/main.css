@@ -17,7 +17,6 @@
   figure,
   footer,
   header,
-  hgroup,
   main,
   nav,
   section,
@@ -25,110 +24,110 @@
     display: block;
   }
 
-  /* line 33, _reset.scss */
+  /* line 32, _reset.scss */
   audio, canvas, progress, video {
     display: inline-block;
     vertical-align: baseline;
   }
 
-  /* line 41, _reset.scss */
+  /* line 40, _reset.scss */
   audio:not([controls]) {
     display: none;
     height: 0;
   }
 
-  /* line 48, _reset.scss */
+  /* line 47, _reset.scss */
   [hidden], template {
     display: none;
   }
 
-  /* line 55, _reset.scss */
+  /* line 54, _reset.scss */
   html {
     font-family: sans-serif;
     text-size-adjust: 100%;
   }
 
-  /* line 65, _reset.scss */
+  /* line 64, _reset.scss */
   body {
     margin: 0;
   }
 
-  /* line 71, _reset.scss */
+  /* line 70, _reset.scss */
   a {
     background: transparent;
   }
 
-  /* line 76, _reset.scss */
+  /* line 75, _reset.scss */
   a:focus {
     outline: thin dotted #ccc;
   }
 
-  /* line 80, _reset.scss */
+  /* line 79, _reset.scss */
   textarea:focus,
   input:focus {
     outline: thin dotted #ccc;
   }
 
-  /* line 85, _reset.scss */
+  /* line 84, _reset.scss */
   :focus {
     outline: thin dotted #ccc;
   }
 
-  /* line 90, _reset.scss */
+  /* line 89, _reset.scss */
   abbr[title] {
     border-bottom: 1px dotted;
   }
 
-  /* line 95, _reset.scss */
+  /* line 94, _reset.scss */
   b,
   strong {
     font-weight: bold;
   }
 
-  /* line 101, _reset.scss */
+  /* line 100, _reset.scss */
   dfn {
     font-style: italic;
   }
 
-  /* line 106, _reset.scss */
+  /* line 105, _reset.scss */
   hr {
     box-sizing: content-box;
     height: 0;
   }
 
-  /* line 112, _reset.scss */
+  /* line 111, _reset.scss */
   mark {
     background: #ff0;
     color: #000;
   }
 
-  /* line 118, _reset.scss */
+  /* line 117, _reset.scss */
   code, kbd, pre, samp {
     font-family: monospace, serif;
     font-size: 1em;
   }
 
-  /* line 124, _reset.scss */
+  /* line 123, _reset.scss */
   pre {
     white-space: pre-wrap;
   }
 
-  /* line 129, _reset.scss */
+  /* line 128, _reset.scss */
   q:before {
     content: '\201C';
   }
 
-  /* line 133, _reset.scss */
+  /* line 132, _reset.scss */
   q:after {
     content: '\201D';
   }
 
-  /* line 138, _reset.scss */
+  /* line 137, _reset.scss */
   small {
     font-size: 80%;
   }
 
-  /* line 143, _reset.scss */
+  /* line 142, _reset.scss */
   sub, sup {
     font-size: 75%;
     line-height: 0;
@@ -136,45 +135,45 @@
     vertical-align: baseline;
   }
 
-  /* line 150, _reset.scss */
+  /* line 149, _reset.scss */
   sup {
     top: -0.5em;
   }
 
-  /* line 154, _reset.scss */
+  /* line 153, _reset.scss */
   sub {
     bottom: -0.25em;
   }
 
-  /* line 160, _reset.scss */
+  /* line 159, _reset.scss */
   img {
     border: none;
   }
 
-  /* line 165, _reset.scss */
+  /* line 164, _reset.scss */
   svg:not(:root) {
     overflow: hidden;
   }
 
-  /* line 171, _reset.scss */
+  /* line 170, _reset.scss */
   figure {
     margin: 0;
   }
 
-  /* line 177, _reset.scss */
+  /* line 176, _reset.scss */
   fieldset {
     border: none;
     margin: 0;
     padding: 0;
   }
 
-  /* line 185, _reset.scss */
+  /* line 184, _reset.scss */
   legend {
     border: none;
     padding: 0;
   }
 
-  /* line 194, _reset.scss */
+  /* line 193, _reset.scss */
   button,
   input,
   optgroup,
@@ -185,24 +184,24 @@
     margin: 0;
   }
 
-  /* line 205, _reset.scss */
+  /* line 204, _reset.scss */
   button,
   input {
     line-height: normal;
   }
 
-  /* line 214, _reset.scss */
+  /* line 213, _reset.scss */
   button,
   select {
     text-transform: none;
   }
 
-  /* line 220, _reset.scss */
+  /* line 219, _reset.scss */
   button {
     overflow: visible;
   }
 
-  /* line 227, _reset.scss */
+  /* line 226, _reset.scss */
   button,
   html input[type="button"],
   input[type="reset"],
@@ -211,71 +210,69 @@
     cursor: pointer;
   }
 
-  /* line 236, _reset.scss */
+  /* line 235, _reset.scss */
   button[disabled],
   html input[disabled] {
     cursor: default;
   }
 
-  /* line 243, _reset.scss */
+  /* line 242, _reset.scss */
   input[type="checkbox"],
   input[type="radio"] {
     box-sizing: border-box;
     padding: 0;
   }
 
-  /* line 251, _reset.scss */
+  /* line 250, _reset.scss */
   input[type="search"] {
     -webkit-appearance: textfield;
     box-sizing: content-box;
   }
 
-  /* line 257, _reset.scss */
+  /* line 256, _reset.scss */
   input[type="search"]::-webkit-search-cancel-button,
   input[type="search"]::-webkit-search-decoration {
     -webkit-appearance: none;
   }
 
-  /* line 263, _reset.scss */
+  /* line 262, _reset.scss */
   button::-moz-focus-inner,
   input::-moz-focus-inner {
     border: none;
     padding: 0;
   }
 
-  /* line 270, _reset.scss */
+  /* line 269, _reset.scss */
   input {
     line-height: normal;
   }
 
-  /* line 278, _reset.scss */
+  /* line 277, _reset.scss */
   textarea {
     overflow: auto;
     vertical-align: top;
   }
 
-  /* line 285, _reset.scss */
+  /* line 284, _reset.scss */
   table {
     border-collapse: collapse;
     border-spacing: 0;
   }
 
-  /* line 290, _reset.scss */
+  /* line 289, _reset.scss */
   td,
   th {
     padding: 0;
   }
 
-  /* line 296, _reset.scss */
+  /* line 295, _reset.scss */
   body {
     text-rendering: optimizeSpeed;
     -webkit-font-smoothing: subpixel-antialiased;
-    -webkit-font-kerning: auto;
-    -moz-font-kerning: auto;
     font-kerning: auto;
   }
 
-  /* line 305, _reset.scss */
+  /* line 302, _reset.scss */
   h1,
   h2,
   h3,
@@ -287,21 +284,18 @@
   caption {
     font-weight: normal;
     text-rendering: optimizeLegibility;
-    -webkit-font-kerning: normal;
-    -moz-font-kerning: normal;
     font-kerning: normal;
-    -webkit-font-feature-settings: 'liga', 'kern';
-    -moz-font-feature-settings: 'liga', 'kern';
+    font-feature-settings: 'liga', 'kern';
   }
 
-  /* line 327, _reset.scss */
+  /* line 320, _reset.scss */
   html {
     margin-left: calc(100vw - 100%);
     margin-right: 0;
   }
 }
-@media screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 2dppx), screen and (min-resolution: 192dpi) {
-  /* line 335, _reset.scss */
+@media screen and (min-device-pixel-ratio: 2), screen and (min-resolution: 2dppx), screen and (min-resolution: 192dpi) {
+  /* line 329, _reset.scss */
   p,
   li {
     letter-spacing: 0.01rem;
@@ -309,14 +303,14 @@
   }
 }
 @media screen {
-  /* line 344, _reset.scss */
+  /* line 338, _reset.scss */
   *,
   *::before,
   *::after {
     box-sizing: border-box;
   }
 
-  /* line 350, _reset.scss */
+  /* line 344, _reset.scss */
   input[type=submit],
   input[type=button],
   select,
@@ -324,20 +318,20 @@
     cursor: pointer;
   }
 
-  /* line 357, _reset.scss */
+  /* line 351, _reset.scss */
   textarea {
     resize: vertical;
     overflow: auto;
     width: 100%;
   }
 
-  /* line 366, _reset.scss */
+  /* line 360, _reset.scss */
   input[type="number"]::-webkit-inner-spin-button,
   input[type="number"]::-webkit-outer-spin-button {
     height: auto;
   }
 
-  /* line 372, _reset.scss */
+  /* line 366, _reset.scss */
   input[type='search']::-webkit-search-decoration,
   input[type='search']::-webkit-search-cancel-button,
   input[type='search']::-webkit-search-results-button,
@@ -345,16 +339,16 @@
     display: none;
   }
 
-  /* line 380, _reset.scss */
+  /* line 374, _reset.scss */
   input[type=text],
   input[type=email],
   input[type=url],
   textarea {
-    -webkit-appearance: none;
+    appearance: none;
     border-radius: 0;
   }
 
-  /* line 391, _reset.scss */
+  /* line 385, _reset.scss */
   img {
     max-width: 100%;
     height: auto;
@@ -362,54 +356,54 @@
     border: none;
   }
 
-  /* line 399, _reset.scss */
+  /* line 393, _reset.scss */
   a:link {
     color: blue;
   }
 
-  /* line 403, _reset.scss */
+  /* line 397, _reset.scss */
   a:visited {
     color: blue;
   }
 
-  /* line 409, _reset.scss */
+  /* line 403, _reset.scss */
   a:focus {
     color: blue;
   }
 
-  /* line 413, _reset.scss */
+  /* line 407, _reset.scss */
   a:hover {
     color: blue;
   }
 
-  /* line 417, _reset.scss */
+  /* line 411, _reset.scss */
   a:active {
     color: blue;
   }
 
-  /* line 421, _reset.scss */
+  /* line 415, _reset.scss */
   em {
     font-style: italic;
   }
 
-  /* line 428, _reset.scss */
+  /* line 422, _reset.scss */
   input[aria-required="true"],
   textarea[aria-required="true"] {
     background: #fffdd0;
     transition: all 0.3s;
   }
 
-  /* line 434, _reset.scss */
+  /* line 428, _reset.scss */
   input[aria-required="true"]:valid, textarea[aria-required="true"]:valid {
     background: white;
   }
 
-  /* line 439, _reset.scss */
+  /* line 433, _reset.scss */
   .hide {
     display: none;
   }
 
-  /* line 444, _reset.scss */
+  /* line 438, _reset.scss */
   .visuallyhidden {
     border: none;
     clip: rect(0 0 0 0);
@@ -421,7 +415,7 @@
     width: 1px;
   }
 
-  /* line 456, _reset.scss */
+  /* line 450, _reset.scss */
   .clearfix::before,
   .clearfix::after {
     content: '\0020';
@@ -430,7 +424,7 @@
     overflow: hidden;
   }
 
-  /* line 464, _reset.scss */
+  /* line 458, _reset.scss */
   .clearfix::after {
     clear: both;
   }
@@ -438,13 +432,6 @@
   /* line 175, _mixins.scss */
   .line-through {
     text-decoration: line-through;
-    -webkit-user-select: none;
-    /* Chrome all / Safari all */
-    -moz-user-select: none;
-    /* Firefox all */
-    -ms-user-select: none;
-    /* IE 10+ */
-    -o-user-select: none;
     user-select: none;
   }
 
@@ -463,13 +450,6 @@
 /* line 175, _mixins.scss */
 .line-through {
   text-decoration: line-through;
-  -webkit-user-select: none;
-  /* Chrome all / Safari all */
-  -moz-user-select: none;
-  /* Firefox all */
-  -ms-user-select: none;
-  /* IE 10+ */
-  -o-user-select: none;
   user-select: none;
 }
 
