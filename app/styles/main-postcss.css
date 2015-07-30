@@ -2986,6 +2986,7 @@
     padding: 0.5em 3em 0.5em 0.5em;
     position: relative;
     -webkit-clip-path: polygon(0% 0%, 100% 0%, 96% 100%, 0% 100%);
+    clip-path: polygon(0% 0%, 100% 0%, 96% 100%, 0% 100%);
   }
   /* line 85, _blog.scss */
   .blog article blockquote:hover, .blog article blockquote:focus {

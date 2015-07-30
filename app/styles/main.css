@@ -3162,7 +3162,7 @@
     margin: 1.5em 10px 1.5em 0;
     padding: 0.5em 3em 0.5em 0.5em;
     position: relative;
-    -webkit-clip-path: polygon(0% 0%, 100% 0%, 96% 100%, 0% 100%);
+    clip-path: polygon(0% 0%, 100% 0%, 96% 100%, 0% 100%);
   }
   /* line 85, _blog.scss */
   .blog article blockquote:hover {
