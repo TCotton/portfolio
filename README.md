@@ -1,9 +1,4 @@
-I've written a blog article here about using
-
-constructor functions with AngularJS controllers:
-
-http://andywalpole.me/#!/blog/140067/using-prototypal-inheritance-angularjs-controllers-services
-
+```
     ____                __   ____        __ _                             __
    / __ \ ____   _____ / /_ / __/____   / /(_)____     ____ _ ____   ____/ /
   / /_/ // __ \ / ___// __// /_ / __ \ / // // __ \   / __ `// __ \ / __  /
@@ -22,6 +17,8 @@ http://andywalpole.me/#!/blog/140067/using-prototypal-inheritance-angularjs-cont
  / ___ | / / / // /_/ // /_/ /    | |/ |/ // /_/ // // /_/ // /_/ // //  __/
 /_/  |_|/_/ /_/ \__,_/ \__, /     |__/|__/ \__,_//_// .___/ \____//_/ \___/
                       /____/                       /_/
+
+```
 
 http://andywalpole.me
 
