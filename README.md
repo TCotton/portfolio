@@ -1,5 +1,7 @@
 I've written a blog article here about using
+
 constructor functions with AngularJS controllers:
+
 http://andywalpole.me/#!/blog/140067/using-prototypal-inheritance-angularjs-controllers-services
 
     ____                __   ____        __ _                             __
