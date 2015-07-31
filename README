@@ -22,3 +22,6 @@ http://andywalpole.me/#!/blog/140067/using-prototypal-inheritance-angularjs-cont
                       /____/                       /_/
 
 http://andywalpole.me
+
+[![Dependency Status](https://david-dm.org/tcotton/portfolio.svg?style=flat-square)](https://david-dm.org/tcotton/portfolio)
+[![devDependency Status](https://david-dm.org/tcotton/portfolio/dev-status.svg?style=flat-square)](https://david-dm.org/tcotton/portfolio#info=devDependencies)
