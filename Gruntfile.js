@@ -585,10 +585,11 @@ module.exports = function(grunt) {
         processors: [
           require('postcss-will-change'),
           require('autoprefixer-core')({browsers: ['last 3 versions', 'Android >= 2.3', 'ie_mob 11'], cascade: false }),
+          require('postcss-mq-keyframes'),
           require('postcss-fakeid'),
           require('postcss-single-charset'),
           require('postcss-focus'),
-          require('postcss-mq-keyframes')
+          require('css-mqpacker')
         ]
       },
       prod: {
