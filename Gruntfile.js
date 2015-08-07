@@ -524,19 +524,6 @@ module.exports = function(grunt) {
       }
     },
 
-    /*  'lodash': {
-     'build': {
-     // output location
-     'dest': '<%= yeoman.app %>/components/lodash.build.js',
-     'options': {
-     // modifiers for prepared builds
-     // modern, strict, compat
-     'modifier': 'modern',Ima
-     'moduleId': 'underscore'
-     }
-     }
-     },*/
-
     protractor: {
       options: {
         configFile: 'e2e.conf.js', // Default config file
@@ -554,14 +541,6 @@ module.exports = function(grunt) {
           }
         }
       }
-      /*     run_firefox: {
-       configFile: 'e2e.conf.js', // Default config file
-       options: {
-       args: {
-       browser: 'firefox'
-       }
-       }/Applications/MAMP/htdocs/portfolio/app/config/constants.js
-       }*/
     },
 
     jscs: {
@@ -588,8 +567,7 @@ module.exports = function(grunt) {
           require('postcss-mq-keyframes'),
           require('postcss-fakeid'),
           require('postcss-single-charset'),
-          require('postcss-focus'),
-          require('css-mqpacker')
+          require('postcss-focus')
         ]
       },
       prod: {

@@ -128,18 +128,13 @@
 
   #slider {
     [class*=animate-bounceIn] {
-      -webkit-animation-name: bounceIn;
-      -webkit-animation-duration: 1s;
-      -webkit-animation-fill-mode: both;
       animation-name: bounceIn;
       animation-duration: 1s;
       animation-fill-mode: both;
     }
 
     .animate-bounceIn-later {
-      -webkit-animation-duration: 0.6s;
       animation-duration: 0.6s;
-      -webkit-animation-delay: 0.4s;
       animation-delay: 0.4s;
     }
   }
