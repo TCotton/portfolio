@@ -73,7 +73,7 @@ describe('Controller: ProjectsPageCtrl', function () {
     $rootScope.$digest();
 
     expect(scope.prevPage).toEqual(PROJECTS.lightning.internalUrl);
-    expect(scope.nextPage).toEqual(PROJECTS.twttwt.internalUrl);
+    expect(scope.nextPage).toEqual(PROJECTS['mq-keyframes'].internalUrl);
 
   });
 

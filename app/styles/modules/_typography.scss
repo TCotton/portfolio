@@ -363,9 +363,10 @@ h3.contact-header {
 }
 
 h3.project-header {
-  @include font-calculator($baseFontFamily, 30px, 0);
+  @include font-calculator($baseFontFamily, 26px, 0);
   font-weight: 400;
   color: white;
+  white-space: nowrap;
 }
 
 .footer-top-text p, ul.footer-top-text {

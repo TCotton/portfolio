@@ -19,14 +19,14 @@
     "externalUrl": "http://pennybooks.info/",
     "workImage": "/images/peenybooks-screenshot.png"
   },
-  "twttwt": {
+  "mq-keyframes": {
     "id": "003",
-    "title": "Twt Twt",
-    "summary": "Send Tweets with UTF-8 character symbols to make a simple message fun - ♘ ❤ ♬ ♡ ❄ ♘",
-    "details": "<p>twt twt uses the Twitter API to allow users to insert unicode characters into their Tweets.</p><p>Technologies used include QAuth, jQuery, jQuery Rumble plugin, Modernizr, Selectivizr and SVG.</p>",
-    "code": "HTML5 APIs and PHP backend",
-    "internalUrl": "/#!/side-projects/twttwt",
-    "externalUrl": "https://twttwt.com/",
-    "workImage": "/images/twttwt-screenshot.png"
+    "title": "mq-keyframes",
+    "summary": "Part of postCSS ecosystem. PostCSS is a tool for transforming CSS with JS plugins",
+    "details": "<p>postcss-mq-keyframes is part of the postCSS ecosystem - a tool for transforming CSS with JS plugins</p><p>Takes CSS3 keyframe animation and moves them outside any media queries to the bottom of the file.</p>",
+    "code": "JavaScript - NodeJS",
+    "internalUrl": "/#!/side-projects/postcss-mq-keyframes",
+    "externalUrl": "https://www.npmjs.com/package/postcss-mq-keyframes",
+    "workImage": "/images/postcss-mq-keyframes-screenshot.png"
   }
 }

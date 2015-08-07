@@ -1406,13 +1406,14 @@
 
   /* line 365, modules/_typography.scss */
   h3.project-header {
-    font-size: 3em;
+    font-size: 2.6em;
     font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
     font-weight: 400;
     color: white;
+    white-space: nowrap;
   }
 
-  /* line 371, modules/_typography.scss */
+  /* line 372, modules/_typography.scss */
   .footer-top-text p, ul.footer-top-text {
     font-size: 2em;
     font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
@@ -1422,14 +1423,14 @@
     color: #666;
   }
 
-  /* line 378, modules/_typography.scss */
+  /* line 379, modules/_typography.scss */
   .code-preview {
     font-size: 12px;
     color: #666;
     line-height: 16px;
   }
 
-  /* line 384, modules/_typography.scss */
+  /* line 385, modules/_typography.scss */
   p.footer-copyright {
     font-size: 1.3em;
     font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
@@ -1437,24 +1438,24 @@
     color: white;
     text-transform: capitalize;
   }
-  /* line 389, modules/_typography.scss */
+  /* line 390, modules/_typography.scss */
   p.footer-copyright a {
     color: white;
     text-decoration: none;
   }
-  /* line 392, modules/_typography.scss */
+  /* line 393, modules/_typography.scss */
   p.footer-copyright a:hover {
     text-decoration: underline;
   }
 
-  /* line 398, modules/_typography.scss */
+  /* line 399, modules/_typography.scss */
   .admin-comments dt, .content-text aside dt {
     font-size: 1.4em;
     font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
     font-weight: 600;
   }
 
-  /* line 403, modules/_typography.scss */
+  /* line 404, modules/_typography.scss */
   .admin-comments dd, .content-text aside dd {
     font-size: 1.4em;
     font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
@@ -1462,30 +1463,30 @@
     font-weight: 400;
   }
 
-  /* line 408, modules/_typography.scss */
+  /* line 409, modules/_typography.scss */
   .content-text aside a {
     text-decoration: none;
     background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.3) 11%, rgba(0, 0, 0, 0.3) 16%, transparent 16%);
   }
-  /* line 413, modules/_typography.scss */
+  /* line 414, modules/_typography.scss */
   .content-text aside a:link {
     color: #666;
   }
-  /* line 416, modules/_typography.scss */
+  /* line 417, modules/_typography.scss */
   .content-text aside a:visited {
     color: gray;
   }
-  /* line 419, modules/_typography.scss */
+  /* line 420, modules/_typography.scss */
   .content-text aside a:focus {
     color: #666;
     background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
   }
-  /* line 423, modules/_typography.scss */
+  /* line 424, modules/_typography.scss */
   .content-text aside a:hover {
     color: #666;
     background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
   }
-  /* line 428, modules/_typography.scss */
+  /* line 429, modules/_typography.scss */
   .content-text aside a:active {
     color: #666;
     background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.1) 11%, rgba(0, 0, 0, 0.1) 16%, transparent 16%);
@@ -2800,7 +2801,7 @@
   }
   /* line 46, _sideprojects.scss */
   .no-webp .side-projects .project-box-three {
-    background-image: url("/images/twt-twt-sideproject.png");
+    background-image: url("/images/postcss-mq-keyframes-sideproject.png");
   }
 
   /* line 54, _sideprojects.scss */
@@ -2813,7 +2814,7 @@
   }
   /* line 62, _sideprojects.scss */
   .webp .side-projects .project-box-three {
-    background-image: url("/images/twt-twt-sideproject.png.webp");
+    background-image: url("/images/postcss-mq-keyframes-sideproject.png.webp");
   }
 }
 @media screen and (max-width: 979px) {
