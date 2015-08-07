@@ -6,7 +6,7 @@
 
 </div><!-- end banner -->
 
-<div id="main-content" class="clearfix contact content-text" itemscope itemtype="http://schema.org/ContactPage">
+<div id="main-content" class="clearfix form content-text" itemscope itemtype="http://schema.org/ContactPage">
 
   <div id="left-large">
 
@@ -36,7 +36,7 @@
       <span class="name-block">
       <label for="name" class="visuallyhidden">Your full name</label>
       <span data-ng-if="contactForm.name.$invalid && submitted" class="error-message" tabindex="0" aria-labelledby="name" role="alert">Please supply your name.</span>
-      <input type="text" id="name" name="name" value="" placeholder="Your full name" required="required" class="input"
+      <input type="text" id="name" name="name" value="" placeholder="Your full name" required="required" class="form__input"
              data-ng-required="true" data-ng-model="contact.name" maxlength="64" />
       </span>
 
@@ -44,14 +44,14 @@
       <label for="email" class="visuallyhidden">Your email address</label>
       <span data-ng-if="contactForm.email.$invalid && submitted" class="error-message" tabindex="0" aria-labelledby="email" role="alert">Please supply a valid email address.</span>
       <input type="email" id="email" name="email" value="" placeholder="Your email address" required="required"
-             class="input" data-ng-required="true" data-ng-model="contact.email" maxlength="64"  autocorrect="off" autocapitalize="off"/>
+             class="form__input" data-ng-required="true" data-ng-model="contact.email" maxlength="64"  autocorrect="off" autocapitalize="off"/>
         </span>
 
       <span class="message-block">
       <label for="message" class="visuallyhidden">Please write a message</label>
       <span data-ng-if="contactForm.message.$invalid && submitted" class="error-message" tabindex="0" aria-labelledby="message" role="alert">Don't forget to write a message!</span>
       <textarea id="message" cols="10" rows="10" name="message" placeholder="Your message" required="required"
-                class="textarea" data-ng-required="true" data-ng-model="contact.message" maxlength="1000"></textarea>
+                class="form__textarea" data-ng-required="true" data-ng-model="contact.message" maxlength="1000"></textarea>
         </span>
 
             <span class="hide">
