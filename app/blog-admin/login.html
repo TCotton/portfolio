@@ -17,16 +17,16 @@
     <form novalidate="novalidate" name="loginForm"
           data-ng-submit="AdminLogin.submitLoginForm(loginForm.$valid)">
 
-      <span class="name-block">
+       <span class="form__division-blocks">
       <label for="name" class="visuallyhidden">Your full name</label>
-      <span data-ng-show="loginForm.name.$invalid && submitted" class="error-message">Please supply your username.</span>
+      <span data-ng-show="loginForm.name.$invalid && submitted" class="form__error-message">Please supply your username.</span>
       <input type="text" id="name" name="name" value="" placeholder="Username" required="required" class="form__input"
              data-ng-required="true" data-ng-model="login.name" maxlength="32"  autocorrect="off" autocapitalize="off"/>
       </span>
 
-      <span class="password-block">
+       <span class="form__division-blocks">
       <label for="password" class="visuallyhidden">Your email address</label>
-      <span data-ng-show="loginForm.password.$invalid && submitted" class="error-message">Please supply a valid password.</span>
+      <span data-ng-show="loginForm.password.$invalid && submitted" class="form__error-message">Please supply a valid password.</span>
       <input type="password" id="password" name="password" value="" placeholder="Password" required="required"
              class="form__input" data-ng-required="true" data-ng-model="login.password" maxlength="32"  autocorrect="off" autocapitalize="off"/>
         </span>

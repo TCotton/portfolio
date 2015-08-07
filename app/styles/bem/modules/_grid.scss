@@ -1,0 +1,47 @@
+[class*=__left-large] {
+  width: 822px;
+  float: left;
+  display: inline;
+  margin: 0 32px 0 0;
+}
+
+[class*=__left-small] {
+  width: 398px;
+  float: left;
+  display: inline;
+  margin: 0 32px 0 0;
+}
+
+[class*=__right-large] {
+  width: 822px;
+  float: left;
+  display: inline;
+}
+
+[class*=__right-small] {
+  width: 398px;
+  float: left;
+  display: inline;
+}
+
+@include breakpoint('wide') {
+
+  [class*=__left-large] {
+    width: 65.65495207667732%;
+    margin: 0 2.5559105431309903% 0 0;
+  }
+
+  [class*=__left-small] {
+    width: 31.789137380191697%;
+    margin: 0 2.5559105431309903% 0 0;
+  }
+
+  [class*=__right-large] {
+    width: 65.65495207667732%;
+  }
+
+  [class*=__right-small] {
+    width: 31.789137380191697%;
+  }
+
+}

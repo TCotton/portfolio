@@ -35,6 +35,7 @@
 .comments,
 .login,
 .user-details {
+  /*
 
   .input {
     width: 70%;
@@ -79,8 +80,9 @@
     margin: 0 10px 15px 0;
     float: left;
   }
+  */
 
-  [class$="-block"] {
+/*  [class$="-block"] {
     position: relative;
     display: block;
     clear: both;
@@ -97,10 +99,10 @@
       background: $textTwo;
       padding: 0 5px;
     }
-  }
+  }*/
 
 }
-
+/*
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
 
   input[type='text']:focus,
@@ -121,8 +123,8 @@
     font-size: 15px;
   }
 
-}
-
+}*/
+/*
 @media screen and (min--moz-device-pixel-ratio: 0) {
 
   // another firefox bug :(
@@ -145,8 +147,9 @@
 
   }
 
-}
+}*/
 
+/*
 @include breakpoint('mobile') {
 
   .contact,
@@ -165,4 +168,4 @@
 
   }
 
-}
+}*/

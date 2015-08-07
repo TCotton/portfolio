@@ -86,7 +86,10 @@ module.exports = function(grunt) {
         tasks: ['newer:jshint:test', 'protractor-e2e']
       },
       sass: {
-        files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}', '<%= yeoman.app %>/styles/bem/{,*/}*.{scss,sass}'],
+        files: [
+          '<%= yeoman.app %>/styles/{,*/}*.{scss,sass}',
+          '<%= yeoman.app %>/styles/bem/{,*/}*.{scss,sass}'
+        ],
         tasks: ['sass:dev', 'scsslint']
       },
       css: {

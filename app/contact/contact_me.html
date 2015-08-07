@@ -8,11 +8,11 @@
 
 <div id="main-content" class="clearfix form content-text" itemscope itemtype="http://schema.org/ContactPage">
 
-  <div id="left-large">
+  <div class="contact__left-large">
 
     <div class="hidden-desktop">
 
-      <h4 class="content-title">Get in touch</h4>
+      <h4 class="content-title">Get in touch left</h4>
 
       <p>Andy Walpole<br>
         Web Developer</p>
@@ -22,7 +22,7 @@
       </p>
 
     </div>
-    <!-- end right-large -->
+    <!-- end hidden-desktop -->
 
     <h3 class="content-title">Send a message</h3>
 
@@ -33,23 +33,23 @@
     <form novalidate="novalidate" name="contactForm"
           data-ng-submit="AdminFormCtrl.submitContactForm(contactForm.$valid)">
 
-      <span class="name-block">
+      <span class="form__division-blocks">
       <label for="name" class="visuallyhidden">Your full name</label>
-      <span data-ng-if="contactForm.name.$invalid && submitted" class="error-message" tabindex="0" aria-labelledby="name" role="alert">Please supply your name.</span>
+      <span data-ng-if="contactForm.name.$invalid && submitted" class="form__error-message" tabindex="0" aria-labelledby="name" role="alert">Please supply your name.</span>
       <input type="text" id="name" name="name" value="" placeholder="Your full name" required="required" class="form__input"
              data-ng-required="true" data-ng-model="contact.name" maxlength="64" />
       </span>
 
-      <span class="email-block">
+      <span class="form__division-blocks">
       <label for="email" class="visuallyhidden">Your email address</label>
-      <span data-ng-if="contactForm.email.$invalid && submitted" class="error-message" tabindex="0" aria-labelledby="email" role="alert">Please supply a valid email address.</span>
+      <span data-ng-if="contactForm.email.$invalid && submitted" class="form__error-message" tabindex="0" aria-labelledby="email" role="alert">Please supply a valid email address.</span>
       <input type="email" id="email" name="email" value="" placeholder="Your email address" required="required"
              class="form__input" data-ng-required="true" data-ng-model="contact.email" maxlength="64"  autocorrect="off" autocapitalize="off"/>
         </span>
 
-      <span class="message-block">
+      <span class="form__division-blocks">
       <label for="message" class="visuallyhidden">Please write a message</label>
-      <span data-ng-if="contactForm.message.$invalid && submitted" class="error-message" tabindex="0" aria-labelledby="message" role="alert">Don't forget to write a message!</span>
+      <span data-ng-if="contactForm.message.$invalid && submitted" class="form__error-message" tabindex="0" aria-labelledby="message" role="alert">Don't forget to write a message!</span>
       <textarea id="message" cols="10" rows="10" name="message" placeholder="Your message" required="required"
                 class="form__textarea" data-ng-required="true" data-ng-model="contact.message" maxlength="1000"></textarea>
         </span>
@@ -67,7 +67,7 @@
   </div>
   <!-- end left-large -->
 
-  <div id="right-small">
+  <div class="contact__right-small">
 
     <h4 class="content-title">Get in touch</h4>
 
@@ -78,7 +78,7 @@
       <a href="mailto:me@andywalpole.me?Subject=Contact%20from%20portfolio" class="underline">me@andywalpole.me</a></p>
 
   </div>
-  <!-- end right-large -->
+  <!-- end right-small -->
 
 
 </div><!-- end main-content -->

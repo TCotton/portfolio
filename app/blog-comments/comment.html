@@ -23,35 +23,35 @@
   <form novalidate="novalidate" name="commentForm" data-ng-if="commentsOpen"
         data-ng-submit="BlogCommentCtrl.submitComment(commentForm.$valid)">
 
-        <span class="title-block">
+    <span class="form__division-blocks">
         <label for="name" class="visuallyhidden">Your name</label>
           <span data-ng-if="commentForm.name.$invalid && commentBlogFormSubmit"
-                class="error-message" aria-labelledby="name" role="alert"
+                class="form__error-message" aria-labelledby="name" role="alert"
                 tabindex="0">Error: Please provide a name.</span>
         <input type="text" name="name" id="name" value="" placeholder="Name" required="required" aria-required="true"
                data-ng-model="commentFormData.name" data-ng-required="true" class="form__input" maxlength="120"/>
         </span>
 
-        <span class="email-block">
+    <span class="form__division-blocks">
         <label for="email" class="visuallyhidden">Your email address</label>
            <span data-ng-if="commentForm.email.$invalid && commentBlogFormSubmit"
-                 class="error-message" aria-labelledby="email"
+                 class="form__error-message" aria-labelledby="email"
                  role="alert" tabindex="0">Error: Please provide an email address.</span>
         <input type="email" name="email" id="email" value="" placeholder="Email (will be kept private)"
                required="required" data-ng-model="commentFormData.email" data-ng-required="true" aria-required="true"
                class="form__input" maxlength="200" autocorrect="off" autocapitalize="off"/>
         </span>
 
-        <span class="url-block">
+    <span class="form__division-blocks">
         <label for="url" class="visuallyhidden">Your website address</label>
         <input type="url" id="url" name="url" value="" placeholder="Website" class="form__input"
                data-ng-model="commentFormData.url" maxlength="200" autocorrect="off" autocapitalize="off"/>
         </span>
 
-         <span class="message-block">
+    <span class="form__division-blocks">
         <label for="message" class="visuallyhidden">Your comments</label>
              <span data-ng-if="commentForm.message.$invalid && commentBlogFormSubmit"
-                   class="error-message" aria-labelledby="message" role="alert" tabindex="0">Error: Please provide a comment.</span>
+                   class="form__error-message" aria-labelledby="message" role="alert" tabindex="0">Error: Please provide a comment.</span>
         <textarea id="message" cols="10" rows="10" placeholder="Your message"
                   data-ng-required="true" aria-required="true" data-ng-model="commentFormData.message" name="message"
                   required="required"

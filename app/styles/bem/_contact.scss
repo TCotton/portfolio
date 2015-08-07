@@ -1,0 +1,20 @@
+@include breakpoint('tablet') {
+
+  .contact {
+
+    &__left-large {
+      width: 100%;
+      float: none;
+      display: inline-block;
+      margin: 0;
+
+      .hidden-desktop {
+        width: 100%;
+      }
+    }
+
+    &__right-small {
+      display: none;
+    }
+  }
+}

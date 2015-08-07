@@ -996,6 +996,60 @@
   }
 }
 @media screen {
+  /* line 1, bem/modules/_grid.scss */
+  [class*=__left-large] {
+    width: 822px;
+    float: left;
+    display: inline;
+    margin: 0 32px 0 0;
+  }
+
+  /* line 8, bem/modules/_grid.scss */
+  [class*=__left-small] {
+    width: 398px;
+    float: left;
+    display: inline;
+    margin: 0 32px 0 0;
+  }
+
+  /* line 15, bem/modules/_grid.scss */
+  [class*=__right-large] {
+    width: 822px;
+    float: left;
+    display: inline;
+  }
+
+  /* line 21, bem/modules/_grid.scss */
+  [class*=__right-small] {
+    width: 398px;
+    float: left;
+    display: inline;
+  }
+}
+@media screen and (max-width: 1366px) {
+  /* line 29, bem/modules/_grid.scss */
+  [class*=__left-large] {
+    width: 65.65495207667732%;
+    margin: 0 2.5559105431309903% 0 0;
+  }
+
+  /* line 34, bem/modules/_grid.scss */
+  [class*=__left-small] {
+    width: 31.789137380191697%;
+    margin: 0 2.5559105431309903% 0 0;
+  }
+
+  /* line 39, bem/modules/_grid.scss */
+  [class*=__right-large] {
+    width: 65.65495207667732%;
+  }
+
+  /* line 43, bem/modules/_grid.scss */
+  [class*=__right-small] {
+    width: 31.789137380191697%;
+  }
+}
+@media screen {
   /* line 11, modules/_typography.scss */
   h1.logo {
     font-size: 3.5em;
@@ -1703,146 +1757,143 @@
     clear: both;
   }
 
-  /* line 39, modules/_forms.scss */
-  .contact .input,
-  .comments .input,
-  .login .input,
-  .user-details .input {
+  /* line 34, modules/_forms.scss */
+  .contact,
+  .comments,
+  .login,
+  .user-details {
+  /*
+
+  .input {
     width: 70%;
     height: 66px;
     padding: 10px;
-    border: 1px solid #ccc;
-    font-size: 1.6em;
-    font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
-    color: #666;
+    border: 1px solid $border;
+    @include font-calculator($baseFontFamily, 16px, 0);
+    color: $textTwo;
     font-weight: 400;
     clear: both;
     float: left;
     margin: 0 0 15px 0;
+
+    &:focus {
+      border: 1px solid $textTwo;
+    }
+
   }
-  /* line 51, modules/_forms.scss */
-  .contact .input:focus,
-  .comments .input:focus,
-  .login .input:focus,
-  .user-details .input:focus {
-    border: 1px solid #666;
-  }
-  /* line 57, modules/_forms.scss */
-  .contact .textarea,
-  .comments .textarea,
-  .login .textarea,
-  .user-details .textarea {
+
+  .textarea {
     width: 100%;
     height: 271px;
     padding: 10px;
-    border: 1px solid #ccc;
-    font-size: 1.6em;
-    font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
-    color: #666;
+    border: 1px solid $border;
+    @include font-calculator($baseFontFamily, 16px, 0);
+    color: $textTwo;
     font-weight: 400;
     clear: both;
     float: left;
     margin: 0 0 15px 0;
+
+    &:focus {
+      border: 1px solid $textTwo;
+    }
+
   }
-  /* line 69, modules/_forms.scss */
-  .contact .textarea:focus,
-  .comments .textarea:focus,
-  .login .textarea:focus,
-  .user-details .textarea:focus {
-    border: 1px solid #666;
-  }
-  /* line 75, modules/_forms.scss */
-  .contact .checkbox,
-  .comments .checkbox,
-  .login .checkbox,
-  .user-details .checkbox {
+
+  .checkbox {
     width: 20px;
     height: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid $border;
     margin: 0 10px 15px 0;
     float: left;
   }
-  /* line 83, modules/_forms.scss */
-  .contact [class$="-block"],
-  .comments [class$="-block"],
-  .login [class$="-block"],
-  .user-details [class$="-block"] {
-    position: relative;
-    display: block;
-    clear: both;
+  */
+    /*  [class$="-block"] {
+        position: relative;
+        display: block;
+        clear: both;
+    
+        .error-message {
+          @include font-calculator($baseFontFamily, 16px, 0);
+          height: 30px;
+          line-height: 30px;
+          position: absolute;
+          z-index: 1;
+          left: 0;
+          top: -30px;
+          color: white;
+          background: $textTwo;
+          padding: 0 5px;
+        }
+      }*/
   }
-  /* line 88, modules/_forms.scss */
-  .contact [class$="-block"] .error-message,
-  .comments [class$="-block"] .error-message,
-  .login [class$="-block"] .error-message,
-  .user-details [class$="-block"] .error-message {
-    font-size: 1.6em;
-    font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
-    height: 30px;
-    line-height: 30px;
-    position: absolute;
-    z-index: 1;
-    left: 0;
-    top: -30px;
-    color: white;
-    background: #666;
-    padding: 0 5px;
+
+  /*
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+  
+    input[type='text']:focus,
+    input[type='url']:focus,
+    input[type='email']:focus,
+    textarea:focus {
+      font-size: 16px;
+    }
+  
   }
-}
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-  /* line 106, modules/_forms.scss */
-  input[type='text']:focus,
-  input[type='url']:focus,
-  input[type='email']:focus,
-  textarea:focus {
-    font-size: 16px;
-  }
-}
-@media screen and (-webkit-min-device-pixel-ratio: 0) and (max-width: 979px) {
-  /* line 117, modules/_forms.scss */
-  input[type='text']:focus,
-  input[type='url']:focus,
-  input[type='email']:focus,
-  textarea:focus {
-    font-size: 15px;
-  }
-}
-@media screen and (min--moz-device-pixel-ratio: 0) {
-  /* line 136, modules/_forms.scss */
-  .contact .input,
-  .comments .input,
-  .login .input,
-  .user-details .input {
-    width: calc(70% - 20px);
-    height: 56px;
-  }
-  /* line 141, modules/_forms.scss */
-  .contact .textarea,
-  .comments .textarea,
-  .login .textarea,
-  .user-details .textarea {
-    width: calc(100% - 20px);
-    height: 261px;
-  }
-}
-@media screen and (max-width: 767px) {
-  /* line 157, modules/_forms.scss */
-  .contact .input,
-  .comments .input,
-  .login .input,
-  .user-details .input {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-  /* line 162, modules/_forms.scss */
-  .contact .textarea,
-  .comments .textarea,
-  .login .textarea,
-  .user-details .textarea {
-    margin-bottom: 10px;
-  }
-}
-@media screen {
+  
+  @media screen and (-webkit-min-device-pixel-ratio: 0) and (max-width: $media_breakpoint_tablet) {
+  
+    input[type='text']:focus,
+    input[type='url']:focus,
+    input[type='email']:focus,
+    textarea:focus {
+      font-size: 15px;
+    }
+  
+  }*/
+  /*
+  @media screen and (min--moz-device-pixel-ratio: 0) {
+  
+    // another firefox bug :(
+    // come back to this
+  
+    .contact,
+    .comments,
+    .login,
+    .user-details {
+  
+      .input {
+        width: calc(70% - 20px);
+        height: 56px;
+      }
+  
+      .textarea {
+        width: calc(100% - 20px);
+        height: 261px;
+      }
+  
+    }
+  
+  }*/
+  /*
+  @include breakpoint('mobile') {
+  
+    .contact,
+    .comments,
+    .login,
+    .user-details {
+  
+      .input {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+  
+      .textarea {
+        margin-bottom: 10px;
+      }
+  
+    }
+  
+  }*/
   /* line 3, bem/modules/_forms.scss */
   .form__input {
     width: 70%;
@@ -1857,11 +1908,11 @@
     float: left;
     margin: 0 0 15px 0;
   }
-  /* line 16, bem/modules/_forms.scss */
+  /* line 15, bem/modules/_forms.scss */
   .form__input:focus {
     border: 1px solid #666;
   }
-  /* line 22, bem/modules/_forms.scss */
+  /* line 20, bem/modules/_forms.scss */
   .form__textarea {
     width: 100%;
     height: 271px;
@@ -1875,11 +1926,81 @@
     float: left;
     margin: 0 0 15px 0;
   }
-  /* line 35, bem/modules/_forms.scss */
+  /* line 32, bem/modules/_forms.scss */
   .form__textarea:focus {
     border: 1px solid #666;
   }
-
+  /* line 37, bem/modules/_forms.scss */
+  .form__checkbox {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    margin: 0 10px 15px 0;
+    float: left;
+  }
+  /* line 45, bem/modules/_forms.scss */
+  .form__division-blocks {
+    position: relative;
+    display: block;
+    clear: both;
+  }
+  /* line 51, bem/modules/_forms.scss */
+  .form__error-message {
+    font-size: 1.6em;
+    font-family: 'Open Sans', Roboto, 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: -30px;
+    color: white;
+    background: #666;
+    padding: 0 5px;
+  }
+}
+@media screen and (max-width: 767px) {
+  /* line 70, bem/modules/_forms.scss */
+  .form__input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  /* line 75, bem/modules/_forms.scss */
+  .form__textarea {
+    margin-bottom: 10px;
+  }
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  /* line 83, bem/modules/_forms.scss */
+  input[type='text']:focus,
+  input[type='url']:focus,
+  input[type='email']:focus,
+  textarea:focus {
+    font-size: 16px;
+  }
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (max-width: 979px) {
+  /* line 94, bem/modules/_forms.scss */
+  input[type='text']:focus,
+  input[type='url']:focus,
+  input[type='email']:focus,
+  textarea:focus {
+    font-size: 15px;
+  }
+}
+@media screen and (min--moz-device-pixel-ratio: 0) {
+  /* line 110, bem/modules/_forms.scss */
+  .form__input {
+    width: calc(70% - 20px);
+    height: 56px;
+  }
+  /* line 115, bem/modules/_forms.scss */
+  .form__textarea {
+    width: calc(100% - 20px);
+    height: 261px;
+  }
+}
+@media screen {
   /* line 1, modules/_loader.scss */
   .loader {
     position: absolute;
@@ -3375,6 +3496,23 @@
     display: none;
   }
 }
+@media screen and (max-width: 979px) {
+  /* line 5, bem/_contact.scss */
+  .contact__left-large {
+    width: 100%;
+    float: none;
+    display: inline-block;
+    margin: 0;
+  }
+  /* line 11, bem/_contact.scss */
+  .contact__left-large .hidden-desktop {
+    width: 100%;
+  }
+  /* line 16, bem/_contact.scss */
+  .contact__right-small {
+    display: none;
+  }
+}
 @media screen {
   /* line 1, _admin.scss */
   .content-text .user-details ul {
@@ -3507,7 +3645,7 @@
     clear: both;
   }
 
-  /* line 5, _footer.scss */
+  /* line 6, _footer.scss */
   div[id=footer-top] {
     height: 281px;
     padding: 25px 57px 0 57px;
@@ -3515,11 +3653,11 @@
     background: #f4f3f2;
     position: relative;
   }
-  /* line 11, _footer.scss */
+  /* line 12, _footer.scss */
   div[id=footer-top] a {
     text-decoration: none;
   }
-  /* line 14, _footer.scss */
+  /* line 15, _footer.scss */
   div[id=footer-top]:after {
     content: '';
     position: absolute;
@@ -3539,7 +3677,7 @@
     background: linear-gradient(to bottom, rgba(244, 243, 242, 0) 0%, #f4f3f2 100%);
     /* W3C */
   }
-  /* line 29, _footer.scss */
+  /* line 30, _footer.scss */
   div[id=footer-top]:before {
     content: '';
     position: absolute;
@@ -3553,21 +3691,21 @@
     -webkit-transition: opacity 0.5s;
     transition: opacity 0.5s;
   }
-  /* line 41, _footer.scss */
+  /* line 42, _footer.scss */
   div[id=footer-top]:hover:before, div[id=footer-top]:focus:before {
     opacity: 0.5;
   }
 
-  /* line 48, _footer.scss */
+  /* line 49, _footer.scss */
   div[id=footer-top].blogFooter:after, div[id=footer-top].blogFooter:after {
     content: none;
   }
-  /* line 51, _footer.scss */
+  /* line 52, _footer.scss */
   div[id=footer-top].blogFooter:before, div[id=footer-top].blogFooter:before {
     content: none;
   }
 
-  /* line 57, _footer.scss */
+  /* line 58, _footer.scss */
   div[id=recommended-article] a {
     margin: auto;
     position: absolute;
@@ -3580,19 +3718,19 @@
   }
 }
 @media screen and (max-width: 1366px) {
-  /* line 68, _footer.scss */
+  /* line 69, _footer.scss */
   div[id=footer-top] {
     padding: 30px 4.172767203513909% 0 4.172767203513909%;
   }
 }
 @media screen and (max-width: 767px) {
-  /* line 76, _footer.scss */
+  /* line 77, _footer.scss */
   div[id=footer-top] {
     padding: 20px 4.172767203513909% 0 4.172767203513909%;
   }
 }
 @media screen {
-  /* line 81, _footer.scss */
+  /* line 82, _footer.scss */
   div[id=footer-bottom] {
     height: 94px;
     background: #27353d;
@@ -3600,7 +3738,7 @@
     position: relative;
     overflow: hidden;
   }
-  /* line 87, _footer.scss */
+  /* line 88, _footer.scss */
   div[id=footer-bottom]:before {
     content: '';
     position: absolute;

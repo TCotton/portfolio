@@ -8,7 +8,7 @@
 
 <div id="main-content" class="clearfix content-text">
 
-  <div class="user-details">
+  <div class="form">
 
     <h3 class="content-title">User details</h3>
 
@@ -27,20 +27,20 @@
     <form novalidate="novalidate" name="editUserForm"
           data-ng-submit="AdminUserDetailsCtrl.submitEditUserForm(editUserForm.$valid)" ng-if="editThisUser">
 
-      <span class="name-block">
+       <span class="form__division-blocks">
       <label for="name" class="visuallyhidden">Please supply your username</label>
       <span data-ng-show="editUserForm.name.$invalid && editUserSubmit.submitted"
-            class="error-message">Please supply your username.</span>
-      <input type="text" id="name" name="name" value="" placeholder="Username" required="required" class="input"
+            class="form__error-message">Please supply your username.</span>
+      <input type="text" id="name" name="name" value="" placeholder="Username" required="required" class="form__input"
              data-ng-required="true" data-ng-model="editUser.name"/>
       </span>
 
-      <span class="text-block">
+       <span class="form__division-blocks">
       <label for="text" class="visuallyhidden">Please supply a valid password</label>
       <span data-ng-show="editUserForm.text.$invalid && editUserSubmit.submitted"
-            class="error-message">Please supply a valid password.</span>
+            class="form__error-message">Please supply a valid password.</span>
       <input type="text" id="text" name="text" value="" placeholder="Password" required="required"
-             class="input" data-ng-required="true" data-ng-model="editUser.password"/>
+             class="form__input" data-ng-required="true" data-ng-model="editUser.password"/>
       </span>
 
       <input type="hidden" data-ng-model="editUser._id.$oid" value=""/>
@@ -54,20 +54,20 @@
     <form novalidate="novalidate" name="addUserForm"
           data-ng-submit="AdminUserDetailsCtrl.submitAddUserForm(addUserForm.$valid)" ng-if="!editThisUser">
 
-      <span class="name-block">
+       <span class="form__division-blocks">
       <label for="name" class="visuallyhidden">Please supply your username</label>
       <span data-ng-show="addUserForm.name.$invalid && addUserSubmit.submitted"
-            class="error-message">Please supply your username.</span>
-      <input type="text" id="name" name="name" value="" placeholder="Username" required="required" class="input"
+            class="form__error-message">Please supply your username.</span>
+      <input type="text" id="name" name="name" value="" placeholder="Username" required="required" class="form__input"
              data-ng-required="true" data-ng-model="addUser.name"/>
       </span>
 
-      <span class="text-block">
+       <span class="form__division-blocks">
       <label for="text" class="visuallyhidden">Please supply a valid password</label>
       <span data-ng-show="addUserForm.text.$invalid && addUserSubmit.submitted"
-            class="error-message">Please supply a valid password.</span>
+            class="form__error-message">Please supply a valid password.</span>
       <input type="text" id="text" name="text" value="" placeholder="Password" required="required"
-             class="input" data-ng-required="true" data-ng-model="addUser.password"/>
+             class="form__input" data-ng-required="true" data-ng-model="addUser.password"/>
       </span>
 
 

@@ -8,7 +8,7 @@
 
 <div id="main-content" class="clearfix content-text" ng-init="AdminEditBlogCtrl.anotherFunction()">
 
-  <div class="user-details">
+  <div class="form">
 
     <h3 class="content-title" data-ng-init="AdminEditBlogCtrl.getBlogs();">Blog articles listed below</h3>
 
@@ -23,53 +23,53 @@
     <form novalidate="novalidate" name="editBlogForm"
           data-ng-submit="AdminEditBlogCtrl.editBlog(editBlogForm.$valid)" data-ng-if="displayForm">
 
-      <span class="title-block">
+        <span class="form__division-blocks">
       <label for="title" class="visuallyhidden">Blog article title</label>
       <span data-ng-show="editBlogForm.title.$invalid && editBlogFormSubmit"
-            class="error-message">Please provide a blog title.</span>
-      <input type="text" id="title" name="title" value="" placeholder="Title" required="required" class="input"
+            class="form__error-message">Please provide a blog title.</span>
+      <input type="text" id="title" name="title" value="" placeholder="Title" required="required" class="form__input"
              data-ng-required="true" data-ng-model="editBlogFormData.title"/>
       </span>
 
-      <span class="author-block">
+        <span class="form__division-blocks">
       <label for="author" class="visuallyhidden">Blog article author</label>
       <span data-ng-show="editBlogForm.author.$invalid && editBlogFormSubmit"
-            class="error-message">Please provide the blog article author.</span>
+            class="form__error-message">Please provide the blog article author.</span>
       <input type="text" id="author" name="author" value="" placeholder="Author" required="required"
-             class="input" data-ng-required="true" data-ng-model="editBlogFormData.author"/>
+             class="form__input" data-ng-required="true" data-ng-model="editBlogFormData.author"/>
       </span>
 
-      <span class="category-block">
+        <span class="form__division-blocks">
       <label for="category" class="visuallyhidden">Blog category</label>
       <span data-ng-show="editBlogForm.category.$invalid && editBlogFormSubmit"
-            class="error-message">Please provide a blog category.</span>
+            class="form__error-message">Please provide a blog category.</span>
       <input type="text" id="category" name="category" value="" placeholder="Category" required="required"
-             class="input" data-ng-required="true" data-ng-model="editBlogFormData.category"/>
+             class="form__input" data-ng-required="true" data-ng-model="editBlogFormData.category"/>
       </span>
 
-            <span class="content-block">
+              <span class="form__division-blocks">
             <label for="content" class="visuallyhidden">Content</label>
-            <span data-ng-show="editBlogForm.content.$invalid && editBlogFormSubmit" class="error-message">Don't forget to add the content!</span>
+            <span data-ng-show="editBlogForm.content.$invalid && editBlogFormSubmit" class="form__error-message">Don't forget to add the content!</span>
             <textarea id="content" cols="10" rows="40" name="content" placeholder="Content" required="required"
-                      class="textarea" data-ng-required="true" data-ng-model="editBlogFormData.content"></textarea>
+                      class="form__textarea" data-ng-required="true" data-ng-model="editBlogFormData.content"></textarea>
             </span>
 
-      <span class="aside-block">
+        <span class="form__division-blocks">
       <label for="aside" class="visuallyhidden">Summary side block</label>
         <textarea id="aside" cols="10" rows="20" name="aside" placeholder="Summary side block - optional"
-                  class="textarea" data-ng-model="editBlogFormData.aside"></textarea>
+                  class="form__textarea" data-ng-model="editBlogFormData.aside"></textarea>
       </span>
 
-      <span class="displayImage-block">
+        <span class="form__division-blocks">
       <label for="displayImage" class="visuallyhidden">"Display image URL. Optional. The image must be 898px x
         345px"</label>
       <input type="text" id="displayImage" name="displayImage" value=""
              placeholder="Display image URL. Optional. The image must be 898px x 345px"
-             class="input" data-ng-model="editBlogFormData.displayImage"/>
+             class="form__input" data-ng-model="editBlogFormData.displayImage"/>
       </span>
 
-      <span class="clearfix comment-block">
-      <input id="allowComments" type="checkbox" class="checkbox" name="allowComments"
+      <span class="clearfix form__division-blocks">
+      <input id="allowComments" type="checkbox" class="form__checkbox" name="allowComments"
              data-ng-model="editBlogFormData.commentsOpen"/>
       <label for="allowComments" class="form-label">Open comments on this blog article</label>
       </span>
