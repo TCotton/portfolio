@@ -1,4 +1,4 @@
-<div class="comments" data-ng-controller="CommentCtrl as BlogCommentCtrl">
+<div class="form" data-ng-controller="CommentCtrl as BlogCommentCtrl">
 
   <h5 class="content-title" data-ng-if="!commentsOpen">Blog comments are not open for this article</h5>
 
@@ -29,7 +29,7 @@
                 class="error-message" aria-labelledby="name" role="alert"
                 tabindex="0">Error: Please provide a name.</span>
         <input type="text" name="name" id="name" value="" placeholder="Name" required="required" aria-required="true"
-               data-ng-model="commentFormData.name" data-ng-required="true" class="input" maxlength="120"/>
+               data-ng-model="commentFormData.name" data-ng-required="true" class="form__input" maxlength="120"/>
         </span>
 
         <span class="email-block">
@@ -39,12 +39,12 @@
                  role="alert" tabindex="0">Error: Please provide an email address.</span>
         <input type="email" name="email" id="email" value="" placeholder="Email (will be kept private)"
                required="required" data-ng-model="commentFormData.email" data-ng-required="true" aria-required="true"
-               class="input" maxlength="200" autocorrect="off" autocapitalize="off"/>
+               class="form__input" maxlength="200" autocorrect="off" autocapitalize="off"/>
         </span>
 
         <span class="url-block">
         <label for="url" class="visuallyhidden">Your website address</label>
-        <input type="url" id="url" name="url" value="" placeholder="Website" class="input"
+        <input type="url" id="url" name="url" value="" placeholder="Website" class="form__input"
                data-ng-model="commentFormData.url" maxlength="200" autocorrect="off" autocapitalize="off"/>
         </span>
 
@@ -55,7 +55,7 @@
         <textarea id="message" cols="10" rows="10" placeholder="Your message"
                   data-ng-required="true" aria-required="true" data-ng-model="commentFormData.message" name="message"
                   required="required"
-                  class="textarea" maxlength="2000"></textarea>
+                  class="form__textarea" maxlength="2000"></textarea>
            </span>
 
             <span class="hide">

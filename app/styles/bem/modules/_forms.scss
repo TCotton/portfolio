@@ -1,0 +1,41 @@
+.form {
+
+  &__input {
+
+    width: 70%;
+    height: 66px;
+    padding: 10px;
+    border: 1px solid $border;
+    @include font-calculator($baseFontFamily, 16px, 0);
+    color: $textTwo;
+    font-weight: 400;
+    clear: both;
+    float: left;
+    margin: 0 0 15px 0;
+
+    &:focus {
+      border: 1px solid $textTwo;
+    }
+
+  }
+
+  &__textarea {
+
+    width: 100%;
+    height: 271px;
+    padding: 10px;
+    border: 1px solid $border;
+    @include font-calculator($baseFontFamily, 16px, 0);
+    color: $textTwo;
+    font-weight: 400;
+    clear: both;
+    float: left;
+    margin: 0 0 15px 0;
+
+    &:focus {
+      border: 1px solid $textTwo;
+    }
+
+  }
+
+}

@@ -86,8 +86,8 @@ module.exports = function(grunt) {
         tasks: ['newer:jshint:test', 'protractor-e2e']
       },
       sass: {
-        files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
-        tasks: ['sass:dev']
+        files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}', '<%= yeoman.app %>/styles/bem/{,*/}*.{scss,sass}'],
+        tasks: ['sass:dev', 'scsslint']
       },
       css: {
         files: ['<%= yeoman.app %>/styles/main.css'],
@@ -499,7 +499,8 @@ module.exports = function(grunt) {
       server: [
         'sass:dev',
         'jscs',
-        'postcss:prod'
+        'postcss:prod',
+        'scsslint'
       ],
       test: [
         'sass:dev'
@@ -513,7 +514,8 @@ module.exports = function(grunt) {
 
     scsslint: {
       allFiles: [
-        '<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'
+        '<%= yeoman.app %>/styles/bem/*.scss',
+        '<%= yeoman.app %>/styles/bem/modules/*.scss'
       ],
       options: {
         bundleExec: false,
