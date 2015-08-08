@@ -635,11 +635,11 @@ module.exports = function(grunt) {
     grunt.task.run([
       'clean:server',
       'concurrent:server',
-      'postcss:prod',
+      //'postcss:prod',
       'ngconstant',
       /*      'lodash',*/
       'express:livereload',
-      'open',
+      //'open',
       'watch'
     ]);
   });

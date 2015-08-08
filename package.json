@@ -2,21 +2,21 @@
   "name": "portfolio",
   "version": "1.0.2",
   "dependencies": {
-    "addressparser": "0.3.2",
-    "angular-memory-stats": "1.0.0-beta1",
-    "array-indexofobject": "0.0.1",
-    "async": "1.3.0",
-    "body-parser": "1.13.2",
-    "bunyan-request-logger": "1.0.1",
-    "compression": "1.5.1",
-    "cookie-parser": "1.3.5",
-    "errorhandler": "1.4.1",
-    "express": "4.13.1",
-    "express-error-handler": "1.0.1",
-    "feedparser": "1.1.3",
-    "google-feed-api": "0.0.2",
-    "helmet": "0.10.0",
-    "jslint": "0.9.1",
+    "addressparser": "^0.3.2",
+    "angular-memory-stats": "^1.0.0-beta1",
+    "array-indexofobject": "^0.0.1",
+    "async": "^1.3.0",
+    "body-parser": "^1.13.2",
+    "bunyan-request-logger": "^1.0.1",
+    "compression": "^1.5.1",
+    "cookie-parser": "^1.3.5",
+    "errorhandler": "^1.4.1",
+    "express": "^4.13.1",
+    "express-error-handler": "^1.0.1",
+    "feedparser": "^1.1.3",
+    "google-feed-api": "^0.0.2",
+    "helmet": "^0.10.0",
+    "jslint": "^0.9.1",
     "method-override": "^2.3.3",
     "moment": "2.6.0",
     "mongoose": "^4.0.6",
@@ -30,14 +30,13 @@
     "response-time": "^2.3.1",
     "rss": "^1.1.1",
     "sax": "^1.1.1",
-    "serve-favicon": "2.3.0",
+    "serve-favicon": "^2.3.0",
     "sitemap": "^0.9.0",
     "underscore": "^1.6.0"
   },
   "devDependencies": {
     "astrolabe": "^0.3.6",
     "autoprefixer-core": "^5.2.1",
-    "css-mqpacker": "^3.1.0",
     "csswring": "^3.0.5",
     "grunt": "^0.4.5",
     "grunt-concurrent": "^2.0.0",
@@ -60,11 +59,11 @@
     "grunt-lodash": "0.4.0",
     "grunt-newer": "1.1.1",
     "grunt-ng-annotate": "1.0.1",
-    "grunt-ng-constant": "1.1.0",
+    "grunt-ng-constant": "^1.1.0",
     "grunt-ngmin": "0.0.3",
-    "grunt-nodemon": "0.4.0",
+    "grunt-nodemon": "^0.4.0",
     "grunt-nsp-package": "0.0.5",
-    "grunt-open": "0.2.3",
+    "grunt-open": "^0.2.3",
     "grunt-postcss": "^0.5.4",
     "grunt-preprocess": "^4.2.0",
     "grunt-protractor-runner": "^2.0.0",
@@ -82,7 +81,6 @@
     "karma-firefox-launcher": "^0.1.6",
     "karma-html2js-preprocessor": "^0.1.0",
     "karma-jasmine": "0.2.0",
-    "karma-ng-html2js-preprocessor": "^0.1.2",
     "karma-ng-scenario": "^0.1.0",
     "karma-phantomjs-launcher": "^0.2.0",
     "karma-requirejs": "^0.2.2",
@@ -103,7 +101,7 @@
     "uglify-save-license": "^0.4.1"
   },
   "engines": {
-    "node": "0.12.7"
+    "node": ">=0.12.7"
   },
   "scripts": {
     "test": "grunt test"
@@ -118,7 +116,8 @@
     "url": "git://github.com/TCotton/portfolio.git"
   },
   "keywords": [
-    "portfoli0"
+    "portfolio",
+    "angular"
   ],
   "author": "Andy Walpole",
   "license": "GPL-3.0",
