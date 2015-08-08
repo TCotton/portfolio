@@ -30,6 +30,27 @@
       }
     }
 
+    .svg-container-left {
+      float: left;
+      margin-right: 1em;
+      margin-bottom: inherit;
+      max-width: 33%;
+      object-fit: cover;
+    }
+
+    .svg-container-right {
+      float: right;
+      max-width: 33%;
+      margin-left: 1em;
+      margin-bottom: inherit;
+      &:first-child {
+        opacity: 0.75;
+      }
+      &:first-of-type {
+        opacity: 0.75;
+      }
+    }
+
     .image-container {
       border: 1px solid $boxBorder;
       background-clip: content-box;
@@ -94,6 +115,10 @@
       line-height: 0.1em;
       margin-right: 0.2em;
       vertical-align: -0.45em;
+    }
+
+    blockquote.no-open-quote {
+      border: 1px solid #ececec;
     }
 
     blockquote.no-open-quote::before {
@@ -194,6 +219,10 @@
 
       header {
         margin: 0 0 10px 0;
+      }
+
+      .svg-container-left, .svg-container-right {
+        max-width: 50vw;
       }
     }
 
