@@ -58,6 +58,10 @@
       overflow: hidden;
       width: 100%;
       text-align: center;
+      img {
+        object-fit: contain;
+        object-position: 0;
+      }
     }
 
     figure {
