@@ -3,79 +3,68 @@
  */
 
 'use strict';
-describe('Controller: ProjectsPageCtrl', function () {
+describe('Controller: ProjPageCtrl', function() {
 
   // load the controller's module
-  beforeEach(module('portfolioApp.sideProjectsController', 'AppConstants',  'ngRoute', 'underscore'));
+  beforeEach(module(
+    'portfolioApp.sideProjectsController',
+    'portfolioApp.sideProjectsReact',
+    'testConstants',
+    'underscore',
+    'react',
+    'AppConstants',
+    'ngRoute',
+    'portfolioAppConfig',
+    'jmdobry.angular-cache'
+  ));
 
-  var ProjectsPageCtrl;
+  var ProjPageCtrl;
   var scope;
   var $controller;
   var $rootScope;
-  var PROJECTS;
+  var MOCK_DATA;
   var $httpBackend;
   var $location;
   var $route;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function (_$controller_, _$rootScope_, _PROJECTS_, _$httpBackend_, _$location_, _$route_) {
+  beforeEach(inject(function(_$controller_, _$rootScope_, _MOCK_DATA_, _$httpBackend_, _$location_, _$route_) {
     $controller = _$controller_;
     $rootScope = _$rootScope_;
-    PROJECTS = _PROJECTS_;
+    MOCK_DATA = _MOCK_DATA_;
     $httpBackend = _$httpBackend_;
     $location = _$location_;
     $route = _$route_;
 
     $rootScope.currentPage = 'http://localhost:9000/#!/side-projects/pennybooks';
+
+    scope = $rootScope.$new();
+
+    ProjPageCtrl = $controller('ProjectsPageCtrl as ProjPageCtrl', {
+      $scope: scope
+    });
+
+    scope.$apply(function() {
+      ProjPageCtrl.findData();
+    });
+
   }));
 
+  it('Checks that local scope is changed when penny books page is loaded', function() {
 
-  it('Checks that local scope is changed when thomson reuters japan page is loaded', function () {
-
-    expect($route.current).toBeUndefined();
-
-    $location.path('/side-projects/pennybooks');
-    $httpBackend.expectGET('views/projects_page.html').respond(200);
-
-    scope = $rootScope.$new();
-
-    $rootScope.$digest();
-
-    ProjectsPageCtrl = $controller('ProjectsPageCtrl', {
-      $scope: scope
-    });
-
-    $rootScope.$digest();
-
-    expect(scope.title).toEqual(PROJECTS.pennybooks.title);
-    expect(scope.summary).toEqual(PROJECTS.pennybooks.summary);
-    expect(scope.details).toEqual(PROJECTS.pennybooks.details);
-    expect(scope.code).toEqual(PROJECTS.pennybooks.code);
-    expect(scope.workImage).toEqual(PROJECTS.pennybooks.workImage);
+    expect(scope.title).toEqual(MOCK_DATA.pages.pennybooks.title);
+    expect(scope.summary).toEqual(MOCK_DATA.pages.pennybooks.summary);
+    expect(scope.details).toEqual(MOCK_DATA.pages.pennybooks.details);
+    expect(scope.code).toEqual(MOCK_DATA.pages.pennybooks.code);
+    expect(scope.workImage).toEqual(MOCK_DATA.pages.pennybooks.workImage);
 
   });
 
-  it('Checks that the navigation has a prev and next link', function () {
+  it('Checks that the navigation has a prev and next link', function() {
 
-    expect($route.current).toBeUndefined();
-
-    $location.path('/side-projects/pennybooks');
-    $httpBackend.expectGET('views/projects_page.html').respond(200);
-
-    scope = $rootScope.$new();
-
-    $rootScope.$digest();
-
-    ProjectsPageCtrl = $controller('ProjectsPageCtrl', {
-      $scope: scope
-    });
-
-    $rootScope.$digest();
-
-    expect(scope.prevPage).toEqual(PROJECTS.lightning.internalUrl);
-    expect(scope.nextPage).toEqual(PROJECTS['mq-keyframes'].internalUrl);
+    expect(scope.prevPage).toEqual(MOCK_DATA.pages.lightning.internalUrl);
+    expect(scope.nextPage).toEqual(MOCK_DATA.pages['mq-keyframes'].internalUrl);
 
   });
-
 
 });

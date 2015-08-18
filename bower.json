@@ -9,7 +9,8 @@
     "angular-cache": "~2.3.3",
     "angular-aria": "^1.4.3",
     "underscore": "~1.6.0",
-    "moment": "~2.6.0"
+    "moment": "~2.6.0",
+    "ngReact": "~0.1.7"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.3"

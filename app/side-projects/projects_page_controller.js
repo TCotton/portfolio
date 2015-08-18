@@ -27,10 +27,11 @@
     /** Using defineProperty prevents injected constants being exposed to the template
      * **/
     Object.defineProperty(this, 'PROJECTS', {
-      enumerable: false,
-      configurable: false,
-      writable: false,
-      value: PROJECTS
+      value: PROJECTS.pages
+    });
+
+    Object.defineProperty(this, 'SIDE_PROJECTS', {
+      value: PROJECTS.postContent
     });
 
     /** local scope
@@ -43,8 +44,6 @@
     this.$scope.prevPage = null;
     this.$scope.nextPage = null;
 
-    this.findData();
-
   };
 
   ProjectsPageCtrl.$inject = ['$rootScope', '$scope', '$log', 'PROJECTS', '$window', '_'];
@@ -54,6 +53,10 @@
   ProjectsPageCtrl.prototype.findData = function() {
 
     var currentPage = this.$rootScope.currentPage.substring(this.$rootScope.currentPage.lastIndexOf('/') + 1, this.$rootScope.currentPage.length);
+
+    if (Object.is(currentPage, 'side-projects')) {
+      return;
+    }
 
     var wordData = this._.filter(this.PROJECTS, function(o) {
 

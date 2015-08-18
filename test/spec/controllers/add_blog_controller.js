@@ -1,5 +1,5 @@
 'use strict';
-describe('Controller: AddBlogCtrl as AdminAddBlogCtrl', function () {
+describe('Controller: AddBlogCtrl as AdminAddBlogCtrl', function() {
 
   var $controller;
   var $rootScope;
@@ -14,7 +14,7 @@ describe('Controller: AddBlogCtrl as AdminAddBlogCtrl', function () {
     'momentLibrary', 'helperFunctions'));
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function (_$controller_, _$rootScope_, _MOCK_DATA_, _$httpBackend_, _$q_) {
+  beforeEach(inject(function(_$controller_, _$rootScope_, _MOCK_DATA_, _$httpBackend_, _$q_) {
     $controller = _$controller_;
     $rootScope = _$rootScope_;
     MOCK_DATA = _MOCK_DATA_;
@@ -31,20 +31,20 @@ describe('Controller: AddBlogCtrl as AdminAddBlogCtrl', function () {
 
     $httpBackend.expect('POST', '/api/blog/add').respond(200);
 
-    scope.$apply(function () {
+    scope.$apply(function() {
       AdminAddBlogCtrl.addBlog(true);
     });
 
   }));
 
-  it('Except url not have any spaces, to be all lowercase, contain hypthens and not contain stopwords. Tests the _addSEOFriendlyURL function', function () {
+  it('Except url not have any spaces, to be all lowercase, contain hypthens and not contain stopwords. Tests the _addSEOFriendlyURL function', function() {
 
     expect(scope.addBlogFormData.url).toContain('-');
     expect(scope.addBlogFormData.url).not.toContain(' ');
 
     var slicedArray = scope.addBlogFormData.url;
 
-    Object.keys(slicedArray.split('-')).forEach(function (key) {
+    Object.keys(slicedArray.split('-')).forEach(function(key) {
 
       expect(stopwords).not.toContain(slicedArray[key]);
 
@@ -52,7 +52,7 @@ describe('Controller: AddBlogCtrl as AdminAddBlogCtrl', function () {
 
   });
 
-  it('Tests the _addDate function. Must be 13 numbers, less then current time plus one hour, more than current time minus one hour', function () {
+  it('Tests the _addDate function. Must be 13 numbers, less then current time plus one hour, more than current time minus one hour', function() {
 
     expect(scope.addBlogFormData.publishedDate).toMatch(/[0-9]/g);
     expect(scope.addBlogFormData.publishedDate.length).toBe(Date.now().toString().length);
@@ -61,14 +61,14 @@ describe('Controller: AddBlogCtrl as AdminAddBlogCtrl', function () {
 
   });
 
-  it('Tests the _addUniqueID() function. Must be 6 digit string', function () {
+  it('Tests the _addUniqueID() function. Must be 6 digit string', function() {
 
     expect(scope.addBlogFormData.uniqueId.length).toBe(6);
     expect(scope.addBlogFormData.uniqueId).toBe(Date.now().toString().substring(0, 6));
 
   });
 
-  it('Tests the _createContentSnippet() function. Must be 140 or fewer characters and end with an ellipse', function () {
+  it('Tests the _createContentSnippet() function. Must be 140 or fewer characters and end with an ellipse', function() {
 
     expect(scope.addBlogFormData.contentSnippet.length).toBeLessThan(140);
     expect(scope.addBlogFormData.contentSnippet).toContain('...');
@@ -76,7 +76,7 @@ describe('Controller: AddBlogCtrl as AdminAddBlogCtrl', function () {
 
   });
 
-  it('After submission of blog of local scope form fields will be null: AdminAddBlogCtrl.addBlog()', function () {
+  it('After submission of blog of local scope form fields will be null: AdminAddBlogCtrl.addBlog()', function() {
 
     expect(scope.addBlogFormData.title).toBe(MOCK_DATA.blogArticle.title);
     expect(scope.addBlogFormData.author).toBe(MOCK_DATA.blogArticle.author);
@@ -85,7 +85,7 @@ describe('Controller: AddBlogCtrl as AdminAddBlogCtrl', function () {
 
     $httpBackend.expect('POST', '/api/blog/add').respond(200);
 
-    scope.$apply(function () {
+    scope.$apply(function() {
       AdminAddBlogCtrl.addBlog(true);
     });
 
