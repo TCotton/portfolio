@@ -1,5 +1,5 @@
 'use strict';
-describe('Controller: FormCtrl', function () {
+describe('Controller: FormCtrl', function() {
 
   // load the controller's module
   beforeEach(module('portfolioApp.contractController', 'testConstants', 'portfolioApp.contractService', 'ngSanitize', 'underscore'));
@@ -10,11 +10,20 @@ describe('Controller: FormCtrl', function () {
   var $rootScope;
   var MOCK_DATA;
   var $httpBackend;
-  var formDataSuccess = {'success': 'true', 'message': 'Thank you for taking the time to fill out the form. I will contact you as soon as I can!'};
-  var formData = {successMessage: null, successMessageDisable: null, name: 'Andy Walpole', email: 'andy_walpole@btopenworld.com', message: 'A message here'};
+  var formDataSuccess = {
+    'success': 'true',
+    'message': 'Thank you for taking the time to fill out the form. I will contact you as soon as I can!'
+  };
+  var formData = {
+    successMessage: null,
+    successMessageDisable: null,
+    name: 'Andy Walpole',
+    email: 'andy_walpole@btopenworld.com',
+    message: 'A message here'
+  };
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function (_$controller_, _$rootScope_, _MOCK_DATA_, _$httpBackend_) {
+  beforeEach(inject(function(_$controller_, _$rootScope_, _MOCK_DATA_, _$httpBackend_) {
     $controller = _$controller_;
     $rootScope = _$rootScope_;
     MOCK_DATA = _MOCK_DATA_;
@@ -24,10 +33,10 @@ describe('Controller: FormCtrl', function () {
     AdminFormCtrl = $controller('FormCtrl as AdminFormCtrl', {
       $scope: scope
     });
+
   }));
 
-
-  it('Checks that scope changes to true after data is passed to the submitContactForm method', function () {
+  it('Checks that scope changes to true after data is passed to the submitContactForm method', function() {
 
     scope.contact = {};
     scope.contact.name = formData.name;
@@ -38,7 +47,7 @@ describe('Controller: FormCtrl', function () {
 
     $httpBackend.expect('POST', '/api/sendmail').respond(200, formDataSuccess);
 
-    scope.$apply(function () {
+    scope.$apply(function() {
       AdminFormCtrl.submitContactForm(true);
     });
 

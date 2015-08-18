@@ -4,7 +4,7 @@
 
 
 'use strict';
-describe('Controller: SidebarCtrl', function () {
+describe('Controller: SidebarCtrl', function() {
 
   // load the controller's module
   beforeEach(module('testConstants', 'portfolioApp.blogSidebarController', 'portfolioApp.blogAdminService', 'portfolioApp.blogPagesService', 'AppConstants', 'ngSanitize', 'ngRoute', 'HashBangURLs', 'portfolioAppConfig', 'jmdobry.angular-cache', 'underscore'));
@@ -21,7 +21,7 @@ describe('Controller: SidebarCtrl', function () {
 
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function (_$controller_, _$rootScope_, _$q_, _MOCK_DATA_, _$httpBackend_, _$angularCacheFactory_, _$timeout_) {
+  beforeEach(inject(function(_$controller_, _$rootScope_, _$q_, _MOCK_DATA_, _$httpBackend_, _$angularCacheFactory_, _$timeout_) {
 
     $controller = _$controller_;
     $rootScope = _$rootScope_;
@@ -57,8 +57,7 @@ describe('Controller: SidebarCtrl', function () {
 
   }));
 
-
-  it('Test to make sure that tags are created from blog content', function () {
+  it('Test to make sure that tags are created from blog content', function() {
 
     scope.blogData = MOCK_DATA.allBlogData.data;
 
@@ -66,7 +65,7 @@ describe('Controller: SidebarCtrl', function () {
 
     var categories = _.pluck(MOCK_DATA.allBlogData.data, 'category');
 
-    Object.keys(categories).forEach(function (key) {
+    Object.keys(categories).forEach(function(key) {
 
       expect(scope.blogTags).toContain(categories[key]);
 
