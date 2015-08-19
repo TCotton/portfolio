@@ -65,5 +65,5 @@
   "validateIndentation": 2,
   "esprima": "/node_modules/esprima-fb",
   "esprimaOptions": { "tolerant": true },
-  "excludeFiles": ["node_modules/**", "./jsx/**", "jsx/**"]
+  "excludeFiles": ["node_modules/**", "./jsx/**", "jsx/**", "./jsx/react-blog.jsx"]
 }

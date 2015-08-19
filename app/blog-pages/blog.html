@@ -8,21 +8,15 @@
 
 <div id="main-content" class="clearfix blog content-text">
 
-  <div id="left-large" data-blog-directive>
+  <div id="left-large">
 
     <!-- repeat old blog posts here -->
-    <div data-ng-repeat="blog in totalBlogPosts | orderBy: '-publishedDate' | limitTo: displayPosts track by $index">
-      <div data-blog-block-directive blog="blog"
-           srcset-large-webp="BlogIndexCtrl.srcsetImageWebp(blog.displayImage);"
-           srcset-webp="BlogIndexCtrl.srcsetImageWebp(blog.displayImage);"
-           srcset="BlogIndexCtrl.srcsetImage(blog.displayImage);"></div>
-    </div>
+
+    <react-component name="blogList" props="totalBlogPosts" watch-depth="reference"/>
 
     <div id="more-posts" class="clearfix" data-ng-click="BlogIndexCtrl.morePosts();">
-
       <div><h6>More posts</h6></div>
       <div><span class="down-arrow"></span></div>
-
     </div>
 
   </div>
@@ -31,6 +25,5 @@
     <div data-ng-include src="'../blog-sidebar/sidebar.html'"></div>
 
   <!-- end right small -->
-
 
 </div><!-- end main content -->
