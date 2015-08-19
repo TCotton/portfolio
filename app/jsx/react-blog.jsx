@@ -3,15 +3,17 @@
 
   'use strict';
 
-  var app = angular.module('portfolioApp.sideProjectsReact');
+  var app = angular.module('portfolioApp.angularReact');
 
-  window.sideProjects = React.createClass({
+  window.projects = React.createClass({
     render: function() {
       return (
-        <div id="main-content" className="clearfix side-projects">
+        <div id="main-content" className={this.props.className}>
           {Object.keys(this.props).map(function(value, index) {
-            return <window.Content key={index} content={this.props[value]}/>;
-          }.bind(this))}
+            if (Object.is(typeof this.props[value], 'object')) {
+              return <window.Content key={index} content={this.props[value]}/>;
+            }
+          }, this)}
         </div>
       );
     }
@@ -27,6 +29,6 @@
     }
   });
 
-  app.value('sideProjects', window.sideProjects);
+  app.value('projects', window.projects);
 
 })(window, document, React);

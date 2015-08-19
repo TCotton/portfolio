@@ -32,6 +32,7 @@
     }
   },
   "postContent": {
+    "className": "clearfix side-projects",
     "one": {
       "href": "/#!/side-projects/lightning",
       "class": "project-box-one",

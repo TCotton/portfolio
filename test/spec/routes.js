@@ -83,7 +83,7 @@ describe('Routes test with log in', function() {
     it('should load the work page on successful load of /work-projects/thomson-reuters-japan', function() {
       location.path('/work-projects/thomson-reuters-japan');
       rootScope.$digest(); // call the digest loop
-      expect(route.current.controller).toBe('WorkPageCtrl');
+      expect(route.current.controller).toBe('WorkPageCtrl as WorkProjPageCtrl');
     });
 
   });

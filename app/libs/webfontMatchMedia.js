@@ -1,6 +1,62 @@
-/**
- * Created by awalpole on 11/09/2014.
- */
+// Commons ES6 / ES7 polyfills
+(function(window){
+// Array.prototype.contains()
+  if(![].contains)try{Object.defineProperty(Array.prototype,"contains",{enumerable:!1,configurable:!0,writable:!0,value:function(c,f){if(void 0===this||null===this)throw new TypeError("Cannot convert this value to object");var e=Object(this),b=parseInt(e.length)||0;if(0===b)return!1;var a=parseInt(f)||0;if(a>=b)return!1;0<=a||(a=b+a,0>a&&(a=0));for(;a<b;){var d=e[a];if(c===d||c!==c&&d!==d)return!0;a++}return!1}})}catch(e$$4){Array.prototype.contains=function(c,f){if(void 0===this||null===this)throw new TypeError("Cannot convert this value to object");
+    var e=Object(this),b=parseInt(e.length)||0;if(0===b)return!1;var a=parseInt(f)||0;if(a>=b)return!1;0<=a||(a=b+a,0>a&&(a=0));for(;a<b;){var d=e[a];if(c===d||c!==c&&d!==d)return!0;a++}return!1}};
+
+// Object.defineProperties
+  if(!Object.defineProperties)var defineProperties=function(e,d){function h(a){function b(a,c){return Object.prototype.hasOwnProperty.call(a,c)}if("object"!==typeof a||null===a)throw new TypeError("bad desc");var c={};b(a,"enumerable")&&(c.enumerable=!!e.enumerable);b(a,"configurable")&&(c.configurable=!!e.configurable);b(a,"value")&&(c.value=e.value);b(a,"writable")&&(c.writable=!!a.writable);if(b(a,"get")){var d=a.get;if("function"!==typeof d&&"undefined"!==typeof d)throw new TypeError("bad get");
+    c.get=d}if(b(a,"set")){a=a.set;if("function"!==typeof a&&"undefined"!==typeof a)throw new TypeError("bad set");c.set=a}if(("get"in c||"set"in c)&&("value"in c||"writable"in c))throw new TypeError("identity-confused descriptor");return c}if("object"!==typeof e||null===e)throw new TypeError("bad obj");d=Object(d);for(var g=Object.keys(d),f=[],b=0;b<g.length;b++)f.push([g[b],h(d[g[b]])]);for(b=0;b<f.length;b++)Object.defineProperty(e,f[b][0],f[b][1]);return e};
+
+// Object.keys
+  Object.keys||(Object.keys=function(){var e=Object.prototype.hasOwnProperty,f=!{toString:null}.propertyIsEnumerable("toString"),c="toString toLocaleString valueOf hasOwnProperty isPrototypeOf propertyIsEnumerable constructor".split(" "),g=c.length;return function(b){if("object"!==typeof b&&("function"!==typeof b||null===b))throw new TypeError("Object.keys called on non-object");var d=[],a;for(a in b)e.call(b,a)&&d.push(a);if(f)for(a=0;a<g;a++)e.call(b,c[a])&&d.push(c[a]);return d}}());
+
+// forEach
+  Array.prototype.forEach||(Array.prototype.forEach=function(c,f){var d,a;if(null==this)throw new TypeError(" this is null or not defined");var b=Object(this),g=b.length>>>0;if("function"!==typeof c)throw new TypeError(c+" is not a function");1<arguments.length&&(d=f);for(a=0;a<g;){var e;a in b&&(e=b[a],c.call(d,e,a,b));a++}});
+
+// bind
+  Function.prototype.bind||(Function.prototype.bind=function(b){if("function"!==typeof this)throw new TypeError("Function.prototype.bind - what is trying to be bound is not callable");var d=Array.prototype.slice.call(arguments,1),e=this,a=function(){},c=function(){return e.apply(this instanceof a&&b?this:b,d.concat(Array.prototype.slice.call(arguments)))};a.prototype=this.prototype;c.prototype=new a;return c});
+
+// String.prototype.startsWith
+  String.prototype.startsWith||Object.defineProperty(String.prototype,"startsWith",{enumerable:!1,configurable:!1,writable:!1,value:function(b,a){a=a||0;return this.lastIndexOf(b,a)===a}});
+
+// String.prototype.endsWith
+  String.prototype.endsWith||Object.defineProperty(String.prototype,"endsWith",{value:function(c,a){var b=this.toString();if(void 0===a||a>b.length)a=b.length;a-=c.length;b=b.indexOf(c,a);return-1!==b&&b===a}});
+
+// String.prototype.contains
+  String.prototype.contains||(String.prototype.contains=function(){return-1!==String.prototype.indexOf.apply(this,arguments)});
+
+// String.prototype.repeat
+  String.prototype.repeat||(String.prototype.repeat=function(a){if(null==this)throw new TypeError("can't convert "+this+" to object");var b=""+this;a=+a;a!=a&&(a=0);if(0>a)throw new RangeError("repeat count must be non-negative");if(Infinity==a)throw new RangeError("repeat count must be less than infinity");a=Math.floor(a);if(0==b.length||0==a)return"";if(268435456<=b.length*a)throw new RangeError("repeat count must not overflow maximum string size");for(var c="";;){1==(a&1)&&(c+=b);a>>>=1;if(0==a)break;b+=b}return c});
+
+// String.prototype.codePointAt
+  String.prototype.codePointAt||function(){var d=function(b){if(null==this)throw TypeError();var c=String(this),d=c.length,a=b?Number(b):0;a!=a&&(a=0);if(!(0>a||a>=d))return b=c.charCodeAt(a),55296<=b&&56319>=b&&d>a+1&&(c=c.charCodeAt(a+1),56320<=c&&57343>=c)?1024*(b-55296)+c-56320+65536:b};Object.defineProperty?Object.defineProperty(String.prototype,"codePointAt",{value:d,configurable:!0,writable:!0}):String.prototype.codePointAt=d}();
+
+// Object.is
+  Object.is||(Object.is=function(a,b){return 0===a&&0===b?1/a===1/b:a!==a?b!==b:a===b});
+
+// Object.assign - only accepts first argument
+  Object.assign||Object.defineProperty(Object,"assign",{enumerable:!1,configurable:!0,writable:!0,value:function(b,l){if(void 0===b||null===b)throw new TypeError("Cannot convert first argument to object");for(var f=Object(b),c=1;c<arguments.length;c++){var a=arguments[c];if(void 0!==a&&null!==a)for(var g=Object.keys(Object(a)),d=0,k=g.length;d<k;d++){var e=g[d],h=Object.getOwnPropertyDescriptor(a,e);void 0!==h&&h.enumerable&&(f[e]=a[e])}}return f}});
+
+// Object.create
+  "function"!=typeof Object.create&&(Object.create=function(){var a=function(){};return function(b){if(1<arguments.length)throw Error("Second argument not supported");if("object"!=typeof b)throw TypeError("Argument must be an object");a.prototype=b;var c=new a;a.prototype=null;return c}}());
+
+// Number.isInteger
+  Number.isInteger||(Number.isInteger=function(a){return"number"===typeof a&&isFinite(a)&&-9007199254740992<a&&9007199254740992>a&&Math.floor(a)===a});
+
+// Number.parseInt - poor implementation but better than nothing
+  Number.parseInt||(Number.parseInt=function(a){return window.parseInt(a)});
+
+// Number.parseFloat - poor implementation but better than nothing
+  Number.parseFloat||(Number.parseFloat=function(a){return window.parseFloat(a)});
+
+//Array.find
+  Array.prototype.find||(Array.prototype.find=function(d,e){if(null==this)throw new TypeError("Array.prototype.find called on null or undefined");if("function"!==typeof d)throw new TypeError("predicate must be a function");for(var b=Object(this),f=b.length>>>0,c,a=0;a<f;a++)if(c=b[a],d.call(e,c,a,b))return c});
+
+// Array.of // Array.from: https://gist.github.com/rwaldron/3186576
+  (function(f){function g(a){try{return new a,!0}catch(c){return!1}}Array.from=function(a){var c,e,b,d,f;a=Object(a);c=+a.length;e=g(this)?Object(new this(c)):Array(c);for(b=0;b<c;){d=String(b);if(f=a.hasOwnProperty(d))d=a[d],e[b]=d;b++}return e};Array.of=function(){var a,c,e,b,d;a=Object(arguments);c=+a.length;e=g(this)?Object(new this(c)):Array(c);for(b=0;b<c;)d=String(b),d=a[d],e[b]=d,b++;return e};f.Array.from=Array.from;f.Array.of=Array.of})(window);
+
+})(window);
 /*
  * Copyright 2015 Small Batch, Inc.
  *

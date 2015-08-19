@@ -8,7 +8,7 @@ describe('Controller: ProjPageCtrl', function() {
   // load the controller's module
   beforeEach(module(
     'portfolioApp.sideProjectsController',
-    'portfolioApp.sideProjectsReact',
+    'portfolioApp.angularReact',
     'testConstants',
     'underscore',
     'react',
@@ -52,18 +52,18 @@ describe('Controller: ProjPageCtrl', function() {
 
   it('Checks that local scope is changed when penny books page is loaded', function() {
 
-    expect(scope.title).toEqual(MOCK_DATA.pages.pennybooks.title);
-    expect(scope.summary).toEqual(MOCK_DATA.pages.pennybooks.summary);
-    expect(scope.details).toEqual(MOCK_DATA.pages.pennybooks.details);
-    expect(scope.code).toEqual(MOCK_DATA.pages.pennybooks.code);
-    expect(scope.workImage).toEqual(MOCK_DATA.pages.pennybooks.workImage);
+    expect(scope.title).toEqual(MOCK_DATA.sideProjects.pages.pennybooks.title);
+    expect(scope.summary).toEqual(MOCK_DATA.sideProjects.pages.pennybooks.summary);
+    expect(scope.details).toEqual(MOCK_DATA.sideProjects.pages.pennybooks.details);
+    expect(scope.code).toEqual(MOCK_DATA.sideProjects.pages.pennybooks.code);
+    expect(scope.workImage).toEqual(MOCK_DATA.sideProjects.pages.pennybooks.workImage);
 
   });
 
   it('Checks that the navigation has a prev and next link', function() {
 
-    expect(scope.prevPage).toEqual(MOCK_DATA.pages.lightning.internalUrl);
-    expect(scope.nextPage).toEqual(MOCK_DATA.pages['mq-keyframes'].internalUrl);
+    expect(scope.prevPage).toEqual(MOCK_DATA.sideProjects.pages.lightning.internalUrl);
+    expect(scope.nextPage).toEqual(MOCK_DATA.sideProjects.pages['mq-keyframes'].internalUrl);
 
   });
 

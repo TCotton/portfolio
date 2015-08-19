@@ -6,76 +6,64 @@
 describe('Controller: WorkPageCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('portfolioApp.wordProjectsController', 'AppConstants', 'ngRoute', 'underscore'));
+  beforeEach(module('portfolioApp.wordProjectsController',
+    'portfolioApp.angularReact',
+    'testConstants',
+    'underscore',
+    'react',
+    'AppConstants',
+    'ngRoute',
+    'portfolioAppConfig',
+    'jmdobry.angular-cache'
+  ));
 
-  var WorkPageCtrl;
+  var WorkProjPageCtrl;
   var scope;
   var $controller;
   var $rootScope;
-  var WORK;
+  var MOCK_DATA;
   var $httpBackend;
   var $location;
   var $route;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function (_$controller_, _$rootScope_, _WORK_, _$httpBackend_, _$location_, _$route_) {
+  beforeEach(inject(function (_$controller_, _$rootScope_, _MOCK_DATA_, _$httpBackend_, _$location_, _$route_) {
     $controller = _$controller_;
     $rootScope = _$rootScope_;
-    WORK = _WORK_;
+    MOCK_DATA = _MOCK_DATA_;
     $httpBackend = _$httpBackend_;
     $location = _$location_;
     $route = _$route_;
     $rootScope.currentPage = 'http://localhost:9000/#!/work-projects/thomson-reuters-japan';
-  }));
-
-
-  it('Checks that local scope is changed when thomson reuters japan page is loaded', function () {
-
-    expect($route.current).toBeUndefined();
-
-    $location.path('/work-projects/thomson-reuters-japan');
-    $httpBackend.expectGET('work-projects/work_page.html').respond(200);
 
     scope = $rootScope.$new();
 
-    $rootScope.$digest();
-
-    WorkPageCtrl = $controller('WorkPageCtrl', {
+    WorkProjPageCtrl = $controller('WorkPageCtrl as WorkProjPageCtrl', {
       $scope: scope
     });
 
-    $rootScope.$digest();
+    scope.$apply(function() {
+      WorkProjPageCtrl.findData();
+    });
 
-    expect(scope.title).toEqual(WORK.thomsonreuters.title);
-    expect(scope.summary).toEqual(WORK.thomsonreuters.summary);
-    expect(scope.details).toEqual(WORK.thomsonreuters.details);
-    expect(scope.code).toEqual(WORK.thomsonreuters.code);
-    expect(scope.company).toEqual(WORK.thomsonreuters.company);
-    expect(scope.workImage).toEqual(WORK.thomsonreuters.workImage);
+  }));
+
+  it('Checks that local scope is changed when thomson reuters japan page is loaded', function () {
+
+    expect(scope.title).toEqual(MOCK_DATA.workProjects.pages.thomsonreuters.title);
+    expect(scope.summary).toEqual(MOCK_DATA.workProjects.pages.thomsonreuters.summary);
+    expect(scope.details).toEqual(MOCK_DATA.workProjects.pages.thomsonreuters.details);
+    expect(scope.code).toEqual(MOCK_DATA.workProjects.pages.thomsonreuters.code);
+    expect(scope.company).toEqual(MOCK_DATA.workProjects.pages.thomsonreuters.company);
+    expect(scope.workImage).toEqual(MOCK_DATA.workProjects.pages.thomsonreuters.workImage);
 
   });
 
   it('Checks that the navigation has a prev and next link', function () {
 
-    expect($route.current).toBeUndefined();
-
-    $location.path('/work-projects/thomson-reuters-japan');
-    $httpBackend.expectGET('work-projects/work_page.html').respond(200);
-
-    scope = $rootScope.$new();
-
-    $rootScope.$digest();
-
-    WorkPageCtrl = $controller('WorkPageCtrl', {
-      $scope: scope
-    });
-
-    $rootScope.$digest();
-
-    expect(scope.prevPage).toEqual(WORK.blinkbox.internalUrl);
-    expect(scope.nextPage).toEqual(WORK.lawstudent.internalUrl);
+    expect(scope.prevPage).toEqual(MOCK_DATA.workProjects.pages.blinkbox.internalUrl);
+    expect(scope.nextPage).toEqual(MOCK_DATA.workProjects.pages.lawstudent.internalUrl);
 
   });
-
 
 });

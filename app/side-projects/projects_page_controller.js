@@ -54,10 +54,6 @@
 
     var currentPage = this.$rootScope.currentPage.substring(this.$rootScope.currentPage.lastIndexOf('/') + 1, this.$rootScope.currentPage.length);
 
-    if (Object.is(currentPage, 'side-projects')) {
-      return;
-    }
-
     var wordData = this._.filter(this.PROJECTS, function(o) {
 
       if (o.internalUrl.substring(o.internalUrl.lastIndexOf('/') + 1, o.internalUrl.length) === currentPage) {

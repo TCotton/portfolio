@@ -13,6 +13,7 @@
    * @param $log
    * @param WORK
    * @param $window
+   * @param _
    * @constructor
    */
   var WorkPageCtrl = function($rootScope, $scope, $log, WORK, $window, _) {
@@ -26,7 +27,11 @@
     /** Using defineProperty prevents injected constants being exposed to the template
      * **/
     Object.defineProperty(this, 'WORK', {
-      value: WORK
+      value: WORK.pages
+    });
+
+    Object.defineProperty(this, 'WORK_PROJECTS', {
+      value: WORK.postContent
     });
 
     this.$scope.title = null;
@@ -35,11 +40,8 @@
     this.$scope.code = null;
     this.$scope.company = null;
     this.$scope.workImage = null;
-
     this.$scope.prevPage = null;
     this.$scope.nextPage = null;
-
-    this.findData();
 
   };
 
@@ -81,7 +83,6 @@
     this.$scope.company = data[0].company;
     this.$scope.workImage = data[0].workImage;
     this.$scope.workImageWebP = data[0].workImage + '.webp';
-    console.log(this.$scope.workImageWebP);
     this.$rootScope.pageTitle = data[0].title + ' - ' + data[0].summary;
 
   };
