@@ -6,11 +6,11 @@
 
     <pre class="code-preview">
 /**
- * This entire site is coded in AngularJS. Inspect the code on GitHub: https://github.com/TCotton/portfolio
+ * This entire site is coded in AngularJS and React. Inspect the code on GitHub: https://github.com/TCotton/portfolio
  */
 
-angular.module('portfolioApp', [ 'portfolioApp.blogAdminService', 'portfolioApp.blogAdminController', 'portfolioApp.blogCommentsDirective', 'portfolioApp.blogCommentsService', 'portfolioApp.blogPagesController', 'portfolioApp.blogPagesDirective', 'portfolioApp.blogPagesService', 'portfolioApp.blogPagesFilter', 'portfolioApp.blogSidebarController', 'portfolioApp.contractController', 'portfolioApp.contractService', 'portfolioApp.footerController', 'portfolioApp.footerService', 'portfolioApp.homepageDirective', 'portfolioApp.miscDirective', 'portfolioApp.sideProjectsController', 'portfolioApp.sitemapController', 'portfolioApp.wordProjectsController', 'AppConstants', 'ngResource', 'ngSanitize', 'ngRoute', 'HashBangURLs', 'portfolioAppConfig', 'jmdobry.angular-cache', 'underscore', 'momentLibrary'])
-  .config(function ($routeProvider, $httpProvider) {
+angular.module('portfolioApp', ['portfolioApp.blogAdminService','portfolioApp.blogAdminController','portfolioApp.blogCommentsDirective','portfolioApp.blogCommentsService','portfolioApp.blogPagesController','portfolioApp.blogPagesDirective','portfolioApp.blogPagesService','portfolioApp.blogPagesFilter','portfolioApp.blogSidebarController','portfolioApp.contractController','portfolioApp.contractService','portfolioApp.footerController','portfolioApp.footerService','portfolioApp.homepageDirective','portfolioApp.miscDirective','portfolioApp.sideProjectsController','portfolioApp.angularReact','portfolioApp.sitemapController','portfolioApp.wordProjectsController','AppConstants','ngResource','ngSanitize','ngRoute','ngAria','HashBangURLs','portfolioAppConfig','jmdobry.angular-cache','underscore','momentLibrary','helperFunctions','requestTimeout','clearRequestTimeout','requestInterval','clearRequestInterval','react'
+]).config(function($routeProvider, $httpProvider) {
 
     // Needed for CORS
     // http://better-inter.net/enabling-cors-in-angular-js/
