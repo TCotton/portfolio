@@ -1,20 +1,8 @@
-<div id="right-small" data-ng-controller="SidebarCtrl" data-ng-cloak class="ng-cloak">
+<div id="right-small" data-ng-controller="SidebarCtrl">
 
-  <h4 class="content-title">Recent posts</h4>
-  <ul itemscope itemtype="http://schema.org/SiteNavigationElement">
-    <a data-ng-repeat="blog in blogData | orderBy: '-publishedDate' | limitTo: 10  track by $index"
-       data-ng-href="/#!/blog/{{::blog.uniqueId}}/{{::blog.url}}">
-      <li>{{::blog.title}}</li>
-    </a>
-  </ul>
+  <data-blog-sidebar-react-directive></data-blog-sidebar-react-directive>
 
-  <h4 class="content-title">Popular categories</h4>
-  <ul>
-    <a data-ng-repeat="tags in ::blogTags | limitTo: 10 track by $index" data-ng-href="/#!/category/{{::tags.toLowerCase()}}">
-      <li>{{::tags}}</li>
-    </a>
-  </ul>
-
+  &nbsp;
 </div>
 
 

@@ -134,8 +134,8 @@
     });
 
     return {
-      restrict: 'AE',
-
+      restrict: 'E',
+      replace: true,
       link: function(scope, iElement) {
 
         BlogList = React.createClass({displayName: "BlogList",
