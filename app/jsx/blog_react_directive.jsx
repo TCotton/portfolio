@@ -4,33 +4,6 @@
 
   var app = angular.module('portfolioApp.angularReact');
 
-  /* window.projects && window.Content is used in hte display for work and personal projects */
-  window.projects = React.createClass({
-    render: function() {
-      return (
-        <div id="main-content" className={this.props.className}>
-          {Object.keys(this.props).map(function(value, index) {
-            if (Object.is(typeof this.props[value], 'object')) {
-              return <window.Content key={index} content={this.props[value]}/>;
-            }
-          }, this)}
-        </div>
-      );
-    }
-  });
-
-  window.Content = React.createClass({
-    render: function() {
-      return (
-        <a href={this.props.content.href} className={this.props.content.class}>
-          <header><h3 className="project-header">{this.props.content.name}</h3></header>
-        </a>
-      )
-    }
-  });
-
-  app.value('projects', window.projects);
-
   app.directive('blogDirective', ['$timeout', '$filter', function($timeout, $filter) {
 
     var BlogList;
@@ -123,7 +96,9 @@
         return (
           <section>
             <h3 className="blog-title">{this.props.content.title}</h3>
+
             <p className="date">{$filter('date')(this.props.content.publishedDate)}</p>
+
             <p>{this.props.content.contentSnippet}</p>
           </section>
         )
@@ -201,7 +176,6 @@
           }
 
         }.bind(this));
-
       }
     };
   }

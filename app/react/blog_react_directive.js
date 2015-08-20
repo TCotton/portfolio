@@ -4,33 +4,6 @@
 
   var app = angular.module('portfolioApp.angularReact');
 
-  /* window.projects && window.Content is used in hte display for work and personal projects */
-  window.projects = React.createClass({
-    render: function() {
-      return (
-        <div id="main-content" className={this.props.className}>
-          {Object.keys(this.props).map(function(value, index) {
-            if (Object.is(typeof this.props[value], 'object')) {
-              return <window.Content key={index} content={this.props[value]}/>;
-            }
-          }, this)}
-        </div>
-      );
-    }
-  });
-
-  window.Content = React.createClass({
-    render: function() {
-      return (
-        <a href={this.props.content.href} className={this.props.content.class}>
-          <header><h3 className="project-header">{this.props.content.name}</h3></header>
-        </a>
-      )
-    }
-  });
-
-  app.value('projects', window.projects);
-
   app.directive('blogDirective', ['$timeout', '$filter', function($timeout, $filter) {
 
     var BlogList;
@@ -42,18 +15,18 @@
      2. Main Section
      3. Footer
      */
-    var BlogListContent = React.createClass({
+    var BlogListContent = React.createClass({displayName: "BlogListContent",
       // creates link to blog article
       displayLink: function() {
         return '/#!/blog/' + this.props.blogContent.uniqueId + '/' + this.props.blogContent.url;
       },
       render: function() {
         return (
-          <article>
-            <BlogListHeader content={this.props.blogContent} link={this.displayLink()}/>
-            <BlogListSection content={this.props.blogContent}/>
-            <BlogListFooter content={this.props.blogContent} link={this.displayLink()}/>
-          </article>
+          React.createElement("article", null, 
+            React.createElement(BlogListHeader, {content: this.props.blogContent, link: this.displayLink()}), 
+            React.createElement(BlogListSection, {content: this.props.blogContent}), 
+            React.createElement(BlogListFooter, {content: this.props.blogContent, link: this.displayLink()})
+          )
         )
       }
     });
@@ -64,7 +37,7 @@
      3. type="image/webp" -> large
      Plus a default for those browsers which don't support the latest HTML5 responsive image markup
      */
-    var BlogListHeader = React.createClass({
+    var BlogListHeader = React.createClass({displayName: "BlogListHeader",
 
       getImage: function(imageType) {
 
@@ -103,57 +76,59 @@
       // uses picture markup for
       render: function() {
         return (
-          <header>
-            <a href={this.props.link}>
-              <picture>
-                <source type="image/webp" media="(max-width: 480px)" srcSet={this.srcsetImage('webpSmall')}/>
-                <source type="image/jpeg" media="(max-width: 480px)" srcSet={this.srcsetImage('jpeg')}/>
-                <source type="image/webp" media="(min-width: 481px)" srcSet={this.srcsetImage('webpLarge')}/>
-                <img src={this.props.content.displayImage} alt=""/>
-              </picture>
-            </a>
-          </header>
+          React.createElement("header", null, 
+            React.createElement("a", {href: this.props.link}, 
+              React.createElement("picture", null, 
+                React.createElement("source", {type: "image/webp", media: "(max-width: 480px)", srcSet: this.srcsetImage('webpSmall')}), 
+                React.createElement("source", {type: "image/jpeg", media: "(max-width: 480px)", srcSet: this.srcsetImage('jpeg')}), 
+                React.createElement("source", {type: "image/webp", media: "(min-width: 481px)", srcSet: this.srcsetImage('webpLarge')}), 
+                React.createElement("img", {src: this.props.content.displayImage, alt: ""})
+              )
+            )
+          )
         )
       }
     });
 
     /* The section contains the blog article title, publication date and snippet */
-    var BlogListSection = React.createClass({
+    var BlogListSection = React.createClass({displayName: "BlogListSection",
       render: function() {
         return (
-          <section>
-            <h3 className="blog-title">{this.props.content.title}</h3>
-            <p className="date">{$filter('date')(this.props.content.publishedDate)}</p>
-            <p>{this.props.content.contentSnippet}</p>
-          </section>
+          React.createElement("section", null, 
+            React.createElement("h3", {className: "blog-title"}, this.props.content.title), 
+
+            React.createElement("p", {className: "date"}, $filter('date')(this.props.content.publishedDate)), 
+
+            React.createElement("p", null, this.props.content.contentSnippet)
+          )
         )
       }
     });
 
     /* The footer contains the read more link */
-    var BlogListFooter = React.createClass({
+    var BlogListFooter = React.createClass({displayName: "BlogListFooter",
       render: function() {
         return (
-          <footer>
-            <p className="read-more">
-              <a href={this.props.link} className="underline">Read more...</a>
-            </p>
-          </footer>
+          React.createElement("footer", null, 
+            React.createElement("p", {className: "read-more"}, 
+              React.createElement("a", {href: this.props.link, className: "underline"}, "Read more...")
+            )
+          )
         )
       }
     });
 
     /* Adds the more posts link at the bottom of hte exposed articles */
-    var BlogListMore = React.createClass({
+    var BlogListMore = React.createClass({displayName: "BlogListMore",
       updateDisplayPosts: function() {
         displayPosts = displayPosts + 10;
       },
       render: function() {
         return (
-          <div id="more-posts" className="clearfix" onClick={this.updateDisplayPosts()}>
-            <div><h6>More posts</h6></div>
-            <div><span className="down-arrow"></span></div>
-          </div>
+          React.createElement("div", {id: "more-posts", className: "clearfix", onClick: this.updateDisplayPosts()}, 
+            React.createElement("div", null, React.createElement("h6", null, "More posts")), 
+            React.createElement("div", null, React.createElement("span", {className: "down-arrow"}))
+          )
         )
       }
     });
@@ -163,7 +138,7 @@
 
       link: function(scope, iElement) {
 
-        BlogList = React.createClass({
+        BlogList = React.createClass({displayName: "BlogList",
 
           componentWillMount: function() {
           },
@@ -173,12 +148,12 @@
 
           render: function() {
             return (
-              <div>
-                {Object.keys(this.props.content).map(function(value, index) {
-                  return <BlogListContent key={index} blogContent={this.props.content[value]}/>;
-                }, this)}
-                <BlogListMore />
-              </div>
+              React.createElement("div", null, 
+                Object.keys(this.props.content).map(function(value, index) {
+                  return React.createElement(BlogListContent, {key: index, blogContent: this.props.content[value]});
+                }, this), 
+                React.createElement(BlogListMore, null)
+              )
             )
           }
 
@@ -193,7 +168,7 @@
 
             $timeout(function() {
               React.render(
-                <BlogList content={posts}/>,
+                React.createElement(BlogList, {content: posts}),
                 iElement['0']
               );
             });
@@ -201,7 +176,6 @@
           }
 
         }.bind(this));
-
       }
     };
   }
