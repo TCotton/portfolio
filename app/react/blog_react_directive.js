@@ -16,6 +16,9 @@
      3. Footer
      */
     var BlogListContent = React.createClass({displayName: "BlogListContent",
+      shouldComponentUpdate: function(nextProps) {
+        return this.props.value !== nextProps.value;
+      },
       // creates link to blog article
       displayLink: function() {
         return '/#!/blog/' + this.props.blogContent.uniqueId + '/' + this.props.blogContent.url;
@@ -96,9 +99,7 @@
         return (
           React.createElement("section", null, 
             React.createElement("h3", {className: "blog-title"}, this.props.content.title), 
-
             React.createElement("p", {className: "date"}, $filter('date')(this.props.content.publishedDate)), 
-
             React.createElement("p", null, this.props.content.contentSnippet)
           )
         )
@@ -120,12 +121,12 @@
 
     /* Adds the more posts link at the bottom of hte exposed articles */
     var BlogListMore = React.createClass({displayName: "BlogListMore",
-      updateDisplayPosts: function() {
-        displayPosts = displayPosts + 10;
+      shouldComponentUpdate: function(nextProps) {
+        return this.props.value !== nextProps.value;
       },
       render: function() {
         return (
-          React.createElement("div", {id: "more-posts", className: "clearfix", onClick: this.updateDisplayPosts()}, 
+          React.createElement("div", {id: "more-posts", className: "clearfix", onClick: this.props.onClick}, 
             React.createElement("div", null, React.createElement("h6", null, "More posts")), 
             React.createElement("div", null, React.createElement("span", {className: "down-arrow"}))
           )
@@ -140,10 +141,11 @@
 
         BlogList = React.createClass({displayName: "BlogList",
 
-          componentWillMount: function() {
-          },
-
-          shouldComponentUpdate: function() {
+          onChildClick: function() {
+            displayPosts = (displayPosts + 5);
+            var posts = $filter('orderBy')(scope.totalBlogPosts, '-publishedDate');
+            posts = $filter('limitTo')(posts, displayPosts);
+            renderBloglist(posts);
           },
 
           render: function() {
@@ -152,27 +154,42 @@
                 Object.keys(this.props.content).map(function(value, index) {
                   return React.createElement(BlogListContent, {key: index, blogContent: this.props.content[value]});
                 }, this), 
-                React.createElement(BlogListMore, null)
+                React.createElement(BlogListMore, {onClick:  this.onChildClick})
               )
             )
           }
 
         });
 
+        /**
+         * Renders DOM
+         * Wrapped in $timeout function as a way of triggering the $apply() method
+         * @param posts
+         */
+        var renderBloglist = function renderBloglist(posts) {
+
+          $timeout(function() {
+            React.render(
+              React.createElement(BlogList, {content: posts}),
+              iElement['0']
+            );
+          });
+
+        };
+
+        // use $watch to make sure that blog posts are sent from the service
+        // before the HTML is rendered
+
         scope.$watch('totalBlogPosts', function(newValue, oldValue) {
 
           if (!Object.is(newValue, oldValue) || (Array.isArray(oldValue) && oldValue.length > 0)) {
 
+            // uses $filter put them in date descending order
             var posts = $filter('orderBy')(scope.totalBlogPosts, '-publishedDate');
-            posts = $filter('limitTo')(posts, scope.displayPosts);
+            // initial # posts displayed is five
+            posts = $filter('limitTo')(posts, displayPosts);
 
-            $timeout(function() {
-              React.render(
-                React.createElement(BlogList, {content: posts}),
-                iElement['0']
-              );
-            });
-
+            renderBloglist(posts);
           }
 
         }.bind(this));

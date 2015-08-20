@@ -6,6 +6,8 @@
 
   app.directive('blogSidebarReactDirective', ['$timeout', '$filter', function($timeout, $filter) {
 
+    var menuItems = 10;
+
     /**
      * Loop through the 10 most recent blog posts
      */
@@ -90,9 +92,9 @@
 
           if (!Object.is(newValue, oldValue) || (Array.isArray(oldValue) && oldValue.length > 0)) {
 
-            var tags = $filter('limitTo')(scope.blogTags, 10);
+            var tags = $filter('limitTo')(scope.blogTags, menuItems);
             var cats = $filter('orderBy')(scope.blogData, '-publishedDate');
-            cats = $filter('limitTo')(cats, 10);
+            cats = $filter('limitTo')(cats, menuItems);
 
             $timeout(function() {
               React.render(
