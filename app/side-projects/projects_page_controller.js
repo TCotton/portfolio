@@ -30,6 +30,8 @@
       value: PROJECTS.pages
     });
 
+    console.dir(PROJECTS.postContent);
+
     Object.defineProperty(this, 'SIDE_PROJECTS', {
       value: PROJECTS.postContent
     });

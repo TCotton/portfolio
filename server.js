@@ -45,7 +45,7 @@ app.use(bodyParser.json());
 app.use(methodOverride()); 						// simulate DELETE and PUT
 app.use(cookieParser());
 
-app.all('*', function (req, res, next) {
+app.all('*', function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Headers', 'X-Requested-With');
   next();
@@ -56,7 +56,7 @@ app.all('*', function (req, res, next) {
  */
 if (app.get('env') === 'development') {
 
-  app.all('*', function (req, res, next) {
+  app.all('*', function(req, res, next) {
     res.header('Cache-Control', 'no-cache');
     next();
   });
@@ -67,7 +67,7 @@ if (app.get('env') === 'development') {
   app.use(express.static(path.join(__dirname, 'app'))); 		// set the static files location /public/img will be /img for users
 
   // Error Handling
-  app.use(function (err, req, res, next) {
+  app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
       message: err.message,
@@ -84,27 +84,27 @@ if (app.get('env') === 'production') {
 
   app.use(favicon(path.join(__dirname, 'dist/favicon.ico')));
 
-  app.all('*', function (req, res, next) {
+  app.all('*', function(req, res, next) {
     res.header('Cache-Control', 'no-cache');
     next();
   });
 
-  app.all('/blog-admin/*', function (req, res, next) {
+  app.all('/blog-admin/*', function(req, res, next) {
     res.header('Cache-Control', 'no-store');
     next();
   });
 
-  app.all('/scripts/*', function (req, res, next) {
+  app.all('/scripts/*', function(req, res, next) {
     res.header('Cache-Control', 'public, max-age=' + sixMonths);
     next();
   });
 
-  app.all('/images/*', function (req, res, next) {
+  app.all('/images/*', function(req, res, next) {
     res.header('Cache-Control', 'public, max-age=' + sixMonths);
     next();
   });
 
-  app.all('/styles/*', function (req, res, next) {
+  app.all('/styles/*', function(req, res, next) {
     res.header('Cache-Control', 'public, max-age=' + sixMonths);
     next();
   });
@@ -115,7 +115,7 @@ if (app.get('env') === 'production') {
 
   // production error handler
   // no stacktraces leaked to user
-  app.use(function (err, req, res, next) {
+  app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
       message: err.message,
@@ -141,6 +141,6 @@ require('./server/rss.js')(app);
 
 module.exports = app;
 
-http.createServer(app).listen(app.get('port'), function () {
+http.createServer(app).listen(app.get('port'), function() {
   console.log('Express server listening on port ' + app.get('port'));
 });

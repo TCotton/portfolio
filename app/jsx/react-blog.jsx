@@ -11,6 +11,7 @@
         <div id="main-content" className={this.props.className}>
           {Object.keys(this.props).map(function(value, index) {
             if (Object.is(typeof this.props[value], 'object')) {
+              console.dir(this.props[value]);
               return <window.Content key={index} content={this.props[value]}/>;
             }
           }, this)}

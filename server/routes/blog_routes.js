@@ -60,7 +60,6 @@ module.exports = function (app) {
     });
   });
 
-
   app.route('/api/blog/delete/:id').delete(function (req, res) {
 
     Blog.remove({
