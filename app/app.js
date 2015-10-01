@@ -21,6 +21,7 @@ angular.module('portfolioApp.footerService', []);
 angular.module('portfolioApp.homepageDirective', []);
 angular.module('portfolioApp.miscDirective', []);
 angular.module('portfolioApp.sideProjectsController', []);
+angular.module('portfolioApp.sideProjectsReact', []);
 angular.module('portfolioApp.sitemapController', []);
 angular.module('portfolioApp.wordProjectsController', []);
 
@@ -41,6 +42,7 @@ angular.module('portfolioApp', [
   'portfolioApp.homepageDirective',
   'portfolioApp.miscDirective',
   'portfolioApp.sideProjectsController',
+  'portfolioApp.sideProjectsReact',
   'portfolioApp.sitemapController',
   'portfolioApp.wordProjectsController',
   'AppConstants',
@@ -81,11 +83,12 @@ angular.module('portfolioApp', [
     })
     .when('/side-projects', {
       templateUrl: 'side-projects/side_projects.html',
-      title: 'Noteworthy personal side projects from the past 18 months'
+      title: 'Noteworthy personal side projects from the past couple of years',
+      controller: 'ProjectsPageCtrl as ProjPageCtrl'
     })
     .when('/side-projects/:projectsPage', {
       templateUrl: 'side-projects/projects_page.html',
-      controller: 'ProjectsPageCtrl'
+      controller: 'ProjectsPageCtrl as ProjPageCtrl'
     })
     .when('/about-me', {
       templateUrl: 'about-me/about_me.html',

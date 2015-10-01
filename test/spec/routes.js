@@ -1,5 +1,5 @@
 'use strict';
-describe('Routes test with log in', function () {
+describe('Routes test with log in', function() {
   // Mock our module in our tests
   beforeEach(module('portfolioApp'));
 
@@ -8,7 +8,7 @@ describe('Routes test with log in', function () {
 
 
   beforeEach(inject(
-    function (_$location_, _$route_, _$rootScope_, _$angularCacheFactory_) {
+    function(_$location_, _$route_, _$rootScope_, _$angularCacheFactory_) {
       location = _$location_;
       route = _$route_;
       rootScope = _$rootScope_;
@@ -23,15 +23,15 @@ describe('Routes test with log in', function () {
     }
   ));
 
-  describe('contact page route', function () {
+  describe('contact page route', function() {
     beforeEach(inject(
-      function ($httpBackend) {
+      function($httpBackend) {
         $httpBackend.expectGET('contact/contact_me.html')
           .respond(200, 'main HTML');
       }
     ));
 
-    it('should load the contact page on successful load of /contact-me', function () {
+    it('should load the contact page on successful load of /contact-me', function() {
       location.path('/contact-me');
       rootScope.$digest(); // call the digest loop
       expect(route.current.controller).toBe('FormCtrl as AdminFormCtrl');
@@ -39,15 +39,15 @@ describe('Routes test with log in', function () {
 
   });
 
-  describe('blog page index route', function () {
+  describe('blog page index route', function() {
     beforeEach(inject(
-      function ($httpBackend) {
+      function($httpBackend) {
         $httpBackend.expectGET('blog-pages/blog.html')
           .respond(200, 'blog HTML');
       }
     ));
 
-    it('should load the blog page on successful load of /blog/', function () {
+    it('should load the blog page on successful load of /blog/', function() {
       location.path('/blog/');
       rootScope.$digest(); // call the digest loop
       expect(route.current.controller).toBe('BlogCtrl as BlogIndexCtrl');
@@ -55,15 +55,15 @@ describe('Routes test with log in', function () {
 
   });
 
-  describe('blog page route', function () {
+  describe('blog page route', function() {
     beforeEach(inject(
-      function ($httpBackend) {
+      function($httpBackend) {
         $httpBackend.expectGET('blog-pages/blog_page.html')
           .respond(200, 'blog HTML');
       }
     ));
 
-    it('should load the blog page on successful load of /blog/136324/using-autoload-in-object-orientated-wordpress-plugin', function () {
+    it('should load the blog page on successful load of /blog/136324/using-autoload-in-object-orientated-wordpress-plugin', function() {
       location.path('/blog/136324/using-autoload-in-object-orientated-wordpress-plugin');
       rootScope.$digest(); // call the digest loop
       expect(route.current.controller).toBe('BlogArticleCtrl as BlogArticlePageCtrl');
@@ -72,15 +72,15 @@ describe('Routes test with log in', function () {
   });
 
 
-  describe('individual work page', function () {
+  describe('individual work page', function() {
     beforeEach(inject(
-      function ($httpBackend) {
+      function($httpBackend) {
         $httpBackend.expectGET('work-projects/work_page.html')
           .respond(200, 'work page HTML');
       }
     ));
 
-    it('should load the work page on successful load of /work-projects/thomson-reuters-japan', function () {
+    it('should load the work page on successful load of /work-projects/thomson-reuters-japan', function() {
       location.path('/work-projects/thomson-reuters-japan');
       rootScope.$digest(); // call the digest loop
       expect(route.current.controller).toBe('WorkPageCtrl');
@@ -88,31 +88,31 @@ describe('Routes test with log in', function () {
 
   });
 
-  describe('individual side project page', function () {
+  describe('individual side project page', function() {
     beforeEach(inject(
-      function ($httpBackend) {
+      function($httpBackend) {
         $httpBackend.expectGET('side-projects/projects_page.html')
           .respond(200, 'project page HTML');
       }
     ));
 
-    it('should load the side projects page on successful load of /side-projects/pennybooks', function () {
+    it('should load the side projects page on successful load of /side-projects/pennybooks', function() {
       location.path('/side-projects/pennybooks');
       rootScope.$digest(); // call the digest loop
-      expect(route.current.controller).toBe('ProjectsPageCtrl');
+      expect(route.current.controller).toBe('ProjectsPageCtrl as ProjPageCtrl');
     });
 
   });
 
-  describe('admin login page', function () {
+  describe('admin login page', function() {
     beforeEach(inject(
-      function ($httpBackend) {
+      function($httpBackend) {
         $httpBackend.expectGET('blog-admin/login.html')
           .respond(200, 'login page HTML');
       }
     ));
 
-    it('should load the login page on successful load of /admin/login', function () {
+    it('should load the login page on successful load of /admin/login', function() {
       location.path('/login');
       rootScope.$digest(); // call the digest loop
       expect(route.current.controller).toBe('LoginCtrl as AdminLogin');
@@ -120,15 +120,15 @@ describe('Routes test with log in', function () {
 
   });
 
-  describe('admin user details page', function () {
+  describe('admin user details page', function() {
     beforeEach(inject(
-      function ($httpBackend) {
+      function($httpBackend) {
         $httpBackend.expectGET('blog-admin/user_details.html')
           .respond(200, 'user details page HTML');
       }
     ));
 
-    it('should load the admin user details page on successful load of /admin/user-details', function () {
+    it('should load the admin user details page on successful load of /admin/user-details', function() {
       location.path('/admin/user-details');
       rootScope.$digest(); // call the digest loop
       expect(route.current.controller).toBe('UserDetailsCtrl as AdminUserDetailsCtrl');
@@ -136,15 +136,15 @@ describe('Routes test with log in', function () {
 
   });
 
-  describe('admin blog details page', function () {
+  describe('admin blog details page', function() {
     beforeEach(inject(
-      function ($httpBackend) {
+      function($httpBackend) {
         $httpBackend.expectGET('blog-admin/blog_details.html')
           .respond(200, 'blog details page HTML');
       }
     ));
 
-    it('should load the admin blog details page on successful load of /admin/user-details', function () {
+    it('should load the admin blog details page on successful load of /admin/user-details', function() {
       location.path('/admin/blog-details');
       rootScope.$digest(); // call the digest loop
       expect(route.current.controller).toBe('EditBlogCtrl as AdminEditBlogCtrl');
@@ -152,15 +152,15 @@ describe('Routes test with log in', function () {
 
   });
 
-  describe('admin add blog page', function () {
+  describe('admin add blog page', function() {
     beforeEach(inject(
-      function ($httpBackend) {
+      function($httpBackend) {
         $httpBackend.expectGET('blog-admin/add_blog.html')
           .respond(200, 'add blog page HTML');
       }
     ));
 
-    it('should load the admin add blog page on successful load of /admin/add-blog', function () {
+    it('should load the admin add blog page on successful load of /admin/add-blog', function() {
       location.path('/admin/add-blog');
       rootScope.$digest(); // call the digest loop
       expect(route.current.controller).toBe('AddBlogCtrl as AdminAddBlogCtrl');
@@ -168,15 +168,15 @@ describe('Routes test with log in', function () {
 
   });
 
-  describe('admin comments page', function () {
+  describe('admin comments page', function() {
     beforeEach(inject(
-      function ($httpBackend) {
+      function($httpBackend) {
         $httpBackend.expectGET('blog-admin/comment_details.html')
           .respond(200, 'admin comments HTML');
       }
     ));
 
-    it('should load the admin comments page on successful load of /admin/blog-comments', function () {
+    it('should load the admin comments page on successful load of /admin/blog-comments', function() {
       location.path('/admin/blog-comments');
       rootScope.$digest(); // call the digest loop
       expect(route.current.controller).toBe('CommentAdminCtrl as AdminCommentAdminCtrl');
@@ -184,15 +184,15 @@ describe('Routes test with log in', function () {
 
   });
 
-  describe('html sitemap page', function () {
+  describe('html sitemap page', function() {
     beforeEach(inject(
-      function ($httpBackend) {
+      function($httpBackend) {
         $httpBackend.expectGET('sitemap/html_sitemap.html')
           .respond(200, 'html sitemap HTML');
       }
     ));
 
-    it('should load the sitemap page on successful load of /sitemap', function () {
+    it('should load the sitemap page on successful load of /sitemap', function() {
       location.path('/sitemap');
       rootScope.$digest(); // call the digest loop
       expect(route.current.controller).toBe('SitemapCtrl');
@@ -200,15 +200,15 @@ describe('Routes test with log in', function () {
 
   });
 
-  describe('Individual category page', function () {
+  describe('Individual category page', function() {
     beforeEach(inject(
-      function ($httpBackend) {
+      function($httpBackend) {
         $httpBackend.expectGET('blog-pages/blog_category.html')
           .respond(200, 'html page category HTML');
       }
     ));
 
-    it('should load the page category CSS on successful load of /blog/css', function () {
+    it('should load the page category CSS on successful load of /blog/css', function() {
       location.path('/category/css');
       rootScope.$digest(); // call the digest loop
       expect(route.current.controller).toBe('BlogCatController as BlogCatPageController');
@@ -219,7 +219,7 @@ describe('Routes test with log in', function () {
 });
 
 
-describe('Routes test without log in', function () {
+describe('Routes test without log in', function() {
 
   // Mock our module in our tests
   beforeEach(module('portfolioApp'));
@@ -227,16 +227,16 @@ describe('Routes test without log in', function () {
   var location, route, rootScope;
 
   beforeEach(inject(
-    function (_$location_, _$route_, _$rootScope_) {
+    function(_$location_, _$route_, _$rootScope_) {
       location = _$location_;
       route = _$route_;
       rootScope = _$rootScope_;
     }
   ));
 
-  describe('admin add blog page without loggin in', function () {
+  describe('admin add blog page without loggin in', function() {
     beforeEach(inject(
-      function ($httpBackend) {
+      function($httpBackend) {
         $httpBackend.expectGET('blog-admin/add_blog.html')
           .respond(200, 'add blog page HTML');
         $httpBackend.expectGET('blog-admin/login.html')
@@ -244,7 +244,7 @@ describe('Routes test without log in', function () {
       }
     ));
 
-    it('should load views/admin/login.html if the user navigates to /admin/add-blog without logging in first', function () {
+    it('should load views/admin/login.html if the user navigates to /admin/add-blog without logging in first', function() {
       location.path('/admin/add-blog');
       rootScope.$digest(); // call the digest loop
       rootScope.$broadcast('$routeChangeSuccess', {});
@@ -254,9 +254,9 @@ describe('Routes test without log in', function () {
 
   });
 
-  describe('admin blog details page without logging in', function () {
+  describe('admin blog details page without logging in', function() {
     beforeEach(inject(
-      function ($httpBackend) {
+      function($httpBackend) {
         $httpBackend.expectGET('blog-admin/blog_details.html')
           .respond(200, 'blog details page HTML');
         $httpBackend.expectGET('blog-admin/login.html')
@@ -264,7 +264,7 @@ describe('Routes test without log in', function () {
       }
     ));
 
-    it('should load views/admin/login.html if the user navigates to /admin/blog-details without logging in first', function () {
+    it('should load views/admin/login.html if the user navigates to /admin/blog-details without logging in first', function() {
       location.path('/admin/blog-details');
       rootScope.$digest(); // call the digest loop
       rootScope.$broadcast('$routeChangeSuccess', {});
@@ -274,9 +274,9 @@ describe('Routes test without log in', function () {
 
   });
 
-  describe('admin user details page without logging in', function () {
+  describe('admin user details page without logging in', function() {
     beforeEach(inject(
-      function ($httpBackend) {
+      function($httpBackend) {
         $httpBackend.expectGET('blog-admin/user_details.html')
           .respond(200, 'user details page HTML');
         $httpBackend.expectGET('blog-admin/login.html')
@@ -284,7 +284,7 @@ describe('Routes test without log in', function () {
       }
     ));
 
-    it('should load views/admin/login.html if the user navigates to /admin/user-details without logging in first', function () {
+    it('should load views/admin/login.html if the user navigates to /admin/user-details without logging in first', function() {
       location.path('/admin/user-details');
       rootScope.$digest(); // call the digest loop
       rootScope.$broadcast('$routeChangeSuccess', {});
@@ -294,9 +294,9 @@ describe('Routes test without log in', function () {
 
   });
 
-  describe('admin comments page without logging in', function () {
+  describe('admin comments page without logging in', function() {
     beforeEach(inject(
-      function ($httpBackend) {
+      function($httpBackend) {
         $httpBackend.expectGET('blog-admin/comment_details.html')
           .respond(200, 'comment details page HTML');
         $httpBackend.expectGET('blog-admin/login.html')
@@ -304,7 +304,7 @@ describe('Routes test without log in', function () {
       }
     ));
 
-    it('should load the admin comments page on successful load of /admin/blog-comments', function () {
+    it('should load the admin comments page on successful load of /admin/blog-comments', function() {
       location.path('/admin/blog-comments');
       rootScope.$digest(); // call the digest loop
       rootScope.$broadcast('$routeChangeSuccess', {});

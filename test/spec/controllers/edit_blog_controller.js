@@ -70,7 +70,6 @@ describe('Controller: EditBlogCtrl as AdminEditBlogCtrl', function () {
 
   });
 
-
   it('After clicking to delete blog article local scope will change with value of blog article to be deleted: AdminAddBlogCtrl.addBlog()', function () {
 
     expect(scope.displayPopup).toBe(false);

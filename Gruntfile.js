@@ -43,16 +43,6 @@ module.exports = function(grunt) {
   grunt.initConfig({
     yeoman: yeomanConfig,
     pkg: grunt.file.readJSON('package.json'),
-    swPrecache: {
-      dev: {
-        handleFetch: false,
-        rootDir: '<%= yeoman.app %>'
-      },
-      dist: {
-        handleFetch: false,
-        rootDir: '<%= yeoman.dist %>'
-      }
-    },
     watch: {
       js: {
         files: [
@@ -98,6 +88,10 @@ module.exports = function(grunt) {
       },
       gruntfile: {
         files: ['Gruntfile.js']
+      },
+      react: {
+        files: ['<%= yeoman.app %>/jsx/*.jsx'],
+        tasks: ['react']
       },
       livereload: {
         options: {
@@ -254,14 +248,20 @@ module.exports = function(grunt) {
         '<%= yeoman.app %>/misc/*.js',
         '<%= yeoman.app %>/shared/*.js',
         '<%= yeoman.app %>/app.js',
-        //'<%= yeoman.server %>/**/*.js',
+        '!<%= yeoman.app %>/react/*.js',
         '!<%= yeoman.app %>/**/config/constants.js' // ignore auto generated constants file'
       ],
       test: {
         options: {
           jshintrc: '.jshintrc'
         },
-        src: ['test/spec/{,*/}*.js', '!test/e2e/{,*/}*.js', '!test/spec/config/constants.js']
+        src: [
+          'test/spec/{,*/}*.js',
+          '!test/e2e/{,*/}*.js',
+          '!test/spec/config/constants.js',
+          '!<%= yeoman.app %>/jsx/*.jsx',
+          '!<%= yeoman.app %>/react/*.js'
+        ]
       }
     },
     // Renames files for browser caching purposes
@@ -403,6 +403,16 @@ module.exports = function(grunt) {
       }
     },
 
+    react: {
+      files: {
+        expand: true,
+        cwd: '<%= yeoman.app %>/jsx',
+        src: ['**/*.jsx'],
+        dest: '<%= yeoman.app %>/react',
+        ext: '.js'
+      }
+    },
+
     cwebp: {
       images: {
         options: {
@@ -411,10 +421,12 @@ module.exports = function(grunt) {
         },
         files: [
           {
-            src: ['<%= yeoman.app %>/images{,*/}*.{png,jpg,jpeg}',
+            src: [
+              '<%= yeoman.app %>/images{,*/}*.{png,jpg,jpeg}',
               '<%= yeoman.app %>/images/blog-images{,*/}*.{png,jpg,jpeg}',
               '<%= yeoman.app %>/images/blog-stock-images{,*/}*.{png,jpg,jpeg}',
-              '<%= yeoman.app %>/images/slider{,*/}*.{png,jpg,jpeg}']
+              '<%= yeoman.app %>/images/slider{,*/}*.{png,jpg,jpeg}'
+            ]
           }
         ]
       }
@@ -549,17 +561,21 @@ module.exports = function(grunt) {
     },
 
     jscs: {
-      src: ['<%= yeoman.app %>/**/*.js',
+      src: [
+        '<%= yeoman.app %>/**/*.js',
         '!<%= yeoman.app %>/components/**/*.js',
         '!<%= yeoman.app %>/config/constants.js',
-        '!<%= yeoman.app %>/libs/*.js'
+        '!<%= yeoman.app %>/libs/*.js',
+        '!<%= yeoman.app %>/react/*.js'
       ],
       options: {
         preset: 'airbnb',
         config: '.jscsrc',
         esnext: true,
         maxErrors: 10,
-        verbose: true
+        verbose: true,
+        esprima: 'esprima-fb',
+        esprimaOptions: { 'tolerant': true }
       }
     },
 
@@ -635,7 +651,7 @@ module.exports = function(grunt) {
     grunt.task.run([
       'clean:server',
       'concurrent:server',
-      //'postcss:prod',
+      'postcss:prod',
       'ngconstant',
       /*      'lodash',*/
       'express:livereload',
@@ -661,6 +677,7 @@ module.exports = function(grunt) {
     'useminPrepare',
     'sass:dist',
     'concurrent:dist',
+    'react',
     'postcss:dist',
     'ngconstant',
     'concat',

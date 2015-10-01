@@ -5,7 +5,7 @@
  */
 
 'use strict';
-describe('Controller: "FooterCtrl as FooterInherCtrl', function () {
+describe('Controller: "FooterCtrl as FooterInherCtrl', function() {
 
   var $controller;
   var $rootScope;
@@ -21,7 +21,7 @@ describe('Controller: "FooterCtrl as FooterInherCtrl', function () {
     'AppConstants', 'ngRoute', 'portfolioAppConfig', 'jmdobry.angular-cache', 'underscore', 'helperFunctions'));
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function (_$controller_, _$rootScope_, _MOCK_DATA_, _$httpBackend_, _$q_) {
+  beforeEach(inject(function(_$controller_, _$rootScope_, _MOCK_DATA_, _$httpBackend_, _$q_) {
     $controller = _$controller_;
     $rootScope = _$rootScope_;
     MOCK_DATA = _MOCK_DATA_;
@@ -38,7 +38,7 @@ describe('Controller: "FooterCtrl as FooterInherCtrl', function () {
 
     $httpBackend.expect('GET', '/api/newsblur/get').respond(200, newsBlurResponse);
 
-    scope.$apply(function () {
+    scope.$apply(function() {
       FooterInherCtrl.loadData();
     });
 
@@ -46,7 +46,7 @@ describe('Controller: "FooterCtrl as FooterInherCtrl', function () {
 
   }));
 
-  it('check local scope changes in public function loadData', function () {
+  it('check local scope changes in public function loadData', function() {
 
     expect(scope.recArticle.title).toBe(newsBlurResponse.stories[0].story_title);
     expect(scope.recArticle.author).toBe(newsBlurResponse.stories[0].story_authors);
@@ -55,7 +55,7 @@ describe('Controller: "FooterCtrl as FooterInherCtrl', function () {
 
   });
 
-  it('Tests the _createContentSnippet() function. Must be 270 or fewer characters, to contain an ellipse and finish with double quotes', function () {
+  it('Tests the _createContentSnippet() function. Must be 270 or fewer characters, to contain an ellipse and finish with double quotes', function() {
 
     $rootScope.$apply(); // promises are resolved/dispatched only on next $digest cycle
 
