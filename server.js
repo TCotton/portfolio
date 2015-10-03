@@ -125,14 +125,14 @@ if (app.get('env') === 'production') {
 }
 
 // routes ======================================================================
-require('./server/routes/user_routes.js')(app);
-require('./server/routes/blog_routes.js')(app);
-require('./server/routes/comment_routes.js')(app);
-require('./server/routes/misc_routes.js')(app);
-require('./server/routes/newsblurAPI.js')(app);
+require('./server/routes/user_routes')(app);
+require('./server/routes/blog_routes')(app);
+require('./server/routes/comment_routes')(app);
+require('./server/routes/misc_routes')(app);
+require('./server/routes/newsblurAPI')(app);
 
 //RSS feed parsing
-require('./server/parse_feed/parse_rss.js')(app);
+require('./server/parse_feed/parse_rss')(app);
 
 // XML sitemap =================================================================
 require('./server/sitemap.js')(app);

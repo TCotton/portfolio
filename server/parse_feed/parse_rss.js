@@ -26,18 +26,17 @@ var _grab_old_blog_posts;
  * Simple getter setter cache class
  * @constructor
  */
-var BlogCacheClass = function () {
 
-  Object.defineProperty(this, 'cache', {
-    get: function () {
-      return this.value;
-    },
-    set: function (val) {
-      this.value = val;
-    }
-  });
+class BlogCacheClass {
 
-};
+  get cache() {
+    return this.value;
+  }
+
+  set cache(val) {
+    this.value = val;
+  }
+}
 
 var OldBlogPosts = new BlogCacheClass();
 var OldBlogPostTotal = new BlogCacheClass();
@@ -48,13 +47,15 @@ var createJSONFile = function () {
 
     fs.writeFile('./server/blogposts.json', OldBlogPosts.cache, function (err) {
       if (err) {
-        new Error(err);
+        throw new Error(err);
       }
     });
 
   }
 
 };
+
+createJSONFile();
 
 /**
  *
@@ -249,7 +250,7 @@ var RSSClass = function () {
 
       // if there is an error retrieving, send the error. nothing after res.send(err) will execute
       if (err) {
-        new Error(err);
+        throw new Error(err);
       }
 
       this.totalNewArticles = _.size(blogs);
@@ -394,6 +395,8 @@ RSSClass.prototype.blogItems = function (callback) {
       res.send(err);
     }
 
+    console.dir(result);
+
     callback(result);
   });
 
@@ -482,7 +485,13 @@ module.exports = function (app) {
       }
     });
 
-    createJSONFile();
+    fs.exists('./server/blogposts.json', function (exists) {
+
+      if (!exists) {
+        createJSONFile();
+      }
+
+    });
 
     // if oldBlogPosts are in the cache then don't use the parseFeed method
     // just retrieve them from the cache
