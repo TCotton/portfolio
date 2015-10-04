@@ -104,7 +104,7 @@
     "uglify-save-license": "^0.4.1"
   },
   "engines": {
-    "node": ">=0.12.7"
+    "node": ">=4.00"
   },
   "scripts": {
     "test": "grunt test"

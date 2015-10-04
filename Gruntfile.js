@@ -572,7 +572,7 @@ module.exports = function(grunt) {
         preset: 'airbnb',
         config: '.jscsrc',
         esnext: true,
-        maxErrors: 10,
+        maxErrors: 100,
         verbose: true,
         esprima: 'esprima-fb',
         esprimaOptions: { 'tolerant': true }

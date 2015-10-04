@@ -6,7 +6,7 @@ var Blog = require('./routes/models/blog_model');
 var _ = require('underscore');
 var q = require('q');
 
-module.exports = function (app) {
+module.exports = function(app) {
 
   var feedOptions = {
     title: 'blog unblock: The blog of web developer Andy Walpole',
@@ -20,18 +20,18 @@ module.exports = function (app) {
 
   /** loop through blogs in monogdb and create RSS friendly objects
    * **/
-  var blogs_database = function () {
+  var blogsDatabase = function() {
 
     var feedItems = {}, deferred, blogURl;
 
     deferred = q.defer();
 
-    Blog.find(function (err, blogs) {
+    Blog.find(function(err, blogs) {
 
       // if there is an error retrieving, send the error. nothing after res.send(err) will execute
       if (!err) {
 
-        Object.keys(blogs).forEach(function (key) {
+        Object.keys(blogs).forEach(function(key) {
 
           blogURl = 'https://andywalpole.me/#!/blog/' + blogs[key].uniqueId + '/' + blogs[key].url;
 
@@ -59,9 +59,12 @@ module.exports = function (app) {
   /** loop through blogs in json file and create RSS friendly objects
    * **/
 
-  var blogs_feed = function () {
+  var blogsFeed = function() {
 
-    var feedItems = {}, deferred, posts, blogURl;
+    let feedItems = {};
+    let deferred;
+    let posts;
+    let blogURl;
 
     deferred = q.defer();
 
@@ -69,7 +72,7 @@ module.exports = function (app) {
 
       if (exists) {
 
-        fs.readFile('./server/blogposts.json', function (err, data) {
+        fs.readFile('./server/blogposts.json', function(err, data) {
 
           if (err) {
             deferred.reject(new Error(err));
@@ -77,7 +80,7 @@ module.exports = function (app) {
 
           posts = JSON.parse(data);
 
-          Object.keys(posts).forEach(function (key) {
+          Object.keys(posts).forEach(function(key) {
 
             blogURl = 'https://andywalpole.me/#!/blog/' + posts[key].uniqueId + '/' + posts[key].url;
 
@@ -96,7 +99,8 @@ module.exports = function (app) {
 
         });
 
-      } else {
+      }
+      else {
 
         deferred.reject(new Error('blogposts.json cannot be found'));
 
@@ -108,28 +112,28 @@ module.exports = function (app) {
 
   };
 
-  var buildData = function () {
+  var buildData = function() {
 
     /** Use promise all to make sure that both functions return data
      * **/
 
-    q.all([blogs_database(), blogs_feed()]).spread(function (a, b) {
+    q.all([blogsDatabase(), blogsFeed()]).spread(function(a, b) {
 
-      var x, l, feedItems;
+      let x;
+      let l;
+      let feedItems;
 
       /** Join them with union function after using sortBy function to rearrange them in correct data order
        * **/
 
-      feedItems = _.union(_.sortBy(a, function (o) {
+      feedItems = _.union(_.sortBy(a, function(o) {
         return o.date * -1;
-      }), _.sortBy(b, function (o) {
+      }), _.sortBy(b, function(o) {
         return !o.date;
       }));
 
       for (x = 0, l = feedItems.length; x !== l; x += 1) {
-
         feed.item(feedItems[x]);
-
       }
 
     });
@@ -138,14 +142,13 @@ module.exports = function (app) {
 
   buildData();
 
-  app.get('/rss.xml', function (req, res) {
+  app.get('/rss.xml', function(req, res) {
 
     res.header('Content-Type', 'application/xml');
 
     if (!_.isEmpty(feed.items)) {
 
-      var xml = feed.xml();
-
+      let xml = feed.xml();
       res.send(xml);
 
     }
