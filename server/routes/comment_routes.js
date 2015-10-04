@@ -9,9 +9,9 @@ var moment = require('moment');
 var mail = require('nodemailer');
 var transporter = mail.createTransport();
 
-module.exports = function (app) {
+module.exports = function(app) {
 
-  app.route('/api/comment/add').post(function (req, res) {
+  app.route('/api/comment/add').post(function(req, res) {
 
     Comments.create({
 
@@ -23,7 +23,7 @@ module.exports = function (app) {
       published: false,
       publishedDate: moment().valueOf()
 
-    }, function (err, comment) {
+    }, function(err, comment) {
 
       if (err) {
         res.send(err);
@@ -52,9 +52,9 @@ module.exports = function (app) {
 
   });
 
-  app.route('/api/comment/update').put(function (req, res) {
+  app.route('/api/comment/update').put(function(req, res) {
 
-    Comments.findById(req.body.id, function (err, cm) {
+    Comments.findById(req.body.id, function(err, cm) {
 
       if (err) {
         res.send(err);
@@ -69,7 +69,7 @@ module.exports = function (app) {
         // update here
         cm.published = req.body.published;
 
-        cm.save(function (err) {
+        cm.save(function(err) {
 
           if (err) {
             res.send(err);
@@ -86,10 +86,10 @@ module.exports = function (app) {
   });
 
 
-  app.route('/api/comment/get').get(function (req, res) {
+  app.route('/api/comment/get').get(function(req, res) {
 
     // use mongoose to get all blogs in the database
-    Comments.find(function (err, comments) {
+    Comments.find(function(err, comments) {
 
       // if there is an error retrieving, send the error. nothing after res.send(err) will execute
       if (err) {
@@ -102,10 +102,10 @@ module.exports = function (app) {
 
   });
 
-  app.route('/api/comment/getPublished').get(function (req, res) {
+  app.route('/api/comment/getPublished').get(function(req, res) {
 
     // use mongoose to get all blogs in the database that are published and with the right blog id
-    Comments.find({published: true, blogId: req.query.blogId }, function (err, comments) {
+    Comments.find({published: true, blogId: req.query.blogId}, function(err, comments) {
 
       // if there is an error retrieving, send the error. nothing after res.send(err) will execute
       if (err) {
@@ -118,14 +118,13 @@ module.exports = function (app) {
 
   });
 
-
-  app.route('/api/comment/delete/:id').delete(function (req, res) {
+  app.route('/api/comment/delete/:id').delete(function(req, res) {
 
     Comments.remove({
 
       _id: req.params.id
 
-    }, function (err, blogs) {
+    }, function(err, blogs) {
 
       if (err) {
         res.send(err);
@@ -138,6 +137,5 @@ module.exports = function (app) {
     });
 
   });
-
 
 };

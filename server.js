@@ -9,6 +9,7 @@ http.globalAgent.maxSockets = Infinity;
 var path = require('path');
 var morgan = require('morgan');
 var helmet = require('helmet');
+var csp = require('helmet-csp');
 var bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
 var cookieParser = require('cookie-parser');
@@ -45,6 +46,40 @@ app.use(bodyParser.json());
 app.use(methodOverride()); 						// simulate DELETE and PUT
 app.use(cookieParser());
 
+if (app.get('env') === 'production') {
+
+  app.use(csp({
+    // Specify directives as normal
+    defaultSrc: ['\'self\'', 'https://andywalpole.me/'],
+    scriptSrc: ['\'self\'', '\'unsafe-inline\'', '\'unsafe-eval\'', 'https://platform.twitter.com', 'https://f.vimeocdn.com',
+      'https://codepen.io', 'https://www.google-analytics.com', 'https://s.ytimg.com', 'https://player.vimeo.com'],
+    styleSrc: ['\'self\'', 'https://fonts.googleapis.com', '\'unsafe-inline\'', 'https://platform.twitter.com'],
+    imgSrc: ['\'self\'', 'data:', 'https://pbs.twimg.com', 'https://www.google-analytics.com', 'https://syndication.twitter.com', 'https://platform.twitter.com'],
+    fontSrc: ['\'self\'', 'fonts.gstatic.com'],
+    frameSrc: ['\'self\'', 'https://www.disclose.tv', 'https://www.youtube-nocookie.com', 'https://player.vimeo.com', 'https://syndication.twitter.com', 'https://platform.twitter.com', 'https://www.youtube.com'],
+    sandbox: ['allow-forms', 'allow-scripts'],
+    reportUri: '/report-violation',
+
+    // Set to an empty array to allow nothing through
+    objectSrc: ['\'self\'', 'https://www.bbc.co.uk'],
+    connectSrc: ['\'self\'', 'https://ssl.bbc.co.uk'],
+
+    // Set to true if you only want browsers to report errors, not block them
+    reportOnly: true,
+
+    // Set to true if you want to blindly set all headers: Content-Security-Policy,
+    // X-WebKit-CSP, and X-Content-Security-Policy.
+    setAllHeaders: false,
+
+    // Set to true if you want to disable CSP on Android.
+    disableAndroid: false,
+
+    // Set to true if you want to force buggy CSP in Safari 5.1 and below.
+    safari5: false
+  }));
+
+}
+
 app.all('*', function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Headers', 'X-Requested-With');
@@ -60,7 +95,6 @@ if (app.get('env') === 'development') {
     res.header('Cache-Control', 'no-cache');
     next();
   });
-
   // This will change in production since we'll be using the dist folder
   // This covers serving up the index page
   app.use(favicon(path.join(__dirname, 'app/favicon.ico')));
@@ -90,6 +124,11 @@ if (app.get('env') === 'production') {
   });
 
   app.all('/blog-admin/*', function(req, res, next) {
+    res.header('Cache-Control', 'no-store');
+    next();
+  });
+
+  app.all('/report-violation', function(req, res, next) {
     res.header('Cache-Control', 'no-store');
     next();
   });

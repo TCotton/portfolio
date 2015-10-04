@@ -6,9 +6,9 @@
 
 var Blog = require('./models/blog_model');
 
-module.exports = function (app) {
+module.exports = function(app) {
 
-  app.route('/api/blog/add').post(function (req, res) {
+  app.route('/api/blog/add').post(function(req, res) {
 
     Blog.create({
 
@@ -24,7 +24,7 @@ module.exports = function (app) {
       displayImage: req.body.displayImage,
       commentsOpen: req.body.allowComments
 
-    }, function (err, blog) {
+    }, function(err, blog) {
 
       if (err) {
         res.send(err);
@@ -39,10 +39,10 @@ module.exports = function (app) {
   });
 
 
-  app.route('/api/blog/get').get(function (req, res) {
+  app.route('/api/blog/get').get(function(req, res) {
 
     // use mongoose to get all blogs in the database
-    Blog.find(function (err, blogs) {
+    Blog.find(function(err, blogs) {
 
       if (app.get('env') === 'production') {
 
@@ -60,13 +60,13 @@ module.exports = function (app) {
     });
   });
 
-  app.route('/api/blog/delete/:id').delete(function (req, res) {
+  app.route('/api/blog/delete/:id').delete(function(req, res) {
 
     Blog.remove({
 
       _id: req.params.id
 
-    }, function (err, blogs) {
+    }, function(err, blogs) {
 
       if (err) {
         res.send(err);
@@ -80,10 +80,9 @@ module.exports = function (app) {
 
   });
 
+  app.route('/api/blog/update').put(function(req, res) {
 
-  app.route('/api/blog/update').put(function (req, res) {
-
-    Blog.findById(req.body.id, function (err, bl) {
+    Blog.findById(req.body.id, function(err, bl) {
 
       if (err) {
         res.send(err);
@@ -106,7 +105,7 @@ module.exports = function (app) {
         bl.displayImage = req.body.displayImage;
         bl.commentsOpen = req.body.allowComments;
 
-        bl.save(function (err) {
+        bl.save(function(err) {
 
           if (err) {
             res.send(err);

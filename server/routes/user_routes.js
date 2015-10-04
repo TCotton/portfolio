@@ -27,10 +27,10 @@ function createPasswordHash(password) {
 
 }
 
-module.exports = function (app) {
+module.exports = function(app) {
 
 
-  app.route('/api/users/add').post(function (req, res) {
+  app.route('/api/users/add').post(function(req, res) {
 
     // read out hmac digest
     var hash = createPasswordHash(req.body.password);
@@ -41,7 +41,7 @@ module.exports = function (app) {
       name: req.body.name,
       password: hash
 
-    }, function (err, user) {
+    }, function(err, user) {
 
       if (err) {
         res.send(err);
@@ -56,10 +56,10 @@ module.exports = function (app) {
   });
 
 
-  app.route('/api/users/get').get(function (req, res) {
+  app.route('/api/users/get').get(function(req, res) {
 
     // use mongoose to get all users in the database
-    Users.find(function (err, users) {
+    Users.find(function(err, users) {
 
       // if there is an error retrieving, send the error. nothing after res.send(err) will execute
       if (err) {
@@ -72,13 +72,13 @@ module.exports = function (app) {
   });
 
 
-  app.route('/api/users/delete/:id').delete(function (req, res) {
+  app.route('/api/users/delete/:id').delete(function(req, res) {
 
     Users.remove({
 
       _id: req.params.id
 
-    }, function (err, users) {
+    }, function(err, users) {
 
       if (err) {
         res.send(err);
@@ -93,12 +93,12 @@ module.exports = function (app) {
   });
 
 
-  app.route('/api/user/find').post(function (req, res) {
+  app.route('/api/user/find').post(function(req, res) {
 
     // read out hmac digest
     var hash = createPasswordHash(req.body.password);
 
-    Users.findOne({ name: req.body.name, password: hash }, function (err, usr) {
+    Users.findOne({name: req.body.name, password: hash}, function(err, usr) {
 
       if (err) {
         res.send(err);
@@ -118,18 +118,16 @@ module.exports = function (app) {
   });
 
 
-  app.route('/api/user/update').put(function (req, res) {
+  app.route('/api/user/update').put(function(req, res) {
 
-    Users.findById(req.body.id, function (err, usr) {
+    Users.findById(req.body.id, function(err, usr) {
 
       if (err) {
         res.send(err);
       }
 
       if (!usr) {
-
         return new Error('Could not load User document');
-
       } else {
 
         // read out hmac digest
@@ -139,7 +137,7 @@ module.exports = function (app) {
         usr.name = req.body.name;
         usr.password = hash;
 
-        usr.save(function (err) {
+        usr.save(function(err) {
 
           if (err) {
             res.send(err);
@@ -154,6 +152,5 @@ module.exports = function (app) {
     });
 
   });
-
 
 };
