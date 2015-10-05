@@ -51,8 +51,7 @@ module.exports = function(config) {
       // do not include tests or libraries
       // (these files will be instrumented by Istanbul)
       // source files we want to generate coverage for
-      'app/scripts/**/*.js': ['coverage'],
-      'app/views/**/*.html': ['ng-html2js']
+      'app/scripts/**/*.js': ['coverage']
     },
 
     // optionally, configure the reporter

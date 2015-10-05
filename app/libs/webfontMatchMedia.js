@@ -1,3 +1,4 @@
+// jscs:disable
 // Commons ES6 / ES7 polyfills
 (function(window){
 // Array.prototype.contains()
@@ -201,7 +202,8 @@ if (WebFont) {
 
 
 /* Modernizr 2.8.3 (Custom Build) | MIT & BSD
- * Build: http://modernizr.com/download/#-cssclasses-addtest-prefixed-teststyles-testprop-testallprops-hasevent-prefixes-domprefixes-img_webp
+ * Build: http://modernizr.com/download/#-cssclasses-addtest-prefixed-
+ * teststyles-testprop-testallprops-hasevent-prefixes-domprefixes-img_webp
  */
 window.Modernizr = (function(window, document, undefined) {
 
@@ -507,3 +509,4 @@ window.Modernizr = (function(window, document, undefined) {
   image.src = 'data:image/webp;base64,UklGRiwAAABXRUJQVlA4ICAAAAAUAgCdASoBAAEAL/3+/3+CAB/AAAFzrNsAAP5QAAAAAA==';
 
 }());
+// jscs:enable

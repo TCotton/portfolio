@@ -26,6 +26,7 @@ module.exports = function(grunt) {
   require('time-grunt')(grunt);
 
   var saveLicense = require('uglify-save-license');
+  var mozjpeg = require('imagemin-mozjpeg');
 
   // configurable paths
   var yeomanConfig = {
@@ -340,20 +341,20 @@ module.exports = function(grunt) {
 
     // The following *-min tasks produce minified files in the dist folder
     imagemin: {
-      dist: {
-        files: [
-          {
-            expand: true,
-            cwd: '<%= yeoman.app %>/images',
-            src: [
-              '/*.{png,jpg,jpeg,gif}',
-              '/blog-images/*.{png,jpg,jpeg,gif}',
-              '/blog-stock-images/*.{png,jpg,jpeg,gif}',
-              '/slider/*.{png,jpg,jpeg,gif}'
-            ],
-            dest: '<%= yeoman.dist %>/images'
-          }
-        ]
+      dynamic: {
+        options: {
+          optimizationLevel: 5,
+          progressive: true,
+          use: [mozjpeg()]
+        },
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.app %>/images',
+          src: [
+            '{,*/}*.{png,jpg}'
+          ],
+          dest: '<%= yeoman.dist %>/images'
+        }]
       }
     },
     svgmin: {
@@ -442,7 +443,7 @@ module.exports = function(grunt) {
             cwd: '<%= yeoman.app %>',
             dest: '<%= yeoman.dist %>',
             src: [
-              '*.{ico,png,txt}',
+              '*.{ico,txt}',
               'views/{,*/}*.html',
               'footer/*.html',
               'homepage/*.html',
@@ -458,10 +459,10 @@ module.exports = function(grunt) {
               'misc/*.html',
               'shared/*.html',
               'components/**/*',
-              'images/*.{webp,png,jpg,jpeg}',
-              'images/blog-images/*.{webp,png,jpg,jpeg}',
-              'images/blog-stock-images/*.{webp,png,jpg,jpeg}',
-              'images/slider/*.{webp,png,jpg,jpeg}',
+              'images/*.webp',
+              'images/blog-images/*.webp',
+              'images/blog-stock-images/*.webp',
+              'images/slider/*.webp',
               'fonts/*',
               'audio/*.mp3'
             ]
@@ -575,7 +576,7 @@ module.exports = function(grunt) {
         maxErrors: 100,
         verbose: true,
         esprima: 'esprima-fb',
-        esprimaOptions: { 'tolerant': true }
+        esprimaOptions: {'tolerant': true}
       }
     },
 
@@ -584,7 +585,7 @@ module.exports = function(grunt) {
         map: true,
         processors: [
           require('postcss-will-change'),
-          require('autoprefixer-core')({browsers: ['last 3 versions', 'Android >= 2.3', 'ie_mob 11'], cascade: false }),
+          require('autoprefixer')({browsers: ['last 3 versions', 'Android >= 2.3', 'ie_mob 11'], cascade: false}),
           require('postcss-mq-keyframes'),
           require('postcss-fakeid'),
           require('postcss-single-charset'),

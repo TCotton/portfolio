@@ -1,51 +1,56 @@
 <div id="banner">
 
-    <section>
-        <h2 class="page-top-title" data-ng-bind="title"></h2>
-        <p class="page-top-text-banner" data-ng-bind="summary"></p>
-    </section>
+  <section>
+    <h2 class="page-top-title" data-ng-bind="title"></h2>
+
+    <p class="page-top-text-banner" data-ng-bind="summary"></p>
+  </section>
 
 </div><!-- end banner -->
 
 <div id="main-content" class="clearfix my-work content-text" ng-init="ProjPageCtrl.findData()">
 
-    <div id="left-small">
+  <div id="left-small">
 
-        <article>
+    <article>
 
-            <div data-ng-bind-html="details"></div>
-            <p class="minor-title">Code used:</p>
-            <p data-ng-bind="code"></p>
+      <div data-ng-bind-html="details"></div>
+      <p class="minor-title">Code used:</p>
 
-        </article>
+      <p data-ng-bind="code"></p>
 
-        <div class="pagination visible-desktop">
+    </article>
 
-            <a data-ng-href="{{prevPage}}" class="paglast"></a>
-            <a href="/#!/work-projects/" class="pagHome"></a>
-            <a data-ng-href="{{nextPage}}" class="pagnext"></a>
+    <div class="pagination visible-desktop">
 
-        </div><!-- end pagination -->
-
-    </div>
-    <!-- end left small -->
-
-    <div id="right-large">
-
-        <picture class="ng-cloak">
-            <source type="image/webp" ng-srcset="{{::workImageWebP}}" >
-            <img ng-src="{{::workImage}}"  alt="{{::title}}"/>
-        </picture>
-
-        <div class="pagination clearfix hidden-desktop">
-
-            <a data-ng-href="{{prevPage}}" class="paglast"></a>
-            <a href="/#!/work-projects/" class="pagHome"></a>
-            <a data-ng-href="{{nextPage}}" class="pagnext"></a>
-
-        </div><!-- end pagination -->
+      <a data-ng-href="{{prevPage}}" class="paglast"></a>
+      <a href="/#!/work-projects/" class="pagHome"></a>
+      <a data-ng-href="{{nextPage}}" class="pagnext"></a>
 
     </div>
-    <!-- end right large -->
+    <!-- end pagination -->
+
+  </div>
+  <!-- end left small -->
+
+  <div id="right-large">
+
+    <picture class="ng-cloak">
+      <source type="image/webp" ng-srcset="{{::workImageWebP}}">
+      <source type="image/jpeg" ng-srcset="{{::workImage}}">
+      <img ng-src="{{::workImage}}" alt="{{::title}}"/>
+    </picture>
+
+    <div class="pagination clearfix hidden-desktop">
+
+      <a data-ng-href="{{prevPage}}" class="paglast"></a>
+      <a href="/#!/work-projects/" class="pagHome"></a>
+      <a data-ng-href="{{nextPage}}" class="pagnext"></a>
+
+    </div>
+    <!-- end pagination -->
+
+  </div>
+  <!-- end right large -->
 
 </div><!-- end main-content -->

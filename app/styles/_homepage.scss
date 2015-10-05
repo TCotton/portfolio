@@ -51,7 +51,6 @@
 #slider {
   clear: both;
   background-color: $imageBackground;
-  background-image: $sliderOne;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -59,30 +58,6 @@
   position: relative;
   will-change: contents;
 
-  &.slider2 {
-    background-image: $sliderOne;
-  }
-  &.slider2 {
-    background-image: $sliderTwo;
-  }
-  &.slider3 {
-    background-image: $sliderThree;
-  }
-  &.slider4 {
-    background-image: $sliderFour;
-  }
-  &.slider5 {
-    background-image: $sliderFive;
-  }
-  &.slider6 {
-    background-image: $sliderSix;
-  }
-  &.slider7 {
-    background-image: $sliderSeven;
-  }
-  &.slider8 {
-    background-image: $sliderEight;
-  }
   &.sliderPlaceholder {
     background-image: $sliderPlaceholderDataURI;
   }
@@ -121,6 +96,62 @@
     &:hover {
       background: $rightArrowHover;
     }
+  }
+}
+
+.no-webp #slider {
+  background-image: $sliderOne;
+  &.slider2 {
+    background-image: $sliderOne;
+  }
+  &.slider2 {
+    background-image: $sliderTwo;
+  }
+  &.slider3 {
+    background-image: $sliderThree;
+  }
+  &.slider4 {
+    background-image: $sliderFour;
+  }
+  &.slider5 {
+    background-image: $sliderFive;
+  }
+  &.slider6 {
+    background-image: $sliderSix;
+  }
+  &.slider7 {
+    background-image: $sliderSeven;
+  }
+  &.slider8 {
+    background-image: $sliderEight;
+  }
+}
+
+.webp #slider {
+  background-image: $sliderOneWepB;
+  &.slider2 {
+    background-image: $sliderOneWepB;
+  }
+  &.slider2 {
+    background-image: $sliderTwoWebB;
+  }
+  &.slider3 {
+    background-image: $sliderThreeWebB;
+  }
+  &.slider4 {
+    background-image: $sliderFourWebB;
+  }
+  &.slider5 {
+    background-image: $sliderFiveWebP;
+  }
+  &.slider6 {
+    background-image: $sliderSixWebP;
+  }
+  &.slider7 {
+    background-image: $sliderSevenWebP;
+  }
+  &.slider8 {
+    background-image: $sliderEightWebP;
   }
 }
 

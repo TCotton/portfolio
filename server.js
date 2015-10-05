@@ -52,19 +52,18 @@ if (app.get('env') === 'production') {
     // Specify directives as normal
     defaultSrc: [
       '\'self\'',
-      'https://andywalpole.me/'
+      'https://andywalpole.me'
     ],
     scriptSrc: [
       '\'self\'',
       '\'unsafe-inline\'',
-      '\'unsafe-eval\'',
       'https://platform.twitter.com',
       'https://f.vimeocdn.com',
       'https://codepen.io',
       'https://www.google-analytics.com',
       'https://s.ytimg.com',
       'https://player.vimeo.com',
-      'https://andywalpole.me/',
+      'https://andywalpole.me',
       'https://syndication.twitter.com'
     ],
     styleSrc: [
@@ -72,7 +71,7 @@ if (app.get('env') === 'production') {
       'https://fonts.googleapis.com',
       '\'unsafe-inline\'',
       'https://platform.twitter.com',
-      'https://andywalpole.me/'
+      'https://andywalpole.me'
     ],
     imgSrc: [
       '\'self\'',
@@ -81,7 +80,7 @@ if (app.get('env') === 'production') {
       'https://www.google-analytics.com',
       'https://syndication.twitter.com',
       'https://platform.twitter.com',
-      'https://andywalpole.me/'
+      'https://andywalpole.me'
     ],
     fontSrc: [
       '\'self\'',
