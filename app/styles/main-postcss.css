@@ -2463,7 +2463,7 @@ div[id=navigation-wrapper] li a {
     width: 60%;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 979px) {
   /* line 205, _homepage.scss */
   [id="slider"] {
     background-position: left bottom;

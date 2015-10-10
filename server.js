@@ -77,6 +77,7 @@ if (app.get('env') === 'production') {
       '\'self\'',
       'data:',
       'https://pbs.twimg.com',
+      'https://abs.twimg.com',
       'https://www.google-analytics.com',
       'https://syndication.twitter.com',
       'https://platform.twitter.com',
@@ -95,7 +96,8 @@ if (app.get('env') === 'production') {
       'https://platform.twitter.com',
       'https://www.youtube.com',
       'https://codepen.io',
-      'https://storify.com'
+      'https://storify.com',
+      'https://www.slideshare.net'
     ],
     sandbox: [
       'allow-forms',
