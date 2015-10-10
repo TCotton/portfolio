@@ -41,8 +41,8 @@
     .svg-container-right {
       float: right;
       max-width: 33%;
-      margin-left: 1em;
-      margin-bottom: inherit;
+      margin-left: 2em;
+      margin-bottom: 1em;
       &:first-child {
         opacity: 0.75;
       }
@@ -78,12 +78,17 @@
       margin: 0 0 20px 0;
     }
 
+    .twitter-container {
+      margin-bottom: 5vh;
+    }
+
     .video-container {
       position: relative;
       padding-bottom: 56.25%;
       padding-top: 30px;
       height: 0;
       overflow: hidden;
+      margin-bottom: 1.5625em;
     }
 
     .video-container iframe,

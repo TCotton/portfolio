@@ -35,12 +35,12 @@ div[id=footer-top] {
     height: 100%;
     width: 100%;
     background: $topFooterBackground;
-    opacity: 0;
+    opacity: 0.5;
     pointer-events: none;
     @include transitions("opacity 0.5s");
   }
   &:hover:before {
-    opacity: 0.5;
+    opacity: 0.3;
   }
 }
 

@@ -109,9 +109,6 @@
   "engines": {
     "node": ">=4.00"
   },
-  "scripts": {
-    "test": "grunt test"
-  },
   "description": "My portfolio",
   "main": "server.js",
   "directories": {
