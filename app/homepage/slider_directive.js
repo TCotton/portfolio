@@ -52,7 +52,6 @@ angular.module('portfolioApp.homepageDirective').directive('sliderDirective', ['
             $scope.slider.sliderClass = 'sliderPlaceholder';
 
             if (storage.localstorage) {
-              console.dir(storage.localstorage);
               sessionStorage.setItem('homePageLoaded', 'true');
             }
 
