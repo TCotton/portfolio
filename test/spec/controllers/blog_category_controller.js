@@ -21,7 +21,7 @@ describe('Controller: BlogCatController as BlogCatPageController', function () {
   var $angularCacheFactory;
   var $location;
 
-  beforeEach(module('testConstants', 'portfolioApp.blogPagesController', 'portfolioApp.blogPagesService', 'portfolioApp.blogAdminService', 'AppConstants', 'ngRoute', 'portfolioAppConfig', 'jmdobry.angular-cache', 'underscore'));
+  beforeEach(module('testConstants', 'portfolioApp.blogPagesController', 'portfolioApp.blogPagesService', 'portfolioApp.blogAdminService', 'AppConstants', 'ngRoute', 'portfolioAppConfig', 'jmdobry.angular-cache', 'underscore', 'detectLocalStorage'));
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function (_$controller_, _$rootScope_, _MOCK_DATA_, _$httpBackend_, _$q_, _$angularCacheFactory_, _$location_) {
