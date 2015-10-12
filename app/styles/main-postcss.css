@@ -44,8 +44,8 @@ audio:not([controls]) {
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%;
 }
 
 /* line 64, _reset.scss */
@@ -93,7 +93,7 @@ dfn {
 /* line 105, _reset.scss */
 hr {
   -webkit-box-sizing: content-box;
-  box-sizing: content-box;
+          box-sizing: content-box;
   height: 0;
 }
 
@@ -222,7 +222,7 @@ html input[disabled] {
 input[type="checkbox"],
 input[type="radio"] {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   padding: 0;
 }
 
@@ -230,7 +230,7 @@ input[type="radio"] {
 input[type="search"] {
   -webkit-appearance: textfield;
   -webkit-box-sizing: content-box;
-  box-sizing: content-box;
+          box-sizing: content-box;
 }
 
 /* line 256, _reset.scss */
@@ -274,7 +274,7 @@ body {
   text-rendering: optimizeSpeed;
   -webkit-font-smoothing: subpixel-antialiased;
   -webkit-font-kerning: auto;
-  font-kerning: auto;
+          font-kerning: auto;
 }
 
 /* line 302, _reset.scss */
@@ -290,9 +290,9 @@ caption {
   font-weight: normal;
   text-rendering: optimizeLegibility;
   -webkit-font-kerning: normal;
-  font-kerning: normal;
+          font-kerning: normal;
   -webkit-font-feature-settings: 'liga', 'kern';
-  font-feature-settings: 'liga', 'kern';
+          font-feature-settings: 'liga', 'kern';
 }
 
 /* line 320, _reset.scss */
@@ -314,7 +314,7 @@ html {
 *::before,
 *::after {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 /* line 344, _reset.scss */
@@ -352,8 +352,8 @@ input[type=email],
 input[type=url],
 textarea {
   -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   border-radius: 0;
 }
 
@@ -400,7 +400,7 @@ input[aria-required="true"],
 textarea[aria-required="true"] {
   background: #fffdd0;
   -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+          transition: all 0.3s;
 }
 
 /* line 428, _reset.scss */
@@ -443,9 +443,9 @@ input[aria-required="true"]:valid, textarea[aria-required="true"]:valid {
 .line-through {
   text-decoration: line-through;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 /* line 5, main.scss */
@@ -464,25 +464,25 @@ div[id=outer-content] {
 .line-through {
   text-decoration: line-through;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 @keyframes swipeIn {
   from {
     -webkit-transform: translateX(-200%);
-    transform: translateX(-200%);
+            transform: translateX(-200%);
   }
   to {
     -webkit-transform: translateX(0%);
-    transform: translateX(0%);
+            transform: translateX(0%);
   }
 }
 @-webkit-keyframes bounceIn {
   0% {
     -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
+            backface-visibility: hidden;
     will-change: opacity, -webkit-transform;
     opacity: 0;
     -webkit-transform: scale(0.3);
@@ -498,7 +498,7 @@ div[id=outer-content] {
   }
   100% {
     -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
+            backface-visibility: hidden;
     will-change: auto;
     opacity: 1;
     -webkit-transform: scale(1);
@@ -507,30 +507,30 @@ div[id=outer-content] {
 @keyframes bounceIn {
   0% {
     -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
+            backface-visibility: hidden;
     will-change: opacity, transform;
     opacity: 0;
     -webkit-transform: scale(0.3);
-    transform: scale(0.3);
+            transform: scale(0.3);
     color: #04b4dc;
   }
   50% {
     opacity: 1;
     -webkit-transform: scale(1.05);
-    transform: scale(1.05);
+            transform: scale(1.05);
     color: white;
   }
   70% {
     -webkit-transform: scale(0.9);
-    transform: scale(0.9);
+            transform: scale(0.9);
   }
   100% {
     -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
+            backface-visibility: hidden;
     will-change: auto;
     opacity: 1;
     -webkit-transform: scale(1);
-    transform: scale(1);
+            transform: scale(1);
   }
 }
 @-webkit-keyframes pace-bounce {
@@ -580,7 +580,7 @@ div[id=outer-content] {
     height: 75px;
     background: rgba(20, 20, 20, 0.1);
     -webkit-box-shadow: 0 0 20px 35px rgba(20, 20, 20, 0.1);
-    box-shadow: 0 0 20px 35px rgba(20, 20, 20, 0.1);
+            box-shadow: 0 0 20px 35px rgba(20, 20, 20, 0.1);
     border-radius: 30px / 40px;
     -webkit-animation-timing-function: ease-in;
   }
@@ -591,7 +591,7 @@ div[id=outer-content] {
     height: 5px;
     background: rgba(20, 20, 20, 0.3);
     -webkit-box-shadow: 0 0 20px 35px rgba(20, 20, 20, 0.3);
-    box-shadow: 0 0 20px 35px rgba(20, 20, 20, 0.3);
+            box-shadow: 0 0 20px 35px rgba(20, 20, 20, 0.3);
     border-radius: 20px / 20px;
     -webkit-animation-timing-function: ease-out;
   }
@@ -600,37 +600,37 @@ div[id=outer-content] {
   0% {
     top: 0;
     -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
   }
   50% {
     top: 140px;
     height: 140px;
     -webkit-animation-timing-function: ease-out;
-    animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
   }
   55% {
     top: 160px;
     height: 120px;
     border-radius: 70px / 60px;
     -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
   }
   65% {
     top: 120px;
     height: 140px;
     border-radius: 70px;
     -webkit-animation-timing-function: ease-out;
-    animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
   }
   95% {
     top: 0;
     -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
   }
   100% {
     top: 0;
     -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
   }
 }
 @keyframes pace-bounce-scaledown {
@@ -649,10 +649,10 @@ div[id=outer-content] {
     height: 75px;
     background: rgba(20, 20, 20, 0.1);
     -webkit-box-shadow: 0 0 20px 35px rgba(20, 20, 20, 0.1);
-    box-shadow: 0 0 20px 35px rgba(20, 20, 20, 0.1);
+            box-shadow: 0 0 20px 35px rgba(20, 20, 20, 0.1);
     border-radius: 30px / 40px;
     -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
   }
   100% {
     bottom: 30px;
@@ -661,10 +661,10 @@ div[id=outer-content] {
     height: 5px;
     background: rgba(20, 20, 20, 0.3);
     -webkit-box-shadow: 0 0 20px 35px rgba(20, 20, 20, 0.3);
-    box-shadow: 0 0 20px 35px rgba(20, 20, 20, 0.3);
+            box-shadow: 0 0 20px 35px rgba(20, 20, 20, 0.3);
     border-radius: 20px / 20px;
     -webkit-animation-timing-function: ease-out;
-    animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
   }
 }
 @-webkit-keyframes tada {
@@ -856,7 +856,7 @@ div[id=main-content] {
   border: 1px solid #ccc;
   margin-right: 33px;
   -webkit-background-clip: content-box;
-  background-clip: content-box;
+          background-clip: content-box;
   padding: 4px;
   position: relative;
   cursor: pointer;
@@ -870,7 +870,7 @@ div[id=main-content] {
 [class*="project-box"]:nth-of-type(3n) {
   margin-right: 0;
   -webkit-background-clip: content-box;
-  background-clip: content-box;
+          background-clip: content-box;
 }
 /* line 58, modules/_grid.scss */
 [class*="project-box"]::before {
@@ -1975,6 +1975,91 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover, a.button-f
     height: 261px;
   }
 }
+/* line 1, bem/modules/_blog-experiment.scss */
+.rejectjs__one, .rejectjs__two {
+  position: relative;
+}
+
+/* line 5, bem/modules/_blog-experiment.scss */
+.rejectjs__one::after, .rejectjs__two::after,
+.rejectjs__one::before,
+.rejectjs__two::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 16, bem/modules/_blog-experiment.scss */
+.rejectjs__one {
+  background-image: url("images/reject-stickers-large.jpg"), url("images/reject-name-cards.jpg"), url("images/reject-speaker-mc.jpg");
+  -webkit-background-size: auto, cover, cover;
+          background-size: auto, cover, cover;
+  background-position: center, center, bottom;
+  background-repeat: no-repeat;
+  background-blend-mode: lighten, lighten, soft-light;
+}
+
+/* line 25, bem/modules/_blog-experiment.scss */
+.rejectjs__one::after {
+  background: url("images/rejectjs.svg");
+  background-repeat: no-repeat;
+  -webkit-background-size: 30% 30%;
+          background-size: 30%;
+  background-position: calc(100% - 10px) calc(100% - 10px);
+  opacity: 0.3;
+}
+
+/* line 33, bem/modules/_blog-experiment.scss */
+.rejectjs__two {
+  background-image: url("images/rejectjs-logo.svg"), url("images/reject-crowdshot-large.jpg");
+  background-position: calc(100% - 10px) calc(100% - 10px), center;
+  -webkit-background-size: 30%, cover;
+          background-size: 30%, cover;
+  background-repeat: no-repeat;
+  background-blend-mode: exclusion, normal;
+}
+
+/* line 42, bem/modules/_blog-experiment.scss */
+.rejectjs__two::before {
+  background: url("images/reject-badges.jpg");
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+          background-size: cover;
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+  mix-blend-mode: soft-light;
+}
+
+/* line 50, bem/modules/_blog-experiment.scss */
+.rejectjs__two::after {
+  background: url("images/reject-montage-badges.jpg");
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+          background-size: cover;
+  opacity: 0.4;
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+  mix-blend-mode: soft-light;
+}
+
+@media (min-width: 767px) and (max-width: 979px) {
+  /* line 66, bem/modules/_blog-experiment.scss */
+  .rejectjs__one {
+    -webkit-background-size: auto, cover, 90%;
+            background-size: auto, cover, 90%;
+  }
+}
+@media (max-width: 767px) {
+  /* line 77, bem/modules/_blog-experiment.scss */
+  .rejectjs__one {
+    -webkit-background-size: auto, cover, 70%;
+            background-size: auto, cover, 70%;
+  }
+}
 /* line 1, modules/_loader.scss */
 .loader {
   position: absolute;
@@ -1990,12 +2075,12 @@ a.button-front-one:disabled:hover, a.button-front-one:disabled:hover, a.button-f
   max-height: 300px;
   display: inline-block;
   -webkit-background-size: contain;
-  background-size: contain;
+          background-size: contain;
   border-radius: 100%;
   border: 3px solid #00bd9c;
   background: url("/images/svg/loading-spin.svg") no-repeat center center;
   -webkit-box-shadow: 0 0 0 3px white;
-  box-shadow: 0 0 0 3px white;
+          box-shadow: 0 0 0 3px white;
 }
 
 /* line 1, _header.scss */
@@ -2084,11 +2169,11 @@ div[id=header] .logo a:active, div[id=header] .logo a.active {
 @keyframes swipeIn {
   from {
     -webkit-transform: translateX(-200%);
-    transform: translateX(-200%);
+            transform: translateX(-200%);
   }
   to {
     -webkit-transform: translateX(0%);
-    transform: translateX(0%);
+            transform: translateX(0%);
   }
 }
 @media (max-width: 979px) {
@@ -2096,52 +2181,52 @@ div[id=header] .logo a:active, div[id=header] .logo a.active {
   div[id=header] input[type=checkbox] ~ [id="navigation-wrapper"] li {
     -webkit-transform: translateX(-200%);
     -ms-transform: translateX(-200%);
-    transform: translateX(-200%);
+        transform: translateX(-200%);
   }
   /* line 107, _header.scss */
   div[id=header] input[type=checkbox]:checked ~ [id="navigation-wrapper"] li:nth-child(1) {
     -webkit-animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.2s;
     -webkit-animation-fill-mode: forwards;
     -webkit-animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.2s;
-    animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.2s;
+            animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.2s;
     -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
   }
   /* line 107, _header.scss */
   div[id=header] input[type=checkbox]:checked ~ [id="navigation-wrapper"] li:nth-child(2) {
     -webkit-animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.3s;
     -webkit-animation-fill-mode: forwards;
     -webkit-animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.3s;
-    animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.3s;
+            animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.3s;
     -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
   }
   /* line 107, _header.scss */
   div[id=header] input[type=checkbox]:checked ~ [id="navigation-wrapper"] li:nth-child(3) {
     -webkit-animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.4s;
     -webkit-animation-fill-mode: forwards;
     -webkit-animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.4s;
-    animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.4s;
+            animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.4s;
     -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
   }
   /* line 107, _header.scss */
   div[id=header] input[type=checkbox]:checked ~ [id="navigation-wrapper"] li:nth-child(4) {
     -webkit-animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.5s;
     -webkit-animation-fill-mode: forwards;
     -webkit-animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.5s;
-    animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.5s;
+            animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.5s;
     -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
   }
   /* line 107, _header.scss */
   div[id=header] input[type=checkbox]:checked ~ [id="navigation-wrapper"] li:nth-child(5) {
     -webkit-animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.6s;
     -webkit-animation-fill-mode: forwards;
     -webkit-animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.6s;
-    animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.6s;
+            animation: swipeIn 0.5s cubic-bezier(0.09, 0.68, 0, 0.99) 0.6s;
     -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
   }
   /* line 115, _header.scss */
   div[id=header] label.handheld-cross {
@@ -2238,7 +2323,7 @@ div[id=navigation-wrapper] li a {
 @-webkit-keyframes bounceIn {
   0% {
     -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
+            backface-visibility: hidden;
     will-change: opacity, -webkit-transform;
     opacity: 0;
     -webkit-transform: scale(0.3);
@@ -2254,7 +2339,7 @@ div[id=navigation-wrapper] li a {
   }
   100% {
     -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
+            backface-visibility: hidden;
     will-change: auto;
     opacity: 1;
     -webkit-transform: scale(1);
@@ -2263,30 +2348,30 @@ div[id=navigation-wrapper] li a {
 @keyframes bounceIn {
   0% {
     -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
+            backface-visibility: hidden;
     will-change: opacity, transform;
     opacity: 0;
     -webkit-transform: scale(0.3);
-    transform: scale(0.3);
+            transform: scale(0.3);
     color: #04b4dc;
   }
   50% {
     opacity: 1;
     -webkit-transform: scale(1.05);
-    transform: scale(1.05);
+            transform: scale(1.05);
     color: white;
   }
   70% {
     -webkit-transform: scale(0.9);
-    transform: scale(0.9);
+            transform: scale(0.9);
   }
   100% {
     -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
+            backface-visibility: hidden;
     will-change: auto;
     opacity: 1;
     -webkit-transform: scale(1);
-    transform: scale(1);
+            transform: scale(1);
   }
 }
 /* line 51, _homepage.scss */
@@ -2296,11 +2381,11 @@ div[id=navigation-wrapper] li a {
   background-repeat: no-repeat;
   background-position: center;
   -webkit-background-size: contain;
-  background-size: contain;
+          background-size: contain;
   padding: 0 0 39.97071742313324% 0;
   position: relative;
   -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+          backface-visibility: hidden;
   will-change: contents;
 }
 /* line 61, _homepage.scss */
@@ -2326,7 +2411,7 @@ div[id=navigation-wrapper] li a {
   display: block;
   cursor: pointer;
   -webkit-background-size: contain;
-  background-size: contain;
+          background-size: contain;
 }
 /* line 85, _homepage.scss */
 [id="slider"] .left-arrow {
@@ -2425,18 +2510,18 @@ div[id=navigation-wrapper] li a {
   /* line 161, _homepage.scss */
   [id="slider"] [class*=animate-bounceIn] {
     -webkit-animation-name: bounceIn;
-    animation-name: bounceIn;
+            animation-name: bounceIn;
     -webkit-animation-duration: 1s;
-    animation-duration: 1s;
+            animation-duration: 1s;
     -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
+            animation-fill-mode: both;
   }
   /* line 167, _homepage.scss */
   [id="slider"] .animate-bounceIn-later {
     -webkit-animation-duration: 0.6s;
-    animation-duration: 0.6s;
+            animation-duration: 0.6s;
     -webkit-animation-delay: 0.4s;
-    animation-delay: 0.4s;
+            animation-delay: 0.4s;
   }
 }
 @media (max-width: 1366px) {
@@ -2499,13 +2584,13 @@ div[id=navigation-wrapper] li a {
   -webkit-align-items: center;
   -moz-align-items: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-justify-content: center;
   -moz-justify-content: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /* line 244, _homepage.scss */
 [id="homepage-stats"] > span {
@@ -2605,12 +2690,12 @@ div[id=navigation-wrapper] li a {
     -ms-transform: scale(0.4);
     -ms-transition: all 2s linear 0s;
     -webkit-transform: scale(0.4);
-    -ms-transform: scale(0.4);
-    transform: scale(0.4);
+        -ms-transform: scale(0.4);
+            transform: scale(0.4);
     -webkit-transition: all 2s linear 0s;
-    transition: all 2s linear 0s;
+            transition: all 2s linear 0s;
     -webkit-animation: pace-bounce-scaledown 5s;
-    animation: pace-bounce-scaledown 5s;
+            animation: pace-bounce-scaledown 5s;
   }
 
   /* line 350, _homepage.scss */
@@ -2638,7 +2723,7 @@ div[id=navigation-wrapper] li a {
     height: 75px;
     background: rgba(20, 20, 20, 0.1);
     -webkit-box-shadow: 0 0 20px 35px rgba(20, 20, 20, 0.1);
-    box-shadow: 0 0 20px 35px rgba(20, 20, 20, 0.1);
+            box-shadow: 0 0 20px 35px rgba(20, 20, 20, 0.1);
     border-radius: 30px / 40px;
     -webkit-transform: scaleY(0.3);
     -ms-transform: scaleY(0.3);
@@ -2694,7 +2779,7 @@ div[id=navigation-wrapper] li a {
     height: 75px;
     background: rgba(20, 20, 20, 0.1);
     -webkit-box-shadow: 0 0 20px 35px rgba(20, 20, 20, 0.1);
-    box-shadow: 0 0 20px 35px rgba(20, 20, 20, 0.1);
+            box-shadow: 0 0 20px 35px rgba(20, 20, 20, 0.1);
     border-radius: 30px / 40px;
     -webkit-animation-timing-function: ease-in;
   }
@@ -2705,7 +2790,7 @@ div[id=navigation-wrapper] li a {
     height: 5px;
     background: rgba(20, 20, 20, 0.3);
     -webkit-box-shadow: 0 0 20px 35px rgba(20, 20, 20, 0.3);
-    box-shadow: 0 0 20px 35px rgba(20, 20, 20, 0.3);
+            box-shadow: 0 0 20px 35px rgba(20, 20, 20, 0.3);
     border-radius: 20px / 20px;
     -webkit-animation-timing-function: ease-out;
   }
@@ -2714,37 +2799,37 @@ div[id=navigation-wrapper] li a {
   0% {
     top: 0;
     -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
   }
   50% {
     top: 140px;
     height: 140px;
     -webkit-animation-timing-function: ease-out;
-    animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
   }
   55% {
     top: 160px;
     height: 120px;
     border-radius: 70px / 60px;
     -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
   }
   65% {
     top: 120px;
     height: 140px;
     border-radius: 70px;
     -webkit-animation-timing-function: ease-out;
-    animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
   }
   95% {
     top: 0;
     -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
   }
   100% {
     top: 0;
     -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
   }
 }
 @keyframes pace-bounce-scaledown {
@@ -2763,10 +2848,10 @@ div[id=navigation-wrapper] li a {
     height: 75px;
     background: rgba(20, 20, 20, 0.1);
     -webkit-box-shadow: 0 0 20px 35px rgba(20, 20, 20, 0.1);
-    box-shadow: 0 0 20px 35px rgba(20, 20, 20, 0.1);
+            box-shadow: 0 0 20px 35px rgba(20, 20, 20, 0.1);
     border-radius: 30px / 40px;
     -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
   }
   100% {
     bottom: 30px;
@@ -2775,10 +2860,10 @@ div[id=navigation-wrapper] li a {
     height: 5px;
     background: rgba(20, 20, 20, 0.3);
     -webkit-box-shadow: 0 0 20px 35px rgba(20, 20, 20, 0.3);
-    box-shadow: 0 0 20px 35px rgba(20, 20, 20, 0.3);
+            box-shadow: 0 0 20px 35px rgba(20, 20, 20, 0.3);
     border-radius: 20px / 20px;
     -webkit-animation-timing-function: ease-out;
-    animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
   }
 }
 /* line 1, _banner.scss */
@@ -2832,7 +2917,7 @@ div[id=banner] a {
   background-repeat: no-repeat;
   background-position: left bottom;
   -webkit-background-size: contain;
-  background-size: contain;
+          background-size: contain;
 }
 /* line 15, _mywork.scss */
 .my-work [class*="project-box"]:hover header h3, .my-work [class*="project-box"]:focus header h3 {
@@ -2927,7 +3012,7 @@ div[id=banner] a {
 .my-work div[id=right-large] img {
   border: 1px solid #ccc;
   -webkit-background-clip: content-box;
-  background-clip: content-box;
+          background-clip: content-box;
   padding: 4px;
   overflow: hidden;
 }
@@ -2939,7 +3024,7 @@ div[id=banner] a {
   float: left;
   cursor: pointer;
   -webkit-background-size: contain;
-  background-size: contain;
+          background-size: contain;
   margin: 0 14px 0 0;
   background-color: black;
 }
@@ -3048,7 +3133,7 @@ div[id=banner] a {
   background-repeat: no-repeat;
   background-position: left bottom;
   -webkit-background-size: contain;
-  background-size: contain;
+          background-size: contain;
 }
 /* line 12, _sideprojects.scss */
 .side-projects [class*="project-box"]:hover header h3, .side-projects [class*="project-box"]:focus header h3 {
@@ -3215,18 +3300,18 @@ div[id=banner] a {
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-timing-function: linear;
     -webkit-animation-name: shake;
-    animation-name: shake;
+            animation-name: shake;
     -webkit-animation-delay: 6s;
-    animation-delay: 6s;
+            animation-delay: 6s;
     -webkit-animation-duration: 0.8s;
-    animation-duration: 0.8s;
+            animation-duration: 0.8s;
     -webkit-transform-origin: 50% 50%;
-    -ms-transform-origin: 50% 50%;
-    transform-origin: 50% 50%;
+        -ms-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
     -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
     -webkit-animation-timing-function: linear;
-    animation-timing-function: linear;
+            animation-timing-function: linear;
   }
 }
 /* line 92, _aboutme.scss */
@@ -3251,12 +3336,12 @@ div[id=banner] a {
   from {
     opacity: 0;
     -webkit-transform: scaleX(0);
-    transform: scaleX(0);
+            transform: scaleX(0);
   }
   to {
     opacity: 1;
     -webkit-transform: scaleX(1);
-    transform: scaleX(1);
+            transform: scaleX(1);
   }
 }
 @-webkit-keyframes shake {
@@ -3297,47 +3382,47 @@ div[id=banner] a {
 @keyframes shake {
   0% {
     -webkit-transform: translate(2px, 1px) rotate(0deg);
-    transform: translate(2px, 1px) rotate(0deg);
+            transform: translate(2px, 1px) rotate(0deg);
   }
   10% {
     -webkit-transform: translate(-1px, -2px) rotate(-1deg);
-    transform: translate(-1px, -2px) rotate(-1deg);
+            transform: translate(-1px, -2px) rotate(-1deg);
   }
   20% {
     -webkit-transform: translate(-3px, 0px) rotate(1deg);
-    transform: translate(-3px, 0px) rotate(1deg);
+            transform: translate(-3px, 0px) rotate(1deg);
   }
   30% {
     -webkit-transform: translate(0px, 2px) rotate(0deg);
-    transform: translate(0px, 2px) rotate(0deg);
+            transform: translate(0px, 2px) rotate(0deg);
   }
   40% {
     -webkit-transform: translate(1px, -1px) rotate(1deg);
-    transform: translate(1px, -1px) rotate(1deg);
+            transform: translate(1px, -1px) rotate(1deg);
   }
   50% {
     -webkit-transform: translate(-1px, 2px) rotate(-1deg);
-    transform: translate(-1px, 2px) rotate(-1deg);
+            transform: translate(-1px, 2px) rotate(-1deg);
   }
   60% {
     -webkit-transform: translate(-3px, 1px) rotate(0deg);
-    transform: translate(-3px, 1px) rotate(0deg);
+            transform: translate(-3px, 1px) rotate(0deg);
   }
   70% {
     -webkit-transform: translate(2px, 1px) rotate(-1deg);
-    transform: translate(2px, 1px) rotate(-1deg);
+            transform: translate(2px, 1px) rotate(-1deg);
   }
   80% {
     -webkit-transform: translate(-1px, -1px) rotate(1deg);
-    transform: translate(-1px, -1px) rotate(1deg);
+            transform: translate(-1px, -1px) rotate(1deg);
   }
   90% {
     -webkit-transform: translate(2px, 2px) rotate(0deg);
-    transform: translate(2px, 2px) rotate(0deg);
+            transform: translate(2px, 2px) rotate(0deg);
   }
   100% {
     -webkit-transform: translate(1px, -2px) rotate(-1deg);
-    transform: translate(1px, -2px) rotate(-1deg);
+            transform: translate(1px, -2px) rotate(-1deg);
   }
 }
 @media (max-width: 979px) {
@@ -3386,7 +3471,7 @@ div[id=banner] a {
 .blog article header {
   border: 1px solid #ccc;
   -webkit-background-clip: content-box;
-  background-clip: content-box;
+          background-clip: content-box;
   padding: 4px;
   overflow: hidden;
   width: 100%;
@@ -3433,7 +3518,7 @@ div[id=banner] a {
 .blog article .image-container {
   border: 1px solid #ccc;
   -webkit-background-clip: content-box;
-  background-clip: content-box;
+          background-clip: content-box;
   padding: 4px;
   overflow: hidden;
   width: 100%;
@@ -3494,7 +3579,7 @@ div[id=banner] a {
   padding: 0.5em 3em 0.5em 0.5em;
   position: relative;
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 96% 100%, 0% 100%);
-  clip-path: polygon(0% 0%, 100% 0%, 96% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 100% 0%, 96% 100%, 0% 100%);
 }
 /* line 115, _blog.scss */
 .blog article blockquote:hover, .blog article blockquote:focus {
@@ -3630,7 +3715,7 @@ div[id=banner] a {
   display: inline-block;
   cursor: pointer;
   -webkit-background-size: contain;
-  background-size: contain;
+          background-size: contain;
   background: url("/images/svg/down-arrow.svg") no-repeat center center;
 }
 /* line 259, _blog.scss */
@@ -3679,7 +3764,7 @@ div[id=banner] a {
   float: left;
   cursor: pointer;
   -webkit-background-size: contain;
-  background-size: contain;
+          background-size: contain;
   margin: 0 14px 14px 0;
 }
 /* line 310, _blog.scss */
@@ -4177,11 +4262,11 @@ pre[class*="language-"] {
   word-break: normal;
   line-height: 1.5;
   -moz-tab-size: 4;
-  tab-size: 4;
+       tab-size: 4;
   -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none;
+     -moz-hyphens: none;
+      -ms-hyphens: none;
+          hyphens: none;
 }
 
 /* line 21, modules/_prism.scss */
@@ -4335,9 +4420,9 @@ pre.line-numbers > code {
   letter-spacing: -1px;
   border-right: 1px solid #999;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 /* line 152, modules/_prism.scss */
@@ -4364,7 +4449,7 @@ pre.line-numbers > code {
     background: transparent !important;
     color: #000 !important;
     -webkit-box-shadow: none !important;
-    box-shadow: none !important;
+            box-shadow: none !important;
     text-shadow: none !important;
   }
 
