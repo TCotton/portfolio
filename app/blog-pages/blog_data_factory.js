@@ -2,12 +2,10 @@
  * Created by awalpole on 06/10/2014.
  */
 'use strict';
-angular.module('portfolioApp.blogPagesService').factory('BlogDataFactory', ['$http', '$q', 'MongoBlogFactory', '$angularCacheFactory', 'CONFIG', 'storage', function ($http, $q, MongoBlogFactory, $angularCacheFactory, CONFIG, storage) {
-
-
+angular.module('portfolioApp.blogPagesService').factory('BlogDataFactory', ['$http', '$q', 'MongoBlogFactory', '$angularCacheFactory', 'CONFIG', 'storage', function($http, $q, MongoBlogFactory, $angularCacheFactory, CONFIG, storage) {
   /* cache the relevant data in either session or storage
    * **/
-  var _cache = function (blog) {
+  var _cache = function(blog) {
 
     $angularCacheFactory.get('blogCache').put('totalArticles', blog.data.totalArticles);
     $angularCacheFactory.get('blogCache').put('allBlogPosts', blog.data.BlogPosts);
@@ -16,7 +14,7 @@ angular.module('portfolioApp.blogPagesService').factory('BlogDataFactory', ['$ht
 
   return {
 
-    retrieveData: function () {
+    retrieveData: function() {
 
       var _blogData;
       var deferred = $q.defer();
@@ -32,7 +30,7 @@ angular.module('portfolioApp.blogPagesService').factory('BlogDataFactory', ['$ht
       if (!$angularCacheFactory.get('blogCache').get('allBlogPosts')) {
 
         // through a POST service supply the RSS url and the images in the CONFIG.BLOG object to be added the individual blog post objects
-        MongoBlogFactory.getOldBlogPosts({RSSFeed: CONFIG.RSS_FEED_LINK, BLOG: CONFIG.BLOG}).then(function (value) {
+        MongoBlogFactory.getOldBlogPosts({RSSFeed: CONFIG.RSS_FEED_LINK, BLOG: CONFIG.BLOG}).then(function(value) {
 
           _blogData = value;
 
@@ -40,8 +38,8 @@ angular.module('portfolioApp.blogPagesService').factory('BlogDataFactory', ['$ht
             _cache(value);
           }
 
-        }, function () {
-        }).then(function () {
+        }, function() {
+        }).then(function() {
 
           deferred.resolve(_blogData);
 

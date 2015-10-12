@@ -3,7 +3,7 @@
  */
 'use strict';
 
-angular.module('portfolioApp.homepageDirective').directive('sliderDirective', ['SLIDER', '$interval', '$timeout', '$animate', '$window', '_', 'requestTimeout', 'storage', function (SLIDER, $interval, $timeout, $animate, $window, _, requestTimeout, storage) {
+angular.module('portfolioApp.homepageDirective').directive('sliderDirective', ['SLIDER', '$interval', '$timeout', '$animate', '$window', '_', 'requestTimeout', 'storage', function(SLIDER, $interval, $timeout, $animate, $window, _, requestTimeout, storage) {
 
   return {
     restrict: 'A',
@@ -20,15 +20,15 @@ angular.module('portfolioApp.homepageDirective').directive('sliderDirective', ['
     '<div class="left-arrow" rel="prev" role="button" tabindex="0" aria-label="Previous slide"></div>' +
     '<div class="right-arrow" rel="next" role="button"  tabindex="0" aria-label="Next slide"></div>' +
     '</div>',
-    controller: function ($scope) {
+    controller: function($scope) {
 
       $scope.slideController = {
         currentSlide: 0,
 
-        sliderForMethod: function (sliderNumber) {
+        sliderForMethod: function(sliderNumber) {
           // loops through SLIDER constant and finds the right child objects
 
-          Object.keys(SLIDER).forEach(function (key) {
+          Object.keys(SLIDER).forEach(function(key) {
 
             if (key.indexOf(sliderNumber) !== -1) {
 
@@ -41,7 +41,7 @@ angular.module('portfolioApp.homepageDirective').directive('sliderDirective', ['
 
         },
 
-        sliderStartMethod: function () {
+        sliderStartMethod: function() {
 
           // starts off with first slider details and reduced quality image
           // after initial page load the placeholder image is replaced by the full size image
@@ -64,7 +64,7 @@ angular.module('portfolioApp.homepageDirective').directive('sliderDirective', ['
           }
         },
 
-        sliderReplaceMethod: function () {
+        sliderReplaceMethod: function() {
 
           $scope.slider.sliderClass = 'slider1';
 
@@ -72,7 +72,7 @@ angular.module('portfolioApp.homepageDirective').directive('sliderDirective', ['
       };
 
     },
-    link: function (scope, element) {
+    link: function(scope, element) {
 
       var sliderDirectiveLink = {
 
@@ -82,7 +82,7 @@ angular.module('portfolioApp.homepageDirective').directive('sliderDirective', ['
         animationGap: 2000,
         timerInterval: null,
 
-        timer: function () {
+        timer: function() {
 
           var pTag;
           var pTagFunction;
@@ -98,7 +98,7 @@ angular.module('portfolioApp.homepageDirective').directive('sliderDirective', ['
           h2Tag = angular.element(element[0].querySelector('h2'));
           aTag = angular.element(element[0].querySelector('a'));
 
-          sliderDirectiveLink.timerInterval = $interval(function () {
+          sliderDirectiveLink.timerInterval = $interval(function() {
 
             if ($window.matchMedia && $window.matchMedia('(min-device-width: 768px) and (orientation: landscape)')) {
 
@@ -106,7 +106,7 @@ angular.module('portfolioApp.homepageDirective').directive('sliderDirective', ['
 
                 $animate.addClass(pTag, 'animate-bounceIn');
 
-                requestTimeout(function () {
+                requestTimeout(function() {
                   $animate.removeClass(pTag, 'animate-bounceIn');
                   scope.$digest();
                 }, sliderDirectiveLink.animationGap);
@@ -117,7 +117,7 @@ angular.module('portfolioApp.homepageDirective').directive('sliderDirective', ['
 
                 $animate.addClass(h2Tag, 'animate-bounceIn');
 
-                requestTimeout(function () {
+                requestTimeout(function() {
                   $animate.removeClass(h2Tag, 'animate-bounceIn');
                   scope.$digest();
                 }, sliderDirectiveLink.animationGap);
@@ -128,7 +128,7 @@ angular.module('portfolioApp.homepageDirective').directive('sliderDirective', ['
 
                 $animate.addClass(aTag, 'animate-bounceIn-later');
 
-                requestTimeout(function () {
+                requestTimeout(function() {
                   $animate.removeClass(aTag, 'animate-bounceIn-later');
                   scope.$digest();
                 }, sliderDirectiveLink.animationGap);
@@ -159,9 +159,9 @@ angular.module('portfolioApp.homepageDirective').directive('sliderDirective', ['
 
         },
 
-        navigation: function () {
+        navigation: function() {
 
-          angular.element(element[0].querySelector('.right-arrow')).bind('click', function () {
+          angular.element(element[0].querySelector('.right-arrow')).bind('click', function() {
 
             // use the left arrow to move through the slider in a left direction
             if (scope.slideController.currentSlide < sliderDirectiveLink.sliderTotal) {
@@ -182,7 +182,7 @@ angular.module('portfolioApp.homepageDirective').directive('sliderDirective', ['
 
           });
 
-          angular.element(element[0].querySelector('.left-arrow')).bind('click', function () {
+          angular.element(element[0].querySelector('.left-arrow')).bind('click', function() {
 
             // use the the right arrow to move through the slider in a right direction
             if (scope.slideController.currentSlide > 1) {
@@ -205,15 +205,15 @@ angular.module('portfolioApp.homepageDirective').directive('sliderDirective', ['
 
         },
 
-        start: function () {
+        start: function() {
 
           // when the site first loads up the load the placeholder with the reduced PNG8 image
-          $timeout(function () {
+          $timeout(function() {
 
             scope.slideController.currentSlide = 1;
             scope.slideController.sliderStartMethod();
 
-            $timeout(function () {
+            $timeout(function() {
 
               // after the defined millisecond gap defined in startGap then load the right size image
               scope.slideController.sliderReplaceMethod();
@@ -237,10 +237,10 @@ angular.module('portfolioApp.homepageDirective').directive('sliderDirective', ['
 
         },
 
-        destroy: function () {
+        destroy: function() {
 
           // destroy timers when scope is destroyed
-          scope.$on('$destroy', function () {
+          scope.$on('$destroy', function() {
 
             if (sliderDirectiveLink.timerInterval) {
               $interval.cancel(sliderDirectiveLink.timerInterval);
@@ -251,7 +251,7 @@ angular.module('portfolioApp.homepageDirective').directive('sliderDirective', ['
           });
         },
 
-        init: function () {
+        init: function() {
           sliderDirectiveLink.start();
           sliderDirectiveLink.timer();
           sliderDirectiveLink.navigation();
@@ -266,8 +266,8 @@ angular.module('portfolioApp.homepageDirective').directive('sliderDirective', ['
 
 }]);
 
-angular.module('portfolioApp').filter('slice', function () {
-  return function (arr, start, end) {
+angular.module('portfolioApp').filter('slice', function() {
+  return function(arr, start, end) {
     return arr.slice(start, end);
   };
 });

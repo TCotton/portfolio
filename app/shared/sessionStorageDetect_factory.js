@@ -1,10 +1,11 @@
 /**
  * Created by awalpole on 06/10/2014.
  */
+// jscs:disable
 // jshint maxdepth:5
 // jshint maxcomplexity:10
 'use strict';
-angular.module('detectLocalStorage', []).factory('storage', [function () {
+angular.module('detectLocalStorage', []).factory('storage', [function() {
 
 
   /**
@@ -49,7 +50,7 @@ angular.module('detectLocalStorage', []).factory('storage', [function () {
     _q: [],
 
     // Stub these for people who are listening
-    on: function (test, cb) {
+    on: function(test, cb) {
       // I don't really think people should do this, but we can
       // safe guard it a bit.
       // -- NOTE:: this gets WAY overridden in src/addTest for actual async tests.
@@ -57,23 +58,23 @@ angular.module('detectLocalStorage', []).factory('storage', [function () {
       // but the code to *disallow* sync tests in the real version of this
       // function is actually larger than this.
       var self = this;
-      setTimeout(function () {
+      setTimeout(function() {
         cb(self[test]);
       }, 0);
     },
 
-    addTest: function (name, fn, options) {
+    addTest: function(name, fn, options) {
       tests.push({name: name, fn: fn, options: options});
     },
 
-    addAsyncTest: function (fn) {
+    addAsyncTest: function(fn) {
       tests.push({name: null, fn: fn});
     }
   };
 
 
   // Fake some of Object.create so we can force non test results to be non "own" properties.
-  var Modernizr = function () {
+  var Modernizr = function() {
   };
   Modernizr.prototype = ModernizrProto;
 
@@ -118,7 +119,7 @@ angular.module('detectLocalStorage', []).factory('storage', [function () {
   //   www.quirksmode.org/dom/html5.html
   // But IE8 doesn't support either with local files
 
-  Modernizr.addTest('localstorage', function () {
+  Modernizr.addTest('localstorage', function() {
     var mod = 'modernizr';
     try {
       localStorage.setItem(mod, mod);
@@ -216,3 +217,4 @@ angular.module('detectLocalStorage', []).factory('storage', [function () {
   return Modernizr;
 
 }]);
+// jscs:enable

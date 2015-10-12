@@ -3,7 +3,7 @@
  */
 
 'use strict';
-(function () {
+(function() {
 
   var app = angular.module('portfolioApp.blogSidebarController');
 
@@ -24,7 +24,7 @@
    * @param $timeout
    * @constructor
    */
-  var SidebarCtrl = function ($rootScope, $scope, $log, BlogDataFactory, $angularCacheFactory, $window, $timeout, _, storage) {
+  var SidebarCtrl = function($rootScope, $scope, $log, BlogDataFactory, $angularCacheFactory, $window, $timeout, _, storage) {
 
     $scope.blogData = null;
 
@@ -34,7 +34,7 @@
      * @type {function(this:SidebarCtrl)|*|Function}
      * @private
      */
-    _populateBlogScope = function () {
+    _populateBlogScope = function() {
 
       /** Either receive data from BlogDataService or from the cache
        * **/
@@ -47,7 +47,7 @@
 
         /** Take blog object from service ready to be used in the side bar lists
          **/
-        BlogDataFactory.retrieveData().then(function (result) {
+        BlogDataFactory.retrieveData().then(function(result) {
 
           // retrieve blog data to be used in the ng-repeat directive in the sidebar
           if (_.isObject(result.data.BlogPosts)) {
@@ -56,7 +56,7 @@
 
           }
 
-        }, function (response) {
+        }, function(response) {
 
           $log.warn('Error SidebarCtrl');
           $log.warn(response);
@@ -75,23 +75,23 @@
      * @returns {Array}
      * @private
      */
-    _sortCategoriesByPopularity = function (blogPosts) {
+    _sortCategoriesByPopularity = function(blogPosts) {
 
       var newArray = {};
 
       _.chain(blogPosts)
         .pluck('category')
-        .filter(function (r) {
+        .filter(function(r) {
           return typeof r !== 'undefined';
         })
-        .groupBy(function (list) {
+        .groupBy(function(list) {
           return list;
         })
-        .each(function (list, iterator) {
+        .each(function(list, iterator) {
           newArray[iterator] = _.size(list);
         });
 
-      return Object.keys(newArray).sort(function (a, b) {
+      return Object.keys(newArray).sort(function(a, b) {
         return -(newArray[a] - newArray[b]);
       });
 
@@ -104,15 +104,15 @@
      * @private
      */
 
-    _handleMediaMatch = function (mql) {
+    _handleMediaMatch = function(mql) {
 
       if (!mql.matches) {
 
-        $timeout(function () {
+        $timeout(function() {
           _populateBlogScope();
         }, 0);
 
-        var unbindWatcher = $scope.$watch('blogData', function (newData) {
+        var unbindWatcher = $scope.$watch('blogData', function(newData) {
 
           if (newData !== null && !$angularCacheFactory.get('blogCache').get('blogTags')) {
 
