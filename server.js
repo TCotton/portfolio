@@ -64,7 +64,8 @@ if (app.get('env') === 'production') {
       'https://s.ytimg.com',
       'https://player.vimeo.com',
       'https://andywalpole.me',
-      'https://syndication.twitter.com'
+      'https://syndication.twitter.com',
+      'https://platform.vine.co'
     ],
     styleSrc: [
       '\'self\'',
@@ -97,7 +98,9 @@ if (app.get('env') === 'production') {
       'https://www.youtube.com',
       'https://codepen.io',
       'https://storify.com',
-      'https://www.slideshare.net'
+      'https://www.slideshare.net',
+      'https://vine.co',
+      'https://drive.google.com'
     ],
     sandbox: [
       'allow-forms',
