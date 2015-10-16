@@ -99,7 +99,9 @@
         return (
           <section>
             <h3 className="blog-title">{this.props.content.title}</h3>
+
             <p className="date">{$filter('date')(this.props.content.publishedDate)}</p>
+
             <p>{this.props.content.contentSnippet}</p>
           </section>
         )
@@ -121,9 +123,6 @@
 
     /* Adds the more posts link at the bottom of hte exposed articles */
     var BlogListMore = React.createClass({
-      shouldComponentUpdate: function(nextProps) {
-        return this.props.value !== nextProps.value;
-      },
       render: function() {
         return (
           <div id="more-posts" className="clearfix" onClick={this.props.onClick}>
@@ -141,10 +140,23 @@
 
         BlogList = React.createClass({
 
+          getInitialState: function() {
+            return {showMore: true};
+          },
+
+          componentDidMount: function() {
+            if (Object.keys(scope.totalBlogPosts).length <= 10) {
+              this.setState({showMore: false});
+            }
+          },
+
           onChildClick: function() {
             displayPosts = (displayPosts + 5);
-            var posts = $filter('orderBy')(scope.totalBlogPosts, '-publishedDate');
-            posts = $filter('limitTo')(posts, displayPosts);
+            var totalPosts = $filter('orderBy')(scope.totalBlogPosts, '-publishedDate');
+            var posts = $filter('limitTo')(totalPosts, displayPosts);
+            if (posts >= totalPosts) {
+              this.setState({showMore: false});
+            }
             renderBloglist(posts);
           },
 
@@ -154,11 +166,10 @@
                 {Object.keys(this.props.content).map(function(value, index) {
                   return <BlogListContent key={index} blogContent={this.props.content[value]}/>;
                 }, this)}
-                <BlogListMore onClick={ this.onChildClick }/>
+                { this.state.showMore ? <BlogListMore onClick={ this.onChildClick }/> : null }
               </div>
             )
           }
-
         });
 
         /**
