@@ -214,19 +214,32 @@ angular.module('portfolioApp.homepageDirective').directive('sliderDirective', ['
 
             $timeout(function() {
 
+              var imgs;
+
               // after the defined millisecond gap defined in startGap then load the right size image
               scope.slideController.sliderReplaceMethod();
 
               // force images to download in the background
               // otherwise there is a noticeable lag in image download with every new slide
-              var imgs = '<div style="display:none" aria-hidden="true">' +
-                '<img src="/images/slider/blinkbox.png" alt="" />' +
-                '<img src="/images/slider/lightning.png" alt="" />' +
-                '<img src="/images/slider/uk-law-student.png" alt="" />' +
-                '<img src="/images/slider/kaplan.png" alt="" />' +
-                '<img src="/images/slider/drnewmans.png" alt="" />' +
-                '<img src="/images/slider/penny-books.png" alt="" />' +
-                '<img src="/images/slider/twt-twt.png" alt="" /></div>';
+              if ($window.Modernizr.webp) {
+                imgs = '<div style="display:none" aria-hidden="true">' +
+                  '<img src="/images/slider/blinkbox.png.webp" alt="" />' +
+                  '<img src="/images/slider/lightning.png.webp" alt="" />' +
+                  '<img src="/images/slider/uk-law-student.png.webp" alt="" />' +
+                  '<img src="/images/slider/kaplan.png.webp" alt="" />' +
+                  '<img src="/images/slider/drnewmans.png.webp" alt="" />' +
+                  '<img src="/images/slider/penny-books.png.webp" alt="" />' +
+                  '<img src="/images/slider/twt-twt.png.webp" alt="" /></div>';
+              } else {
+                imgs = '<div style="display:none" aria-hidden="true">' +
+                  '<img src="/images/slider/blinkbox.png" alt="" />' +
+                  '<img src="/images/slider/lightning.png" alt="" />' +
+                  '<img src="/images/slider/uk-law-student.png" alt="" />' +
+                  '<img src="/images/slider/kaplan.png" alt="" />' +
+                  '<img src="/images/slider/drnewmans.png" alt="" />' +
+                  '<img src="/images/slider/penny-books.png" alt="" />' +
+                  '<img src="/images/slider/twt-twt.png" alt="" /></div>';
+              }
 
               element.append(imgs);
 
