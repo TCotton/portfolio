@@ -4,7 +4,7 @@
 
   var app = angular.module('portfolioApp.angularReact');
 
-  app.directive('blogDirective', ['$timeout', '$filter', function($timeout, $filter) {
+  app.directive('blogReactDirective', ['$timeout', '$filter', function($timeout, $filter) {
 
     var BlogList;
     var displayPosts = 5;
