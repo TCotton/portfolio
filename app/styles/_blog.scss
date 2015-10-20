@@ -64,6 +64,12 @@
       }
     }
 
+    .image-container-rejectjs {
+      min-height: 812px;
+      margin-bottom: 1.5625em;
+      @extend .image-container;
+    }
+
     figure {
       margin-bottom: 20px;
       display: inline-block;
@@ -168,7 +174,7 @@
       border: 1px solid $border;
       caption {
         padding: 0 0 10px 0;
-        font-style:italic;
+        font-style: italic;
       }
       tr:first-of-type th {
         padding: 5px;
@@ -182,7 +188,6 @@
         color: darken($textFour, 5%);
       }
     }
-
 
   }
 
@@ -271,8 +276,6 @@
     float: right;
   }
 
-
-
 }
 
 #pagination {
@@ -344,6 +347,22 @@
   }
 }
 
+@media (min-width: $media_breakpoint_mobile) and (max-width: $media_breakpoint_tablet) {
+
+  .blog {
+
+    article {
+
+      .image-container-rejectjs {
+        min-height: 700px;
+      }
+
+    }
+
+  }
+
+}
+
 @include breakpoint(tablet) {
 
   .blog {
@@ -385,6 +404,9 @@
     article {
       aside {
         display: none;
+      }
+      .image-container-rejectjs {
+        min-height: 350px;
       }
     }
     &.blog-single {

@@ -15,7 +15,7 @@
 
 .rejectjs__one {
   @extend %rejectjs;
-  background-image: url('images/reject-stickers-large.jpg'), url('images/reject-name-cards.jpg'), url('images/reject-speaker-mc.jpg');
+  background-image: url('https://andywalpole.me/images/blog-images/reject-stickers-large.jpg'), url('https://andywalpole.me/images/blog-images/reject-name-cards.jpg'), url('https://andywalpole.me/images/blog-images/reject-speaker-mc.jpg');
   background-size: auto, cover, cover;
   background-position: center, center, bottom;
   background-repeat: no-repeat;
@@ -23,7 +23,7 @@
 }
 
 .rejectjs__one::after {
-  background: url('images/rejectjs.svg');
+  background: url('https://andywalpole.me/images/logos/rejectjs.svg');
   background-repeat: no-repeat;
   background-size: 30%;
   background-position: calc(100% - 10px) calc(100% - 10px);
@@ -32,7 +32,7 @@
 
 .rejectjs__two {
   @extend %rejectjs;
-  background-image: url('images/rejectjs-logo.svg'), url('images/reject-crowdshot-large.jpg');
+  background-image: url('https://andywalpole.me/images/logos/rejectjs-logo.svg'), url('https://andywalpole.me/images/blog-images/reject-crowdshot-large.jpg');
   background-position: calc(100% - 10px) calc(100% - 10px), center;
   background-size: 30%, cover;
   background-repeat: no-repeat;
@@ -40,7 +40,7 @@
 }
 
 .rejectjs__two::before {
-  background: url('images/reject-badges.jpg');
+  background: url('https://andywalpole.me/images/blog-images/reject-badges.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   filter: blur(3px);
@@ -48,7 +48,7 @@
 }
 
 .rejectjs__two::after {
-  background: url('images/reject-montage-badges.jpg');
+  background: url('https://andywalpole.me/images/blog-images/reject-montage-badges.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 0.4;
@@ -59,10 +59,6 @@
 // must change .image-container
 @media (min-width: $media_breakpoint_mobile) and (max-width: $media_breakpoint_tablet) {
 
-  .image-container {
-    //min-height: 700px;
-  }
-
   .rejectjs__one {
     background-size: auto, cover, 90%;
   }
@@ -70,11 +66,7 @@
 
 @media (max-width: $media_breakpoint_mobile) {
 
-  .image-container {
-    //min-height: 450px;
-  }
-
   .rejectjs__one {
-    background-size: auto, cover, 70%;
+    background-size: auto, cover, 90%;
   }
 }
