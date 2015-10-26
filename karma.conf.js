@@ -22,6 +22,7 @@ module.exports = function(config) {
       'app/components/moment/moment.js',
       'app/components/react/react-with-addons.js',
       'app/components/ngReact/ngReact.js',
+      'app/components/fastclick/lib/fastclick.js',
       'app/libs/*.js',
       'app/app.js',
       'app/config/*.js',

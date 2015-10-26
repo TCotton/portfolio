@@ -61,7 +61,8 @@ angular.module('portfolioApp', [
   'requestInterval',
   'clearRequestInterval',
   'react',
-  'detectLocalStorage'
+  'detectLocalStorage',
+  'fastclick'
 ]).config(function($routeProvider, $httpProvider) {
 
   // Needed for CORS

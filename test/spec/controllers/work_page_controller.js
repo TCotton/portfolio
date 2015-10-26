@@ -14,7 +14,8 @@ describe('Controller: WorkPageCtrl', function () {
     'AppConstants',
     'ngRoute',
     'portfolioAppConfig',
-    'jmdobry.angular-cache'
+    'jmdobry.angular-cache',
+    'fastclick'
   ));
 
   var WorkProjPageCtrl;

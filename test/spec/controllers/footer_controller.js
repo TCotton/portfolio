@@ -18,7 +18,7 @@ describe('Controller: "FooterCtrl as FooterInherCtrl', function() {
   var contentSnippet;
 
   beforeEach(module('testConstants', 'portfolioApp.footerController', 'portfolioApp.footerService',
-    'AppConstants', 'ngRoute', 'portfolioAppConfig', 'jmdobry.angular-cache', 'underscore', 'helperFunctions'));
+    'AppConstants', 'ngRoute', 'portfolioAppConfig', 'jmdobry.angular-cache', 'underscore', 'helperFunctions', 'fastclick'));
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function(_$controller_, _$rootScope_, _MOCK_DATA_, _$httpBackend_, _$q_) {
