@@ -1,213 +1,209 @@
-(function(window, document, React) {
+'use strict';
 
-  'use strict';
+var app = angular.module('portfolioApp.angularReact');
 
-  var app = angular.module('portfolioApp.angularReact');
+app.directive('blogReactDirective', ['$timeout', '$filter', 'React', function($timeout, $filter, React) {
 
-  app.directive('blogReactDirective', ['$timeout', '$filter', function($timeout, $filter) {
+  var BlogList;
+  var displayPosts = 5;
 
-    var BlogList;
-    var displayPosts = 5;
+  /* This is the HTML of the individual blog section
+   Inbetween the article tags are three sections:
+   1. Header
+   2. Main Section
+   3. Footer
+   */
+  var BlogListContent = React.createClass({
+    shouldComponentUpdate: function(nextProps) {
+      return this.props.value !== nextProps.value;
+    },
+    // creates link to blog article
+    displayLink: function() {
+      return '/#!/blog/' + this.props.blogContent.uniqueId + '/' + this.props.blogContent.url;
+    },
+    render: function() {
+      return (
+        <article>
+          <BlogListHeader content={this.props.blogContent} link={this.displayLink()}/>
+          <BlogListSection content={this.props.blogContent}/>
+          <BlogListFooter content={this.props.blogContent} link={this.displayLink()}/>
+        </article>
+      )
+    }
+  });
 
-    /* This is the HTML of the individual blog section
-     Inbetween the article tags are three sections:
-     1. Header
-     2. Main Section
-     3. Footer
-     */
-    var BlogListContent = React.createClass({
-      shouldComponentUpdate: function(nextProps) {
-        return this.props.value !== nextProps.value;
-      },
-      // creates link to blog article
-      displayLink: function() {
-        return '/#!/blog/' + this.props.blogContent.uniqueId + '/' + this.props.blogContent.url;
-      },
-      render: function() {
-        return (
-          <article>
-            <BlogListHeader content={this.props.blogContent} link={this.displayLink()}/>
-            <BlogListSection content={this.props.blogContent}/>
-            <BlogListFooter content={this.props.blogContent} link={this.displayLink()}/>
-          </article>
-        )
-      }
-    });
+  /* The blog section header is the image. There are three different types of images
+   1. type="image/webp" -> small
+   2. type="image/jpeg" -> small
+   3. type="image/webp" -> large
+   Plus a default for those browsers which don't support the latest HTML5 responsive image markup
+   */
+  var BlogListHeader = React.createClass({
 
-    /* The blog section header is the image. There are three different types of images
-     1. type="image/webp" -> small
-     2. type="image/jpeg" -> small
-     3. type="image/webp" -> large
-     Plus a default for those browsers which don't support the latest HTML5 responsive image markup
-     */
-    var BlogListHeader = React.createClass({
+    getImage: function(imageType) {
 
-      getImage: function(imageType) {
+      var image = this.props.content.displayImage;
+      var dot = image.lastIndexOf('.');
 
-        var image = this.props.content.displayImage;
-        var dot = image.lastIndexOf('.');
-
-        var newImage = {
-          'webpSmall': function() {
-            return '/' + image.slice(0, dot) + '-small' + image.slice(dot) + '.webp';
-          },
-          'webpLarge': function() {
-            return '/' + image.slice(0, dot) + image.slice(dot) + '.webp';
-          },
-          'jpeg': function() {
-            return '/' + image.slice(0, dot) + image.slice(dot);
-          }
-        };
-
-        return newImage[imageType]();
-      },
-
-      srcsetImage: function(imageType) {
-
-        var newImage;
-        var image = this.props.content.displayImage;
-
-        if (!Object.is(image.indexOf('stock-photo'), -1)) {
-          newImage = this.getImage(imageType);
+      var newImage = {
+        'webpSmall': function() {
+          return '/' + image.slice(0, dot) + '-small' + image.slice(dot) + '.webp';
+        },
+        'webpLarge': function() {
+          return '/' + image.slice(0, dot) + image.slice(dot) + '.webp';
+        },
+        'jpeg': function() {
+          return '/' + image.slice(0, dot) + image.slice(dot);
         }
-        else {
-          newImage = '/' + image;
-        }
+      };
 
-        return newImage;
-      },
-      // uses picture markup for
-      render: function() {
-        return (
-          <header>
-            <a href={this.props.link}>
-              <picture>
-                <source type="image/webp" media="(max-width: 480px)" srcSet={this.srcsetImage('webpSmall')}/>
-                <source type="image/jpeg" media="(max-width: 480px)" srcSet={this.srcsetImage('jpeg')}/>
-                <source type="image/webp" media="(min-width: 481px)" srcSet={this.srcsetImage('webpLarge')}/>
-                <img src={this.props.content.displayImage} alt=""/>
-              </picture>
-            </a>
-          </header>
-        )
+      return newImage[imageType]();
+    },
+
+    srcsetImage: function(imageType) {
+
+      var newImage;
+      var image = this.props.content.displayImage;
+
+      if (!Object.is(image.indexOf('stock-photo'), -1)) {
+        newImage = this.getImage(imageType);
       }
-    });
-
-    /* The section contains the blog article title, publication date and snippet */
-    var BlogListSection = React.createClass({
-      render: function() {
-        return (
-          <section>
-            <h3 className="blog-title">{this.props.content.title}</h3>
-
-            <p className="date">{$filter('date')(this.props.content.publishedDate)}</p>
-
-            <p>{this.props.content.contentSnippet}</p>
-          </section>
-        )
+      else {
+        newImage = '/' + image;
       }
-    });
 
-    /* The footer contains the read more link */
-    var BlogListFooter = React.createClass({
-      render: function() {
-        return (
-          <footer>
-            <p className="read-more">
-              <a href={this.props.link} className="underline">Read more...</a>
-            </p>
-          </footer>
-        )
-      }
-    });
+      return newImage;
+    },
+    // uses picture markup for
+    render: function() {
+      return (
+        <header>
+          <a href={this.props.link}>
+            <picture>
+              <source type="image/webp" media="(max-width: 480px)" srcSet={this.srcsetImage('webpSmall')}/>
+              <source type="image/jpeg" media="(max-width: 480px)" srcSet={this.srcsetImage('jpeg')}/>
+              <source type="image/webp" media="(min-width: 481px)" srcSet={this.srcsetImage('webpLarge')}/>
+              <img src={this.props.content.displayImage} alt=""/>
+            </picture>
+          </a>
+        </header>
+      )
+    }
+  });
 
-    /* Adds the more posts link at the bottom of hte exposed articles */
-    var BlogListMore = React.createClass({
-      render: function() {
-        return (
-          <div id="more-posts" className="clearfix" onClick={this.props.onClick}>
-            <div><h6>More posts</h6></div>
-            <div><span className="down-arrow"></span></div>
-          </div>
-        )
-      }
-    });
+  /* The section contains the blog article title, publication date and snippet */
+  var BlogListSection = React.createClass({
+    render: function() {
+      return (
+        <section>
+          <h3 className="blog-title">{this.props.content.title}</h3>
 
-    return {
-      restrict: 'E',
-      replace: true,
-      link: function(scope, iElement) {
+          <p className="date">{$filter('date')(this.props.content.publishedDate)}</p>
 
-        BlogList = React.createClass({
+          <p>{this.props.content.contentSnippet}</p>
+        </section>
+      )
+    }
+  });
 
-          getInitialState: function() {
-            return {showMore: true};
-          },
+  /* The footer contains the read more link */
+  var BlogListFooter = React.createClass({
+    render: function() {
+      return (
+        <footer>
+          <p className="read-more">
+            <a href={this.props.link} className="underline">Read more...</a>
+          </p>
+        </footer>
+      )
+    }
+  });
 
-          componentDidMount: function() {
-            if (Object.keys(scope.totalBlogPosts).length <= 10) {
-              this.setState({showMore: false});
-            }
-          },
+  /* Adds the more posts link at the bottom of hte exposed articles */
+  var BlogListMore = React.createClass({
+    render: function() {
+      return (
+        <div id="more-posts" className="clearfix" onClick={this.props.onClick}>
+          <div><h6>More posts</h6></div>
+          <div><span className="down-arrow"></span></div>
+        </div>
+      )
+    }
+  });
 
-          onChildClick: function() {
-            displayPosts = (displayPosts + 5);
-            var totalPosts = $filter('orderBy')(scope.totalBlogPosts, '-publishedDate');
-            var posts = $filter('limitTo')(totalPosts, displayPosts);
-            if (posts >= totalPosts) {
-              this.setState({showMore: false});
-            }
-            renderBloglist(posts);
-          },
+  return {
+    restrict: 'E',
+    replace: true,
+    link: function(scope, iElement) {
 
-          render: function() {
-            return (
-              <div>
-                {Object.keys(this.props.content).map(function(value, index) {
-                  return <BlogListContent key={index} blogContent={this.props.content[value]}/>;
-                }, this)}
-                { this.state.showMore ? <BlogListMore onClick={ this.onChildClick }/> : null }
-              </div>
-            )
+      BlogList = React.createClass({
+
+        getInitialState: function() {
+          return {showMore: true};
+        },
+
+        componentDidMount: function() {
+          if (Object.keys(scope.totalBlogPosts).length <= 10) {
+            this.setState({showMore: false});
           }
+        },
+
+        onChildClick: function() {
+          displayPosts = (displayPosts + 5);
+          var totalPosts = $filter('orderBy')(scope.totalBlogPosts, '-publishedDate');
+          var posts = $filter('limitTo')(totalPosts, displayPosts);
+          if (posts >= totalPosts) {
+            this.setState({showMore: false});
+          }
+          renderBloglist(posts);
+        },
+
+        render: function() {
+          return (
+            <div>
+              {Object.keys(this.props.content).map(function(value, index) {
+                return <BlogListContent key={index} blogContent={this.props.content[value]}/>;
+              }, this)}
+              { this.state.showMore ? <BlogListMore onClick={ this.onChildClick }/> : null }
+            </div>
+          )
+        }
+      });
+
+      /**
+       * Renders DOM
+       * Wrapped in $timeout function as a way of triggering the $apply() method
+       * @param posts
+       */
+      var renderBloglist = function renderBloglist(posts) {
+
+        $timeout(function() {
+          React.render(
+            <BlogList content={posts}/>,
+            iElement['0']
+          );
         });
 
-        /**
-         * Renders DOM
-         * Wrapped in $timeout function as a way of triggering the $apply() method
-         * @param posts
-         */
-        var renderBloglist = function renderBloglist(posts) {
+      };
 
-          $timeout(function() {
-            React.render(
-              <BlogList content={posts}/>,
-              iElement['0']
-            );
-          });
+      // use $watch to make sure that blog posts are sent from the service
+      // before the HTML is rendered
 
-        };
+      scope.$watch('totalBlogPosts', function(newValue, oldValue) {
 
-        // use $watch to make sure that blog posts are sent from the service
-        // before the HTML is rendered
+        if (!Object.is(newValue, oldValue) || (Array.isArray(oldValue) && oldValue.length > 0)) {
 
-        scope.$watch('totalBlogPosts', function(newValue, oldValue) {
+          // uses $filter put them in date descending order
+          var posts = $filter('orderBy')(scope.totalBlogPosts, '-publishedDate');
+          // initial # posts displayed is five
+          posts = $filter('limitTo')(posts, displayPosts);
 
-          if (!Object.is(newValue, oldValue) || (Array.isArray(oldValue) && oldValue.length > 0)) {
+          renderBloglist(posts);
+        }
 
-            // uses $filter put them in date descending order
-            var posts = $filter('orderBy')(scope.totalBlogPosts, '-publishedDate');
-            // initial # posts displayed is five
-            posts = $filter('limitTo')(posts, displayPosts);
+      }.bind(this));
+    }
+  };
+}
 
-            renderBloglist(posts);
-          }
-
-        }.bind(this));
-      }
-    };
-  }
-
-  ]);
-
-})(window, document, React);
+]);

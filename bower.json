@@ -10,7 +10,7 @@
     "angular-aria": "^1.4.7",
     "underscore": "1.6.0",
     "moment": "2.6.0",
-    "ngReact": "0.1.7",
+    "react": "0.13.0",
     "fastclick": "1.0.6"
   },
   "devDependencies": {

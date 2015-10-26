@@ -86,7 +86,8 @@ if (app.get('env') === 'production') {
     ],
     fontSrc: [
       '\'self\'',
-      'https://fonts.gstatic.com'
+      'https://fonts.gstatic.com',
+      'https://public.slidesharecdn.com'
     ],
     frameSrc: [
       '\'self\'',
