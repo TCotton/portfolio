@@ -107,13 +107,10 @@
     "uglify-save-license": "^0.4.1"
   },
   "engines": {
-    "node": "4.2.0"
+    "node": "4.2.2"
   },
   "description": "My portfolio",
   "main": "server.js",
-  "directories": {
-    "test": "test"
-  },
   "repository": {
     "type": "git",
     "url": "git://github.com/TCotton/portfolio.git"

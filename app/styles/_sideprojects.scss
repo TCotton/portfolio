@@ -1,5 +1,11 @@
 .side-projects {
 
+  .project-box-one,
+  .project-box-two,
+  .project-box-three {
+    margin-bottom: 30px;
+  }
+
   [class*="project-box"] {
     text-decoration: none;
     background-color: $imageBackground;
@@ -47,6 +53,10 @@
     background-image: $sideThree;
   }
 
+  .project-box-four {
+    background-image: $sideFour;
+  }
+
 }
 
 .webp .side-projects {
@@ -61,6 +71,10 @@
 
   .project-box-three {
     background-image: $sideThreeWebP;
+  }
+
+  .project-box-four {
+    background-image: $sideFourWebP;
   }
 
 }
