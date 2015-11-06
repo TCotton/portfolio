@@ -34,10 +34,10 @@
       "id": "004",
       "title": "Diceware",
       "summary": "Create NSA-resistant passphrases using the Diceware method",
-      "details": "<p>This side-project, built on React / Flux architecture, uses the Diceware method of creating passphrases.</p> <p>First created by Arnold Reinhold in the mid-90s, Diceware requires five rolls of a six-sided dice for every word. Arnold recommends using a minimum of six words to ensure that the entropy level is high enough to be uncrackable by even the most powerful computers.</p> <p>As an example, this is six word Diceware-generated passphrase: whom heat easter m&m chaff lynch.</p> <p>Rolling a dice 30 times is a laborious endeavor, but the website diceware.buzz generates a passphrase in milliseconds.</p> <p>To ensure genuine cryptographic randomness, the code uses either the NodeJS crypto module or the browser crypto API, depending on the environment. In the absence of either, it falls back to using the JavaScript Math methods.</p><p>The website URL is <a href=\"http://diceware.buzz/\">http://diceware.buzz</a></p>",
+      "details": "<p>This side-project, built on React / Flux architecture, uses the Diceware method of creating passphrases.</p> <p>First created by Arnold Reinhold in the mid-90s, Diceware requires five rolls of a six-sided dice for every word. Arnold recommends using a minimum of six words to ensure that the entropy level is high enough to be uncrackable by even the most powerful computers.</p> <p>As an example, this is a six word Diceware-generated passphrase: whom heat easter m&m chaff lynch.</p> <p>Rolling a dice 30 times is a laborious endeavor, but the website diceware.buzz generates a passphrase in milliseconds.</p> <p>To ensure genuine cryptographic randomness, the code uses either the NodeJS crypto module or the browser crypto API, depending on the environment. In the absence of either, it falls back to using the JavaScript Math methods.</p><p>The website URL is <a href=\"https://diceware.buzz/\">https://diceware.buzz</a>.<br>The code can be found on <a href=\"https://github.com/TCotton/diceware-react-flux\">my GitHub account</a>.</p>",
       "code": "React / Flux",
       "internalUrl": "/#!/side-projects/diceware",
-      "externalUrl": "http://diceware.buzz/",
+      "externalUrl": "https://diceware.buzz/",
       "workImage": "/images/diceware-screenshot.png"
     }
   },
