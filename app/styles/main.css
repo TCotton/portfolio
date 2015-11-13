@@ -2840,13 +2840,17 @@
     padding: 0 0 25px 0;
   }
   /* line 118, _mywork.scss */
+  .my-work div[id=right-large] a {
+    text-decoration: none;
+  }
+  /* line 122, _mywork.scss */
   .my-work div[id=right-large] img {
     border: 1px solid #ccc;
     background-clip: content-box;
     padding: 4px;
     overflow: hidden;
   }
-  /* line 128, _mywork.scss */
+  /* line 132, _mywork.scss */
   .my-work .pagination [class*="pag"] {
     width: 55px;
     height: 54px;
@@ -2857,37 +2861,37 @@
     margin: 0 14px 0 0;
     background-color: black;
   }
-  /* line 138, _mywork.scss */
+  /* line 142, _mywork.scss */
   .my-work .pagination [class*="pag"]:last-of-type {
     margin: 0;
   }
-  /* line 143, _mywork.scss */
+  /* line 147, _mywork.scss */
   .my-work .pagination .paglast {
     background: url("/images/svg/left-arrow.svg") no-repeat center center;
   }
-  /* line 146, _mywork.scss */
+  /* line 150, _mywork.scss */
   .my-work .pagination .paglast:hover {
     background: url("/images/svg/left-arrow-hover.svg") no-repeat center center;
   }
-  /* line 154, _mywork.scss */
+  /* line 158, _mywork.scss */
   .my-work .pagination .pagHome {
     background: url("/images/svg/index.svg") no-repeat center center;
   }
-  /* line 157, _mywork.scss */
+  /* line 161, _mywork.scss */
   .my-work .pagination .pagHome:hover {
     background: url("/images/svg/index-hover.svg") no-repeat center center;
   }
-  /* line 163, _mywork.scss */
+  /* line 167, _mywork.scss */
   .my-work .pagination .pagnext {
     background: url("/images/svg/right-arrow.svg") no-repeat center center;
   }
-  /* line 166, _mywork.scss */
+  /* line 170, _mywork.scss */
   .my-work .pagination .pagnext:hover {
     background: url("/images/svg/right-arrow-hover.svg") no-repeat center center;
   }
 }
 @media screen and (max-width: 979px) {
-  /* line 178, _mywork.scss */
+  /* line 182, _mywork.scss */
   .my-work div[id=left-small] {
     width: auto;
     float: none;
@@ -2895,31 +2899,31 @@
     margin: 0;
     border: none;
   }
-  /* line 185, _mywork.scss */
+  /* line 189, _mywork.scss */
   .my-work div[id=left-small] article {
     border-bottom: none;
     margin: 0 0 15px 0;
     padding: 0 0 15px 0;
   }
-  /* line 192, _mywork.scss */
+  /* line 196, _mywork.scss */
   .my-work div[id=right-large] {
     width: 100%;
     float: none;
     display: inline-block;
     padding: 0 0 0 0;
   }
-  /* line 199, _mywork.scss */
+  /* line 203, _mywork.scss */
   .my-work div[id=right-large] img {
     margin: 0 0 50px 0;
   }
-  /* line 205, _mywork.scss */
+  /* line 209, _mywork.scss */
   .my-work .pagination {
     border-top: 1px solid #ccc;
     padding: 50px 0 0 0;
     text-align: center;
     width: 100%;
   }
-  /* line 212, _mywork.scss */
+  /* line 216, _mywork.scss */
   .my-work .project-box-one,
   .my-work .project-box-two,
   .my-work .project-box-three,
@@ -2927,26 +2931,26 @@
   .my-work .project-box-five {
     margin-bottom: 30px;
   }
-  /* line 220, _mywork.scss */
+  /* line 224, _mywork.scss */
   .my-work .project-box-six {
     margin-bottom: 0;
   }
 }
 @media screen and (max-width: 767px) {
-  /* line 232, _mywork.scss */
+  /* line 236, _mywork.scss */
   .my-work div[id=left-small] article {
     margin: 0 0 10px 0;
     padding: 0 0 15px 0;
   }
-  /* line 239, _mywork.scss */
+  /* line 243, _mywork.scss */
   .my-work div[id=right-large] img {
     margin: 0 0 40px 0;
   }
-  /* line 244, _mywork.scss */
+  /* line 248, _mywork.scss */
   .my-work .pagination {
     padding: 40px 0 0 0;
   }
-  /* line 248, _mywork.scss */
+  /* line 252, _mywork.scss */
   .my-work .project-box-one,
   .my-work .project-box-two,
   .my-work .project-box-three,

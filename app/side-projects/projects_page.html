@@ -35,16 +35,18 @@
 
   <div id="right-large">
 
-    <picture class="ng-cloak">
-      <source type="image/webp" ng-srcset="{{::workImageWebP}}">
-      <source type="image/jpeg" ng-srcset="{{::workImage}}">
-      <img ng-src="{{::workImage}}" alt="{{::title}}"/>
-    </picture>
+    <a ng-href="{{::externalUrl}}">
+      <picture class="ng-cloak">
+        <source type="image/webp" ng-srcset="{{::workImageWebP}}">
+        <source type="image/jpeg" ng-srcset="{{::workImage}}">
+        <img ng-src="{{::workImage}}" alt="{{::title}}"/>
+      </picture>
+    </a>
 
     <div class="pagination clearfix hidden-desktop">
 
       <a data-ng-href="{{prevPage}}" class="paglast"></a>
-      <a href="/#!/work-projects/" class="pagHome"></a>
+      <a href="/#!/side-projects" class="pagHome"></a>
       <a data-ng-href="{{nextPage}}" class="pagnext"></a>
 
     </div>
