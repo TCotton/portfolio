@@ -5,6 +5,7 @@
 // set up ========================
 var express = require('express');
 var http = require('http');
+var errorHandler = require('express-error-handler');
 http.globalAgent.maxSockets = Infinity;
 var path = require('path');
 var morgan = require('morgan');
@@ -20,7 +21,10 @@ var mongoose = require('mongoose'); 					// mongoose for mongodb
 var sixMonths = 14515200;
 
 var conf = require('./server/config/prerender'); 			// load the prerender config
+
+
 app.use(require('prerender-node').set('prerenderToken', conf.prerender));
+
 app.use(helmet.frameguard('deny'));
 app.use(helmet.xssFilter());
 app.use(helmet.nosniff());
@@ -45,6 +49,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 app.use(methodOverride()); 						// simulate DELETE and PUT
 app.use(cookieParser());
+app.use(errorHandler());
 
 if (app.get('env') === 'production') {
 
@@ -134,9 +139,15 @@ if (app.get('env') === 'production') {
 
 }
 
+app.get('/404', function(req, res, next) {
+  var err = new Error('Sample error');
+  err.status = 404;
+  next(err);
+});
+
 app.all('*', function(req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'X-Requested-With');
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With');
   next();
 });
 
@@ -146,7 +157,7 @@ app.all('*', function(req, res, next) {
 if (app.get('env') === 'development') {
 
   app.all('*', function(req, res, next) {
-    res.header('Cache-Control', 'no-cache');
+    res.setHeader('Cache-Control', 'no-cache');
     next();
   });
   // This will change in production since we'll be using the dist folder
@@ -156,11 +167,15 @@ if (app.get('env') === 'development') {
 
   // Error Handling
   app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
-    });
+    if (err) {
+      res.statusCode = (err.status || 500);
+      res.render('error', {
+        message: err.message,
+        error: err
+      });
+    } else {
+      next();
+    }
   });
 }
 
@@ -191,27 +206,27 @@ if (app.get('env') === 'production') {
   app.use(favicon(path.join(__dirname, 'dist/favicon.ico')));
 
   app.all('*', function(req, res, next) {
-    res.header('Cache-Control', 'no-cache');
+    res.setHeader('Cache-Control', 'no-cache');
     next();
   });
 
   app.all('/blog-admin/*', function(req, res, next) {
-    res.header('Cache-Control', 'no-store');
+    res.setHeader('Cache-Control', 'no-store');
     next();
   });
 
   app.all('/scripts/*', function(req, res, next) {
-    res.header('Cache-Control', 'public, max-age=' + sixMonths);
+    res.setHeader('Cache-Control', 'public, max-age=' + sixMonths);
     next();
   });
 
   app.all('/images/*', function(req, res, next) {
-    res.header('Cache-Control', 'public, max-age=' + sixMonths);
+    res.setHeader('Cache-Control', 'public, max-age=' + sixMonths);
     next();
   });
 
   app.all('/styles/*', function(req, res, next) {
-    res.header('Cache-Control', 'public, max-age=' + sixMonths);
+    res.setHeader('Cache-Control', 'public, max-age=' + sixMonths);
     next();
   });
 
@@ -222,11 +237,15 @@ if (app.get('env') === 'production') {
   // production error handler
   // no stacktraces leaked to user
   app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: {}
-    });
+    if (err) {
+      res.statusCode = (err.status || 500);
+      res.render('error', {
+        message: err.message,
+        error: err
+      });
+    } else {
+      next();
+    }
   });
 }
 

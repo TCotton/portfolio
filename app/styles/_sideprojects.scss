@@ -42,19 +42,23 @@
 .no-webp .side-projects {
 
   .project-box-one {
-    background-image: $sideOne;
+    background-image: $sideFour;
   }
 
   .project-box-two {
-    background-image: $sideTwo;
+    background-image: $sideFive;
   }
 
   .project-box-three {
-    background-image: $sideThree;
+    background-image: $sideOne;
   }
 
   .project-box-four {
-    background-image: $sideFour;
+    background-image: $sideTwo;
+  }
+
+  .project-box-five {
+    background-image: $sideThree;
   }
 
 }
@@ -62,19 +66,23 @@
 .webp .side-projects {
 
   .project-box-one {
-    background-image: $sideOneWebP;
+    background-image: $sideFourWebP;
   }
 
   .project-box-two {
-    background-image: $sideTwoWebP;
+    background-image: $sideFiveWebP;
   }
 
   .project-box-three {
-    background-image: $sideThreeWebP;
+    background-image: $sideOneWebP;
   }
 
   .project-box-four {
-    background-image: $sideFourWebP;
+    background-image: $sideTwoWebP;
+  }
+
+  .project-box-five {
+    background-image: $sideThreeWebP;
   }
 
 }

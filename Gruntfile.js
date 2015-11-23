@@ -28,6 +28,8 @@ module.exports = function(grunt) {
   var saveLicense = require('uglify-save-license');
   var mozjpeg = require('imagemin-mozjpeg');
 
+  //var gruntPostHTML = require('grunt-posthtml');
+
   // configurable paths
   var yeomanConfig = {
     // configurable paths
@@ -514,7 +516,7 @@ module.exports = function(grunt) {
     concurrent: {
       server: [
         'sass:dev',
-        'jscs',
+        // 'jscs',
         'postcss:prod',
         'scsslint'
       ],
@@ -672,7 +674,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build', [
     'test',
-    'jscs',
+    // 'jscs',
     'clean:dist',
     'wiredep',
     'useminPrepare',

@@ -39,29 +39,44 @@
       "internalUrl": "/#!/side-projects/diceware",
       "externalUrl": "https://diceware.buzz/",
       "workImage": "/images/diceware-screenshot.png"
+    },
+    "posthtmlHead": {
+      "id": "005",
+      "title": "posthtml-head-elements",
+      "summary": "Post-processor NPM module",
+      "details": "<p>posthtml-head-elements is an NPM module which is a part of the vibrant and ever-expanding frontend post-processor toolset.</p><p>PostCSS is probably the most well-known suite of post-processor modules, but PostHTML is a new addition to the frontend NPM ecosystem.</p><p>PostHTML allows the developer to make changes to the HTML during the build process.</p><p>posthtml-head-elements stores all HTML head elements - title, script, link, base and meta - in a JSON file, and renders them into the documents head.</p>",
+      "code": "Node.js",
+      "internalUrl": "/#!/side-projects/posthtml-head-elements",
+      "externalUrl": "https://www.npmjs.com/package/posthtml-head-elements",
+      "workImage": "/images/posthtml-head-elements-screenshot.png"
     }
   },
   "postContent": {
     "className": "clearfix side-projects",
     "one": {
-      "href": "/#!/side-projects/lightning",
+      "href": "/#!/side-projects/diceware",
       "class": "project-box-one",
-      "name": "lightning.sx"
+      "name": "Diceware"
     },
     "two": {
-      "href": "/#!/side-projects/pennybooks",
+      "href": "/#!/side-projects/posthtml-head-elements",
       "class": "project-box-two",
-      "name": "Penny Books"
+      "name": "posthtml-head-elements"
     },
     "three": {
-      "href": "/#!/side-projects/postcss-mq-keyframes",
+      "href": "/#!/side-projects/lightning",
       "class": "project-box-three",
-      "name": "PostCSS MQ-Keyframes"
+      "name": "lightning.sx"
     },
     "four": {
-      "href": "/#!/side-projects/diceware",
+      "href": "/#!/side-projects/postcss-mq-keyframes",
       "class": "project-box-four",
-      "name": "Diceware"
+      "name": "PostCSS MQ-Keyframes"
+    },
+    "five": {
+      "href": "/#!/side-projects/pennybooks",
+      "class": "project-box-five",
+      "name": "Penny Books"
     }
   }
 }

@@ -3002,47 +3002,55 @@
 
   /* line 44, _sideprojects.scss */
   .no-webp .side-projects .project-box-one {
-    background-image: url("/images/lightning-sideproject.png");
+    background-image: url("/images/diceware-sideproject.png");
   }
   /* line 48, _sideprojects.scss */
   .no-webp .side-projects .project-box-two {
-    background-image: url("/images/pennybooks-sideproject.png");
+    background-image: url("/images/posthtml-head-elements-sideproject.png");
   }
   /* line 52, _sideprojects.scss */
   .no-webp .side-projects .project-box-three {
-    background-image: url("/images/postcss-mq-keyframes-sideproject.png");
+    background-image: url("/images/lightning-sideproject.png");
   }
   /* line 56, _sideprojects.scss */
   .no-webp .side-projects .project-box-four {
-    background-image: url("/images/diceware-sideproject.png");
+    background-image: url("/images/pennybooks-sideproject.png");
+  }
+  /* line 60, _sideprojects.scss */
+  .no-webp .side-projects .project-box-five {
+    background-image: url("/images/postcss-mq-keyframes-sideproject.png");
   }
 
-  /* line 64, _sideprojects.scss */
-  .webp .side-projects .project-box-one {
-    background-image: url("/images/lightning-sideproject.png.webp");
-  }
   /* line 68, _sideprojects.scss */
-  .webp .side-projects .project-box-two {
-    background-image: url("/images/pennybooks-sideproject.png.webp");
+  .webp .side-projects .project-box-one {
+    background-image: url("/images/diceware-sideproject.png.webp");
   }
   /* line 72, _sideprojects.scss */
-  .webp .side-projects .project-box-three {
-    background-image: url("/images/postcss-mq-keyframes-sideproject.png.webp");
+  .webp .side-projects .project-box-two {
+    background-image: url("/images/posthtml-head-elements-sideproject.png.webp");
   }
   /* line 76, _sideprojects.scss */
+  .webp .side-projects .project-box-three {
+    background-image: url("/images/lightning-sideproject.png.webp");
+  }
+  /* line 80, _sideprojects.scss */
   .webp .side-projects .project-box-four {
-    background-image: url("/images/diceware-sideproject.png.webp");
+    background-image: url("/images/pennybooks-sideproject.png.webp");
+  }
+  /* line 84, _sideprojects.scss */
+  .webp .side-projects .project-box-five {
+    background-image: url("/images/postcss-mq-keyframes-sideproject.png.webp");
   }
 }
 @media screen and (max-width: 979px) {
-  /* line 86, _sideprojects.scss */
+  /* line 94, _sideprojects.scss */
   .side-projects .project-box-one,
   .side-projects .project-box-two,
   .side-projects .project-box-three,
   .side-projects .project-box-four {
     margin-bottom: 33px;
   }
-  /* line 93, _sideprojects.scss */
+  /* line 101, _sideprojects.scss */
   .side-projects .project-box-five,
   .side-projects .project-box-six {
     margin-bottom: 0;
