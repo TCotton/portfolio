@@ -2920,11 +2920,11 @@
   }
   /* line 56, _sideprojects.scss */
   .no-webp .side-projects .project-box-four {
-    background-image: url("/images/pennybooks-sideproject.png");
+    background-image: url("/images/postcss-mq-keyframes-sideproject.png");
   }
   /* line 60, _sideprojects.scss */
   .no-webp .side-projects .project-box-five {
-    background-image: url("/images/postcss-mq-keyframes-sideproject.png");
+    background-image: url("/images/pennybooks-sideproject.png");
   }
 
   /* line 68, _sideprojects.scss */
@@ -2941,11 +2941,11 @@
   }
   /* line 80, _sideprojects.scss */
   .webp .side-projects .project-box-four {
-    background-image: url("/images/pennybooks-sideproject.png.webp");
+    background-image: url("/images/postcss-mq-keyframes-sideproject.png.webp");
   }
   /* line 84, _sideprojects.scss */
   .webp .side-projects .project-box-five {
-    background-image: url("/images/postcss-mq-keyframes-sideproject.png.webp");
+    background-image: url("/images/pennybooks-sideproject.png.webp");
   }
 }
 @media screen and (max-width: 979px) {
