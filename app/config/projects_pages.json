@@ -49,6 +49,16 @@
       "internalUrl": "/#!/side-projects/posthtml-head-elements",
       "externalUrl": "https://www.npmjs.com/package/posthtml-head-elements",
       "workImage": "/images/posthtml-head-elements-screenshot.png"
+    },
+    "posthtmlGrunt": {
+      "id": "006",
+      "title": "posthtml-grunt",
+      "summary": "Grunt.js wrapper for PostHMTL",
+      "details": "<p>posthtml-grunt is a Grunt wrapper for the PostHMTL npm module.</p><p>Grunt has mostly been superseded by Gulp, which is a faster and more maintainable build system.</p><p>However, there is a lot of legacy code in use in projects (such as this portfolio!) that rely on Grunt, and so any new suite of npm tools, like PostHMTL, will still require a Grunt wrapper.</p>",
+      "code": "Node.js",
+      "internalUrl": "/#!/side-projects/posthtml-grunt",
+      "externalUrl": "https://www.npmjs.com/package/grunt-posthtml",
+      "workImage": "/images/grunt-posthtml-screenshot.png"
     }
   },
   "postContent": {
@@ -64,18 +74,23 @@
       "name": "posthtml-head-elements"
     },
     "three": {
-      "href": "/#!/side-projects/lightning",
+      "href": "/#!/side-projects/posthtml-grunt",
       "class": "project-box-three",
-      "name": "lightning.sx"
+      "name": "posthtml-grunt"
     },
     "four": {
-      "href": "/#!/side-projects/postcss-mq-keyframes",
+      "href": "/#!/side-projects/lightning",
       "class": "project-box-four",
-      "name": "PostCSS MQ-Keyframes"
+      "name": "lightning.sx"
     },
     "five": {
-      "href": "/#!/side-projects/pennybooks",
+      "href": "/#!/side-projects/postcss-mq-keyframes",
       "class": "project-box-five",
+      "name": "PostCSS MQ-Keyframes"
+    },
+    "six": {
+      "href": "/#!/side-projects/pennybooks",
+      "class": "project-box-six",
       "name": "Penny Books"
     }
   }

@@ -1,0 +1,64 @@
+{
+  "link": [
+    {
+      "rel": "dns-prefetch",
+      "href": "//codepen.io"
+    },
+    {
+      "rel": "dns-prefetch",
+      "href": "//fonts.gstatic.com"
+    },
+    {
+      "rel": "dns-prefetch",
+      "href": "//youtube.com"
+    },
+    {
+      "rel": "dns-prefetch",
+      "href": "//youtube-nocookie.com"
+    },
+    {
+      "rel": "dns-prefetch",
+      "href": "//s.ytimg.com"
+    },
+    {
+      "rel": "dns-prefetch",
+      "href": "//ssl.gstatic.com"
+    },
+    {
+      "rel": "dns-prefetch",
+      "href": "//i.ytimg.com"
+    },
+    {
+      "rel": "dns-prefetch",
+      "href": "//platform.twitter.com"
+    },
+    {
+      "rel": "dns-prefetch",
+      "href": "//disclose.tv"
+    },
+    {
+      "rel": "dns-prefetch",
+      "href": "//storify.com"
+    },
+    {
+      "rel": "dns-prefetch",
+      "href": "//player.vimeo.com"
+    },
+    {
+      "rel": "dns-prefetch",
+      "href": "//syndication.twitter.com"
+    },
+    {
+      "rel": "dns-prefetch",
+      "href": "//f.vimeocdn.com"
+    },
+    {
+      "rel": "dns-prefetch",
+      "href": "//pbs.twimg.com"
+    },
+    {
+      "rel": "dns-prefetch",
+      "href": "//platform.vine.co"
+    }
+  ]
+}

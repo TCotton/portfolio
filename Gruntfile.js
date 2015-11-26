@@ -307,6 +307,19 @@ module.exports = function(grunt) {
       }
     },
 
+    posthtml: {
+      options: {
+        use: [
+          require('posthtml-head-elements')({headElements: 'app/config/head_elements.json'})
+        ]
+      },
+      build: {
+        files: [
+          {src: '<%= yeoman.dist %>/index.html', dest: '<%= yeoman.dist %>/index.html'}
+        ]
+      }
+    },
+
     // Performs rewrites based on rev and the useminPrepare configuration
     usemin: {
       html: [
@@ -609,7 +622,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.dist %>/styles',
-          src: ['*main-post.css', '!*.min.css'],
+          src: ['*.main-postcss.css', '!*.min.css'],
           dest: '<%= yeoman.dist %>/styles',
           ext: '.css'
         }]
@@ -686,13 +699,14 @@ module.exports = function(grunt) {
     'concat',
     'preprocess:html',  // Remove DEBUG code from production builds
     'ngmin',
-    //'ngAnnotate',
+    // 'ngAnnotate',
     'inline',
     'cwebp',
     'copy:dist',
-    'cssmin',
+    // 'cssmin',
     'uglify',
     'rev',
+    'posthtml',
     'usemin',
     'htmlmin'
   ]);
