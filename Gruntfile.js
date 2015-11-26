@@ -306,11 +306,10 @@ module.exports = function(grunt) {
         }
       }
     },
-
     posthtml: {
       options: {
         use: [
-          require('posthtml-head-elements')({headElements: 'app/config/head_elements.json'})
+          require('posthtml-head-elements')({headElements: path.resolve(__dirname, yeomanConfig.app) + '/config/head_elements.json'})
         ]
       },
       build: {

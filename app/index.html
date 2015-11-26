@@ -25,7 +25,13 @@
   <meta data-ng-if="hideFooter" property="og:title" content="{{faceBookTitle}}"/>
   <meta data-ng-if="hideFooter" property="og:url" content="{{canonical}}"/>
   <meta data-ng-if="hideFooter" property="og:description" content="{{faceBookDescription}}"/>
+  <meta data-ng-if="hideFooter" property="og:type" content="article" />
   <meta data-ng-if="hideFooter" name="description" content="{{faceBookDescription}}">
+
+  <meta data-ng-if="hideFooter" name="twitter:card" content="summary" />
+  <meta data-ng-if="hideFooter" name="twitter:site" content="@andywalpole" />
+  <meta data-ng-if="hideFooter" name="twitter:title" content="{{faceBookTitle}}" />
+  <meta data-ng-if="hideFooter" name="twitter:description" content="{{faceBookDescription}}" />
 
   <link rel="canonical" href="{{canonical}}"/>
 
@@ -167,6 +173,7 @@
 <script src="blog-pages/codepen_directive.js"></script>
 <script src="blog-pages/twitter_directive.js"></script>
 <script src="blog-pages/vine_directive.js"></script>
+<script src="blog-pages/scroll_to_top_directive.js"></script>
 <script src="shared/loader_directive.js"></script>
 <script src="react/blog_react_directive.js"></script>
 <script src="react/blog_sidebar_react_directive.js"></script>

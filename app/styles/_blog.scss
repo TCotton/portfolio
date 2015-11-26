@@ -9,6 +9,13 @@
       list-style-position: inside;
     }
 
+    .scroll-top {
+      color: lighten($textTwo, 10%);
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
     header {
       border: 1px solid $boxBorder;
       background-clip: content-box;
