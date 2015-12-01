@@ -1,22 +1,19 @@
 /**
  * Created by awalpole on 23/05/2014.
  */
+
 /*jshint camelcase: false */
 /*jshint loopfunc: true */
 'use strict';
-(function() {
-
-  var app = angular.module('portfolioApp.footerController');
-
+class FooterCtrl {
   /**
-   * @description For displaying recommended blog article using data from the NewsBlur API
-   * @param $scope
-   * @param $log
-   * @param NewsBlurFactory
-   * @constructor
+   * constructor
+   * @param $scope {object}
+   * @param $log {object}
+   * @param NewsBlurFactory {object}
+   * @param hfs {object}
    */
-  var FooterCtrl = function($scope, $log, NewsBlurFactory, hfs) {
-
+  constructor($scope, $log, NewsBlurFactory, hfs) {
     this.$scope = $scope;
     this.$log = $log;
     this.$scope.recArticle = {};
@@ -25,36 +22,22 @@
     this.$scope.recArticle.author = null;
     this.$scope.recArticle.content = null;
     this.$scope.recArticle.link = null;
+    this.NewsBlurFactory = NewsBlurFactory;
+    this.hfs = hfs;
+  }
 
-    /** Using defineProperty prevents injected service being exposed to the template
-     * **/
-    Object.defineProperty(this, 'NewsBlurFactory', {
-      value: NewsBlurFactory
-    });
+  loadData() {
 
-    Object.defineProperty(this, 'hfs', {
-      value: hfs
-    });
+    const returnedPromise = this.NewsBlurFactory.getBlogPosts();
 
-  };
-
-  FooterCtrl.$inject = ['$scope', '$log', 'NewsBlurFactory', 'helperFunctionsService'];
-
-  /** Return JSON data for latest articles saved in my Newsblur account
-   *  Uses Newsblur API on NodeJS
-   * **/
-  FooterCtrl.prototype.loadData = function() {
-
-    var returnedPromise = this.NewsBlurFactory.getBlogPosts();
-
-    returnedPromise.then(function(value) {
+    returnedPromise.then((value) => {
 
       if (value.data !== 'null') {
 
         // make JSON file into usable object
-        var returnedData = value.data;
+        let returnedData = value.data;
 
-        for (var key in returnedData.stories) {
+        for (let key in returnedData.stories) {
 
           this.$scope.recArticle.title = returnedData.stories[key]['story_title'];
           this.$scope.recArticle.date = returnedData.stories[key]['short_parsed_date'].split(',')[0];
@@ -71,15 +54,18 @@
 
       }
 
-    }.bind(this), function(value) {
+    }, (value) => {
 
       this.$log.warn('Failure: FooterCtrl.getBlogPosts');
       this.$log.warn(value);
 
-    }.bind(this));
+    });
 
-  };
+  }
+}
 
-  app.controller('FooterCtrl', FooterCtrl);
+FooterCtrl.$inject = ['$scope', '$log', 'NewsBlurFactory', 'helperFunctionsService'];
 
-}());
+angular.module('portfolioApp.footerController').controller('FooterCtrl', ['$scope', '$log', 'NewsBlurFactory', 'helperFunctionsService', function($scope, $log, NewsBlurFactory, helperFunctionsService) {
+  return new FooterCtrl($scope, $log, NewsBlurFactory, helperFunctionsService);
+}]);
