@@ -43,8 +43,7 @@ angular.module('portfolioApp.homepageDirective').directive('homepageStatsDirecti
           scope.stats.block1.header = calculateDate;
           mql.removeListener(handleMediaMatch);
 
-        }
-        else {
+        } else {
 
           scope.stats = _.toArray(STATS).slice(0, 3);
           scope.stats[0].header = calculateDate;
@@ -59,8 +58,7 @@ angular.module('portfolioApp.homepageDirective').directive('homepageStatsDirecti
         mql.addListener(handleMediaMatch);
         handleMediaMatch(mql);
 
-      }
-      else {
+      } else {
 
         scope.stats = STATS;
         scope.stats.block1.header = calculateDate;

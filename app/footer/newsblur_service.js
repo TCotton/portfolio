@@ -4,7 +4,7 @@
 
 'use strict';
 
-class NewsBlurFactory {
+class NewsBlurService {
 
   /**
    * constructor
@@ -33,7 +33,7 @@ class NewsBlurFactory {
   }
 }
 
-angular.module('portfolioApp.footerService').service('NewsBlurFactory', ['$http', '$q', function($http, $q) {
-  return new NewsBlurFactory($http, $q);
+angular.module('portfolioApp.footerService').service('NewsBlurService', ['$http', '$q', function($http, $q) {
+  return new NewsBlurService($http, $q);
 }]);
 

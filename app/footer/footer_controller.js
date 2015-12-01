@@ -13,7 +13,7 @@ class FooterCtrl {
    * @param NewsBlurFactory {object}
    * @param hfs {object}
    */
-  constructor($scope, $log, NewsBlurFactory, hfs) {
+  constructor($scope, $log, NewsBlurService, hfs) {
     this.$scope = $scope;
     this.$log = $log;
     this.$scope.recArticle = {};
@@ -22,13 +22,13 @@ class FooterCtrl {
     this.$scope.recArticle.author = null;
     this.$scope.recArticle.content = null;
     this.$scope.recArticle.link = null;
-    this.NewsBlurFactory = NewsBlurFactory;
+    this.NewsBlurService = NewsBlurService;
     this.hfs = hfs;
   }
 
   loadData() {
 
-    const returnedPromise = this.NewsBlurFactory.getBlogPosts();
+    const returnedPromise = this.NewsBlurService.getBlogPosts();
 
     returnedPromise.then((value) => {
 
@@ -64,8 +64,8 @@ class FooterCtrl {
   }
 }
 
-FooterCtrl.$inject = ['$scope', '$log', 'NewsBlurFactory', 'helperFunctionsService'];
+FooterCtrl.$inject = ['$scope', '$log', 'NewsBlurService', 'helperFunctionsService'];
 
-angular.module('portfolioApp.footerController').controller('FooterCtrl', ['$scope', '$log', 'NewsBlurFactory', 'helperFunctionsService', function($scope, $log, NewsBlurFactory, helperFunctionsService) {
+angular.module('portfolioApp.footerController').controller('FooterCtrl', ['$scope', '$log', 'NewsBlurService', 'helperFunctionsService', function($scope, $log, NewsBlurFactory, helperFunctionsService) {
   return new FooterCtrl($scope, $log, NewsBlurFactory, helperFunctionsService);
 }]);
