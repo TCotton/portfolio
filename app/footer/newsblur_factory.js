@@ -5,6 +5,13 @@
 'use strict';
 
 class NewsBlurFactory {
+
+  /**
+   * constructor
+   * @param $http {object}
+   * @param $q {object}
+   */
+
   constructor($http, $q) {
     this.$http = $http;
     this.$q = $q;
@@ -26,7 +33,7 @@ class NewsBlurFactory {
   }
 }
 
-angular.module('portfolioApp.footerService').factory('NewsBlurFactory', ['$http', '$q', function($http, $q) {
+angular.module('portfolioApp.footerService').service('NewsBlurFactory', ['$http', '$q', function($http, $q) {
   return new NewsBlurFactory($http, $q);
 }]);
 
