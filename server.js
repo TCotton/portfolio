@@ -163,7 +163,7 @@ if (app.get('env') === 'development') {
   // This will change in production since we'll be using the dist folder
   // This covers serving up the index page
   app.use(favicon(path.join(__dirname, 'app/favicon.ico')));
-  app.use(express.static(path.join(__dirname, 'app'))); 		// set the static files location /public/img will be /img for users
+  app.use(express.static(path.join(__dirname, 'tmp'))); 		// set the static files location /public/img will be /img for users
 
   // Error Handling
   app.use(function(err, req, res, next) {

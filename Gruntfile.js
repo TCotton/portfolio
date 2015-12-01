@@ -66,7 +66,7 @@ module.exports = function(grunt) {
           '<%= yeoman.app %>/shared/*.js',
           '<%= yeoman.app %>/app.js'
         ],
-        tasks: ['newer:jshint:all'],
+        tasks: ['newer:jshint:all', 'newer:babel:tmp', 'newer:copy:tmp'],
         options: {
           livereload: '<%= express.livereload.options %>'
         }
@@ -88,14 +88,14 @@ module.exports = function(grunt) {
       },
       css: {
         files: ['<%= yeoman.app %>/styles/main.css'],
-        tasks: ['postcss:prod']
+        tasks: ['postcss:prod', 'newer:copy:tmp']
       },
       gruntfile: {
         files: ['Gruntfile.js']
       },
       react: {
         files: ['<%= yeoman.app %>/jsx/*.jsx'],
-        tasks: ['react']
+        tasks: ['react', 'newer:copy:tmp']
       },
       livereload: {
         options: {
@@ -458,6 +458,7 @@ module.exports = function(grunt) {
             cwd: '<%= yeoman.app %>',
             dest: '<%= yeoman.tmp %>',
             src: [
+              'index.html',
               '*.{ico,txt}',
               'views/{,*/}*.html',
               'footer/*.html',
@@ -478,10 +479,20 @@ module.exports = function(grunt) {
               'images/blog-images/*.webp',
               'images/blog-stock-images/*.webp',
               'images/slider/*.webp',
+              'images/svg/*.svg',
               'fonts/*',
               'audio/*.mp3',
-              'styles/*css'
+              'styles/*.css',
+              'react/*.js',
+              'libs/*.js',
+              'config/*.js'
             ]
+          },
+          {
+            expand: true,
+            cwd: '.tmp/images',
+            dest: '<%= yeoman.dist %>/images',
+            src: ['generated/*']
           }
         ]
       },
@@ -566,7 +577,8 @@ module.exports = function(grunt) {
         'sass:dev',
         // 'jscs',
         'postcss:prod',
-        'scsslint'
+        'scsslint',
+        'babel:tmp'
       ],
       test: [
         'sass:dev'
@@ -616,7 +628,7 @@ module.exports = function(grunt) {
         sourceMap: true,
         presets: ['es2015']
       },
-      dist: {
+      tmp: {
         files: [{
           expand: true,
           dot: false,
