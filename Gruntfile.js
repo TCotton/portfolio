@@ -35,6 +35,7 @@ module.exports = function(grunt) {
     // configurable paths
     app: require('./bower.json').appPath || 'app',
     dist: 'dist',
+    tmp: 'tmp',
     server: 'server'
   };
 
@@ -449,6 +450,41 @@ module.exports = function(grunt) {
 
     // Copies remaining files to places other tasks can use
     copy: {
+      tmp: {
+        files: [
+          {
+            expand: true,
+            dot: true,
+            cwd: '<%= yeoman.app %>',
+            dest: '<%= yeoman.tmp %>',
+            src: [
+              '*.{ico,txt}',
+              'views/{,*/}*.html',
+              'footer/*.html',
+              'homepage/*.html',
+              'work-projects/*.html',
+              'side-projects/*.html',
+              'about-me/*.html',
+              'contact/*.html',
+              'blog-comments/*.html',
+              'blog-sidebar/*.html',
+              'blog-pages/*.html',
+              'blog-admin/*.html',
+              'sitemap/*.html',
+              'misc/*.html',
+              'shared/*.html',
+              'components/**/*',
+              'images/*.webp',
+              'images/blog-images/*.webp',
+              'images/blog-stock-images/*.webp',
+              'images/slider/*.webp',
+              'fonts/*',
+              'audio/*.mp3',
+              'styles/*css'
+            ]
+          }
+        ]
+      },
       dist: {
         files: [
           {
@@ -575,6 +611,29 @@ module.exports = function(grunt) {
       }
     },
 
+    babel: {
+      options: {
+        sourceMap: true,
+        presets: ['es2015']
+      },
+      dist: {
+        files: [{
+          expand: true,
+          dot: false,
+          cwd: '<%= yeoman.app %>/',
+          src: [
+            '**/*.js',
+            '!components/**/*.js',
+            '!config/constants.js',
+            '!libs/*.js',
+            '!react/*.js',
+            '!jsx/*.jsx'
+          ],
+          dest: '<%= yeoman.tmp %>/'
+        }]
+      }
+    },
+
     jscs: {
       src: [
         '<%= yeoman.app %>/**/*.js',
@@ -668,6 +727,7 @@ module.exports = function(grunt) {
       'concurrent:server',
       'postcss:prod',
       'ngconstant',
+      'copy:tmp',
       /*      'lodash',*/
       'express:livereload',
       //'open',
