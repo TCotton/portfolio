@@ -1,23 +1,17 @@
-/**
- * Created by andywalpole on 08/04/2014.
- */
 'use strict';
-(function() {
-
-  var app = angular.module('portfolioApp.sideProjectsController');
+class ProjectsPageCtrl {
 
   /**
    * @description Personal projects page
-   * @param $rootScope
-   * @param $scope
-   * @param $log
-   * @param PROJECTS
-   * @param $window
-   * @param _
+   * @param $rootScope {object}
+   * @param $scope {object}
+   * @param $log {object}
+   * @param PROJECTS {object}
+   * @param $window {object}
+   * @param _ {function}
    * @constructor
    */
-  var ProjectsPageCtrl = function($rootScope, $scope, $log, PROJECTS, $window, _) {
-
+  constructor($rootScope, $scope, $log, PROJECTS, $window, _) {
     this.$rootScope = $rootScope;
     this.$scope = $scope;
     this.$log = $log;
@@ -44,17 +38,13 @@
     this.$scope.prevPage = null;
     this.$scope.nextPage = null;
 
-  };
+  }
 
-  ProjectsPageCtrl.$inject = ['$rootScope', '$scope', '$log', 'PROJECTS', '$window', '_'];
+  findData() {
 
-  /** Take the right data for the project page from the constants based on the current page
-   * **/
-  ProjectsPageCtrl.prototype.findData = function() {
+    let currentPage = this.$rootScope.currentPage.substring(this.$rootScope.currentPage.lastIndexOf('/') + 1, this.$rootScope.currentPage.length);
 
-    var currentPage = this.$rootScope.currentPage.substring(this.$rootScope.currentPage.lastIndexOf('/') + 1, this.$rootScope.currentPage.length);
-
-    var wordData = this._.filter(this.PROJECTS, function(o) {
+    let wordData = this._.filter(this.PROJECTS, function(o) {
 
       if (o.internalUrl.substring(o.internalUrl.lastIndexOf('/') + 1, o.internalUrl.length) === currentPage) {
 
@@ -68,17 +58,18 @@
       this.bindData(wordData);
       this.navigation();
 
-    }
-    else {
+    } else {
 
       this.$window.location.href = '/#!/404';
 
     }
-  };
+
+  }
 
   /** Bind the data from the constans to the local scope
    * **/
-  ProjectsPageCtrl.prototype.bindData = function(data) {
+
+  bindData(data) {
 
     this.$scope.title = data[0].title;
     this.$scope.summary = data[0].summary;
@@ -89,21 +80,21 @@
     this.$scope.externalUrl = data[0].externalUrl;
     this.$rootScope.pageTitle = data[0].title + ' - ' + data[0].summary;
 
-  };
+  }
 
   /** Navigation that allows the user to go either forwards or backwards in the side projects section
    * **/
-  ProjectsPageCtrl.prototype.navigation = function() {
 
+  navigation() {
     /**
      * TODO: refactor pagination
      * **/
 
-    var currentPage;
-    var page;
-    var pageNumber;
-    var prevPage;
-    var nextPage;
+    let currentPage;
+    let page;
+    let pageNumber;
+    let prevPage;
+    let nextPage;
 
     currentPage = this.$rootScope.currentPage.substring(this.$rootScope.currentPage.lastIndexOf('/') + 1, this.$rootScope.currentPage.length);
 
@@ -162,8 +153,12 @@
 
       }
     }
-  };
 
-  app.controller('ProjectsPageCtrl', ProjectsPageCtrl);
+  }
+}
 
-}());
+ProjectsPageCtrl.$inject = ['$rootScope', '$scope', '$log', 'PROJECTS', '$window', '_'];
+
+angular.module('portfolioApp.sideProjectsController').controller('ProjectsPageCtrl', ['$rootScope', '$scope', '$log', 'PROJECTS', '$window', '_', function($rootScope, $scope, $log, PROJECTS, $window, _) {
+  return new ProjectsPageCtrl($rootScope, $scope, $log, PROJECTS, $window, _);
+}]);
