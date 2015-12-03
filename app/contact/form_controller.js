@@ -1,22 +1,15 @@
-/**
- * Created by awalpole on 31/03/2014.
- */
-
 'use strict';
-
-(function() {
-
-  var app = angular.module('portfolioApp.contractController');
-
+class FormCtrl {
   /**
    * @description Contact me form submission
-   * @param $scope
-   * @param PostFormFactory
-   * @param $sanitize
-   * @param _
+   * @param $scope {object}
+   * @param PostFormService {object}
+   * @param $sanitize {function}
+   * @param _ {function}
+   * @param $timeout {function}
    * @constructor
    */
-  var FormCtrl = function($scope, PostFormFactory, $sanitize, _, $timeout) {
+  constructor($scope, PostFormService, $sanitize, _, $timeout) {
 
     this.$scope = $scope;
     this.$sanitize = $sanitize;
@@ -25,8 +18,8 @@
 
     /** Using defineProperty prevents injected service being exposed to the template
      * **/
-    Object.defineProperty(this, 'PostFormFactory', {
-      value: PostFormFactory
+    Object.defineProperty(this, 'PostFormService', {
+      value: PostFormService
     });
 
     // declare scope
@@ -39,18 +32,16 @@
     this.$scope.contact.successMessage = null;
     this.$scope.contact.successMessageDisable = null;
 
-  };
-
-  FormCtrl.$inject = ['$scope', 'PostFormFactory', '$sanitize', '_', '$timeout'];
+  }
 
   /** Submit form and display message to user
    * Also delete form model values and disable the submit button
    * **/
 
-  FormCtrl.prototype.submitContactForm = function(isValid) {
+  submitContactForm(isValid) {
 
-    var formData;
-    var promise;
+    let formData;
+    let promise;
 
     this.$scope.submitted = true;
 
@@ -59,16 +50,17 @@
 
       // sanitise and remove naughty spam stuff from email
       // TODO: move to server
-      formData = this._.object(this._.map(this.$scope.contact, function(value, key) {
+      formData = this._.object(this._.map(this.$scope.contact, (value, key) => {
 
         value = this.$sanitize(value).trim();
 
         return [key, value];
-      }.bind(this)));
 
-      promise = this.PostFormFactory.submitForm(formData);
+      }));
 
-      promise.then(function(value) {
+      promise = this.PostFormService.submitForm(formData);
+
+      promise.then((value) => {
 
         if (value.data.success) {
 
@@ -83,13 +75,13 @@
 
         }
 
-      }.bind(this), function() {
+      }, () => {
 
         this.$log('Error: FormCtrl.submitContactForm');
 
-      }.bind(this));
-    }
-    else {
+      });
+
+    } else {
 
       this.$scope.formFailure = 'The form has not been submitted because of errors. Please review the form error messages and click submit again';
       this.$timeout(function() {
@@ -97,9 +89,13 @@
       }, 0);
 
     }
-  };
 
-  app.controller('FormCtrl', FormCtrl);
+  }
+}
 
-}());
+FormCtrl.$inject = ['$scope', 'PostFormService', '$sanitize', '_', '$timeout'];
+
+angular.module('portfolioApp.contractController').controller('FormCtrl', ['$scope', 'PostFormService', '$sanitize', '_', '$timeout', function($scope, PostFormService, $sanitize, _, $timeout) {
+  return new FormCtrl($scope, PostFormService, $sanitize, _, $timeout);
+}]);
 

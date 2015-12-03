@@ -10,7 +10,7 @@ class FooterCtrl {
    * constructor
    * @param $scope {object}
    * @param $log {object}
-   * @param NewsBlurFactory {object}
+   * @param NewsBlurService {object}
    * @param hfs {object}
    */
   constructor($scope, $log, NewsBlurService, hfs) {
