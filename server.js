@@ -139,12 +139,6 @@ if (app.get('env') === 'production') {
 
 }
 
-app.get('/404', function(req, res, next) {
-  var err = new Error('Sample error');
-  err.status = 404;
-  next(err);
-});
-
 app.all('*', function(req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With');

@@ -6,10 +6,8 @@ angular.module('portfolioApp.blogPagesService').factory('BlogDataFactory', ['$ht
   /* cache the relevant data in either session or storage
    * **/
   var _cache = function(blog) {
-
     $angularCacheFactory.get('blogCache').put('totalArticles', blog.data.totalArticles);
     $angularCacheFactory.get('blogCache').put('allBlogPosts', blog.data.BlogPosts);
-
   };
 
   return {
@@ -21,9 +19,7 @@ angular.module('portfolioApp.blogPagesService').factory('BlogDataFactory', ['$ht
 
       // remove cache for debugging purposes
       if ($angularCacheFactory.get('authCache').get('logginIn')) {
-
         $angularCacheFactory.get('blogCache').removeAll();
-
       }
 
       // use a a cache means that it is possible to bypass the above methods and just serve up the data

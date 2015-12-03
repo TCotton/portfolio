@@ -1,25 +1,15 @@
-/**
- * Created by awalpole on 21/05/2014.
- */
-
 'use strict';
-(function() {
-
-  var app = angular.module('portfolioApp.sideProjectsController');
-
-  var _sortCategoriesByPopularity;
-
+class SitemapCtrl {
   /**
    * @description For displaying a HTML sitemap
-   * @param $rootScope
-   * @param $scope
-   * @param $log
-   * @param BlogDataFactory
-   * @param $angularCacheFactory
-   * @param _
+   * @param $scope  {object}
+   * @param $log  {object}
+   * @param BlogDataFactory  {object}
+   * @param $angularCacheFactory {function}
+   * @param _ {function}
    * @constructor
    */
-  var SitemapCtrl = function($rootScope, $scope, $log, BlogDataFactory, $angularCacheFactory, _) {
+  constructor($scope, $log, BlogDataFactory, $angularCacheFactory, _) {
 
     /** Either receive data from BlogDataService or from the cache
      * **/
@@ -31,26 +21,27 @@
      **/
     BlogDataFactory.retrieveData().then(function(result) {
 
+      console.dir(result);
+
       // retrieve blog data to be used in the ng-repeat directive in the sidebar
 
       if (_.isObject(result.data.BlogPosts)) {
-
         $scope.blogData = result.data.BlogPosts;
-
       }
 
     }, function(response) {
 
       $log.warn('Error SitemapCtrl');
       $log.warn(response);
+      console.dir(response);
 
     });
 
     /** Plucks category names from object and then sorts them by popularity
      * **/
-    _sortCategoriesByPopularity = function() {
+    let _sortCategoriesByPopularity = function() {
 
-      var newArray = {};
+      let newArray = {};
 
       _.chain($scope.blogData)
         .pluck('category')
@@ -77,8 +68,7 @@
         $scope.blogTags = _sortCategoriesByPopularity(newData);
         $angularCacheFactory.get('blogCache').put('blogTags', $scope.blogTags);
 
-      }
-      else if (newData !== null && $angularCacheFactory.get('blogCache').get('blogTags')) {
+      } else if (newData !== null && $angularCacheFactory.get('blogCache').get('blogTags')) {
 
         $scope.blogTags = $angularCacheFactory.get('blogCache').get('blogTags');
 
@@ -86,10 +76,11 @@
 
     });
 
-  };
+  }
+}
 
-  SitemapCtrl.$inject = ['$rootScope', '$scope', '$log', 'BlogDataFactory', '$angularCacheFactory', '_'];
+SitemapCtrl.$inject = ['$scope', '$log', 'BlogDataFactory', '$angularCacheFactory', '_'];
 
-  app.controller('SitemapCtrl', SitemapCtrl);
-
-}());
+angular.module('portfolioApp.sideProjectsController').controller('SitemapCtrl', ['$scope', '$log', 'BlogDataFactory', '$angularCacheFactory', '_', function($scope, $log, BlogDataFactory, $angularCacheFactory, _) {
+  return new SitemapCtrl($scope, $log, BlogDataFactory, $angularCacheFactory, _);
+}]);
