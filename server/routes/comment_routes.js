@@ -3,18 +3,30 @@
  */
 
 'use strict';
-
+var fs = require('fs');
+var dir = 'log';
+if (!fs.existsSync(dir)) {
+  fs.mkdirSync(dir);
+}
 var Comments = require('./models/comment_model');
 var moment = require('moment');
-var mail = require('nodemailer');
-var transporter = mail.createTransport();
+var postmarkapp = require('./../config/postmarkapp');
+var postmark = require('postmark');
+var client = new postmark.Client(postmarkapp.api);
+var winston = require('winston');
+
+var logger = new (winston.Logger)({
+  transports: [
+    new (winston.transports.Console)(),
+    new (winston.transports.File)({filename: 'log/comment_routes.log'})
+  ]
+});
 
 module.exports = function(app) {
 
   app.route('/api/comment/add').post(function(req, res) {
 
     Comments.create({
-
       name: req.body.name,
       email: req.body.email,
       url: req.body.url,
@@ -22,7 +34,6 @@ module.exports = function(app) {
       blogId: req.body.blogId,
       published: false,
       publishedDate: moment().valueOf()
-
     }, function(err, comment) {
 
       if (err) {
@@ -36,15 +47,20 @@ module.exports = function(app) {
           'Url: ' + req.body.url + '\n' +
           'Message: ' + req.body.message + '\n';
 
-        transporter.sendMail({
-          from: 'admin@andywalpole.me', // sender address
-          to: 'me@andywalpole.me', // list of receivers
-          subject: 'New comment on website', // Subject line
-          text: message, // plaintext body
-          html: message // html body
-        });
+        client.sendEmail({
+          'From': 'me@andywalpole.me',
+          'To': 'me@andywalpole.me',
+          'Subject': 'New comment on blog',
+          'HtmlBody': message
+        }, function(error) {
+          if (error) {
+            logger.log('info', 'Unable to send (comment notification) via postmark: ' + error.message);
+            return;
+          }
 
-        res.json(comment);
+          res.json(comment);
+
+        });
 
       }
 

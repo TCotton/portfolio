@@ -294,7 +294,6 @@ module.exports = function(grunt) {
     uglify: {
       options: {
         mangle: true,
-        preserveComments: saveLicense,
         compress: {
           sequences: true,
           dead_code: true,

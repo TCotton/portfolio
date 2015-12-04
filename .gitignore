@@ -21,3 +21,4 @@ app/styles/file.css.patch
 .modulus-base-ignore
 scss-lint-report.xml
 tmp/
+log/
