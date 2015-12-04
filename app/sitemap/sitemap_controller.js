@@ -21,10 +21,7 @@ class SitemapCtrl {
      **/
     BlogDataFactory.retrieveData().then(function(result) {
 
-      console.dir(result);
-
       // retrieve blog data to be used in the ng-repeat directive in the sidebar
-
       if (_.isObject(result.data.BlogPosts)) {
         $scope.blogData = result.data.BlogPosts;
       }
@@ -33,7 +30,6 @@ class SitemapCtrl {
 
       $log.warn('Error SitemapCtrl');
       $log.warn(response);
-      console.dir(response);
 
     });
 

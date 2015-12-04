@@ -1,22 +1,24 @@
-/**
- * Created by andywalpole on 08/04/2014.
- */
 'use strict';
-(function() {
-
-  var app = angular.module('portfolioApp.wordProjectsController');
+class WorkPageCtrl {
 
   /**
-   * @description Displays work projects
-   * @param $rootScope
-   * @param $scope
-   * @param $log
-   * @param WORK
-   * @param $window
-   * @param _
+   * @description Personal projects page
+   * @param $rootScope {object}
+   * @param $scope {object}
+   * @param $log {object}
+   * @param WORK {object}
+   * @param $window {object}
+   * @param _ {function}
    * @constructor
    */
-  var WorkPageCtrl = function($rootScope, $scope, $log, WORK, $window, _) {
+  constructor($rootScope, $scope, $log, WORK, $window, _) {
+
+    console.log(typeof $rootScope);
+    console.log(typeof $scope);
+    console.log(typeof $log);
+    console.log(typeof WORK);
+    console.log(typeof $window);
+    console.log(typeof _);
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
@@ -43,11 +45,9 @@
     this.$scope.prevPage = null;
     this.$scope.nextPage = null;
 
-  };
+  }
 
-  WorkPageCtrl.$inject = ['$rootScope', '$scope', '$log', 'WORK', '$window', '_'];
-
-  WorkPageCtrl.prototype.findData = function() {
+  findData() {
 
     var currentPage = this.$rootScope.currentPage.substring(this.$rootScope.currentPage.lastIndexOf('/') + 1, this.$rootScope.currentPage.length);
 
@@ -65,16 +65,18 @@
       this.bindData(wordData);
       this.navigation();
 
-    }
-    else {
+    } else {
 
       this.$window.location.href = '/#!/404';
 
     }
 
-  };
+  }
 
-  WorkPageCtrl.prototype.bindData = function(data) {
+  /** Bind the data from the constans to the local scope
+   * **/
+
+  bindData(data) {
 
     this.$scope.title = data[0].title;
     this.$scope.summary = data[0].summary;
@@ -85,9 +87,12 @@
     this.$scope.workImageWebP = data[0].workImage + '.webp';
     this.$rootScope.pageTitle = data[0].title + ' - ' + data[0].summary;
 
-  };
+  }
 
-  WorkPageCtrl.prototype.navigation = function() {
+  /** Navigation that allows the user to go either forwards or backwards in the side projects section
+   * **/
+
+  navigation() {
 
     /**
      * TODO: refactor pagination
@@ -156,8 +161,14 @@
 
       }
     }
-  };
 
-  app.controller('WorkPageCtrl', WorkPageCtrl);
+  }
+}
 
-}());
+WorkPageCtrl.$inject = ['$rootScope', '$scope', '$log', 'PROJECTS', '$window', '_'];
+
+angular.module('portfolioApp.wordProjectsController').controller('WorkPageCtrl', ['$rootScope', '$scope', '$log', 'PROJECTS', '$window', '_', function($rootScope, $scope, $log, PROJECTS, $window, _) {
+  return new WorkPageCtrl($rootScope, $scope, $log, PROJECTS, $window, _);
+}]);
+
+console.log('WorkPageCtrl');
