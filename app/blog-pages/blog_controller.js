@@ -1,22 +1,17 @@
-/**
- * Created by andywalpole on 01/04/2014.
- */
-
 'use strict';
-(function() {
-
-  var app = angular.module('portfolioApp.blogPagesController');
+class BlogCtrl {
 
   /**
    * @description Blog home page
-   * @param $scope
-   * @param BlogDataFactory
-   * @param $angularCacheFactory
-   * @param $rootScope
-   * @param _
+   * @param $scope {object}
+   * @param BlogDataFactory {object}
+   * @param $angularCacheFactory {function}
+   * @param $rootScope {function}
+   * @param _ {object}
    * @constructor
    */
-  var BlogCtrl = function($scope, BlogDataFactory, $angularCacheFactory, _, $rootScope) {
+
+  constructor($scope, BlogDataFactory, $angularCacheFactory, _, $rootScope) {
 
     this.$scope = $scope;
     this.$rootScope = $rootScope;
@@ -29,14 +24,13 @@
 
       this.$scope.totalBlogPosts = $angularCacheFactory.get('blogCache').get('allBlogPosts');
 
-    }
-    else {
+    } else {
 
       // start loader spinner in loaderDirective
 
       this.$rootScope.loader = true;
 
-      BlogDataFactory.retrieveData().then(function(result) {
+      BlogDataFactory.retrieveData().then((result) => {
 
         if (_.isObject(result.data.BlogPosts)) {
 
@@ -47,14 +41,14 @@
 
         }
 
-      }.bind(this));
+      });
 
     }
+  }
+}
 
-  };
+BlogCtrl.$inject = ['$scope', 'BlogDataFactory', '$angularCacheFactory', '_', '$rootScope'];
 
-  BlogCtrl.$inject = ['$scope', 'BlogDataFactory', '$angularCacheFactory', '_', '$rootScope'];
-
-  app.controller('BlogCtrl', BlogCtrl);
-
-}());
+angular.module('portfolioApp.blogPagesController').controller('BlogCtrl', ['$scope', 'BlogDataFactory', '$angularCacheFactory', '_', '$rootScope', function($scope, BlogDataFactory, $angularCacheFactory, _, $rootScope) {
+  return new BlogCtrl($scope, BlogDataFactory, $angularCacheFactory, _, $rootScope);
+}]);
