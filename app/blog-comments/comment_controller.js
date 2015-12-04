@@ -1,110 +1,109 @@
-/**
- * Created by awalpole on 05/05/2014.
- */
-'use strict';
 (function() {
-  var app = angular.module('portfolioApp.blogAdminController');
-  /**
-   * @description For displaying and the submission of blog comments
-   * @param $scope
-   * @param $rootScope
-   * @param MongoCommentFactory
-   * @param $log
-   * @param $timeout
-   * @constructor
-   */
-  var CommentCtrl = function($scope, $rootScope, MongoCommentFactory, $log, $timeout) {
+  'use strict';
+  class CommentCtrl {
 
-    this.$scope = $scope;
-    this.$rootScope = $rootScope;
-    this.$log = $log;
-    this.$timeout = $timeout;
+    /**
+     * @description For displaying and the submission of blog comments
+     * @param $scope {object}
+     * @param $rootScope {object}
+     * @param MongoCommentFactory {object}
+     * @param $log {object}
+     * @param $timeout {function}
+     * @constructor
+     */
 
-    /** Using defineProperty prevents injected service being exposed to the template
-     * **/
-    Object.defineProperty(this, 'MongoCommentFactory', {
-      value: MongoCommentFactory
-    });
+    constructor($scope, $rootScope, MongoCommentFactory, $log, $timeout) {
 
-    this.$scope.commentBlogFormSubmit = false;
-    this.$scope.publishComments = null;
-    this.$scope.commentFormData = {};
-    this.$scope.zipRegex = /(?!.*)/;
+      this.$scope = $scope;
+      this.$rootScope = $rootScope;
+      this.$log = $log;
+      this.$timeout = $timeout;
 
-    // find blogId number form the URL string, ie /#!/blog/136324/using-autoload-in-object-orientated-wordpress-plugin
-    this.$scope.commentFormData.blogId = $rootScope.currentPage.substring($rootScope.currentPage.indexOf('/#!/') + 9, $rootScope.currentPage.indexOf('/#!/') + 15);
+      /** Using defineProperty prevents injected service being exposed to the template
+       * **/
+      Object.defineProperty(this, 'MongoCommentFactory', {
+        value: MongoCommentFactory
+      });
 
-  };
+      this.$scope.commentBlogFormSubmit = false;
+      this.$scope.publishComments = null;
+      this.$scope.commentFormData = {};
+      this.$scope.zipRegex = /(?!.*)/;
 
-  CommentCtrl.$inject = ['$scope', '$rootScope', 'MongoCommentFactory', '$log', '$timeout'];
+      // find blogId number form the URL string, ie /#!/blog/136324/using-autoload-in-object-orientated-wordpress-plugin
+      this.$scope.commentFormData.blogId = $rootScope.currentPage.substring($rootScope.currentPage.indexOf('/#!/') + 9, $rootScope.currentPage.indexOf('/#!/') + 15);
+    }
 
-  CommentCtrl.prototype.retreiveComment = function() {
+    retreiveComment() {
 
-    var data = {
-      blogId: this.$scope.commentFormData.blogId
-    };
+      let data = {
+        blogId: this.$scope.commentFormData.blogId
+      };
 
-    var returnedData = this.MongoCommentFactory.getPubilshedComments(data);
+      const returnedData = this.MongoCommentFactory.getPubilshedComments(data);
 
-    returnedData.then(function(result) {
+      returnedData.then((result) => {
 
-      if (!_.isEmpty(result.data)) {
+        if (!_.isEmpty(result.data)) {
 
-        this.$scope.publishComments = result.data;
+          this.$scope.publishComments = result.data;
+
+        }
+
+      }, (result) => {
+        this.$log.warn('Failure: CommentCtrl.retreiveComment');
+        this.$log.warn(result);
+      });
+
+    }
+
+    submitComment(isValid) {
+      console.log(typeof isValid);
+
+      this.$scope.commentBlogFormSubmit = true;
+
+      if (!isValid) {
+
+        this.$scope.formFailure = 'The form has not been submitted because of errors. Please review the form error messages and click submit again';
+        this.$timeout(function() {
+          document.querySelector('.comment-form-failure').focus();
+        }, 0);
 
       }
 
-    }.bind(this), function(result) {
-      this.$log.warn('Failure: CommentCtrl.retreiveComment');
-      this.$log.warn(result);
-    }.bind(this));
+      if (isValid) {
 
-  };
+        let returnedData = this.MongoCommentFactory.addComment(this.$scope.commentFormData);
 
-  CommentCtrl.prototype.submitComment = function(isValid) {
+        returnedData.then(() => {
 
-    this.$scope.commentBlogFormSubmit = true;
+          this.$scope.formFailure = null;
+          this.$scope.formSuccess = 'You have successfully submitted a blog comment';
+          this.$timeout(function() {
+            document.querySelector('.comment-form-success').focus();
+          }, 0);
 
-    if (!isValid) {
+          // reset scope to remove values from input fields
+          // loop over form field models
+          Object.keys(this.$scope.commentFormData).forEach(function(key) {
+            this.$scope.commentFormData[key] = null;
+          }, this);
 
-      this.$scope.formFailure = 'The form has not been submitted because of errors. Please review the form error messages and click submit again';
-      this.$timeout(function() {
-        document.querySelector('.comment-form-failure').focus();
-      }, 0);
+          this.$scope.commentBlogFormSubmit = false;
 
+        }, (value) => {
+          this.$log.warn('Failure: CommentCtrl.submitComment');
+          this.$log.warn(value);
+        });
+
+      }
     }
+  }
 
-    if (isValid) {
+  CommentCtrl.$inject = ['$scope', '$rootScope', 'MongoCommentFactory', '$log', '$timeout'];
 
-      var returnedData = this.MongoCommentFactory.addComment(this.$scope.commentFormData);
-
-      returnedData.then(function() {
-
-        this.$scope.formFailure = null;
-        this.$scope.formSuccess = 'You have successfully submitted a blog comment';
-        this.$timeout(function() {
-          document.querySelector('.comment-form-success').focus();
-        }, 0);
-
-        // reset scope to remove values from input fields
-        // loop over form field models
-        Object.keys(this.$scope.commentFormData).forEach(function(key) {
-
-          this.$scope.commentFormData[key] = null;
-
-        }, this);
-
-        this.$scope.commentBlogFormSubmit = false;
-
-      }.bind(this), function(value) {
-        this.$log.warn('Failure: CommentCtrl.submitComment');
-        this.$log.warn(value);
-      }.bind(this));
-
-    }
-
-  };
-
-  app.controller('CommentCtrl', CommentCtrl);
+  angular.module('portfolioApp.blogAdminController').controller('CommentCtrl', ['$scope', '$rootScope', 'MongoCommentFactory', '$log', '$timeout', function($scope, $rootScope, MongoCommentFactory, $log, $timeout) {
+    return new CommentCtrl($scope, $rootScope, MongoCommentFactory, $log, $timeout);
+  }]);
 
 }());
