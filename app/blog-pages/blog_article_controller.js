@@ -7,7 +7,7 @@
      * @param $rootScope {object}
      * @param $scope {object}
      * @param $location {object}
-     * @param BlogDataFactory {object}
+     * @param BlogDataService {object}
      * @param $log {object}
      * @param $timeout {function}
      * @param $sce {object}
@@ -18,7 +18,7 @@
      * @constructor
      */
 
-    constructor($rootScope, $scope, $location, BlogDataFactory, $log, $timeout, $sce, $angularCacheFactory, $route, $filter, _) {
+    constructor($rootScope, $scope, $location, BlogDataService, $log, $timeout, $sce, $angularCacheFactory, $route, $filter, _) {
 
       this.$rootScope = $rootScope;
       this.$scope = $scope;
@@ -47,7 +47,7 @@
 
         this.$rootScope.loader = true;
 
-        BlogDataFactory.retrieveData().then((result) => {
+        BlogDataService.retrieveData().then((result) => {
 
           if (_.isObject(result.data.BlogPosts)) {
 
@@ -134,10 +134,10 @@
 
   }
 
-  BlogArticleCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataFactory', '$log', '$timeout', '$sce', '$angularCacheFactory', '$route', '$filter', '_'];
+  BlogArticleCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataService', '$log', '$timeout', '$sce', '$angularCacheFactory', '$route', '$filter', '_'];
 
-  angular.module('portfolioApp.blogPagesController').controller('BlogArticleCtrl', ['$rootScope', '$scope', '$location', 'BlogDataFactory', '$log', '$timeout', '$sce', '$angularCacheFactory', '$route', '$filter', '_', function($rootScope, $scope, $location, BlogDataFactory, $log, $timeout, $sce, $angularCacheFactory, $route, $filter, _) {
-    return new BlogArticleCtrl($rootScope, $scope, $location, BlogDataFactory, $log, $timeout, $sce, $angularCacheFactory, $route, $filter, _);
+  angular.module('portfolioApp.blogPagesController').controller('BlogArticleCtrl', ['$rootScope', '$scope', '$location', 'BlogDataService', '$log', '$timeout', '$sce', '$angularCacheFactory', '$route', '$filter', '_', function($rootScope, $scope, $location, BlogDataService, $log, $timeout, $sce, $angularCacheFactory, $route, $filter, _) {
+    return new BlogArticleCtrl($rootScope, $scope, $location, BlogDataService, $log, $timeout, $sce, $angularCacheFactory, $route, $filter, _);
   }]);
 
 }());

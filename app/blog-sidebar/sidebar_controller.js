@@ -6,7 +6,7 @@
      * @description Displays blog posts and categories in blog sidebar
      * @param $scope {object}
      * @param $log {object}
-     * @param BlogDataFactory {object}
+     * @param BlogDataService {object}
      * @param $angularCacheFactory {function}
      * @param $window {object}
      * @param $timeout {function}
@@ -15,7 +15,7 @@
      * @constructor
      */
 
-    constructor($scope, $log, BlogDataFactory, $angularCacheFactory, $window, $timeout, _, storage) {
+    constructor($scope, $log, BlogDataService, $angularCacheFactory, $window, $timeout, _, storage) {
 
       $scope.blogData = null;
 
@@ -37,7 +37,7 @@
 
           /** Take blog object from service ready to be used in the side bar lists
            **/
-          BlogDataFactory.retrieveData().then(function(result) {
+          BlogDataService.retrieveData().then(function(result) {
 
             // retrieve blog data to be used in the ng-repeat directive in the sidebar
             if (_.isObject(result.data.BlogPosts)) {
@@ -145,10 +145,10 @@
 
   }
 
-  SidebarCtrl.$inject = ['$scope', '$log', 'BlogDataFactory', '$angularCacheFactory', '$window', '$timeout', '_', 'storage'];
+  SidebarCtrl.$inject = ['$scope', '$log', 'BlogDataService', '$angularCacheFactory', '$window', '$timeout', '_', 'storage'];
 
-  angular.module('portfolioApp.blogSidebarController').controller('SidebarCtrl', ['$scope', '$log', 'BlogDataFactory', '$angularCacheFactory', '$window', '$timeout', '_', 'storage', function($scope, $log, BlogDataFactry, $angularCacheFactory, $window, $timeout, _, storage) {
-    return new SidebarCtrl($scope, $log, BlogDataFactry, $angularCacheFactory, $window, $timeout, _, storage);
+  angular.module('portfolioApp.blogSidebarController').controller('SidebarCtrl', ['$scope', '$log', 'BlogDataService', '$angularCacheFactory', '$window', '$timeout', '_', 'storage', function($scope, $log, BlogDataService, $angularCacheFactory, $window, $timeout, _, storage) {
+    return new SidebarCtrl($scope, $log, BlogDataService, $angularCacheFactory, $window, $timeout, _, storage);
   }]);
 
 }());

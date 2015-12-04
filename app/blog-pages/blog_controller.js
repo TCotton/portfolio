@@ -12,7 +12,7 @@
      * @constructor
      */
 
-    constructor($scope, BlogDataFactory, $angularCacheFactory, _, $rootScope) {
+    constructor($scope, BlogDataService, $angularCacheFactory, _, $rootScope) {
 
       this.$scope = $scope;
       this.$rootScope = $rootScope;
@@ -31,7 +31,7 @@
 
         this.$rootScope.loader = true;
 
-        BlogDataFactory.retrieveData().then((result) => {
+        BlogDataService.retrieveData().then((result) => {
 
           if (_.isObject(result.data.BlogPosts)) {
 
@@ -48,10 +48,10 @@
     }
   }
 
-  BlogCtrl.$inject = ['$scope', 'BlogDataFactory', '$angularCacheFactory', '_', '$rootScope'];
+  BlogCtrl.$inject = ['$scope', 'BlogDataService', '$angularCacheFactory', '_', '$rootScope'];
 
-  angular.module('portfolioApp.blogPagesController').controller('BlogCtrl', ['$scope', 'BlogDataFactory', '$angularCacheFactory', '_', '$rootScope', function($scope, BlogDataFactory, $angularCacheFactory, _, $rootScope) {
-    return new BlogCtrl($scope, BlogDataFactory, $angularCacheFactory, _, $rootScope);
+  angular.module('portfolioApp.blogPagesController').controller('BlogCtrl', ['$scope', 'BlogDataService', '$angularCacheFactory', '_', '$rootScope', function($scope, BlogDataService, $angularCacheFactory, _, $rootScope) {
+    return new BlogCtrl($scope, BlogDataService, $angularCacheFactory, _, $rootScope);
   }]);
 
 }());

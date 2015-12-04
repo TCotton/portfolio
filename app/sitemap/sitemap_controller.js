@@ -3,14 +3,14 @@
   class SitemapCtrl {
     /**
      * @description For displaying a HTML sitemap
-     * @param $scope  {object}
-     * @param $log  {object}
-     * @param BlogDataFactory  {object}
+     * @param $scope {object}
+     * @param $log {object}
+     * @param BlogDataService {object}
      * @param $angularCacheFactory {function}
      * @param _ {function}
      * @constructor
      */
-    constructor($scope, $log, BlogDataFactory, $angularCacheFactory, _) {
+    constructor($scope, $log, BlogDataService, $angularCacheFactory, _) {
 
       /** Either receive data from BlogDataService or from the cache
        * **/
@@ -20,7 +20,7 @@
 
       /** Take blog object from service ready to be used in the side bar lists
        **/
-      BlogDataFactory.retrieveData().then(function(result) {
+      BlogDataService.retrieveData().then(function(result) {
 
         // retrieve blog data to be used in the ng-repeat directive in the sidebar
         if (_.isObject(result.data.BlogPosts)) {
@@ -76,10 +76,10 @@
     }
   }
 
-  SitemapCtrl.$inject = ['$scope', '$log', 'BlogDataFactory', '$angularCacheFactory', '_'];
+  SitemapCtrl.$inject = ['$scope', '$log', 'BlogDataService', '$angularCacheFactory', '_'];
 
-  angular.module('portfolioApp.sideProjectsController').controller('SitemapCtrl', ['$scope', '$log', 'BlogDataFactory', '$angularCacheFactory', '_', function($scope, $log, BlogDataFactory, $angularCacheFactory, _) {
-    return new SitemapCtrl($scope, $log, BlogDataFactory, $angularCacheFactory, _);
+  angular.module('portfolioApp.sideProjectsController').controller('SitemapCtrl', ['$scope', '$log', 'BlogDataService', '$angularCacheFactory', '_', function($scope, $log, BlogDataService, $angularCacheFactory, _) {
+    return new SitemapCtrl($scope, $log, BlogDataService, $angularCacheFactory, _);
   }]);
 
 }());

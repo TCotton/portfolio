@@ -6,14 +6,14 @@
      * @description For displaying posts in their respective categories
      * @param $scope {object}
      * @param $location {object}
-     * @param BlogDataFactory {object}
+     * @param BlogDataService {object}
      * @param $log {object}
      * @param $angularCacheFactory {function}
      * @param $rootScope {object}
      * @param _ {function}
      * @constructor
      */
-    constructor($scope, $location, BlogDataFactory, $log, $angularCacheFactory, $rootScope, _) {
+    constructor($scope, $location, BlogDataService, $log, $angularCacheFactory, $rootScope, _) {
 
       this.$scope = $scope;
       this.$location = $location;
@@ -40,7 +40,7 @@
         // start loader spinner in loaderDirective
         this.$rootScope.loader = true;
 
-        BlogDataFactory.retrieveData().then((result) => {
+        BlogDataService.retrieveData().then((result) => {
 
           if (_.isObject(result.data.BlogPosts)) {
 
@@ -132,10 +132,10 @@
 
   }
 
-  BlogCatController.$inject = ['$scope', '$location', 'BlogDataFactory', '$log', '$angularCacheFactory', '$rootScope', '_'];
+  BlogCatController.$inject = ['$scope', '$location', 'BlogDataService', '$log', '$angularCacheFactory', '$rootScope', '_'];
 
-  angular.module('portfolioApp.blogPagesController').controller('BlogCatController', ['$scope', '$location', 'BlogDataFactory', '$log', '$angularCacheFactory', '$rootScope', '_', function($scope, $location, BlogDataFactory, $log, $angularCacheFactory, $rootScope, _) {
-    return new BlogCatController($scope, $location, BlogDataFactory, $log, $angularCacheFactory, $rootScope, _);
+  angular.module('portfolioApp.blogPagesController').controller('BlogCatController', ['$scope', '$location', 'BlogDataService', '$log', '$angularCacheFactory', '$rootScope', '_', function($scope, $location, BlogDataService, $log, $angularCacheFactory, $rootScope, _) {
+    return new BlogCatController($scope, $location, BlogDataService, $log, $angularCacheFactory, $rootScope, _);
   }]);
 
 }());

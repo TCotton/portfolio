@@ -28,7 +28,6 @@ angular.module('portfolioApp.blogPagesDirective').directive('scrollToTop', ['$ti
   };
 
   /**
-   *
    * @param event {object}
    */
 
