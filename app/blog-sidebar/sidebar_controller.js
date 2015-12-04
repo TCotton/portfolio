@@ -1,30 +1,20 @@
-/**
- * Created by awalpole on 11/04/2014.
- */
-
 'use strict';
-(function() {
-
-  var app = angular.module('portfolioApp.blogSidebarController');
-
-  /** Declare enclosed scope variable names
-   * **/
-  var _sortCategoriesByPopularity;
-  var _populateBlogScope;
-  var _handleMediaMatch;
+class SidebarCtrl {
 
   /**
    * @description Displays blog posts and categories in blog sidebar
-   * @param $rootScope
-   * @param $scope
-   * @param $log
-   * @param BlogDataFactory
-   * @param $angularCacheFactory
-   * @param $window
-   * @param $timeout
+   * @param $scope {object}
+   * @param $log {object}
+   * @param BlogDataFactory {object}
+   * @param $angularCacheFactory {function}
+   * @param $window {object}
+   * @param $timeout {function}
+   * @param _ {function}
+   * @param storage {object}
    * @constructor
    */
-  var SidebarCtrl = function($rootScope, $scope, $log, BlogDataFactory, $angularCacheFactory, $window, $timeout, _, storage) {
+
+  constructor($scope, $log, BlogDataFactory, $angularCacheFactory, $window, $timeout, _, storage) {
 
     $scope.blogData = null;
 
@@ -34,7 +24,7 @@
      * @type {function(this:SidebarCtrl)|*|Function}
      * @private
      */
-    _populateBlogScope = function() {
+    let _populateBlogScope = function() {
 
       /** Either receive data from BlogDataService or from the cache
        * **/
@@ -42,8 +32,7 @@
 
         $scope.blogData = $angularCacheFactory.get('blogCache').get('allBlogPosts');
 
-      }
-      else {
+      } else {
 
         /** Take blog object from service ready to be used in the side bar lists
          **/
@@ -75,9 +64,9 @@
      * @returns {Array}
      * @private
      */
-    _sortCategoriesByPopularity = function(blogPosts) {
+    let _sortCategoriesByPopularity = function(blogPosts) {
 
-      var newArray = {};
+      let newArray = {};
 
       _.chain(blogPosts)
         .pluck('category')
@@ -104,7 +93,7 @@
      * @private
      */
 
-    _handleMediaMatch = function(mql) {
+    let _handleMediaMatch = function(mql) {
 
       if (!mql.matches) {
 
@@ -112,7 +101,7 @@
           _populateBlogScope();
         }, 0);
 
-        var unbindWatcher = $scope.$watch('blogData', function(newData) {
+        let unbindWatcher = $scope.$watch('blogData', function(newData) {
 
           if (newData !== null && !$angularCacheFactory.get('blogCache').get('blogTags')) {
 
@@ -145,17 +134,18 @@
       mql.addListener(_handleMediaMatch);
       _handleMediaMatch(mql);
 
-    }
-    else {
+    } else {
 
       _populateBlogScope();
 
     }
 
-  };
+  }
 
-  SidebarCtrl.$inject = ['$rootScope', '$scope', '$log', 'BlogDataFactory', '$angularCacheFactory', '$window', '$timeout', '_', 'storage'];
+}
 
-  app.controller('SidebarCtrl', SidebarCtrl);
+SidebarCtrl.$inject = ['$scope', '$log', 'BlogDataFactory', '$angularCacheFactory', '$window', '$timeout', '_', 'storage'];
 
-}());
+angular.module('portfolioApp.blogSidebarController').controller('SidebarCtrl', ['$scope', '$log', 'BlogDataFactory', '$angularCacheFactory', '$window', '$timeout', '_', 'storage', function($scope, $log, BlogDataFactry, $angularCacheFactory, $window, $timeout, _, storage) {
+  return new SidebarCtrl($scope, $log, BlogDataFactry, $angularCacheFactory, $window, $timeout, _, storage);
+}]);
