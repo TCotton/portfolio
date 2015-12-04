@@ -18,15 +18,15 @@
    * @param {library} _
    * @constructor
    */
-  var CommentAdminCtrl = function($scope, MongoCommentFactory, $log, _) {
+  var CommentAdminCtrl = function($scope, MongoCommentService, $log, _) {
 
     this.$scope = $scope;
     this.$log = $log;
     this._ = _;
     /** Using defineProperty prevents injected service being exposed to the template
      * **/
-    Object.defineProperty(this, 'MongoCommentFactory', {
-      value: MongoCommentFactory
+    Object.defineProperty(this, 'MongoCommentService', {
+      value: MongoCommentService
     });
 
     this.$scope.comments = null;
@@ -39,7 +39,7 @@
 
   CommentAdminCtrl.prototype.getComments = function() {
 
-    var returnedPromise = this.MongoCommentFactory.getComments();
+    var returnedPromise = this.MongoCommentService.getComments();
 
     returnedPromise.then(function(result) {
 
@@ -60,7 +60,7 @@
 
   CommentAdminCtrl.prototype.deleteComment = function(data) {
 
-    var returnedPromise = this.MongoCommentFactory.deleteComment(data._id);
+    var returnedPromise = this.MongoCommentService.deleteComment(data._id);
 
     returnedPromise.then(function(value) {
 
@@ -87,7 +87,7 @@
       published: data.published !== true || false
     };
 
-    var returnedPromise = this.MongoCommentFactory.editComment(formData);
+    var returnedPromise = this.MongoCommentService.editComment(formData);
 
     returnedPromise.then(function(value) {
 
@@ -107,7 +107,7 @@
 
   };
 
-  CommentAdminCtrl.$inject = ['$scope', 'MongoCommentFactory', '$log', '_'];
+  CommentAdminCtrl.$inject = ['$scope', 'MongoCommentService', '$log', '_'];
 
   app.controller('CommentAdminCtrl', CommentAdminCtrl);
 

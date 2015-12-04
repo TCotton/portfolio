@@ -12,7 +12,7 @@
      * @constructor
      */
 
-    constructor($scope, $rootScope, MongoCommentFactory, $log, $timeout) {
+    constructor($scope, $rootScope, MongoCommentService, $log, $timeout) {
 
       this.$scope = $scope;
       this.$rootScope = $rootScope;
@@ -21,8 +21,8 @@
 
       /** Using defineProperty prevents injected service being exposed to the template
        * **/
-      Object.defineProperty(this, 'MongoCommentFactory', {
-        value: MongoCommentFactory
+      Object.defineProperty(this, 'MongoCommentService', {
+        value: MongoCommentService
       });
 
       this.$scope.commentBlogFormSubmit = false;
@@ -40,7 +40,7 @@
         blogId: this.$scope.commentFormData.blogId
       };
 
-      const returnedData = this.MongoCommentFactory.getPubilshedComments(data);
+      const returnedData = this.MongoCommentService.getPubilshedComments(data);
 
       returnedData.then((result) => {
 
@@ -58,7 +58,6 @@
     }
 
     submitComment(isValid) {
-      console.log(typeof isValid);
 
       this.$scope.commentBlogFormSubmit = true;
 
@@ -73,7 +72,7 @@
 
       if (isValid) {
 
-        let returnedData = this.MongoCommentFactory.addComment(this.$scope.commentFormData);
+        let returnedData = this.MongoCommentService.addComment(this.$scope.commentFormData);
 
         returnedData.then(() => {
 
@@ -100,10 +99,10 @@
     }
   }
 
-  CommentCtrl.$inject = ['$scope', '$rootScope', 'MongoCommentFactory', '$log', '$timeout'];
+  CommentCtrl.$inject = ['$scope', '$rootScope', 'MongoCommentService', '$log', '$timeout'];
 
-  angular.module('portfolioApp.blogAdminController').controller('CommentCtrl', ['$scope', '$rootScope', 'MongoCommentFactory', '$log', '$timeout', function($scope, $rootScope, MongoCommentFactory, $log, $timeout) {
-    return new CommentCtrl($scope, $rootScope, MongoCommentFactory, $log, $timeout);
+  angular.module('portfolioApp.blogAdminController').controller('CommentCtrl', ['$scope', '$rootScope', 'MongoCommentService', '$log', '$timeout', function($scope, $rootScope, MongoCommentService, $log, $timeout) {
+    return new CommentCtrl($scope, $rootScope, MongoCommentService, $log, $timeout);
   }]);
 
 }());
