@@ -1,28 +1,23 @@
-/**
- * Created by awalpole on 05/04/2014.
- */
-
 'use strict';
-(function() {
-
-  var app = angular.module('portfolioApp.blogPagesController');
+class BlogArticleCtrl {
 
   /**
    * @description For displaying individual blog posts
-   * @param $rootScope
-   * @param $scope
-   * @param $location
-   * @param BlogDataFactory
-   * @param $log
-   * @param $timeout
-   * @param $sce
-   * @param $angularCacheFactory
-   * @param $route
-   * @param $filter
-   * @param _
+   * @param $rootScope {object}
+   * @param $scope {object}
+   * @param $location {object}
+   * @param BlogDataFactory {object}
+   * @param $log {object}
+   * @param $timeout {function}
+   * @param $sce {object}
+   * @param $angularCacheFactory {function}
+   * @param $route {object}
+   * @param $filter {function}
+   * @param _ {function}
    * @constructor
    */
-  var BlogArticleCtrl = function($rootScope, $scope, $location, BlogDataFactory, $log, $timeout, $sce, $angularCacheFactory, $route, $filter, _) {
+
+  constructor($rootScope, $scope,$location, BlogDataFactory, $log, $timeout, $sce, $angularCacheFactory, $route, $filter, _) {
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
@@ -45,14 +40,13 @@
 
       this.$scope.oldBlogPosts = $angularCacheFactory.get('blogCache').get('allBlogPosts');
 
-    }
-    else {
+    } else {
 
       // start loader spinner in loaderDirective
 
       this.$rootScope.loader = true;
 
-      BlogDataFactory.retrieveData().then(function(result) {
+      BlogDataFactory.retrieveData().then((result) => {
 
         if (_.isObject(result.data.BlogPosts)) {
 
@@ -63,29 +57,28 @@
 
         }
 
-      }.bind(this), function(response) {
+      }, (response) => {
 
         this.$log.warn('Error BlogArticleCtrl');
         this.$log.warn(response);
 
-      }.bind(this));
+      });
 
     }
 
     // find blogId number form the URL string, ie /#!/blog/136324/using-autoload-in-object-orientated-wordpress-plugin
-    var blogId = this.$rootScope.currentPage.substring(this.$rootScope.currentPage.indexOf('/#!/') + 9, this.$rootScope.currentPage.indexOf('/#!/') + 15);
+    let blogId = this.$rootScope.currentPage.substring(this.$rootScope.currentPage.indexOf('/#!/') + 9, this.$rootScope.currentPage.indexOf('/#!/') + 15);
 
     /**
      * @type {function(this:BlogArticleCtrl)|*|Function}
      * @private
      */
-    var _renderArticle = function() {
+    let _renderArticle = () => {
 
-      var blogPost = _.filter(this.$scope.oldBlogPosts, function(o) {
+      let blogPost = _.filter(this.$scope.oldBlogPosts, function(o) {
 
         // filter articles array to find the correct article for the page
         if (o.publishedDate.substring(0, 6) === blogId) {
-
           return o.publishedDate;
         }
       });
@@ -100,11 +93,10 @@
         this.$scope.displayImage = blogPost[0].displayImage;
         if (blogPost[0].displayImage.indexOf('stock-photo') !== -1) {
 
-          var dot = blogPost[0].displayImage.lastIndexOf('.');
+          let dot = blogPost[0].displayImage.lastIndexOf('.');
           this.$scope.displaySrcsetImage = blogPost[0].displayImage.slice(0, dot) + '-small' + blogPost[0].displayImage.slice(dot);
 
-        }
-        else {
+        } else {
 
           this.$scope.displaySrcsetImage = blogPost[0].displayImage;
 
@@ -115,12 +107,11 @@
         this.$scope.URLencoded = encodeURIComponent(this.$rootScope.currentPage);
         this.$rootScope.faceBookTitle = blogPost[0].title;
         this.$rootScope.faceBookDescription = blogPost[0].contentSnippet;
-        this.$timeout(function() {
+        this.$timeout(() => {
           this.$scope.wordCount = this.$filter('wordcount')(document.querySelector('section > div').innerText || document.querySelector('section > div').textContent);
-        }.bind(this), 0);
+        }, 0);
 
-      }
-      else {
+      } else {
 
         // if not empty redirect to homepage
         // TODO: move this server side
@@ -128,22 +119,22 @@
 
       }
 
-    }.bind(this);
+    };
 
     this.$scope.$watch('oldBlogPosts', function(blogData) {
 
       if (blogData !== null) {
-
         _renderArticle();
-
       }
 
     });
 
-  };
+  }
 
-  BlogArticleCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataFactory', '$log', '$timeout', '$sce', '$angularCacheFactory', '$route', '$filter', '_'];
+}
 
-  app.controller('BlogArticleCtrl', BlogArticleCtrl);
+BlogArticleCtrl.$inject = ['$rootScope', '$scope', '$location', 'BlogDataFactory', '$log', '$timeout', '$sce', '$angularCacheFactory', '$route', '$filter', '_'];
 
-}());
+angular.module('portfolioApp.blogPagesController').controller('BlogArticleCtrl', ['$rootScope', '$scope', '$location', 'BlogDataFactory', '$log', '$timeout', '$sce', '$angularCacheFactory', '$route', '$filter', '_', function($rootScope, $scope, $location, BlogDataFactory, $log, $timeout, $sce, $angularCacheFactory, $route, $filter, _) {
+  return new BlogArticleCtrl($rootScope, $scope, $location, BlogDataFactory, $log, $timeout, $sce, $angularCacheFactory, $route, $filter, _);
+}]);

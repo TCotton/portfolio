@@ -1,25 +1,18 @@
-/**
- * Created by awalpole on 30/08/2014.
- */
-
 'use strict';
-(function() {
+class BlogCatController {
 
-  var app = angular.module('portfolioApp.blogPagesController');
-
-  var _filterBlogPosts;
   /**
    * @description For displaying posts in their respective categories
-   * @param $scope
-   * @param $location
-   * @param BlogDataFactory
-   * @param $log
-   * @param $angularCacheFactory
-   * @param $rootScope
-   * @param _
+   * @param $scope {object}
+   * @param $location {object}
+   * @param BlogDataFactory {object}
+   * @param $log {object}
+   * @param $angularCacheFactory {function}
+   * @param $rootScope {object}
+   * @param _ {function}
    * @constructor
    */
-  var BlogCatController = function($scope, $location, BlogDataFactory, $log, $angularCacheFactory, $rootScope, _) {
+  constructor($scope, $location, BlogDataFactory, $log, $angularCacheFactory, $rootScope, _) {
 
     this.$scope = $scope;
     this.$location = $location;
@@ -32,8 +25,8 @@
     this.$scope.displayPosts = 10;
     this.$scope.blogPosts = null;
 
-    var urlPath = this.$location.path();
-    var category = urlPath.substring(urlPath.lastIndexOf('/') + 1, urlPath.length);
+    const urlPath = this.$location.path();
+    const category = urlPath.substring(urlPath.lastIndexOf('/') + 1, urlPath.length);
 
     /** Either receive data from BlogDataService or from the cache
      * **/
@@ -41,14 +34,12 @@
 
       this.$scope.blogPosts = $angularCacheFactory.get('blogCache').get('allBlogPosts');
 
-    }
-    else {
+    } else {
 
       // start loader spinner in loaderDirective
-
       this.$rootScope.loader = true;
 
-      BlogDataFactory.retrieveData().then(function(result) {
+      BlogDataFactory.retrieveData().then((result) => {
 
         if (_.isObject(result.data.BlogPosts)) {
 
@@ -59,7 +50,7 @@
 
         }
 
-      }.bind(this));
+      });
 
     }
     /**
@@ -69,7 +60,7 @@
      * @type {function(this:BlogCatController)|*|Function}
      * @private
      */
-    _filterBlogPosts = function(blogs) {
+    let _filterBlogPosts = (blogs) => {
 
       return _.chain(blogs)
         .filter(function(item) {
@@ -80,9 +71,9 @@
 
         }).value();
 
-    }.bind(this);
+    };
 
-    this.$scope.$watch('blogPosts', function(newData) {
+    this.$scope.$watch('blogPosts', (newData) => {
 
       if (newData !== null) {
 
@@ -109,39 +100,40 @@
 
       }// end if(newData !== null) {
 
-    }.bind(this));
+    });
 
-  };
+  }
 
-  BlogCatController.$inject = ['$scope', '$location', 'BlogDataFactory', '$log', '$angularCacheFactory', '$rootScope', '_'];
-
-  BlogCatController.prototype.morePosts = function() {
-
+  morePosts() {
     this.$scope.displayPosts = this.$scope.displayPosts + 10;
+  }
 
-  };
+  /**\
+   *
+   * @param image {string}
+   * @returns {string}
+   */
+  /* srcsetImage(image) {
 
-  BlogCatController.prototype.srcsetImage = function(image) {
+   let newImage;
 
-    var newImage;
+   if (image.indexOf('stock-photo') !== -1) {
+   let dot = image.lastIndexOf('.');
+   newImage = '/' + image.slice(0, dot) + '-small' + image.slice(dot);
 
-    if (image.indexOf('stock-photo') !== -1) {
+   } else {
+   newImage = '/' + image;
 
-      var dot = image.lastIndexOf('.');
+   }
 
-      newImage = '/' + image.slice(0, dot) + '-small' + image.slice(dot);
+   return newImage;
+   }*/
 
-    }
-    else {
+}
 
-      newImage = '/' + image;
+BlogCatController.$inject = ['$scope', '$location', 'BlogDataFactory', '$log', '$angularCacheFactory', '$rootScope', '_'];
 
-    }
+angular.module('portfolioApp.blogPagesController').controller('BlogCatController', ['$scope', '$location', 'BlogDataFactory', '$log', '$angularCacheFactory', '$rootScope', '_', function($scope, $location, BlogDataFactory, $log, $angularCacheFactory, $rootScope, _) {
+  return new BlogCatController($scope, $location, BlogDataFactory, $log, $angularCacheFactory, $rootScope, _);
+}]);
 
-    return newImage;
-
-  };
-
-  app.controller('BlogCatController', BlogCatController);
-
-}());
