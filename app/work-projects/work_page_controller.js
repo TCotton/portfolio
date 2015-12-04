@@ -13,12 +13,7 @@ class WorkPageCtrl {
    */
   constructor($rootScope, $scope, $log, WORK, $window, _) {
 
-    console.log(typeof $rootScope);
-    console.log(typeof $scope);
-    console.log(typeof $log);
-    console.log(typeof WORK);
-    console.log(typeof $window);
-    console.log(typeof _);
+    console.dir(WORK);
 
     this.$rootScope = $rootScope;
     this.$scope = $scope;
@@ -49,9 +44,11 @@ class WorkPageCtrl {
 
   findData() {
 
-    var currentPage = this.$rootScope.currentPage.substring(this.$rootScope.currentPage.lastIndexOf('/') + 1, this.$rootScope.currentPage.length);
+    console.dir(this.WORK);
 
-    var wordData = this._.filter(this.WORK, function(o) {
+    let currentPage = this.$rootScope.currentPage.substring(this.$rootScope.currentPage.lastIndexOf('/') + 1, this.$rootScope.currentPage.length);
+
+    let wordData = this._.filter(this.WORK, function(o) {
 
       if (o.internalUrl.substring(o.internalUrl.lastIndexOf('/') + 1, o.internalUrl.length) === currentPage) {
 
@@ -98,11 +95,11 @@ class WorkPageCtrl {
      * TODO: refactor pagination
      * **/
 
-    var currentPage;
-    var page;
-    var pageNumber;
-    var prevPage;
-    var nextPage;
+    let currentPage;
+    let page;
+    let pageNumber;
+    let prevPage;
+    let nextPage;
 
     currentPage = this.$rootScope.currentPage.substring(this.$rootScope.currentPage.lastIndexOf('/') + 1, this.$rootScope.currentPage.length);
 
@@ -165,10 +162,8 @@ class WorkPageCtrl {
   }
 }
 
-WorkPageCtrl.$inject = ['$rootScope', '$scope', '$log', 'PROJECTS', '$window', '_'];
+WorkPageCtrl.$inject = ['$rootScope', '$scope', '$log', 'WORK', '$window', '_'];
 
-angular.module('portfolioApp.wordProjectsController').controller('WorkPageCtrl', ['$rootScope', '$scope', '$log', 'PROJECTS', '$window', '_', function($rootScope, $scope, $log, PROJECTS, $window, _) {
-  return new WorkPageCtrl($rootScope, $scope, $log, PROJECTS, $window, _);
+angular.module('portfolioApp.wordProjectsController').controller('WorkPageCtrl', ['$rootScope', '$scope', '$log', 'WORK', '$window', '_', function($rootScope, $scope, $log, WORK, $window, _) {
+  return new WorkPageCtrl($rootScope, $scope, $log, WORK, $window, _);
 }]);
-
-console.log('WorkPageCtrl');
