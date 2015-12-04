@@ -44,8 +44,6 @@ class WorkPageCtrl {
 
   findData() {
 
-    console.dir(this.WORK);
-
     let currentPage = this.$rootScope.currentPage.substring(this.$rootScope.currentPage.lastIndexOf('/') + 1, this.$rootScope.currentPage.length);
 
     let wordData = this._.filter(this.WORK, function(o) {
