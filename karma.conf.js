@@ -13,6 +13,7 @@ module.exports = function(config) {
     files: [
       'app/components/angular/angular.js',
       'app/components/angular-mocks/angular-mocks.js',
+      'node_modules/ng-describe/dist/ng-describe.js',
       'app/components/angular-resource/angular-resource.js',
       'app/components/angular-sanitize/angular-sanitize.js',
       'app/components/angular-route/angular-route.js',
