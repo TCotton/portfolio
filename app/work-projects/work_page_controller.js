@@ -14,8 +14,6 @@
      */
     constructor($rootScope, $scope, $log, WORK, $window, _) {
 
-      console.dir(WORK);
-
       this.$rootScope = $rootScope;
       this.$scope = $scope;
       this.$log = $log;
