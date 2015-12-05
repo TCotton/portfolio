@@ -1,7 +1,7 @@
+'use strict';
 /*jshint camelcase: false */
 /*jshint loopfunc: true */
 (function() {
-  'use strict';
   class FooterCtrl {
     /**
      * constructor

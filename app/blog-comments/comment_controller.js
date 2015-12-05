@@ -1,12 +1,12 @@
+'use strict';
 (function() {
-  'use strict';
   class CommentCtrl {
 
     /**
      * @description For displaying and the submission of blog comments
      * @param $scope {object}
      * @param $rootScope {object}
-     * @param MongoCommentFactory {object}
+     * @param MongoCommentService {object}
      * @param $log {object}
      * @param $timeout {function}
      * @constructor
