@@ -19,7 +19,6 @@ describe('Controller: SidebarCtrl', function() {
   var $angularCacheFactory;
   var $timeout;
 
-
   // Initialize the controller and a mock scope
   beforeEach(inject(function(_$controller_, _$rootScope_, _$q_, _MOCK_DATA_, _$httpBackend_, _$angularCacheFactory_, _$timeout_) {
 
@@ -73,8 +72,6 @@ describe('Controller: SidebarCtrl', function() {
 
     $httpBackend.flush();
 
-
   });
-
 
 });
