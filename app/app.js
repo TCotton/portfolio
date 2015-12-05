@@ -57,9 +57,6 @@ angular.module('portfolioApp', [
   'momentLibrary',
   'helperFunctions',
   'requestTimeout',
-  'clearRequestTimeout',
-  'requestInterval',
-  'clearRequestInterval',
   'react',
   'detectLocalStorage',
   'fastclick'
