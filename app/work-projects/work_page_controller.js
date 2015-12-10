@@ -104,7 +104,6 @@
       page = this._.filter(this.WORK, function(o) {
 
         if (o.internalUrl.substring(o.internalUrl.lastIndexOf('/') + 1, o.length) === currentPage) {
-
           return o;
         }
       });
@@ -117,7 +116,6 @@
         prevPage = this._.filter(this.WORK, function(o) {
 
           if (parseInt(o.id, 10) === (parseInt(pageNumber, 10) - 1)) {
-
             return o;
           }
         });
@@ -126,7 +124,6 @@
         nextPage = this._.filter(this.WORK, function(o) {
 
           if (parseInt(o.id, 10) === (parseInt(pageNumber, 10) + 1)) {
-
             return o;
           }
         });
