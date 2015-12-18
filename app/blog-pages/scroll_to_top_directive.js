@@ -32,7 +32,7 @@ angular.module('portfolioApp.blogPagesDirective').directive('scrollToTop', ['$ti
    */
 
   var scrollEvent = function scrollEvent(event) {
-    scrollTo($document[0].body, 0, 600);
+    scrollTo($document[0].body.scrollTop === 0 ? $document[0].documentElement : $document[0].body, 0, 600);
     event.preventDefault();
   };
 
@@ -40,10 +40,10 @@ angular.module('portfolioApp.blogPagesDirective').directive('scrollToTop', ['$ti
     restrict: 'A',
     link: function(scope, element) {
 
-      element['0'].addEventListener('click', scrollEvent, false);
+      element.on('click', scrollEvent);
 
       scope.$on('$destroy', function() {
-        element['0'].removeEventListener('click', scrollEvent, false);
+        element.off('click', scrollEvent);
       });
 
     }
