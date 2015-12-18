@@ -31,7 +31,7 @@ app.use(helmet.nosniff());
 app.use(helmet.hidePoweredBy());
 
 if (app.get('env') === 'production') {
-  app.use(helmet.hsts({maxAge: 15552000}));
+  app.use(helmet.hsts({maxAge: 31536000}));
 }
 
 var database = require('./server/config/database'); 			// load the database config

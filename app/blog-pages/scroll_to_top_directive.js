@@ -40,10 +40,10 @@ angular.module('portfolioApp.blogPagesDirective').directive('scrollToTop', ['$ti
     restrict: 'A',
     link: function(scope, element) {
 
-      element.on('click', scrollEvent);
+      element['0'].addEventListener('click', scrollEvent, false);
 
       scope.$on('$destroy', function() {
-        element.off('click', scrollEvent);
+        element['0'].removeEventListener('click', scrollEvent, false);
       });
 
     }

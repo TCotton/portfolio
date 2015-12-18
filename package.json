@@ -45,6 +45,7 @@
     "astrolabe": "^0.3.6",
     "autoprefixer": "^6.1.0",
     "babel-preset-es2015": "^6.1.18",
+    "babel-preset-es2015-loose": "^6.1.3",
     "csswring": "^4.0.0",
     "grunt": "^0.4.5",
     "grunt-babel": "^6.0.0",

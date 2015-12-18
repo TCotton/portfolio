@@ -624,7 +624,7 @@ module.exports = function(grunt) {
     babel: {
       options: {
         sourceMap: true,
-        presets: ['es2015']
+        presets: ['es2015-loose']
       },
       tmp: {
         files: [{
