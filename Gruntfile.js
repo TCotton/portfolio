@@ -739,7 +739,7 @@ module.exports = function(grunt) {
       'ngconstant',
       'copy:tmp',
       /*      'lodash',*/
-      'express:livereload',
+      // 'express:livereload',
       //'open',
       'watch'
     ]);

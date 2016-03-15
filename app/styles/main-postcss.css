@@ -1291,7 +1291,6 @@
     word-break: break-word;
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
-    -moz-hyphens: auto;
     hyphens: auto;
   }
 }
@@ -3909,7 +3908,6 @@
     -moz-tab-size: 4;
          tab-size: 4;
     -webkit-hyphens: none;
-       -moz-hyphens: none;
         -ms-hyphens: none;
             hyphens: none;
   }
