@@ -59,13 +59,18 @@ angular.module('portfolioApp', [
   'requestTimeout',
   'react',
   'detectLocalStorage',
-  'fastclick'
-]).config(function($routeProvider, $httpProvider) {
+  'ngOpbeat'
+]).config(function($routeProvider, $httpProvider, $opbeatProvider) {
 
   // Needed for CORS
   // http://better-inter.net/enabling-cors-in-angular-js/
   $httpProvider.defaults.useXDomain = true;
   delete $httpProvider.defaults.headers.common['X-Requested-With'];
+
+  $opbeatProvider.config({
+    orgId: '55aec660d5204d32b2b3bfb7a1980e0a',
+    appId: 'a7a0e96ae4'
+  });
 
   $routeProvider
     .when('/', {

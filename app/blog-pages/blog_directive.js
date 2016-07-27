@@ -1,7 +1,6 @@
 /**
  * Created by andywalpole on 01/04/2014.
  */
-/*jshint multistr: true */
 'use strict';
 
 angular.module('portfolioApp.blogPagesDirective').directive('blogBlockDirective', [function() {
