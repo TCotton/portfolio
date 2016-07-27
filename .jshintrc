@@ -1,5 +1,5 @@
 {
-  "maxparams": 5,
+  "maxparams": 10,
   "maxdepth": 5,
   "maxstatements": 25,
   "maxcomplexity": 5,
@@ -39,16 +39,13 @@
     "onmessage": false,
     "postMessage": false,
     "self": false
-
   },
 
   "debug": false,
   "devel": false,
-
   "esnext": true,
   "strict": true,
-  "globalstrict": true,
-
+  "globalstrict": false,
   "asi": false,
   "laxbreak": false,
   "laxcomma": false,
@@ -63,16 +60,12 @@
   "immed": true,
   "latedef": true,
   "loopfunc": false,
-  "maxdepth": 3,
-  "maxparams": false,
   "multistr": false,
   "noarg": true,
-  "regexp": true,
   "shadow": false,
   "supernew": false,
   "undef": true,
   "unused": true,
-
   "quotmark": "single",
   "camelcase": true,
   "indent": 2,
