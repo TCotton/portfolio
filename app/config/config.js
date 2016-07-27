@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$location', '$angularCacheFactory', '$route', 'FastClick', '$document', function($rootScope, $window, $location, $angularCacheFactory, $route, FastClick, $document) {
+angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$location', '$angularCacheFactory', '$route', function($rootScope, $window, $location, $angularCacheFactory, $route) {
 
   var track = function() {
     /* jshint ignore:start */
@@ -9,8 +9,6 @@ angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$locatio
     });
     /* jshint ignore:end */
   };
-
-  FastClick.attach($document[0].body);
 
   $rootScope.$on('$viewContentLoaded', track);
 
