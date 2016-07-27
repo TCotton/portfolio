@@ -50,6 +50,7 @@ app.use(bodyParser.json());
 app.use(methodOverride()); 						// simulate DELETE and PUT
 app.use(cookieParser());
 app.use(errorHandler());
+/*
 
 if (app.get('env') === 'production') {
 
@@ -92,7 +93,8 @@ if (app.get('env') === 'production') {
     fontSrc: [
       '\'self\'',
       'https://fonts.gstatic.com',
-      'https://public.slidesharecdn.com'
+      'https://public.slidesharecdn.com',
+      'https://www.slideshare.net'
     ],
     frameSrc: [
       '\'self\'',
@@ -138,6 +140,7 @@ if (app.get('env') === 'production') {
   }));
 
 }
+*/
 
 app.all('*', function(req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');

@@ -13,13 +13,9 @@
     <article itemscope itemtype="http://schema.org/BlogPosting">
 
       <header>
-
-        <picture class="ng-cloak">
-          <source type="image/jpeg" media="(max-width: 480px)" srcset="/{{::displaySrcsetImage}}" >
-          <img data-ng-src="/{{displayImage}}" alt="Background image for {{title}}"/>
-        </picture>
-
+        <img src="https://andywalpole.me/{{::displayImage}}" alt="Background image for {{::title}}"/>
       </header>
+
       <section data-codepen-directive data-twitter-directive data-vine-directive>
 
         <h3 class="blog-title" data-ng-bind="title" itemprop="headline"></h3>
