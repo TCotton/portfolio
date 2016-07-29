@@ -357,8 +357,7 @@ module.exports = function(grunt) {
       dynamic: {
         options: {
           optimizationLevel: 3,
-          progressive: true,
-          use: [mozjpeg()]
+          progressive: true
         },
         files: [{
           expand: true,
