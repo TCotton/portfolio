@@ -50,97 +50,6 @@ app.use(bodyParser.json());
 app.use(methodOverride()); 						// simulate DELETE and PUT
 app.use(cookieParser());
 app.use(errorHandler());
-/*
-
-if (app.get('env') === 'production') {
-
-  app.use(csp({
-    // Specify directives as normal
-    defaultSrc: [
-      '\'self\'',
-      'https://andywalpole.me'
-    ],
-    scriptSrc: [
-      '\'self\'',
-      '\'unsafe-inline\'',
-      'https://platform.twitter.com',
-      'https://f.vimeocdn.com',
-      'https://codepen.io',
-      'https://www.google-analytics.com',
-      'https://s.ytimg.com',
-      'https://player.vimeo.com',
-      'https://andywalpole.me',
-      'https://syndication.twitter.com',
-      'https://platform.vine.co'
-    ],
-    styleSrc: [
-      '\'self\'',
-      'https://fonts.googleapis.com',
-      '\'unsafe-inline\'',
-      'https://platform.twitter.com',
-      'https://andywalpole.me'
-    ],
-    imgSrc: [
-      '\'self\'',
-      'data:',
-      'https://pbs.twimg.com',
-      'https://abs.twimg.com',
-      'https://www.google-analytics.com',
-      'https://syndication.twitter.com',
-      'https://platform.twitter.com',
-      'https://andywalpole.me'
-    ],
-    fontSrc: [
-      '\'self\'',
-      'https://fonts.gstatic.com',
-      'https://public.slidesharecdn.com',
-      'https://www.slideshare.net'
-    ],
-    frameSrc: [
-      '\'self\'',
-      'https://www.disclose.tv',
-      'https://www.youtube-nocookie.com',
-      'https://player.vimeo.com',
-      'https://syndication.twitter.com',
-      'https://platform.twitter.com',
-      'https://www.youtube.com',
-      'https://codepen.io',
-      'https://storify.com',
-      'https://www.slideshare.net',
-      'https://vine.co',
-      'https://drive.google.com'
-    ],
-    sandbox: [
-      'allow-forms',
-      'allow-scripts',
-      'allow-same-origin'
-    ],
-    // Set to an empty array to allow nothing through
-    objectSrc: [
-      '\'self\'',
-      'https://www.bbc.co.uk'
-    ],
-    connectSrc: [
-      '\'self\'',
-      'https://ssl.bbc.co.uk'
-    ],
-
-    // Set to true if you only want browsers to report errors, not block them
-    reportOnly: false,
-
-    // Set to true if you want to blindly set all headers: Content-Security-Policy,
-    // X-WebKit-CSP, and X-Content-Security-Policy.
-    setAllHeaders: false,
-
-    // Set to true if you want to disable CSP on Android.
-    disableAndroid: true,
-
-    // Set to true if you want to force buggy CSP in Safari 5.1 and below.
-    safari5: false
-  }));
-
-}
-*/
 
 app.all('*', function(req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -152,6 +61,20 @@ app.all('*', function(req, res, next) {
  * Development Settings
  */
 if (app.get('env') === 'development') {
+
+  app.use(express.static(__dirname + '/app'));
+
+  app.get('/*', function(req, res, next) {
+
+    if (!req.path.startsWith('/api/')) {
+      res.sendFile(__dirname + '/app/index.html');
+    }
+
+    if (req.path.startsWith('/api/')) {
+      next();
+    }
+
+  });
 
   app.all('*', function(req, res, next) {
     res.setHeader('Cache-Control', 'no-cache');
@@ -201,6 +124,20 @@ if (app.get('env') === 'production') {
   app.use(wwwRedirect);
 
   app.use(favicon(path.join(__dirname, 'dist/favicon.ico')));
+
+  app.use(express.static(__dirname + '/dist'));
+
+  app.get('/*', function(req, res, next) {
+
+    if (!req.path.startsWith('/api/')) {
+      res.sendFile(__dirname + '/dist/index.html');
+    }
+
+    if (req.path.startsWith('/api/')) {
+      next();
+    }
+
+  });
 
   app.all('*', function(req, res, next) {
     res.setHeader('Cache-Control', 'no-cache');

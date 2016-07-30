@@ -15,7 +15,7 @@ angular.module('portfolioApp.blogPagesDirective').directive('blogBlockDirective'
       srcsetLargeWebp: '='
     },
     template: '<article>' +
-    '<header><a data-ng-href="/#!/blog/{{::blog.uniqueId}}/{{::blog.url}}">' +
+    '<header><a data-ng-href="/blog/{{::blog.uniqueId}}/{{::blog.url}}">' +
     '<picture>' +
     '<source type="image/webp" media="(max-width: 481px)" data-ng-srcset="{{::srcsetWebp}}">' +
     '<source type="image/jpeg" media="(max-width: 480px)" data-ng-srcset="{{::srcset}}">' +
@@ -29,7 +29,7 @@ angular.module('portfolioApp.blogPagesDirective').directive('blogBlockDirective'
     '<p>{{::blog.contentSnippet}}</p> ' +
     '</section>' +
     '<footer>' +
-    '<p class="read-more"><a data-ng-href="/#!/blog/{{::blog.uniqueId}}/{{::blog.url}}" class="underline">Read more...</a></p>' +
+    '<p class="read-more"><a data-ng-href="/blog/{{::blog.uniqueId}}/{{::blog.url}}" class="underline">Read more...</a></p>' +
     '</footer>' +
     '</article>'
   };
