@@ -60,7 +60,7 @@ angular.module('portfolioApp', [
   'react',
   'detectLocalStorage',
   'ngOpbeat'
-]).config(function($routeProvider, $httpProvider, $opbeatProvider, $locationProvider) {
+]).config(function($routeProvider, $httpProvider, $opbeatProvider) {
 
   // Needed for CORS
   // http://better-inter.net/enabling-cors-in-angular-js/
@@ -70,11 +70,6 @@ angular.module('portfolioApp', [
   $opbeatProvider.config({
     orgId: '55aec660d5204d32b2b3bfb7a1980e0a',
     appId: 'a7a0e96ae4'
-  });
-
-  $locationProvider.html5Mode({
-    enabled: true,
-    requireBase: false
   });
 
   $routeProvider
