@@ -68,7 +68,7 @@
       }
 
       // find blogId number form the URL string, ie /#!/blog/136324/using-autoload-in-object-orientated-wordpress-plugin
-      let blogId = this.$rootScope.currentPage.substring(this.$rootScope.currentPage.indexOf('/#!/') + 9, this.$rootScope.currentPage.indexOf('/#!/') + 15);
+      let blogId = this.$rootScope.currentPage.substring(this.$rootScope.currentPage.indexOf('/blog/') + 6, this.$rootScope.currentPage.indexOf('/blog/') + 12);
 
       /**
        * @type {function(this:BlogArticleCtrl)|*|Function}
@@ -116,7 +116,7 @@
 
           // if not empty redirect to homepage
           // TODO: move this server side
-          this.$location.path('/#!/');
+          this.$location.path('/');
 
         }
 

@@ -453,8 +453,7 @@ module.exports = function(app) {
 
       });
 
-    }
-    else {
+    } else {
 
       OldBlogFeed.parseFeed(OldBlogFeed.RSSFeed, function(data) {
 
