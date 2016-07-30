@@ -61,7 +61,7 @@
 
       } else {
 
-        this.$window.location.href = '/#!/404';
+        this.$window.location.href = '/404';
 
       }
 

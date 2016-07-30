@@ -9,25 +9,25 @@
 
 <div id="main-content" class="clearfix content-text sitemap">
 
-  <p><a href="/#!/" class="underline">Homepage</a><br>
+  <p><a href="/" class="underline">Homepage</a><br>
 
-    <a href="/#!/work-projects" class="underline">Work projects</a><br>
-    <a href="/#!/work-projects/blinkbox" class="underline">Work projects - Blinkboxbooks</a><br>
-    <a href="/#!/work-projects/thomson-reuters-japan" class="underline">Work projects - Thomson Reuters Japan</a><br>
-    <a href="/#!/work-projects/uk-lawstudent" class="underline">Work projects - Thomson Reuters UK Law Student</a><br>
-    <a href="/#!/work-projects/kaplan" class="underline">Work projects - Kaplan International</a><br>
-    <a href="/#!/side-projects" class="underline">Side projects</a><br>
-    <a href="/#!/side-projects/lightning" class="underline">Side projects - lightning.gs</a><br>
-    <a href="/#!/side-projects/pennybooks" class="underline">Side projects - Penny Books</a><br>
-    <a href="/#!/side-projects/twttwt" class="underline">Side projects - Twt Twt</a><br>
-    <a href="/#!/about-me" class="underline">About me</a><br>
-    <a href="/#!/contact-me" class="underline">Contact me</a><br>
-    <a href="/#!/blog/" class="underline">Blog</a><br>
+    <a href="/work-projects" class="underline">Work projects</a><br>
+    <a href="/work-projects/blinkbox" class="underline">Work projects - Blinkboxbooks</a><br>
+    <a href="/work-projects/thomson-reuters-japan" class="underline">Work projects - Thomson Reuters Japan</a><br>
+    <a href="/work-projects/uk-lawstudent" class="underline">Work projects - Thomson Reuters UK Law Student</a><br>
+    <a href="/work-projects/kaplan" class="underline">Work projects - Kaplan International</a><br>
+    <a href="/side-projects" class="underline">Side projects</a><br>
+    <a href="/side-projects/lightning" class="underline">Side projects - lightning.gs</a><br>
+    <a href="/side-projects/pennybooks" class="underline">Side projects - Penny Books</a><br>
+    <a href="/side-projects/twttwt" class="underline">Side projects - Twt Twt</a><br>
+    <a href="/about-me" class="underline">About me</a><br>
+    <a href="/contact-me" class="underline">Contact me</a><br>
+    <a href="/blog/" class="underline">Blog</a><br>
     <span data-ng-repeat="blog in blogData | orderBy: '-publishedDate' track by $index">
-      <a data-ng-href="/#!/blog/{{blog.uniqueId}}/{{blog.url}}" data-ng-bind="blog.title" class="underline"></a><br>
+      <a data-ng-href="/blog/{{blog.uniqueId}}/{{blog.url}}" data-ng-bind="blog.title" class="underline"></a><br>
     </span>
     <span data-ng-repeat="cats in blogTags track by $index">
-      <a data-ng-href="/#!/category/{{cats.toLowerCase()}}" data-ng-bind="cats" class="underline"></a><br>
+      <a data-ng-href="/category/{{cats.toLowerCase()}}" data-ng-bind="cats" class="underline"></a><br>
     </span>
 
   </p>
