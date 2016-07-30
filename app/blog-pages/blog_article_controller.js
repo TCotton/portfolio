@@ -20,14 +20,7 @@
 
     constructor($rootScope, $scope, $location, BlogDataService, $log, $timeout, $sce, $angularCacheFactory, $route, $filter, _) {
 
-      this.$rootScope = $rootScope;
-      this.$scope = $scope;
-      this.$location = $location;
-      this.$log = $log;
-      this.$timeout = $timeout;
-      this.$sce = $sce;
-      this.$route = $route;
-      this.$filter = $filter;
+      Object.assign(this, {$rootScope, $scope, $location, $log, $timeout, $sce, $route, $filter});
 
       this.$scope.oldBlogPosts = null;
       this.$scope.title = null;
@@ -68,8 +61,8 @@
       }
 
       // find blogId number form the URL string, ie /#!/blog/136324/using-autoload-in-object-orientated-wordpress-plugin
-      let blogId = this.$rootScope.currentPage.substring(this.$rootScope.currentPage.indexOf('/blog/') + 6, this.$rootScope.currentPage.indexOf('/blog/') + 12);
-
+      var blogId = this.$rootScope.currentPage.substring(this.$rootScope.currentPage.indexOf('/blog/') + 6, this.$rootScope.currentPage.indexOf('/blog/') + 12);
+      
       /**
        * @type {function(this:BlogArticleCtrl)|*|Function}
        * @private
