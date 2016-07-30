@@ -94,5 +94,10 @@ angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$locatio
  */
 //get the module from creating an angular module
 angular.module('HashBangURLs', []).config(['$locationProvider', function($locationProvider) {
-  $locationProvider.html5Mode(false).hashPrefix('!');
+
+  $locationProvider.html5Mode({
+    enabled: true,
+    requireBase: false
+  });
+
 }]);

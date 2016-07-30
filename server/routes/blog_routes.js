@@ -45,9 +45,7 @@ module.exports = function(app) {
     Blog.find(function(err, blogs) {
 
       if (app.get('env') === 'production') {
-
         res.setHeader('Cache-Control', 'public, max-age=60');
-
       }
 
       // if there is an error retrieving, send the error. nothing after res.send(err) will execute

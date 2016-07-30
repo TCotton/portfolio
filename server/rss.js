@@ -33,7 +33,7 @@ module.exports = function(app) {
 
         Object.keys(blogs).forEach(function(key) {
 
-          blogURl = 'https://andywalpole.me/#!/blog/' + blogs[key].uniqueId + '/' + blogs[key].url;
+          blogURl = 'https://andywalpole.me/blog/' + blogs[key].uniqueId + '/' + blogs[key].url;
 
           feedItems[key] = {
             title: blogs[key].title,
@@ -82,7 +82,7 @@ module.exports = function(app) {
 
           Object.keys(posts).forEach(function(key) {
 
-            blogURl = 'https://andywalpole.me/#!/blog/' + posts[key].uniqueId + '/' + posts[key].url;
+            blogURl = 'https://andywalpole.me/blog/' + posts[key].uniqueId + '/' + posts[key].url;
 
             feedItems[key] = {
               title: posts[key].title,
@@ -99,11 +99,8 @@ module.exports = function(app) {
 
         });
 
-      }
-      else {
-
+      } else {
         deferred.reject(new Error('blogposts.json cannot be found'));
-
       }
 
     });
