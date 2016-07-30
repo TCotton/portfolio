@@ -125,6 +125,20 @@ if (app.get('env') === 'production') {
 
   app.use(favicon(path.join(__dirname, 'dist/favicon.ico')));
 
+  app.use(express.static(__dirname + '/dist'));
+
+  app.get('/*', function(req, res, next) {
+
+    if (!req.path.startsWith('/api/')) {
+      res.sendFile(__dirname + '/dist/index.html');
+    }
+
+    if (req.path.startsWith('/api/')) {
+      next();
+    }
+
+  });
+
   app.all('*', function(req, res, next) {
     res.setHeader('Cache-Control', 'no-cache');
     next();
