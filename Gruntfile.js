@@ -1,13 +1,6 @@
 // Generated on 2013-07-31 using generator-angular 0.3.1
 'use strict';
 
-// no more needed, see grunt-express doc
-//var LIVERELOAD_PORT = 35729;
-//var lrSnippet = require('express-livereload')({ port: LIVERELOAD_PORT });
-//var mountFolder = function (express, dir) {
-//  return express.static(require('path').resolve(dir));
-//};
-
 var path = require('path');
 
 // # Globbing
@@ -24,6 +17,8 @@ module.exports = function(grunt) {
 
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
+
+  console.dir(swPrecache);
 
   // configurable paths
   var yeomanConfig = {
@@ -42,6 +37,12 @@ module.exports = function(grunt) {
   grunt.initConfig({
     yeoman: yeomanConfig,
     pkg: grunt.file.readJSON('package.json'),
+    swPrecache: {
+      dev: {
+        handleFetch: false,
+        rootDir: 'app'
+      }
+    },
     watch: {
       js: {
         files: [
@@ -721,6 +722,44 @@ module.exports = function(grunt) {
 
   });
 
+  function writeServiceWorkerFile(rootDir, handleFetch, callback) {
+    var config = {
+      cacheId: grunt.file.readJSON('package.json').name,
+      // If handleFetch is false (i.e. because this is called from swPrecache:dev), then
+      // the service worker will precache resources but won't actually serve them.
+      // This allows you to test precaching behavior without worry about the cache preventing your
+      // local changes from being picked up during the development cycle.
+      handleFetch: handleFetch,
+      logger: grunt.log.writeln,
+      staticFileGlobs: [
+        rootDir + '/css/**.css',
+        rootDir + '/**.html',
+        rootDir + '/images/**.*',
+        rootDir + '/js/**.js'
+      ],
+      stripPrefix: rootDir + '/',
+      // verbose defaults to false, but for the purposes of this demo, log more.
+      verbose: true
+    };
+
+    swPrecache.write(path.join(rootDir, 'service-worker.js'), config, callback);
+  }
+
+  grunt.registerMultiTask('swPrecache', function() {
+    var done = this.async();
+    var rootDir = this.data.rootDir;
+    var handleFetch = this.data.handleFetch;
+
+    console.dir(this.data);
+
+    writeServiceWorkerFile(rootDir, handleFetch, function(error) {
+      if (error) {
+        grunt.fail.warn(error);
+      }
+      done();
+    });
+  });
+
   grunt.registerTask('server', function(target) {
 
     if (target === 'dist') {
@@ -736,6 +775,7 @@ module.exports = function(grunt) {
       /*      'lodash',*/
       'express:livereload',
       //'open',
+      'swPrecache',
       'watch'
     ]);
   });

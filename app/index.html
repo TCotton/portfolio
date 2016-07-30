@@ -23,13 +23,13 @@
   <meta data-ng-if="hideFooter" property="og:title" content="{{faceBookTitle}}"/>
   <meta data-ng-if="hideFooter" property="og:url" content="{{canonical}}"/>
   <meta data-ng-if="hideFooter" property="og:description" content="{{faceBookDescription}}"/>
-  <meta data-ng-if="hideFooter" property="og:type" content="article" />
+  <meta data-ng-if="hideFooter" property="og:type" content="article"/>
   <meta data-ng-if="hideFooter" name="description" content="{{faceBookDescription}}">
 
-  <meta data-ng-if="hideFooter" name="twitter:card" content="summary" />
-  <meta data-ng-if="hideFooter" name="twitter:site" content="@andywalpole" />
-  <meta data-ng-if="hideFooter" name="twitter:title" content="{{faceBookTitle}}" />
-  <meta data-ng-if="hideFooter" name="twitter:description" content="{{faceBookDescription}}" />
+  <meta data-ng-if="hideFooter" name="twitter:card" content="summary"/>
+  <meta data-ng-if="hideFooter" name="twitter:site" content="@andywalpole"/>
+  <meta data-ng-if="hideFooter" name="twitter:title" content="{{faceBookTitle}}"/>
+  <meta data-ng-if="hideFooter" name="twitter:description" content="{{faceBookDescription}}"/>
 
   <link rel="canonical" href="{{canonical}}"/>
 
@@ -40,10 +40,20 @@
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
   <script>
-    (function(e,t,n,r,i,s,o){e["GoogleAnalyticsObject"]=i;e[i]=e[i]||function(){(e[i].q=e[i].q||[]).push(arguments)},e[i].l=1*new Date;s=t.createElement(n),o=t.getElementsByTagName(n)[0];s.async=1;s.src=r;o.parentNode.insertBefore(s,o)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create","UA-1173435-13",{cookieDomain:"andywalpole.me",siteSpeedSampleRate:100})
+    (function(e, t, n, r, i, s, o) {
+      e["GoogleAnalyticsObject"] = i;
+      e[i] = e[i] || function() {
+            (e[i].q = e[i].q || []).push(arguments)
+          }, e[i].l = 1 * new Date;
+      s = t.createElement(n), o = t.getElementsByTagName(n)[0];
+      s.async = 1;
+      s.src = r;
+      o.parentNode.insertBefore(s, o)
+    })(window, document, "script", "//www.google-analytics.com/analytics.js", "ga");
+    ga("create", "UA-1173435-13", {cookieDomain: "andywalpole.me", siteSpeedSampleRate: 100})
   </script>
 
-  <meta name="msvalidate.01" content="A3327273DCF9CE62812809732D9A73A1" />
+  <meta name="msvalidate.01" content="A3327273DCF9CE62812809732D9A73A1"/>
 
 </head>
 <body>
@@ -61,7 +71,8 @@
 
     <label for="toggle-1" class="handheld-cross hidden-desktop" data-ng-class="{active: !pageChange}">Main Menu</label>
     <!-- toogle checked box on page load or click of menu item -->
-    <input type="checkbox" id="toggle-1" class="hidden-desktop" data-ng-checked="!pageChange" data-ng-click="pageChange = false">
+    <input type="checkbox" id="toggle-1" class="hidden-desktop" data-ng-checked="!pageChange"
+           data-ng-click="pageChange = false">
 
     <div id="navigation-wrapper">
 
@@ -97,7 +108,7 @@
   <![endif]-->
 
   <div id="outer-content">
-  <div id="content" data-ng-view></div>
+    <div id="content" data-ng-view></div>
   </div>
 
   <div data-ng-include src="'footer/footer.html'"></div>
@@ -186,8 +197,41 @@
 </script>
 <!--<![endif]-->
 <div class="hide">
-<a href="http://www.jonathanmurray.com/bulk.php?entry_id=47624"><!-- rolypoly-slice --></a>
+  <a href="http://www.jonathanmurray.com/bulk.php?entry_id=47624"><!-- rolypoly-slice --></a>
 </div>
 <data-loader-directive ng-if="loader"></data-loader-directive>
+
+<div>
+  <button id="clear-cache">Clear Cache</button>
+</div>
+
+<script src="service-worker-registration.js"></script>
+<script>
+  function sendMessage(message) {
+    return new Promise(function(resolve, reject) {
+      if (navigator.serviceWorker.controller) {
+        var messageChannel = new MessageChannel();
+        messageChannel.port1.onmessage = function(event) {
+          if (event.data.error) {
+            reject(event.data.error);
+          } else {
+            resolve(event.data);
+          }
+        };
+        navigator.serviceWorker.controller.postMessage(message, [messageChannel.port2]);
+      } else {
+        reject("This page isn't currently controlled by a service worker. Please reload and try again.");
+      }
+    });
+  }
+  document.querySelector('#clear-cache').addEventListener('click', function() {
+    sendMessage({command: 'delete_all'}).then(function() {
+      console.log('All caches deleted.');
+    }).catch(function(error) {
+      console.error('Caches not deleted:', error);
+    });
+  });
+</script>
+
 </body>
 </html>
