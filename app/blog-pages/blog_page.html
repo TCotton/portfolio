@@ -16,7 +16,10 @@
 
         <picture class="ng-cloak">
           <source type="image/jpeg" media="(max-width: 480px)" data-ng-srcset="{{::displaySrcsetImage}}" >
-          <img data-ng-src="{{displayImage}}" alt="Background image for {{title}}"/>
+          <source type="image/webp" media="(max-width: 480px)" data-ng-srcset="{{::displaySrcsetImage +  '.webp'}}" >
+          <source type="image/jpeg" media="(min-width: 480px)" data-ng-srcset="{{::displayImage}}" >
+          <source type="image/webp" media="(min-width: 480px)" data-ng-srcset="{{::displayImage + '.webp'}}" >
+          <img data-ng-src="{{::displayImage}}" alt="Background image for {{title}}"/>
         </picture>
 
       </header>
