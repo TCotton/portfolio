@@ -64,8 +64,16 @@ if (app.get('env') === 'development') {
 
   app.use(express.static(__dirname + '/app'));
 
-  app.get('/*', function(req, res){
-    res.sendFile(__dirname + '/app/index.html');
+  app.get('/*', function(req, res, next) {
+
+    if (!req.path.startsWith('/api/')) {
+      res.sendFile(__dirname + '/app/index.html');
+    }
+
+    if (req.path.startsWith('/api/')) {
+      next();
+    }
+
   });
 
   app.all('*', function(req, res, next) {
