@@ -16,20 +16,20 @@ function addProjects() {
 
   url = [];
 
-  url.push({url: '/#!/', changefreq: 'monthly', priority: 1.0});
-  url.push({url: '/#!/work-projects', changefreq: 'monthly', priority: 0.7});
-  url.push({url: '/#!/work-projects/blinkbox', changefreq: 'monthly', priority: 0.7});
-  url.push({url: '/#!/work-projects/thomson-reuters-japan', changefreq: 'monthly', priority: 0.7});
-  url.push({url: '/#!/work-projects/uk-lawstudent', changefreq: 'monthly', priority: 0.7});
-  url.push({url: '/#!/work-projects/kaplan', changefreq: 'monthly', priority: 0.7});
-  url.push({url: '/#!/side-projects', changefreq: 'monthly', priority: 0.7});
-  url.push({url: '/#!/side-projects/lightning', changefreq: 'monthly', priority: 0.7});
-  url.push({url: '/#!/side-projects/pennybooks', changefreq: 'monthly', priority: 0.7});
-  url.push({url: '/#!/side-projects/twttwt', changefreq: 'monthly', priority: 0.7});
-  url.push({url: '/#!/about-me', changefreq: 'monthly', priority: 0.7});
-  url.push({url: '/#!/contact-me', changefreq: 'monthly', priority: 0.7});
-  url.push({url: '/#!/blog/', changefreq: 'weekly', priority: 0.7});
-  url.push({url: '/#!/sitemap', changefreq: 'weekly', priority: 0.7});
+  url.push({url: '/', changefreq: 'monthly', priority: 1.0});
+  url.push({url: '/work-projects', changefreq: 'monthly', priority: 0.7});
+  url.push({url: '/work-projects/blinkbox', changefreq: 'monthly', priority: 0.7});
+  url.push({url: '/work-projects/thomson-reuters-japan', changefreq: 'monthly', priority: 0.7});
+  url.push({url: '/work-projects/uk-lawstudent', changefreq: 'monthly', priority: 0.7});
+  url.push({url: '/work-projects/kaplan', changefreq: 'monthly', priority: 0.7});
+  url.push({url: '/side-projects', changefreq: 'monthly', priority: 0.7});
+  url.push({url: '/side-projects/lightning', changefreq: 'monthly', priority: 0.7});
+  url.push({url: '/side-projects/pennybooks', changefreq: 'monthly', priority: 0.7});
+  url.push({url: '/side-projects/twttwt', changefreq: 'monthly', priority: 0.7});
+  url.push({url: '/about-me', changefreq: 'monthly', priority: 0.7});
+  url.push({url: '/contact-me', changefreq: 'monthly', priority: 0.7});
+  url.push({url: '/blog/', changefreq: 'weekly', priority: 0.7});
+  url.push({url: '/sitemap', changefreq: 'weekly', priority: 0.7});
 
   next(null, url);
 
@@ -44,7 +44,7 @@ function getDataBasePosts(url) {
 
       Object.keys(blogs).forEach(function(key) {
 
-        var blogURl = '/#!/blog/' + blogs[key].uniqueId + '/' + blogs[key].url;
+        var blogURl = '/blog/' + blogs[key].uniqueId + '/' + blogs[key].url;
 
         url.push({url: blogURl, changefreq: 'weekly', priority: 0.7});
 
@@ -78,7 +78,7 @@ function getDataBasePosts(url) {
 
       Object.keys(cats).forEach(function(key) {
 
-        var blogURl = '/#!/category/' + cats[key].toLowerCase();
+        var blogURl = '/category/' + cats[key].toLowerCase();
 
         url.push({url: blogURl, changefreq: 'weekly', priority: 0.5});
 
@@ -108,7 +108,7 @@ function getOldBlogPosts(url) {
 
         Object.keys(posts).forEach(function(key) {
 
-          var blogURl = '/#!/blog/' + posts[key].uniqueId + '/' + posts[key].url;
+          var blogURl = '/blog/' + posts[key].uniqueId + '/' + posts[key].url;
 
           url.push({url: blogURl, changefreq: 'monthly', priority: 0.7});
 
