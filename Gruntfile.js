@@ -1,12 +1,4 @@
-// Generated on 2013-07-31 using generator-angular 0.3.1
 'use strict';
-
-// no more needed, see grunt-express doc
-//var LIVERELOAD_PORT = 35729;
-//var lrSnippet = require('express-livereload')({ port: LIVERELOAD_PORT });
-//var mountFolder = function (express, dir) {
-//  return express.static(require('path').resolve(dir));
-//};
 
 var path = require('path');
 
@@ -716,6 +708,22 @@ module.exports = function(grunt) {
             dest: '.tmp/concat/scripts'
           }
         ]
+      }
+    },
+
+    ngtemplates: {
+      appTemplates: {
+        src: '<%= yeoman.app %>/homepage/*.html',
+        dest: '<%= yeoman.app %>/shared/templates.js',
+        standalone: true,
+        options: {
+          htmlmin: {
+            collapseWhitespace: true,
+            collapseBooleanAttributes: true,
+            removeCommentsFromCDATA: true,
+            removeOptionalTags: true
+          }
+        }
       }
     }
 
