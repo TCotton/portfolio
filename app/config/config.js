@@ -18,7 +18,7 @@ angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$locatio
   $rootScope.$on('$locationChangeStart', function() {
 
     if ($location.absUrl() === 'https://andywalpole.me/?utm_source=Responsive+Design+Weekly&utm_campaign=f8173896a5-Responsive_Design_Weekly_152&utm_medium=email&utm_term=0_df65b6d7c8-f8173896a5-58971581#!/blog/142790/using-webp-image-format') {
-      window.location = 'https://andywalpole.me/blog/142790/using-webp-image-format';
+      $window.location = 'https://andywalpole.me/#!/blog/142790/using-webp-image-format';
     }
 
     $rootScope.currentPage = $location.absUrl();
@@ -74,10 +74,9 @@ angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$locatio
     if (admin.test(currentPage)) {
 
       if (!$angularCacheFactory.get('authCache').get('logginIn') || $angularCacheFactory.get('authCache').get('logginIn') !== $rootScope.userid) {
-
         $location.path('/login');
-
       }
+
     }
 
     // every time the page reloads make sure it loads from the top
@@ -100,5 +99,5 @@ angular.module('HashBangURLs', []).config(['$locationProvider', function($locati
     enabled: true,
     requireBase: false
   });
-  
+
 }]);
