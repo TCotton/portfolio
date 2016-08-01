@@ -715,8 +715,9 @@ module.exports = function(grunt) {
       appTemplates: {
         src: '<%= yeoman.app %>/homepage/*.html',
         dest: '<%= yeoman.app %>/shared/templates.js',
-        standalone: true,
         options: {
+          standalone: true,
+          quotes: 'single',
           htmlmin: {
             collapseWhitespace: true,
             collapseBooleanAttributes: true,
@@ -743,6 +744,7 @@ module.exports = function(grunt) {
       'copy:tmp',
       /*      'lodash',*/
       'express:livereload',
+      'ngtemplates',
       //'open',
       'watch'
     ]);
