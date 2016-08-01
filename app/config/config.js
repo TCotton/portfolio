@@ -98,6 +98,6 @@ angular.module('HashBangURLs', []).config(['$locationProvider', function($locati
   $locationProvider.html5Mode({
     enabled: true,
     requireBase: false
-  });
+  }).hashPrefix('!');
 
 }]);
