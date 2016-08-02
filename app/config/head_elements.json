@@ -59,6 +59,41 @@
     {
       "rel": "dns-prefetch",
       "href": "//platform.vine.co"
+    },
+    {
+      "rel": "icon",
+      "sizes": "192x192",
+      "href": "images/icons/chrome-touch-icon-192x192.png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "images/touch/apple-touch-icon.png"
+    }
+  ],
+  "meta": [
+    {
+      "name": "mobile-web-app-capable",
+      "content": "yes"
+    },
+    {
+      "name": "application-name",
+      "content": "blog unblock"
+    },
+    {
+      "name": "apple-mobile-web-app-capable",
+      "content": "yes"
+    },
+    {
+      "name": "apple-mobile-web-app-status-bar-style",
+      "content": "black"
+    },
+    {
+      "name": "apple-mobile-web-app-title",
+      "content": "blog unblock"
+    },
+    {
+      "name": "theme-color",
+      "content": "#00bd9c"
     }
   ]
 }

@@ -1,0 +1,25 @@
+{
+  "name": "blog unblockt",
+  "short_name": "bu",
+  "icons": [{
+    "src": "images/icons/icon-128x128.png",
+    "sizes": "128x128",
+    "type": "image/png"
+  }, {
+    "src": "images/icons/apple-touch-icon.png",
+    "sizes": "152x152",
+    "type": "image/png"
+  }, {
+    "src": "images/icons/ms-touch-icon-144x144-precomposed.png",
+    "sizes": "144x144",
+    "type": "image/png"
+  }, {
+    "src": "images/icons/chrome-touch-icon-192x192.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }],
+  "start_url": "/blog/",
+  "display": "standalone",
+  "background_color": "#00bd9c",
+  "theme_color": "#ffffff"
+}

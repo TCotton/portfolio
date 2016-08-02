@@ -61,6 +61,20 @@ app.all('*', function(req, res, next) {
  */
 if (app.get('env') === 'development') {
 
+  app.use(express.static(__dirname + '/app'));
+
+  app.get('/*', function(req, res, next) {
+
+    if (!req.path.startsWith('/api/')) {
+      res.sendFile(__dirname + '/app/index.html');
+    }
+
+    if (req.path.startsWith('/api/')) {
+      next();
+    }
+
+  });
+
   app.all('*', function(req, res, next) {
     res.setHeader('Cache-Control', 'no-cache');
     next();
@@ -82,6 +96,7 @@ if (app.get('env') === 'development') {
       next();
     }
   });
+
 }
 
 /**
@@ -109,6 +124,20 @@ if (app.get('env') === 'production') {
   app.use(wwwRedirect);
 
   app.use(favicon(path.join(__dirname, 'dist/favicon.ico')));
+
+  app.use(express.static(__dirname + '/dist'));
+
+  app.get('/*', function(req, res, next) {
+
+    if (!req.path.startsWith('/api/')) {
+      res.sendFile(__dirname + '/dist/index.html');
+    }
+
+    if (req.path.startsWith('/api/')) {
+      next();
+    }
+
+  });
 
   app.all('*', function(req, res, next) {
     res.setHeader('Cache-Control', 'no-cache');

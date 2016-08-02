@@ -90,7 +90,7 @@
             // if empty send to 404 page
             // if not empty redirect to 404
             // TODO: move this server side
-            this.$location.path('/#!/');
+            this.$location.path('/404');
 
           }
 
@@ -108,27 +108,6 @@
     morePosts() {
       this.$scope.displayPosts = this.$scope.displayPosts + 10;
     }
-
-    /**\
-     *
-     * @param image {string}
-     * @returns {string}
-     */
-    /* srcsetImage(image) {
-
-     let newImage;
-
-     if (image.indexOf('stock-photo') !== -1) {
-     let dot = image.lastIndexOf('.');
-     newImage = '/' + image.slice(0, dot) + '-small' + image.slice(dot);
-
-     } else {
-     newImage = '/' + image;
-
-     }
-
-     return newImage;
-     }*/
 
   }
 
