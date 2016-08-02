@@ -109,7 +109,7 @@
 
           // if not empty redirect to homepage
           // TODO: move this server side
-          this.$location.path('/');
+          this.$location.path('/404');
 
         }
 

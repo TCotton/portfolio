@@ -90,7 +90,7 @@
             // if empty send to 404 page
             // if not empty redirect to 404
             // TODO: move this server side
-            this.$location.path('/');
+            this.$location.path('/404');
 
           }
 
