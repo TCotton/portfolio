@@ -39,7 +39,7 @@ angular.module('portfolioApp.miscDirective').directive('pageLoadingDirective', [
           run: function() {
             this.prefixedEvent(this.get(), 'AnimationEnd', this.animationListener);
           },
-          get: function() {
+          get: function () {
             return this.elem;
           },
           set: function(val) {
