@@ -18,7 +18,7 @@ module.exports = function(grunt) {
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
-  console.dir(swPrecache);
+  var swPrecache = require('sw-precache/lib/sw-precache');
 
   // configurable paths
   var yeomanConfig = {
@@ -40,7 +40,7 @@ module.exports = function(grunt) {
     swPrecache: {
       dev: {
         handleFetch: false,
-        rootDir: 'app'
+        rootDir: 'dist'
       }
     },
     watch: {
@@ -519,7 +519,8 @@ module.exports = function(grunt) {
               'images/blog-stock-images/*.webp',
               'images/slider/*.webp',
               'fonts/*',
-              'audio/*.mp3'
+              'audio/*.mp3',
+              'service-worker-registration.js'
             ]
           },
           {
@@ -686,7 +687,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.dist %>/styles',
-          src: ['*.main-postcss.css', '!*.min.css'],
+          src: ['*.css'],
           dest: '<%= yeoman.dist %>/styles',
           ext: '.css'
         }]
@@ -732,10 +733,10 @@ module.exports = function(grunt) {
       handleFetch: handleFetch,
       logger: grunt.log.writeln,
       staticFileGlobs: [
-        rootDir + '/css/**.css',
-        rootDir + '/**.html',
+        rootDir + '/styles/*.main-postcss.css',
+        rootDir + '**/**/**.html',
         rootDir + '/images/**.*',
-        rootDir + '/js/**.js'
+        rootDir + '/scripts/**.js'
       ],
       stripPrefix: rootDir + '/',
       // verbose defaults to false, but for the purposes of this demo, log more.
@@ -749,8 +750,6 @@ module.exports = function(grunt) {
     var done = this.async();
     var rootDir = this.data.rootDir;
     var handleFetch = this.data.handleFetch;
-
-    console.dir(this.data);
 
     writeServiceWorkerFile(rootDir, handleFetch, function(error) {
       if (error) {
@@ -775,7 +774,6 @@ module.exports = function(grunt) {
       /*      'lodash',*/
       'express:livereload',
       //'open',
-      'swPrecache',
       'watch'
     ]);
   });
@@ -813,7 +811,8 @@ module.exports = function(grunt) {
     'rev',
     'posthtml',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'swPrecache'
   ]);
 
   grunt.registerTask('default', [

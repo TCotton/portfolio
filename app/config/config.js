@@ -1,4 +1,4 @@
-mod'use strict';
+'use strict';
 
 angular.module('portfolioAppConfig', []).run(['$rootScope', '$window', '$location', '$angularCacheFactory', '$route', function($rootScope, $window, $location, $angularCacheFactory, $route) {
 
