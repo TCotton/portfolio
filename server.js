@@ -66,11 +66,11 @@ if (app.get('env') === 'development') {
 
   app.get('/*', function(req, res, next) {
 
-    if (!req.path.startsWith('/api/')) {
+    if (!req.url.startsWith('/api/')) {
       res.sendFile(__dirname + '/app/index.html');
     }
 
-    if (req.path.startsWith('/api/')) {
+    if (req.url.startsWith('/api/')) {
       next();
     }
 
@@ -88,11 +88,8 @@ if (app.get('env') === 'development') {
   // Error Handling
   app.use(function(err, req, res, next) {
     if (err) {
-      res.statusCode = (err.status || 500);
-      res.render('error', {
-        message: err.message,
-        error: err
-      });
+      console.error(err.stack);
+      next(err);
     } else {
       next();
     }
@@ -129,11 +126,11 @@ if (app.get('env') === 'production') {
 
   app.get('/*', function(req, res, next) {
 
-    if (!req.path.startsWith('/api/')) {
+    if (!req.url.startsWith('/api/')) {
       res.sendFile(__dirname + '/dist/index.html');
     }
 
-    if (req.path.startsWith('/api/')) {
+    if (req.url.startsWith('/api/')) {
       next();
     }
 
