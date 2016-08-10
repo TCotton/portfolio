@@ -722,7 +722,17 @@ module.exports = function(grunt) {
 
     ngtemplates: {
       appTemplates: {
-        src: '<%= yeoman.app %>/homepage/*.html',
+        src: [
+          '<%= yeoman.app %>/homepage/*.html',
+          '<%= yeoman.app %>/side-projects/*.html',
+          '<%= yeoman.app %>/work-projects/*.html',
+          '<%= yeoman.app %>/blog-comments/*.html',
+          '<%= yeoman.app %>/blog-pages/*.html',
+          '<%= yeoman.app %>/blog-sidebar/*.html',
+          '<%= yeoman.app %>/blog-comments/*.html',
+          '<%= yeoman.app %>/about-me/*.html',
+          '<%= yeoman.app %>/contact/*.html'
+        ],
         dest: '<%= yeoman.app %>/shared/templates.js',
         options: {
           standalone: true,
@@ -732,6 +742,9 @@ module.exports = function(grunt) {
             collapseBooleanAttributes: true,
             removeCommentsFromCDATA: true,
             removeOptionalTags: true
+          },
+          url: function(url) {
+            return url.replace('app/', '');
           }
         }
       }
@@ -811,6 +824,7 @@ module.exports = function(grunt) {
     'clean:dist',
     'wiredep',
     'useminPrepare',
+    'ngtemplates',
     'sass:dist',
     'concurrent:dist',
     'react',
