@@ -9,27 +9,31 @@
  * This entire site is coded in AngularJS and React. Inspect the code on GitHub: https://github.com/TCotton/portfolio
  */
 
-angular.module('portfolioApp', ['portfolioApp.blogAdminService','portfolioApp.blogAdminController','portfolioApp.blogCommentsDirective','portfolioApp.blogCommentsService','portfolioApp.blogPagesController','portfolioApp.blogPagesDirective','portfolioApp.blogPagesService','portfolioApp.blogPagesFilter','portfolioApp.blogSidebarController','portfolioApp.contractController','portfolioApp.contractService','portfolioApp.footerController','portfolioApp.footerService','portfolioApp.homepageDirective','portfolioApp.miscDirective','portfolioApp.sideProjectsController','portfolioApp.angularReact','portfolioApp.sitemapController','portfolioApp.wordProjectsController','AppConstants','ngResource','ngSanitize','ngRoute','ngAria','HashBangURLs','portfolioAppConfig','jmdobry.angular-cache','underscore','momentLibrary','helperFunctions','requestTimeout','clearRequestTimeout','requestInterval','clearRequestInterval','react'
-]).config(function($routeProvider, $httpProvider) {
+ angular.module('portfolioApp', ['portfolioApp.blogAdminService','portfolioApp.blogAdminController','portfolioApp.blogCommentsDirective','portfolioApp.blogCommentsService','portfolioApp.blogPagesController','portfolioApp.blogPagesDirective','portfolioApp.blogPagesService','portfolioApp.blogPagesFilter','portfolioApp.blogSidebarController','portfolioApp.contractController','portfolioApp.contractService','portfolioApp.footerController','portfolioApp.footerService','portfolioApp.homepageDirective','portfolioApp.miscDirective','portfolioApp.sideProjectsController','portfolioApp.angularReact','portfolioApp.sitemapController','portfolioApp.wordProjectsController','AppConstants','ngResource','ngSanitize','ngRoute','ngAria','HashBangURLs','portfolioAppConfig','jmdobry.angular-cache','underscore','momentLibrary','helperFunctions','requestTimeout','react','detectLocalStorage','ngOpbeat','appTemplates'
+]).config(function($routeProvider, $httpProvider, $opbeatProvider) {
 
-    // Needed for CORS
-    // http://better-inter.net/enabling-cors-in-angular-js/
-    $httpProvider.defaults.useXDomain = true;
-    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+  $httpProvider.defaults.useXDomain = true;
+  delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
-    $routeProvider
-      .when('/', {
-        templateUrl: 'homepage/main.html',
-        title: 'The portfolio and blog of web developer Andy Walpole'
-      })
-      .when('/work-projects', {
-        templateUrl: 'work-projects/my_work.html',
-        title: 'Noteworthy work projects from the past 18 months'
-      })
-      .when('/work-projects/:workPage', {
-        templateUrl: 'work-projects/work_page.html',
-        controller: 'WorkPageCtrl'
-      })
+  $opbeatProvider.config({
+    orgId: '55aec660d5204d32b2b3bfb7a1980e0a',
+    appId: 'a7a0e96ae4'
+  });
+
+  $routeProvider
+    .when('/', {
+      templateUrl: 'homepage/main.html',
+      title: 'The portfolio and blog of web developer Andy Walpole'
+    })
+    .when('/work-projects', {
+      templateUrl: 'work-projects/my_work.html',
+      title: 'Noteworthy work projects from the past 18 months',
+      controller: 'WorkPageCtrl as WorkProjPageCtrl'
+    })
+    .when('/work-projects/:workPage', {
+      templateUrl: 'work-projects/work_page.html',
+      controller: 'WorkPageCtrl as WorkProjPageCtrl'
+    })
        </pre>
       </a>
     </div>
