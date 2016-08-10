@@ -22,3 +22,4 @@ app/styles/file.css.patch
 scss-lint-report.xml
 tmp/
 log/
+app/service-worker.js

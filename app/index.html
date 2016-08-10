@@ -22,13 +22,13 @@
   <meta data-ng-if="hideFooter" property="og:title" content="{{faceBookTitle}}"/>
   <meta data-ng-if="hideFooter" property="og:url" content="{{canonical}}"/>
   <meta data-ng-if="hideFooter" property="og:description" content="{{faceBookDescription}}"/>
-  <meta data-ng-if="hideFooter" property="og:type" content="article" />
+  <meta data-ng-if="hideFooter" property="og:type" content="article"/>
   <meta data-ng-if="hideFooter" name="description" content="{{faceBookDescription}}">
 
-  <meta data-ng-if="hideFooter" name="twitter:card" content="summary" />
-  <meta data-ng-if="hideFooter" name="twitter:site" content="@andywalpole" />
-  <meta data-ng-if="hideFooter" name="twitter:title" content="{{faceBookTitle}}" />
-  <meta data-ng-if="hideFooter" name="twitter:description" content="{{faceBookDescription}}" />
+  <meta data-ng-if="hideFooter" name="twitter:card" content="summary"/>
+  <meta data-ng-if="hideFooter" name="twitter:site" content="@andywalpole"/>
+  <meta data-ng-if="hideFooter" name="twitter:title" content="{{faceBookTitle}}"/>
+  <meta data-ng-if="hideFooter" name="twitter:description" content="{{faceBookDescription}}"/>
 
   <link rel="canonical" href="{{canonical}}"/>
 
@@ -94,7 +94,7 @@
   <![endif]-->
 
   <div id="outer-content">
-  <div id="content" data-ng-view></div>
+    <div id="content" data-ng-view></div>
   </div>
 
   <div data-ng-include src="'footer/footer.html'"></div>
@@ -185,5 +185,6 @@
 <a href="http://www.jonathanmurray.com/bulk.php?entry_id=47624"><!-- rolypoly-slice --></a>
 </div>
 <data-loader-directive ng-if="loader"></data-loader-directive>
+<script src="service-worker-registration.js"></script>
 </body>
 </html>
