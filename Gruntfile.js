@@ -17,6 +17,8 @@ module.exports = function(grunt) {
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
+  var swPrecache = require('sw-precache/lib/sw-precache');
+
   // configurable paths
   var yeomanConfig = {
     // configurable paths
@@ -34,6 +36,12 @@ module.exports = function(grunt) {
   grunt.initConfig({
     yeoman: yeomanConfig,
     pkg: grunt.file.readJSON('package.json'),
+    swPrecache: {
+      dev: {
+        handleFetch: false,
+        rootDir: 'dist'
+      }
+    },
     watch: {
       js: {
         files: [
@@ -489,7 +497,7 @@ module.exports = function(grunt) {
             cwd: '<%= yeoman.app %>',
             dest: '<%= yeoman.dist %>',
             src: [
-              '*.{ico,txt}',
+              '*.{ico,txt,json}',
               'views/{,*/}*.html',
               'footer/*.html',
               'homepage/*.html',
@@ -510,7 +518,8 @@ module.exports = function(grunt) {
               'images/blog-stock-images/*.webp',
               'images/slider/*.webp',
               'fonts/*',
-              'audio/*.mp3'
+              'audio/*.mp3',
+              'service-worker-registration.js'
             ]
           },
           {
@@ -677,7 +686,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.dist %>/styles',
-          src: ['*.main-postcss.css', '!*.min.css'],
+          src: ['*.css'],
           dest: '<%= yeoman.dist %>/styles',
           ext: '.css'
         }]
@@ -728,6 +737,42 @@ module.exports = function(grunt) {
       }
     }
 
+  });
+
+  function writeServiceWorkerFile(rootDir, handleFetch, callback) {
+    var config = {
+      cacheId: grunt.file.readJSON('package.json').name,
+      // If handleFetch is false (i.e. because this is called from swPrecache:dev), then
+      // the service worker will precache resources but won't actually serve them.
+      // This allows you to test precaching behavior without worry about the cache preventing your
+      // local changes from being picked up during the development cycle.
+      handleFetch: handleFetch,
+      logger: grunt.log.writeln,
+      staticFileGlobs: [
+        rootDir + '/styles/*.main-postcss.css',
+        rootDir + '**/**/**.html',
+        rootDir + '/images/**.*',
+        rootDir + '/scripts/**.js'
+      ],
+      stripPrefix: rootDir + '/',
+      // verbose defaults to false, but for the purposes of this demo, log more.
+      verbose: true
+    };
+
+    swPrecache.write(path.join(rootDir, 'service-worker.js'), config, callback);
+  }
+
+  grunt.registerMultiTask('swPrecache', function() {
+    var done = this.async();
+    var rootDir = this.data.rootDir;
+    var handleFetch = this.data.handleFetch;
+
+    writeServiceWorkerFile(rootDir, handleFetch, function(error) {
+      if (error) {
+        grunt.fail.warn(error);
+      }
+      done();
+    });
   });
 
   grunt.registerTask('server', function(target) {
@@ -783,7 +828,8 @@ module.exports = function(grunt) {
     'rev',
     'posthtml',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'swPrecache'
   ]);
 
   grunt.registerTask('default', [

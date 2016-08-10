@@ -119,6 +119,7 @@
     "posthtml-doctype": "^1.1.1",
     "posthtml-head-elements": "^0.4.1",
     "requirejs": "^2.1.22",
+    "sw-precache": "^4.0.0",
     "time-grunt": "^1.2.2",
     "uglify-save-license": "^0.4.1"
   },

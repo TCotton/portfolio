@@ -22,7 +22,6 @@ var sixMonths = 14515200;
 
 var conf = require('./server/config/prerender'); 			// load the prerender config
 
-
 app.use(require('prerender-node').set('prerenderToken', conf.prerender));
 
 app.use(helmet.frameguard('deny'));
