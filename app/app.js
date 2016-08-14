@@ -59,7 +59,8 @@ angular.module('portfolioApp', [
   'requestTimeout',
   'react',
   'detectLocalStorage',
-  'ngOpbeat'
+  'ngOpbeat',
+  'appTemplates'
 ]).config(function($routeProvider, $httpProvider, $opbeatProvider) {
 
   // Needed for CORS

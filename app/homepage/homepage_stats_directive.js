@@ -4,11 +4,11 @@
 
 'use strict';
 
-angular.module('portfolioApp.homepageDirective').directive('homepageStatsDirective', ['STATS', '$window', '_', 'moment', function(STATS, $window, _, moment) {
+angular.module('portfolioApp.homepageDirective').directive('homepageStatsDirective', ['STATS', '$window', '_', 'moment', '$templateCache', function(STATS, $window, _, moment, $templateCache) {
 
   return {
     restrict: 'A',
-    templateUrl: '../homepage/homepage_stats.html',
+    template: $templateCache.get('homepage/homepage_stats.html'),
     scope: {
       header: '@header',
       section: '@section'
