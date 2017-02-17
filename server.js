@@ -26,11 +26,11 @@ app.use(require('prerender-node').set('prerenderToken', conf.prerender));
 
 app.use(helmet.frameguard('deny'));
 app.use(helmet.xssFilter());
-app.use(helmet.nosniff());
+app.use(helmet.noSniff());
 app.use(helmet.hidePoweredBy());
 
 if (app.get('env') === 'production') {
-  app.use(helmet.hsts({maxAge: 31536000}));
+  app.use(helmet.hsts({ maxAge: 31536000 }));
 }
 
 var database = require('./server/config/database'); 			// load the database config
@@ -50,7 +50,9 @@ app.use(methodOverride()); 						// simulate DELETE and PUT
 app.use(cookieParser());
 app.use(errorHandler());
 
-app.all('*', function(req, res, next) {
+global.__base = __dirname + '/';
+
+app.all('*', function (req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With');
   next();
@@ -63,7 +65,9 @@ if (app.get('env') === 'development') {
 
   app.use(express.static(__dirname + '/app'));
 
-  app.get('/*', function(req, res, next) {
+  app.get('/*', function (req, res, next) {
+
+    console.log(req.url);
 
     if (!req.url.startsWith('/api/')) {
       res.sendFile(__dirname + '/app/index.html');
@@ -75,7 +79,7 @@ if (app.get('env') === 'development') {
 
   });
 
-  app.all('*', function(req, res, next) {
+  app.all('*', function (req, res, next) {
     res.setHeader('Cache-Control', 'no-cache');
     next();
   });
@@ -85,9 +89,8 @@ if (app.get('env') === 'development') {
   app.use(express.static(path.join(__dirname, 'tmp'))); 		// set the static files location /public/img will be /img for users
 
   // Error Handling
-  app.use(function(err, req, res, next) {
+  app.use(function (err, req, res, next) {
     if (err) {
-      console.error(err.stack);
       next(err);
     } else {
       next();
@@ -124,7 +127,7 @@ if (app.get('env') === 'production') {
 
   app.use(express.static(__dirname + '/dist'));
 
-  app.get('/*', function(req, res, next) {
+  app.get('/*', function (req, res, next) {
 
     if (!req.url.startsWith('/api/')) {
       res.sendFile(__dirname + '/dist/index.html');
@@ -136,27 +139,27 @@ if (app.get('env') === 'production') {
 
   });
 
-  app.all('*', function(req, res, next) {
+  app.all('*', function (req, res, next) {
     res.setHeader('Cache-Control', 'no-cache');
     next();
   });
 
-  app.all('/blog-admin/*', function(req, res, next) {
+  app.all('/blog-admin/*', function (req, res, next) {
     res.setHeader('Cache-Control', 'no-store');
     next();
   });
 
-  app.all('/scripts/*', function(req, res, next) {
+  app.all('/scripts/*', function (req, res, next) {
     res.setHeader('Cache-Control', 'public, max-age=' + sixMonths);
     next();
   });
 
-  app.all('/images/*', function(req, res, next) {
+  app.all('/images/*', function (req, res, next) {
     res.setHeader('Cache-Control', 'public, max-age=' + sixMonths);
     next();
   });
 
-  app.all('/styles/*', function(req, res, next) {
+  app.all('/styles/*', function (req, res, next) {
     res.setHeader('Cache-Control', 'public, max-age=' + sixMonths);
     next();
   });
@@ -167,7 +170,7 @@ if (app.get('env') === 'production') {
 
   // production error handler
   // no stacktraces leaked to user
-  app.use(function(err, req, res, next) {
+  app.use(function (err, req, res, next) {
     if (err) {
       res.statusCode = (err.status || 500);
       res.render('error', {
@@ -197,6 +200,6 @@ require('./server/rss')(app);
 
 module.exports = app;
 
-http.createServer(app).listen(app.get('port'), function() {
+http.createServer(app).listen(app.get('port'), function () {
   console.log('Express server listening on port ' + app.get('port'));
 });

@@ -6,7 +6,7 @@
     "angular-resource": "1.5.8",
     "angular-sanitize": "1.5.8",
     "angular-route": "1.5.8",
-    "angular-cache": "~2.3.3",
+    "angular-cache": "2.3.3",
     "angular-aria": "1.5.8",
     "underscore": "1.6.0",
     "moment": "2.6.0",

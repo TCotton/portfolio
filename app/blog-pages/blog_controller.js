@@ -33,6 +33,8 @@
 
         BlogDataService.retrieveData().then((result) => {
 
+          console.dir(result);
+
           if (_.isObject(result.data.BlogPosts)) {
 
             // stop loader spinner in loaderDirective

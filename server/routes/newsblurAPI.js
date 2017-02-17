@@ -124,8 +124,6 @@ module.exports = function(app) {
         res.send(err);
       }
 
-      res.setHeader('Cache-Control', 'public, max-age=86400');
-
       if (_.isEmpty(file)) {
 
         // if the directory doesn't have a file then create one and send the contents to the frontend

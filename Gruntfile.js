@@ -811,8 +811,7 @@ module.exports = function(grunt) {
     'rev',
     'posthtml',
     'usemin',
-    'htmlmin',
-    'swPrecache'
+    'htmlmin'
   ]);
 
   grunt.registerTask('default', [
