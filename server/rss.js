@@ -12,7 +12,7 @@ module.exports = function(app) {
     title: 'blog unblock: The blog of web developer Andy Walpole',
     description: 'Covers JavaScript, CSS, HTML and some political and social commentary',
     language: 'en',
-    site_url: 'https://andywalpole.me/#!/blog/',
+    site_url: 'https://andywalpole.me/blog/',
     feed_url: 'https://andywalpole.me/rss.xml'
   };
 

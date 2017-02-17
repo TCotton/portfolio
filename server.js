@@ -58,6 +58,8 @@ app.all('*', function (req, res, next) {
   next();
 });
 
+require('./server/rss')(app);
+
 /*
  * Development Settings
  */
@@ -195,8 +197,6 @@ require('./server/parse_feed/parse_rss')(app);
 
 // XML sitemap =================================================================
 require('./server/sitemap')(app);
-
-require('./server/rss')(app);
 
 module.exports = app;
 
