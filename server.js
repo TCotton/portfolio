@@ -18,7 +18,7 @@ var methodOverride = require('method-override');
 var compress = require('compression');
 var app = express(); 								// create our app w/ express
 var mongoose = require('mongoose'); 					// mongoose for mongodb
-var sixMonths = 14515200;
+var cache = 31557600;
 
 var conf = require('./server/config/prerender'); 			// load the prerender config
 
@@ -57,19 +57,21 @@ app.all('*', function (req, res, next) {
   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With');
   next();
 });
-
-require('./server/rss')(app);
-
+const cacheTime = 86400000 * 7;
 /*
  * Development Settings
  */
 if (app.get('env') === 'development') {
 
-  app.use(express.static(__dirname + '/app'));
+  app.use(express.static(__dirname + '/app', { maxAge: cacheTime }));
+  // This will change in production since we'll be using the dist folder
+  // This covers serving up the index page
+  app.use(favicon(path.join(__dirname, 'app/favicon.ico')));
+  app.use(express.static(path.join(__dirname, 'tmp'), { maxAge: cacheTime })); 		// set the static files location /public/img will be /img for users
+
+  require('./server/rss')(app);
 
   app.get('/*', function (req, res, next) {
-
-    console.log(req.url);
 
     if (!req.url.startsWith('/api/')) {
       res.sendFile(__dirname + '/app/index.html');
@@ -85,10 +87,6 @@ if (app.get('env') === 'development') {
     res.setHeader('Cache-Control', 'no-cache');
     next();
   });
-  // This will change in production since we'll be using the dist folder
-  // This covers serving up the index page
-  app.use(favicon(path.join(__dirname, 'app/favicon.ico')));
-  app.use(express.static(path.join(__dirname, 'tmp'))); 		// set the static files location /public/img will be /img for users
 
   // Error Handling
   app.use(function (err, req, res, next) {
@@ -127,7 +125,9 @@ if (app.get('env') === 'production') {
 
   app.use(favicon(path.join(__dirname, 'dist/favicon.ico')));
 
-  app.use(express.static(__dirname + '/dist'));
+  app.use(express.static(__dirname + '/dist', { maxAge: cacheTime }));
+
+  require('./server/rss')(app);
 
   app.get('/*', function (req, res, next) {
 
@@ -140,33 +140,6 @@ if (app.get('env') === 'production') {
     }
 
   });
-
-  app.all('*', function (req, res, next) {
-    res.setHeader('Cache-Control', 'no-cache');
-    next();
-  });
-
-  app.all('/blog-admin/*', function (req, res, next) {
-    res.setHeader('Cache-Control', 'no-store');
-    next();
-  });
-
-  app.all('/scripts/*', function (req, res, next) {
-    res.setHeader('Cache-Control', 'public, max-age=' + sixMonths);
-    next();
-  });
-
-  app.all('/images/*', function (req, res, next) {
-    res.setHeader('Cache-Control', 'public, max-age=' + sixMonths);
-    next();
-  });
-
-  app.all('/styles/*', function (req, res, next) {
-    res.setHeader('Cache-Control', 'public, max-age=' + sixMonths);
-    next();
-  });
-
-  app.use(express.static(path.join(__dirname, 'dist')));
 
   // set the static files location /public/img will be /img for users
 

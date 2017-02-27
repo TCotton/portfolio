@@ -519,8 +519,7 @@ module.exports = function(grunt) {
               'images/blog-stock-images/*.webp',
               'images/slider/*.webp',
               'fonts/*',
-              'audio/*.mp3',
-              'service-worker-registration.js'
+              'audio/*.mp3'
             ]
           },
           {
