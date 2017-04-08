@@ -335,7 +335,21 @@ module.exports = function(grunt) {
       ],
       css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
       options: {
-        assetsDirs: ['<%= yeoman.dist %>']
+        assetsDirs: ['<%= yeoman.dist %>'],
+				blockReplacements: {
+					js: function (block) {
+
+						const asyncScripts = [
+							'scripts.js'
+						];
+
+						const isAsync = block.async || asyncScripts.indexOf(block.dest) > -1;
+
+						return isAsync ?
+							'<script rel="preload" src="' + block.dest + '"><\/script>' :
+							'<script rel="preload" src="' + block.dest + '"><\/script>';
+					}
+				}
       }
     },
 

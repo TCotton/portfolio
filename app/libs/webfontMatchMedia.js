@@ -918,7 +918,7 @@ var WebFont;
 
 window.webfontMatchMedia = window.webfontMatchMedia || {};
 
-window.webfontMatchMedia = (function(document, window, undefined) {
+window.webfontMatchMedia = (function(document, window) {
 
   return {
 

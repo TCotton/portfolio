@@ -71,6 +71,7 @@ angular.module('portfolioApp', [
     orgId: '55aec660d5204d32b2b3bfb7a1980e0a',
     appId: 'a7a0e96ae4'
   });
+  $httpProvider.useApplyAsync(true);
 
   $routeProvider
     .when('/', {
