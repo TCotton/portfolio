@@ -333,22 +333,23 @@ module.exports = function(grunt) {
         '<%= yeoman.dist %>/shared/*.html',
         '<%= yeoman.dist %>/misc/*.html'
       ],
-      css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
       options: {
         assetsDirs: ['<%= yeoman.dist %>'],
 				blockReplacements: {
 					js: function (block) {
 
-						const asyncScripts = [
-							'scripts.js'
-						];
+						const asyncScripts = 'scripts.js';
 
-						const isAsync = block.async || asyncScripts.indexOf(block.dest) > -1;
+						const isAsync = (block.dest.indexOf(asyncScripts) === -1);
 
 						return isAsync ?
-							'<script rel="preload" src="' + block.dest + '"><\/script>' :
-							'<script rel="preload" src="' + block.dest + '"><\/script>';
-					}
+							'<script rel="preload" defer src="' + block.dest + '"><\/script>' :
+							'<script rel="preload" defer src="' + block.dest + '"><\/script>';
+					},
+          css: function(block) {
+						grunt.log.writeln('in css block!');
+					  return `<link rel="preload" href="${block.dest}" as="style" onload="${this.rel}='stylesheet">`;
+          }
 				}
       }
     },
@@ -819,7 +820,7 @@ module.exports = function(grunt) {
     'inline',
     'cwebp',
     'copy:dist',
-    // 'cssmin',
+    'cssmin',
     'uglify',
     'rev',
     'posthtml',
