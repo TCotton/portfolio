@@ -1,0 +1,20 @@
+{
+  "name": "opbeat-angular",
+  "version": "3.1.2",
+  "license": "MIT",
+  "description": "Official AngularJS client for logging exceptions, stacktraces and performance data to Opbeat",
+  "main": "opbeat-angular.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/opbeat/opbeat-js.git"
+  },
+  "contributors": [
+    "Hamidreza Jahtalab <hamid@opbeat.com>",
+    "Mark Lloyd Jones <mark.lloyd.jones@gmail.com>",
+    "Kenneth Auchenberg"
+  ],
+  "homepage": "https://github.com/opbeat/opbeat-js"
+}
