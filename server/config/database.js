@@ -5,5 +5,5 @@
 module.exports = {
 
   // the database url to connect
-  url : 'mongodb://AndyW:BRus8eKEkaseJ5z2stA8eC2adEcH7Yup@novus.modulusmongo.net:27017/Oqyg6yzi'
+  url: 'mongodb://DCotton:CBpeKPmiTmA3gdWKepDiB8@ds125511-a0.mlab.com:25511,ds125511-a1.mlab.com:25511/portfolio?replicaSet=rs-ds125511'
 };
