@@ -3,7 +3,6 @@
  */
 'use strict';
 // set up ========================
-const spdy = require('spdy');
 var express = require('express');
 var http = require('http');
 var errorHandler = require('express-error-handler');
@@ -174,16 +173,6 @@ require('./server/sitemap')(app);
 
 module.exports = app;
 
-if (app.get('env') === 'production') {
-
-  spdy.createServer(app).listen(process.env.PORT || app.get('port'), function () {
-		console.log('Express server listening on port ' + app.get('port'));
-	});
-
-} else {
-
-	http.createServer(app).listen(process.env.PORT || app.get('port'), function () {
-		console.log('Express server listening on port ' + app.get('port'));
-	});
-
-}
+http.createServer(app).listen(process.env.PORT || app.get('port'), function () {
+	console.log('Express server listening on port ' + app.get('port'));
+});

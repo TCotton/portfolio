@@ -38,7 +38,6 @@
     "sax": "1.2.2",
     "serve-favicon": "2.3.2",
     "sitemap": "1.9.0",
-    "spdy": "^3.4.4",
     "underscore": "1.8.3",
     "winston": "2.3.1"
   },
