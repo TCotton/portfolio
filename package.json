@@ -124,8 +124,8 @@
     "uglify-save-license": "0.4.1"
   },
   "engines": {
-    "node": "=6.10.2",
-    "npm": "=3.10.10"
+    "node": "=6.9.5",
+    "npm": "=4.5.0"
   },
   "description": "My portfolio",
   "main": "server.js",
