@@ -2,7 +2,1038 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6a6cdc15-b520-43b6-8a39-1f224aae8668" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/andywalpole.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/awalpole.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLinters/jshint.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jscsPlugin.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/portfolio.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/scssLintPlugin.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/about-me/about_me.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/audio/PeteOnSoftware_Episode33_RobEisenbergOnAurelia.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog-admin/add_blog.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog-admin/add_blog_controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog-admin/admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog-admin/blog_details.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog-admin/comment_admin_controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog-admin/comment_details.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog-admin/edit_blog_controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog-admin/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog-admin/login_controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog-admin/mongo_blog_factory.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog-admin/mongo_user_factory.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog-admin/user_details.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog-admin/user_details_controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog-comments/comment.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog-comments/comment_controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog-comments/comment_directive.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog-comments/mongo_comment_service.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog-pages/blog.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog-pages/blog_article_controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog-pages/blog_category.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog-pages/blog_category_controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog-pages/blog_controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog-pages/blog_data_service.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog-pages/blog_directive.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog-pages/blog_page.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog-pages/codepen_directive.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog-pages/compile_directive.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog-pages/prism_directive.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog-pages/scroll_to_top_directive.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog-pages/twitter_directive.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog-pages/vine_directive.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog-pages/word_count_filter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog-sidebar/sidebar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog-sidebar/sidebar_controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/config.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/constants.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/front_page_stats.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/head_elements.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/projects_pages.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/slider.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/work_pages.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/contact/contact_me.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/contact/form_controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/contact/post_form_service.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dev-tools/console-commands.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dev-tools/find-missing-directives.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dev-tools/stop-angular-overrides.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/footer/footer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/footer/footer_controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/footer/newsblur_service.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/homepage/homepage_stats.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/homepage/homepage_stats_directive.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/homepage/main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/homepage/slider_directive.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/KAPLAN.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/KAPLAN.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/andyw.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/andyw.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blinkbox-work.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blinkbox-work.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blinkboxbooks-screenshot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blinkboxbooks-screenshot.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/Choosing-Javascript.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/Choosing-Javascript.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/alan-rusbridge-dont-spy-on-us.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/alan-rusbridge-dont-spy-on-us.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/angularjs2-website-angulario-large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/angularjs2-website-angulario-large.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/angularjs2-website-angulario-medium.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/angularjs2-website-angulario-medium.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/angularjs2-website-angulario-small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/angularjs2-website-angulario-small.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/apple-iphone.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/apple-iphone.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/bright-light-personal-reflections.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/bright-light-personal-reflections.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/cctv.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/cctv.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/constant-support-es6-chrome-canary-large.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/constant-support-es6-chrome-canary-large.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/constant-support-es6-chrome-canary-medium.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/constant-support-es6-chrome-canary-medium.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/constant-support-es6-chrome-canary-small.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/constant-support-es6-chrome-canary-small.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/constant-support-es6-chrome-large.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/constant-support-es6-chrome-large.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/constant-support-es6-chrome-medium.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/constant-support-es6-chrome-medium.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/constant-support-es6-chrome-small.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/constant-support-es6-chrome-small.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/constants-support-safari8-large.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/constants-support-safari8-large.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/constants-support-safari8-medium.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/constants-support-safari8-medium.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/constants-support-safari8-small.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/constants-support-safari8-small.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/cory_doctorow-small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/cory_doctorow-small.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/creating-accessible-forms-using-angularjs-screenshot-one.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/creating-accessible-forms-using-angularjs-screenshot-one.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/creating-accessible-forms-using-angularjs-screenshot-two.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/creating-accessible-forms-using-angularjs-screenshot-two.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/cssconfeu-claudina-sarahe.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/cssconfeu-claudina-sarahe.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/cssconfeu-crowd-four.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/cssconfeu-crowd-four.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/cssconfeu-crowd-one.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/cssconfeu-crowd-one.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/cssconfeu-crowd-three.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/cssconfeu-crowd-three.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/cssconfeu-crowd-two.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/cssconfeu-crowd-two.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/cssconfeu-katie-kurkoski.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/cssconfeu-katie-kurkoski.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/cssconfeu-timmy-lister.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/cssconfeu-timmy-lister.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/cssconfeu-zoe-m-gillenwater.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/cssconfeu-zoe-m-gillenwater.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/dont-spy-on-us-intro.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/dont-spy-on-us-intro.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/dont-spy-on-us-thumb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/dont-spy-on-us-thumb.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/dont-spy-on-us.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/dont-spy-on-us.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/edgeconf-conference-large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/edgeconf-conference-large.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/edgeconf-conference-medium.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/edgeconf-conference-medium.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/edgeconf-conference-small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/edgeconf-conference-small.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/edgeconf-into-large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/edgeconf-into-large.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/edgeconf-into-medium.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/edgeconf-into-medium.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/edgeconf-into-small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/edgeconf-into-small.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/edgeconf-progressive-enhancement-large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/edgeconf-progressive-enhancement-large.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/edgeconf-progressive-enhancement-medium.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/edgeconf-progressive-enhancement-medium.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/edgeconf-progressive-enhancement-small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/edgeconf-progressive-enhancement-small.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/es6-slide-one.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/es6-slide-one.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/es6-slide-three.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/es6-slide-three.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/es6-slide-two.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/es6-slide-two.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/facebook.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/facebook.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/fear-technology-section.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/fear-technology-section.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/fear-technology.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/fear-technology.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/flexbox-css3-layout-large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/flexbox-css3-layout-large.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/flexbox-css3-layout-medium.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/flexbox-css3-layout-medium.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/flexbox-css3-layout-small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/fronteers-bruce-lawson-rachel-andrews.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/fronteers-bruce-lawson-rachel-andrews.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/fronteers-congress-audience-shot.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/fronteers-congress-audience-shot.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/fronteers-crowd-one.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/fronteers-crowd-one.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/fronteers-crowd-three.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/fronteers-crowd-three.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/fronteers-crowd-two.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/fronteers-crowd-two.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/fronteers-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/fronteers-logo.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/google-trends-ecmascript6-large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/google-trends-ecmascript6-large.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/google-trends-ecmascript6-medium.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/google-trends-ecmascript6-medium.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/google-trends-ecmascript6-small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/google-trends-ecmascript6-small.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/googlepagespeed-screenshot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/googlepagespeed-screenshot.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/image-five-finished-checkboxes.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/image-five-finished-checkboxes.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/image-four-ie9-select-dropdown-option.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/image-four-ie9-select-dropdown-option.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/image-one-finished-select-dropdown-list.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/image-one-finished-select-dropdown-list.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/image-one-hidden-menu.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/image-one-hidden-menu.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/image-three-firefox-select-dropdown-appearance-none.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/image-three-firefox-select-dropdown-appearance-none.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/image-two-chrome-select-dropdown-appearance-none.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/image-two-chrome-select-dropdown-appearance-none.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/image-two-display-menu.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/image-two-display-menu.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/images-using-notoriously-ticky-form-elements.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/images-using-notoriously-ticky-form-elements.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/javascript-five-large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/javascript-five-large.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/javascript-five-small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/javascript-five-small.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/javascript-four-large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/javascript-four-large.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/javascript-four-small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/javascript-four-small.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/javascript-one-large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/javascript-one-large.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/javascript-one-small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/javascript-one-small.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/javascript-seven-large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/javascript-seven-large.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/javascript-seven-small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/javascript-seven-small.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/javascript-six-large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/javascript-six-large.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/javascript-six-small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/javascript-six-small.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/javascript-three-large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/javascript-three-large.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/javascript-three-small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/javascript-three-small.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/javascript-two-large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/javascript-two-large.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/javascript-two-small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/javascript-two-small.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/jimmy-wales-bruce-schneier-dont-spy-on-us.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/jimmy-wales-bruce-schneier-dont-spy-on-us.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/js-learning-curves.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/js-learning-curves.jpeg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/on-the-record.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/on-the-record.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/once-upon-a-punch-card-how-textiles-can-explain-why-we-have-the-web.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/once-upon-a-punch-card-how-textiles-can-explain-why-we-have-the-web.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/panic-snowden-leaks.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/panic-snowden-leaks.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/prefixfree-vs-autoprefixer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/prefixfree-vs-autoprefixer.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/react-javascript-library-large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/react-javascript-library-large.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/react-javascript-library-medium.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/react-javascript-library-medium.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/react-javascript-library-small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/react-javascript-library-small.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/reactjs-if-you-wish-to-learn-ES6-2015-from-scratch-you-must-first-invent-the-universe.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/reactjs-if-you-wish-to-learn-ES6-2015-from-scratch-you-must-first-invent-the-universe.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/reactjs-why-empathy-matters.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/reactjs-why-empathy-matters.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/reject-badges-large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/reject-badges-large.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/reject-badges.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/reject-badges.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/reject-crowdshot-large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/reject-crowdshot-large.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/reject-lapttop.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/reject-lapttop.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/reject-montage-badges.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/reject-montage-badges.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/reject-name-cards.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/reject-name-cards.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/reject-outside-people-largeshot.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/reject-outside-people-largeshot.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/reject-outsideshot-person.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/reject-outsideshot-person.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/reject-person-blurredbackground-large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/reject-person-blurredbackground-large.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/reject-speaker-mc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/reject-speaker-mc.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/reject-stickers-large.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/reject-stickers-large.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/rejectjs-science-in-the-browser-orchestrating-and-visualising-neural-simulations.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/rejectjs-science-in-the-browser-orchestrating-and-visualising-neural-simulations.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/sketching-for-software-development.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/sketching-for-software-development.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/steve-souders-tweet-one.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/steve-souders-tweet-one.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/steve-sounders-tweet-two.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/steve-sounders-tweet-two.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/tips-writing-third-party-javascript.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/tips-writing-third-party-javascript.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/twitter-screenshot.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/twitter-screenshot.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/we-are-the-change.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/we-are-the-change.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/what-if-your-brain-were-literally-javascript.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-images/what-if-your-brain-were-literally-javascript.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/internet_explorer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/internet_explorer.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-eight-small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-eight-small.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-eight.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-eight.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-five-small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-five-small.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-five.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-five.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-four-small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-four-small.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-four.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-four.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-nine-small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-nine.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-nine.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-one-small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-one-small.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-one.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-one.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-seven-small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-seven-small.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-seven.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-seven.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-six-small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-six-small.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-six.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-six.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-ten-small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-ten-small.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-ten.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-ten.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-three-small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-three-small.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-three.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-three.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-two-small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-two-small.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-two.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/blog-stock-images/stock-photo-two.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/diceware-screenshot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/diceware-screenshot.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/diceware-sideproject.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/diceware-sideproject.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/dr-newmans-screenshot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/dr-newmans-screenshot.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/elevaate-screenshot.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/elevaate-screenshot.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/elevaate-work.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/elevaate-work.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/grunt-posthtml-screenshot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/grunt-posthtml-screenshot.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/grunt-posthtml-sideproject.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/grunt-posthtml-sideproject.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/icons/apple-touch-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/icons/chrome-touch-icon-192x192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/icons/icon-128x128.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/icons/ms-touch-icon-144x144-precomposed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/kaplan-screenshot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/kaplan-screenshot.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/kaplan-work.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/kaplan-work.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/law-student-work.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/law-student-work.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/lightning-screenshot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/lightning-screenshot.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/lightning-sideproject.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/lightning-sideproject.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/CSSconfEU-logo-2015.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/aerospike.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/airbrake.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/android-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/android.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/angular-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/angular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/ansible.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/apache.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/apache_cloudstack.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/apiary.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/appcelerator.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/apple.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/appsignal.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/arangodb.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/arduino.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/asana.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/atom.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/atomic.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/auth0.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/autoprefixer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/autoprefixer.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/awesome.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/aws.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/babel.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/backbone-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/backbone.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/base.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/basecamp.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/basekit.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/bash.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/behance.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/bem-2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/bem.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/bitbucket.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/bitrise.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/blocs.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/blogger.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/blossom.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/bootstrap.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/bosun.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/bourbon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/bower.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/brackets.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/brandfolder.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/broccoli.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/browserify-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/browserify.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/browserstack.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/browsersync.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/buck.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/bugherd.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/c++.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/c.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/cachet.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/campaignmonitor.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/campfire.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/canjs.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/capistrano.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/cassandra.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/celluloid.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/centos.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/chai.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/chalk.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/chef.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/chrome.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/circleci.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/cljs.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/clojure.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/close.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/cocoapods.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/codebase.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/codecademy.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/codeclimate.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/codecov.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/codeigniter.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/codepen-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/codepen.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/coderwall.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/codeship.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/codrops.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/coffeescript.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/compass.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/component.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/componentkit.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/concrete5.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/cordova.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/coreos.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/couchdb.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/coursera.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/coveralls.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/coverity.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/craft.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/crashlytics.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/createjs.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/crittercism.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/crossbrowsertesting.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/crowdprocess.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/css-3.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/css-3_official.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/cssnext.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/d3.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/dart.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/debian.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/delicious-burger.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/delicious.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/deploy.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/designernews.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/deviantart.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/digitalocean.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/disqus.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/distelli.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/divshot.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/django.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/docker.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/dojo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/dotcloud.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/dotnet.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/dribbble-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/dribbble.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/drone.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/dropbox.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/dropzone.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/drupal.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/duckduckgo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/eclipse.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/elasticsearch.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/electron.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/elementary.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/ember-tomster.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/ember.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/emmet.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/engine-yard.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/envato.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/enyo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/erlang.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/es6.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/eslint.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/eventsentry.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/express.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/fabric.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/facebook.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/famous.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/fedora.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/firebase.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/firefox.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/flask.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/flexible-gs.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/flickr-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/flickr.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/flight.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/flow.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/flux.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/forever.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/foundation.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/framed.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/freebsd.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/freedcamp.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/fronteers-logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/fsharp.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/ghost.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/git-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/git.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/github-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/github-octocat.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/github.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/gitlab.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/glint.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/gnu.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/google-analytics.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/google-cloud.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/google-developers.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/google-drive.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/google-plus.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/google.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/gopher.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/gradle.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/grails.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/grove.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/grunt.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/gulp.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/gwt.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/hack.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/hadoop.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/haml.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/handlebars.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/hapi.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/harrow.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/haskell.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/haxe.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/heroku.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/hhvm.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/hipchat.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/hoodie.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/html-5.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/html5-boilerplate.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/hubspot.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/ifttt.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/imagemin.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/importio.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/infer.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/instagram-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/instagram.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/intercom.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/internetexplorer.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/invision.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/io.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/ionic.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/ios.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/iron.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/jade.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/jasmine.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/java.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/javascript.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/jekyll.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/jenkins.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/jetbrains.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/jhipster.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/jira.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/joomla.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/jquery.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/jruby.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/jsbin.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/jscs.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/jsfiddle.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/json.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/jspm.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/karma.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/keen.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/keymetrics.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/khan_academy.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/kinvey.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/kissmetrics-monochromatic.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/kissmetrics.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/kitematic.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/knex.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/kraken.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/krakenjs.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/kubernets.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/laravel.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/lastfm.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/leafjet.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/leankit.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/less.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/leveldb.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/linkedin.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/linux-mint.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/loader.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/lodash.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/logentries.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/loggly.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/loopback.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/lotus.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/lua.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/lucene.net.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/lucene.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/lynda.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/macosx.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/mageia.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/magento.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/mailchimp-freddie.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/mailchimp.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/mailgun.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/mandrill-shield.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/mandrill.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/mariadb.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/marionette.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/markdown.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/marvel.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/material-ui.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/mdn.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/meanio.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/medium.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/memcached.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/memsql.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/mercurial.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/mesos.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/meteor-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/meteor.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/microsoft-windows.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/microsoft.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/mithril.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/mixpanel.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/mocha.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/modernizr.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/modulus.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/momentjs.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/mongodb.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/mongolab.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/mono.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/mootools.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/mysql.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/myth.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/nativescript.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/neat.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/neo4j.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/neovim.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/netbeans.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/new-relic.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/nginx.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/node-sass.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/nodebots.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/nodejitsu.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/nodejs-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/nodejs.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/nodemon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/nodewebkit.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/npm-2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/npm.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/nuclide.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/oauth.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/ocaml.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/open-graph.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/openlayers.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/openshift.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/opensource.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/openstack.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/opsmatic.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/optimizely.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/origami.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/oshw.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/panda.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/parse.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/parsehub.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/passport.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/perl.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/phalcon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/phoenix.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/phonegap-bot.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/phonegap.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/php.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/picasa.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/pingdom.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/pinterest.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/pipedrive.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/pixelapse.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/play.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/pm2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/podio.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/polymer.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/postcss.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/postgresql.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/pouchdb.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/precursor.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/producteev.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/producthunt.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/protoio.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/puppet.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/python.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/q.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/rackspace.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/rails.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/randomcolor.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/raphael.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/raspberry-pi.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/react.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/reddit.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/redis.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/rejectjs-logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/rejectjs.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/require.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/rest.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/rethinkdb.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/riak.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/rollbar.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/rsa.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/ruby.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/rubygems.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/rum.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/runscope.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/rust.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/safari.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/sails.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/salesforce.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/saltstack.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/sass.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/scala.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/segment.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/semantic-ui.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/semaphore.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/sencha.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/sendgrid.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/sentry.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/shields.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/sinatra.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/sketchapp.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/slack.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/snap-svg.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/socket.io.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/solr.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/soundcloud.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/sourcetree.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/spring.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/square.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/squarespace.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/stackoverflow.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/stackshare.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/stash.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/statuspage.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/steroids.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/strongloop.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/struts.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/styleci.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/stylus.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/subversion.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/supersonic.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/suse.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/susy.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/svg.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/swift.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/symfony.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/taiga.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/targetprocess.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/tastejs.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/teamwork.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/tectonic.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/todoist.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/todomvc.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/traackr.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/trac.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/travis-ci-monochrome.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/travis-ci.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/treehouse.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/trello.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/tumblr-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/tumblr.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/tutsplus.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/tux.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/twilio.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/twitter.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/typeform.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/ubuntu.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/udemy.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/uikit.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/unitjs.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/unity.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/v8.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/vaadin.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/vagrant.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/vim.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/vimeo-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/vimeo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/vine.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/visual-studio.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/visual_website_optimizer.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/void.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/vue.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/w3c.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/waffle.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/webcomponents.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/webhooks.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/webpack.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/webplatform.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/weebly.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/wercker.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/wicket.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/wix.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/wordpress-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/wordpress.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/wufoo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/ycombinator.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/yeoman.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/youtrack.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/youtube.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/zapier.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/zend-framework.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/zendesk.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/logos/zenhub.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/me-blog.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/me-blog.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/newmans-clinic-work.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/newmans-clinic-work.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/peenybooks-screenshot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/peenybooks-screenshot.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/pennybooks-sideproject.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/pennybooks-sideproject.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/postcss-mq-keyframes-screenshot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/postcss-mq-keyframes-screenshot.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/postcss-mq-keyframes-sideproject.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/postcss-mq-keyframes-sideproject.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/posthtml-head-elements-screenshot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/posthtml-head-elements-screenshot.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/posthtml-head-elements-sideproject.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/posthtml-head-elements-sideproject.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/reuters-japan-work.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/reuters-japan-work.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/slider/blinkbox.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/slider/blinkbox.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/slider/drnewmans.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/slider/drnewmans.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/slider/kaplan.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/slider/kaplan.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/slider/lightning.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/slider/lightning.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/slider/penny-books.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/slider/penny-books.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/slider/thompson-reuters-japan-low-quality.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/slider/thompson-reuters-japan-low-quality.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/slider/thompson-reuters-japan.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/slider/thompson-reuters-japan.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/slider/twt-twt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/slider/twt-twt.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/slider/uk-law-student.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/slider/uk-law-student.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/svg/cross.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/svg/down-arrow-hover.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/svg/down-arrow.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/svg/index-hover.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/svg/index.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/svg/left-arrow-hover.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/svg/left-arrow.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/svg/loading-spin.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/svg/menu-hover.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/svg/menu.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/svg/more-work.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/svg/outline1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/svg/outline10.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/svg/outline2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/svg/outline3.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/svg/outline4.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/svg/outline5.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/svg/outline6.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/svg/outline7.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/svg/outline8.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/svg/outline9.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/svg/rejectjs-logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/svg/rejectjs.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/svg/right-arrow-hover.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/svg/right-arrow.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/svg/scripts.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/svg/solid1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/svg/solid10.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/svg/solid2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/svg/solid3.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/svg/solid4.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/svg/solid5.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/svg/solid6.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/svg/solid7.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/svg/solid8.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/svg/solid9.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/svg/twitter.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/thomson-reuters-japan-screenshot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/thomson-reuters-japan-screenshot.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/twt-twt-sideproject.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/twt-twt-sideproject.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/twttwt-screenshot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/twttwt-screenshot.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/uk-lawstudents-screenshot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/uk-lawstudents-screenshot.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/yeoman.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/images/yeoman.png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/jsx/blog_react_directive.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/jsx/blog_sidebar_react_directive.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/jsx/projects_react_directive.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/prism.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/webfontMatchMedia.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/misc/404.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/misc/page_loading_directive.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/react/blog_react_directive.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/react/blog_sidebar_react_directive.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/react/projects_react_directive.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/service-worker-registration.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/clearRequestInterval_factory.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/clearRequestTimeout_factory.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/fastclick_factory.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/functionWebWorker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/helperFunctionService.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/loader_directive.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/lodash_factory.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/moment_factory.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/react_factory.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/requestInterval_factory.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/requestTimeout_factory.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/sessionStorageDetect_factory.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/underscore_factory.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/webWorkerFunctionService.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/side-projects/projects_page.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/side-projects/projects_page_controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/side-projects/side_projects.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sitemap/html_sitemap.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sitemap/sitemap_controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/styles/_aboutme.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/styles/_admin.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/styles/_banner.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/styles/_blog.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/styles/_contact.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/styles/_footer.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/styles/_header.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/styles/_homepage.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/styles/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/styles/_mywork.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/styles/_print.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/styles/_reset.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/styles/_sideprojects.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/styles/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/styles/bem/_blog-comments.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/styles/bem/_contact.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/styles/bem/modules/_blog-experiment.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/styles/bem/modules/_forms.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/styles/bem/modules/_grid.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/styles/main-postcss.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/styles/main-postcss.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/styles/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/styles/main.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/styles/modules/_animation.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/styles/modules/_buttons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/styles/modules/_forms.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/styles/modules/_grid.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/styles/modules/_icons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/styles/modules/_loader.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/styles/modules/_media_queries.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/styles/modules/_navigation.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/styles/modules/_prism.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/styles/modules/_scrollbars.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/styles/modules/_svg.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/styles/modules/_typography.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/work-projects/my_work.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/work-projects/work_page.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/work-projects/work_page_controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/e2e/blogPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/e2e/carousel_test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/e2e/comment_form.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/e2e/contactPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/e2e/contact_form.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/e2e/homepage_stats_test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/e2e/indexPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/e2e/nav.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/e2e/testingData.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/spec/config/config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/spec/config/testing_data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/spec/controllers/add_blog_controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/spec/controllers/blog_article_controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/spec/controllers/blog_category_controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/spec/controllers/blog_contoller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/spec/controllers/comment_admin_controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/spec/controllers/comment_controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/spec/controllers/edit_blog_controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/spec/controllers/edit_details_controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/spec/controllers/footer_controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/spec/controllers/form_controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/spec/controllers/login_controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/spec/controllers/projects_page_controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/spec/controllers/sidebar_controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/spec/controllers/sitemap_controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/spec/controllers/user_details_controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/spec/controllers/work_page_controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/spec/directives/blog_directive.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/spec/directives/homepage_stats_directive.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/spec/directives/slider_directive.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/spec/filters/word_count_filter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/spec/routes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/spec/services/blog_data_service.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/spec/templates.js" beforeDir="false" />
     </list>
     <ignored path="portfolio.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -14,114 +1045,85 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/portfolio$Unnamed.coverage" NAME="karma Coverage Results" MODIFIED="1397156218238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="KarmaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/portfolio$karma.coverage" NAME="karma Coverage Results" MODIFIED="1444051636175" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="KarmaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/portfolio$Unnamed.coverage" NAME="karma Coverage Results" MODIFIED="1397156218238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="KarmaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="portfolio" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name=".bowerrc" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.bowerrc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".bower.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/components/angular/.bower.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bower.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/components/angular/bower.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Gruntfile.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gruntfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="806" column="14" lean-forward="false" selection-start-line="806" selection-start-column="14" selection-end-line="806" selection-end-column="14" />
-              <folding />
+            <state relative-caret-position="209">
+              <caret line="784" column="21" selection-start-line="784" selection-start-column="21" selection-end-line="784" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".modulusignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.modulusignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".slugignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.slugignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="misc_routes.log" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/log/misc_routes.log">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="128" lean-forward="true" selection-start-line="2" selection-start-column="94" selection-end-line="3" selection-end-column="128" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="178" column="0" lean-forward="true" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="65" column="29" lean-forward="true" selection-start-line="65" selection-start-column="29" selection-end-line="65" selection-end-column="29" />
-              <folding />
+            <state relative-caret-position="272">
+              <caret line="40" column="26" lean-forward="true" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="database.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/config/database.js">
+      <file leaf-file-name="contact_me.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/contact/contact_me.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="17">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="work.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/work.txt">
+      <file leaf-file-name="contact_me.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dist/contact/contact_me.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134766">
-              <caret line="7487" column="148" lean-forward="false" selection-start-line="7487" selection-start-column="148" selection-end-line="7487" selection-end-column="148" />
-              <folding />
+            <state>
+              <caret column="295" selection-start-column="295" selection-end-column="295" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="blogs.metadata.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dump/Oqyg6yzi/blogs.metadata.json">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/components/angular/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="17">
+              <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -139,15 +1141,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>karma</find>
-      <find>grunt-contrib-imagemin</find>
-      <find>loader-directive</find>
-      <find>loader</find>
-      <find>Blog.find</find>
-      <find>livereload</find>
-      <find>$log.warn</find>
-      <find>oldBlog</find>
-      <find>createJSONFile</find>
       <find>Blog</find>
       <find>expres</find>
       <find>_grabOldBlogPosts</find>
@@ -169,12 +1162,22 @@
       <find>imagemin</find>
       <find>svgmin</find>
       <find>success</find>
+      <find>spdy</find>
+      <find>breakpoint</find>
+      <find>grunt-protractor-runner</find>
+      <find>/angular</find>
+      <find>bower</find>
+      <find />
+      <find>bower.json</find>
+      <find>07858756827</find>
+      <find>babel-core</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/app</dir>
       <dir>$PROJECT_DIR$/server/routes</dir>
       <dir>$PROJECT_DIR$/app/blog-pages</dir>
       <dir>$PROJECT_DIR$/server</dir>
+      <dir>$PROJECT_DIR$</dir>
     </dirStrings>
   </component>
   <component name="FindManager">
@@ -188,8 +1191,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/config/work_pages.json" />
-        <option value="$PROJECT_DIR$/app/jsx/blog_react_directive.jsx" />
         <option value="$PROJECT_DIR$/app/jsx/blog_sidebar_react_directive.jsx" />
         <option value="$PROJECT_DIR$/app/react/blog_react_directive.js" />
         <option value="$PROJECT_DIR$/app/react/blog_sidebar_react_directive.js" />
@@ -225,9 +1226,7 @@
         <option value="$PROJECT_DIR$/app/blog-pages/blog_article_controller.js" />
         <option value="$PROJECT_DIR$/app/about-me/about_me.html" />
         <option value="$PROJECT_DIR$/server/rss.js" />
-        <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/app/app.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/dist/index.html" />
         <option value="$PROJECT_DIR$/app/libs/webfontMatchMedia.js" />
         <option value="$PROJECT_DIR$/app/index.html" />
@@ -239,6 +1238,10 @@
         <option value="$PROJECT_DIR$/.modulusignore" />
         <option value="$PROJECT_DIR$/.slugignore" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/app/components/angular/bower.json" />
+        <option value="$PROJECT_DIR$/app/contact/contact_me.html" />
       </list>
     </option>
   </component>
@@ -247,7 +1250,176 @@
     <config-path>$PROJECT_DIR$/bower.json</config-path>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER">
-    <gruntfile path="$PROJECT_DIR$/Gruntfile.js" />
+    <gruntfile path="$PROJECT_DIR$/Gruntfile.js">
+      <alias-task name="test" info="Alias for &quot;clean:server&quot;, &quot;concurrent:test&quot;, &quot;ngconstant:test&quot;, &quot;express:test&quot;, &quot;karma&quot; tasks." file-path="$PROJECT_DIR$/Gruntfile.js">
+        <dependency value="clean:server" />
+        <dependency value="concurrent:test" />
+        <dependency value="ngconstant:test" />
+        <dependency value="express:test" />
+        <dependency value="karma" />
+      </alias-task>
+      <alias-task name="build" info="Alias for &quot;test&quot;, &quot;babel:tmp&quot;, &quot;clean:dist&quot;, &quot;wiredep&quot;, &quot;useminPrepare&quot;, &quot;sass:dist&quot;, &quot;concurrent:dist&quot;, &quot;react&quot;, &quot;postcss:dist&quot;, &quot;ngconstant&quot;, &quot;concat&quot;, &quot;preprocess:html&quot;, &quot;ngmin&quot;, &quot;inline&quot;, &quot;cwebp&quot;, &quot;copy:dist&quot;, &quot;cssmin&quot;, &quot;uglify&quot;, &quot;rev&quot;, &quot;posthtml&quot;, &quot;usemin&quot;, &quot;htmlmin&quot; tasks." file-path="$PROJECT_DIR$/Gruntfile.js">
+        <dependency value="test" />
+        <dependency value="babel:tmp" />
+        <dependency value="clean:dist" />
+        <dependency value="wiredep" />
+        <dependency value="useminPrepare" />
+        <dependency value="sass:dist" />
+        <dependency value="concurrent:dist" />
+        <dependency value="react" />
+        <dependency value="postcss:dist" />
+        <dependency value="ngconstant" />
+        <dependency value="concat" />
+        <dependency value="preprocess:html" />
+        <dependency value="ngmin" />
+        <dependency value="inline" />
+        <dependency value="cwebp" />
+        <dependency value="copy:dist" />
+        <dependency value="cssmin" />
+        <dependency value="uglify" />
+        <dependency value="rev" />
+        <dependency value="posthtml" />
+        <dependency value="usemin" />
+        <dependency value="htmlmin" />
+      </alias-task>
+      <alias-task name="default" info="Alias for &quot;jshint&quot;, &quot;test&quot;, &quot;build&quot; tasks." file-path="$PROJECT_DIR$/Gruntfile.js">
+        <dependency value="jshint" />
+        <dependency value="test" />
+        <dependency value="build" />
+      </alias-task>
+      <alias-task name="protractor-e2e" info="Alias for &quot;concurrent:protractor_test&quot; task." file-path="$PROJECT_DIR$/Gruntfile.js">
+        <dependency value="concurrent:protractor_test" />
+      </alias-task>
+      <alias-task name="protractor-chrome" info="Alias for &quot;protractor:run_chrome&quot; task." file-path="$PROJECT_DIR$/Gruntfile.js">
+        <dependency value="protractor:run_chrome" />
+      </alias-task>
+      <core-task name="babel" info="Use next generation JavaScript, today" file-path="$PROJECT_DIR$/node_modules/grunt-babel/tasks/babel.js" multi="true">
+        <target value="tmp" />
+      </core-task>
+      <core-task name="concurrent" info="Run grunt tasks concurrently" file-path="$PROJECT_DIR$/node_modules/grunt-concurrent/tasks/concurrent.js" multi="true">
+        <target value="server" />
+        <target value="test" />
+        <target value="dist" />
+        <target value="protractor_test" />
+      </core-task>
+      <core-task name="clean" info="Clean files and folders." file-path="$PROJECT_DIR$/node_modules/grunt-contrib-clean/tasks/clean.js" multi="true">
+        <target value="dist" />
+      </core-task>
+      <core-task name="concat" info="Concatenate files." file-path="$PROJECT_DIR$/node_modules/grunt-contrib-concat/tasks/concat.js" multi="true" />
+      <core-task name="connect" info="Start a connect web server." file-path="$PROJECT_DIR$/node_modules/grunt-contrib-connect/tasks/connect.js" multi="true" />
+      <core-task name="copy" info="Copy files." file-path="$PROJECT_DIR$/node_modules/grunt-contrib-copy/tasks/copy.js" multi="true">
+        <target value="tmp" />
+        <target value="dist" />
+        <target value="styles" />
+      </core-task>
+      <core-task name="cssmin" info="Minify CSS" file-path="$PROJECT_DIR$/node_modules/grunt-contrib-cssmin/tasks/cssmin.js" multi="true">
+        <target value="target" />
+      </core-task>
+      <core-task name="htmlmin" info="Minify HTML" file-path="$PROJECT_DIR$/node_modules/grunt-contrib-htmlmin/tasks/htmlmin.js" multi="true">
+        <target value="dist" />
+      </core-task>
+      <core-task name="imagemin" info="Minify PNG, JPEG, GIF and SVG images" file-path="$PROJECT_DIR$/node_modules/grunt-contrib-imagemin/tasks/imagemin.js" multi="true">
+        <target value="dynamic" />
+      </core-task>
+      <core-task name="jshint" info="Validate files with JSHint." file-path="$PROJECT_DIR$/node_modules/grunt-contrib-jshint/tasks/jshint.js" multi="true">
+        <target value="all" />
+        <target value="test" />
+      </core-task>
+      <core-task name="sass" info="Compile Sass to CSS" file-path="$PROJECT_DIR$/node_modules/grunt-contrib-sass/tasks/sass.js" multi="true">
+        <target value="dev" />
+        <target value="dist" />
+      </core-task>
+      <core-task name="uglify" info="Minify files with UglifyJS." file-path="$PROJECT_DIR$/node_modules/grunt-contrib-uglify/tasks/uglify.js" multi="true" />
+      <core-task name="watch" info="Run predefined tasks whenever watched files change." file-path="$PROJECT_DIR$/node_modules/grunt-contrib-watch/tasks/watch.js" multi="false">
+        <target value="js" />
+        <target value="jsTest" />
+        <target value="e2eTest" />
+        <target value="sass" />
+        <target value="css" />
+        <target value="gruntfile" />
+        <target value="react" />
+        <target value="livereload" />
+      </core-task>
+      <core-task name="css_mqpacker" info="Pack same media query rules into one media query rule using CSS MQPacker." file-path="$PROJECT_DIR$/node_modules/grunt-css-mqpacker/tasks/css_mqpacker.js" multi="true" />
+      <core-task name="parallel" info="Run sub-tasks in parallel." file-path="$PROJECT_DIR$/node_modules/grunt-parallel/tasks/parallel.js" multi="true" />
+      <core-task name="express" info="Custom multi task." file-path="$PROJECT_DIR$/node_modules/grunt-express/tasks/express.js" multi="true">
+        <target value="livereload" />
+        <target value="test" />
+        <target value="dist" />
+      </core-task>
+      <core-task name="express-start" info="Start the server (or restart if already started)" file-path="$PROJECT_DIR$/node_modules/grunt-express/tasks/express.js" multi="false" />
+      <core-task name="express-restart" info="Restart the server (or start if not already started)" file-path="$PROJECT_DIR$/node_modules/grunt-express/tasks/express.js" multi="false" />
+      <core-task name="express-server" info="Custom task." file-path="$PROJECT_DIR$/node_modules/grunt-express/tasks/express.js" multi="false" />
+      <core-task name="express-keepalive" info="Keep grunt running" file-path="$PROJECT_DIR$/node_modules/grunt-express/tasks/express.js" multi="false" />
+      <core-task name="inline" info="Replaces &lt;link&gt;, &lt;script&gt; and &lt;img&gt; tags to their inline contents" file-path="$PROJECT_DIR$/node_modules/grunt-inline/tasks/inline.js" multi="true">
+        <target value="dist" />
+      </core-task>
+      <core-task name="jscs" info="JavaScript Code Style checker" file-path="$PROJECT_DIR$/node_modules/grunt-jscs/tasks/jscs.js" multi="true">
+        <target value="src" />
+      </core-task>
+      <core-task name="karma" info="run karma." file-path="$PROJECT_DIR$/node_modules/grunt-karma/tasks/grunt-karma.js" multi="true">
+        <target value="unit" />
+      </core-task>
+      <core-task name="lodash" info="Builds a customized lodash" file-path="$PROJECT_DIR$/node_modules/grunt-lodash/tasks/lodash.js" multi="true" />
+      <core-task name="newer" info="Run a task with only those source files that have been modified since the last successful run." file-path="$PROJECT_DIR$/node_modules/grunt-newer/tasks/newer.js" multi="false" />
+      <core-task name="any-newer" info="DEPRECATED TASK.  Use the &quot;newer&quot; task instead" file-path="$PROJECT_DIR$/node_modules/grunt-newer/tasks/newer.js" multi="false" />
+      <core-task name="newer-postrun" info="Internal task." file-path="$PROJECT_DIR$/node_modules/grunt-newer/tasks/newer.js" multi="false" />
+      <core-task name="newer-clean" info="Remove cached timestamps." file-path="$PROJECT_DIR$/node_modules/grunt-newer/tasks/newer.js" multi="false" />
+      <core-task name="ngAnnotate" info="Add, remove and rebuild AngularJS dependency injection annotations" file-path="$PROJECT_DIR$/node_modules/grunt-ng-annotate/tasks/ng-annotate.js" multi="true" />
+      <core-task name="ngconstant" info="Dynamic angular constant generator task." file-path="$PROJECT_DIR$/node_modules/grunt-ng-constant/tasks/ngconstant.js" multi="true">
+        <target value="build" />
+        <target value="test" />
+      </core-task>
+      <core-task name="ngmin" info="Annotate AngularJS scripts for minification" file-path="$PROJECT_DIR$/node_modules/grunt-ngmin/tasks/ngmin.js" multi="true">
+        <target value="dist" />
+      </core-task>
+      <core-task name="nodemon" info="Runs a nodemon monitor of your node.js server." file-path="$PROJECT_DIR$/node_modules/grunt-nodemon/tasks/nodemon.js" multi="true" />
+      <core-task name="validate-package" info="Audits package.json against nodesecurity.io API" file-path="$PROJECT_DIR$/node_modules/grunt-nsp-package/tasks/package.js" multi="false" />
+      <core-task name="open" info="Open urls and files from a grunt task" file-path="$PROJECT_DIR$/node_modules/grunt-open/tasks/open.js" multi="true">
+        <target value="server" />
+      </core-task>
+      <core-task name="postcss" info="Process CSS files." file-path="$PROJECT_DIR$/node_modules/grunt-postcss/tasks/postcss.js" multi="true">
+        <target value="prod" />
+        <target value="dist" />
+      </core-task>
+      <core-task name="posthtml" info="PostHMTL Grunt Plugin" file-path="$PROJECT_DIR$/node_modules/grunt-posthtml/tasks/posthtml.js" multi="true">
+        <target value="build" />
+      </core-task>
+      <core-task name="preprocess" info="Preprocess files based off environment configuration" file-path="$PROJECT_DIR$/node_modules/grunt-preprocess/tasks/preprocess.js" multi="true">
+        <target value="html" />
+        <target value="js" />
+      </core-task>
+      <core-task name="protractor" info="A grunt task to run protractor." file-path="$PROJECT_DIR$/node_modules/grunt-protractor-runner/tasks/protractor_runner.js" multi="true">
+        <target value="run_chrome" />
+      </core-task>
+      <core-task name="react" info="Compile Facebook React JSX templates into JavaScript" file-path="$PROJECT_DIR$/node_modules/grunt-react/tasks/react.js" multi="true">
+        <target value="files" />
+      </core-task>
+      <core-task name="rev" info="Prefix static asset file names with a content hash" file-path="$PROJECT_DIR$/node_modules/grunt-rev/tasks/rev.js" multi="true">
+        <target value="dist" />
+      </core-task>
+      <core-task name="scsslint" info="Validate `.scss` files with `scss-lint`." file-path="$PROJECT_DIR$/node_modules/grunt-scss-lint/tasks/scss-lint.js" multi="true">
+        <target value="allFiles" />
+      </core-task>
+      <core-task name="svgmin" info="Minify SVG" file-path="$PROJECT_DIR$/node_modules/grunt-svgmin/tasks/svgmin.js" multi="true">
+        <target value="dist" />
+      </core-task>
+      <core-task name="usemin" info="Replaces references to non-minified scripts / stylesheets" file-path="$PROJECT_DIR$/node_modules/grunt-usemin/tasks/usemin.js" multi="true">
+        <target value="html" />
+      </core-task>
+      <core-task name="useminPrepare" info="Using HTML markup as the primary source of information" file-path="$PROJECT_DIR$/node_modules/grunt-usemin/tasks/usemin.js" multi="true" />
+      <core-task name="cwebp" info="Convert images to WebP format with the encoder tool cwebp" file-path="$PROJECT_DIR$/node_modules/grunt-webp-compress/tasks/cwebp.js" multi="true">
+        <target value="images" />
+      </core-task>
+      <core-task name="wiredep" info="Inject Bower packages into your source code." file-path="$PROJECT_DIR$/node_modules/grunt-wiredep/tasks/wiredep.js" multi="true">
+        <target value="app" />
+        <target value="sass" />
+      </core-task>
+      <core-task name="swPrecache" info="Custom multi task." file-path="$PROJECT_DIR$/Gruntfile.js" multi="true">
+        <target value="dev" />
+      </core-task>
+      <core-task name="server" info="Custom task." file-path="$PROJECT_DIR$/Gruntfile.js" multi="false" />
+    </gruntfile>
   </component>
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsGruntFileManager">
@@ -422,9 +1594,42 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/app/components/angular-aria/package.json" />
+      <path value="$PROJECT_DIR$/app/components/angular-cache/package.json" />
+      <path value="$PROJECT_DIR$/app/components/angular-mocks/package.json" />
+      <path value="$PROJECT_DIR$/app/components/angular-resource/package.json" />
+      <path value="$PROJECT_DIR$/app/components/angular-route/package.json" />
+      <path value="$PROJECT_DIR$/app/components/angular-sanitize/package.json" />
+      <path value="$PROJECT_DIR$/app/components/angular/package.json" />
+      <path value="$PROJECT_DIR$/app/components/opbeat-angular/package.json" />
+      <path value="$PROJECT_DIR$/app/components/underscore/package.json" />
+      <path value="$PROJECT_DIR$/dist/components/angular-aria/package.json" />
+      <path value="$PROJECT_DIR$/dist/components/angular-cache/package.json" />
+      <path value="$PROJECT_DIR$/dist/components/angular-mocks/package.json" />
+      <path value="$PROJECT_DIR$/dist/components/angular-resource/package.json" />
+      <path value="$PROJECT_DIR$/dist/components/angular-route/package.json" />
+      <path value="$PROJECT_DIR$/dist/components/angular-sanitize/package.json" />
+      <path value="$PROJECT_DIR$/dist/components/angular/package.json" />
+      <path value="$PROJECT_DIR$/dist/components/opbeat-angular/package.json" />
+      <path value="$PROJECT_DIR$/dist/components/underscore/package.json" />
+      <path value="$PROJECT_DIR$/package.json" />
+      <path value="$PROJECT_DIR$/tmp/components/angular-aria/package.json" />
+      <path value="$PROJECT_DIR$/tmp/components/angular-cache/package.json" />
+      <path value="$PROJECT_DIR$/tmp/components/angular-mocks/package.json" />
+      <path value="$PROJECT_DIR$/tmp/components/angular-resource/package.json" />
+      <path value="$PROJECT_DIR$/tmp/components/angular-route/package.json" />
+      <path value="$PROJECT_DIR$/tmp/components/angular-sanitize/package.json" />
+      <path value="$PROJECT_DIR$/tmp/components/angular/package.json" />
+      <path value="$PROJECT_DIR$/tmp/components/opbeat-angular/package.json" />
+      <path value="$PROJECT_DIR$/tmp/components/underscore/package.json" />
+    </packageJsonPaths>
+  </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1440" />
+    <option name="x" value="541" />
+    <option name="y" value="52" />
+    <option name="width" value="1321" />
     <option name="height" value="828" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -453,102 +1658,83 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="portfolio" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="portfolio" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="portfolio" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="portfolio" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="log" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
+          <expand>
+            <path>
+              <item name="portfolio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="portfolio" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="portfolio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="portfolio" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="options.lastSelected" value="settings.nodejs" />
-    <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="options.searchVisible" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="LayoutCode.rearrangeEntriesJavaScript" value="false" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="LayoutCode.rearrangeEntriesSCSS" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Applications/MAMP/htdocs/portfolio/package.json" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="76" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="102" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="107" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1018" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="106" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="122" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="127" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="948" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="JavaScriptLanguageLevel" value="JSX" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="LayoutCode.rearrangeEntriesCSS" value="false" />
+    <property name="LayoutCode.rearrangeEntriesECMAScript 6" value="false" />
     <property name="LayoutCode.rearrangeEntriesHTML" value="false" />
     <property name="LayoutCode.rearrangeEntriesJSON" value="false" />
-    <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
-    <property name="restartRequiresConfirmation" value="true" />
+    <property name="LayoutCode.rearrangeEntriesJavaScript" value="false" />
     <property name="LayoutCode.rearrangeEntriesPlain text" value="false" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="76" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="102" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="107" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1018" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="106" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="122" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="127" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="948" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
-    <property name="JavaScriptLanguageLevel" value="JSX" />
-    <property name="JavaScriptPreferStrict" value="true" />
-    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
-    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="LayoutCode.rearrangeEntriesSCSS" value="false" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Applications/MAMP/htdocs/portfolio/package.json" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="add_unversioned_files" value="true&#10;/Applications/MAMP/htdocs/portfolio/app/components/angular/index.js&#10;/Applications/MAMP/htdocs/portfolio/app/contact/contact_me.html&#10;/Applications/MAMP/htdocs/portfolio/app/robots.txt" />
     <property name="editorconfig.notification" value="Applied .editorconfig settings" />
-    <property name="LayoutCode.rearrangeEntriesECMAScript 6" value="false" />
-    <property name="LayoutCode.rearrangeEntriesCSS" value="false" />
-    <property name="jsx.switch.disabled" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.EJS" />
-    <property name="js.eslint.nodeInterpreter" value="/usr/local/bin/node" />
-    <property name="js.eslint.eslintPackage" value="/usr/local/lib/node_modules/eslint" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="js-jscs-package" value="$PROJECT_DIR$/node_modules/jscs" />
-    <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
-    <property name="node.js.path.for.package.jscs" value="project" />
-    <property name="node.js.selected.package.jscs" value="$PROJECT_DIR$/node_modules/jscs" />
+    <property name="js.buildTools.grunt.grunt-cli.package" value="/usr/local/lib/node_modules/grunt-cli" />
+    <property name="js.eslint.eslintPackage" value="/usr/local/lib/node_modules/eslint" />
+    <property name="js.eslint.nodeInterpreter" value="/usr/local/bin/node" />
+    <property name="jsx.switch.disabled" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="node.js.detected.package.jscs" value="true" />
-    <property name="add_unversioned_files" value="$PROJECT_DIR$/log/misc_routes.log&#10;/Applications/MAMP/htdocs/portfolio/server/config/database.js" />
+    <property name="node.js.detected.package.prettier" value="true" />
+    <property name="node.js.path.for.package.jscs" value="project" />
+    <property name="node.js.path.for.package.prettier" value="project" />
+    <property name="node.js.selected.package.jscs" value="$PROJECT_DIR$/node_modules/jscs" />
+    <property name="node.js.selected.package.prettier" value="" />
+    <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="options.lastSelected" value="settings.nodejs" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="recentsLimit" value="5" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.EJS" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -578,16 +1764,25 @@
     </option>
   </component>
   <component name="RunManager" selected="Node.js.slider_directive.js">
-    <configuration default="false" name="mongo_user_service.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="/usr/local/bin/node" path-to-js-file="mongo_user_service.js" working-dir="$PROJECT_DIR$/app/scripts/services">
+    <configuration name="karma" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="$PROJECT_DIR$/karma.conf.js" />
+      <karma-package-dir value="$PROJECT_DIR$/node_modules/karma" />
+      <node-interpreter value="project" />
+      <envs />
+      <RunnerSettings RunnerId="KarmaCoverageProgramRunner" />
+      <RunnerSettings RunnerId="KarmaJavaScriptTestRunnerDebug" />
+      <RunnerSettings RunnerId="KarmaJavaScriptTestRunnerRun" />
+      <ConfigurationWrapper RunnerId="KarmaCoverageProgramRunner" />
+      <ConfigurationWrapper RunnerId="KarmaJavaScriptTestRunnerDebug" />
+      <ConfigurationWrapper RunnerId="KarmaJavaScriptTestRunnerRun" />
+    </configuration>
+    <configuration name="mongo_user_service.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="/usr/local/bin/node" path-to-js-file="mongo_user_service.js" working-dir="$PROJECT_DIR$/app/scripts/services">
       <RunnerSettings RunnerId="NodeJS.debug" />
       <RunnerSettings RunnerId="NodeJS.run" />
       <ConfigurationWrapper RunnerId="NodeJS.debug" />
       <ConfigurationWrapper RunnerId="NodeJS.run" />
-      <method />
     </configuration>
-    <configuration default="false" name="slider_directive.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="/usr/local/bin/node" path-to-js-file="slider_directive.js" working-dir="$PROJECT_DIR$/app/homepage">
-      <method />
-    </configuration>
+    <configuration name="slider_directive.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="/usr/local/bin/node" path-to-js-file="slider_directive.js" working-dir="$PROJECT_DIR$/app/homepage" />
     <configuration default="true" type="BashConfigurationType" factoryName="Bash">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="INTERPRETER_PATH" value="/bin/bash" />
@@ -637,11 +1832,16 @@
       <option name="filePath" />
       <method />
     </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.grunt" factoryName="Grunt.js">
       <node-interpreter value="project" />
       <pass-parent-env-vars value="true" />
-      <envs />
-      <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-interpreter>project</node-interpreter>
@@ -650,56 +1850,29 @@
       <tasks />
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run" />
-      <scripts />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
     </configuration>
     <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
       <node-interpreter />
       <node-options />
       <working-directory>$PROJECT_DIR$</working-directory>
       <pass-parent-env>true</pass-parent-env>
-      <envs />
       <ui>bdd</ui>
       <extra-mocha-options />
       <test-kind>DIRECTORY</test-kind>
       <test-directory />
       <recursive>false</recursive>
-      <method />
     </configuration>
-    <configuration default="false" name="karma" type="JavaScriptTestRunnerKarma" factoryName="Karma">
-      <config-file value="$PROJECT_DIR$/karma.conf.js" />
-      <karma-package-dir value="$PROJECT_DIR$/node_modules/karma" />
-      <node-interpreter value="project" />
-      <envs />
-      <RunnerSettings RunnerId="KarmaCoverageProgramRunner" />
-      <RunnerSettings RunnerId="KarmaJavaScriptTestRunnerDebug" />
-      <RunnerSettings RunnerId="KarmaJavaScriptTestRunnerRun" />
-      <ConfigurationWrapper RunnerId="KarmaCoverageProgramRunner" />
-      <ConfigurationWrapper RunnerId="KarmaJavaScriptTestRunnerDebug" />
-      <ConfigurationWrapper RunnerId="KarmaJavaScriptTestRunnerRun" />
-      <method />
-    </configuration>
-    <list size="3">
-      <item index="0" class="java.lang.String" itemvalue="Karma.karma" />
-      <item index="1" class="java.lang.String" itemvalue="Node.js.mongo_user_service.js" />
-      <item index="2" class="java.lang.String" itemvalue="Node.js.slider_directive.js" />
+    <list>
+      <item itemvalue="Karma.karma" />
+      <item itemvalue="Node.js.mongo_user_service.js" />
+      <item itemvalue="Node.js.slider_directive.js" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Node.js.slider_directive.js" />
-        <item index="1" class="java.lang.String" itemvalue="Node.js.mongo_user_service.js" />
+      <list>
+        <item itemvalue="Node.js.slider_directive.js" />
+        <item itemvalue="Node.js.mongo_user_service.js" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -733,11 +1906,13 @@
       <workItem from="1493389402759" duration="13000" />
       <workItem from="1493389445900" duration="4832000" />
       <workItem from="1493420851936" duration="3873000" />
+      <workItem from="1498730761261" duration="406000" />
+      <workItem from="1525921295555" duration="7115000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49039000" />
+    <option name="totallyTimeSpent" value="58131000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -749,57 +1924,34 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="828" extended-state="0" />
-    <editor active="true" />
+    <frame x="600" y="63" width="1321" height="828" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13800424" sideWeight="0.7777778" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277592" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24409449" sideWeight="0.36209813" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3280116" sideWeight="0.51447475" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.09813875" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32597622" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24645257" sideWeight="0.47433904" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282572" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3955432" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16117217" sideWeight="0.22222222" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32863188" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279503" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Grunt" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32730263" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11175617" sideWeight="0.48552522" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7777778" visible="true" weight="0.31782946" />
+      <window_info anchor="bottom" id="TODO" order="10" weight="0.3277592" />
+      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
+      <window_info id="Grunt " order="2" sideWeight="0.36209813" side_tool="true" weight="0.24409449" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.48372093" side_tool="true" visible="true" weight="0.09785933" />
+      <window_info anchor="bottom" id="Find" order="2" sideWeight="0.48552522" weight="0.11175617" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.51627904" visible="true" weight="0.09785933" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32597622" />
+      <window_info id="Structure" order="1" sideWeight="0.47433904" side_tool="true" weight="0.24645257" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3282572" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.3955432" />
+      <window_info id="Favorites" order="3" sideWeight="0.22222222" side_tool="true" weight="0.16117217" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Application Servers" order="13" />
+      <window_info anchor="bottom" id="Grunt" order="9" weight="0.32730263" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Changes" order="7" weight="0.32863188" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="right" id="Coverage" order="3" side_tool="true" weight="0.3279503" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32863188" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277592" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994187" sideWeight="0.51447475" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32597622" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.09813875" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279503" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282572" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Grunt" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32730263" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16117217" sideWeight="0.7777778" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24409449" sideWeight="0.36209813" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11175617" sideWeight="0.48552522" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24645257" sideWeight="0.47433904" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16117217" sideWeight="0.22222222" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3955432" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="processedProjectFiles" value="true" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -820,13 +1972,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server.js</url>
-          <line>127</line>
+          <line>126</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="8" />
     </breakpoint-manager>
-    <watches-manager />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <PATH>
@@ -841,315 +1992,166 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/footer/newsblur_service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="35" column="5" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="35" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/blogposts.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/parse_feed/blogposts.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/footer/footer_controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="51" column="21" lean-forward="false" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/blog-pages/blog_data_service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/parse_feed/parse_rss.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1170">
-          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/newsblurAPI.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2268">
-          <caret line="126" column="28" lean-forward="false" selection-start-line="126" selection-start-column="28" selection-end-line="126" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/blog-pages/blog_article_controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="954">
-          <caret line="53" column="26" lean-forward="false" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/about-me/about_me.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1296">
-          <caret line="72" column="8" lean-forward="false" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/rss.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2664">
-          <caret line="148" column="20" lean-forward="false" selection-start-line="148" selection-start-column="20" selection-end-line="148" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/shared/webWorkerFunctionService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="900">
-          <caret line="50" column="5" lean-forward="false" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+          <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/styles/main-postcss.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
-          <caret line="544" column="32" lean-forward="false" selection-start-line="544" selection-start-column="32" selection-end-line="544" selection-end-column="32" />
+          <caret line="544" column="32" selection-start-line="544" selection-start-column="32" selection-end-line="544" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/dev-tools/stop-angular-overrides.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/dev-tools/find-missing-directives.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/libs/prism.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/blog-pages/codepen_directive.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
-          <caret line="19" column="16" lean-forward="false" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/blog-pages/twitter_directive.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/blog-pages/vine_directive.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/blog-pages/word_count_filter.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
-          <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/config/postmarkapp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/blog-pages/blog_page.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
-          <caret line="8" column="70" lean-forward="false" selection-start-line="8" selection-start-column="70" selection-end-line="8" selection-end-column="70" />
+          <caret line="8" column="70" selection-start-line="8" selection-start-column="70" selection-end-line="8" selection-end-column="70" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/blog-sidebar/sidebar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="5" column="6" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/contact/contact_me.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1278">
-          <caret line="71" column="47" lean-forward="false" selection-start-line="71" selection-start-column="47" selection-end-line="71" selection-end-column="47" />
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/homepage/slider_directive.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/footer/footer.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="45" column="17" lean-forward="false" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
+          <caret line="45" column="17" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/sitemap.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/styles/70b6884d.main-postcss.css" />
     <entry file="file://$PROJECT_DIR$/dist/styles/9414f395.main.css" />
     <entry file="file://$PROJECT_DIR$/dist/styles/f0c6443b.main-postcss.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/homepage/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="54" lean-forward="false" selection-start-line="0" selection-start-column="54" selection-end-line="0" selection-end-column="54" />
+        <state>
+          <caret column="54" selection-start-column="54" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="846">
-          <caret line="47" column="45" lean-forward="false" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
+          <caret line="47" column="45" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3402">
-          <caret line="189" column="41" lean-forward="false" selection-start-line="189" selection-start-column="41" selection-end-line="189" selection-end-column="41" />
+          <caret line="189" column="41" selection-start-line="189" selection-start-column="41" selection-end-line="189" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
-          <caret line="9" column="130" lean-forward="false" selection-start-line="9" selection-start-column="130" selection-end-line="9" selection-end-column="130" />
+          <caret line="9" column="130" selection-start-line="9" selection-start-column="130" selection-end-line="9" selection-end-column="130" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/libs/webfontMatchMedia.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="2" column="29" lean-forward="false" selection-start-line="2" selection-start-column="29" selection-end-line="103" selection-end-column="14" />
+        <state>
+          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="103" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/routes/blog_routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
-          <caret line="14" column="28" lean-forward="false" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+          <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/routes/comment_routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
-          <caret line="22" column="3" lean-forward="false" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
-          <folding />
+          <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/routes/misc_routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
-          <caret line="19" column="3" lean-forward="false" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/user_routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="31" lean-forward="false" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-          <folding />
+          <caret line="19" column="3" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/routes/models/user_model.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
-          <caret line="9" column="3" lean-forward="false" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
-          <folding />
+          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bower.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/work.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134766">
-          <caret line="7487" column="148" lean-forward="false" selection-start-line="7487" selection-start-column="148" selection-end-line="7487" selection-end-column="148" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/work.txt" />
     <entry file="file://$PROJECT_DIR$/dump/Oqyg6yzi/blogs.metadata.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/server/config/database.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="806" column="14" lean-forward="false" selection-start-line="806" selection-start-column="14" selection-end-line="806" selection-end-column="14" />
-          <folding />
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
@@ -1157,23 +2159,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="178" column="0" lean-forward="true" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="65" column="29" lean-forward="true" selection-start-line="65" selection-start-column="29" selection-end-line="65" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1181,23 +2166,131 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="3" column="128" lean-forward="true" selection-start-line="2" selection-start-column="94" selection-end-line="3" selection-end-column="128" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.slugignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-          <folding />
+        <state relative-caret-position="153">
+          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/parse_feed/blogposts.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret column="2438" selection-start-column="2438" selection-end-column="2438" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/karma.conf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="54" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/user_routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="43" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/sitemap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/rss.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="49" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/newsblurAPI.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="188" column="13" selection-start-line="188" selection-start-column="13" selection-end-line="188" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.slugignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="7" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.bowerrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/angular/.bower.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/angular/bower.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/angular/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="784" column="21" selection-start-line="784" selection-start-column="21" selection-end-line="784" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/blog-admin/admin.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/contact/contact_me.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="295" selection-start-column="295" selection-end-column="295" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/contact/contact_me.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="40" column="26" lean-forward="true" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
         </state>
       </provider>
     </entry>

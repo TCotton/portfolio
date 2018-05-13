@@ -6,5 +6,7 @@
 /node_modules
 /test
 /tmp
-.idea/
 .DS_Store
+.idea
+package-lock.json
+server/newsblur_feed/
