@@ -193,7 +193,9 @@ module.exports = function(grunt) {
       dev: {
         options: {
           style: 'expanded',
-          lineNumbers: true
+          lineNumbers: true,
+					sourceMap: true,
+					sourceComments: true,
         },
         files: {
           '<%= yeoman.app %>/styles/main.css': '<%= yeoman.app %>/styles/main.scss'
