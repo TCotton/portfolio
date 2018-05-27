@@ -9,16 +9,11 @@
  * This entire site is coded in AngularJS and React. Inspect the code on GitHub: https://github.com/TCotton/portfolio
  */
 
- angular.module('portfolioApp', ['portfolioApp.blogAdminService','portfolioApp.blogAdminController','portfolioApp.blogCommentsDirective','portfolioApp.blogCommentsService','portfolioApp.blogPagesController','portfolioApp.blogPagesDirective','portfolioApp.blogPagesService','portfolioApp.blogPagesFilter','portfolioApp.blogSidebarController','portfolioApp.contractController','portfolioApp.contractService','portfolioApp.footerController','portfolioApp.footerService','portfolioApp.homepageDirective','portfolioApp.miscDirective','portfolioApp.sideProjectsController','portfolioApp.angularReact','portfolioApp.sitemapController','portfolioApp.wordProjectsController','AppConstants','ngResource','ngSanitize','ngRoute','ngAria','HashBangURLs','portfolioAppConfig','jmdobry.angular-cache','underscore','momentLibrary','helperFunctions','requestTimeout','react','detectLocalStorage','ngOpbeat','appTemplates'
-]).config(function($routeProvider, $httpProvider, $opbeatProvider) {
+ angular.module('portfolioApp', ['portfolioApp.blogAdminService','portfolioApp.blogAdminController','portfolioApp.blogCommentsDirective','portfolioApp.blogCommentsService','portfolioApp.blogPagesController','portfolioApp.blogPagesDirective','portfolioApp.blogPagesService','portfolioApp.blogPagesFilter','portfolioApp.blogSidebarController','portfolioApp.contractController','portfolioApp.contractService','portfolioApp.footerController','portfolioApp.footerService','portfolioApp.homepageDirective','portfolioApp.miscDirective','portfolioApp.sideProjectsController','portfolioApp.angularReact','portfolioApp.sitemapController','portfolioApp.wordProjectsController','AppConstants','ngResource','ngSanitize','ngRoute','ngAria','HashBangURLs','portfolioAppConfig','jmdobry.angular-cache','underscore','momentLibrary','helperFunctions','requestTimeout','react','detectLocalStorage','appTemplates'
+]).config(function($routeProvider, $httpProvider) {
 
   $httpProvider.defaults.useXDomain = true;
   delete $httpProvider.defaults.headers.common['X-Requested-With'];
-
-  $opbeatProvider.config({
-    orgId: '55aec660d5204d32b2b3bfb7a1980e0a',
-    appId: 'a7a0e96ae4'
-  });
 
   $routeProvider
     .when('/', {

@@ -22,7 +22,6 @@ module.exports = function(config) {
       'app/components/angular-cache/dist/angular-cache.js',
       'app/components/moment/moment.js',
       'app/components/react/react-with-addons.js',
-      'app/components/opbeat-angular/opbeat-angular.js',
       'app/libs/*.js',
       'app/app.js',
       'app/config/*.js',
