@@ -30,7 +30,7 @@
     "pkgcloud": "1.4.0",
     "postcss-cssstats": "1.0.0",
     "postmark": "1.3.1",
-    "prerender-node": "2.7.0",
+    "prerender-node": "3.2.0",
     "q": "1.4.1",
     "resanitize": "0.3.0",
     "response-time": "2.3.2",

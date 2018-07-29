@@ -23,7 +23,27 @@ var cache = 31557600;
 
 var conf = require('./server/config/prerender'); 			// load the prerender config
 
-app.use(require('prerender-node').set('prerenderToken', conf.prerender));
+const prerender = require('prerender-node').set('prerenderToken', conf.prerender);
+prerender.crawlerUserAgents.push('googlebot');
+prerender.crawlerUserAgents.push('bingbot');
+prerender.crawlerUserAgents.push('yandex');
+prerender.crawlerUserAgents.push('baiduspider');
+prerender.crawlerUserAgents.push('facebookexternalhit');
+prerender.crawlerUserAgents.push('twitterbot');
+prerender.crawlerUserAgents.push('linkedinbot');
+prerender.crawlerUserAgents.push('rogerbot');
+prerender.crawlerUserAgents.push('pinterest/0.');
+prerender.crawlerUserAgents.push('developers.google.com/+/web/snippet');
+prerender.crawlerUserAgents.push('www.google.com/webmasters/tools/richsnippets');
+prerender.crawlerUserAgents.push('slackbot');
+prerender.crawlerUserAgents.push('W3C_Validator');
+prerender.crawlerUserAgents.push('WhatsApp');
+prerender.crawlerUserAgents.push('flipboard');
+prerender.crawlerUserAgents.push('tumblr');
+prerender.crawlerUserAgents.push('flipboard');
+prerender.crawlerUserAgents.push('SkypeUriPreview');
+prerender.crawlerUserAgents.push('Google Page Speed');
+app.use(prerender);
 
 app.use(helmet.frameguard('deny'));
 app.use(helmet.xssFilter());
