@@ -123,10 +123,7 @@
     "sw-precache": "4.3.0",
     "time-grunt": "1.4.0",
     "uglify-save-license": "0.4.1",
-    "version-bump-prompt": "^4.1.0"
-  },
-  "scripts": {
-    "start": "node server.js"
+    "version-bump-prompt": "4.1.0"
   },
   "engines": {
     "node": "=6.14.2",
