@@ -1,5 +1,5 @@
 node_modules
-dist
+
 .tmp
 .sass-cache
 app/components
@@ -12,7 +12,7 @@ app/styles/main.css.map
 test/spec/config/constants.js
 coverage
 app/phppages
-server/config/
+
 server/blogposts.json
 .DS_Store
 server/newsblur_feed/
