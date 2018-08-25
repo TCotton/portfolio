@@ -1,6 +1,10 @@
 <a name="1.0.0"></a>
 
+# 1.1.0 (1018-08-25)
 
+### Bug fixes
+
+- Removed mobile number and other personal details
 
 # 1.0.3 (2018-05-27)
 
