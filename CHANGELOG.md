@@ -1,8 +1,8 @@
 <a name="1.0.0"></a>
 
-# 1.1.0 (1018-08-25)
+# 1.1.0 (11018-08-25)
 
-### Bug fixes
+## Bug fixes
 
 - Removed mobile number and other personal details
 
