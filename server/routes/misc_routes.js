@@ -28,12 +28,14 @@ module.exports = function(app) {
     var message = req.body.message + '<br>' + 'IP Address: ' + ipAddress + '<br>' + 'Sender email address: ' + req.body.email;
 
     client.sendEmail({
-      'From': 'andy.walpole@gmail.com',
+      'From': 'me@andywalpole.me',
       'To': 'andy.walpole@gmail.com',
       'Subject': 'Contact from portfolio',
       'HtmlBody': message
     }, function(error) {
       if (error) {
+
+        console.dir(error.message);
 
         logger.log('info', 'Unable to send (content form notification) via postmark: ' + error.message);
 

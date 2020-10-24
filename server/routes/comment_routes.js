@@ -48,7 +48,7 @@ module.exports = function(app) {
           'Message: ' + req.body.message + '\n';
 
         client.sendEmail({
-          'From': 'andy.walpole@gmail.com',
+          'From': 'me@andywalpole.me',
           'To': 'andy.walpole@gmail.com',
           'Subject': 'New comment on blog',
           'HtmlBody': message
