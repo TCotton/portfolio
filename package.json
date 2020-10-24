@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "dependencies": {
     "addressparser": "1.0.1",
     "angular-memory-stats": "1.0.0-beta1",
