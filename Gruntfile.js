@@ -818,7 +818,6 @@ module.exports = function(grunt) {
     'concat',
     'preprocess:html',  // Remove DEBUG code from production builds
     'ngmin',
-    'ngAnnotate',
     'inline',
     'cwebp',
     'copy:dist',
