@@ -45,7 +45,7 @@ var createJSONFile = function() {
 
   if (OldBlogPosts.cache) {
 
-    fs.writeFile('./server/blogposts.json', OldBlogPosts.cache, function(err) {
+    fs.writeFile('./server/parse_feed/blogposts.json', OldBlogPosts.cache, function(err) {
       if (err) {
         throw new Error(err);
       }
@@ -297,6 +297,8 @@ var RSSClass = function() {
 
   _grabOldBlogPosts = (url) => {
 
+    debugger;
+
     var deferred = q.defer();
 
     fs.readFile(url, (err, data) => {
@@ -429,7 +431,7 @@ module.exports = function(app) {
     OldBlogFeed.RSSFeed = req.query.RSSFeed;
     OldBlogFeed.BLOG = JSON.parse(req.query.BLOG);
 
-    fs.access(__base + 'server/blogposts.json', (err) => {
+    fs.access(__base + 'server/parse_feed/blogposts.json', (err) => {
 
       if (err) {
         createJSONFile();
@@ -449,7 +451,7 @@ module.exports = function(app) {
 
     } else {
 
-      OldBlogFeed.parseFeed(__base + 'server/blogposts.json', function(data) {
+      OldBlogFeed.parseFeed(__base + 'server/parse_feed/blogposts.json', function(data) {
 
         res.json(data);
 
