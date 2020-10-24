@@ -25,7 +25,7 @@
     "method-override": "2.3.7",
     "moment": "2.17.1",
     "mongodb": "2.2.24",
-    "mongoose": "4.8.3",
+    "mongoose": "5.7.5",
     "morgan": "1.8.1",
     "pkgcloud": "1.4.0",
     "postcss-cssstats": "1.0.0",
