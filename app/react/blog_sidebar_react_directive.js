@@ -26,7 +26,7 @@ app.directive('blogSidebarReactDirective', ['$timeout', '$filter', 'React', func
    */
   var SidebarRecentPostsMarkup = React.createClass({displayName: "SidebarRecentPostsMarkup",
     displayLink: function() {
-      return '/#!/blog/' + this.props.content.uniqueId + '/' + this.props.content.url;
+      return '/blog/' + this.props.content.uniqueId + '/' + this.props.content.url;
     },
     render: function() {
       return (
@@ -57,7 +57,7 @@ app.directive('blogSidebarReactDirective', ['$timeout', '$filter', 'React', func
    */
   var SidebarPopularCategoriesMarkUp = React.createClass({displayName: "SidebarPopularCategoriesMarkUp",
     displayLink: function() {
-      return '/#!/category/' + this.props.content.toLowerCase();
+      return '/category/' + this.props.content.toLowerCase();
     },
     render: function() {
       return (

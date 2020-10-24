@@ -1,13 +1,6 @@
 // Generated on 2013-07-31 using generator-angular 0.3.1
 'use strict';
 
-// no more needed, see grunt-express doc
-//var LIVERELOAD_PORT = 35729;
-//var lrSnippet = require('express-livereload')({ port: LIVERELOAD_PORT });
-//var mountFolder = function (express, dir) {
-//  return express.static(require('path').resolve(dir));
-//};
-
 var path = require('path');
 
 // # Globbing
@@ -25,9 +18,7 @@ module.exports = function(grunt) {
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
-  var mozjpeg = require('imagemin-mozjpeg');
-
-  //var gruntPostHTML = require('grunt-posthtml');
+  var swPrecache = require('sw-precache/lib/sw-precache');
 
   // configurable paths
   var yeomanConfig = {
@@ -46,6 +37,12 @@ module.exports = function(grunt) {
   grunt.initConfig({
     yeoman: yeomanConfig,
     pkg: grunt.file.readJSON('package.json'),
+    swPrecache: {
+      dev: {
+        handleFetch: false,
+        rootDir: 'dist'
+      }
+    },
     watch: {
       js: {
         files: [
@@ -196,7 +193,9 @@ module.exports = function(grunt) {
       dev: {
         options: {
           style: 'expanded',
-          lineNumbers: true
+          lineNumbers: true,
+					sourceMap: true,
+					sourceComments: true,
         },
         files: {
           '<%= yeoman.app %>/styles/main.css': '<%= yeoman.app %>/styles/main.scss'
@@ -336,9 +335,24 @@ module.exports = function(grunt) {
         '<%= yeoman.dist %>/shared/*.html',
         '<%= yeoman.dist %>/misc/*.html'
       ],
-      css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
       options: {
-        assetsDirs: ['<%= yeoman.dist %>']
+        assetsDirs: ['<%= yeoman.dist %>'],
+				blockReplacements: {
+					js: function (block) {
+
+						const asyncScripts = 'scripts.js';
+
+						const isAsync = (block.dest.indexOf(asyncScripts) === -1);
+
+						return isAsync ?
+							'<script rel="preload" defer src="' + block.dest + '"><\/script>' :
+							'<script rel="preload" defer src="' + block.dest + '"><\/script>';
+					},
+          css: function(block) {
+						grunt.log.writeln('in css block!');
+					  return `<link rel="preload" href="${block.dest}" as="style" onload="${this.rel}='stylesheet">`;
+          }
+				}
       }
     },
 
@@ -356,9 +370,8 @@ module.exports = function(grunt) {
     imagemin: {
       dynamic: {
         options: {
-          optimizationLevel: 3,
-          progressive: true,
-          use: [mozjpeg()]
+          optimizationLevel: 7,
+          progressive: true
         },
         files: [{
           expand: true,
@@ -502,7 +515,7 @@ module.exports = function(grunt) {
             cwd: '<%= yeoman.app %>',
             dest: '<%= yeoman.dist %>',
             src: [
-              '*.{ico,txt}',
+              '*.{ico,txt,json}',
               'views/{,*/}*.html',
               'footer/*.html',
               'homepage/*.html',
@@ -624,7 +637,7 @@ module.exports = function(grunt) {
     babel: {
       options: {
         sourceMap: true,
-        presets: ['es2015']
+        presets: ['es2015-loose']
       },
       tmp: {
         files: [{
@@ -690,7 +703,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.dist %>/styles',
-          src: ['*.main-postcss.css', '!*.min.css'],
+          src: ['*.css'],
           dest: '<%= yeoman.dist %>/styles',
           ext: '.css'
         }]
@@ -724,6 +737,42 @@ module.exports = function(grunt) {
       }
     }
 
+  });
+
+  function writeServiceWorkerFile(rootDir, handleFetch, callback) {
+    var config = {
+      cacheId: grunt.file.readJSON('package.json').name,
+      // If handleFetch is false (i.e. because this is called from swPrecache:dev), then
+      // the service worker will precache resources but won't actually serve them.
+      // This allows you to test precaching behavior without worry about the cache preventing your
+      // local changes from being picked up during the development cycle.
+      handleFetch: handleFetch,
+      logger: grunt.log.writeln,
+      staticFileGlobs: [
+        rootDir + '/styles/*.main-postcss.css',
+        rootDir + '**/**/**.html',
+        rootDir + '/images/**.*',
+        rootDir + '/scripts/**.js'
+      ],
+      stripPrefix: rootDir + '/',
+      // verbose defaults to false, but for the purposes of this demo, log more.
+      verbose: true
+    };
+
+    swPrecache.write(path.join(rootDir, 'service-worker.js'), config, callback);
+  }
+
+  grunt.registerMultiTask('swPrecache', function() {
+    var done = this.async();
+    var rootDir = this.data.rootDir;
+    var handleFetch = this.data.handleFetch;
+
+    writeServiceWorkerFile(rootDir, handleFetch, function(error) {
+      if (error) {
+        grunt.fail.warn(error);
+      }
+      done();
+    });
   });
 
   grunt.registerTask('server', function(target) {
@@ -773,7 +822,7 @@ module.exports = function(grunt) {
     'inline',
     'cwebp',
     'copy:dist',
-    // 'cssmin',
+    'cssmin',
     'uglify',
     'rev',
     'posthtml',

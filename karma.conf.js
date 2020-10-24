@@ -22,7 +22,6 @@ module.exports = function(config) {
       'app/components/angular-cache/dist/angular-cache.js',
       'app/components/moment/moment.js',
       'app/components/react/react-with-addons.js',
-      'app/components/fastclick/lib/fastclick.js',
       'app/libs/*.js',
       'app/app.js',
       'app/config/*.js',

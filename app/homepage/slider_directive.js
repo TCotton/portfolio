@@ -5,281 +5,281 @@
 
 angular.module('portfolioApp.homepageDirective').directive('sliderDirective', ['SLIDER', '$interval', '$timeout', '$animate', '$window', '_', 'requestTimeout', 'storage', function(SLIDER, $interval, $timeout, $animate, $window, _, requestTimeout, storage) {
 
-  return {
-    restrict: 'A',
-    scope: {
-      slider: '@'
-    },
-    replace: true,
-    template: '<div id="slider" data-ng-class="slider.sliderClass" tabindex="0">' +
-    '<section>' +
-    '<h2 class="page-top-title" class="slider1" data-ng-bind="slider.title"></h2>' +
-    '<p class="page-top-text" data-ng-bind="slider.text"></p>' +
-    '<a data-ng-href="{{slider.URL}}" class="button-front-one">View Project</a>' +
-    '</section>' +
-    '<div class="left-arrow" rel="prev" role="button" tabindex="0" aria-label="Previous slide"></div>' +
-    '<div class="right-arrow" rel="next" role="button"  tabindex="0" aria-label="Next slide"></div>' +
-    '</div>',
-    controller: function($scope) {
+	return {
+		restrict: 'A',
+		scope: {
+			slider: '@'
+		},
+		replace: true,
+		template: '<div id="slider" data-ng-class="slider.sliderClass" tabindex="0">' +
+		'<section>' +
+		'<h2 class="page-top-title" class="slider1" data-ng-bind="slider.title"></h2>' +
+		'<p class="page-top-text" data-ng-bind="slider.text"></p>' +
+		'<a data-ng-href="{{slider.URL}}" class="button-front-one">View Project</a>' +
+		'</section>' +
+		'<div class="left-arrow" rel="prev" role="button" tabindex="0" aria-label="Previous slide"></div>' +
+		'<div class="right-arrow" rel="next" role="button"  tabindex="0" aria-label="Next slide"></div>' +
+		'</div>',
+		controller: function($scope) {
 
-      $scope.slideController = {
-        currentSlide: 0,
+			$scope.slideController = {
+				currentSlide: 0,
 
-        sliderForMethod: function(sliderNumber) {
-          // loops through SLIDER constant and finds the right child objects
+				sliderForMethod: function(sliderNumber) {
+					// loops through SLIDER constant and finds the right child objects
 
-          Object.keys(SLIDER).forEach(function(key) {
+					Object.keys(SLIDER).forEach(function(key) {
 
-            if (key.indexOf(sliderNumber) !== -1) {
+						if (key.indexOf(sliderNumber) !== -1) {
 
-              $scope.slider = SLIDER[key];
-              $scope.slider.sliderClass = 'slider' + sliderNumber;
+							$scope.slider = SLIDER[key];
+							$scope.slider.sliderClass = 'slider' + sliderNumber;
 
-            }
+						}
 
-          });
+					});
 
-        },
+				},
 
-        sliderStartMethod: function() {
+				sliderStartMethod: function() {
 
-          // starts off with first slider details and reduced quality image
-          // after initial page load the placeholder image is replaced by the full size image
-          $scope.slider = SLIDER.slider1;
+					// starts off with first slider details and reduced quality image
+					// after initial page load the placeholder image is replaced by the full size image
+					$scope.slider = SLIDER.slider1;
 
-          if (!sessionStorage.getItem('homePageLoaded')) {
+					if (!sessionStorage.getItem('homePageLoaded')) {
 
-            $scope.slider.sliderClass = 'sliderPlaceholder';
+						$scope.slider.sliderClass = 'sliderPlaceholder';
 
-            if (storage.localstorage) {
-              sessionStorage.setItem('homePageLoaded', 'true');
-            }
+						if (storage.localstorage) {
+							sessionStorage.setItem('homePageLoaded', 'true');
+						}
 
-          }
-          else {
+					}
+					else {
 
-            $scope.slider.sliderClass = 'slider1';
+						$scope.slider.sliderClass = 'slider1';
 
-          }
-        },
+					}
+				},
 
-        sliderReplaceMethod: function() {
+				sliderReplaceMethod: function() {
 
-          $scope.slider.sliderClass = 'slider1';
+					$scope.slider.sliderClass = 'slider1';
 
-        }
-      };
+				}
+			};
 
-    },
-    link: function(scope, element) {
+		},
+		link: function(scope, element) {
 
-      var sliderDirectiveLink = {
+			var sliderDirectiveLink = {
 
-        sliderTotal: _.size(SLIDER),
-        timeGap: 8000,
-        startGap: 4000,
-        animationGap: 2000,
-        timerInterval: null,
+				sliderTotal: _.size(SLIDER),
+				timeGap: 8000,
+				startGap: 4000,
+				animationGap: 2000,
+				timerInterval: null,
 
-        timer: function() {
+				timer: function() {
 
-          var pTag;
-          var pTagFunction;
-          var h2Tag;
-          var h2TagFunction;
-          var aTag;
-          var aTagFunction;
-          // add and remove animate classes
-          // this is not used on mobile devices because of performance issues
-          // using matchMedia below it is possible to prevent the classes from changing
+					var pTag;
+					var pTagFunction;
+					var h2Tag;
+					var h2TagFunction;
+					var aTag;
+					var aTagFunction;
+					// add and remove animate classes
+					// this is not used on mobile devices because of performance issues
+					// using matchMedia below it is possible to prevent the classes from changing
 
-          pTag = angular.element(element[0].querySelector('p'));
-          h2Tag = angular.element(element[0].querySelector('h2'));
-          aTag = angular.element(element[0].querySelector('a'));
+					pTag = angular.element(element[0].querySelector('p'));
+					h2Tag = angular.element(element[0].querySelector('h2'));
+					aTag = angular.element(element[0].querySelector('a'));
 
-          sliderDirectiveLink.timerInterval = $interval(function() {
+					sliderDirectiveLink.timerInterval = $interval(function() {
 
-            if ($window.matchMedia && $window.matchMedia('(min-device-width: 768px) and (orientation: landscape)')) {
+						if ($window.matchMedia && $window.matchMedia('(min-device-width: 768px) and (orientation: landscape)')) {
 
-              pTagFunction = function pTagFunction() {
+							pTagFunction = function pTagFunction() {
 
-                $animate.addClass(pTag, 'animate-bounceIn');
+								$animate.addClass(pTag, 'animate-bounceIn');
 
-                requestTimeout(function() {
-                  $animate.removeClass(pTag, 'animate-bounceIn');
-                  scope.$digest();
-                }, sliderDirectiveLink.animationGap);
+								requestTimeout(function() {
+									$animate.removeClass(pTag, 'animate-bounceIn');
+									scope.$digest();
+								}, sliderDirectiveLink.animationGap);
 
-              };
+							};
 
-              h2TagFunction = function h2TagFunction() {
+							h2TagFunction = function h2TagFunction() {
 
-                $animate.addClass(h2Tag, 'animate-bounceIn');
+								$animate.addClass(h2Tag, 'animate-bounceIn');
 
-                requestTimeout(function() {
-                  $animate.removeClass(h2Tag, 'animate-bounceIn');
-                  scope.$digest();
-                }, sliderDirectiveLink.animationGap);
+								requestTimeout(function() {
+									$animate.removeClass(h2Tag, 'animate-bounceIn');
+									scope.$digest();
+								}, sliderDirectiveLink.animationGap);
 
-              };
+							};
 
-              aTagFunction = function aTagFunction() {
+							aTagFunction = function aTagFunction() {
 
-                $animate.addClass(aTag, 'animate-bounceIn-later');
+								$animate.addClass(aTag, 'animate-bounceIn-later');
 
-                requestTimeout(function() {
-                  $animate.removeClass(aTag, 'animate-bounceIn-later');
-                  scope.$digest();
-                }, sliderDirectiveLink.animationGap);
+								requestTimeout(function() {
+									$animate.removeClass(aTag, 'animate-bounceIn-later');
+									scope.$digest();
+								}, sliderDirectiveLink.animationGap);
 
-              };
+							};
 
-              pTagFunction();
-              h2TagFunction();
-              aTagFunction();
+							pTagFunction();
+							h2TagFunction();
+							aTagFunction();
 
-            }// end matchMedia
+						}// end matchMedia
 
-            // skip through the set interval and either reset the slider list to the beginning
-            // or carry on to the next one
-            if (scope.slideController.currentSlide < sliderDirectiveLink.sliderTotal) {
+						// skip through the set interval and either reset the slider list to the beginning
+						// or carry on to the next one
+						if (scope.slideController.currentSlide < sliderDirectiveLink.sliderTotal) {
 
-              scope.slideController.sliderForMethod(scope.slideController.currentSlide + 1);
-              scope.slideController.currentSlide = scope.slideController.currentSlide + 1;
+							scope.slideController.sliderForMethod(scope.slideController.currentSlide + 1);
+							scope.slideController.currentSlide = scope.slideController.currentSlide + 1;
 
-            }
-            else {
+						}
+						else {
 
-              scope.slideController.sliderForMethod(1);
-              scope.slideController.currentSlide = 1;
+							scope.slideController.sliderForMethod(1);
+							scope.slideController.currentSlide = 1;
 
-            }
-          }, this.timeGap);
+						}
+					}, this.timeGap);
 
-        },
+				},
 
-        navigation: function() {
+				navigation: function() {
 
-          angular.element(element[0].querySelector('.right-arrow')).bind('click', function() {
+					angular.element(element[0].querySelector('.right-arrow')).bind('click', function() {
 
-            // use the left arrow to move through the slider in a left direction
-            if (scope.slideController.currentSlide < sliderDirectiveLink.sliderTotal) {
+						// use the left arrow to move through the slider in a left direction
+						if (scope.slideController.currentSlide < sliderDirectiveLink.sliderTotal) {
 
-              scope.slideController.sliderForMethod(scope.slideController.currentSlide + 1);
-              scope.slideController.currentSlide = scope.slideController.currentSlide + 1;
+							scope.slideController.sliderForMethod(scope.slideController.currentSlide + 1);
+							scope.slideController.currentSlide = scope.slideController.currentSlide + 1;
 
-            }
-            else {
+						}
+						else {
 
-              scope.slideController.sliderForMethod(1);
-              scope.slideController.currentSlide = 1;
+							scope.slideController.sliderForMethod(1);
+							scope.slideController.currentSlide = 1;
 
-            }
+						}
 
-            $interval.cancel(sliderDirectiveLink.timerInterval);
-            sliderDirectiveLink.timer();
+						$interval.cancel(sliderDirectiveLink.timerInterval);
+						sliderDirectiveLink.timer();
 
-          });
+					});
 
-          angular.element(element[0].querySelector('.left-arrow')).bind('click', function() {
+					angular.element(element[0].querySelector('.left-arrow')).bind('click', function() {
 
-            // use the the right arrow to move through the slider in a right direction
-            if (scope.slideController.currentSlide > 1) {
+						// use the the right arrow to move through the slider in a right direction
+						if (scope.slideController.currentSlide > 1) {
 
-              scope.slideController.sliderForMethod(scope.slideController.currentSlide - 1);
-              scope.slideController.currentSlide = scope.slideController.currentSlide - 1;
+							scope.slideController.sliderForMethod(scope.slideController.currentSlide - 1);
+							scope.slideController.currentSlide = scope.slideController.currentSlide - 1;
 
-            }
-            else {
+						}
+						else {
 
-              scope.slideController.sliderForMethod(sliderDirectiveLink.sliderTotal);
-              scope.slideController.currentSlide = sliderDirectiveLink.sliderTotal;
+							scope.slideController.sliderForMethod(sliderDirectiveLink.sliderTotal);
+							scope.slideController.currentSlide = sliderDirectiveLink.sliderTotal;
 
-            }
+						}
 
-            $interval.cancel(sliderDirectiveLink.timerInterval);
-            sliderDirectiveLink.timer();
+						$interval.cancel(sliderDirectiveLink.timerInterval);
+						sliderDirectiveLink.timer();
 
-          });
+					});
 
-        },
+				},
 
-        start: function() {
+				start: function() {
 
-          // when the site first loads up the load the placeholder with the reduced PNG8 image
-          $timeout(function() {
+					// when the site first loads up the load the placeholder with the reduced PNG8 image
+					$timeout(function() {
 
-            scope.slideController.currentSlide = 1;
-            scope.slideController.sliderStartMethod();
+						scope.slideController.currentSlide = 1;
+						scope.slideController.sliderStartMethod();
 
-            $timeout(function() {
+						$timeout(function() {
 
-              var imgs;
+							var imgs;
 
-              // after the defined millisecond gap defined in startGap then load the right size image
-              scope.slideController.sliderReplaceMethod();
+							// after the defined millisecond gap defined in startGap then load the right size image
+							scope.slideController.sliderReplaceMethod();
 
-              // force images to download in the background
-              // otherwise there is a noticeable lag in image download with every new slide
-              if ($window.Modernizr.webp) {
-                imgs = '<div style="display:none" aria-hidden="true">' +
-                  '<img src="/images/slider/blinkbox.png.webp" alt="" />' +
-                  '<img src="/images/slider/lightning.png.webp" alt="" />' +
-                  '<img src="/images/slider/uk-law-student.png.webp" alt="" />' +
-                  '<img src="/images/slider/kaplan.png.webp" alt="" />' +
-                  '<img src="/images/slider/drnewmans.png.webp" alt="" />' +
-                  '<img src="/images/slider/penny-books.png.webp" alt="" />' +
-                  '<img src="/images/slider/twt-twt.png.webp" alt="" /></div>';
-              } else {
-                imgs = '<div style="display:none" aria-hidden="true">' +
-                  '<img src="/images/slider/blinkbox.png" alt="" />' +
-                  '<img src="/images/slider/lightning.png" alt="" />' +
-                  '<img src="/images/slider/uk-law-student.png" alt="" />' +
-                  '<img src="/images/slider/kaplan.png" alt="" />' +
-                  '<img src="/images/slider/drnewmans.png" alt="" />' +
-                  '<img src="/images/slider/penny-books.png" alt="" />' +
-                  '<img src="/images/slider/twt-twt.png" alt="" /></div>';
-              }
+							// force images to download in the background
+							// otherwise there is a noticeable lag in image download with every new slide
+							if ($window.Modernizr.webp) {
+								imgs = '<div style="display:none" aria-hidden="true">' +
+									'<img src="/images/slider/blinkbox.png.webp" alt="" />' +
+									'<img src="/images/slider/lightning.png.webp" alt="" />' +
+									'<img src="/images/slider/uk-law-student.png.webp" alt="" />' +
+									'<img src="/images/slider/kaplan.png.webp" alt="" />' +
+									'<img src="/images/slider/drnewmans.png.webp" alt="" />' +
+									'<img src="/images/slider/penny-books.png.webp" alt="" />' +
+									'<img src="/images/slider/twt-twt.png.webp" alt="" /></div>';
+							} else {
+								imgs = '<div style="display:none" aria-hidden="true">' +
+									'<img src="/images/slider/blinkbox.png" alt="" />' +
+									'<img src="/images/slider/lightning.png" alt="" />' +
+									'<img src="/images/slider/uk-law-student.png" alt="" />' +
+									'<img src="/images/slider/kaplan.png" alt="" />' +
+									'<img src="/images/slider/drnewmans.png" alt="" />' +
+									'<img src="/images/slider/penny-books.png" alt="" />' +
+									'<img src="/images/slider/twt-twt.png" alt="" /></div>';
+							}
 
-              element.append(imgs);
+							element.append(imgs);
 
-            }, sliderDirectiveLink.startGap);
+						}, sliderDirectiveLink.startGap);
 
-          }, 0);
+					}, 0);
 
-        },
+				},
 
-        destroy: function() {
+				destroy: function() {
 
-          // destroy timers when scope is destroyed
-          scope.$on('$destroy', function() {
+					// destroy timers when scope is destroyed
+					scope.$on('$destroy', function() {
 
-            if (sliderDirectiveLink.timerInterval) {
-              $interval.cancel(sliderDirectiveLink.timerInterval);
-            }
-            angular.element(element[0].querySelector('.left-arrow')).unbind('click');
-            angular.element(element[0].querySelector('.right-arrow')).unbind('click');
+						if (sliderDirectiveLink.timerInterval) {
+							$interval.cancel(sliderDirectiveLink.timerInterval);
+						}
+						angular.element(element[0].querySelector('.left-arrow')).unbind('click');
+						angular.element(element[0].querySelector('.right-arrow')).unbind('click');
 
-          });
-        },
+					});
+				},
 
-        init: function() {
-          sliderDirectiveLink.start();
-          sliderDirectiveLink.timer();
-          sliderDirectiveLink.navigation();
-          sliderDirectiveLink.destroy();
-        }
-      };
+				init: function() {
+					sliderDirectiveLink.start();
+					sliderDirectiveLink.timer();
+					sliderDirectiveLink.navigation();
+					sliderDirectiveLink.destroy();
+				}
+			};
 
-      return sliderDirectiveLink.init();
+			return sliderDirectiveLink.init();
 
-    }
-  };
+		}
+	};
 
 }]);
 
 angular.module('portfolioApp').filter('slice', function() {
-  return function(arr, start, end) {
-    return arr.slice(start, end);
-  };
+	return function(arr, start, end) {
+		return arr.slice(start, end);
+	};
 });

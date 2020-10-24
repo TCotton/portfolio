@@ -5,4 +5,9 @@ Disallow: /?_escaped_fragment_=/work-projects/elevaate
 Disallow: /?_escaped_fragment_=/blog/?page=*
 Disallow: /?_escaped_fragment_=/views*
 Disallow: /?_escaped_fragment_=/views/*
-Sitemap: sitemap.xml
+Disallow: /work-projects/drnewmans
+Disallow: /work-projects/blinkbox
+Disallow: /work-projects/elevaate
+Disallow: /blog/?page=*
+Disallow: /views*
+Disallow: /views/*

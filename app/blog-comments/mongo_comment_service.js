@@ -1,6 +1,5 @@
+'use strict';
 (function() {
-  'use strict';
-
   class MongoCommentService {
 
     /**
@@ -10,7 +9,7 @@
 
     constructor($http, $q) {
       this.$http = $http;
-      this.$q = $q;
+      this.deferred = $q.defer();
     }
 
     /**
@@ -18,8 +17,6 @@
      * @returns {*}
      */
     addComment(formData) {
-
-      const deferred = this.$q.defer();
 
       let returnedMessage = this.$http({
         url: '/api/comment/add',
@@ -30,23 +27,21 @@
         }
       });
 
-      deferred.resolve(returnedMessage);
+      this.deferred.resolve(returnedMessage);
 
-      return deferred.promise;
+      return this.deferred.promise;
     }
 
     getComments() {
-
-      const deferred = this.$q.defer();
 
       let returnedMessage = this.$http({
         url: '/api/comment/get',
         method: 'GET'
       });
 
-      deferred.resolve(returnedMessage);
+      this.deferred.resolve(returnedMessage);
 
-      return deferred.promise;
+      return this.deferred.promise;
     }
 
     /**
@@ -57,8 +52,6 @@
 
     editComment(formData) {
 
-      const deferred = this.$q.defer();
-
       let returnedMessage = this.$http({
         url: '/api/comment/update',
         method: 'PUT',
@@ -68,9 +61,9 @@
         }
       });
 
-      deferred.resolve(returnedMessage);
+      this.deferred.resolve(returnedMessage);
 
-      return deferred.promise;
+      return this.deferred.promise;
     }
 
     /**
@@ -81,17 +74,15 @@
 
     getPubilshedComments(data) {
 
-      const deferred = this.$q.defer();
-
       let returnedMessage = this.$http({
         url: '/api/comment/getPublished',
         method: 'GET',
         params: data
       });
 
-      deferred.resolve(returnedMessage);
+      this.deferred.resolve(returnedMessage);
 
-      return deferred.promise;
+      return this.deferred.promise;
     }
 
     /**
@@ -102,16 +93,14 @@
 
     deleteComment(formData) {
 
-      const deferred = this.$q.defer();
-
       let returnedMessage = this.$http({
         url: '/api/comment/delete/' + formData,
         method: 'DELETE'
       });
 
-      deferred.resolve(returnedMessage);
+      this.deferred.resolve(returnedMessage);
 
-      return deferred.promise;
+      return this.deferred.promise;
     }
 
   }

@@ -32,7 +32,7 @@ angular.module('portfolioApp.blogPagesDirective').directive('scrollToTop', ['$ti
    */
 
   var scrollEvent = function scrollEvent(event) {
-    scrollTo($document[0].body, 0, 600);
+    scrollTo($document[0].body.scrollTop === 0 ? $document[0].documentElement : $document[0].body, 0, 600);
     event.preventDefault();
   };
 

@@ -1,9 +1,8 @@
 /**
  * Created by awalpole on 26/02/15.
  */
-
+'use strict';
 angular.module('helperFunctions', []).factory('helperFunctionsService', [function() {
-  'use strict';
 
   return {
 

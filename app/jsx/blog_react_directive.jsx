@@ -19,7 +19,7 @@ app.directive('blogReactDirective', ['$timeout', '$filter', 'React', function($t
     },
     // creates link to blog article
     displayLink: function() {
-      return '/#!/blog/' + this.props.blogContent.uniqueId + '/' + this.props.blogContent.url;
+      return '/blog/' + this.props.blogContent.uniqueId + '/' + this.props.blogContent.url;
     },
     render: function() {
       return (

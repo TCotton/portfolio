@@ -57,18 +57,16 @@ angular.module('portfolioApp', [
   'momentLibrary',
   'helperFunctions',
   'requestTimeout',
-  'clearRequestTimeout',
-  'requestInterval',
-  'clearRequestInterval',
   'react',
   'detectLocalStorage',
-  'fastclick'
 ]).config(function($routeProvider, $httpProvider) {
 
   // Needed for CORS
   // http://better-inter.net/enabling-cors-in-angular-js/
   $httpProvider.defaults.useXDomain = true;
   delete $httpProvider.defaults.headers.common['X-Requested-With'];
+
+  $httpProvider.useApplyAsync(true);
 
   $routeProvider
     .when('/', {
