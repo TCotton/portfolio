@@ -1,4 +1,10 @@
-<div id="footer"><div id="footer-top" data-ng-class="{'blogFooter':hideFooter}"><div data-ng-if="!hideFooter" aria-hidden="true"><a href="https://github.com/TCotton/portfolio"><pre class="code-preview">
+<div id="footer">
+
+  <div id="footer-top" data-ng-class="{'blogFooter':hideFooter}">
+    <div data-ng-if="!hideFooter" aria-hidden="true">
+      <a href="https://github.com/TCotton/portfolio">
+
+    <pre class="code-preview">
 /**
  * This entire site is coded in AngularJS and React. Inspect the code on GitHub: https://github.com/TCotton/portfolio
  */
@@ -23,4 +29,26 @@
       templateUrl: 'work-projects/work_page.html',
       controller: 'WorkPageCtrl as WorkProjPageCtrl'
     })
-       </pre></a></div><div data-ng-if="hideFooter" id="recommended-article" data-ng-controller="FooterCtrl as FooterInherCtrl" data-ng-init="FooterInherCtrl.loadData()" data-ng-cloak class="ng-cloak"><a data-ng-if="recArticle.link" data-ng-href="{{::recArticle.link}}" target="_blank"><header>Latest recommended article: <em><span>{{::recArticle.title}}</span></em> by <em><span>{{::recArticle.author}}</span> / <span>{{::recArticle.date}}</span></em></header><section><em>{{recArticle.content}}</em></section></a></div></div><!-- end footer top --><div id="footer-bottom"><p class="footer-copyright">&copy; Andy Walpole / <a href="/sitemap">Sitemap</a></div><!-- end footer bottom --></div><!-- end footer -->
+       </pre>
+      </a>
+    </div>
+
+    <div data-ng-if="hideFooter" id="recommended-article" data-ng-controller="FooterCtrl as FooterInherCtrl" data-ng-init="FooterInherCtrl.loadData()" data-ng-cloak class="ng-cloak">
+
+      <a data-ng-if="recArticle.link" data-ng-href="{{::recArticle.link}}" target="_blank">
+        <header>Latest recommended article: <em><span>{{::recArticle.title}}</span></em>
+          by <em><span>{{::recArticle.author}}</span> / <span>{{::recArticle.date}}</span></em>
+        </header>
+        <section><em>{{recArticle.content}}</em></section>
+      </a>
+    </div>
+
+  </div>
+  <!-- end footer top -->
+
+  <div id="footer-bottom">
+    <p class="footer-copyright">&copy; Andy Walpole / <a href="/sitemap">Sitemap</a></p>
+  </div>
+  <!-- end footer bottom -->
+
+</div><!-- end footer -->

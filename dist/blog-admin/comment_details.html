@@ -1,1 +1,49 @@
-<div id="banner"><section><h2 class="page-top-title">Blog comments</h2></section></div><!-- end banner --><div id="main-content" class="clearfix content-text admin-comments"><div class="comment-details"><h3 class="content-title">Blog comments</h3><div data-ng-init="AdminCommentAdminCtrl.getComments()"></div><div data-ng-repeat="comment in comments | orderBy: '-publishedDate' track by $index"><div class="comment-block"><dl><dt>Date:<dd data-ng-bind="comment.publishedDate | date"><dt>Name:<dd data-ng-bind="comment.name"><dt>Email:<dd data-ng-bind="comment.email"><dt>Website:<dd data-ng-bind="comment.url"><dt>Comment:<dd data-ng-bind="comment.message"><dt>Blog ID:<dd data-ng-bind="comment.blogId"><dt>Published:<dd data-ng-bind="comment.published"></dl><p><a data-ng-click="AdminCommentAdminCtrl.publishComment(comment)" href="">Published / un-publish this comment</a><p><a data-ng-click="AdminCommentAdminCtrl.deleteComment(comment)" href="">Delete this comment</a></div></div></div><!-- end comment details --></div><!-- end main content -->
+<div id="banner">
+
+  <section>
+    <h2 class="page-top-title">Blog comments</h2>
+  </section>
+
+</div><!-- end banner -->
+
+<div id="main-content" class="clearfix content-text admin-comments">
+
+  <div class="comment-details">
+
+    <h3 class="content-title">Blog comments</h3>
+
+    <div data-ng-init="AdminCommentAdminCtrl.getComments()"></div>
+
+    <div data-ng-repeat="comment in comments | orderBy: '-publishedDate' track by $index">
+
+      <div class="comment-block">
+
+        <dl>
+          <dt>Date:</dt>
+          <dd data-ng-bind="comment.publishedDate | date"></dd>
+          <dt>Name:</dt>
+          <dd data-ng-bind="comment.name"></dd>
+          <dt>Email:</dt>
+          <dd data-ng-bind="comment.email"></dd>
+          <dt>Website:</dt>
+          <dd data-ng-bind="comment.url"></dd>
+          <dt>Comment:</dt>
+          <dd data-ng-bind="comment.message"></dd>
+          <dt>Blog ID:</dt>
+          <dd data-ng-bind="comment.blogId"></dd>
+          <dt>Published:</dt>
+          <dd data-ng-bind="comment.published"></dd>
+        </dl>
+
+        <p><a data-ng-click="AdminCommentAdminCtrl.publishComment(comment)" href="">Published / un-publish this comment</a></p>
+        <p><a data-ng-click="AdminCommentAdminCtrl.deleteComment(comment)" href="">Delete this comment</a></p>
+
+      </div>
+
+    </div>
+
+  </div>
+  <!-- end comment details -->
+
+
+</div><!-- end main content -->

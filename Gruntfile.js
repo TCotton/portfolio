@@ -318,9 +318,11 @@ module.exports = function(grunt) {
     },
 
     // Performs rewrites based on rev and the useminPrepare configuration
+    //        //'<%= yeoman.dist %>/{,*/}*.html',
+    /*
     usemin: {
       html: [
-        '<%= yeoman.dist %>/{,*/}*.html',
+
         '<%= yeoman.dist %>/footer/*.html',
         '<%= yeoman.dist %>/homepage/*.html',
         '<%= yeoman.dist %>/work-projects/*.html',
@@ -355,6 +357,7 @@ module.exports = function(grunt) {
 				}
       }
     },
+    */
 
     inline: {
       dist: {
@@ -732,6 +735,16 @@ module.exports = function(grunt) {
       }
     },
 
+    concat: {
+      options: {
+        separator: ';'
+      },
+      dist: {
+        src: [ 'app/*.js', 'tmp/*.js' ],
+        dest: 'dist/app.js'
+      }
+    }
+
     // Allow the use of non-minsafe AngularJS files. Automatically makes it
     // minsafe compatible so Uglify does not destroy the ng references
     /*
@@ -828,12 +841,12 @@ module.exports = function(grunt) {
     'concat',
     'preprocess:html',  // Remove DEBUG code from production builds
     //'ngmin',
-    //'ngAnnotate',
+    'ngAnnotate',
     'inline',
     'cwebp',
     'copy:dist',
     'cssmin',
-    'uglify',
+    //'uglify',
     'rev',
     'posthtml',
     'usemin',
