@@ -555,6 +555,16 @@ module.exports = function(grunt) {
       }
     },
 
+    ngAnnotate: {
+      options: {
+          singleQuotes: true,
+      },
+      your_target: {
+
+      }
+    },
+
+    
     ngconstant: {
       build: {
         options: {
@@ -724,6 +734,7 @@ module.exports = function(grunt) {
 
     // Allow the use of non-minsafe AngularJS files. Automatically makes it
     // minsafe compatible so Uglify does not destroy the ng references
+    /*
     ngmin: {
       dist: {
         files: [
@@ -735,8 +746,7 @@ module.exports = function(grunt) {
           }
         ]
       }
-    }
-
+    }*/
   });
 
   function writeServiceWorkerFile(rootDir, handleFetch, callback) {
@@ -817,8 +827,8 @@ module.exports = function(grunt) {
     'ngconstant',
     'concat',
     'preprocess:html',  // Remove DEBUG code from production builds
-    'ngmin',
-  
+    //'ngmin',
+    //'ngAnnotate',
     'inline',
     'cwebp',
     'copy:dist',
