@@ -1,6 +1,6 @@
 {
-  "name": "portfolio",
-  "version": "1.1.2",
+  "name": "my-webpack-project",
+  "version": "1.0.0",
   "dependencies": {
     "addressparser": "1.0.1",
     "angular-memory-stats": "1.0.0-beta1",
@@ -43,11 +43,17 @@
     "winston": "2.3.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@webpack-cli/init": "^1.0.2",
     "astrolabe": "0.3.6",
     "autoprefixer": "6.7.3",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-preset-es2015": "6.22.0",
     "babel-preset-es2015-loose": "8.0.0",
     "babel-preset-stage-3": "6.22.0",
+    "css-loader": "^5.0.0",
     "csswring": "5.1.1",
     "grunt": "1.0.1",
     "grunt-babel": "6.0.0",
@@ -109,7 +115,9 @@
     "load-grunt-tasks": "3.5.2",
     "lodash-cli": "4.17.4",
     "matchdep": "1.0.1",
+    "mini-css-extract-plugin": "^1.2.0",
     "ng-describe": "1.8.0",
+    "node-sass": "^4.14.1",
     "phantomjs-prebuilt": "2.1.14",
     "postcss-fakeid": "1.0.2",
     "postcss-focus": "1.0.0",
@@ -120,19 +128,25 @@
     "posthtml-doctype": "1.1.1",
     "posthtml-head-elements": "0.5.0",
     "requirejs": "2.3.2",
+    "sass-loader": "^10.0.4",
+    "style-loader": "^2.0.0",
     "sw-precache": "4.3.0",
+    "terser-webpack-plugin": "^5.0.1",
     "time-grunt": "1.4.0",
     "uglify-save-license": "0.4.1",
-    "version-bump-prompt": "^4.1.0"
+    "version-bump-prompt": "^4.1.0",
+    "webpack": "^5.3.0",
+    "webpack-cli": "^4.1.0"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "webpack"
   },
   "engines": {
     "node": "=6.17.1",
     "npm": "=3.10.10"
   },
-  "description": "My portfolio",
+  "description": "My webpack project",
   "main": "server.js",
   "repository": {
     "type": "git",
