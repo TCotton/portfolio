@@ -70,9 +70,9 @@
     "grunt-karma": "2.0.0",
     "grunt-lodash": "0.5.1",
     "grunt-newer": "1.2.0",
-    "grunt-ng-annotate": "3.0.0",
+    "grunt-ng-annotate": "^3.0.0",
     "grunt-ng-constant": "2.0.1",
-    "grunt-ngmin": "0.0.3",
+
     "grunt-nodemon": "0.4.0",
     "grunt-nsp-package": "0.0.5",
     "grunt-open": "0.2.3",

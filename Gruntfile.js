@@ -558,7 +558,7 @@ module.exports = function(grunt) {
     ngconstant: {
       build: {
         options: {
-          name: 'constants',
+          name: 'AppConstants',
           dest: '<%= yeoman.app %>/config/constants.js',
           constants: {
             SLIDER: grunt.file.readJSON('app/config/slider.json'),
@@ -817,7 +817,7 @@ module.exports = function(grunt) {
     'ngconstant',
     'concat',
     'preprocess:html',  // Remove DEBUG code from production builds
-    'ngmin',
+    //'ngmin',
     'ngAnnotate',
     'inline',
     'cwebp',
