@@ -1,27 +1,7 @@
-##### 2.3.7 - 16 June 2014
-
-###### Backwards compatible bug fixes
-- Angular 1.2.18 with $http/localStorage #116
-
-##### 2.3.6 - 15 June 2014
-
-###### Backwards compatible bug fixes
-- $http w/ cache is trying to store a promise, which dies on JSON.stringify #115
-
-##### 2.3.5 - 15 June 2014
-
-###### Backwards compatible bug fixes
-- Page refresh retouches cache expiry times with defaults #114
-
-##### 2.3.4 - 01 May 2014
-
-###### Backwards compatible bug fixes
-- Fix module definition and load sequencing #111
-
 ##### 2.3.3 - 24 February 2014
 
 ###### Backwards compatible bug fixes
-- *sigh* Fixed #102 (regression from #100)
+- *sigh Fixed #102 (regression from #100)
 
 ##### 2.3.2 - 23 February 2014
 

@@ -558,7 +558,7 @@ module.exports = function(grunt) {
     ngconstant: {
       build: {
         options: {
-          name: 'constants',
+          name: 'AppConstants',
           dest: '<%= yeoman.app %>/config/constants.js',
           constants: {
             SLIDER: grunt.file.readJSON('app/config/slider.json'),
@@ -724,7 +724,7 @@ module.exports = function(grunt) {
 
     // Allow the use of non-minsafe AngularJS files. Automatically makes it
     // minsafe compatible so Uglify does not destroy the ng references
-    ngmin: {
+    ngAnnotate: {
       dist: {
         files: [
           {
@@ -816,8 +816,7 @@ module.exports = function(grunt) {
     'postcss:dist',
     'ngconstant',
     'concat',
-    'preprocess:html',  // Remove DEBUG code from production builds
-    'ngmin',
+    'preprocess:html',  // Remove DEBUG code from production build
     'ngAnnotate',
     'inline',
     'cwebp',
