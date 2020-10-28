@@ -558,7 +558,7 @@ module.exports = function(grunt) {
     ngconstant: {
       build: {
         options: {
-          name: 'AppConstants',
+          name: 'constants',
           dest: '<%= yeoman.app %>/config/constants.js',
           constants: {
             SLIDER: grunt.file.readJSON('app/config/slider.json'),
