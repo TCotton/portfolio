@@ -647,7 +647,7 @@ module.exports = function(grunt) {
           src: [
             '**/*.js',
             '!components/**/*.js',
-            '!config/constants.js',
+            //'!config/constants.js',
             '!libs/*.js',
             '!react/*.js',
             '!jsx/*.jsx'
@@ -805,6 +805,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build', [
     'test',
+    'ngconstant',
     'babel:tmp',
     // 'jscs',
     'clean:dist',
@@ -814,7 +815,6 @@ module.exports = function(grunt) {
     'concurrent:dist',
     'react',
     'postcss:dist',
-    'ngconstant',
     'concat',
     'preprocess:html',  // Remove DEBUG code from production build
     'ngAnnotate',
