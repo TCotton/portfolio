@@ -687,7 +687,7 @@
       left: 0;
       bottom: 0;
       right: 0;
-      background: url("/images/svg/more-work.svg") no-repeat center center;
+      background: url("../images/svg/more-work.svg") no-repeat center center;
       width: 55px;
       height: 56px;
       display: block;
@@ -1606,7 +1606,7 @@
             background-size: contain;
     border-radius: 100%;
     border: 3px solid #00bd9c;
-    background: url("/images/svg/loading-spin.svg") no-repeat center center;
+    background: url("../images/svg/loading-spin.svg") no-repeat center center;
     -webkit-box-shadow: 0 0 0 3px white;
             box-shadow: 0 0 0 3px white; }
   /* line 1, app/styles/_header.scss */
@@ -1709,7 +1709,7 @@
     width: 42px;
     height: 42px;
     display: block;
-    background: url("/images/svg/menu.svg") no-repeat center center;
+    background: url("../images/svg/menu.svg") no-repeat center center;
     float: right;
     cursor: pointer;
     -moz-user-select: none;
@@ -1718,7 +1718,7 @@
     user-select: none; }
     /* line 128, app/styles/_header.scss */
     div[id=header] label.handheld-cross.active {
-      background: url("/images/svg/menu-hover.svg") no-repeat center center; } }
+      background: url("../images/svg/menu-hover.svg") no-repeat center center; } }
 
 @media screen {
   /* line 135, app/styles/_header.scss */
@@ -1819,71 +1819,71 @@
     /* line 85, app/styles/_homepage.scss */
     [id="slider"] .left-arrow {
       left: 57px;
-      background: url("/images/svg/left-arrow.svg") no-repeat center center; }
+      background: url("../images/svg/left-arrow.svg") no-repeat center center; }
       /* line 88, app/styles/_homepage.scss */
       [id="slider"] .left-arrow:hover, [id="slider"] .left-arrow:focus {
-        background: url("/images/svg/left-arrow-hover.svg") no-repeat center center; }
+        background: url("../images/svg/left-arrow-hover.svg") no-repeat center center; }
     /* line 93, app/styles/_homepage.scss */
     [id="slider"] .right-arrow {
       right: 57px;
-      background: url("/images/svg/right-arrow.svg") no-repeat center center; }
+      background: url("../images/svg/right-arrow.svg") no-repeat center center; }
       /* line 96, app/styles/_homepage.scss */
       [id="slider"] .right-arrow:hover, [id="slider"] .right-arrow:focus {
-        background: url("/images/svg/right-arrow-hover.svg") no-repeat center center; }
+        background: url("../images/svg/right-arrow-hover.svg") no-repeat center center; }
   /* line 102, app/styles/_homepage.scss */
   .no-webp [id="slider"] {
-    background-image: url("/images/slider/thompson-reuters-japan.png"); }
+    background-image: url("../images/slider/thompson-reuters-japan.png"); }
     /* line 104, app/styles/_homepage.scss */
     .no-webp [id="slider"].slider2 {
-      background-image: url("/images/slider/thompson-reuters-japan.png"); }
+      background-image: url("../images/slider/thompson-reuters-japan.png"); }
     /* line 107, app/styles/_homepage.scss */
     .no-webp [id="slider"].slider2 {
-      background-image: url("/images/slider/blinkbox.png"); }
+      background-image: url("../images/slider/blinkbox.png"); }
     /* line 110, app/styles/_homepage.scss */
     .no-webp [id="slider"].slider3 {
-      background-image: url("/images/slider/lightning.png"); }
+      background-image: url("../images/slider/lightning.png"); }
     /* line 113, app/styles/_homepage.scss */
     .no-webp [id="slider"].slider4 {
-      background-image: url("/images/slider/uk-law-student.png"); }
+      background-image: url("../images/slider/uk-law-student.png"); }
     /* line 116, app/styles/_homepage.scss */
     .no-webp [id="slider"].slider5 {
-      background-image: url("/images/slider/kaplan.png"); }
+      background-image: url("../images/slider/kaplan.png"); }
     /* line 119, app/styles/_homepage.scss */
     .no-webp [id="slider"].slider6 {
-      background-image: url("/images/slider/drnewmans.png"); }
+      background-image: url("../images/slider/drnewmans.png"); }
     /* line 122, app/styles/_homepage.scss */
     .no-webp [id="slider"].slider7 {
-      background-image: url("/images/slider/penny-books.png"); }
+      background-image: url("../images/slider/penny-books.png"); }
     /* line 125, app/styles/_homepage.scss */
     .no-webp [id="slider"].slider8 {
-      background-image: url("/images/slider/twt-twt.png"); }
+      background-image: url("../images/slider/twt-twt.png"); }
   /* line 130, app/styles/_homepage.scss */
   .webp [id="slider"] {
-    background-image: url("/images/slider/thompson-reuters-japan.png.webp"); }
+    background-image: url("../images/slider/thompson-reuters-japan.png.webp"); }
     /* line 132, app/styles/_homepage.scss */
     .webp [id="slider"].slider2 {
-      background-image: url("/images/slider/thompson-reuters-japan.png.webp"); }
+      background-image: url("../images/slider/thompson-reuters-japan.png.webp"); }
     /* line 135, app/styles/_homepage.scss */
     .webp [id="slider"].slider2 {
-      background-image: url("/images/slider/blinkbox.png.webp"); }
+      background-image: url("../images/slider/blinkbox.png.webp"); }
     /* line 138, app/styles/_homepage.scss */
     .webp [id="slider"].slider3 {
-      background-image: url("/images/slider/lightning.png.webp"); }
+      background-image: url("../images/slider/lightning.png.webp"); }
     /* line 141, app/styles/_homepage.scss */
     .webp [id="slider"].slider4 {
-      background-image: url("/images/slider/uk-law-student.png.webp"); }
+      background-image: url("../images/slider/uk-law-student.png.webp"); }
     /* line 144, app/styles/_homepage.scss */
     .webp [id="slider"].slider5 {
-      background-image: url("/images/slider/kaplan.png.webp"); }
+      background-image: url("../images/slider/kaplan.png.webp"); }
     /* line 147, app/styles/_homepage.scss */
     .webp [id="slider"].slider6 {
-      background-image: url("/images/slider/drnewmans.png.webp"); }
+      background-image: url("../images/slider/drnewmans.png.webp"); }
     /* line 150, app/styles/_homepage.scss */
     .webp [id="slider"].slider7 {
-      background-image: url("/images/slider/penny-books.png.webp"); }
+      background-image: url("../images/slider/penny-books.png.webp"); }
     /* line 153, app/styles/_homepage.scss */
     .webp [id="slider"].slider8 {
-      background-image: url("/images/slider/twt-twt.png.webp"); } }
+      background-image: url("../images/slider/twt-twt.png.webp"); } }
 
 @media screen and (min-device-width: 768px) and (orientation: landscape) {
   /* line 161, app/styles/_homepage.scss */
@@ -2132,40 +2132,40 @@
       transform: translateY(0); }
   /* line 28, app/styles/_mywork.scss */
   .webp .my-work .project-box-one {
-    background-image: url("/images/elevaate-work.png.webp"); }
+    background-image: url("../images/elevaate-work.png.webp"); }
   /* line 32, app/styles/_mywork.scss */
   .webp .my-work .project-box-two {
-    background-image: url("/images/blinkbox-work.png.webp"); }
+    background-image: url("../images/blinkbox-work.png.webp"); }
   /* line 36, app/styles/_mywork.scss */
   .webp .my-work .project-box-three {
-    background-image: url("/images/reuters-japan-work.png.webp"); }
+    background-image: url("../images/reuters-japan-work.png.webp"); }
   /* line 40, app/styles/_mywork.scss */
   .webp .my-work .project-box-four {
-    background-image: url("/images/law-student-work.png.webp"); }
+    background-image: url("../images/law-student-work.png.webp"); }
   /* line 44, app/styles/_mywork.scss */
   .webp .my-work .project-box-five {
-    background-image: url("/images/kaplan-work.png.webp"); }
+    background-image: url("../images/kaplan-work.png.webp"); }
   /* line 48, app/styles/_mywork.scss */
   .webp .my-work .project-box-six {
-    background-image: url("/images/newmans-clinic-work.png.webp"); }
+    background-image: url("../images/newmans-clinic-work.png.webp"); }
   /* line 56, app/styles/_mywork.scss */
   .no-webp .my-work .project-box-one {
-    background-image: url("/images/elevaate-work.png"); }
+    background-image: url("../images/elevaate-work.png"); }
   /* line 60, app/styles/_mywork.scss */
   .no-webp .my-work .project-box-two {
-    background-image: url("/images/blinkbox-work.png"); }
+    background-image: url("../images/blinkbox-work.png"); }
   /* line 64, app/styles/_mywork.scss */
   .no-webp .my-work .project-box-three {
-    background-image: url("/images/reuters-japan-work.png"); }
+    background-image: url("../images/reuters-japan-work.png"); }
   /* line 68, app/styles/_mywork.scss */
   .no-webp .my-work .project-box-four {
-    background-image: url("/images/law-student-work.png"); }
+    background-image: url("../images/law-student-work.png"); }
   /* line 72, app/styles/_mywork.scss */
   .no-webp .my-work .project-box-five {
-    background-image: url("/images/kaplan-work.png"); }
+    background-image: url("../images/kaplan-work.png"); }
   /* line 76, app/styles/_mywork.scss */
   .no-webp .my-work .project-box-six {
-    background-image: url("/images/newmans-clinic-work.png"); }
+    background-image: url("../images/newmans-clinic-work.png"); }
   /* line 84, app/styles/_mywork.scss */
   .my-work .project-box-one,
   .my-work .project-box-two,
@@ -2219,22 +2219,22 @@
       margin: 0; }
   /* line 147, app/styles/_mywork.scss */
   .my-work .pagination .paglast {
-    background: url("/images/svg/left-arrow.svg") no-repeat center center; }
+    background: url("../images/svg/left-arrow.svg") no-repeat center center; }
     /* line 150, app/styles/_mywork.scss */
     .my-work .pagination .paglast:hover, .my-work .pagination .paglast:focus {
-      background: url("/images/svg/left-arrow-hover.svg") no-repeat center center; }
+      background: url("../images/svg/left-arrow-hover.svg") no-repeat center center; }
   /* line 158, app/styles/_mywork.scss */
   .my-work .pagination .pagHome {
-    background: url("/images/svg/index.svg") no-repeat center center; }
+    background: url("../images/svg/index.svg") no-repeat center center; }
     /* line 161, app/styles/_mywork.scss */
     .my-work .pagination .pagHome:hover, .my-work .pagination .pagHome:focus {
-      background: url("/images/svg/index-hover.svg") no-repeat center center; }
+      background: url("../images/svg/index-hover.svg") no-repeat center center; }
   /* line 167, app/styles/_mywork.scss */
   .my-work .pagination .pagnext {
-    background: url("/images/svg/right-arrow.svg") no-repeat center center; }
+    background: url("../images/svg/right-arrow.svg") no-repeat center center; }
     /* line 170, app/styles/_mywork.scss */
     .my-work .pagination .pagnext:hover, .my-work .pagination .pagnext:focus {
-      background: url("/images/svg/right-arrow-hover.svg") no-repeat center center; } }
+      background: url("../images/svg/right-arrow-hover.svg") no-repeat center center; } }
 
 @media screen and (max-width: 979px) {
   /* line 182, app/styles/_mywork.scss */
@@ -2331,40 +2331,40 @@
       opacity: 0; }
   /* line 44, app/styles/_sideprojects.scss */
   .no-webp .side-projects .project-box-one {
-    background-image: url("/images/diceware-sideproject.png"); }
+    background-image: url("../images/diceware-sideproject.png"); }
   /* line 48, app/styles/_sideprojects.scss */
   .no-webp .side-projects .project-box-two {
-    background-image: url("/images/posthtml-head-elements-sideproject.png"); }
+    background-image: url("../images/posthtml-head-elements-sideproject.png"); }
   /* line 52, app/styles/_sideprojects.scss */
   .no-webp .side-projects .project-box-three {
-    background-image: url("/images/grunt-posthtml-sideproject.png"); }
+    background-image: url("../images/grunt-posthtml-sideproject.png"); }
   /* line 56, app/styles/_sideprojects.scss */
   .no-webp .side-projects .project-box-four {
-    background-image: url("/images/lightning-sideproject.png"); }
+    background-image: url("../images/lightning-sideproject.png"); }
   /* line 60, app/styles/_sideprojects.scss */
   .no-webp .side-projects .project-box-five {
-    background-image: url("/images/postcss-mq-keyframes-sideproject.png"); }
+    background-image: url("../images/postcss-mq-keyframes-sideproject.png"); }
   /* line 64, app/styles/_sideprojects.scss */
   .no-webp .side-projects .project-box-six {
-    background-image: url("/images/pennybooks-sideproject.png"); }
+    background-image: url("../images/pennybooks-sideproject.png"); }
   /* line 72, app/styles/_sideprojects.scss */
   .webp .side-projects .project-box-one {
-    background-image: url("/images/diceware-sideproject.png.webp"); }
+    background-image: url("../images/diceware-sideproject.png.webp"); }
   /* line 76, app/styles/_sideprojects.scss */
   .webp .side-projects .project-box-two {
-    background-image: url("/images/posthtml-head-elements-sideproject.png.webp"); }
+    background-image: url("../images/posthtml-head-elements-sideproject.png.webp"); }
   /* line 80, app/styles/_sideprojects.scss */
   .webp .side-projects .project-box-three {
-    background-image: url("/images/grunt-posthtml-sideproject.png.webp"); }
+    background-image: url("../images/grunt-posthtml-sideproject.png.webp"); }
   /* line 84, app/styles/_sideprojects.scss */
   .webp .side-projects .project-box-four {
-    background-image: url("/images/lightning-sideproject.png.webp"); }
+    background-image: url("../images/lightning-sideproject.png.webp"); }
   /* line 88, app/styles/_sideprojects.scss */
   .webp .side-projects .project-box-five {
-    background-image: url("/images/postcss-mq-keyframes-sideproject.png.webp"); }
+    background-image: url("../images/postcss-mq-keyframes-sideproject.png.webp"); }
   /* line 92, app/styles/_sideprojects.scss */
   .webp .side-projects .project-box-six {
-    background-image: url("/images/pennybooks-sideproject.png.webp"); } }
+    background-image: url("../images/pennybooks-sideproject.png.webp"); } }
 
 @media screen and (max-width: 979px) {
   /* line 102, app/styles/_sideprojects.scss */
@@ -2731,10 +2731,10 @@
       cursor: pointer;
       -webkit-background-size: contain;
               background-size: contain;
-      background: url("/images/svg/down-arrow.svg") no-repeat center center; }
+      background: url("../images/svg/down-arrow.svg") no-repeat center center; }
       /* line 271, app/styles/_blog.scss */
       [id="more-posts"] .down-arrow:hover, [id="more-posts"] .down-arrow:focus {
-        background: url("/images/svg/down-arrow-hover.svg") no-repeat center center; }
+        background: url("../images/svg/down-arrow-hover.svg") no-repeat center center; }
     /* line 276, app/styles/_blog.scss */
     [id="more-posts"] > div:first-of-type {
       float: right;
@@ -2777,76 +2777,76 @@
         margin: 0; }
     /* line 327, app/styles/_blog.scss */
     [id="pagination"] .left-p [class*="pag"] {
-      background: url("/images/svg/left-arrow.svg") no-repeat center center; }
+      background: url("../images/svg/left-arrow.svg") no-repeat center center; }
       /* line 329, app/styles/_blog.scss */
       [id="pagination"] .left-p [class*="pag"]:hover, [id="pagination"] .left-p [class*="pag"]:focus {
-        background: url("/images/svg/left-arrow-hover.svg") no-repeat center center; }
+        background: url("../images/svg/left-arrow-hover.svg") no-repeat center center; }
     /* line 339, app/styles/_blog.scss */
     [id="pagination"] .pag1 {
-      background: url("/images/svg/solid1.svg") no-repeat center center; }
+      background: url("../images/svg/solid1.svg") no-repeat center center; }
       /* line 341, app/styles/_blog.scss */
       [id="pagination"] .pag1:hover, [id="pagination"] .pag1:focus {
-        background: url("/images/svg/outline1.svg") no-repeat center center; }
+        background: url("../images/svg/outline1.svg") no-repeat center center; }
     /* line 339, app/styles/_blog.scss */
     [id="pagination"] .pag2 {
-      background: url("/images/svg/solid2.svg") no-repeat center center; }
+      background: url("../images/svg/solid2.svg") no-repeat center center; }
       /* line 341, app/styles/_blog.scss */
       [id="pagination"] .pag2:hover, [id="pagination"] .pag2:focus {
-        background: url("/images/svg/outline2.svg") no-repeat center center; }
+        background: url("../images/svg/outline2.svg") no-repeat center center; }
     /* line 339, app/styles/_blog.scss */
     [id="pagination"] .pag3 {
-      background: url("/images/svg/solid3.svg") no-repeat center center; }
+      background: url("../images/svg/solid3.svg") no-repeat center center; }
       /* line 341, app/styles/_blog.scss */
       [id="pagination"] .pag3:hover, [id="pagination"] .pag3:focus {
-        background: url("/images/svg/outline3.svg") no-repeat center center; }
+        background: url("../images/svg/outline3.svg") no-repeat center center; }
     /* line 339, app/styles/_blog.scss */
     [id="pagination"] .pag4 {
-      background: url("/images/svg/solid4.svg") no-repeat center center; }
+      background: url("../images/svg/solid4.svg") no-repeat center center; }
       /* line 341, app/styles/_blog.scss */
       [id="pagination"] .pag4:hover, [id="pagination"] .pag4:focus {
-        background: url("/images/svg/outline4.svg") no-repeat center center; }
+        background: url("../images/svg/outline4.svg") no-repeat center center; }
     /* line 339, app/styles/_blog.scss */
     [id="pagination"] .pag5 {
-      background: url("/images/svg/solid5.svg") no-repeat center center; }
+      background: url("../images/svg/solid5.svg") no-repeat center center; }
       /* line 341, app/styles/_blog.scss */
       [id="pagination"] .pag5:hover, [id="pagination"] .pag5:focus {
-        background: url("/images/svg/outline5.svg") no-repeat center center; }
+        background: url("../images/svg/outline5.svg") no-repeat center center; }
     /* line 339, app/styles/_blog.scss */
     [id="pagination"] .pag6 {
-      background: url("/images/svg/solid6.svg") no-repeat center center; }
+      background: url("../images/svg/solid6.svg") no-repeat center center; }
       /* line 341, app/styles/_blog.scss */
       [id="pagination"] .pag6:hover, [id="pagination"] .pag6:focus {
-        background: url("/images/svg/outline6.svg") no-repeat center center; }
+        background: url("../images/svg/outline6.svg") no-repeat center center; }
     /* line 339, app/styles/_blog.scss */
     [id="pagination"] .pag7 {
-      background: url("/images/svg/solid7.svg") no-repeat center center; }
+      background: url("../images/svg/solid7.svg") no-repeat center center; }
       /* line 341, app/styles/_blog.scss */
       [id="pagination"] .pag7:hover, [id="pagination"] .pag7:focus {
-        background: url("/images/svg/outline7.svg") no-repeat center center; }
+        background: url("../images/svg/outline7.svg") no-repeat center center; }
     /* line 339, app/styles/_blog.scss */
     [id="pagination"] .pag8 {
-      background: url("/images/svg/solid8.svg") no-repeat center center; }
+      background: url("../images/svg/solid8.svg") no-repeat center center; }
       /* line 341, app/styles/_blog.scss */
       [id="pagination"] .pag8:hover, [id="pagination"] .pag8:focus {
-        background: url("/images/svg/outline8.svg") no-repeat center center; }
+        background: url("../images/svg/outline8.svg") no-repeat center center; }
     /* line 339, app/styles/_blog.scss */
     [id="pagination"] .pag9 {
-      background: url("/images/svg/solid9.svg") no-repeat center center; }
+      background: url("../images/svg/solid9.svg") no-repeat center center; }
       /* line 341, app/styles/_blog.scss */
       [id="pagination"] .pag9:hover, [id="pagination"] .pag9:focus {
-        background: url("/images/svg/outline9.svg") no-repeat center center; }
+        background: url("../images/svg/outline9.svg") no-repeat center center; }
     /* line 339, app/styles/_blog.scss */
     [id="pagination"] .pag10 {
-      background: url("/images/svg/solid10.svg") no-repeat center center; }
+      background: url("../images/svg/solid10.svg") no-repeat center center; }
       /* line 341, app/styles/_blog.scss */
       [id="pagination"] .pag10:hover, [id="pagination"] .pag10:focus {
-        background: url("/images/svg/outline10.svg") no-repeat center center; }
+        background: url("../images/svg/outline10.svg") no-repeat center center; }
     /* line 349, app/styles/_blog.scss */
     [id="pagination"] .right-p [class*="pag"] {
-      background: url("/images/svg/right-arrow.svg") no-repeat center center; }
+      background: url("../images/svg/right-arrow.svg") no-repeat center center; }
       /* line 351, app/styles/_blog.scss */
       [id="pagination"] .right-p [class*="pag"]:hover, [id="pagination"] .right-p [class*="pag"]:focus {
-        background: url("/images/svg/right-arrow-hover.svg") no-repeat center center; } }
+        background: url("../images/svg/right-arrow-hover.svg") no-repeat center center; } }
 
 @media screen and (min-width: 767px) and (max-width: 979px) {
   /* line 363, app/styles/_blog.scss */

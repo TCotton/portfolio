@@ -1,16 +1,4 @@
 "use strict";
-/*
-import angular from "angular";
-import "angular-aria";
-import "angular-resource";
-import "angular-sanitize";
-import "angular-route";
-import "angular-aria";
-import "underscore";
-import "moment";
-import "react";
-*/
-
 /**
  * This entire site is coded in AngularJS. Inspect the code on GitHub: https://github.com/TCotton/portfolio
  */
@@ -79,6 +67,8 @@ angular
     delete $httpProvider.defaults.headers.common["X-Requested-With"];
 
     $httpProvider.useApplyAsync(true);
+
+    console.dir('angular router');
 
     $routeProvider
       .when("/", {
@@ -167,6 +157,7 @@ angular
     /** Solution to make server side code accept data submitted with angularjs via POST
      * Use x-www-form-urlencoded Content-Type
      * **/
+    
     $httpProvider.defaults.headers.post["Content-Type"] =
       "application/x-www-form-urlencoded;charset=utf-8";
 

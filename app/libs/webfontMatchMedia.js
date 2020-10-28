@@ -1,3 +1,7 @@
+if(!window) {
+  return;
+}
+
 // jscs:disable
 // Commons ES6 / ES7 polyfills
 // Array.prototype.contains()

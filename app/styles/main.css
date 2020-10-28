@@ -2202,7 +2202,7 @@
       transform: translateY(0); }
   /* line 28, app/styles/_mywork.scss */
   .webp .my-work .project-box-one {
-    background-image: url("/images/elevaate-work.png.webp"); }
+    background-image: url("../images/elevaate-work.png.webp"); }
   /* line 32, app/styles/_mywork.scss */
   .webp .my-work .project-box-two {
     background-image: url("/images/blinkbox-work.png.webp"); }

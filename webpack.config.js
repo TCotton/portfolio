@@ -33,22 +33,28 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
  */
 
 const TerserPlugin = require("terser-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ASSET_PATH = process.env.ASSET_PATH || '/images';
 
 module.exports = {
   mode: "development",
-  entry: "./index.js",
+  entry: "./app/app.js",
 
   plugins: [
     new webpack.ProgressPlugin(),
-    new MiniCssExtractPlugin({ filename: "main.[chunkhash].css" }),
+    new HtmlWebpackPlugin({
+      template: "app/index.html",
+    }),
   ],
 
   output: {
+    globalObject: `typeof self !== 'undefined' ? self : this`,
     path: path.join(__dirname, "/dist"),
     filename: "bundle.js",
+    publicPath: ASSET_PATH,
   },
 
-  devtool: 'source-map',
+  devtool: "source-map",
   devServer: {
     contentBase: path.join(__dirname, "/app"),
     port: 8008,
@@ -66,7 +72,7 @@ module.exports = {
         loader: "babel-loader",
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
+        test: /\.(png|jpe?g|webp|gif)$/i,
         use: [
           {
             loader: "file-loader",
@@ -89,9 +95,6 @@ module.exports = {
       {
         test: /.(scss|css)$/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-          },
           {
             loader: "style-loader",
           },
