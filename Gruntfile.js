@@ -291,10 +291,11 @@ module.exports = function(grunt) {
 
     uglify: {
       options: {
-        mangle: true,
+        mangle: false,
         preserveComments: true,
         beautify: true,
-        compress: false
+        compress: false,
+        sourceMap: true,
       }
     },
     posthtml: {
@@ -643,7 +644,7 @@ module.exports = function(grunt) {
             '!components/**/*.js',
             //'!config/constants.js',
             '!libs/*.js',
-            '!react/*.js',
+            //'!react/*.js',
             '!jsx/*.jsx'
           ],
           dest: '<%= yeoman.tmp %>/'
@@ -807,7 +808,7 @@ module.exports = function(grunt) {
     'useminPrepare',
     'sass:dist',
     'concurrent:dist',
-    'react',
+    // 'react',
     'postcss:dist',
     'concat',
     'preprocess:html',  // Remove DEBUG code from production build
