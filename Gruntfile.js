@@ -62,7 +62,7 @@ module.exports = function(grunt) {
           '<%= yeoman.app %>/shared/*.js',
           '<%= yeoman.app %>/app.js'
         ],
-        tasks: ['newer:jshint:all', 'newer:babel:tmp', 'newer:copy:tmp'],
+        tasks: ['newer:babel:tmp', 'newer:copy:tmp'],
         options: {
           livereload: '<%= express.livereload.options %>'
         }
@@ -824,7 +824,6 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('default', [
-    'jshint',
     'test',
     'build'
   ]);

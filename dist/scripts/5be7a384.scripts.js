@@ -1698,6 +1698,7 @@ function _classCallCheck(a, b) {
         /* @ngInject */
         a.$inject = [ "$rootScope", "$scope", "$log", "WORK", "$window", "_" ];
         function a(b, c, d, e, f, g) {
+            console.dir(arguments);
             _classCallCheck(this, a);
             this.$rootScope = b;
             this.$scope = c;
