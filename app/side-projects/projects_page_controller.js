@@ -11,6 +11,7 @@
      * @param _ {function}
      * @constructor
      */
+    /* @ngInject */
     constructor($rootScope, $scope, $log, PROJECTS, $window, _) {
       this.$rootScope = $rootScope;
       this.$scope = $scope;
