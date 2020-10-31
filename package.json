@@ -43,14 +43,18 @@
     "winston": "2.3.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
     "astrolabe": "0.3.6",
     "autoprefixer": "6.7.3",
+    "babel-core": "^6.0.0",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "6.22.0",
     "babel-preset-es2015-loose": "8.0.0",
     "babel-preset-stage-3": "6.22.0",
     "csswring": "5.1.1",
     "grunt": "1.0.1",
-    "grunt-babel": "6.0.0",
+    "grunt-babel": "^6.0.0",
     "grunt-concurrent": "2.3.1",
     "grunt-contrib-clean": "1.0.0",
     "grunt-contrib-concat": "1.0.1",
@@ -70,9 +74,8 @@
     "grunt-karma": "2.0.0",
     "grunt-lodash": "0.5.1",
     "grunt-newer": "1.2.0",
-    "grunt-ng-annotate": "3.0.0",
+    "grunt-ng-annotate": "^3.0.0",
     "grunt-ng-constant": "2.0.1",
-    "grunt-ngmin": "0.0.3",
     "grunt-nodemon": "0.4.0",
     "grunt-nsp-package": "0.0.5",
     "grunt-open": "0.2.3",
@@ -81,7 +84,6 @@
     "grunt-posthtml": "0.5.0",
     "grunt-preprocess": "5.1.0",
     "grunt-protractor-runner": "4.0.0",
-    "grunt-react": "0.12.3",
     "grunt-rev": "0.1.0",
     "grunt-sass": "2.1.0",
     "grunt-scss-lint": "0.5.0",
@@ -123,7 +125,7 @@
     "sw-precache": "4.3.0",
     "time-grunt": "1.4.0",
     "uglify-save-license": "0.4.1",
-    "version-bump-prompt": "^4.1.0"
+    "version-bump-prompt": "4.1.0"
   },
   "scripts": {
     "start": "node server.js"

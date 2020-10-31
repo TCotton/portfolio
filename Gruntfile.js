@@ -62,7 +62,7 @@ module.exports = function(grunt) {
           '<%= yeoman.app %>/shared/*.js',
           '<%= yeoman.app %>/app.js'
         ],
-        tasks: ['newer:jshint:all', 'newer:babel:tmp', 'newer:copy:tmp'],
+        tasks: ['newer:babel:tmp', 'newer:copy:tmp'],
         options: {
           livereload: '<%= express.livereload.options %>'
         }
@@ -291,17 +291,11 @@ module.exports = function(grunt) {
 
     uglify: {
       options: {
-        mangle: true,
-        compress: {
-          sequences: true,
-          dead_code: true,
-          conditionals: true,
-          booleans: true,
-          unused: true,
-          if_return: true,
-          join_vars: true,
-          drop_console: true
-        }
+        mangle: false,
+        preserveComments: true,
+        beautify: true,
+        compress: false,
+        sourceMap: true,
       }
     },
     posthtml: {
@@ -637,7 +631,8 @@ module.exports = function(grunt) {
     babel: {
       options: {
         sourceMap: true,
-        presets: ['es2015-loose']
+        comments: true,
+        presets: ['env']
       },
       tmp: {
         files: [{
@@ -647,9 +642,9 @@ module.exports = function(grunt) {
           src: [
             '**/*.js',
             '!components/**/*.js',
-            '!config/constants.js',
+            //'!config/constants.js',
             '!libs/*.js',
-            '!react/*.js',
+            //'!react/*.js',
             '!jsx/*.jsx'
           ],
           dest: '<%= yeoman.tmp %>/'
@@ -724,7 +719,7 @@ module.exports = function(grunt) {
 
     // Allow the use of non-minsafe AngularJS files. Automatically makes it
     // minsafe compatible so Uglify does not destroy the ng references
-    ngmin: {
+    ngAnnotate: {
       dist: {
         files: [
           {
@@ -805,6 +800,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build', [
     'test',
+    'ngconstant',
     'babel:tmp',
     // 'jscs',
     'clean:dist',
@@ -812,13 +808,11 @@ module.exports = function(grunt) {
     'useminPrepare',
     'sass:dist',
     'concurrent:dist',
-    'react',
+    // 'react',
     'postcss:dist',
-    'ngconstant',
     'concat',
-    'preprocess:html',  // Remove DEBUG code from production builds
-    'ngmin',
-    // 'ngAnnotate',
+    'preprocess:html',  // Remove DEBUG code from production build
+    'ngAnnotate',
     'inline',
     'cwebp',
     'copy:dist',
@@ -831,7 +825,6 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('default', [
-    'jshint',
     'test',
     'build'
   ]);

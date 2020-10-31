@@ -1,0 +1,13 @@
+User-agent: *
+Disallow: /?_escaped_fragment_=/work-projects/drnewmans
+Disallow: /?_escaped_fragment_=/work-projects/blinkbox
+Disallow: /?_escaped_fragment_=/work-projects/elevaate
+Disallow: /?_escaped_fragment_=/blog/?page=*
+Disallow: /?_escaped_fragment_=/views*
+Disallow: /?_escaped_fragment_=/views/*
+Disallow: /work-projects/drnewmans
+Disallow: /work-projects/blinkbox
+Disallow: /work-projects/elevaate
+Disallow: /blog/?page=*
+Disallow: /views*
+Disallow: /views/*
