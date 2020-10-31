@@ -28,11 +28,7 @@ module.exports = function(app) {
     var message = req.body.message + '<br>' + 'IP Address: ' + ipAddress + '<br>' + 'Sender email address: ' + req.body.email;
 
     client.sendEmail({
-<<<<<<< HEAD
-      'From': 'andy.walpole@gmail.com',
-=======
       'From': 'me@andywalpole.me',
->>>>>>> ng-inject-branch
       'To': 'andy.walpole@gmail.com',
       'Subject': 'Contact from portfolio',
       'HtmlBody': message

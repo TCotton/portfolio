@@ -48,11 +48,7 @@ module.exports = function(app) {
           'Message: ' + req.body.message + '\n';
 
         client.sendEmail({
-<<<<<<< HEAD
-          'From': 'andy.walpole@gmail.com',
-=======
           'From': 'me@andywalpole.me',
->>>>>>> ng-inject-branch
           'To': 'andy.walpole@gmail.com',
           'Subject': 'New comment on blog',
           'HtmlBody': message
