@@ -29,9 +29,9 @@ var logger = new (winston.Logger)({
 });
 var cache = 31557600;
 
-var conf = require('./server/config/prerender'); 			// load the prerender config
+//var conf = require('./server/config/prerender'); 			// load the prerender config
 
-app.use(require('prerender-node').set('prerenderToken', conf.prerender));
+//app.use(require('prerender-node').set('prerenderToken', conf.prerender));
 
 app.use(helmet.frameguard('deny'));
 app.use(helmet.xssFilter());

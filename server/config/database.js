@@ -5,5 +5,5 @@
  */
 
 module.exports = {
-  url: 'mongodb+srv://CottonBuds:okyEThtpVEiU5ehb@portfolio.cgcl0.mongodb.net/portfolio?retryWrites=true&w=majority'
+  url: 'mongodb+srv://CottonBuds:okyEThtpVEiU5ehb@portfolio.cgcl0.mongodb.net/portfolio?retryWrites=tre&w=majority'
 };
