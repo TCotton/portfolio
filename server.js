@@ -37,7 +37,7 @@ if (app.get('env') === 'production') {
 var database = require('./server/config/database'); 			// load the database config
 
 // configuration ===============================================================
-mongoose.connect(database.url); 	// connect to mongoDB database on modulus.io
+mongoose.connect(database.url, {useNewUrlParser: true}); 	// connect to mongoDB database on modulus.io
 
 app.set('port', process.env.PORT || 3000);
 
