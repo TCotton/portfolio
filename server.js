@@ -3,7 +3,7 @@
  */
 'use strict';
 // set up ========================
-const spdy = require('spdy');
+//const spdy = require('spdy');
 var express = require('express');
 var http = require('http');
 var errorHandler = require('express-error-handler');
@@ -11,7 +11,7 @@ http.globalAgent.maxSockets = Infinity;
 var path = require('path');
 var morgan = require('morgan');
 var helmet = require('helmet');
-var csp = require('helmet-csp');
+//var csp = require('helmet-csp');
 var bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
 var cookieParser = require('cookie-parser');
