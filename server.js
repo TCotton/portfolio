@@ -19,6 +19,14 @@ var methodOverride = require('method-override');
 var compress = require('compression');
 var app = express(); 								// create our app w/ express
 var mongoose = require('mongoose'); 					// mongoose for mongodb
+var winston = require('winston');
+
+var logger = new (winston.Logger)({
+  transports: [
+    new (winston.transports.Console)(),
+    new (winston.transports.File)({filename: 'log/main_log.log'})
+  ]
+});
 var cache = 31557600;
 
 var conf = require('./server/config/prerender'); 			// load the prerender config
@@ -37,7 +45,7 @@ if (app.get('env') === 'production') {
 var database = require('./server/config/database'); 			// load the database config
 
 // configuration ===============================================================
-mongoose.connect(database.url, {useNewUrlParser: true}); 	// connect to mongoDB database on modulus.io
+mongoose.connect(database.url, {useNewUrlParser: true}).catch(error => logger.log('warning', 'DB error' + error.toString()));	// connect to mongoDB database on modulus.io
 
 app.set('port', process.env.PORT || 3000);
 
