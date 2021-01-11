@@ -52,7 +52,7 @@ function callback(error, response, body) {
 request(options, callback);
 
 mongoose.connect(process.env.DATABASE, {useNewUrlParser: true}).catch(error => logger.log('warning', 'DB error' + error.toString()));	// connect to mongoDB database on modulus.io
-
+mongoose.set('debug', true);
 
 //var conf = require('./server/config/prerender'); 			// load the prerender config
 
