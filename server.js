@@ -27,7 +27,32 @@ var logger = new (winston.Logger)({
     new (winston.transports.File)({filename: 'log/main_log.log'})
   ]
 });
-var cache = 31557600;
+//var cache = 31557600;
+require('dotenv').config({ silent: (app.get('env') === 'production') });
+var url = require('url');
+var HttpsProxyAgent = require('https-proxy-agent');
+var request = require('request');
+
+var testEndpoint = 'https://ip.quotaguard.com';
+var proxy = process.env.QUOTAGUARDSHIELD_URL;
+var agent = new HttpsProxyAgent(proxy);
+var options = {
+  uri: url.parse(testEndpoint),
+  agent
+};
+
+function callback(error, response, body) {
+  if (!error && response.statusCode == 200) {
+    console.log('body: ', body);
+  } else {
+    console.log('error: ', error);
+  }
+}
+
+request(options, callback);
+
+mongoose.connect(process.env.DATABASE, {useNewUrlParser: true}).catch(error => logger.log('warning', 'DB error' + error.toString()));	// connect to mongoDB database on modulus.io
+
 
 //var conf = require('./server/config/prerender'); 			// load the prerender config
 
@@ -41,11 +66,6 @@ app.use(helmet.hidePoweredBy());
 if (app.get('env') === 'production') {
   app.use(helmet.hsts({ maxAge: 31536000 }));
 }
-
-var database = require('./server/config/database'); 			// load the database config
-
-// configuration ===============================================================
-mongoose.connect(database.url, {useNewUrlParser: true}).catch(error => logger.log('warning', 'DB error' + error.toString()));	// connect to mongoDB database on modulus.io
 
 app.set('port', process.env.PORT || 3000);
 
