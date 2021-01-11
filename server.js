@@ -54,6 +54,9 @@ request(options, callback);
 mongoose.connect(process.env.DATABASE, {useNewUrlParser: true}).catch(error => logger.log('warning', 'DB error' + error.toString()));	// connect to mongoDB database on modulus.io
 mongoose.set('debug', true);
 mongoose.set('bufferCommands', false);
+mongoose.connection.on('error', err => {
+  logError(err);
+});
 
 //var conf = require('./server/config/prerender'); 			// load the prerender config
 
