@@ -51,7 +51,7 @@ function callback(error, response, body) {
 
 request(options, callback);
 
-mongoose.connect('mongodb+srv://CottonBuds:okyEThtpVEiU5ehb@portfolio.cgcl0.mongodb.net/portfolio?retryWrites=true&w=majority', {useNewUrlParser: true}).catch(error => logger.log('warning', 'DB error' + error.toString()));	// connect to mongoDB database on modulus.io
+mongoose.connect(process.env.MONGO, {useNewUrlParser: true}).catch(error => logger.log('warning', 'DB error' + error.toString()));	// connect to mongoDB database on modulus.io
 mongoose.set('debug', true);
 mongoose.connection.on('error', err => {
   throw new Error(err);
