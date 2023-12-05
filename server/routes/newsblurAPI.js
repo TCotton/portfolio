@@ -2,6 +2,8 @@
  * Created by awalpole on 22/05/2014.
  */
 
+'use strict';
+
 var newsblur = require('./../config/newsblur');
 var http = require('http');
 var querystring = require('querystring');
@@ -11,7 +13,7 @@ var _ = require('underscore');
 
 /** Send authentication to newsblur API
  * **/
-var req_authentication = function () {
+var req_authentication = function() {
 
   var data;
   var options;
@@ -20,7 +22,7 @@ var req_authentication = function () {
 
   data = querystring.stringify({
     username: newsblur.username,
-    password: newsblur.password
+    password: newsblur.password,
   });
 
   options = {
@@ -31,11 +33,11 @@ var req_authentication = function () {
     headers: {
       'User-Agent': 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.13) Gecko/20080311 Firefox/2.0.0.13',
       'Content-Type': 'application/x-www-form-urlencoded',
-      'Content-Length': Buffer.byteLength(data)
+      'Content-Length': Buffer.byteLength(data),
     }
   };
 
-  req = http.request(options, function (res) {
+  req = http.request(options, function(res) {
 
     if (res.statusCode === 200 && res.headers['set-cookie']) {
 
@@ -49,7 +51,7 @@ var req_authentication = function () {
 
   });
 
-  req.on('error', function (e) {
+  req.on('error', function(e) {
     deferred.reject(new Error('problem with request: ' + e.message));
   });
 
@@ -62,7 +64,7 @@ var req_authentication = function () {
 
 /** Request the last starred items using the returned authenticated cookie is the header request
  * **/
-var write_json_file = function (data) {
+var write_json_file = function(data) {
 
   var options;
   var req;
@@ -81,7 +83,7 @@ var write_json_file = function (data) {
     }
   };
 
-  req = http.request(options, function (res) {
+  req = http.request(options, function(res) {
 
     var wstream;
 
@@ -91,18 +93,18 @@ var write_json_file = function (data) {
 
     res.pipe(wstream);
 
-    res.on('end', function () {
+    res.on('end', function() {
       deferred.resolve(fileName);
     });
 
     // This is here in case any errors occur
-    wstream.on('error', function (err) {
+    wstream.on('error', function(err) {
       deferred.reject(new Error(err));
     });
 
   });
 
-  req.on('error', function (e) {
+  req.on('error', function(e) {
     deferred.reject(new Error('problem with request: ' + e.message));
   });
 
@@ -112,24 +114,22 @@ var write_json_file = function (data) {
 
 };
 
-module.exports = function (app) {
+module.exports = function(app) {
 
-  app.route('/api/newsblur/get').get(function (req, res) {
+  app.route('/api/newsblur/get').get(function(req, res) {
 
-    fs.readdir('./server/newsblur_feed', function (err, file) {
+    fs.readdir('./server/newsblur_feed', function(err, file) {
 
       if (err) {
         res.send(err);
       }
 
-      res.setHeader('Cache-Control', 'public, max-age=86400');
-
       if (_.isEmpty(file)) {
 
         // if the directory doesn't have a file then create one and send the contents to the frontend
 
-        req_authentication().then(function (data) {
-          write_json_file(data).then(function(fileName){
+        req_authentication().then(function(data) {
+          write_json_file(data).then(function(fileName) {
 
             if (fileName) {
 
@@ -157,25 +157,19 @@ module.exports = function (app) {
         if ((dateNow - fileAge) > hours24) {
 
           // if older than a day then delete the file and write a new one
-          fs.unlink('./server/newsblur_feed/' + file.toString(), function (err) {
+          fs.unlink('./server/newsblur_feed/' + file.toString(), function(err) {
 
             if (err) {
               res.send(err);
             }
 
-            req_authentication().then(function (data) {
-              write_json_file(data).then(function(fileName){
+            req_authentication().then(function(data) {
+              write_json_file(data).then(function(fileName) {
 
                 if (fileName) {
 
-                  fs.readFile('./server/newsblur_feed/' + fileName + '.json', function(err, data) {
-
-                    if (err) {
-                      throw err;
-                    }
-                    res.send(data);
-
-                  });
+                  let contents = fs.readFileSync('./server/newsblur_feed/' + fileName + '.json', 'utf8');
+                  res.send(contents);
 
                 }
 

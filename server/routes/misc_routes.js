@@ -29,7 +29,7 @@ module.exports = function(app) {
 
     client.sendEmail({
       'From': 'me@andywalpole.me',
-      'To': 'me@andywalpole.me',
+      'To': 'andy.walpole@gmail.com',
       'Subject': 'Contact from portfolio',
       'HtmlBody': message
     }, function(error) {

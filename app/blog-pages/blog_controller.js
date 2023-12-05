@@ -1,11 +1,11 @@
+'use strict';
 (function() {
-  'use strict';
   class BlogCtrl {
 
     /**
      * @description Blog home page
      * @param $scope {object}
-     * @param BlogDataFactory {object}
+     * @param BlogDataService {object}
      * @param $angularCacheFactory {function}
      * @param $rootScope {function}
      * @param _ {object}
@@ -32,6 +32,8 @@
         this.$rootScope.loader = true;
 
         BlogDataService.retrieveData().then((result) => {
+
+          console.dir(result);
 
           if (_.isObject(result.data.BlogPosts)) {
 

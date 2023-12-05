@@ -3,6 +3,7 @@
  */
 'use strict';
 // set up ========================
+//const spdy = require('spdy');
 var express = require('express');
 var http = require('http');
 var errorHandler = require('express-error-handler');
@@ -10,7 +11,7 @@ http.globalAgent.maxSockets = Infinity;
 var path = require('path');
 var morgan = require('morgan');
 var helmet = require('helmet');
-var csp = require('helmet-csp');
+//var csp = require('helmet-csp');
 var bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
 var cookieParser = require('cookie-parser');
@@ -18,26 +19,56 @@ var methodOverride = require('method-override');
 var compress = require('compression');
 var app = express(); 								// create our app w/ express
 var mongoose = require('mongoose'); 					// mongoose for mongodb
-var sixMonths = 14515200;
+var winston = require('winston');
 
-var conf = require('./server/config/prerender'); 			// load the prerender config
+var logger = new (winston.Logger)({
+  transports: [
+    new (winston.transports.Console)(),
+    new (winston.transports.File)({filename: 'log/main_log.log'})
+  ]
+});
+//var cache = 31557600;
+require('dotenv').config({ silent: (app.get('env') === 'production') });
+var url = require('url');
+var HttpsProxyAgent = require('https-proxy-agent');
+var request = require('request');
 
+var testEndpoint = 'https://ip.quotaguard.com';
+var proxy = process.env.QUOTAGUARDSHIELD_URL;
+var agent = new HttpsProxyAgent(proxy);
+var options = {
+  uri: url.parse(testEndpoint),
+  agent
+};
 
-app.use(require('prerender-node').set('prerenderToken', conf.prerender));
+function callback(error, response, body) {
+  if (!error && response.statusCode == 200) {
+    console.log('body: ', body);
+  } else {
+    console.log('error: ', error);
+  }
+}
+
+request(options, callback);
+
+mongoose.connect(process.env.MONGO, {useNewUrlParser: true}).catch(error => logger.log('warning', 'DB error' + error.toString()));	// connect to mongoDB database on modulus.io
+mongoose.set('debug', true);
+mongoose.connection.on('error', err => {
+  throw new Error(err);
+});
+
+//var conf = require('./server/config/prerender'); 			// load the prerender config
+
+//app.use(require('prerender-node').set('prerenderToken', conf.prerender));
 
 app.use(helmet.frameguard('deny'));
 app.use(helmet.xssFilter());
-app.use(helmet.nosniff());
+app.use(helmet.noSniff());
 app.use(helmet.hidePoweredBy());
 
 if (app.get('env') === 'production') {
-  app.use(helmet.hsts({maxAge: 15552000}));
+  app.use(helmet.hsts({ maxAge: 31536000 }));
 }
-
-var database = require('./server/config/database'); 			// load the database config
-
-// configuration ===============================================================
-mongoose.connect(database.url); 	// connect to mongoDB database on modulus.io
 
 app.set('port', process.env.PORT || 3000);
 
@@ -51,126 +82,53 @@ app.use(methodOverride()); 						// simulate DELETE and PUT
 app.use(cookieParser());
 app.use(errorHandler());
 
-if (app.get('env') === 'production') {
+global.__base = __dirname + '/';
 
-  app.use(csp({
-    // Specify directives as normal
-    defaultSrc: [
-      '\'self\'',
-      'https://andywalpole.me'
-    ],
-    scriptSrc: [
-      '\'self\'',
-      '\'unsafe-inline\'',
-      'https://platform.twitter.com',
-      'https://f.vimeocdn.com',
-      'https://codepen.io',
-      'https://www.google-analytics.com',
-      'https://s.ytimg.com',
-      'https://player.vimeo.com',
-      'https://andywalpole.me',
-      'https://syndication.twitter.com',
-      'https://platform.vine.co'
-    ],
-    styleSrc: [
-      '\'self\'',
-      'https://fonts.googleapis.com',
-      '\'unsafe-inline\'',
-      'https://platform.twitter.com',
-      'https://andywalpole.me'
-    ],
-    imgSrc: [
-      '\'self\'',
-      'data:',
-      'https://pbs.twimg.com',
-      'https://abs.twimg.com',
-      'https://www.google-analytics.com',
-      'https://syndication.twitter.com',
-      'https://platform.twitter.com',
-      'https://andywalpole.me'
-    ],
-    fontSrc: [
-      '\'self\'',
-      'https://fonts.gstatic.com',
-      'https://public.slidesharecdn.com'
-    ],
-    frameSrc: [
-      '\'self\'',
-      'https://www.disclose.tv',
-      'https://www.youtube-nocookie.com',
-      'https://player.vimeo.com',
-      'https://syndication.twitter.com',
-      'https://platform.twitter.com',
-      'https://www.youtube.com',
-      'https://codepen.io',
-      'https://storify.com',
-      'https://www.slideshare.net',
-      'https://vine.co',
-      'https://drive.google.com'
-    ],
-    sandbox: [
-      'allow-forms',
-      'allow-scripts',
-      'allow-same-origin'
-    ],
-    // Set to an empty array to allow nothing through
-    objectSrc: [
-      '\'self\'',
-      'https://www.bbc.co.uk'
-    ],
-    connectSrc: [
-      '\'self\'',
-      'https://ssl.bbc.co.uk'
-    ],
-
-    // Set to true if you only want browsers to report errors, not block them
-    reportOnly: false,
-
-    // Set to true if you want to blindly set all headers: Content-Security-Policy,
-    // X-WebKit-CSP, and X-Content-Security-Policy.
-    setAllHeaders: false,
-
-    // Set to true if you want to disable CSP on Android.
-    disableAndroid: true,
-
-    // Set to true if you want to force buggy CSP in Safari 5.1 and below.
-    safari5: false
-  }));
-
-}
-
-app.all('*', function(req, res, next) {
+app.all('*', function (req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With');
   next();
 });
-
+const cacheTime = 86400000 * 7;
 /*
  * Development Settings
  */
 if (app.get('env') === 'development') {
 
-  app.all('*', function(req, res, next) {
-    res.setHeader('Cache-Control', 'no-cache');
-    next();
-  });
+  app.use(express.static(__dirname + '/app', { maxAge: cacheTime }));
   // This will change in production since we'll be using the dist folder
   // This covers serving up the index page
   app.use(favicon(path.join(__dirname, 'app/favicon.ico')));
-  app.use(express.static(path.join(__dirname, 'tmp'))); 		// set the static files location /public/img will be /img for users
+  app.use(express.static(path.join(__dirname, 'tmp'), { maxAge: cacheTime })); 		// set the static files location /public/img will be /img for users
+
+  require('./server/rss')(app);
+
+  app.get('/*', function (req, res, next) {
+
+    if (!req.url.startsWith('/api/')) {
+      res.sendFile(__dirname + '/app/index.html');
+    }
+
+    if (req.url.startsWith('/api/')) {
+      next();
+    }
+
+  });
+
+  app.all('*', function (req, res, next) {
+    res.setHeader('Cache-Control', 'no-cache');
+    next();
+  });
 
   // Error Handling
-  app.use(function(err, req, res, next) {
+  app.use(function (err, req, res, next) {
     if (err) {
-      res.statusCode = (err.status || 500);
-      res.render('error', {
-        message: err.message,
-        error: err
-      });
+      next(err);
     } else {
       next();
     }
   });
+
 }
 
 /**
@@ -199,38 +157,27 @@ if (app.get('env') === 'production') {
 
   app.use(favicon(path.join(__dirname, 'dist/favicon.ico')));
 
-  app.all('*', function(req, res, next) {
-    res.setHeader('Cache-Control', 'no-cache');
-    next();
-  });
+  app.use(express.static(__dirname + '/dist', { maxAge: cacheTime }));
 
-  app.all('/blog-admin/*', function(req, res, next) {
-    res.setHeader('Cache-Control', 'no-store');
-    next();
-  });
+  require('./server/rss')(app);
 
-  app.all('/scripts/*', function(req, res, next) {
-    res.setHeader('Cache-Control', 'public, max-age=' + sixMonths);
-    next();
-  });
+  app.get('/*', function (req, res, next) {
 
-  app.all('/images/*', function(req, res, next) {
-    res.setHeader('Cache-Control', 'public, max-age=' + sixMonths);
-    next();
-  });
+    if (!req.url.startsWith('/api/')) {
+      res.sendFile(__dirname + '/dist/index.html');
+    }
 
-  app.all('/styles/*', function(req, res, next) {
-    res.setHeader('Cache-Control', 'public, max-age=' + sixMonths);
-    next();
-  });
+    if (req.url.startsWith('/api/')) {
+      next();
+    }
 
-  app.use(express.static(path.join(__dirname, 'dist')));
+  });
 
   // set the static files location /public/img will be /img for users
 
   // production error handler
   // no stacktraces leaked to user
-  app.use(function(err, req, res, next) {
+  app.use(function (err, req, res, next) {
     if (err) {
       res.statusCode = (err.status || 500);
       res.render('error', {
@@ -256,10 +203,20 @@ require('./server/parse_feed/parse_rss')(app);
 // XML sitemap =================================================================
 require('./server/sitemap')(app);
 
-require('./server/rss')(app);
-
 module.exports = app;
 
-http.createServer(app).listen(app.get('port'), function() {
-  console.log('Express server listening on port ' + app.get('port'));
-});
+if (app.get('env') === 'production') {
+
+	http.createServer(app).listen(app.get('port'), function () {
+		console.log('Express server listening on port ' + app.get('port'));
+	});
+
+} else {
+
+	http.createServer(app).listen(app.get('port'), function () {
+		console.log('Express server listening on port ' + app.get('port'));
+	});
+
+}
+
+

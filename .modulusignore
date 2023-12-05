@@ -1,0 +1,8 @@
+.sass-cache
+.tmp
+/app
+/coverage
+/log
+/node_modules
+/test
+/tmp

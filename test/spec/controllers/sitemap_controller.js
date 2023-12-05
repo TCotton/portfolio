@@ -3,7 +3,7 @@
  */
 
 'use strict';
-describe('Controller: SitemapCtrl', function () {
+describe('Controller: SitemapCtrl', function() {
 
   // load the controller's module
   beforeEach(module('testConstants', 'portfolioApp.sideProjectsController', 'portfolioApp.blogAdminService', 'portfolioApp.blogPagesService', 'AppConstants', 'ngSanitize', 'ngRoute', 'HashBangURLs', 'portfolioAppConfig', 'jmdobry.angular-cache', 'underscore', 'detectLocalStorage', 'fastclick'));
@@ -18,7 +18,7 @@ describe('Controller: SitemapCtrl', function () {
   var $angularCacheFactory;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function (_$controller_, _$rootScope_, _$q_, _MOCK_DATA_, _$httpBackend_, _$angularCacheFactory_) {
+  beforeEach(inject(function(_$controller_, _$rootScope_, _$q_, _MOCK_DATA_, _$httpBackend_, _$angularCacheFactory_) {
 
     $controller = _$controller_;
     $rootScope = _$rootScope_;
@@ -53,12 +53,11 @@ describe('Controller: SitemapCtrl', function () {
 
   }));
 
-
-  it('Test to make sure that tags are created from blog content', function () {
+  it('Test to make sure that tags are created from blog content', function() {
 
     var categories = _.pluck(MOCK_DATA.allBlogData.data, 'category');
 
-    Object.keys(categories).forEach(function (key) {
+    Object.keys(categories).forEach(function(key) {
 
       expect(scope.blogTags).toContain(categories[key]);
 

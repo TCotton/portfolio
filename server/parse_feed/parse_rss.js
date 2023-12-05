@@ -297,21 +297,17 @@ var RSSClass = function() {
 
   _grabOldBlogPosts = (url) => {
 
+    debugger;
+
     var deferred = q.defer();
 
-    var feed = new gfeed.Feed(url);
-
-    feed.setNumEntries(50);
-
-    feed.load((data) => {
-
-      /** After retrieving data using Google RSS API store it into the cache and count number of old blog posts
-       * **/
-      if (data.error || !data) {
+    fs.readFile(url, (err, data) => {
+      if (err) {
         deferred.reject(new Error('Error fetching feeds'));
       }
 
-      deferred.resolve(data.feed.entries);
+      deferred.resolve(JSON.parse(data));
+      // console.log(Object.keys(JSON.parse(data)).length);
 
     });
 
@@ -435,9 +431,9 @@ module.exports = function(app) {
     OldBlogFeed.RSSFeed = req.query.RSSFeed;
     OldBlogFeed.BLOG = JSON.parse(req.query.BLOG);
 
-    fs.exists('./server/blogposts.json', function(exists) {
+    fs.access(__base + 'server/blogposts.json', (err) => {
 
-      if (!exists) {
+      if (err) {
         createJSONFile();
       }
 
@@ -453,10 +449,9 @@ module.exports = function(app) {
 
       });
 
-    }
-    else {
+    } else {
 
-      OldBlogFeed.parseFeed(OldBlogFeed.RSSFeed, function(data) {
+      OldBlogFeed.parseFeed(__base + 'server/blogposts.json', function(data) {
 
         res.json(data);
 

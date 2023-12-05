@@ -1,14 +1,15 @@
-/**
- * Created by awalpole on 04/10/2014.
- */
-
 'use strict';
 
-angular.module('portfolioApp.miscDirective').directive('pageLoadingDirective', [function() {
+angular.module('portfolioApp.miscDirective').directive('pageLoadingDirective', ['$window', function($window) {
 
   return {
     restrict: 'E',
-    template: '<div class="pace"><div class="pace-progress"><div class="pace-progress-inner"></div></div><div class="pace-activity"></div></div>',
+    template: '<div class="pace">' +
+    '<div class="pace-progress">' +
+    '<div class="pace-progress-inner"></div>' +
+    '</div>' +
+    '<div class="pace-activity"></div>' +
+    '</div>',
     replace: true,
     scope: true,
     link: function(scope, element) {
@@ -18,12 +19,12 @@ angular.module('portfolioApp.miscDirective').directive('pageLoadingDirective', [
         var _private = {
 
           pfx: ['webkit', 'moz', 'MS', 'o', ''],
-
           elem: null,
-
           prefixedEvent: function(element, type, callback) {
 
-            for (var p = 0; p < this.pfx.length; p++) {
+            var p;
+
+            for (p = 0; p < this.pfx.length; p++) {
               if (!this.pfx[p]) {
                 type = type.toLowerCase();
               }
@@ -31,20 +32,16 @@ angular.module('portfolioApp.miscDirective').directive('pageLoadingDirective', [
             }
 
           },
-
           animationListener: function() {
             element.addClass('hide');
             element[0].style.webkitAnimationName = '';
           },
-
           run: function() {
             this.prefixedEvent(this.get(), 'AnimationEnd', this.animationListener);
           },
-
-          get: function() {
+          get: function () {
             return this.elem;
           },
-
           set: function(val) {
             this.elem = val;
           }
@@ -52,20 +49,14 @@ angular.module('portfolioApp.miscDirective').directive('pageLoadingDirective', [
 
         return {
           init: function(args) {
-
             _private.set(args.val);
             _private.run();
-
           },
           destroy: function() {
 
             scope.$on('$destroy', function() {
-
-              console.log('destroy');
-
               element.removeClass('hide');
               element[0].style.webkitAnimationName = 'pace-bounce-scaledown';
-
             });
 
           }
@@ -75,16 +66,16 @@ angular.module('portfolioApp.miscDirective').directive('pageLoadingDirective', [
       var handleMediaMatch = function(mql) {
 
         if (mql.matches) {
-
-          animationBounce.init({val: element[0]});
-
+          animationBounce.init({
+            val: element[0]
+          });
         }
 
       };
 
-      if (window.matchMedia) {
+      if ($window.matchMedia) {
 
-        var mql = window.matchMedia('screen and (min-width: 415px)');
+        var mql = $window.matchMedia('screen and (min-width: 415px)');
         mql.addListener(handleMediaMatch);
         handleMediaMatch(mql);
 
@@ -92,18 +83,8 @@ angular.module('portfolioApp.miscDirective').directive('pageLoadingDirective', [
 
       animationBounce.destroy();
 
-      scope.$on(
-        '$destroy',
-        function(event) {
-
-          console.log(event);
-
-        }
-      );
-
     }
 
   };
 
 }]);
-

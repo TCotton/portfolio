@@ -1,5 +1,5 @@
+'use strict';
 (function() {
-  'use strict';
   class SitemapCtrl {
     /**
      * @description For displaying a HTML sitemap

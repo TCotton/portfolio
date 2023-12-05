@@ -10,7 +10,6 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="referrer" content="no-referrer-when-downgrade">
-  <meta name="fragment" content="!">
   <base href="/">
 
   <script src="libs/webfontMatchMedia.js?__inline=true"></script>
@@ -21,17 +20,16 @@
 
   <meta data-ng-if="hideFooter" property="og:site_name" content="blog unblock - blog of web developer. Andy Walpole">
   <meta data-ng-if="hideFooter" property="og:title" content="{{faceBookTitle}}"/>
-  <meta data-ng-if="hideFooter" property="og:url" content="{{canonical}}"/>
   <meta data-ng-if="hideFooter" property="og:description" content="{{faceBookDescription}}"/>
-  <meta data-ng-if="hideFooter" property="og:type" content="article" />
+  <meta data-ng-if="hideFooter" property="og:type" content="article"/>
   <meta data-ng-if="hideFooter" name="description" content="{{faceBookDescription}}">
 
-  <meta data-ng-if="hideFooter" name="twitter:card" content="summary" />
-  <meta data-ng-if="hideFooter" name="twitter:site" content="@andywalpole" />
-  <meta data-ng-if="hideFooter" name="twitter:title" content="{{faceBookTitle}}" />
-  <meta data-ng-if="hideFooter" name="twitter:description" content="{{faceBookDescription}}" />
+  <meta data-ng-if="hideFooter" name="twitter:card" content="summary"/>
+  <meta data-ng-if="hideFooter" name="twitter:site" content="@andywalpole"/>
+  <meta data-ng-if="hideFooter" name="twitter:title" content="{{faceBookTitle}}"/>
+  <meta data-ng-if="hideFooter" name="twitter:description" content="{{faceBookDescription}}"/>
 
-  <link rel="canonical" href="{{canonical}}"/>
+  <meta name="google-site-verification" content="EXyskgWvwTgxI78g2kK5NqdjMZyIA1p4e5dm-nuK20c" />
 
   <posthtml-head-elements></posthtml-head-elements>
 
@@ -43,7 +41,75 @@
     (function(e,t,n,r,i,s,o){e["GoogleAnalyticsObject"]=i;e[i]=e[i]||function(){(e[i].q=e[i].q||[]).push(arguments)},e[i].l=1*new Date;s=t.createElement(n),o=t.getElementsByTagName(n)[0];s.async=1;s.src=r;o.parentNode.insertBefore(s,o)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create","UA-1173435-13",{cookieDomain:"andywalpole.me",siteSpeedSampleRate:100})
   </script>
 
-  <meta name="msvalidate.01" content="A3327273DCF9CE62812809732D9A73A1" />
+  <!-- build:js scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="components/angular/angular.js"></script>
+  <script src="components/angular-resource/angular-resource.js"></script>
+  <script src="components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="components/angular-route/angular-route.js"></script>
+  <script src="components/angular-cache/dist/angular-cache.min.js"></script>
+  <script src="components/angular-aria/angular-aria.js"></script>
+  <script src="components/underscore/underscore.js"></script>
+  <script src="components/moment/moment.js"></script>
+  <script src="components/react/react.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:js({.tmp,tmp}) scripts/scripts.js -->
+  <script rel="preload" src="config/constants.js"></script>
+  <script rel="preload" src="shared/underscore_factory.js"></script>
+  <script rel="preload" src="shared/moment_factory.js"></script>
+  <script rel="preload" src="shared/react_factory.js"></script>
+  <script rel="preload" src="shared/requestTimeout_factory.js"></script>
+  <script rel="preload" src="shared/clearRequestTimeout_factory.js"></script>
+  <script rel="preload" src="shared/requestInterval_factory.js"></script>
+  <script rel="preload" src="shared/clearRequestInterval_factory.js"></script>
+  <script rel="preload" src="shared/helperFunctionService.js"></script>
+  <script rel="preload" src="shared/sessionStorageDetect_factory.js"></script>
+  <script rel="preload" src="app.js"></script>
+  <!-- library -->
+  <script rel="preload" src="libs/prism.js"></script>
+  <script rel="preload" src="config/config.js"></script>
+  <!-- filters -->
+  <script rel="preload" src="blog-pages/word_count_filter.js"></script>
+  <!-- services -->
+  <script rel="preload" src="blog-pages/blog_data_service.js"></script>
+  <script rel="preload" src="contact/post_form_service.js"></script>
+  <script rel="preload" src="blog-admin/mongo_user_factory.js"></script>
+  <script rel="preload" src="blog-admin/mongo_blog_factory.js"></script>
+  <script rel="preload" src="blog-comments/mongo_comment_service.js"></script>
+  <script rel="preload" src="footer/newsblur_service.js"></script>
+  <!-- controllers -->
+  <script rel="preload" src="contact/form_controller.js"></script>
+  <script rel="preload" src="blog-pages/blog_controller.js"></script>
+  <script rel="preload" src="blog-pages/blog_article_controller.js"></script>
+  <script rel="preload" src="work-projects/work_page_controller.js"></script>
+  <script rel="preload" src="side-projects/projects_page_controller.js"></script>
+  <script rel="preload" src="blog-admin/login_controller.js"></script>
+  <script rel="preload" src="blog-admin/user_details_controller.js"></script>
+  <script rel="preload" src="blog-admin/add_blog_controller.js"></script>
+  <script rel="preload" src="blog-admin/edit_blog_controller.js"></script>
+  <script rel="preload" src="blog-sidebar/sidebar_controller.js"></script>
+  <script rel="preload" src="blog-comments/comment_controller.js"></script>
+  <script rel="preload" src="blog-admin/comment_admin_controller.js"></script>
+  <script rel="preload" src="sitemap/sitemap_controller.js"></script>
+  <script rel="preload" src="footer/footer_controller.js"></script>
+  <script rel="preload" src="blog-pages/blog_category_controller.js"></script>
+  <!-- directives -->
+  <script rel="preload" src="homepage/slider_directive.js"></script>
+  <script rel="preload" src="homepage/homepage_stats_directive.js"></script>
+  <script rel="preload" src="blog-comments/comment_directive.js"></script>
+  <script rel="preload" src="blog-pages/compile_directive.js"></script>
+  <script rel="preload" src="blog-pages/prism_directive.js"></script>
+  <script rel="preload" src="blog-pages/codepen_directive.js"></script>
+  <script rel="preload" src="blog-pages/twitter_directive.js"></script>
+  <script rel="preload" src="blog-pages/vine_directive.js"></script>
+  <script rel="preload" src="blog-pages/scroll_to_top_directive.js"></script>
+  <script rel="preload" src="shared/loader_directive.js"></script>
+  <script rel="preload" src="react/blog_react_directive.js"></script>
+  <script rel="preload" src="react/blog_sidebar_react_directive.js"></script>
+  <script rel="preload" src="react/projects_react_directive.js"></script>
+  <!-- endbuild -->
 
 </head>
 <body>
@@ -55,7 +121,7 @@
   <div id="header">
 
     <div id="logo-wrapper">
-      <h1 class="logo"><a href="/#!/">Andy Walpole</a></h1>
+      <h1 class="logo"><a href="/">Andy Walpole</a></h1>
     </div>
     <!-- end logo -->
 
@@ -67,19 +133,19 @@
 
       <ul class="navigation">
         <li>
-          <a href="/#!/work-projects" data-link="work-projects">Work Projects</a>
+          <a href="/work-projects" data-link="work-projects">Work Projects</a>
         </li>
         <li>
-          <a href="/#!/side-projects" data-link="side-projects">Side Projects</a>
+          <a href="/side-projects" data-link="side-projects">Side Projects</a>
         </li>
         <li>
-          <a href="/#!/about-me" data-link="about-me">About Me</a>
+          <a href="/about-me" data-link="about-me">About Me</a>
         </li>
         <li>
-          <a href="/#!/contact-me" data-link="contant-me">Contact Me</a>
+          <a href="/contact-me" data-link="contant-me">Contact Me</a>
         </li>
         <li>
-          <a href="/#!/blog/" data-link="blog/">Blog</a>
+          <a href="/blog/" data-link="blog/">Blog</a>
         </li>
       </ul>
 
@@ -97,7 +163,7 @@
   <![endif]-->
 
   <div id="outer-content">
-  <div id="content" data-ng-view></div>
+    <div id="content" data-ng-view></div>
   </div>
 
   <div data-ng-include src="'footer/footer.html'"></div>
@@ -105,78 +171,6 @@
 </div>
 
 <!-- end container -->
-
-<!-- build:js scripts/vendor.js -->
-<!-- bower:js -->
-<script src="components/angular/angular.js"></script>
-<script src="components/angular-resource/angular-resource.js"></script>
-<script src="components/angular-sanitize/angular-sanitize.js"></script>
-<script src="components/angular-route/angular-route.js"></script>
-<script src="components/angular-cache/dist/angular-cache.min.js"></script>
-<script src="components/angular-aria/angular-aria.js"></script>
-<script src="components/underscore/underscore.js"></script>
-<script src="components/moment/moment.js"></script>
-<script src="components/react/react.js"></script>
-<script src="components/fastclick/lib/fastclick.js"></script>
-<!-- endbower -->
-<!-- endbuild -->
-
-<!-- build:js({.tmp,tmp}) scripts/scripts.js -->
-<script src="config/constants.js"></script>
-<script src="shared/underscore_factory.js"></script>
-<script src="shared/moment_factory.js"></script>
-<script src="shared/fastclick_factory.js"></script>
-<script src="shared/react_factory.js"></script>
-<script src="shared/requestTimeout_factory.js"></script>
-<script src="shared/clearRequestTimeout_factory.js"></script>
-<script src="shared/requestInterval_factory.js"></script>
-<script src="shared/clearRequestInterval_factory.js"></script>
-<script src="shared/helperFunctionService.js"></script>
-<script src="shared/sessionStorageDetect_factory.js"></script>
-<script src="app.js"></script>
-<!-- library -->
-<script src="libs/prism.js"></script>
-<script src="config/config.js"></script>
-<!-- filters -->
-<script src="blog-pages/word_count_filter.js"></script>
-<!-- services -->
-<script src="blog-pages/blog_data_service.js"></script>
-<script src="contact/post_form_service.js"></script>
-<script src="blog-admin/mongo_user_factory.js"></script>
-<script src="blog-admin/mongo_blog_factory.js"></script>
-<script src="blog-comments/mongo_comment_service.js"></script>
-<script src="footer/newsblur_service.js"></script>
-<!-- controllers -->
-<script src="contact/form_controller.js"></script>
-<script src="blog-pages/blog_controller.js"></script>
-<script src="blog-pages/blog_article_controller.js"></script>
-<script src="work-projects/work_page_controller.js"></script>
-<script src="side-projects/projects_page_controller.js"></script>
-<script src="blog-admin/login_controller.js"></script>
-<script src="blog-admin/user_details_controller.js"></script>
-<script src="blog-admin/add_blog_controller.js"></script>
-<script src="blog-admin/edit_blog_controller.js"></script>
-<script src="blog-sidebar/sidebar_controller.js"></script>
-<script src="blog-comments/comment_controller.js"></script>
-<script src="blog-admin/comment_admin_controller.js"></script>
-<script src="sitemap/sitemap_controller.js"></script>
-<script src="footer/footer_controller.js"></script>
-<script src="blog-pages/blog_category_controller.js"></script>
-<!-- directives -->
-<script src="homepage/slider_directive.js"></script>
-<script src="homepage/homepage_stats_directive.js"></script>
-<script src="blog-comments/comment_directive.js"></script>
-<script src="blog-pages/compile_directive.js"></script>
-<script src="blog-pages/prism_directive.js"></script>
-<script src="blog-pages/codepen_directive.js"></script>
-<script src="blog-pages/twitter_directive.js"></script>
-<script src="blog-pages/vine_directive.js"></script>
-<script src="blog-pages/scroll_to_top_directive.js"></script>
-<script src="shared/loader_directive.js"></script>
-<script src="react/blog_react_directive.js"></script>
-<script src="react/blog_sidebar_react_directive.js"></script>
-<script src="react/projects_react_directive.js"></script>
-<!-- endbuild -->
 <!--[if !IE]><!-->
 <script>
   // terrible IE10 hack
